@@ -1,0 +1,6 @@
+enum PLAYER_GROUND_STATE {
+
+	GROUNDED,
+	AIRBORNE,
+
+}
