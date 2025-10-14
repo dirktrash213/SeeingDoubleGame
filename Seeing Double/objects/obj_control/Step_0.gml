@@ -9,6 +9,22 @@ for (var i = 0; i < gp_num; i++;) {
 	   
 }
 
+if keyboard_check(ord("W")) || keyboard_check(ord("A")) || keyboard_check(ord("S")) || keyboard_check(ord("D")) || keyboard_check(vk_space)
+|| keyboard_check(vk_escape) || keyboard_check(vk_shift) {
+
+	global.lastInputWasController = false;
+
+}
+
+if gamepad_axis_value(global.controllerPort,gp_axislh) < 0 || gamepad_axis_value(global.controllerPort,gp_axislh) > 0 
+|| gamepad_axis_value(global.controllerPort,gp_axislv) < 0 || gamepad_axis_value(global.controllerPort,gp_axislv) > 0
+|| gamepad_button_check(global.controllerPort, gp_face1) || gamepad_button_check(global.controllerPort, gp_face3) ||
+gamepad_button_check_pressed(global.controllerPort,gp_start) {
+
+	global.lastInputWasController = true;
+
+}
+
 /*
 //Handle moving in menus with the analog stick 
 

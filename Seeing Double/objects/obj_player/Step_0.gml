@@ -25,21 +25,66 @@ var _subPixel = 0.5;
 
 if place_meeting(x + xSpeed, y, obj_block_wall) {
 
-	//Scoot up to wall preciesly
+	//Check for slope					
+	if !place_meeting(x + xSpeed, y - abs(xSpeed)-1, obj_block_wall) {
 	
-	var _pixelCheck = _subPixel * sign(xSpeed);
+		//Nudge player up to be on top of slope
+		while place_meeting(x + xSpeed, y, obj_block_wall) { 
+			
+			y -= _subPixel;
+			
+		}
 	
-	while !place_meeting(x + +_pixelCheck, y, obj_block_wall) {
+	} else { //No slope in front of player, now check for ceil slopes instead
 	
-		x += _pixelCheck;
+		//Check ceiling slopes
+		if !place_meeting(x + xSpeed, y + abs(xSpeed)+1, obj_block_wall) {
+		
+			while place_meeting(x + xSpeed, y, obj_block_wall) { 
+			
+				y += _subPixel;
+			
+			}
+		
+		} else { //Normal wall collision
+	
+			//Scoot up to wall preciesly
+	
+			var _pixelCheck = _subPixel * sign(xSpeed);
+	
+			while !place_meeting(x + _pixelCheck, y, obj_block_wall) {
+	
+				x += _pixelCheck;
+	
+			}
+	
+
+			//Collide
+			xSpeed = 0;
+		
+		}
 	
 	}
-	
-
-	//Collide
-	xSpeed = 0;
 
 }
+
+
+//Going down slopes
+
+//Check if wall not in front but wall below us at aprox 45 degree angle
+if ySpeed >= 0 && !place_meeting(x + xSpeed, y + 1, obj_block_wall) && place_meeting(x + xSpeed, y + abs(xSpeed)+1, obj_block_wall) {
+
+	while !place_meeting(x + xSpeed, y + _subPixel, obj_block_wall) {
+	
+		y += _subPixel;
+	
+	}
+
+}
+
+
+
+
 
 //Move
 

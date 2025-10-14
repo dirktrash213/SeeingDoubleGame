@@ -11,6 +11,10 @@ if !playerIsPresent() exit;
 var _camWidth = camera_get_view_width(view_camera[0]);
 var _camHeight = camera_get_view_height(view_camera[0]);
 
+// Round the player's position to ensure the target camera position corresponds to clean integer coordinates in the room.
+//var _targetPlayerX = round(obj_player_pitter.x);
+//var _targetPlayerY = round(obj_player_pitter.y);
+
 //Center camera on player
 var _camX = obj_player_pitter.x - _camWidth/2;
 var _camY = obj_player_pitter.y - _camHeight/2;
@@ -23,10 +27,9 @@ _camY = clamp(_camY, 0, room_height - _camHeight);
 finalCamX += (_camX - finalCamX) * camTrailSpeed;
 finalCamY += (_camY - finalCamY) * camTrailSpeed;
 
-
-
 //Set camera coordinates
 camera_set_view_pos(view_camera[0], finalCamX, finalCamY);
+
 
 
 

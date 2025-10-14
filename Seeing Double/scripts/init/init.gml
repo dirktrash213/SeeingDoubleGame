@@ -8,7 +8,7 @@
 
 
 global.controllerPort = 0;
-
+global.lastInputWasController = false;
 
 function scr_isControllerConnected() {
 
