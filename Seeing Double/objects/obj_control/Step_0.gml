@@ -64,11 +64,25 @@ if global.hasMovedRight && gamepad_axis_value(global.controllerPort,gp_axislh) =
 
 } */
 
+/*
+
 global.moveLeft = keyboard_check(ord("A")) || gamepad_axis_value(global.controllerPort,gp_axislh) < 0;
 global.moveRight = keyboard_check(ord("D")) || gamepad_axis_value(global.controllerPort,gp_axislh) > 0;
 global.moveUp = keyboard_check(ord("W")) || gamepad_axis_value(global.controllerPort,gp_axislv) < 0;
 global.moveDown = keyboard_check(ord("S")) || gamepad_axis_value(global.controllerPort,gp_axislv) > 0;
-global.jump = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(global.controllerPort, gp_face1);
+global.jump = keyboard_check(vk_space) || gamepad_button_check(global.controllerPort, gp_face1);
+global.jumpPressed = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(global.controllerPort, gp_face1);
 global.pause = keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(global.controllerPort,gp_start);
+
+
+
+
+
+global.moveRight = clamp(global.moveRight, 0, 1);
+global.moveLeft = clamp(global.moveLeft, 0, 1);
+global.jumpPressed = clamp(global.jumpPressed, 0, 1);
+global.jump = clamp(global.jump, 0, 1);
+
+
 
 //show_debug_message(global.moveLeft)

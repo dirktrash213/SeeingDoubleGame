@@ -1,7 +1,7 @@
 #macro VIEW_WIDTH 1280
 #macro VIEW_HEIGHT 720
 
-window_set_size(VIEW_WIDTH, VIEW_HEIGHT);
+//window_set_size(VIEW_WIDTH, VIEW_HEIGHT);
 
 
 
@@ -21,5 +21,11 @@ function scr_isControllerConnected() {
 	}
 		
 	return _connected;
+
+}
+
+function playerIsPresent() {
+
+	return instance_exists(obj_player);
 
 }

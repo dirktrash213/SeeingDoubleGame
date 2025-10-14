@@ -12,12 +12,12 @@
   "conversionMode": 0,
   "duration": 244.51997,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "BGM",
+    "path": "folders/Sounds/BGM.yy",
   },
   "preload": false,
   "sampleRate": 44100,
   "soundFile": "bgm_inSync.wav",
   "type": 0,
-  "volume": 1.0,
+  "volume": 0.5,
 }

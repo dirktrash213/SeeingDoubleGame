@@ -1,0 +1,1 @@
+audio_play_sound(bgm_inSync, 1, 1);
