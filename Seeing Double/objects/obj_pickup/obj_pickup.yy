@@ -1,15 +1,16 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_interactable_coin",
+  "name": "obj_pickup",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Interactables",
-    "path": "folders/Objects/Interactables.yy",
+    "name": "obj_pickup",
+    "path": "folders/Objects/obj_pickup.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -27,10 +28,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spr_interactable_coin",
-    "path": "sprites/spr_interactable_coin/spr_interactable_coin.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

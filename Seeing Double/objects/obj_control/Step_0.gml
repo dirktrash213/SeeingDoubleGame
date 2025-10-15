@@ -1,4 +1,4 @@
-
+checkForConfirm();
 
 // Get and assign a controller port for a connected controller
 var gp_num = gamepad_get_device_count();
@@ -32,6 +32,8 @@ if global.readytoDisplayTitleScreenMenu {
 	
 
 }
+
+if confirm && alarm[1] > 1 alarm[1] = 1;
 
 /*
 //Handle moving in menus with the analog stick 

@@ -7,6 +7,7 @@
 
 
 global.coinCount = 0;
+global.cherryCount = 0;
 global.defeatCount = 0;
 
 global.playerControl = true;
@@ -17,4 +18,4 @@ global.lastInputWasController = false;
 
 global.readytoDisplayTitleScreenMenu = true;
 global.titleScreenMenuActive = false;
-global.delayBeforeTitleScreen = 180;
+global.delayBeforeTitleScreen = 300;

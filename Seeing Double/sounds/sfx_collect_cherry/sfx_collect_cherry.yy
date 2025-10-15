@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSound",
   "resourceVersion": "1.0",
-  "name": "sfx_collect_gem",
+  "name": "sfx_collect_cherry",
   "audioGroupId": {
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
@@ -17,7 +17,7 @@
   },
   "preload": false,
   "sampleRate": 44100,
-  "soundFile": "sfx_collect_gem.wav",
+  "soundFile": "sfx_collect_cherry.wav",
   "type": 0,
-  "volume": 0.5,
+  "volume": 0.25,
 }

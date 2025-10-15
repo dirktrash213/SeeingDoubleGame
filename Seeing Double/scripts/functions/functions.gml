@@ -33,6 +33,8 @@ function patterPlayerIsPresent() {
 //Sets up the title screen menu
 function titleScreenIntro() {
 
+	scribble_anim_wave(1, 0.1, 0.1);
+
 	global.titleScreenMenuActive = true;
 	global.playerControl = false;
 	
@@ -49,5 +51,12 @@ function titleScreenIntro() {
 	
 	}
 
+
+}
+
+function checkForConfirm() {
+
+	confirm = keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter) ||
+	gamepad_button_check_pressed(global.controllerPort, gp_face1) || gamepad_button_check_pressed(global.controllerPort, gp_start);
 
 }
