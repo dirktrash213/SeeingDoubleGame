@@ -31,6 +31,8 @@
     {"name":"inst_1C6AAFF7","path":"rooms/rm_titleScreen/rm_titleScreen.yy",},
     {"name":"inst_99503A6","path":"rooms/rm_titleScreen/rm_titleScreen.yy",},
     {"name":"inst_1865504C","path":"rooms/rm_titleScreen/rm_titleScreen.yy",},
+    {"name":"inst_5DF2F432","path":"rooms/rm_titleScreen/rm_titleScreen.yy",},
+    {"name":"inst_6CE0ACA7","path":"rooms/rm_titleScreen/rm_titleScreen.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -67,6 +69,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_40B00425","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_hazard_spikes","path":"objects/obj_interactable_hazard_spikes/obj_interactable_hazard_spikes.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":352.0,"y":192.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_335E1656","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_coin","path":"objects/obj_interactable_coin/obj_interactable_coin.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":416.0,"y":192.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1865504C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_coin","path":"objects/obj_interactable_coin/obj_interactable_coin.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":320.0,"y":160.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5DF2F432","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_background_picnicBasket","path":"objects/obj_background_picnicBasket/obj_background_picnicBasket.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":146.0,"y":176.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6CE0ACA7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_player_patter","path":"objects/obj_player_patter/obj_player_patter.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":224.0,"y":176.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"LevelTiles","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":17,"SerialiseWidth":30,"TileCompressedData":[
 1,17,-29,0,1,272,-29,0,1,292,-277,0,3,38,0,36,-4,0,3,36,0,37,-16,0,4,-2147483648,0,0,270,-11,

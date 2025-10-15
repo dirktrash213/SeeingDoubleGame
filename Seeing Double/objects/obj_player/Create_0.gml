@@ -24,6 +24,7 @@ walkSprite = spr_pitter_walk;
 runSprite = spr_pitter_run;
 jumpSprite = spr_pitter_jump;
 defeatSprite = spr_pitter_defeat;
+happySprite = spr_pitter_happy;
 
 
 jumpSfx = sfx_jump_pitter;
@@ -41,8 +42,7 @@ runType = 0;
 moveSpeed[0] = 2; //Walk speed
 moveSpeed[1] = 3.5; //Run speed
 
-moveLeft = 0;
-moveRight = 0;
+
 
 xSpeed = 0;
 ySpeed = 0;
@@ -74,7 +74,7 @@ coyoteHangTimer = 0;
 coyoteJumpFrames = 5;
 coyoteJumpTimer = 0;
 
-
+happyPicnic = false;
 
 //Respawning
 

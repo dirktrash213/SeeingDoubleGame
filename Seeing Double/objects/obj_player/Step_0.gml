@@ -233,4 +233,5 @@ if !onGround sprite_index = jumpSprite;
 
 mask_index = maskSprite; //Use this collision mask
 
+if happyPicnic sprite_index = happySprite;
 

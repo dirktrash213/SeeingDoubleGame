@@ -5,12 +5,14 @@ function controlsSetup() {
 	jumpKeyBuffered = 0;
 	jumpKeyBufferTimer = 0;
 
-
-
-
-
-
-
+	moveLeft = 0;
+	moveRight = 0;
+	moveUp = 0;
+	moveDown = 0;
+	jump = 0;
+	jumpPressed = 0;
+	pause = 0;
+	run = 0;
 
 }
 

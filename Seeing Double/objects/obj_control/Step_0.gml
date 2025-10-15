@@ -25,6 +25,14 @@ gamepad_button_check_pressed(global.controllerPort,gp_start) {
 
 }
 
+if global.readytoDisplayTitleScreenMenu {
+	
+	titleScreenIntro();
+	global.readytoDisplayTitleScreenMenu = false;
+	
+
+}
+
 /*
 //Handle moving in menus with the analog stick 
 
