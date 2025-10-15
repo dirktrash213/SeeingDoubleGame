@@ -29,7 +29,7 @@ jumpSfx = sfx_jump_pitter;
 
 
 
-
+slopeChecksEnabled = false;
 
 
 //Moving

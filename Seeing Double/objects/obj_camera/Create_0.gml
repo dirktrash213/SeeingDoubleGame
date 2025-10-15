@@ -1,4 +1,20 @@
-finalCamX = 0;
-finalCamY = 0;
+view_width = 1920/4;  //The higher the number on the right the better
+view_height = 1080/4;   //4
 
-camTrailSpeed = 0.25;
+freeze = false; //Freeze camera during certain cutscenes
+
+window_scale = 3; //Scale window to 3 times the size of my view so it won't be super tiny
+
+
+//Set window size
+window_set_size(view_width*window_scale, view_height*window_scale);
+
+//Center the view on the monitor, use an alarm since it has to happen one step after you set the window size
+//Otherwise the new size will not be taken into account when you call the new center
+alarm[0] = 1; //Alarm 0 calls window_center()
+
+//Resize our application surface, which controls how much of the pixels in our window we are actually using
+//The higher the number - up to the size of the window - the more resolution you have to work with, and the smooother things can scroll
+
+//Resize it to be equal to our window
+surface_resize(application_surface, view_width*window_scale, view_height*window_scale)

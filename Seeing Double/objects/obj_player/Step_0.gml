@@ -72,7 +72,7 @@ if place_meeting(x + xSpeed, y, obj_block_wall) {
 //Going down slopes
 
 //Check if wall not in front but wall below us at aprox 45 degree angle
-if ySpeed >= 0 && !place_meeting(x + xSpeed, y + 1, obj_block_wall) && place_meeting(x + xSpeed, y + abs(xSpeed)+1, obj_block_wall) {
+if ySpeed >= 0 && !place_meeting(x + xSpeed, y + 1, obj_block_wall) && place_meeting(x + xSpeed, y + abs(xSpeed)+1, obj_block_wall) && slopeChecksEnabled {
 
 	while !place_meeting(x + xSpeed, y + _subPixel, obj_block_wall) {
 	
