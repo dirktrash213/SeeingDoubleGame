@@ -23,6 +23,7 @@ idleSprite = spr_pitter_idle;
 walkSprite = spr_pitter_walk;
 runSprite = spr_pitter_run;
 jumpSprite = spr_pitter_jump;
+defeatSprite = spr_pitter_defeat;
 
 
 jumpSfx = sfx_jump_pitter;
@@ -72,3 +73,10 @@ coyoteHangTimer = 0;
 
 coyoteJumpFrames = 5;
 coyoteJumpTimer = 0;
+
+
+
+//Respawning
+
+xRespawn = 0;
+yRespawn = 0;

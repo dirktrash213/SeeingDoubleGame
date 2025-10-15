@@ -1,0 +1,2 @@
+canRespawnPlayer = true;
+

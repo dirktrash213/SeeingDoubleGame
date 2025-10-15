@@ -7,7 +7,11 @@
 
 
 global.coinCount = 0;
+global.defeatCount = 0;
+
 global.playerControl = true;
+global.playerDefeated = false;
+global.playerRespawnTime = 90;
 global.controllerPort = 0;
 global.lastInputWasController = false;
 

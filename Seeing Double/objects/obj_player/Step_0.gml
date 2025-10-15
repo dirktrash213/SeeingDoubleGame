@@ -1,3 +1,13 @@
+
+if global.playerDefeated {
+
+	x = x;
+	y = y;
+	
+	exit;
+
+}
+
 getControls();
 
 //Move direction
