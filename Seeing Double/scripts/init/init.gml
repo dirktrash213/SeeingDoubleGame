@@ -6,7 +6,8 @@
 
 
 
-
+global.coinCount = 0;
+global.playerControl = true;
 global.controllerPort = 0;
 global.lastInputWasController = false;
 
@@ -27,5 +28,17 @@ function scr_isControllerConnected() {
 function playerIsPresent() {
 
 	return instance_exists(obj_player);
+
+}
+
+function pitterPlayerIsPresent() {
+
+	return instance_exists(obj_player_pitter);
+
+}
+
+function patterPlayerIsPresent() {
+
+	return instance_exists(obj_player_patter);
 
 }

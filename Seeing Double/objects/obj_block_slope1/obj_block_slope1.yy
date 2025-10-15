@@ -33,5 +33,5 @@
     "path": "sprites/spr_block_collision_slope1/spr_block_collision_slope1.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }
