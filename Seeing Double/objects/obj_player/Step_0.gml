@@ -234,4 +234,47 @@ if !onGround sprite_index = jumpSprite;
 mask_index = maskSprite; //Use this collision mask
 
 if happyPicnic sprite_index = happySprite;
+if concernedPicnic sprite_index = concernSprite;
+if scaredPicnic sprite_index = scaredSprite;
+if searchingForPatterPicnic {
+	
+	sprite_index = runScaredSprite;
 
+	if x > 224 && hspeed == freakoutSpeed {
+		
+		hspeed = -freakoutSpeed;
+		image_xscale = -1;
+		
+	}
+	
+	if x < 190 && hspeed == -freakoutSpeed {
+		
+		hspeed = freakoutSpeed;
+		image_xscale = 1;
+		
+	}
+	
+}
+
+if thinkingPicnic {
+
+	hspeed = 0;
+	image_xscale = 1;
+	sprite_index = concernSprite;
+	
+	var _offsetX = -5;
+	var _offsetY = -20;
+	
+	if !instance_exists(obj_background_elipses) {
+		
+		instance_create_layer(x + _offsetX, y + _offsetY, "Instances", obj_background_elipses);
+		
+	} 
+	
+}
+
+if wonderingAboutCherriesPicnic {
+
+	sprite_index = curiousSprite;
+
+}

@@ -9,3 +9,6 @@ runSprite = spr_patter_run;
 jumpSprite = spr_patter_jump;
 defeatSprite = spr_patter_defeat;
 happySprite = spr_patter_happy;
+concernSprite = spr_patter_pause;
+scaredSprite = spr_patter_scared;
+curiousSprite = spr_patter_curious;

@@ -33,7 +33,7 @@ if global.readytoDisplayTitleScreenMenu {
 
 }
 
-if confirm && alarm[1] > 1 alarm[1] = 1;
+if confirm && alarm[1] > 1 && global.titleScreenCutsceneState == TITLE_SCREEN_CUTSCENE_STATE.ON_MENU alarm[1] = 1;
 
 /*
 //Handle moving in menus with the analog stick 

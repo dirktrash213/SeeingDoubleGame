@@ -16,6 +16,9 @@ function setOnGround(_val = true) {
 
 controlsSetup();
 
+heartParticleSpawnRate = 10;
+wherePatterParticleSpawnRate = 20;
+
 //Sprites
 
 maskSprite = spr_pitter_idle; //Use this if you want to use this sprite's collision mask for other sprites
@@ -25,6 +28,10 @@ runSprite = spr_pitter_run;
 jumpSprite = spr_pitter_jump;
 defeatSprite = spr_pitter_defeat;
 happySprite = spr_pitter_happy;
+concernSprite = spr_pitter_pause;
+scaredSprite = spr_pitter_scared;
+runScaredSprite = spr_pitter_run_scared;
+curiousSprite = spr_pitter_curious;
 
 
 jumpSfx = sfx_jump_pitter;
@@ -75,6 +82,16 @@ coyoteJumpFrames = 5;
 coyoteJumpTimer = 0;
 
 happyPicnic = false;
+concernedPicnic = false;
+scaredPicnic = false;
+searchingForPatterPicnic = false;
+thinkingPicnic = false;
+wonderingAboutCherriesPicnic = false;
+
+freakoutDuration = 300;
+freakoutSpeed = 1.0;
+
+curiousDuration = 180;
 
 //Respawning
 

@@ -29,8 +29,12 @@ if typingContinue {
 
 }
 
-if confirm && _newGameTextFinishedTyping >= 1 {
+if confirm && _newGameTextFinishedTyping >= 1 && global.titleScreenCutsceneState == TITLE_SCREEN_CUTSCENE_STATE.ON_MENU {
+	
+	var _delayUntilCutsceneBegins = 60;
 
 	typingNewGame = false;
+	global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.PAD_WARMING_UP;
+	obj_control.alarm[1] = _delayUntilCutsceneBegins;
 
 }

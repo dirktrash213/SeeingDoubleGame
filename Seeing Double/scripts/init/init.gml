@@ -4,7 +4,9 @@
 //window_set_size(VIEW_WIDTH, VIEW_HEIGHT);
 
 
-
+//global.particleSystemHeartsPink = part_system_create();
+//global.particleSystemHeartsBlue = part_system_create();
+//global.particleSystemDevice = part_system_create();
 
 global.coinCount = 0;
 global.cherryCount = 0;
@@ -19,3 +21,5 @@ global.lastInputWasController = false;
 global.readytoDisplayTitleScreenMenu = true;
 global.titleScreenMenuActive = false;
 global.delayBeforeTitleScreen = 300;
+
+global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.ON_MENU;

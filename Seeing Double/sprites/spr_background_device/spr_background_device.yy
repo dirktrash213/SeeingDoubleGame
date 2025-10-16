@@ -23,7 +23,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"93043fbc-5bab-4f36-82c9-4fc89ec04d41","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 0,
+  "origin": 1,
   "parent": {
     "name": "Background",
     "path": "folders/Sprites/Background.yy",
@@ -59,7 +59,7 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 0,
+    "xorigin": 32,
     "yorigin": 0,
   },
   "swatchColours": null,
