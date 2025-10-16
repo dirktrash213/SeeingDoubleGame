@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "obj_pickup",
-    "path": "folders/Objects/obj_pickup.yy",
+    "name": "Collectables",
+    "path": "folders/Objects/Collectables.yy",
   },
   "parentObjectId": null,
   "persistent": false,

@@ -278,3 +278,24 @@ if wonderingAboutCherriesPicnic {
 	sprite_index = curiousSprite;
 
 }
+
+
+if global.cutsceneActive {
+
+	switch global.currentCutsceneID {
+	
+		case "sampleCutscene": {
+		
+		
+		
+		} break;
+		
+		case "sampleCutscene2": {
+		
+		
+		
+		} break;
+	
+	}
+
+}

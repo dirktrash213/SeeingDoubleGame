@@ -22,4 +22,6 @@ global.readytoDisplayTitleScreenMenu = true;
 global.titleScreenMenuActive = false;
 global.delayBeforeTitleScreen = 300;
 
+global.cutsceneActive = false;
+global.currentCutsceneID = "";
 global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.ON_MENU;
