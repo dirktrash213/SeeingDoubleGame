@@ -89,7 +89,7 @@ thinkingPicnic = false;
 wonderingAboutCherriesPicnic = false;
 
 freakoutDuration = 300;
-freakoutSpeed = 1.0;
+freakoutSpeed = 1.5;
 
 curiousDuration = 180;
 
@@ -97,3 +97,4 @@ curiousDuration = 180;
 
 xRespawn = 0;
 yRespawn = 0;
+roomRespawn = rm_titleScreen;
