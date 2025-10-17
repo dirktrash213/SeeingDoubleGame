@@ -13,7 +13,7 @@ if pitterPlayerIsPresent() {
 	
 		var _xOffset = abs(obj_player_pitter.x - xEnter);
 
-		obj_player_pitter.x = xSpawn - _xOffset;
+		obj_player_pitter.x = xSpawn + _xOffset;
 		obj_player_pitter.y = ySpawn;
 	
 	}

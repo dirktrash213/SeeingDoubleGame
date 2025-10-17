@@ -1,4 +1,4 @@
-targetRoom = rm_runTutorial;
+targetRoom = rm_hills_runTutorial;
 
 xEnter = 959;
 yEnter = 240;

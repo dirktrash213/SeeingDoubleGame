@@ -10,7 +10,7 @@
 room_goto(rm_titleScreen);
 
 
-/*
+
 global.readytoDisplayTitleScreenMenu = false;
 
 
@@ -19,4 +19,4 @@ global.readytoDisplayTitleScreenMenu = false;
 
 room_goto(rm_test);
 
-room_goto(rm_runTutorial);
+room_goto(rm_hills_jumpIntoPit);

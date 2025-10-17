@@ -1,4 +1,4 @@
-targetRoom = rm_jumpTutorial;
+targetRoom = rm_hills_jumpTutorial;
 
 xEnter = 1;
 yEnter = 240;
