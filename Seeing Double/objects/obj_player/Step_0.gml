@@ -1,5 +1,4 @@
-
-if global.playerDefeated {
+if global.playerDefeated || global.paused {
 
 	x = x;
 	y = y;
@@ -141,7 +140,7 @@ if onGround {
 
 //Initiate the jump
 
-if jumpKeyBuffered && jumpCount < jumpMax {
+if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled {
 
 	//Reset jump buffer
 	jumpKeyBuffered = false;

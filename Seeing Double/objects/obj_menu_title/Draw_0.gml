@@ -1,4 +1,4 @@
-checkForConfirm();
+checkForMenuInput();
 
 var _newGameTextFinishedTyping = typist.get_state();
 

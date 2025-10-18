@@ -19,7 +19,7 @@ function controlsSetup() {
 
 function getControls() {
 	
-	if global.playerControl {
+	if global.playerControl && !global.paused {
 
 		moveLeft = keyboard_check(ord("A")) || gamepad_axis_value(global.controllerPort,gp_axislh) < 0;
 		moveRight = keyboard_check(ord("D")) || gamepad_axis_value(global.controllerPort,gp_axislh) > 0;
@@ -40,7 +40,7 @@ function getControls() {
 
 	//Jump key buffering
 	
-	if jumpPressed {
+	if jumpPressed && !jumpDisabled {
 	
 		jumpKeyBufferTimer = jumpBufferTime;
 	

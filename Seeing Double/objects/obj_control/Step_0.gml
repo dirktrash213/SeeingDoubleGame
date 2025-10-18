@@ -1,4 +1,358 @@
-checkForConfirm();
+checkForMenuInput();
+
+
+
+
+if global.paused {
+
+	if confirm {
+		
+		if pauseMenuSublevel != 0 || pauseMenuPosition != 0 {
+			
+			if submenuType == "Audio settings" {
+				
+				if pauseMenuPosition == 0 audio_play_sound(sfx_jump_patter, 1, 0);
+			
+			} else { 
+				
+				audio_play_sound(sfx_jump_patter, 1, 0);
+				
+			}
+			
+		}
+	
+		switch pauseMenuSublevel {
+	
+			case 0: { //Sublevel 0
+		
+				switch pauseMenuPosition {
+	
+					case 0: { //Resume game
+		
+						global.paused = !global.paused;
+	
+						togglePause();
+			
+						exit;
+		
+					} break;
+					
+					case 1: { //Go to Options
+		
+						submenuType = "Options";
+						
+						pauseMenuSublevel++;
+						
+						pauseMenuPosition = 0;
+						
+						exit;
+		
+					} break;
+					
+					case 2: { //Exit game
+						
+						submenuType = "Exit";
+		
+						pauseMenuSublevel++;
+						
+						pauseMenuPosition = 0;
+						
+						exit;
+		
+					} break;
+	
+				}
+		
+			} break;
+			
+			case 1: { //Sublevel 1
+			
+				switch submenuType {
+				
+					case "Options": {
+					
+						switch pauseMenuPosition {
+						
+							case 0: { //Back to main menu
+							
+								submenuType = "";
+		
+								pauseMenuSublevel--;
+						
+								pauseMenuPosition = 0;
+						
+								exit;
+							
+							} break;
+							
+							case 1: { //Go to video settings
+							
+								submenuType = "Video settings";
+								
+								pauseMenuSublevel++;
+						
+								pauseMenuPosition = 0;
+						
+								exit;
+							
+							} break;
+							
+							case 2: { //Go to audio settings
+							
+								submenuType = "Audio settings";
+								
+								pauseMenuSublevel++;
+						
+								pauseMenuPosition = 0;
+						
+								exit;
+							
+							} break;
+						
+						}
+					
+					} break;
+					
+					case "Exit": {
+					
+						switch pauseMenuPosition {
+						
+							case 0: { //Back to main menu
+							
+								submenuType = "";
+		
+								pauseMenuSublevel--;
+						
+								pauseMenuPosition = 0;
+						
+								exit;
+							
+							} break;
+							
+							case 1: { //Exit game
+							
+								game_end();
+							
+							} break;
+							
+						}
+					
+					}
+				
+				}
+			
+			} break;
+			
+			case 2: { //Sublevel 2
+				
+				switch submenuType {
+				
+					case "Video settings": {
+					
+						switch pauseMenuPosition {
+						
+							case 0: { //Back to options menu
+						
+								submenuType = "Options";
+		
+								pauseMenuSublevel--;
+					
+								pauseMenuPosition = 0;
+					
+								exit;
+						
+							} break;
+							
+							case 1: { //Toggle fullscreen
+						
+								window_set_fullscreen(!window_get_fullscreen());
+						
+							} break;
+							
+						}
+					
+					} break;
+					
+					case "Audio settings": {
+					
+						switch pauseMenuPosition { 
+							
+							case 0: { //Back to options menu
+						
+								submenuType = "Options";
+		
+								pauseMenuSublevel--;
+					
+								pauseMenuPosition = 0;
+					
+								exit;
+						
+							} break;
+							
+						}
+				
+					} break;
+					
+				}
+				
+			}
+	
+		}
+	
+	}
+	
+	//if back {
+	//
+	//	if pauseMenuSublevel == 0 {
+	//	
+	//		global.paused = !global.paused;
+	//
+	//		togglePause();
+	//		
+	//		exit;
+	//	
+	//	} else {
+	//	
+	//		pauseMenuSublevel--;
+	//	
+	//	}
+	//
+	//
+	//}
+	
+	if moveUp {
+		
+		pauseMenuPosition--;
+		
+	}
+	
+	if moveDown {
+		
+		pauseMenuPosition++;
+		
+	}
+	
+	switch pauseMenuSublevel {
+	
+		case 0: {
+		
+			if pauseMenuPosition < 0 pauseMenuPosition = 2;
+			if pauseMenuPosition > 2 pauseMenuPosition = 0;
+		
+		} break;
+		
+		case 1: { 
+			
+			switch submenuType {
+				
+				case "Options": {
+				
+					if pauseMenuPosition < 0 pauseMenuPosition = 2;
+					if pauseMenuPosition > 2 pauseMenuPosition = 0;
+				
+				} break;
+				
+				case "Exit": {
+				
+					if pauseMenuPosition < 0 pauseMenuPosition = 1;
+					if pauseMenuPosition > 1 pauseMenuPosition = 0;
+				
+				} break;
+					
+			}
+			
+		} break;
+		
+		case 2: {
+		
+			switch submenuType {
+				
+				case "Video settings": {
+				
+					if pauseMenuPosition < 0 pauseMenuPosition = 1;
+					if pauseMenuPosition > 1 pauseMenuPosition = 0;
+				
+				} break;
+				
+				case "Audio settings": {
+				
+					if pauseMenuPosition < 0 pauseMenuPosition = 3;
+					if pauseMenuPosition > 3 pauseMenuPosition = 0;
+				
+				} break;
+					
+			}
+		
+		} break;
+		
+	}
+	
+	if submenuType == "Audio settings" {
+	
+		show_debug_message("Audio settings menu active")
+		
+		var _canPlaySelectSFX = true;
+	
+		switch pauseMenuPosition {
+		
+			case 1: {
+				
+				if global.volumeMaster == 10 && moveRight _canPlaySelectSFX = false;
+				if global.volumeMaster == 0 && moveLeft _canPlaySelectSFX = false;
+				
+				if moveLeft || back global.volumeMaster--;
+				if moveRight || confirm global.volumeMaster++;
+				
+				if (moveLeft || moveRight || back || confirm) && _canPlaySelectSFX audio_play_sound(sfx_jump_patter, 1, 0);
+				
+				global.volumeMaster = clamp(global.volumeMaster, 0, 10);
+			
+			} break;
+			
+			case 2: {
+			
+				if global.volumeSFX == 10 && moveRight _canPlaySelectSFX = false;
+				if global.volumeSFX == 0 && moveLeft _canPlaySelectSFX = false;
+			
+				if moveLeft || back global.volumeSFX--;
+				if moveRight || confirm global.volumeSFX++;
+				
+				if (moveLeft || moveRight || back || confirm) && _canPlaySelectSFX audio_play_sound(sfx_jump_patter, 1, 0);
+				
+				global.volumeSFX = clamp(global.volumeSFX, 0, 10);
+			
+			} break;
+			
+			case 3: {
+			
+				if global.volumeBGM == 10 && moveRight _canPlaySelectSFX = false;
+				if global.volumeBGM == 0 && moveLeft _canPlaySelectSFX = false;
+			
+				if moveLeft || back global.volumeBGM--;
+				if moveRight || confirm global.volumeBGM++;
+				
+				if (moveLeft || moveRight || back || confirm) && _canPlaySelectSFX audio_play_sound(sfx_jump_patter, 1, 0);
+				
+				global.volumeBGM = clamp(global.volumeBGM, 0, 10);
+			
+			} break;
+		
+		}
+		
+		exit;
+	
+	}
+
+}
+
+if global.playerControl && pauseButtonPressed() {
+
+	global.paused = !global.paused;
+	
+	togglePause();
+
+}
+
 
 // Get and assign a controller port for a connected controller
 var gp_num = gamepad_get_device_count();
@@ -35,8 +389,13 @@ if global.readytoDisplayTitleScreenMenu {
 
 if confirm && alarm[1] > 1 && global.titleScreenCutsceneState == TITLE_SCREEN_CUTSCENE_STATE.ON_MENU alarm[1] = 1;
 
-/*
+
 //Handle moving in menus with the analog stick 
+
+global.moveUp = false;
+global.moveDown = false;
+global.moveLeft = false;
+global.moveRight = false;
 
 if !global.hasMovedUp && gamepad_axis_value(global.controllerPort,gp_axislv) < 0 {
 	
@@ -88,27 +447,6 @@ if global.hasMovedRight && gamepad_axis_value(global.controllerPort,gp_axislh) =
 
 	global.hasMovedRight = false;
 
-} */
-
-/*
-
-global.moveLeft = keyboard_check(ord("A")) || gamepad_axis_value(global.controllerPort,gp_axislh) < 0;
-global.moveRight = keyboard_check(ord("D")) || gamepad_axis_value(global.controllerPort,gp_axislh) > 0;
-global.moveUp = keyboard_check(ord("W")) || gamepad_axis_value(global.controllerPort,gp_axislv) < 0;
-global.moveDown = keyboard_check(ord("S")) || gamepad_axis_value(global.controllerPort,gp_axislv) > 0;
-global.jump = keyboard_check(vk_space) || gamepad_button_check(global.controllerPort, gp_face1);
-global.jumpPressed = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(global.controllerPort, gp_face1);
-global.pause = keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(global.controllerPort,gp_start);
+} 
 
 
-
-
-
-global.moveRight = clamp(global.moveRight, 0, 1);
-global.moveLeft = clamp(global.moveLeft, 0, 1);
-global.jumpPressed = clamp(global.jumpPressed, 0, 1);
-global.jump = clamp(global.jump, 0, 1);
-
-
-
-//show_debug_message(global.moveLeft)

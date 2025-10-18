@@ -1,11 +1,25 @@
-// Use a controller object to initialize these IDs
-//var _layerID = layer_get_id("HeartParticles");
-//
-//// Store the Asset ID for easy access later
-//smokeEmitterAssetID = layer_asset_get_id(_layerID, "Prt_SmokeEmitter");
-//
-//// Initially ensure it's off if you don't want it running immediately
-//if (smokeEmitterAssetID != -1) { // Always check for -1 in case the name is wrong
-//    layer_asset_set_visible(smokeEmitterAssetID, false);
-//}
-//
+xScale = 2;
+yScale = 2;
+
+depth = -14000;
+
+typist = scribble_typist();
+typist2 = scribble_typist();
+//typist.in(0.5, 0.9);
+typist.in(0.85, 0.9);
+typist.sound(sfx_footstep, false, 1, 1); 
+
+typist2.in(0.85, 0.9);
+typist2.sound(sfx_footstep, false, 1, 1); 
+
+//image_alpha = 0.75;
+
+pauseMenuPosition = 0;
+
+pauseMenuSublevel = 0;
+
+submenuType = "";
+
+volumeSliderSprite = spr_UI_volumeSlider;
+volumeMuteIcon = spr_UI_volumeIcon_mute;
+volumeLoudIcon = spr_UI_volumeIcon_loud;

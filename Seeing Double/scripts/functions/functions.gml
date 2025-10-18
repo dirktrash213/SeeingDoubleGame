@@ -56,16 +56,107 @@ function titleScreenIntro() {
 
 }
 
-function checkForConfirm() {
+function checkForMenuInput() {
 
 	confirm = keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter) ||
 	gamepad_button_check_pressed(global.controllerPort, gp_face1) || gamepad_button_check_pressed(global.controllerPort, gp_start);
+	
+	back = keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_backspace) || gamepad_button_check_pressed(global.controllerPort, gp_face2);
+	
+	moveUp = keyboard_check_pressed(ord("W")) || global.moveUp;
+	moveDown = keyboard_check_pressed(ord("S")) || global.moveDown;
+	moveLeft = keyboard_check_pressed(ord("A")) || global.moveLeft;
+	moveRight = keyboard_check_pressed(ord("D")) || global.moveRight;
+	
+	if global.paused {
+	
+		if moveUp || moveDown audio_play_sound(sfx_select, 1, 0);
+	
+	}
+	
 
 }
 
+function pauseButtonPressed() {
+
+	return keyboard_check_pressed(vk_enter) || 
+	gamepad_button_check_pressed(global.controllerPort, gp_start);
+
+}
+
+function togglePause() {
+	
+	audio_play_sound(sfx_pause, 1, 0);
+
+	if global.paused {
+	
+		show_debug_message("Game is now paused")
+		
+		obj_control.pauseMenuPosition = 0;
+		
+		//if playerIsPresent() {
+		//
+		//	with obj_player {
+		//	
+		//		wasPaused = true;
+		//	
+		//	}
+		//
+		//}
+		
+		with (all) {
+		
+			//Save all instance image speeds
+			gamePausedImageSpeed = image_speed;
+			
+			image_speed = 0;
+		
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+	} else {
+	
+		show_debug_message("Game is now unpaused")
+	
+	
+	
+		with (all) {
+		
+			image_speed = gamePausedImageSpeed;
+			
+		}
+	
+		if playerIsPresent() {
+			
+			with obj_player {
+	
+				jumpDisabled = true;
+		
+			}
+		
+		}
+	
+	}
+
+}
+
+
 function particleSetup() {
 
-	effect_create_above(ef_cloud, 100, 100, 1000, c_white);
+	//effect_create_above(ef_cloud, 100, 100, 1000, c_white);
 	
 	//Title screen particle effects
 	global.particleSystemHearts = part_system_create_layer("HeartParticles", false);

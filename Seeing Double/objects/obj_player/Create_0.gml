@@ -98,3 +98,7 @@ curiousDuration = 180;
 xRespawn = 0;
 yRespawn = 0;
 roomRespawn = rm_titleScreen;
+
+//Prevent jumping when unpausing
+jumpDisabled = false;
+jumpDisabledDuration = 2;

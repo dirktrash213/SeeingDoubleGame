@@ -16,9 +16,6 @@ if other.object_index == obj_player_pitter {
 }
 
 
-//other.xSpeed = 0;
-//other.ySpeed = 0;
-
 
 
 
