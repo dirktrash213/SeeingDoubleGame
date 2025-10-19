@@ -1,0 +1,6 @@
+canCollideWithPlayer = true;
+
+
+
+
+

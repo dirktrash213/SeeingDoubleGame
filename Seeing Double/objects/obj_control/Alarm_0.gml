@@ -12,6 +12,8 @@ if pitterPlayerIsPresent() {
 	obj_player_pitter.x = obj_player_pitter.xRespawn;
 	obj_player_pitter.y = obj_player_pitter.yRespawn - _offsetY;
 	
+	//loadGame(); //Not needed here?
+	
 }
 
 

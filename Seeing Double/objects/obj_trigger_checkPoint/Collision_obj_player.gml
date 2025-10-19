@@ -1,3 +1,9 @@
+if !canCollideWithPlayer exit;
+
+canCollideWithPlayer = false;
+
+alarm[0] = collideCooldown;
+
 if pitterPlayerIsPresent() {
 
 	if canRespawnPlayer {
@@ -9,3 +15,5 @@ if pitterPlayerIsPresent() {
 	}
 
 }
+
+saveGame();

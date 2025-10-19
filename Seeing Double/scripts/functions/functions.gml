@@ -134,8 +134,17 @@ function togglePause() {
 	
 	
 		with (all) {
+			
+			if variable_instance_exists(id, "gamePausedImageSpeed") {
 		
-			image_speed = gamePausedImageSpeed;
+				image_speed = gamePausedImageSpeed;
+			
+			} else {
+			
+				image_speed = 1;
+				//image_speed = global.paused ? 0 : 1; //Use this if saving/loading can happen while game is paused
+			
+			}
 			
 		}
 	

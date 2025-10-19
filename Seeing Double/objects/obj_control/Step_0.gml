@@ -363,6 +363,8 @@ if global.playerControl && pauseButtonPressed() {
 
 #endregion
 
+#region Controller Port + Input type detection
+
 // Get and assign a controller port for a connected controller
 var gp_num = gamepad_get_device_count();
 
@@ -387,6 +389,8 @@ gamepad_button_check_pressed(global.controllerPort,gp_start) {
 	global.lastInputWasController = true;
 
 }
+
+#endregion
 
 if global.readytoDisplayTitleScreenMenu {
 	

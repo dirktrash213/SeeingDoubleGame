@@ -12,6 +12,8 @@ if typingNewGame {
 
 	var _newGameText = scribble(_a + "[wave]New Game");
 	
+	if file_exists("save.txt") _newGameText = scribble(_a + "[wave]Continue[/wave]\nNew Game");
+	
 	_newGameText.starting_format("font_titleMenu", c_white);
 	_newGameText.wrap(335); 
 	_newGameText.align(fa_center, fa_top); 
@@ -23,11 +25,7 @@ if typingNewGame {
 
 }
 
-if typingContinue {
-
-	var _continueText = scribble("Continue");
-
-}
+//TODO: Continue loads save, new game asks for confirmation before starting new game, does not override save until player touches first checkpoint
 
 if confirm && _newGameTextFinishedTyping >= 1 && global.titleScreenCutsceneState == TITLE_SCREEN_CUTSCENE_STATE.ON_MENU {
 	
