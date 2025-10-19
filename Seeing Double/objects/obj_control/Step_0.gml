@@ -1,7 +1,15 @@
 checkForMenuInput();
+analogStickMenuMovement();
 
+#region Audio
 
+audio_master_gain(global.volumeMaster/10);
+audio_group_set_gain(audiogroup_sfx, global.volumeSFX/10, 1);
+audio_group_set_gain(audiogroup_bgm, global.volumeBGM/10, 1);
 
+#endregion
+
+#region Pause/Menu handling
 
 if global.paused {
 
@@ -286,7 +294,7 @@ if global.paused {
 		} break;
 		
 	}
-	
+	//@
 	if submenuType == "Audio settings" {
 	
 		show_debug_message("Audio settings menu active")
@@ -353,6 +361,7 @@ if global.playerControl && pauseButtonPressed() {
 
 }
 
+#endregion
 
 // Get and assign a controller port for a connected controller
 var gp_num = gamepad_get_device_count();
@@ -390,63 +399,8 @@ if global.readytoDisplayTitleScreenMenu {
 if confirm && alarm[1] > 1 && global.titleScreenCutsceneState == TITLE_SCREEN_CUTSCENE_STATE.ON_MENU alarm[1] = 1;
 
 
-//Handle moving in menus with the analog stick 
 
-global.moveUp = false;
-global.moveDown = false;
-global.moveLeft = false;
-global.moveRight = false;
 
-if !global.hasMovedUp && gamepad_axis_value(global.controllerPort,gp_axislv) < 0 {
-	
-	global.moveUp = true;
-	global.hasMovedUp = true;
-	
-}
 
-if global.hasMovedUp && gamepad_axis_value(global.controllerPort,gp_axislv) == 0 {
-
-	global.hasMovedUp = false;
-
-}
-
-if !global.hasMovedDown && gamepad_axis_value(global.controllerPort,gp_axislv) > 0 {
-	
-	global.moveDown = true;
-	global.hasMovedDown = true;
-	
-}
-
-if global.hasMovedDown && gamepad_axis_value(global.controllerPort,gp_axislv) == 0 {
-
-	global.hasMovedDown = false;
-
-}
-
-if !global.hasMovedLeft && gamepad_axis_value(global.controllerPort,gp_axislh) < 0 {
-	
-	global.moveLeft = true;
-	global.hasMovedLeft = true;
-	
-}
-
-if global.hasMovedLeft && gamepad_axis_value(global.controllerPort,gp_axislh) == 0 {
-
-	global.hasMovedLeft = false;
-
-}
-
-if !global.hasMovedRight && gamepad_axis_value(global.controllerPort,gp_axislh) > 0 {
-	
-	global.moveRight = true;
-	global.hasMovedRight = true;
-	
-}
-
-if global.hasMovedRight && gamepad_axis_value(global.controllerPort,gp_axislh) == 0 {
-
-	global.hasMovedRight = false;
-
-} 
 
 

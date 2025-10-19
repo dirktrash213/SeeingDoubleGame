@@ -23,3 +23,9 @@ submenuType = "";
 volumeSliderSprite = spr_UI_volumeSlider;
 volumeMuteIcon = spr_UI_volumeIcon_mute;
 volumeLoudIcon = spr_UI_volumeIcon_loud;
+
+audioBGMLoaded = false;
+audioSFXLoaded = false;
+
+audio_group_load(audiogroup_bgm);
+audio_group_load(audiogroup_sfx);

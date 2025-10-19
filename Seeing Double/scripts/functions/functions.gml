@@ -199,3 +199,70 @@ function particleSetup() {
 	part_type_life(global.particleWhereCherries, 300, 300);
 	
 }
+
+
+function analogStickMenuMovement() {
+
+	//Handle moving in menus with the analog stick 
+	
+	var _axisSensitivity = 0.5;
+
+	global.moveUp = false;
+	global.moveDown = false;
+	global.moveLeft = false;
+	global.moveRight = false;
+
+	if !global.hasMovedUp && gamepad_axis_value(global.controllerPort,gp_axislv) < -_axisSensitivity {
+	
+		global.moveUp = true;
+		global.hasMovedUp = true;
+	
+	}
+
+	if global.hasMovedUp && gamepad_axis_value(global.controllerPort,gp_axislv) == 0 {
+
+		global.hasMovedUp = false;
+
+	}
+
+	if !global.hasMovedDown && gamepad_axis_value(global.controllerPort,gp_axislv) > _axisSensitivity {
+	
+		global.moveDown = true;
+		global.hasMovedDown = true;
+	
+	}
+
+	if global.hasMovedDown && gamepad_axis_value(global.controllerPort,gp_axislv) == 0 {
+
+		global.hasMovedDown = false;
+
+	}
+
+	if !global.hasMovedLeft && gamepad_axis_value(global.controllerPort,gp_axislh) < -_axisSensitivity {
+	
+		global.moveLeft = true;
+		global.hasMovedLeft = true;
+	
+	}
+
+	if global.hasMovedLeft && gamepad_axis_value(global.controllerPort,gp_axislh) == 0 {
+
+		global.hasMovedLeft = false;
+
+	}
+
+	if !global.hasMovedRight && gamepad_axis_value(global.controllerPort,gp_axislh) > _axisSensitivity {
+	
+		global.moveRight = true;
+		global.hasMovedRight = true;
+	
+	}
+
+	if global.hasMovedRight && gamepad_axis_value(global.controllerPort,gp_axislh) == 0 {
+
+		global.hasMovedRight = false;
+
+	} 
+
+
+}
