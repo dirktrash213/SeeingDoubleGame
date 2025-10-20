@@ -1,6 +1,10 @@
 
 typingNewGame = true;
-typingContinue = false;
+confirmingNewGame = false;
+
+menuPosition = 0;
+
+//typingContinue = false;
 
 
 typist = scribble_typist();

@@ -56,6 +56,39 @@ function titleScreenIntro() {
 
 }
 
+function startNewGame() {
+
+	var _delayUntilCutsceneBegins = 60;
+
+	typingNewGame = false;
+	global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.PAD_WARMING_UP;
+	obj_control.alarm[1] = _delayUntilCutsceneBegins;
+
+
+
+}
+
+function spawnPitter() {
+
+	var _offsetY = 20;
+
+	room_goto(obj_player_pitter.roomRespawn);
+	//room_goto(asset_get_index(global.roomToSpawnIn));
+
+	obj_player_pitter.x = obj_player_pitter.xRespawn;
+	obj_player_pitter.y = obj_player_pitter.yRespawn - _offsetY;
+
+}
+
+function spawnPatter() {
+	
+	var _offsetY = 20;
+
+	obj_player_patter.x = obj_player_patter.xRespawn;
+	obj_player_patter.y = obj_player_patter.yRespawn - _offsetY;
+
+}
+
 function checkForMenuInput() {
 
 	confirm = keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter) ||

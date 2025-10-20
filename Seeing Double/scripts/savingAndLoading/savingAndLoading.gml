@@ -47,6 +47,23 @@ function saveRoom() {
 		array_push(_dataArray, _dataStruct);
 
 	}
+	
+	//with obj_player_pitter {
+	//
+	//	var _dataStruct = {
+	//	
+	//		objectName: object_get_name(object_index),
+	//		x: x,
+	//		y: y,
+	//		xRespawn: xRespawn,
+	//		yRespawn: yRespawn,
+	//		roomRespawn: roomRespawn,
+	//	
+	//	}
+	//	
+	//	array_push(_dataArray, _dataStruct);
+	//
+	//}
 
 	struct_set(global.gameData.roomData, room_get_name(room), _dataArray);
 
@@ -66,10 +83,19 @@ function saveGame(){
 	file_text_write_real(_file, global.coinCount);
 	file_text_write_real(_file, global.cherryCount);
 	file_text_write_real(_file, global.defeatCount);
+	//file_text_write_string(_file, global.roomToSpawnIn);
+	
+	//if pitterPlayerIsPresent() {
+	//
+	//	file_text_write_real(_file, obj_player_pitter.xRespawn);
+	//	file_text_write_real(_file, obj_player_pitter.yRespawn);
+	//	file_text_write_real(_file, obj_player_pitter.roomRespawn);
+	//
+	//}
 	
 	file_text_write_string(_file, _dataJsonString);
 	
-	file_text_close(_file);
+	file_text_close(_file); 
 
 }
 
@@ -85,6 +111,8 @@ function loadRoom(){
 		for(var i = 0; i < array_length(_dataArray); i++) {
 		
 			var _dataStruct = _dataArray[i];
+			
+			//if asset_get_index(_dataStruct.objectName) == obj_player_pitter continue;
 			
 			var _inst = instance_create_layer(_dataStruct.x, _dataStruct.y, "Instances", asset_get_index(_dataStruct.objectName), _dataStruct);
 		
@@ -103,6 +131,7 @@ function loadGame(){
 		global.coinCount = file_text_read_real(_file);
 		global.cherryCount = file_text_read_real(_file);
 		global.defeatCount = file_text_read_real(_file);
+		//global.roomToSpawnIn = file_text_read_string(_file);
 		
 		var _dataJsonString = file_text_read_string(_file);
 		
