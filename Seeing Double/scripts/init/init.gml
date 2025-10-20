@@ -6,9 +6,16 @@ global.defeatCount = 0;
 
 global.paused = false;
 global.playerControl = true;
+
 global.playerDefeated = false;
 global.playerRespawnTime = 90;
 global.roomToSpawnIn = room_get_name(rm_titleScreen);
+global.xRespawnPitter = 0;
+global.yRespawnPitter = 0;
+global.xRespawnPatter = 0;
+global.yRespawnPatter = 0;
+
+
 global.controllerPort = 0;
 global.lastInputWasController = false;
 

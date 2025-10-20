@@ -1,5 +1,3 @@
-show_debug_message(image_alpha)
-
 if fadingIn {
 	
 	image_alpha = image_alpha < 1.0 ? image_alpha + fadeInRate : 1.0;
@@ -25,8 +23,13 @@ if fadingIn {
 		
 		loadGame();
 		
-		//room_goto(asset_get_index(global.roomToSpawnIn));
+		//show_debug_message("Room to spawn in: " + string(asset_get_index(global.roomToSpawnIn)))
+		
+		room_goto(asset_get_index(global.roomToSpawnIn));
 		//room_goto(obj_player_patter.roomRespawn);
+		
+		obj_player_pitter.x = global.xRespawnPitter;
+		obj_player_pitter.y = global.yRespawnPitter;
 		
 		loadGame();
 		

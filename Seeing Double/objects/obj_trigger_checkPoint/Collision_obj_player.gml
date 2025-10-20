@@ -8,10 +8,12 @@ if pitterPlayerIsPresent() {
 
 	if canRespawnPlayer {
 	
-		obj_player_pitter.xRespawn = x;
-		obj_player_pitter.yRespawn = y;
-		obj_player_pitter.roomRespawn = room;
-		//global.roomToSpawnIn = room_get_name(room);
+		//obj_player_pitter.xRespawn = x;
+		//obj_player_pitter.yRespawn = y;
+		//obj_player_pitter.roomRespawn = room;
+		global.xRespawnPitter = x;
+		global.yRespawnPitter = y;
+		global.roomToSpawnIn = room_get_name(room);
 	
 	}
 

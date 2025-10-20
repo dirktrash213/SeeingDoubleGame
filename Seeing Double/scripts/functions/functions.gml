@@ -72,11 +72,13 @@ function spawnPitter() {
 
 	var _offsetY = 20;
 
-	room_goto(obj_player_pitter.roomRespawn);
-	//room_goto(asset_get_index(global.roomToSpawnIn));
+	//room_goto(obj_player_pitter.roomRespawn);
+	room_goto(asset_get_index(global.roomToSpawnIn));
 
-	obj_player_pitter.x = obj_player_pitter.xRespawn;
-	obj_player_pitter.y = obj_player_pitter.yRespawn - _offsetY;
+	//obj_player_pitter.x = obj_player_pitter.xRespawn;
+	//obj_player_pitter.y = obj_player_pitter.yRespawn - _offsetY;
+	obj_player_pitter.x = global.xRespawnPitter;
+	obj_player_pitter.y = global.yRespawnPitter - _offsetY;
 
 }
 
@@ -84,8 +86,8 @@ function spawnPatter() {
 	
 	var _offsetY = 20;
 
-	obj_player_patter.x = obj_player_patter.xRespawn;
-	obj_player_patter.y = obj_player_patter.yRespawn - _offsetY;
+	obj_player_patter.x = global.xRespawnPatter;
+	obj_player_patter.y = global.xRespawnPatter - _offsetY;
 
 }
 
