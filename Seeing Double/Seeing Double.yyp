@@ -102,6 +102,7 @@
     {"id":{"name":"string_width_scribble","path":"scripts/string_width_scribble/string_width_scribble.yy",},},
     {"id":{"name":"Tileset","path":"sprites/Tileset/Tileset.yy",},},
     {"id":{"name":"scribble_external_font_exists","path":"scripts/scribble_external_font_exists/scribble_external_font_exists.yy",},},
+    {"id":{"name":"spr_background_parallax_hills4","path":"sprites/spr_background_parallax_hills4/spr_background_parallax_hills4.yy",},},
     {"id":{"name":"spr_block_parallax","path":"sprites/spr_block_parallax/spr_block_parallax.yy",},},
     {"id":{"name":"spr_background_parallax_volcano_PLACEHOLDER","path":"sprites/spr_background_parallax_volcano_PLACEHOLDER/spr_background_parallax_volcano_PLACEHOLDER.yy",},},
     {"id":{"name":"obj_interactable_hazard_spikes","path":"objects/obj_interactable_hazard_spikes/obj_interactable_hazard_spikes.yy",},},
@@ -190,6 +191,7 @@
     {"id":{"name":"spr_tilemap","path":"sprites/spr_tilemap/spr_tilemap.yy",},},
     {"id":{"name":"spr_monochrome_tilemap_stuff","path":"sprites/spr_monochrome_tilemap_stuff/spr_monochrome_tilemap_stuff.yy",},},
     {"id":{"name":"sfx_footstep","path":"sounds/sfx_footstep/sfx_footstep.yy",},},
+    {"id":{"name":"rm_hills_secretKeyCard","path":"rooms/rm_hills_secretKeyCard/rm_hills_secretKeyCard.yy",},},
     {"id":{"name":"spr_enemy_propellerBeetle_defeat","path":"sprites/spr_enemy_propellerBeetle_defeat/spr_enemy_propellerBeetle_defeat.yy",},},
     {"id":{"name":"__scribble_surface_get_material","path":"scripts/__scribble_surface_get_material/__scribble_surface_get_material.yy",},},
     {"id":{"name":"spr_pitter_findItem","path":"sprites/spr_pitter_findItem/spr_pitter_findItem.yy",},},
@@ -488,6 +490,7 @@
     {"roomId":{"name":"rm_hills_pitFallContinueMore","path":"rooms/rm_hills_pitFallContinueMore/rm_hills_pitFallContinueMore.yy",},},
     {"roomId":{"name":"rm_hills_pitFallEnd","path":"rooms/rm_hills_pitFallEnd/rm_hills_pitFallEnd.yy",},},
     {"roomId":{"name":"rm_hills_pitFallSecret","path":"rooms/rm_hills_pitFallSecret/rm_hills_pitFallSecret.yy",},},
+    {"roomId":{"name":"rm_hills_secretKeyCard","path":"rooms/rm_hills_secretKeyCard/rm_hills_secretKeyCard.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [
