@@ -9,7 +9,7 @@
 
 room_goto(rm_titleScreen);
 
-/*
+
 
 global.readytoDisplayTitleScreenMenu = false;
 

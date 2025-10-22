@@ -184,35 +184,126 @@ if jumpHoldTimer > 0 {
 //Cap falling speed
 if ySpeed > termVelocity ySpeed = termVelocity;
 
-
+//@
 //Y Collision
 
-_subPixel = 0.5;
+//#region Old Y Collision Code
+//
+//_subPixel = 0.5;
+//
+//if place_meeting(x, y + ySpeed, obj_block_wall) {
+//
+//	var _pixelCheck = _subPixel * sign(ySpeed);
+//	
+//	while !place_meeting(x, y + _pixelCheck, obj_block_wall) {
+//	
+//		y += _pixelCheck;
+//	
+//	}
+//	
+//	//Bonk head on ceiling (consider removing?)
+//	if ySpeed < 0 jumpHoldTimer = 0;
+//	
+//	//Set ySpeed to 0 to collide
+//	ySpeed = 0;
+//
+//}
+//
+////Check if on ground
+//if ySpeed >= 0 && place_meeting(x, y + 1, obj_block_wall) {
+//
+//	setOnGround(true);
+//
+//}
+//
+//#endregion
 
-if place_meeting(x, y + ySpeed, obj_block_wall) {
 
-	var _pixelCheck = _subPixel * sign(ySpeed);
+
+
+//Floor Y Collision
+
+//Check for solid and semisolid platforms under the player
+
+
+var _clampedYspeed = max(0, ySpeed);
+
+var _list = ds_list_create(); //Store objects we run into
+var _array = array_create(0);
+array_push(_array, obj_block_wall, obj_block_wall_semiSolid);
+
+//Do the actual check and add objects to list
+var _listSize = instance_place_list(x, y+1 + _clampedYspeed + movePlatYspeedMax, _array, _list, false);
+
+
+//Loop through colliding wall objects and only return one if its top is below the player
+for(var i = 0; i < _listSize; i++) {
+
+	var _listInstance = _list[|i];
 	
-	while !place_meeting(x, y + _pixelCheck, obj_block_wall) {
+	if (_listInstance.ySpeed <= ySpeed || instance_exists(myFloorPlat)) 
+	&& (_listInstance.ySpeed > 0 || place_meeting(x, y+1 + _clampedYspeed, _listInstance)) {
 	
-		y += _pixelCheck;
+		//Return a solid wall or any semisolid walls that are below the player
+		if _listInstance.object_index == obj_block_wall 
+		|| object_is_ancestor(_listInstance.object_index, obj_block_wall) 
+		|| floor(bbox_bottom) <= ceil(_listInstance.bbox_top - _listInstance.ySpeed) {
+	
+			//Return the highest wall object, and check for platforms that pick up the player from below
+			if !instance_exists(myFloorPlat) 
+			|| _listInstance.bbox_top + _listInstance.ySpeed <= myFloorPlat.bbox_top + myFloorPlat.ySpeed 
+			|| _listInstance.bbox_top + _listInstance.ySpeed <= bbox_top {
+		
+				myFloorPlat = _listInstance;
+		
+			}
+	
+		}
 	
 	}
 	
-	//Bonk head on ceiling (consider removing?)
-	if ySpeed < 0 jumpHoldTimer = 0;
+}
+
+//Destroy the list to prevent memory leak
+ds_list_destroy(_list);
+
+//One last check to confirm floor platform is infact below us or if playform has moved away
+if instance_exists(myFloorPlat) && !place_meeting(x, y + movePlatYspeedMax, myFloorPlat) {
+
+	myFloorPlat = noone;
+
+}
+
+//Land on ground platform if there is one
+if instance_exists(myFloorPlat) {
+
+	//Scoot up
+	_subPixel = 0.5;
+	while !place_meeting(x, y + _subPixel, myFloorPlat) && !place_meeting(x, y, obj_block_wall) {
 	
-	//Set ySpeed to 0 to collide
+		y += _subPixel;
+	
+	}
+	
+	//Make sure we don't end up below the top of a semi soli dplatform
+	if myFloorPlat.object_index == obj_block_wall_semiSolid || object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid) {
+	
+		while place_meeting(x, y, myFloorPlat) {
+		
+			y -= _subPixel;
+		
+		}
+		
+	}
+	
+	y = floor(y);
+	
+	//Collide with ground
 	ySpeed = 0;
-
-}
-
-//Check if on ground
-if ySpeed >= 0 && place_meeting(x, y + 1, obj_block_wall) {
-
 	setOnGround(true);
-
+	
 }
+
 
 
 
@@ -279,7 +370,7 @@ if wonderingAboutCherriesPicnic {
 }
 
 
-if global.cutsceneActive {
+if global.cutsceneActive { //TODO: make cutscene manager object
 
 	switch global.currentCutsceneID {
 	
