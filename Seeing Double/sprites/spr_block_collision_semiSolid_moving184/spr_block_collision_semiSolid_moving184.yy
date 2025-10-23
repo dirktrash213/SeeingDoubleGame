@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_block_collision_semiSolid_moving",
+  "name": "spr_block_collision_semiSolid_moving184",
   "bbox_bottom": 15,
   "bbox_left": 0,
   "bbox_right": 15,
@@ -77,7 +77,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d6c30e97-e870-4c3e-9111-28bcb2ec2081","path":"sprites/spr_block_collision_semiSolid_moving/spr_block_collision_semiSolid_moving.yy",},},},"Disabled":false,"id":"3b29f0e7-eae0-43df-8d99-d39eebffd05e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d6c30e97-e870-4c3e-9111-28bcb2ec2081","path":"sprites/spr_block_collision_semiSolid_moving184/spr_block_collision_semiSolid_moving184.yy",},},},"Disabled":false,"id":"8623e4d1-d473-47f0-a306-e6de4e132622","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

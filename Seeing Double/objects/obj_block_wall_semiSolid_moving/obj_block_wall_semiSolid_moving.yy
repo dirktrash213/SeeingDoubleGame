@@ -32,8 +32,8 @@
   "properties": [],
   "solid": true,
   "spriteId": {
-    "name": "spr_block_collision_semiSolid_moving",
-    "path": "sprites/spr_block_collision_semiSolid_moving/spr_block_collision_semiSolid_moving.yy",
+    "name": "spr_block_collision_semiSolid_moving184",
+    "path": "sprites/spr_block_collision_semiSolid_moving184/spr_block_collision_semiSolid_moving184.yy",
   },
   "spriteMaskId": null,
   "visible": true,

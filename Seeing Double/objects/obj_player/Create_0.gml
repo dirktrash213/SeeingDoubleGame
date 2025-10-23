@@ -140,6 +140,7 @@ jumpDisabledDuration = 2;
 //Moving Platforms
 downSlopeSemiSolid = noone;
 myFloorPlat = noone;
+earlyMovePlatXSpeed = false;
 movePlatXspeed = 0;
 movePlatYspeedMax = termVelocity;
 forgetSemisolid = noone;

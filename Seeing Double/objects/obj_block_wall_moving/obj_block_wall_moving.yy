@@ -4,6 +4,7 @@
   "name": "obj_block_wall_moving",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -11,7 +12,10 @@
     "name": "Objects",
     "path": "folders/Objects.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_block_wall",
+    "path": "objects/obj_block_wall/obj_block_wall.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -28,9 +32,9 @@
   "properties": [],
   "solid": true,
   "spriteId": {
-    "name": "spr_block_collision",
-    "path": "sprites/spr_block_collision/spr_block_collision.yy",
+    "name": "spr_block_collision_moving",
+    "path": "sprites/spr_block_collision_moving/spr_block_collision_moving.yy",
   },
   "spriteMaskId": null,
-  "visible": false,
+  "visible": true,
 }

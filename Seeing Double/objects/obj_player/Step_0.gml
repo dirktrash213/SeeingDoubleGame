@@ -9,6 +9,110 @@ if global.playerDefeated || global.paused {
 
 getControls();
 
+
+//Unstick from moving solid platforms
+
+var _rightWall = noone;
+var _leftWall = noone;
+var _bottomWall = noone;
+var _topWall = noone;
+var _listOfSolidPlatforms = ds_list_create();
+var _listOfSolidPlatformsSize = instance_place_list(x, y, obj_block_wall_moving, _listOfSolidPlatforms, false);
+
+for(var i = 0; i < _listOfSolidPlatformsSize; i++) {
+
+	var _listInst = _listOfSolidPlatforms[|i];
+	
+	//Check for right walls
+	if _listInst.bbox_left - _listInst.xSpeed >= bbox_right-1 {
+	
+		if !instance_exists(_rightWall) || _listInst.bbox_left < _rightWall.bbox_left _rightWall = _listInst;
+	
+	}
+	
+	//Left walls
+	if _listInst.bbox_right - _listInst.xSpeed <= bbox_left+1 {
+	
+		if !instance_exists(_leftWall) || _listInst.bbox_right > _leftWall.bbox_right _leftWall = _listInst;
+	
+	}
+	
+	//Bottom walls
+	if _listInst.bbox_top - _listInst.ySpeed >= bbox_bottom-1 {
+	
+		if !instance_exists(_bottomWall) || _listInst.bbox_top < _bottomWall.bbox_top _bottomWall = _listInst;
+	
+	}
+	
+	//Top walls
+	if _listInst.bbox_bottom - _listInst.ySpeed <= bbox_top+1 {
+	
+		if !instance_exists(_topWall) || _listInst.bbox_bottom > _topWall.bbox_bottom _topWall = _listInst;
+	
+	}
+
+}
+
+ds_list_destroy(_listOfSolidPlatforms);
+
+//Player gets pushed by moving right walls here
+if instance_exists(_rightWall) {
+
+	var _rightDist = bbox_right - x;
+	x = _rightWall.bbox_left - _rightDist;
+
+}
+
+//left
+if instance_exists(_leftWall) {
+
+	var _leftDist = x - bbox_left;
+	x = _leftWall.bbox_right + _leftDist;
+
+}
+
+//bottom
+if instance_exists(_bottomWall) {
+
+	var _bottomDist = bbox_bottom - y;
+	y = _bottomWall.bbox_top - _bottomDist;
+
+}
+
+//top
+if instance_exists(_topWall) {
+
+	var _upDist = y - bbox_top;
+	var _targetY = _topWall.bbox_bottom + _upDist;
+	
+	//Check if wall in the way
+	if !place_meeting(x, _targetY, obj_block_wall) {
+	
+		y = _targetY;
+	
+	}
+	
+}
+
+
+//Don't get dropped by moving platform
+earlyMovePlatXSpeed = false;
+if instance_exists(myFloorPlat) && myFloorPlat.xSpeed != 0 && !place_meeting(x, y + movePlatYspeedMax+1, myFloorPlat) {
+
+	if !place_meeting(x + myFloorPlat.xSpeed, y, obj_block_wall) {
+	
+		x += myFloorPlat.xSpeed;
+		earlyMovePlatXSpeed = true;
+		
+	}
+
+}
+
+
+
+
+
+
 //Move direction
 
 
@@ -377,26 +481,28 @@ if instance_exists(forgetSemisolid) && !place_meeting(x, y, forgetSemisolid) {
 movePlatXspeed = 0;
 if instance_exists(myFloorPlat) movePlatXspeed = myFloorPlat.xSpeed;
 
-if place_meeting(x + movePlatXspeed, y, obj_block_wall) {
+if !earlyMovePlatXSpeed {
 
-	_subPixel = 0.5;
-	var _pixelCheck = _subPixel * sign(movePlatXspeed);
+	if place_meeting(x + movePlatXspeed, y, obj_block_wall) {
+
+		_subPixel = 0.5;
+		var _pixelCheck = _subPixel * sign(movePlatXspeed);
 	
-	while !place_meeting(x + _pixelCheck, y, obj_block_wall) {
+		while !place_meeting(x + _pixelCheck, y, obj_block_wall) {
 	
-		x += _pixelCheck;
+			x += _pixelCheck;
 	
+		}
+
+		//Need this otherwise player sticks to wall when platform moves away
+		movePlatXspeed = 0;
+
 	}
 
-	//Need this otherwise player sticks to wall when platform moves away
-	movePlatXspeed = 0;
+	//Move with platform
+	x += movePlatXspeed;
 
 }
-
-//Move with platform
-x += movePlatXspeed;
-
-
 
 
 //Y snap to moving floor platform
@@ -445,8 +551,29 @@ if instance_exists(myFloorPlat) && (myFloorPlat.ySpeed != 0
 	
 }
 
+//@
+//Get pushed down through a semi solid platform by a moving solid platform
+if instance_exists(myFloorPlat) 
+&& (myFloorPlat.object_index == obj_block_wall_semiSolid || object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid)) 
+&& place_meeting(x, y, obj_block_wall) {
 
+	var _maxPushDistance = 10;
+	var _pushedDistance = 0;
+	var _startY = y;
+	
+	while place_meeting(x, y, obj_block_wall) && _pushedDistance <= _maxPushDistance {
+	
+		y++;
+		_pushedDistance++;
+	
+	}
+	
+	setOnGround(false);
+	//myFloorPlat = false;
+	
+	if _pushedDistance > _maxPushDistance y = _startY;
 
+}
 
 
 //Sprite Control
