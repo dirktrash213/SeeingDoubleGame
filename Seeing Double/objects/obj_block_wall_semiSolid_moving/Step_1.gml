@@ -1,3 +1,5 @@
+if global.paused exit;
+
 //Move in a circle
 dir += rotationSpeed;
 

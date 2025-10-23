@@ -1,5 +1,13 @@
 if global.playerDefeated || global.paused {
 
+	if global.playerDefeated {
+		
+		sprite_index = defeatSprite;
+		
+		if crushed sprite_index = crushedSprite;
+		
+	}
+	
 	x = x;
 	y = y;
 	
@@ -109,14 +117,52 @@ if instance_exists(myFloorPlat) && myFloorPlat.xSpeed != 0 && !place_meeting(x, 
 }
 
 
+//Crouching
 
 
 
+//if moveDown && instance_exists(myFloorPlat) {
+if (moveDown || place_meeting(x, y, obj_block_wall)) && onGround {
+
+	crouching = true;
+
+}
+
+//Automatic
+//if onGround && place_meeting(x, y, obj_block_wall) {
+//
+//	crouching = true;
+//
+//}
+
+if crouching mask_index = crouchSprite;
+
+if crouching && (!moveDown || !onGround) {
+
+	mask_index = maskSprite;
+	//Uncrouch if no solid wall in the way
+	if !place_meeting(x, y, obj_block_wall) {
+	
+		crouching = false;
+	
+	} else {
+	
+		mask_index = crouchSprite;
+	
+	}
+
+}
+
+
+
+
+//X movement
 
 //Move direction
-
-
 moveDir = moveRight - moveLeft;
+//if crouching moveDir = 0;
+
+
 
 //Face direction
 if moveDir != 0 faceDir = moveDir;
@@ -127,9 +173,10 @@ if moveDir != 0 faceDir = moveDir;
 runType = run;
 xSpeed = moveDir * moveSpeed[runType];
 
+if crouching xSpeed = 0;
+//if crouching xSpeed = moveDir * crouchMoveSpeed; //UNUSED
 
 
-//X Movement
 
 //X collision
 
@@ -465,7 +512,11 @@ if moveDown && jumpPressed {
 
 //Move
 
-y += ySpeed;
+if !place_meeting(x, y+ySpeed, obj_block_wall) {
+	
+	y += ySpeed;
+	
+}
 
 //Reset forgetSemisolid if no longer touching the platform
 
@@ -519,35 +570,35 @@ if instance_exists(myFloorPlat) && (myFloorPlat.ySpeed != 0
 	
 	}
 	
-	//Going up a solid wall while on a semi solid platform
-	if myFloorPlat.ySpeed < 0 && place_meeting(x, y + myFloorPlat.ySpeed, obj_block_wall) {
-	
-		
-		if myFloorPlat.object_index == obj_block_wall_semiSolid || object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid) {
-		
-			_subPixel = 0.25;
-			
-			//Get pushed down through semisolid platform
-			while place_meeting(x, y + myFloorPlat.ySpeed, obj_block_wall) {
-			
-				y += _subPixel;
-			
-			}
-			
-			//If we got pushed into a solid wall going down, push ourselves back out
-			while place_meeting(x, y, obj_block_wall) {
-			
-				y -= _subPixel;
-			
-			}
-			
-			y = round(y);
-		
-		}
-	
-		setOnGround(false);
-	
-	}
+	//Going up a solid wall while on a semi solid platform //REDUNDANT
+	//if myFloorPlat.ySpeed < 0 && place_meeting(x, y + myFloorPlat.ySpeed, obj_block_wall) {
+	//
+	//	
+	//	if myFloorPlat.object_index == obj_block_wall_semiSolid || object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid) {
+	//	
+	//		_subPixel = 0.25;
+	//		
+	//		//Get pushed down through semisolid platform
+	//		while place_meeting(x, y + myFloorPlat.ySpeed, obj_block_wall) {
+	//		
+	//			y += _subPixel;
+	//		
+	//		}
+	//		
+	//		//If we got pushed into a solid wall going down, push ourselves back out
+	//		while place_meeting(x, y, obj_block_wall) {
+	//		
+	//			y -= _subPixel;
+	//		
+	//		}
+	//		
+	//		y = round(y);
+	//	
+	//	}
+	//
+	//	setOnGround(false);
+	//
+	//}
 	
 }
 
@@ -575,6 +626,28 @@ if instance_exists(myFloorPlat)
 
 }
 
+//Check if player is crushed
+image_blend = c_white
+if place_meeting(x, y, obj_block_wall) {
+
+	crushTimer++;
+	if crushTimer > crushGraceFrames {
+		
+		//image_blend = c_blue;
+		crushed = true;
+		playerDefeated();
+	
+	}
+
+} else {
+
+	crushTimer = 0;
+
+}
+
+
+
+
 
 //Sprite Control
 
@@ -586,7 +659,18 @@ if xSpeed == 0 sprite_index = idleSprite;
 
 if !onGround sprite_index = jumpSprite;
 
+if crouching sprite_index = crouchSprite;
+
 mask_index = maskSprite; //Use this collision mask
+if crouching mask_index = crouchSprite;
+
+
+
+
+
+//Cutscene sprite control
+
+//if global.cutsceneActive {
 
 if happyPicnic sprite_index = happySprite;
 if concernedPicnic sprite_index = concernSprite;
@@ -633,6 +717,8 @@ if wonderingAboutCherriesPicnic {
 	sprite_index = curiousSprite;
 
 }
+
+//}
 
 
 if global.cutsceneActive { //TODO: make cutscene manager object

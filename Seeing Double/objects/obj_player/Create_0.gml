@@ -60,7 +60,10 @@ idleSprite = spr_pitter_idle;
 walkSprite = spr_pitter_walk;
 runSprite = spr_pitter_run;
 jumpSprite = spr_pitter_jump;
+crouchSprite = spr_pitter_crouch;
 defeatSprite = spr_pitter_defeat;
+crushedSprite = spr_pitter_splat;
+
 happySprite = spr_pitter_happy;
 concernSprite = spr_pitter_pause;
 scaredSprite = spr_pitter_scared;
@@ -82,6 +85,8 @@ moveDir = 0;
 runType = 0;
 moveSpeed[0] = 2; //Walk speed
 moveSpeed[1] = 3.5; //Run speed
+
+crouching = false;
 
 
 
@@ -144,8 +149,9 @@ earlyMovePlatXSpeed = false;
 movePlatXspeed = 0;
 movePlatYspeedMax = termVelocity;
 forgetSemisolid = noone;
-
-
+crushTimer = 0;
+crushGraceFrames = 3;
+crushed = false;
 
 
 
