@@ -15,6 +15,39 @@ function setOnGround(_val = true) {
 
 }
 
+function checkForSemisolidPlatform(_x, _y) {
+	
+	var _rtrn = noone;
+
+	//We must not be moving upwards, then we check for a normal collision
+	
+	if ySpeed >= 0 && place_meeting(_x, _y, obj_block_wall_semiSolid) {
+	
+		var _list = ds_list_create();
+		var _listSize = instance_place_list(_x, _y, obj_block_wall_semiSolid, _list, false);
+		
+		for(var i = 0; i < _listSize; i++) {
+		
+			var _listInst = _list[|i];
+			if _listInst != forgetSemisolid && floor(bbox_bottom) <= ceil(_listInst.bbox_top - _listInst.ySpeed) {
+			
+				_rtrn = _listInst;
+				
+				//Exist loop early
+				i = _listSize;
+			
+			}
+		
+		}
+	
+		ds_list_destroy(_list);
+	
+	}
+
+	return _rtrn;
+
+}
+
 controlsSetup();
 
 heartParticleSpawnRate = 10;
@@ -105,10 +138,11 @@ jumpDisabled = false;
 jumpDisabledDuration = 2;
 
 //Moving Platforms
+downSlopeSemiSolid = noone;
 myFloorPlat = noone;
 movePlatXspeed = 0;
 movePlatYspeedMax = termVelocity;
-
+forgetSemisolid = noone;
 
 
 

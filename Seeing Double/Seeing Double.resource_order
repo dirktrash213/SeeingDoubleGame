@@ -208,6 +208,7 @@
     {"name":"Monitor","order":15,"path":"sprites/Monitor/Monitor.yy",},
     {"name":"rm_init","order":1,"path":"rooms/rm_init/rm_init.yy",},
     {"name":"spr_enemy_helmetBeetle_jump","order":16,"path":"sprites/spr_enemy_helmetBeetle_jump/spr_enemy_helmetBeetle_jump.yy",},
+    {"name":"obj_block_wall_moving","order":22,"path":"objects/obj_block_wall_moving/obj_block_wall_moving.yy",},
     {"name":"__scribble_config_colours","order":1,"path":"scripts/__scribble_config_colours/__scribble_config_colours.yy",},
     {"name":"scribble_external_sound_remove","order":5,"path":"scripts/scribble_external_sound_remove/scribble_external_sound_remove.yy",},
     {"name":"obj_block_wall_semiSolid","order":20,"path":"objects/obj_block_wall_semiSolid/obj_block_wall_semiSolid.yy",},

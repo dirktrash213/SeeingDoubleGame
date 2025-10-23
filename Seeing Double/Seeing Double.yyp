@@ -254,6 +254,7 @@
     {"id":{"name":"Monitor","path":"sprites/Monitor/Monitor.yy",},},
     {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
     {"id":{"name":"spr_enemy_helmetBeetle_jump","path":"sprites/spr_enemy_helmetBeetle_jump/spr_enemy_helmetBeetle_jump.yy",},},
+    {"id":{"name":"obj_block_wall_moving","path":"objects/obj_block_wall_moving/obj_block_wall_moving.yy",},},
     {"id":{"name":"spr_block_collision","path":"sprites/spr_block_collision/spr_block_collision.yy",},},
     {"id":{"name":"__scribble_config_colours","path":"scripts/__scribble_config_colours/__scribble_config_colours.yy",},},
     {"id":{"name":"scribble_external_sound_remove","path":"scripts/scribble_external_sound_remove/scribble_external_sound_remove.yy",},},

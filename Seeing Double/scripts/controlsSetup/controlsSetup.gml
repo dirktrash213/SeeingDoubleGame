@@ -34,6 +34,8 @@ function getControls() {
 
 	moveRight = clamp(moveRight, 0, 1);
 	moveLeft = clamp(moveLeft, 0, 1);
+	moveUp = clamp(moveUp, 0, 1);
+	moveDown = clamp(moveDown, 0, 1);
 	jumpPressed = clamp(jumpPressed, 0, 1);
 	jump = clamp(jump, 0, 1);
 	run = clamp(run, 0, 1);
