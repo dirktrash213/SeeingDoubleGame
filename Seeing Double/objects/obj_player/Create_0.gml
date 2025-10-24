@@ -74,6 +74,7 @@ curiousSprite = spr_pitter_curious;
 jumpSfx = sfx_jump_pitter;
 
 
+canCollide = true;
 
 slopeChecksEnabled = false;
 

@@ -271,7 +271,7 @@ function startNewGame() {
 
 
 }
-
+//@
 function spawnPitter() {
 
 	var _offsetY = 20;
@@ -292,8 +292,10 @@ function spawnPatter() {
 	
 	var _offsetY = 20;
 
+	//show_debug_message()
+
 	obj_player_patter.x = global.xRespawnPatter;
-	obj_player_patter.y = global.xRespawnPatter - _offsetY;
+	obj_player_patter.y = global.yRespawnPatter - _offsetY;
 
 }
 

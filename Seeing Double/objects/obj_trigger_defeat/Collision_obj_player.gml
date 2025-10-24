@@ -1,4 +1,4 @@
-playerDefeated();
+if other.canCollide playerDefeated();
 
 //if global.playerDefeated exit;
 //

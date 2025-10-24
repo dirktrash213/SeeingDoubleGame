@@ -2,16 +2,39 @@ if global.playerDefeated || global.paused {
 
 	if global.playerDefeated {
 		
+		moveDir = 0;
+		
 		sprite_index = defeatSprite;
 		
 		if crushed sprite_index = crushedSprite;
 		
 	}
 	
+	
 	x = x;
 	y = y;
 	
 	exit;
+
+}
+
+if object_index == obj_player_patter {
+
+	
+
+	if y < 319 {
+		
+		obj_player_patter.image_alpha = 0;
+		obj_player_patter.canCollide = false;
+		
+	} else {
+	
+		obj_player_patter.image_alpha = 1;
+		obj_player_patter.canCollide = true;
+	
+	}
+	
+	//show_debug_message(obj_player_patter.canCollide)
 
 }
 
@@ -362,7 +385,7 @@ if ySpeed > termVelocity ySpeed = termVelocity;
 
 _subPixel = 0.5;
 
-if place_meeting(x, y + ySpeed, obj_block_wall) {
+if place_meeting(x, y + ySpeed, obj_block_wall) && canCollide {
 
 	var _pixelCheck = _subPixel * sign(ySpeed);
 	

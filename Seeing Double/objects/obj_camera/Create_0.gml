@@ -25,4 +25,4 @@ cameraLeadAdjustSpeedX = 0.75; //How fast the camera moves when leading the play
 
 
 patterCameraOffsetX = 0;
-patterCameraOffsetY = 304;
+patterCameraOffsetY = 320;

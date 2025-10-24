@@ -13,6 +13,11 @@ if pitterPlayerIsPresent() {
 		//obj_player_pitter.roomRespawn = room;
 		global.xRespawnPitter = x;
 		global.yRespawnPitter = y;
+		
+		var _patterRespawnPoint = instance_nearest(x, y, obj_trigger_patterRespawn);
+		
+		global.xRespawnPatter = _patterRespawnPoint.x;
+		global.yRespawnPatter = _patterRespawnPoint.y;
 		global.roomToSpawnIn = room_get_name(room);
 	
 	}

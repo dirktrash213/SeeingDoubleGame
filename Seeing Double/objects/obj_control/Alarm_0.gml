@@ -17,7 +17,11 @@ if pitterPlayerIsPresent() {
 }
 
 
-
+if patterPlayerIsPresent() && global.splitScreenActive {
+	
+	spawnPatter();
+	
+}
 
 
 
