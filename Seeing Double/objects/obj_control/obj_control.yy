@@ -36,8 +36,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_UI_box",
-    "path": "sprites/spr_UI_box/spr_UI_box.yy",
+    "name": "spr_UI_box_big",
+    "path": "sprites/spr_UI_box_big/spr_UI_box_big.yy",
   },
   "spriteMaskId": null,
   "visible": true,

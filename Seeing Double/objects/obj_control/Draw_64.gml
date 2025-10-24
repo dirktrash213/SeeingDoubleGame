@@ -1,7 +1,3 @@
-drawPauseMenu();
-
-//Scale up by x4
-
 if global.splitScreenActive {
 
 	var _x = 720;
@@ -15,3 +11,5 @@ if global.splitScreenActive {
 
 
 }
+
+drawPauseMenu();

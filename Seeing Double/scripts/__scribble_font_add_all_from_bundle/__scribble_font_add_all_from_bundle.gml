@@ -4,6 +4,7 @@ function __scribble_font_add_all_from_bundle()
 {
 	
 	__scribble_font_add_from_bundle(font_titleMenu);
+	__scribble_font_add_from_bundle(font_pauseMenu);
 	
 	exit; 
 	

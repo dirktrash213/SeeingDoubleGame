@@ -1,5 +1,5 @@
-xScale = 2;
-yScale = 2;
+xScale = 1;
+yScale = 1;
 
 depth = -14000;
 
@@ -20,9 +20,9 @@ pauseMenuSublevel = 0;
 
 submenuType = "";
 
-volumeSliderSprite = spr_UI_volumeSlider;
-volumeMuteIcon = spr_UI_volumeIcon_mute;
-volumeLoudIcon = spr_UI_volumeIcon_loud;
+volumeSliderSprite = spr_UI_volumeSlider_x4;
+volumeMuteIcon = spr_UI_volumeIcon_mute_x4;
+volumeLoudIcon = spr_UI_volumeIcon_loud_x4;
 
 audioBGMLoaded = false;
 audioSFXLoaded = false;

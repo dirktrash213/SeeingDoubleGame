@@ -2,30 +2,50 @@ function drawPauseMenu() {
 
 	if global.paused {
 
+		var _oldFont = draw_get_font();
+		draw_set_font(font_pauseMenu);
 		draw_set_halign(fa_center);
 
-		var _x = camera_get_view_x(VIEW) + camera_get_view_width(VIEW)/2;
-		var _y = camera_get_view_y(VIEW) + camera_get_view_height(VIEW)/2;
+		//var _x = camera_get_view_x(VIEW) + camera_get_view_width(VIEW)/2;
+		//var _y = camera_get_view_y(VIEW) + camera_get_view_height(VIEW)/2;
 	
-		draw_sprite_ext(sprite_index, 0, _x, _y, xScale, yScale, 0, c_white, image_alpha);
+		//draw_sprite_ext(sprite_index, 0, _x, _y, xScale, yScale, 0, c_white, image_alpha);
+		
+		//var _x = 960;
+		//var _y = 540;
+		var _x = display_get_gui_width()/2;
+		var _y = display_get_gui_height()/2;
+		
+		//draw_sprite_ext(sprite_index, 0, _x, _y, xScale, yScale, 0, c_white, image_alpha);
+		
+		var _w = 1200;
+		var _h = 600;
+		
+		draw_sprite_stretched(sprite_index, 0, _x - (_w/2), _y - (_h/2), _w, _h);
 	
+		var _masterOffsetY = -210;
+		
+		var _menuSpritePitter = spr_pitter_jump_x4;
+		var _menuSpritePatter = spr_patter_curious_x4;
+		
+		var _canDrawMenuSprites = true;
 	
 		switch pauseMenuSublevel {
 		
 			case 0: {
 	
-				var _defeatString = global.splitScreenActive ?  " [spr_pitter_defeat][spr_patter_defeat]x" : " [spr_pitter_defeat]x ";  
+				var _defeatString = global.splitScreenActive ?  " [spr_pitter_defeat_x4][spr_patter_defeat_x4]x" : " [spr_pitter_defeat_x4]x ";  
 	
 				//var _statText = scribble("[spr_interactable_coin]x " + string(global.coinCount) + "\n[spr_interactable_cherry]x " + string(global.cherryCount) + "\n[spr_pitter_defeat]x " + string(global.defeatCount));
-				var _statText = scribble("[spr_interactable_coin]x " + string(global.coinCount) + " [spr_interactable_cherry]x " + string(global.cherryCount) + _defeatString + string(global.defeatCount));
+				var _statText = scribble("[spr_interactable_coin_x4]x " + string(global.coinCount) + " [spr_interactable_cherry_x4]x " + string(global.cherryCount) + _defeatString + string(global.defeatCount));
 
-				_statText.starting_format("font_titleMenu", c_white);
+				_statText.starting_format("font_pauseMenu", c_white);
 				//_coinText.wrap(335); 
 				_statText.align(fa_center, fa_top); 
 	
 	
 				var _offsetX = 0;
-				var _offsetY = 50;
+				var _offsetY = 150;
 	
 				_statText.draw(_x + _offsetX, _y + _offsetY, typist);
 	
@@ -42,11 +62,11 @@ function drawPauseMenu() {
 	
 				//var _menuText = scribble(_resumeString + _optionsString + _exitString);
 	
-				//_menuText.starting_format("font_titleMenu", c_white);
+				//_menuText.starting_format("font_pauseMenu", c_white);
 				//_menuText.align(fa_center, fa_top); 
 	
 				_offsetX = 0;
-				_offsetY = -50;
+				_offsetY = _masterOffsetY;
 	
 				//_menuText.draw(_x + _offsetX, _y + _offsetY, typist2);
 			
@@ -70,13 +90,16 @@ function drawPauseMenu() {
 						if pauseMenuPosition == 2 _audioString = "[wave]\nAudio[/wave]";
 	
 						var _offsetX = 0;
-						var _offsetY = -50;
+						var _offsetY = _masterOffsetY;
 	
 						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _videoString + _audioString);
 			
 					} break;
 				
 					case "Exit": {
+						
+						_menuSpritePitter = spr_pitter_begPlayer_x8;
+						_menuSpritePatter = spr_patter_begPlayer_x8;
 			
 						var _confirmString = "Exit the game?";
 						var _noString = "\nDon't exit";
@@ -86,7 +109,7 @@ function drawPauseMenu() {
 						if pauseMenuPosition == 1 _yesString = "[wave]\nExit[/wave]";
 					
 						var _offsetX = 0;
-						var _offsetY = -50;
+						var _offsetY = _masterOffsetY;
 	
 						draw_text_scribble(_x + _offsetX, _y + _offsetY, _confirmString + _noString + _yesString);
 			
@@ -103,19 +126,21 @@ function drawPauseMenu() {
 					case "Video settings": {
 				
 						var _backString = "Back";
-						var _fullscreenString = "\nToggle Fullscreen";
+						var _fullscreenString = "\nFullscreen";
 	
 						if pauseMenuPosition == 0 _backString = "[wave]Back[/wave]";
-						if pauseMenuPosition == 1 _fullscreenString = "[wave]\nToggle Fullscreen[/wave]";
+						if pauseMenuPosition == 1 _fullscreenString = "[wave]\nFullscreen[/wave]";
 				
 						var _offsetX = 0;
-						var _offsetY = -50;
+						var _offsetY = _masterOffsetY;
 	
 						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _fullscreenString);
 				
 					} break;
 				
 					case "Audio settings": {
+						
+						_canDrawMenuSprites = false;
 				
 						var _backString = "Back";
 						var _masterVolumeString = "\nMaster Volume";
@@ -127,18 +152,18 @@ function drawPauseMenu() {
 						if pauseMenuPosition == 2 _sfxVolumeString = "[wave]\nSFX Volume[/wave]";
 						if pauseMenuPosition == 3 _bgmVolumeString = "[wave]\nMusic Volume[/wave]";
 				
-						var _offsetX = -145;
-						var _offsetY = -50;
+						var _offsetX = -485;
+						var _offsetY = _masterOffsetY;
 	
 						draw_set_halign(fa_left);
 						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _masterVolumeString + _sfxVolumeString + _bgmVolumeString);
 						draw_set_halign(fa_center);
 				
-						_offsetX = 85;
-						_offsetY = -20;
+						_offsetX = 330;
+						_offsetY = -80;
 					
-						var _spacing = 20;
-						var _iconOffsetX = 50;
+						var _spacing = 80;
+						var _iconOffsetX = 150;
 				
 						draw_sprite(volumeSliderSprite, global.volumeMaster, _x + _offsetX, _y + _offsetY);
 						draw_sprite(volumeMuteIcon, 0, _x + _offsetX - _iconOffsetX, _y + _offsetY);
@@ -159,18 +184,22 @@ function drawPauseMenu() {
 			} break;
 	
 		}
+		
+		var _menuSpriteOffsetX = 400;
+		var _menuSpriteOffsetY = -40;
 	
+		if _canDrawMenuSprites {
+	
+			draw_sprite(_menuSpritePitter, 0, _x - _menuSpriteOffsetX, _y + _menuSpriteOffsetY);
+			if global.splitScreenActive draw_sprite(_menuSpritePatter, 0, _x + _menuSpriteOffsetX, _y + _menuSpriteOffsetY);
+		
+		}
+	
+		draw_set_halign(fa_left);
+		draw_set_font(_oldFont);
 
 	}
-
-
-
-	draw_set_halign(fa_left);
-
-
-
-
-
+	
 }
 
 function scr_isControllerConnected() {

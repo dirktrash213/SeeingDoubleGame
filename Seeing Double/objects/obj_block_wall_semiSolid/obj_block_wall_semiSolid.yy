@@ -32,5 +32,5 @@
     "path": "sprites/spr_block_collision_semiSolid/spr_block_collision_semiSolid.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }
