@@ -18,3 +18,6 @@ alarm[0] = 1; //Alarm 0 calls window_center()
 
 //Resize it to be equal to our window
 surface_resize(application_surface, view_width*window_scale, view_height*window_scale)
+
+patterCameraOffsetX = 0;
+patterCameraOffsetY = 304;

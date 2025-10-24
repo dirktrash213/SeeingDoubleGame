@@ -27,7 +27,7 @@ global.cutsceneActive = false;
 global.currentCutsceneID = "";
 global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.ON_MENU;
 
-global.splitScreenActive = false;
+global.splitScreenActive = true;
 
 global.volumeMaster = 5;
 global.volumeSFX = 5;

@@ -19,7 +19,7 @@ global.readytoDisplayTitleScreenMenu = false;
 
 
 
-room_goto(rm_hills_pitFallSecret);
+room_goto(rm_forest_splitScreenStart);
 
 
-room_goto(rm_test);
+//room_goto(rm_test);
