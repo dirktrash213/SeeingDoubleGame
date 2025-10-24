@@ -19,5 +19,10 @@ alarm[0] = 1; //Alarm 0 calls window_center()
 //Resize it to be equal to our window
 surface_resize(application_surface, view_width*window_scale, view_height*window_scale)
 
+cameraLeadingX = 0;
+cameraLeadingXmax = 40; //How far the camera leads the player
+cameraLeadAdjustSpeedX = 0.75; //How fast the camera moves when leading the player
+
+
 patterCameraOffsetX = 0;
 patterCameraOffsetY = 304;
