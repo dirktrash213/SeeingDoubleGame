@@ -42,4 +42,7 @@ global.hasMovedDown = false;
 global.hasMovedLeft = false;
 global.hasMovedRight = false;
 
+global.patterOffsetX = 0;
+global.patterOffsetY = 320;
+
 draw_set_font(font_titleMenu);

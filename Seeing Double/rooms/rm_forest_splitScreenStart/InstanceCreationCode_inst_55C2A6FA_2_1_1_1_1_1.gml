@@ -1,9 +1,9 @@
-targetRoom = rm_hills_pitFallContinueMore;
+targetRoom = rm_forest_splitScreenTutorial;
 
-xEnter = 208;
-yEnter = 5;
+xEnter = 479;
+yEnter = 160;
 
-xSpawn = 207;
-ySpawn = 269;
+xSpawn = 1;
+ySpawn = 160;
 
-horizontalWarp = false;
+//horizontalWarp = false;

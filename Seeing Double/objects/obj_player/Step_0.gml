@@ -763,3 +763,15 @@ if global.cutsceneActive { //TODO: make cutscene manager object
 	}
 
 }
+
+//Keep patter in sync with pitter
+if object_index == obj_player_patter {
+
+	if pitterPlayerIsPresent() {
+	
+		x = obj_player_pitter.x;
+		y = obj_player_pitter.y + global.patterOffsetY;
+	
+	}
+
+}

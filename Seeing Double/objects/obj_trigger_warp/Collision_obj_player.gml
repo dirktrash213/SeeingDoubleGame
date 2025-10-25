@@ -1,10 +1,14 @@
 room_goto(targetRoom);
 
+//show_debug_message("gf4wegt4yg4")
+
 if pitterPlayerIsPresent() {
 
 	if horizontalWarp {
 
 		var _yOffset = abs(obj_player_pitter.y - yEnter);
+		
+		show_debug_message(_yOffset)
 
 		obj_player_pitter.x = xSpawn;
 		obj_player_pitter.y = ySpawn - _yOffset;
