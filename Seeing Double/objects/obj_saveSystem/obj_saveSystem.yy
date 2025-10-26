@@ -30,7 +30,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_icon_floppyDisk",
+    "path": "sprites/spr_icon_floppyDisk/spr_icon_floppyDisk.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

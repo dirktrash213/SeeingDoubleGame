@@ -23,7 +23,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"3dfe4f4b-d005-4ad6-93f6-784c45405da7","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 7,
+  "origin": 9,
   "parent": {
     "name": "Pitter And Patter",
     "path": "folders/Sprites/Pitter And Patter.yy",
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 12,
+  "width": 18,
 }

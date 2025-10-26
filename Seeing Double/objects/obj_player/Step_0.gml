@@ -18,9 +18,7 @@ if global.playerDefeated || global.paused {
 
 }
 
-if object_index == obj_player_patter {
-
-	
+if object_index == obj_player_patter && global.splitScreenActive {
 
 	if y < 319 {
 		
@@ -34,8 +32,6 @@ if object_index == obj_player_patter {
 	
 	}
 	
-	//show_debug_message(obj_player_patter.canCollide)
-
 }
 
 getControls();
@@ -282,7 +278,7 @@ if ySpeed >= 0 && !place_meeting(x + xSpeed, y + 1, obj_block_wall) && place_mee
 
 //Move
 
-x += xSpeed;
+if !global.cutsceneActive x += xSpeed;
 
 
 //Y movement
@@ -505,7 +501,7 @@ if instance_exists(myFloorPlat) {
 }
 
 //Manually fall through a semisolid platform
-if moveDown && jumpPressed {
+if moveDown && jumpPressed && !global.cutsceneActive {
 
 	//Make sure we have a floor platform that is a semisolid
 	if instance_exists(myFloorPlat) && (myFloorPlat.object_index == obj_block_wall_semiSolid || object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid)) {
@@ -693,70 +689,117 @@ if crouching mask_index = crouchSprite;
 
 //Cutscene sprite control
 
-//if global.cutsceneActive {
 
-if happyPicnic sprite_index = happySprite;
-if concernedPicnic sprite_index = concernSprite;
-if scaredPicnic sprite_index = scaredSprite;
-if searchingForPatterPicnic {
+
+
+
+
+if global.cutsceneActive {
 	
-	sprite_index = runScaredSprite;
-
-	if x > 224 && hspeed == freakoutSpeed {
-		
-		hspeed = -freakoutSpeed;
-		image_xscale = -1;
-		
-	}
+	if onGround sprite_index = idleSprite;
 	
-	if x < 190 && hspeed == -freakoutSpeed {
-		
-		hspeed = freakoutSpeed;
-		image_xscale = 1;
-		
-	}
-	
-}
-
-if thinkingPicnic {
-
-	hspeed = 0;
-	image_xscale = 1;
-	sprite_index = concernSprite;
-	
-	var _offsetX = -5;
-	var _offsetY = -20;
-	
-	if !instance_exists(obj_background_elipses) {
-		
-		instance_create_layer(x + _offsetX, y + _offsetY, "Instances", obj_background_elipses);
-		
-	} 
-	
-}
-
-if wonderingAboutCherriesPicnic {
-
-	sprite_index = curiousSprite;
-
-}
-
-//}
-
-
-if global.cutsceneActive { //TODO: make cutscene manager object
+	moveDir = 0;
+	xSpeed = 0;
+	//ySpeed = 0;
 
 	switch global.currentCutsceneID {
 	
-		case "sampleCutscene": {
+		case CUTSCENE_ID.OPENING: {
 		
+			if happyPicnic sprite_index = happySprite;
+			if concernedPicnic sprite_index = concernSprite;
+			if scaredPicnic sprite_index = scaredSprite;
+			if searchingForPatterPicnic {
+	
+				sprite_index = runScaredSprite;
+
+				if x > 224 && hspeed == freakoutSpeed {
 		
+					hspeed = -freakoutSpeed;
+					image_xscale = -1;
 		
+				}
+	
+				if x < 190 && hspeed == -freakoutSpeed {
+		
+					hspeed = freakoutSpeed;
+					image_xscale = 1;
+		
+				}
+	
+			}
+
+			if thinkingPicnic {
+
+				hspeed = 0;
+				image_xscale = 1;
+				sprite_index = concernSprite;
+	
+				var _offsetX = -5;
+				var _offsetY = -20;
+	
+				if !instance_exists(obj_background_elipses) {
+		
+					instance_create_layer(x + _offsetX, y + _offsetY, "Instances", obj_background_elipses);
+		
+				} 
+	
+			}
+
+			if wonderingAboutCherriesPicnic {
+
+				sprite_index = curiousSprite;
+
+			}
+			
 		} break;
+		//@
+		case CUTSCENE_ID.SPLIT_SCREEN_ACTIVATE: {
 		
-		case "sampleCutscene2": {
+			if onGround && obj_cutsceneSystem.cutsceneState == SPLIT_SCREEN_CUTSCENE_STATE.NONE {
+			
+				obj_cutsceneSystem.cutsceneState = SPLIT_SCREEN_CUTSCENE_STATE.PITTER_PONDERING;
+					
+				with instance_create_layer (x, y - 15, "Instances", obj_background_elipses) {
+				
+					duration = 300;
+				
+				}
+			
+			}
 		
-		
+			if obj_cutsceneSystem.cutsceneState == SPLIT_SCREEN_CUTSCENE_STATE.PITTER_PONDERING
+			||  obj_cutsceneSystem.cutsceneState == SPLIT_SCREEN_CUTSCENE_STATE.PITTER_WAITING_FOR_RESPONSE {
+			
+				sprite_index = spr_pitter_curious;
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == SPLIT_SCREEN_CUTSCENE_STATE.PITTER_SHOUTING_LEFT {
+			
+				sprite_index = spr_pitter_callOut;
+				image_xscale = -1;
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == SPLIT_SCREEN_CUTSCENE_STATE.PITTER_SHOUTING_RIGHT {
+			
+				sprite_index = spr_pitter_callOut;
+				image_xscale = 1;
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == SPLIT_SCREEN_CUTSCENE_STATE.PITTER_SAD {
+			
+				sprite_index = spr_pitter_sad;
+				
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == SPLIT_SCREEN_CUTSCENE_STATE.FADING_IN_WHITE {
+			
+				sprite_index = spr_pitter_curious_nervous;
+	
+			}
 		
 		} break;
 	
@@ -764,8 +807,12 @@ if global.cutsceneActive { //TODO: make cutscene manager object
 
 }
 
+
+
+
+
 //Keep patter in sync with pitter
-if object_index == obj_player_patter {
+if object_index == obj_player_patter && global.splitScreenActive {
 
 	if pitterPlayerIsPresent() {
 	

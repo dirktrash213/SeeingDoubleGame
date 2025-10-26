@@ -1,0 +1,3 @@
+textOccilating = false;
+
+

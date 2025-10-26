@@ -1,0 +1,2 @@
+cutsceneID = CUTSCENE_ID.SPLIT_SCREEN_ACTIVATE;
+delay = 60;

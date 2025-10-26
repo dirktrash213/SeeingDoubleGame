@@ -1,9 +1,9 @@
-targetRoom = rm_hills_jumpIntoPit;
+targetRoom = rm_hills_pitFallEnd;
 
-xEnter = 127;
-yEnter = 5;
+xEnter = 1;
+yEnter = 224;
 
-xSpawn = 239;
-ySpawn = 269;
+xSpawn = 479;
+ySpawn = 224;
 
 horizontalWarp = false;

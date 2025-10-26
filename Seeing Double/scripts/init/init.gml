@@ -23,11 +23,9 @@ global.readytoDisplayTitleScreenMenu = true;
 global.titleScreenMenuActive = false;
 global.delayBeforeTitleScreen = 300;
 
-global.cutsceneActive = false;
-global.currentCutsceneID = "";
-global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.ON_MENU;
 
-global.splitScreenActive = true;
+
+global.splitScreenActive = false;
 
 global.volumeMaster = 5;
 global.volumeSFX = 5;
@@ -44,5 +42,10 @@ global.hasMovedRight = false;
 
 global.patterOffsetX = 0;
 global.patterOffsetY = 320;
+
+global.cutsceneActive = true;
+//global.currentCutsceneID = CUTSCENE_ID.NONE;
+global.currentCutsceneID = CUTSCENE_ID.OPENING;
+global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.ON_MENU;
 
 draw_set_font(font_titleMenu);

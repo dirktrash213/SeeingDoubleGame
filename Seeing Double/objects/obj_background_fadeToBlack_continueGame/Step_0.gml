@@ -7,6 +7,8 @@ if fadingIn {
 		
 		global.readytoDisplayTitleScreenMenu = false;
 		global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.PAD_FIRED;
+		global.cutsceneActive = false;
+		global.currentCutsceneID = CUTSCENE_ID.NONE;
 		
 		if playerIsPresent() {
 		
