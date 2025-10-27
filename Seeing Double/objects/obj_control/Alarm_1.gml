@@ -41,6 +41,7 @@ switch global.titleScreenCutsceneState {
 		if pitterPlayerIsPresent() obj_player_pitter.wonderingAboutCherriesPicnic = false;
 		
 		global.playerControl = true;
+		global.cutsceneActive = false;
 		
 	} break;
 

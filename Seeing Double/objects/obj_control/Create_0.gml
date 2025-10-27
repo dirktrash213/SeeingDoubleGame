@@ -27,5 +27,8 @@ volumeLoudIcon = spr_UI_volumeIcon_loud_x4;
 audioBGMLoaded = false;
 audioSFXLoaded = false;
 
+dividerYscale = 0;
+dividerYscaleIncreaseAmount = 2;
+
 audio_group_load(audiogroup_bgm);
 audio_group_load(audiogroup_sfx);

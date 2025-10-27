@@ -23,6 +23,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Interactables","folderPath":"folders/Objects/Interactables.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Managers","folderPath":"folders/Objects/Managers.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Menus","folderPath":"folders/Objects/Menus.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Spawners","folderPath":"folders/Objects/Spawners.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Triggers","folderPath":"folders/Objects/Triggers.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Particle Systems","folderPath":"folders/Particle Systems.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Paths","folderPath":"folders/Paths.yy",},
@@ -69,7 +70,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UI","folderPath":"folders/Sprites/UI.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Spawners","folderPath":"folders/Objects/Spawners.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"scribble_license.txt","CopyToMask":-1,"filePath":"datafiles",},

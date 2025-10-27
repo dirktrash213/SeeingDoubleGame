@@ -22,8 +22,6 @@ if fadingIn {
 		
 		global.playerControl = true;
 		
-		if !global.splitScreenActive instance_destroy(obj_player_patter);
-		
 		loadGame();
 		
 		//show_debug_message("Room to spawn in: " + string(asset_get_index(global.roomToSpawnIn)))
@@ -35,6 +33,8 @@ if fadingIn {
 		obj_player_pitter.y = global.yRespawnPitter;
 		
 		loadGame();
+		
+		if !global.splitScreenActive instance_destroy(obj_player_patter);
 		
 	}
 

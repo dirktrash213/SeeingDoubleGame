@@ -29,6 +29,8 @@ doubleTextOffsetX = 0;
 doubleTextOffsetY = 0;
 
 textOccilating = true;
+textAlpha = 1.0;
+//textAlpha = "[alpha,<value>]";
 
 dir = 0;
 //rotationSpeed = 360/180;
