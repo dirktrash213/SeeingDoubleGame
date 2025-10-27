@@ -8,7 +8,7 @@ if pitterPlayerIsPresent() {
 
 		var _yOffset = abs(obj_player_pitter.y - yEnter);
 		
-		show_debug_message(_yOffset)
+		//show_debug_message(_yOffset)
 
 		obj_player_pitter.x = xSpawn;
 		obj_player_pitter.y = ySpawn - _yOffset;
@@ -28,5 +28,27 @@ if pitterPlayerIsPresent() {
 	//	obj_player_pitter.yRespawn = ySpawn;
 	//
 	//}
+
+}
+/*
+if patterPlayerIsPresent() {
+
+	if horizontalWarp {
+
+		var _yOffset = abs(obj_player_patter.y - yEnter);
+		
+		show_debug_message(_yOffset)
+
+		obj_player_patter.x = xSpawn;
+		obj_player_patter.y = ySpawn - _yOffset;
+		
+	} else {
+	
+		var _xOffset = abs(obj_player_patter.x - xEnter);
+
+		obj_player_patter.x = xSpawn + _xOffset;
+		obj_player_patter.y = ySpawn;
+	
+	}
 
 }

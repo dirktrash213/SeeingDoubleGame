@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Walls and Platforms",
+    "path": "folders/Objects/Walls and Platforms.yy",
   },
   "parentObjectId": {
     "name": "obj_block_wall",

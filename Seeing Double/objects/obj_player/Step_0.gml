@@ -18,6 +18,18 @@ if global.playerDefeated || global.paused {
 
 }
 
+//Keep patter in sync with pitter
+if object_index == obj_player_patter && global.splitScreenActive {
+
+	if pitterPlayerIsPresent() {
+	
+		x = obj_player_pitter.x;
+		y = obj_player_pitter.y + global.patterOffsetY;
+	
+	}
+
+}
+
 if object_index == obj_player_patter && global.splitScreenActive {
 
 	if y < 319 {
@@ -811,14 +823,15 @@ if global.cutsceneActive {
 
 
 
-//Keep patter in sync with pitter
-if object_index == obj_player_patter && global.splitScreenActive {
-
-	if pitterPlayerIsPresent() {
-	
-		x = obj_player_pitter.x;
-		y = obj_player_pitter.y + global.patterOffsetY;
-	
-	}
-
-}
+//Keep patter in sync with pitter (except on moving platforms because it looks weird)
+//if object_index == obj_player_patter && global.splitScreenActive && !instance_exists(myFloorPlat) {
+//if object_index == obj_player_patter && global.splitScreenActive {
+//
+//	if pitterPlayerIsPresent() {
+//	
+//		x = obj_player_pitter.x;
+//		y = obj_player_pitter.y + global.patterOffsetY;
+//	
+//	}
+//
+//}

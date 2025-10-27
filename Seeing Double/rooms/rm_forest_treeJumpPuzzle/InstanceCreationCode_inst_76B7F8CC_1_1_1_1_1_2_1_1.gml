@@ -1,7 +1,7 @@
-targetRoom = rm_hills_runTutorial;
+targetRoom = rm_forest_movingPlatformsIntro;
 
-xEnter = 959;
-yEnter = 240;
+xEnter = 958;
+yEnter = 160;
 
 xSpawn = 1;
-ySpawn = 240;
+ySpawn = 160;

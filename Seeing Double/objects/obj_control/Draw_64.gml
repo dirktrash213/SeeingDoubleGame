@@ -45,6 +45,8 @@ if global.splitScreenActive {
 			}
 			
 			instance_destroy(obj_trigger_cutscene);
+			
+			if !audio_is_playing(bgm_inSync) audio_play_sound(bgm_inSync, 1, 1);
 		
 		}
 

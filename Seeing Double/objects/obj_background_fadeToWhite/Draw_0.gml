@@ -41,7 +41,7 @@ if obj_cutsceneSystem.cutsceneState == SPLIT_SCREEN_CUTSCENE_STATE.TEXT_TYPING
 		draw_set_font(_oldFont);
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_top);
-		//draw_text_scribble(_x, _y, "Seeing")
+		
 	
 	}
 	
