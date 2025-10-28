@@ -44,6 +44,8 @@ function getControls() {
 	
 	if jumpPressed && !jumpDisabled && !global.cutsceneActive {
 	
+		show_debug_message("jump pressed")
+		
 		jumpKeyBufferTimer = jumpBufferTime;
 	
 	}
