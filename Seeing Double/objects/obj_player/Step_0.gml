@@ -393,6 +393,19 @@ if ySpeed > termVelocity ySpeed = termVelocity;
 
 _subPixel = 0.5;
 
+//Check if bonked a switch block
+if place_meeting(x, y + ySpeed, obj_interactable_switch_block) && ySpeed < 0 {
+
+	audio_play_sound(sfx_pause, 1, 0, 1, 0, 2.0);
+	
+	with instance_nearest(x,y,obj_interactable_switch_block) {
+	
+		bonked = true;
+	
+	}
+
+}
+
 if place_meeting(x, y + ySpeed, obj_block_wall) && canCollide {
 
 	var _pixelCheck = _subPixel * sign(ySpeed);
@@ -402,12 +415,19 @@ if place_meeting(x, y + ySpeed, obj_block_wall) && canCollide {
 		y += _pixelCheck;
 	
 	}
-	
-	//Bonk head on ceiling (consider removing?)
-	if ySpeed < 0 jumpHoldTimer = 0;
+	//@
+	//Bonk head on ceiling 
+	if ySpeed < 0 {
+		
+		audio_play_sound(sfx_footstep, 1, 0, 1, 0, 0.5);
+		jumpHoldTimer = 0;
+		
+	}
 	
 	//Set ySpeed to 0 to collide
 	ySpeed = 0;
+	
+	
 
 }
 
@@ -633,7 +653,7 @@ if instance_exists(myFloorPlat) && (myFloorPlat.ySpeed != 0
 	
 }
 
-//@
+
 //Get pushed down through a semi solid platform by a moving solid platform
 if instance_exists(myFloorPlat) 
 && (myFloorPlat.object_index == obj_block_wall_semiSolid || object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid)) 
@@ -765,7 +785,7 @@ if global.cutsceneActive {
 			}
 			
 		} break;
-		//@
+		
 		case CUTSCENE_ID.SPLIT_SCREEN_ACTIVATE: {
 		
 			if onGround && obj_cutsceneSystem.cutsceneState == SPLIT_SCREEN_CUTSCENE_STATE.NONE {

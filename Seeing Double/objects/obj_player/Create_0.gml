@@ -104,7 +104,7 @@ jumpCount = 0;
 jumpHoldTimer = 0;
 
 jumpHoldFrames[0] = 10; //18
-jumpSpeed[0] = -3.15; //-3.15  -6.15
+jumpSpeed[0] = -3.17; //-3.15
 jumpHoldFrames[1] = 10;
 jumpSpeed[1] = -2.85; 
 
