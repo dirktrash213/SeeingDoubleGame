@@ -12,7 +12,7 @@ if bonked && visible {
 		if canSwap {
 		
 			instance_destroy();
-			with instance_create_layer(x,y, "Collision", obj_interactable_onOff_block_off) {
+			with instance_create_layer(x,y, "Instances", obj_interactable_onOff_block_off) {
 			
 				canSwap = false;
 				visible = _visible;
@@ -30,7 +30,7 @@ if bonked && visible {
 		if canSwap {
 		
 			instance_destroy();
-			with instance_create_layer(x,y, "Collision", obj_interactable_onOff_block_on) {
+			with instance_create_layer(x,y, "Instances", obj_interactable_onOff_block_on) {
 			
 				canSwap = false;
 				visible = _visible;

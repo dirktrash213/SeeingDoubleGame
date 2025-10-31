@@ -495,7 +495,7 @@ ds_list_destroy(_list);
 
 if instance_exists(downSlopeSemiSolid) myFloorPlat = downSlopeSemiSolid; //TEMP
 
-//One last check to confirm floor platform is infact below us or if playform has moved away
+//One last check to confirm floor platform is infact below us or if platform has moved away
 if instance_exists(myFloorPlat) && !place_meeting(x, y + movePlatYspeedMax, myFloorPlat) {
 
 	myFloorPlat = noone;
@@ -529,6 +529,29 @@ if instance_exists(myFloorPlat) {
 	//Collide with ground
 	ySpeed = 0;
 	setOnGround(true);
+	
+	if myFloorPlat.object_index == obj_block_wall_semiSolid_moving
+	|| myFloorPlat.object_index == obj_block_wall_moving
+	|| object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid_moving) 
+	|| object_is_ancestor(myFloorPlat.object_index, obj_block_wall_moving) {
+	
+		if myFloorPlat.onRails {
+	
+			with myFloorPlat {
+		
+				if stationary {
+		
+					stationary = false;
+					movingOnRails = true;
+					path_start(railPath, pathSpeed, path_action_reverse, false);
+			
+				}
+		
+			}
+	
+		}
+	
+	}
 	
 }
 
@@ -608,7 +631,6 @@ if !earlyMovePlatXSpeed {
 
 
 //Y snap to moving floor platform
-//if instance_exists(myFloorPlat) && myFloorPlat.ySpeed != 0 {
 if instance_exists(myFloorPlat) && (myFloorPlat.ySpeed != 0
 || myFloorPlat.object_index == obj_block_wall_moving
 || object_is_ancestor(myFloorPlat.object_index, obj_block_wall_moving)
@@ -618,38 +640,12 @@ if instance_exists(myFloorPlat) && (myFloorPlat.ySpeed != 0
 	if !place_meeting(x, myFloorPlat.bbox_top, obj_block_wall) && myFloorPlat.bbox_top >= bbox_bottom-movePlatYspeedMax {
 	
 		y = myFloorPlat.bbox_top; //Unfloor y when on moving platform
+		
+		if myFloorPlat.onRails y += myFloorPlat.ySpeed;
 	
 	}
 	
-	//Going up a solid wall while on a semi solid platform //REDUNDANT
-	//if myFloorPlat.ySpeed < 0 && place_meeting(x, y + myFloorPlat.ySpeed, obj_block_wall) {
-	//
-	//	
-	//	if myFloorPlat.object_index == obj_block_wall_semiSolid || object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid) {
-	//	
-	//		_subPixel = 0.25;
-	//		
-	//		//Get pushed down through semisolid platform
-	//		while place_meeting(x, y + myFloorPlat.ySpeed, obj_block_wall) {
-	//		
-	//			y += _subPixel;
-	//		
-	//		}
-	//		
-	//		//If we got pushed into a solid wall going down, push ourselves back out
-	//		while place_meeting(x, y, obj_block_wall) {
-	//		
-	//			y -= _subPixel;
-	//		
-	//		}
-	//		
-	//		y = round(y);
-	//	
-	//	}
-	//
-	//	setOnGround(false);
-	//
-	//}
+	
 	
 }
 

@@ -1,6 +1,34 @@
 /*
 
-
+//Going up a solid wall while on a semi solid platform //REDUNDANT
+	//if myFloorPlat.ySpeed < 0 && place_meeting(x, y + myFloorPlat.ySpeed, obj_block_wall) {
+	//
+	//	
+	//	if myFloorPlat.object_index == obj_block_wall_semiSolid || object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid) {
+	//	
+	//		_subPixel = 0.25;
+	//		
+	//		//Get pushed down through semisolid platform
+	//		while place_meeting(x, y + myFloorPlat.ySpeed, obj_block_wall) {
+	//		
+	//			y += _subPixel;
+	//		
+	//		}
+	//		
+	//		//If we got pushed into a solid wall going down, push ourselves back out
+	//		while place_meeting(x, y, obj_block_wall) {
+	//		
+	//			y -= _subPixel;
+	//		
+	//		}
+	//		
+	//		y = round(y);
+	//	
+	//	}
+	//
+	//	setOnGround(false);
+	//
+	//}
 
 //effect_create_above(ef_cloud, 100, 100, 1000, c_white);
 	
