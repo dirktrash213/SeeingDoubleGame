@@ -1,5 +1,7 @@
 if onRails {
 
+	path_speed = global.paused? 0 : 1;
+
 	// 1. Calculate the speeds
 	// Speed is the change in position over the last step (one frame).
 	xSpeed = x - previousX;

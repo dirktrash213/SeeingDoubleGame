@@ -24,5 +24,5 @@ cameraLeadingXmax = 40; //How far the camera leads the player
 cameraLeadAdjustSpeedX = 0.75; //How fast the camera moves when leading the player
 
 
-patterCameraOffsetX = 0;
-patterCameraOffsetY = 320;
+patterCameraOffsetX = global.patterOffsetX;
+patterCameraOffsetY = global.patterOffsetY;

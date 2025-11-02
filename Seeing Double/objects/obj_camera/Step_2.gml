@@ -52,10 +52,19 @@ if pitterPlayerIsPresent() {
 		
 	}
 	
-	//Vars that center the camera on player
-	var _x = clamp((obj_player_pitter.x-view_width/_cameraClampValue) + cameraLeadingX, 0, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
-	var _y = clamp(obj_player_pitter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue);
+	if !global.verticalLevel {
 	
+		//Vars that center the camera on player
+		var _x = clamp((obj_player_pitter.x-view_width/_cameraClampValue) + cameraLeadingX, 0, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
+		var _y = clamp(obj_player_pitter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue);
+	
+	} else {
+	
+		//Vars that center the camera on player
+		var _x = clamp((obj_player_pitter.x-view_width/_cameraClampValue) + cameraLeadingX, 0, 240); //Special values for vertical levels
+		var _y = clamp(obj_player_pitter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue);
+	
+	}
 
 	//Camera smoothing
 	
@@ -113,7 +122,7 @@ if pitterPlayerIsPresent() {
 	
 }
 
-
+//@
 if patterPlayerIsPresent() {
 
 	if obj_player_patter.moveDir == 1 {
@@ -130,10 +139,26 @@ if patterPlayerIsPresent() {
 		
 	}
 	
-	//Vars that center the camera on player
-	var _x = clamp(obj_player_patter.x-view_width/_cameraClampValue + cameraLeadingX, 0, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
-	var _y = clamp(obj_player_patter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue);
+	//if global.verticalLevel {
+	//
+	//	_cameraClampValue = 4;
+	//	_cameraRoomBoundValue = 2;
+	//
+	//}
 	
+	if !global.verticalLevel {
+	
+		//Vars that center the camera on player
+		var _x = clamp(obj_player_patter.x-view_width/_cameraClampValue + cameraLeadingX, 0, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
+		var _y = clamp(obj_player_patter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue);
+	
+	} else {
+	
+		var _x = clamp(obj_player_patter.x-view_width/_cameraClampValue + cameraLeadingX, patterCameraOffsetX, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
+		var _y = clamp(obj_player_patter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue*2);
+	
+	}
+
 
 	//Camera smoothing
 	
@@ -153,7 +178,16 @@ if patterPlayerIsPresent() {
 	
 		//camera_set_view_pos(view, lerp(_cur_x, _x, _spd), lerp(_cur_y, _y, _spd));
 		//camera_set_view_pos(VIEW, _x, _y);
-		camera_set_view_pos(VIEW2, _x, patterCameraOffsetY); //TODO: change camera movement type depending on level type? Or find a way to draw bounds for the cameras
+		if !global.verticalLevel {
+			
+			camera_set_view_pos(VIEW2, _x, patterCameraOffsetY); //TODO: change camera movement type depending on level type? Or find a way to draw bounds for the cameras
+		
+		} else {
+		
+			camera_set_view_pos(VIEW2, _x, _y);
+			
+		}
+	
 	
 	}
 	

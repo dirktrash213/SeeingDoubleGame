@@ -93,6 +93,12 @@ function saveGame(){
 	file_text_writeln(_file);
 	file_text_write_real(_file, global.splitScreenActive);
 	file_text_writeln(_file);
+	file_text_write_real(_file, global.volumeMaster);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.volumeSFX);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.volumeBGM);
+	file_text_writeln(_file);
 
 	file_text_write_string(_file, _dataJsonString);
 	file_text_writeln(_file);
@@ -143,6 +149,12 @@ function loadGame(){
 		global.yRespawnPitter = file_text_read_real(_file);
 		file_text_readln(_file);
 		global.splitScreenActive = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.volumeMaster = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.volumeSFX = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.volumeBGM = file_text_read_real(_file);
 		file_text_readln(_file);
 		
 		var _dataJsonString = file_text_read_string(_file);

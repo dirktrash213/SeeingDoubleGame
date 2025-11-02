@@ -2,6 +2,9 @@ room_goto(targetRoom);
 
 //show_debug_message("gf4wegt4yg4")
 
+if switchToVertical global.verticalLevel = true;
+if switchToHorizontal global.verticalLevel = false;
+
 if pitterPlayerIsPresent() {
 
 	if horizontalWarp {
@@ -13,12 +16,18 @@ if pitterPlayerIsPresent() {
 		obj_player_pitter.x = xSpawn;
 		obj_player_pitter.y = ySpawn - _yOffset;
 		
+		//global.patterOffsetX = 0;
+		//global.patterOffsetY = 320;
+		
 	} else {
 	
 		var _xOffset = abs(obj_player_pitter.x - xEnter);
 
 		obj_player_pitter.x = xSpawn + _xOffset;
 		obj_player_pitter.y = ySpawn;
+		
+		//global.patterOffsetX = 528;
+		//global.patterOffsetY = 0;
 	
 	}
 	

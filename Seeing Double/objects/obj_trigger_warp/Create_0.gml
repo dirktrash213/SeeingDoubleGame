@@ -9,3 +9,6 @@ ySpawn = 0;
 //canRespawnPlayer = false;
 
 horizontalWarp = true;
+
+switchToVertical = false;
+switchToHorizontal = false;

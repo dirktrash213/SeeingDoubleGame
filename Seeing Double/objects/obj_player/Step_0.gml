@@ -23,16 +23,29 @@ if object_index == obj_player_patter && global.splitScreenActive {
 
 	if pitterPlayerIsPresent() {
 	
-		x = obj_player_pitter.x;
-		y = obj_player_pitter.y + global.patterOffsetY;
+		if !global.verticalLevel {
+		
+			x = obj_player_pitter.x;
+			y = obj_player_pitter.y + global.patterOffsetY;
+		
+		} else {
+		
+			x = obj_player_pitter.x + global.patterOffsetX;
+			y = obj_player_pitter.y;
+		
+		}
 	
 	}
 
 }
 
+//show_debug_message("Pitter x: " + string(obj_player_pitter.x) + ", Pitter y: " + string(obj_player_pitter.y))
+//show_debug_message("Patter x: " + string(obj_player_patter.x) + ", Patter y: " + string(obj_player_patter.y))
+//show_debug_message("--------------")
+
 if object_index == obj_player_patter && global.splitScreenActive {
 
-	if y < 319 {
+	if y < 319 && !global.verticalLevel {
 		
 		obj_player_patter.image_alpha = 0;
 		obj_player_patter.canCollide = false;
@@ -841,13 +854,22 @@ if global.cutsceneActive {
 
 //Keep patter in sync with pitter (except on moving platforms because it looks weird)
 //if object_index == obj_player_patter && global.splitScreenActive && !instance_exists(myFloorPlat) {
-//if object_index == obj_player_patter && global.splitScreenActive {
-//
-//	if pitterPlayerIsPresent() {
-//	
-//		x = obj_player_pitter.x;
-//		y = obj_player_pitter.y + global.patterOffsetY;
-//	
-//	}
-//
-//}
+if object_index == obj_player_patter && global.splitScreenActive {
+
+	if pitterPlayerIsPresent() {
+	
+		if !global.verticalLevel {
+		
+			x = obj_player_pitter.x;
+			y = obj_player_pitter.y + global.patterOffsetY;
+		
+		} else {
+		
+			x = obj_player_pitter.x + global.patterOffsetX;
+			y = obj_player_pitter.y;
+		
+		}
+	
+	}
+
+}

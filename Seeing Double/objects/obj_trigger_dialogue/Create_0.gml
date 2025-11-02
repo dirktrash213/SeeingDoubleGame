@@ -14,5 +14,5 @@ typist.sound(sfx_mouseChirp, false, 1.5, 1.7);
 
 textDisplayDuration = 240;
 
-//firstTimeViewing = true;
+
 

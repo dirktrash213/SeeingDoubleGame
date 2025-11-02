@@ -40,8 +40,10 @@ global.hasMovedDown = false;
 global.hasMovedLeft = false;
 global.hasMovedRight = false;
 
-global.patterOffsetX = 0;
+global.patterOffsetX = 528; //528
 global.patterOffsetY = 320;
+
+global.verticalLevel = false;
 
 global.cutsceneActive = true;
 //global.currentCutsceneID = CUTSCENE_ID.NONE;
@@ -54,6 +56,5 @@ global.dialogueVariables = {
 
 	talkedToGreenBrother : false,
 	talkedToGreenBrotherTwice : false,
-
 
 }
