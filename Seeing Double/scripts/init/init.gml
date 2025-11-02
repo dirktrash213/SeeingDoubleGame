@@ -49,3 +49,11 @@ global.currentCutsceneID = CUTSCENE_ID.OPENING;
 global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.ON_MENU;
 
 draw_set_font(font_titleMenu);
+
+global.dialogueVariables = {
+
+	talkedToGreenBrother : false,
+	talkedToGreenBrotherTwice : false,
+
+
+}

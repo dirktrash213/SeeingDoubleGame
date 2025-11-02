@@ -65,6 +65,7 @@ function saveRoom() {
 	
 	
 
+
 	struct_set(global.gameData.roomData, room_get_name(room), _dataArray);
 
 

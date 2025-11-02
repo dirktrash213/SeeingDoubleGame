@@ -1,7 +1,7 @@
-targetRoom = rm_forest_treeJumpPuzzle;
+targetRoom = rm_forest_treeBase;
 
-xEnter = 479;
-yEnter = 176;
+xEnter = 2879;
+yEnter = 224;
 
 xSpawn = 1;
-ySpawn = 176;
+ySpawn = 224;
