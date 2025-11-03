@@ -868,22 +868,22 @@ if global.cutsceneActive {
 
 //Keep patter in sync with pitter (except on moving platforms because it looks weird)
 //if object_index == obj_player_patter && global.splitScreenActive && !instance_exists(myFloorPlat) {
-if object_index == obj_player_patter && global.splitScreenActive {
-
-	if pitterPlayerIsPresent() {
-	
-		if !global.verticalLevel {
-		
-			x = obj_player_pitter.x;
-			y = obj_player_pitter.y + global.patterOffsetY;
-		
-		} else {
-		
-			x = obj_player_pitter.x + global.patterOffsetX;
-			y = obj_player_pitter.y;
-		
-		}
-	
-	}
-
-}
+//if object_index == obj_player_patter && global.splitScreenActive {
+//
+//	if pitterPlayerIsPresent() {
+//	
+//		if !global.verticalLevel {
+//		
+//			x = obj_player_pitter.x;
+//			y = obj_player_pitter.y + global.patterOffsetY;
+//		
+//		} else {
+//		
+//			x = obj_player_pitter.x + global.patterOffsetX;
+//			y = obj_player_pitter.y;
+//		
+//		}
+//	
+//	}
+//
+//}
