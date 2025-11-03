@@ -172,6 +172,13 @@ if (moveDown || place_meeting(x, y, obj_block_wall)) && onGround {
 
 }
 
+//Looking up
+if moveUp && onGround {
+
+	lookingUp = true;
+
+}
+
 //Automatic
 //if onGround && place_meeting(x, y, obj_block_wall) {
 //
@@ -197,6 +204,11 @@ if crouching && (!moveDown || !onGround) {
 
 }
 
+if lookingUp && (!moveUp || !onGround) {
+
+	lookingUp = false;
+
+}
 
 
 
@@ -218,6 +230,7 @@ runType = run;
 xSpeed = moveDir * moveSpeed[runType];
 
 if crouching xSpeed = 0;
+if lookingUp xSpeed = 0;
 //if crouching xSpeed = moveDir * crouchMoveSpeed; //UNUSED
 
 
@@ -719,6 +732,7 @@ if xSpeed == 0 sprite_index = idleSprite;
 
 if !onGround sprite_index = jumpSprite;
 
+if lookingUp sprite_index = lookingUpSprite;
 if crouching sprite_index = crouchSprite;
 
 mask_index = maskSprite; //Use this collision mask

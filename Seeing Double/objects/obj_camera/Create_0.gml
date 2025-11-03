@@ -26,3 +26,12 @@ cameraLeadAdjustSpeedX = 0.75; //How fast the camera moves when leading the play
 
 patterCameraOffsetX = global.patterOffsetX;
 patterCameraOffsetY = global.patterOffsetY;
+
+
+
+verticalLevelOffsetY = -100;
+verticalLevelOffsetYMin = -150;
+verticalLevelOffsetYMax = -100;
+//verticalLevelOffsetYMax = 200;
+
+verticalLevelOffsetYUpdateAmount = 2;

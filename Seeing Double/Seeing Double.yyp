@@ -121,6 +121,7 @@
     {"id":{"name":"spr_background_elipses","path":"sprites/spr_background_elipses/spr_background_elipses.yy",},},
     {"id":{"name":"scribble_anim_jitter","path":"scripts/scribble_anim_jitter/scribble_anim_jitter.yy",},},
     {"id":{"name":"obj_pickup_coin_red","path":"objects/obj_pickup_coin_red/obj_pickup_coin_red.yy",},},
+    {"id":{"name":"rm_forest_canopyMiddleFloor","path":"rooms/rm_forest_canopyMiddleFloor/rm_forest_canopyMiddleFloor.yy",},},
     {"id":{"name":"obj_saveSystem","path":"objects/obj_saveSystem/obj_saveSystem.yy",},},
     {"id":{"name":"spr_patter_pause","path":"sprites/spr_patter_pause/spr_patter_pause.yy",},},
     {"id":{"name":"__scribble_tick","path":"scripts/__scribble_tick/__scribble_tick.yy",},},
@@ -606,6 +607,7 @@
     {"roomId":{"name":"rm_forest_switches","path":"rooms/rm_forest_switches/rm_forest_switches.yy",},},
     {"roomId":{"name":"rm_forest_treeBase","path":"rooms/rm_forest_treeBase/rm_forest_treeBase.yy",},},
     {"roomId":{"name":"rm_forest_canopyLowerFloor","path":"rooms/rm_forest_canopyLowerFloor/rm_forest_canopyLowerFloor.yy",},},
+    {"roomId":{"name":"rm_forest_canopyMiddleFloor","path":"rooms/rm_forest_canopyMiddleFloor/rm_forest_canopyMiddleFloor.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

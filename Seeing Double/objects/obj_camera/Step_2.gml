@@ -30,7 +30,7 @@ if global.splitScreenActive {
 
 var _cameraClampValue = 4;
 var _cameraRoomBoundValue = global.splitScreenActive ? 2 : 1;
-
+//@
 if pitterPlayerIsPresent() {
 
 	//if abs(xSpeed) >= moveSpeed[1]
@@ -52,6 +52,24 @@ if pitterPlayerIsPresent() {
 		
 	}
 	
+	if global.verticalLevel {
+	
+		if obj_player_pitter.crouching {
+	
+			verticalLevelOffsetY += verticalLevelOffsetYUpdateAmount;
+			verticalLevelOffsetY = min(verticalLevelOffsetY, verticalLevelOffsetYMax)
+	
+		}
+	
+		if obj_player_pitter.lookingUp {
+	
+			verticalLevelOffsetY -= verticalLevelOffsetYUpdateAmount;
+			verticalLevelOffsetY = max(verticalLevelOffsetY, verticalLevelOffsetYMin)
+	
+		}
+	
+	}
+	
 	if !global.verticalLevel {
 	
 		//Vars that center the camera on player
@@ -62,7 +80,7 @@ if pitterPlayerIsPresent() {
 	
 		//Vars that center the camera on player
 		var _x = clamp((obj_player_pitter.x-view_width/_cameraClampValue) + cameraLeadingX, 0, 240); //Special values for vertical levels
-		var _y = clamp(obj_player_pitter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue);
+		var _y = clamp((obj_player_pitter.y-view_height/_cameraClampValue) + verticalLevelOffsetY, 0, room_height-view_height);
 	
 	}
 
@@ -85,8 +103,15 @@ if pitterPlayerIsPresent() {
 		//camera_set_view_pos(view, lerp(_cur_x, _x, _spd), lerp(_cur_y, _y, _spd));
 		//camera_set_view_pos(VIEW, _x, _y);
 		
+		if !global.verticalLevel {
 		
-		camera_set_view_pos(VIEW, _x, 0); //TODO: change camera movement type depending on level type? Or find a way to draw bounds for the cameras
+			camera_set_view_pos(VIEW, _x, 0); //TODO: change camera movement type depending on level type? Or find a way to draw bounds for the cameras
+	
+		} else {
+		
+			camera_set_view_pos(VIEW, _x, _y);
+			
+		}
 	
 	}
 	
@@ -122,7 +147,7 @@ if pitterPlayerIsPresent() {
 	
 }
 
-//@
+
 if patterPlayerIsPresent() {
 
 	if obj_player_patter.moveDir == 1 {
@@ -155,7 +180,7 @@ if patterPlayerIsPresent() {
 	} else {
 	
 		var _x = clamp(obj_player_patter.x-view_width/_cameraClampValue + cameraLeadingX, patterCameraOffsetX, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
-		var _y = clamp(obj_player_patter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue*2);
+		var _y = clamp((obj_player_patter.y-view_height/_cameraClampValue) + verticalLevelOffsetY, 0, room_height-view_height/_cameraRoomBoundValue*2);
 	
 	}
 

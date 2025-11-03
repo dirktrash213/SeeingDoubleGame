@@ -1,8 +1,8 @@
-targetRoom = rm_forest_switches;
+targetRoom = rm_forest_canopyMiddleFloor;
 
 xEnter = 1;
-yEnter = 224;
+yEnter = 5;
 
-xSpawn = 2879;
-ySpawn = 224;
+xSpawn = 1;
+ySpawn = 1079;
 

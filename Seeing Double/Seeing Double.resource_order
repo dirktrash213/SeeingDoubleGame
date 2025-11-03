@@ -93,6 +93,7 @@
     {"name":"spr_background_elipses","order":25,"path":"sprites/spr_background_elipses/spr_background_elipses.yy",},
     {"name":"scribble_anim_jitter","order":4,"path":"scripts/scribble_anim_jitter/scribble_anim_jitter.yy",},
     {"name":"obj_pickup_coin_red","order":3,"path":"objects/obj_pickup_coin_red/obj_pickup_coin_red.yy",},
+    {"name":"rm_forest_canopyMiddleFloor","order":21,"path":"rooms/rm_forest_canopyMiddleFloor/rm_forest_canopyMiddleFloor.yy",},
     {"name":"obj_saveSystem","order":1,"path":"objects/obj_saveSystem/obj_saveSystem.yy",},
     {"name":"spr_patter_pause","order":27,"path":"sprites/spr_patter_pause/spr_patter_pause.yy",},
     {"name":"__scribble_tick","order":22,"path":"scripts/__scribble_tick/__scribble_tick.yy",},
