@@ -9,6 +9,7 @@ runSprite = spr_patter_run;
 jumpSprite = spr_patter_jump;
 crouchSprite = spr_patter_crouch;
 lookingUpSprite = spr_patter_curious;
+climbingSprite = spr_patter_climb;
 defeatSprite = spr_patter_defeat;
 crushedSprite = spr_patter_splat;
 happySprite = spr_patter_happy;

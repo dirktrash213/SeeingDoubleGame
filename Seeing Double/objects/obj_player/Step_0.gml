@@ -179,6 +179,17 @@ if moveUp && onGround {
 
 }
 
+//@
+if moveUp && place_meeting(x, y, obj_block_ladder) {
+
+	climbing = true;
+	lookingUp = false;
+	jumpCount = 0;
+
+}
+
+if !place_meeting(x,y, obj_block_ladder) climbing = false;
+
 //Automatic
 //if onGround && place_meeting(x, y, obj_block_wall) {
 //
@@ -337,7 +348,7 @@ if coyoteHangTimer > 0 {
 }
 
 //Reset jumping variables
-
+//@
 if onGround {
 
 	jumpCount = 0;
@@ -351,11 +362,17 @@ if onGround {
 
 	//If player is in the air, make sure they can't do an extra jump and remove coyote hang time
 	
-	if jumpCount == 0 && coyoteJumpTimer <= 0 jumpCount = 1;
+	if jumpCount == 0 && coyoteJumpTimer <= 0 {
+		
+		if !climbing jumpCount = 1;
+		
+	}
 	
 	coyoteHangTimer = 0;
 
 }
+
+show_debug_message("jumpCount: " + string(jumpCount))
 
 //Initiate the jump
 
@@ -386,6 +403,12 @@ if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled && (!moveDown || _flo
 	var _pitch = random_range(0.9, 1.1);
 	
 	audio_play_sound(jumpSfx, 1, 0, 1, 0, _pitch);
+	
+	climbing = false;
+	
+	image_speed = 1;
+	
+	//show_debug_message("jumpCount: " + string(jumpCount))
 
 }
 
@@ -396,9 +419,9 @@ if !jump {
 
 }
 
-//Jump based on the timer/holding the button
-if jumpHoldTimer > 0 {
-
+//Jump based on the timer/holding the button (unless player is climbing)
+if jumpHoldTimer > 0 && !climbing {
+	//@
 	//Constantly set ySpeed to be the jumping speed
 	ySpeed = jumpSpeed[jumpCount-1];
 	
@@ -441,7 +464,7 @@ if place_meeting(x, y + ySpeed, obj_block_wall) && canCollide {
 		y += _pixelCheck;
 	
 	}
-	//@
+	
 	//Bonk head on ceiling 
 	if ySpeed < 0 {
 		
@@ -528,8 +551,8 @@ if instance_exists(myFloorPlat) && !place_meeting(x, y + movePlatYspeedMax, myFl
 
 }
 
-//Land on ground platform if there is one
-if instance_exists(myFloorPlat) {
+//Land on ground platform if there is one (except if player is climbing up)
+if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
 
 	//Scoot up
 	_subPixel = 0.5;
@@ -608,6 +631,36 @@ if moveDown && jumpPressed && !global.cutsceneActive {
 
 }
 
+//@
+
+
+
+
+//Climbing
+if climbing {
+	
+	onGround = false;
+
+	ySpeed = 0;
+	
+	var _climbSpeed = run ? climbSpeed[1] : climbSpeed[0];
+	
+	if moveUp ySpeed = -_climbSpeed;
+	if moveDown ySpeed = _climbSpeed;
+	
+	if moveUp || moveDown || moveLeft || moveRight {
+	
+		image_speed = 1;
+	
+	} else {
+	
+		image_speed = 0;
+	
+	}
+
+}
+
+//show_debug_message(image_index)
 
 
 //Move
@@ -724,21 +777,28 @@ if place_meeting(x, y, obj_block_wall) {
 
 //Sprite Control
 
-if abs(xSpeed) > 0 sprite_index = walkSprite;
+if !climbing {
 
-if abs(xSpeed) >= moveSpeed[1] sprite_index = runSprite;
+	if abs(xSpeed) > 0 sprite_index = walkSprite;
+
+	if abs(xSpeed) >= moveSpeed[1] sprite_index = runSprite;
 	
-if xSpeed == 0 sprite_index = idleSprite;
+	if xSpeed == 0 sprite_index = idleSprite;
 
-if !onGround sprite_index = jumpSprite;
+	if !onGround sprite_index = jumpSprite;
 
-if lookingUp sprite_index = lookingUpSprite;
-if crouching sprite_index = crouchSprite;
+	if lookingUp sprite_index = lookingUpSprite;
+	
+	if crouching sprite_index = crouchSprite;
 
-mask_index = maskSprite; //Use this collision mask
-if crouching mask_index = crouchSprite;
+	mask_index = maskSprite; //Use this collision mask
+	if crouching mask_index = crouchSprite;
 
+} else {
 
+	sprite_index = climbingSprite;
+
+}
 
 
 
@@ -862,9 +922,9 @@ if global.cutsceneActive {
 
 }
 
+//show_debug_message("image_speed: " + string(image_speed))
 
-
-
+//image_index = 1;
 
 //Keep patter in sync with pitter (except on moving platforms because it looks weird)
 //if object_index == obj_player_patter && global.splitScreenActive && !instance_exists(myFloorPlat) {

@@ -62,6 +62,7 @@ runSprite = spr_pitter_run;
 jumpSprite = spr_pitter_jump;
 crouchSprite = spr_pitter_crouch;
 lookingUpSprite = spr_pitter_curious;
+climbingSprite = spr_pitter_climb;
 defeatSprite = spr_pitter_defeat;
 crushedSprite = spr_pitter_splat;
 
@@ -88,9 +89,12 @@ runType = 0;
 moveSpeed[0] = 2; //Walk speed
 moveSpeed[1] = 3.5; //Run speed
 
+climbSpeed[0] = 2;
+climbSpeed[1] = 3.5;
+
 crouching = false;
 lookingUp = false;
-
+climbing = false;
 
 
 xSpeed = 0;
@@ -109,6 +113,8 @@ jumpHoldFrames[0] = 10; //18
 jumpSpeed[0] = -3.17; //-3.15
 jumpHoldFrames[1] = 10;
 jumpSpeed[1] = -2.85; 
+
+
 
 onGround = true;
 
