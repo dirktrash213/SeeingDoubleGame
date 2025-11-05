@@ -180,6 +180,7 @@ if moveUp && onGround {
 }
 
 //@
+//if moveUpPressed && place_meeting(x, y, obj_block_ladder) {
 if moveUp && place_meeting(x, y, obj_block_ladder) {
 
 	climbing = true;
@@ -188,7 +189,13 @@ if moveUp && place_meeting(x, y, obj_block_ladder) {
 
 }
 
-if !place_meeting(x,y, obj_block_ladder) climbing = false;
+//if !place_meeting(x,y, obj_block_ladder) {
+//	
+//	climbing = false;
+//	
+//}
+
+
 
 //Automatic
 //if onGround && place_meeting(x, y, obj_block_wall) {
@@ -633,9 +640,6 @@ if moveDown && jumpPressed && !global.cutsceneActive {
 
 //@
 
-
-
-
 //Climbing
 if climbing {
 	
@@ -656,6 +660,18 @@ if climbing {
 	
 		image_speed = 0;
 	
+	}
+	
+	if !place_meeting(x+xSpeed,y, obj_block_ladder) {
+		
+		x -= xSpeed;
+		
+	}
+	
+	if !place_meeting(x,y+ySpeed, obj_block_ladder) {
+		
+		y -= ySpeed;
+		
 	}
 
 }

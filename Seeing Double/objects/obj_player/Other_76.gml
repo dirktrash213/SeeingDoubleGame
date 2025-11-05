@@ -10,6 +10,14 @@ if event_data[? "event_type"] == "sprite event" {
 			
 		} break;
 		
+		case "ladder": {
+			
+			var _pitch = random_range(1.5, 2.5);
+			
+			audio_play_sound(sfx_footstep, 1, 0, 0.35, 0, _pitch);
+			
+		} break;
+		
 	}
 	
 }
