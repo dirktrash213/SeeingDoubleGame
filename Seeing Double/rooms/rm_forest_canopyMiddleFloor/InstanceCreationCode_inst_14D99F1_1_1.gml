@@ -7,4 +7,3 @@ xSpawn = 1;
 ySpawn = 5;
 
 horizontalWarp = false;
-//switchToHorizontal = true;

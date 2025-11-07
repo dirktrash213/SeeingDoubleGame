@@ -379,7 +379,7 @@ if onGround {
 
 }
 
-show_debug_message("jumpCount: " + string(jumpCount))
+//show_debug_message("jumpCount: " + string(jumpCount))
 
 //Initiate the jump
 

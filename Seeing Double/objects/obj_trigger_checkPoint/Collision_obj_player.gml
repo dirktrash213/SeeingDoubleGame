@@ -15,6 +15,9 @@ if pitterPlayerIsPresent() {
 		global.yRespawnPitter = y;
 		global.roomToSpawnIn = room_get_name(room);
 		
+		//show_debug_message("global.xRespawnPitter: " + string(global.xRespawnPitter))
+		//show_debug_message("global.yRespawnPitter: " + string(global.yRespawnPitter))
+		
 		if global.splitScreenActive {
 		
 			var _patterRespawnPoint = instance_nearest(x, y, obj_trigger_patterRespawn);

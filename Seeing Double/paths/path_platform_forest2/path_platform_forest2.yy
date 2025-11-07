@@ -1,0 +1,27 @@
+{
+  "resourceType": "GMPath",
+  "resourceVersion": "1.0",
+  "name": "path_platform_forest2",
+  "closed": false,
+  "kind": 1,
+  "parent": {
+    "name": "Paths",
+    "path": "folders/Paths.yy",
+  },
+  "points": [
+    {"speed":100.0,"x":0.0,"y":0.0,},
+    {"speed":100.0,"x":160.0,"y":0.0,},
+    {"speed":100.0,"x":160.0,"y":96.0,},
+    {"speed":100.0,"x":0.0,"y":96.0,},
+    {"speed":100.0,"x":0.0,"y":192.0,},
+    {"speed":100.0,"x":160.0,"y":192.0,},
+    {"speed":100.0,"x":320.0,"y":192.0,},
+    {"speed":100.0,"x":544.0,"y":192.0,},
+    {"speed":100.0,"x":704.0,"y":192.0,},
+    {"speed":100.0,"x":704.0,"y":96.0,},
+    {"speed":100.0,"x":544.0,"y":96.0,},
+    {"speed":100.0,"x":544.0,"y":0.0,},
+    {"speed":100.0,"x":704.0,"y":0.0,},
+  ],
+  "precision": 4,
+}
