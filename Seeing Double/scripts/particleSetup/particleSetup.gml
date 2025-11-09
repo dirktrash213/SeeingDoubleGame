@@ -14,6 +14,9 @@ function particleSetup() {
 	global.particleWherePatter = part_type_create();
 	global.particleCallForPatter = part_type_create();
 	global.particleWhereCherries = part_type_create();
+	
+	global.particleCoinSparkle = part_type_create();
+	global.particleCoinSparkleRed = part_type_create();
 
 	var _heartDirMin = 60;
 	var _heartDirMax = 120;
@@ -49,6 +52,33 @@ function particleSetup() {
 	part_type_speed(global.particleCallForPatter, 1, 1, 0, 0);
 	part_type_direction(global.particleCallForPatter, 80, 100, 0, 0);
 	part_type_life(global.particleCallForPatter, 300, 300);
+	
+	var _coinSparkleSpeedMin = 2;
+	var _coinSparkleSpeedMax = 3;
+	var _coinSparkleDirMin = 60; //60
+	var _coinSparkledirMax = 120; //120
+	var _coinSparkleGrav = 0.1;
+	var _coinSparkleLifeMin = 10;
+	var _coinSparkleLifeMax = 30;
+	
+	part_type_sprite(global.particleCoinSparkle, spr_particle_coinSparkle, 0, 0, 0);
+	part_type_speed(global.particleCoinSparkle, _coinSparkleSpeedMin, _coinSparkleSpeedMax, 0, 0);
+	part_type_direction(global.particleCoinSparkle, _coinSparkleDirMin, _coinSparkledirMax, 0, 0);
+	part_type_gravity(global.particleCoinSparkle, _coinSparkleGrav, 270);
+	part_type_alpha2(global.particleCoinSparkle, 1, 0);
+	part_type_life(global.particleCoinSparkle, _coinSparkleLifeMin, _coinSparkleLifeMax);
+	
+	part_type_sprite(global.particleCoinSparkleRed, spr_particle_coinSparkleRed, 0, 0, 0);
+	part_type_speed(global.particleCoinSparkleRed, _coinSparkleSpeedMin, _coinSparkleSpeedMax, 0, 0);
+	part_type_direction(global.particleCoinSparkleRed, _coinSparkleDirMin, _coinSparkledirMax, 0, 0);
+	part_type_gravity(global.particleCoinSparkleRed, _coinSparkleGrav, 270);
+	part_type_alpha2(global.particleCoinSparkleRed, 1, 0);
+	part_type_life(global.particleCoinSparkleRed, _coinSparkleLifeMin, _coinSparkleLifeMax);
+	
+	
+	
+	
+	
 	
 }
 

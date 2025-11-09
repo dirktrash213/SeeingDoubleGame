@@ -1,0 +1,34 @@
+event_inherited();
+
+xSpeed = moveDir == WALKING_DIRECTION.LEFT ? -walkSpeed : walkSpeed;
+
+//X collision
+
+//How close can we get to a wall
+var _subPixel = 0.5;
+
+if place_meeting(x + xSpeed, y, obj_block_wall) {
+
+	//Collide
+	//xSpeed = 0;
+	moveDir = moveDir == WALKING_DIRECTION.LEFT ? WALKING_DIRECTION.RIGHT : WALKING_DIRECTION.LEFT;
+
+}
+
+//Move
+x += xSpeed;
+
+
+
+//Sprite control
+if moveDir != WALKING_DIRECTION.NONE {
+	
+	sprite_index = walkSprite;
+	
+} else {
+
+	sprite_index = idleSprite;
+
+}
+
+if defeated sprite_index = defeatSprite;

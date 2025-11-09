@@ -1,4 +1,5 @@
 room_goto(targetRoom);
+part_system_clear(global.particleSystemDevice);
 
 //show_debug_message("gf4wegt4yg4")
 

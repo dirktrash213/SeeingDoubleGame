@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Interactables",
-    "path": "folders/Sprites/Interactables.yy",
+    "name": "Pickups",
+    "path": "folders/Sprites/Pickups.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
