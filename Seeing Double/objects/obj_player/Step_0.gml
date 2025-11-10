@@ -480,7 +480,7 @@ if collidingEnemy {
 
 		if ySpeed > 0 && !climbing {
 	
-			audio_play_sound(sfx_footstep, 1, 0, 1, 0, 0.5);
+			audio_play_sound(sfx_slice, 1, 0, 1, 0, 1.5);
 	
 			collidingEnemy.defeated = true;
 			setOnGround(false);

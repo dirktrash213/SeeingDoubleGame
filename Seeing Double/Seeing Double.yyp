@@ -139,6 +139,7 @@
     {"id":{"name":"rm_titleScreen","path":"rooms/rm_titleScreen/rm_titleScreen.yy",},},
     {"id":{"name":"spr_npc_greenFella","path":"sprites/spr_npc_greenFella/spr_npc_greenFella.yy",},},
     {"id":{"name":"spr_particle_wherePatter","path":"sprites/spr_particle_wherePatter/spr_particle_wherePatter.yy",},},
+    {"id":{"name":"rm_forest_canopyUpperFloor_enemyBasics","path":"rooms/rm_forest_canopyUpperFloor_enemyBasics/rm_forest_canopyUpperFloor_enemyBasics.yy",},},
     {"id":{"name":"spr_background_arrow_down","path":"sprites/spr_background_arrow_down/spr_background_arrow_down.yy",},},
     {"id":{"name":"__scribble_gen_1_model_limits_and_bezier_curves","path":"scripts/__scribble_gen_1_model_limits_and_bezier_curves/__scribble_gen_1_model_limits_and_bezier_curves.yy",},},
     {"id":{"name":"spr_platform_forest_tiny","path":"sprites/spr_platform_forest_tiny/spr_platform_forest_tiny.yy",},},
@@ -381,6 +382,7 @@
     {"id":{"name":"path_platform_forest","path":"paths/path_platform_forest/path_platform_forest.yy",},},
     {"id":{"name":"spr_block_spawner_dialogue","path":"sprites/spr_block_spawner_dialogue/spr_block_spawner_dialogue.yy",},},
     {"id":{"name":"__scribble_glyph_data_initialize","path":"scripts/__scribble_glyph_data_initialize/__scribble_glyph_data_initialize.yy",},},
+    {"id":{"name":"spr_enemy_doppleganger","path":"sprites/spr_enemy_doppleganger/spr_enemy_doppleganger.yy",},},
     {"id":{"name":"spr_icon_camera2","path":"sprites/spr_icon_camera2/spr_icon_camera2.yy",},},
     {"id":{"name":"spr_patter_begPlayer","path":"sprites/spr_patter_begPlayer/spr_patter_begPlayer.yy",},},
     {"id":{"name":"spr_interactable_ladder_steel_top","path":"sprites/spr_interactable_ladder_steel_top/spr_interactable_ladder_steel_top.yy",},},
@@ -635,6 +637,7 @@
     {"roomId":{"name":"rm_forest_canopyMiddleFloor","path":"rooms/rm_forest_canopyMiddleFloor/rm_forest_canopyMiddleFloor.yy",},},
     {"roomId":{"name":"rm_forest_canopyUpperFloor","path":"rooms/rm_forest_canopyUpperFloor/rm_forest_canopyUpperFloor.yy",},},
     {"roomId":{"name":"rm_forest_canopyUpperFloor_enemy","path":"rooms/rm_forest_canopyUpperFloor_enemy/rm_forest_canopyUpperFloor_enemy.yy",},},
+    {"roomId":{"name":"rm_forest_canopyUpperFloor_enemyBasics","path":"rooms/rm_forest_canopyUpperFloor_enemyBasics/rm_forest_canopyUpperFloor_enemyBasics.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [
