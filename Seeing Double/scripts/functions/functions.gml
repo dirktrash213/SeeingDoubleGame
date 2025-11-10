@@ -286,6 +286,7 @@ function spawnPitter() {
 	obj_player_pitter.y = global.yRespawnPitter - _offsetY;
 	
 	obj_player_pitter.crushed = false;
+	obj_player_pitter.enemyKilledPlayer = false;
 
 }
 
@@ -297,6 +298,9 @@ function spawnPatter() {
 
 	obj_player_patter.x = global.xRespawnPatter;
 	obj_player_patter.y = global.yRespawnPatter - _offsetY;
+	
+	obj_player_patter.crushed = false;
+	obj_player_patter.enemyKilledPlayer = false;
 
 }
 
@@ -340,6 +344,8 @@ function playerDefeated() {
 	obj_control.alarm[0] = global.playerRespawnTime; 
 
 	other.sprite_index = other.defeatSprite;
+	
+	//other.enemyKilledPlayer = false;
 
 	if other.object_index == obj_player_pitter {
 

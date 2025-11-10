@@ -179,7 +179,7 @@ if moveUp && onGround {
 
 }
 
-//@
+
 //if moveUpPressed && place_meeting(x, y, obj_block_ladder) {
 if moveUp && place_meeting(x, y, obj_block_ladder) {
 
@@ -303,6 +303,26 @@ if place_meeting(x + xSpeed, y, obj_block_wall) {
 
 }
 
+//@
+//Collide with enemy on side
+
+var collidingEnemy = instance_place(x + xSpeed, y, obj_enemy) 
+
+if collidingEnemy {
+
+	if !collidingEnemy.defeated {
+		
+		//show_debug_message("player defeated x collision")
+		//if instance_place(x, y + ySpeed, obj_enemy) != collidingEnemy playerDefeated();
+		enemyKilledPlayer = true;
+		
+	}
+
+}
+
+
+
+
 
 //Going down slopes
 
@@ -355,7 +375,7 @@ if coyoteHangTimer > 0 {
 }
 
 //Reset jumping variables
-//@
+
 if onGround {
 
 	jumpCount = 0;
@@ -428,7 +448,7 @@ if !jump {
 
 //Jump based on the timer/holding the button (unless player is climbing)
 if jumpHoldTimer > 0 && !climbing {
-	//@
+	
 	//Constantly set ySpeed to be the jumping speed
 	ySpeed = jumpSpeed[jumpCount-1];
 	
@@ -448,6 +468,38 @@ if ySpeed > termVelocity ySpeed = termVelocity;
 #region Old Y Collision Code
 
 _subPixel = 0.5;
+
+
+//@
+//Check if stomped on enemy
+collidingEnemy = instance_place(x, y + ySpeed, obj_enemy) 
+
+if collidingEnemy {
+
+	if !collidingEnemy.defeated {
+
+		if ySpeed > 0 && !climbing {
+	
+			audio_play_sound(sfx_footstep, 1, 0, 1, 0, 0.5);
+	
+			collidingEnemy.defeated = true;
+			setOnGround(false);
+			ySpeed = jump ? jumpOffEnemySpeed[1] : jumpOffEnemySpeed[0];
+			enemyKilledPlayer = false;
+	
+		} else {
+
+			//show_debug_message("player defeated y collision")
+			enemyKilledPlayer = true;
+			//playerDefeated();
+	
+		}
+	
+	}
+
+}
+
+if enemyKilledPlayer playerDefeated();
 
 //Check if bonked a switch block
 if place_meeting(x, y + ySpeed, obj_interactable_switch_block) && ySpeed < 0 {
@@ -638,7 +690,7 @@ if moveDown && jumpPressed && !global.cutsceneActive {
 
 }
 
-//@
+
 
 //Climbing
 if climbing {

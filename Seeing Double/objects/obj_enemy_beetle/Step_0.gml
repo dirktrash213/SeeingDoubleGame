@@ -1,5 +1,14 @@
 event_inherited();
 
+if global.paused {
+
+	x = x;
+	y = y;
+	
+	exit;
+
+}
+
 xSpeed = moveDir == WALKING_DIRECTION.LEFT ? -walkSpeed : walkSpeed;
 
 //X collision
@@ -14,6 +23,8 @@ if place_meeting(x + xSpeed, y, obj_block_wall) {
 	moveDir = moveDir == WALKING_DIRECTION.LEFT ? WALKING_DIRECTION.RIGHT : WALKING_DIRECTION.LEFT;
 
 }
+
+if defeated xSpeed = 0;
 
 //Move
 x += xSpeed;

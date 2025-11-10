@@ -1,6 +1,8 @@
 //if global.playerDefeated || global.paused {
 if global.paused {
 
+	if alarm[0] != -1 alarm[0]++;
+
 	x = x;
 	y = y;
 	
@@ -8,6 +10,12 @@ if global.paused {
 
 }
 
+if defeated && !beingRemoved {
+
+	beingRemoved = true;
+	alarm[0] = removeDuration;
+
+}
 
 //Apply gravity
 ySpeed += grav;

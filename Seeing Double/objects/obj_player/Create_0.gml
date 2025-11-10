@@ -114,6 +114,9 @@ jumpSpeed[0] = -3.17; //-3.15
 jumpHoldFrames[1] = 10;
 jumpSpeed[1] = -2.85; 
 
+enemyKilledPlayer = false;
+jumpOffEnemySpeed[0] = -5.34;
+jumpOffEnemySpeed[1] = -8;
 
 
 onGround = true;

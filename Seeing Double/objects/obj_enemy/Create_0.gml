@@ -32,3 +32,6 @@ climbing = false;
 spikey = false;
 
 defeated = false;
+
+beingRemoved = false;
+removeDuration = 120;

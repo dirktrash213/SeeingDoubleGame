@@ -14,3 +14,4 @@ idleSprite = spr_enemy_skullBeetle_idle;
 walkSprite = spr_enemy_skullBeetle_walk;
 jumpSprite = spr_enemy_skullBeetle_jump;
 defeatSprite = spr_enemy_skullBeetle_defeat;
+
