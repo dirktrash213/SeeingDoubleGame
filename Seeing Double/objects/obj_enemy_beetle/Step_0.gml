@@ -1,6 +1,6 @@
 event_inherited();
 
-if global.paused {
+if global.paused || !active {
 
 	x = x;
 	y = y;

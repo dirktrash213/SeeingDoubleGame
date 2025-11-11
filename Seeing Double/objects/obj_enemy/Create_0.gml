@@ -35,3 +35,6 @@ defeated = false;
 
 beingRemoved = false;
 removeDuration = 120;
+active = false;
+
+detectionRadius = 200;

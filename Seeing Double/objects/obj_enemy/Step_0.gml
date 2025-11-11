@@ -1,5 +1,17 @@
-//if global.playerDefeated || global.paused {
-if global.paused {
+if pitterPlayerIsPresent() && !active {
+
+	var _distance = point_distance(x, y, obj_player_pitter.x, obj_player_pitter.y);
+
+	if (_distance <= detectionRadius) {
+    
+	    active = true;
+		show_debug_message("enemy is now active")
+		
+	} 
+
+}
+
+if global.paused || !active {
 
 	if alarm[0] != -1 alarm[0]++;
 
@@ -9,6 +21,9 @@ if global.paused {
 	exit;
 
 }
+
+
+
 
 if defeated && !beingRemoved {
 
