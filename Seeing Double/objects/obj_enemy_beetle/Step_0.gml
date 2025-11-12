@@ -24,6 +24,14 @@ if place_meeting(x + xSpeed, y, obj_block_wall) {
 
 }
 
+var _mult = 20;
+
+if !fallOffLedges && (!place_meeting(x + xSpeed*_mult, y+1, obj_block_wall) && !place_meeting(x + xSpeed*_mult, y+1, obj_block_wall_semiSolid)) {
+
+	moveDir = moveDir == WALKING_DIRECTION.LEFT ? WALKING_DIRECTION.RIGHT : WALKING_DIRECTION.LEFT;
+
+}
+
 if defeated xSpeed = 0;
 
 //Move

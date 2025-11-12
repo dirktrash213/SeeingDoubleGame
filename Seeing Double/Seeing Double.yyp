@@ -396,6 +396,7 @@
     {"id":{"name":"scribble_font_bake_outline_8dir","path":"scripts/scribble_font_bake_outline_8dir/scribble_font_bake_outline_8dir.yy",},},
     {"id":{"name":"__scribble_parse_sound_array_string","path":"scripts/__scribble_parse_sound_array_string/__scribble_parse_sound_array_string.yy",},},
     {"id":{"name":"rm_hills_secretCave","path":"rooms/rm_hills_secretCave/rm_hills_secretCave.yy",},},
+    {"id":{"name":"rm_forest_canopyUpperFloor_enemyLedges","path":"rooms/rm_forest_canopyUpperFloor_enemyLedges/rm_forest_canopyUpperFloor_enemyLedges.yy",},},
     {"id":{"name":"string_width_scribble_ext","path":"scripts/string_width_scribble_ext/string_width_scribble_ext.yy",},},
     {"id":{"name":"spr_patter_defeat_x4","path":"sprites/spr_patter_defeat_x4/spr_patter_defeat_x4.yy",},},
     {"id":{"name":"scribble_default_preprocessor_get","path":"scripts/scribble_default_preprocessor_get/scribble_default_preprocessor_get.yy",},},
@@ -638,6 +639,7 @@
     {"roomId":{"name":"rm_forest_canopyUpperFloor","path":"rooms/rm_forest_canopyUpperFloor/rm_forest_canopyUpperFloor.yy",},},
     {"roomId":{"name":"rm_forest_canopyUpperFloor_enemy","path":"rooms/rm_forest_canopyUpperFloor_enemy/rm_forest_canopyUpperFloor_enemy.yy",},},
     {"roomId":{"name":"rm_forest_canopyUpperFloor_enemyBasics","path":"rooms/rm_forest_canopyUpperFloor_enemyBasics/rm_forest_canopyUpperFloor_enemyBasics.yy",},},
+    {"roomId":{"name":"rm_forest_canopyUpperFloor_enemyLedges","path":"rooms/rm_forest_canopyUpperFloor_enemyLedges/rm_forest_canopyUpperFloor_enemyLedges.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

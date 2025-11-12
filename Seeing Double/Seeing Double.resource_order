@@ -340,6 +340,7 @@
     {"name":"scribble_font_bake_outline_8dir","order":1,"path":"scripts/scribble_font_bake_outline_8dir/scribble_font_bake_outline_8dir.yy",},
     {"name":"__scribble_parse_sound_array_string","order":14,"path":"scripts/__scribble_parse_sound_array_string/__scribble_parse_sound_array_string.yy",},
     {"name":"rm_hills_secretCave","order":4,"path":"rooms/rm_hills_secretCave/rm_hills_secretCave.yy",},
+    {"name":"rm_forest_canopyUpperFloor_enemyLedges","order":25,"path":"rooms/rm_forest_canopyUpperFloor_enemyLedges/rm_forest_canopyUpperFloor_enemyLedges.yy",},
     {"name":"string_width_scribble_ext","order":6,"path":"scripts/string_width_scribble_ext/string_width_scribble_ext.yy",},
     {"name":"spr_patter_defeat_x4","order":46,"path":"sprites/spr_patter_defeat_x4/spr_patter_defeat_x4.yy",},
     {"name":"scribble_default_preprocessor_get","order":1,"path":"scripts/scribble_default_preprocessor_get/scribble_default_preprocessor_get.yy",},
