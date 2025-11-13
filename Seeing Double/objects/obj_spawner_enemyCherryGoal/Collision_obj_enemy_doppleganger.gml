@@ -1,0 +1,13 @@
+instance_create_layer(x,y,"Instances", obj_pickup_cherry);
+
+audio_play_sound(sfx_pause, 1, 0, 1, 0, 2.0);
+
+instance_destroy(instance_nearest(x,y,obj_enemy));
+instance_destroy();
+
+
+
+
+
+
+
