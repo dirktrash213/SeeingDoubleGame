@@ -5,7 +5,7 @@ if pitterPlayerIsPresent() && !active {
 	if (_distance <= detectionRadius) {
     
 	    active = true;
-		show_debug_message("enemy is now active")
+		//show_debug_message("enemy is now active")
 		
 	} 
 

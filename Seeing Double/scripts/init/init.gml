@@ -56,5 +56,10 @@ global.dialogueVariables = {
 
 	talkedToGreenBrother : false,
 	talkedToGreenBrotherTwice : false,
+	talkedToScammer : false,
+	talkedToScammerTwice : false,
+	talkedToScammerThrice : false,
+	boughtParachuteFromScammer : false,
+	jumpedOverParachute : false,
 
 }

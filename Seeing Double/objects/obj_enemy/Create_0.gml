@@ -37,4 +37,4 @@ beingRemoved = false;
 removeDuration = 120;
 active = false;
 
-detectionRadius = 200;
+detectionRadius = 300;

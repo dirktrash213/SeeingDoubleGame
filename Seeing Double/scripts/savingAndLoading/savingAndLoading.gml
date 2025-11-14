@@ -63,6 +63,21 @@ function saveRoom() {
 
 	}
 	
+	with obj_spawner_enemyCherryGoal {
+	
+		var _dataStruct = {
+		
+			objectName: object_get_name(object_index),
+			x: x,
+			y: y,
+			image_index: image_index,
+		
+		}
+		
+		array_push(_dataArray, _dataStruct);
+
+	}
+	
 	
 
 
@@ -116,6 +131,7 @@ function loadRoom(){
 
 	if _dataArray != undefined {
 	
+		instance_destroy(obj_spawner_enemyCherryGoal);
 		instance_destroy(obj_spawner_cherry);
 		instance_destroy(obj_pickup_cherry);
 		instance_destroy(obj_pickup_coin);
