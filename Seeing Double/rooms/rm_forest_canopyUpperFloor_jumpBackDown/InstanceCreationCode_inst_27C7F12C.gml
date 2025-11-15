@@ -1,0 +1,1 @@
+if global.dialogueVariables.boughtParachuteFromScammer instance_destroy();

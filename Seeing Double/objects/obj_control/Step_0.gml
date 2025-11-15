@@ -392,6 +392,14 @@ gamepad_button_check_pressed(global.controllerPort,gp_start) {
 
 #endregion
 
+if audio_is_playing(sfx_purchase_scammed) {
+
+	audio_sound_pitch(sfx_purchase_scammed, scammedSFXpitch)
+	
+	scammedSFXpitch -= scammedSFXpitchDecreaseAmount;
+
+}
+
 if global.readytoDisplayTitleScreenMenu {
 	
 	titleScreenIntro();

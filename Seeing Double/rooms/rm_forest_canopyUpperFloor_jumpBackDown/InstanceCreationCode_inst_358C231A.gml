@@ -1,3 +1,5 @@
+if global.gotScammed instance_destroy();
+
 wrapAmount = 125;
 
 if !global.dialogueVariables.talkedToScammer {
@@ -15,7 +17,9 @@ dialogueString[5] = "How about it? 100 [spr_interactable_coin]coins and this pie
 
 		dialogueString[0] = "C'mon, guy. You can totally trust me!"
 		dialogueString[1] = "You really think someone would do that? Just go out there and sell people junk?"
-		dialogueString[2] = "C'mon! 100 [spr_interactable_coin]coins is a bargain and a half!"
+		dialogueString[2] = "But hey guy. It's your loss. This baby's my top seller, so don't come back cryin' if you snooze and lose."
+	//	dialogueString[2] = "C'mon! This here parachute is state of the art! One of a kind! 100 [spr_interactable_coin]coins is a bargain and a half!"
+	//	dialogueString[2] = "C'mon! 100 [spr_interactable_coin]coins is a bargain and a half!"
 		//dialogueString[2] = "C'mon! 100 [spr_interactable_coin]coins? It's practically a steal!"
 	
 	} else {
@@ -23,7 +27,7 @@ dialogueString[5] = "How about it? 100 [spr_interactable_coin]coins and this pie
 		if !global.dialogueVariables.talkedToScammerThrice {
 	
 			dialogueString[0] = "Alright, alright I get it. Too pricey, eh?"
-			dialogueString[1] = "You're really twistin' my arm here, guy, you know that?"
+			dialogueString[1] = "Sheesh. You're really twistin' my ears here, guy, you know that?"
 			//dialogueString[2] = "Smart and savvy. Can't help but respect that."
 			//dialogueString[2] = "Ok, since you're a smart and savvy conessiuer"
 			dialogueString[2] = "Can't help but respect the hustle, though. You've got some real grit. Panache. Moxie. I like it."

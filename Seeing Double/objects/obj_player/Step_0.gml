@@ -502,13 +502,44 @@ if collidingEnemy {
 if enemyKilledPlayer playerDefeated();
 
 //Check if bonked a switch block
-if place_meeting(x, y + ySpeed, obj_interactable_switch_block) && ySpeed < 0 {
+if place_meeting(x, y + ySpeed, obj_interactable_switch_block_parent) && ySpeed < 0 {
 
-	audio_play_sound(sfx_pause, 1, 0, 1, 0, 2.0);
+	with instance_nearest(x,y,obj_interactable_switch_block_parent) {
 	
-	with instance_nearest(x,y,obj_interactable_switch_block) {
+		if object_index == obj_interactable_switch_block_shop {
+		
+			if !itemBought {
+			
+				if global.coinCount >= itemPrice {
+			
+					itemBought = true;
+					global.coinCount -= itemPrice;
+					bonked = true;
+					
+					if instance_exists(obj_shopItem_parachute) {
+						
+						audio_play_sound(sfx_purchase_scammed, 1, 0, 3, 0, 0.3);
+						
+					} else {
+					
+						audio_play_sound(sfx_collect_coin, 1, 0, 3, 0, 0.5);
+						
+					}
+						
+				} else {
+				
+					audio_play_sound(sfx_mouseChirp, 1, 0, 1, 0, 1.0);
+				
+				}
+			
+			}
+		
+		} else {
 	
-		bonked = true;
+			bonked = true;
+			audio_play_sound(sfx_pause, 1, 0, 1, 0, 2.0);
+		
+		}
 	
 	}
 

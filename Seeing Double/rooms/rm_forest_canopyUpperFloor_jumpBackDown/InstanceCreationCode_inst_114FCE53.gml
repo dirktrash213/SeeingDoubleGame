@@ -1,0 +1,1 @@
+if global.gotScammed instance_destroy();

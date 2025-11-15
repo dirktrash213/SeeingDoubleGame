@@ -32,3 +32,6 @@ dividerYscaleIncreaseAmount = 2;
 
 audio_group_load(audiogroup_bgm);
 audio_group_load(audiogroup_sfx);
+
+scammedSFXpitch = 1.0; //0.3
+scammedSFXpitchDecreaseAmount = 0.001;

@@ -12,7 +12,18 @@ if count == _l-1 {
 	
 	if room == rm_forest_canopyUpperFloor_jumpBackDown {
 		
-		if global.dialogueVariables.talkedToScammerTwice global.dialogueVariables.talkedToScammerThrice = true;
+		if global.dialogueVariables.talkedToScammerTwice {
+			
+			global.dialogueVariables.talkedToScammerThrice = true;
+			
+			with obj_interactable_switch_block_shop {
+				
+				itemPrice = 99;
+				itemPriceText = "99[spr_interactable_coin]";
+				
+			}
+			
+		}
 		
 		if global.dialogueVariables.talkedToScammer global.dialogueVariables.talkedToScammerTwice = true;
 		
@@ -23,6 +34,8 @@ if count == _l-1 {
 	exit;
 	
 }
+
+
 
 count++;
 
