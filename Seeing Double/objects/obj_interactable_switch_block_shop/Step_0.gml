@@ -22,6 +22,9 @@ if bonked && visible {
 		//show_debug_message("scammed!")
 		
 		global.dialogueVariables.boughtParachuteFromScammer = true;
+		
+		if pitterPlayerIsPresent() obj_player_pitter.wearingParachute = true;
+		
 		//global.gotScammed = true;
 		
 	}

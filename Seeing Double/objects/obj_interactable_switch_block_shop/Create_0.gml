@@ -12,7 +12,7 @@ typist.sound(sfx_footstep, false, 1.5, 1.7);
 wrapAmount = 75;
 
 itemName = "Item for sale";
-itemPrice = 100; 
+itemPrice = 1; 
 itemPriceText = string(itemPrice)+"[spr_interactable_coin]";
 
 

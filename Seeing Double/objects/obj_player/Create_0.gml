@@ -80,6 +80,8 @@ canCollide = true;
 
 slopeChecksEnabled = false;
 
+wearingParachute = false;
+wearingBrokenParachute = false;
 
 //Moving
 
