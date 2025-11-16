@@ -31,6 +31,14 @@ if count == _l-1 {
 		
 	}
 	
+	if room == rm_forest_spotTheDifference { 
+		
+		if global.dialogueVariables.talkedToExplorer global.dialogueVariables.talkedToExplorerTwice = true;
+		
+		global.dialogueVariables.talkedToExplorer = true;
+		
+	}
+	
 	exit;
 	
 }
