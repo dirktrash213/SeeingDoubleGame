@@ -1,3 +1,5 @@
+if global.dialogueVariables.solvedForestPuzzle instance_destroy();
+
 wrapAmount = 125;
 
 if !global.dialogueVariables.talkedToExplorer {
@@ -16,7 +18,8 @@ if !global.dialogueVariables.talkedToExplorer {
 	
 	} else {
 	
-		dialogueString[0] = "Hmmmm... now that I think of it, that tree back there seemed a little... off.";
+		//dialogueString[0] = "Hmmmm... now that I think of it, that tree back there seemed a little... off.";
+		dialogueString[0] = "Hmmmm... now that I think of it, one of those pillars back there seemed a little... off.";
 	
 	}
 	

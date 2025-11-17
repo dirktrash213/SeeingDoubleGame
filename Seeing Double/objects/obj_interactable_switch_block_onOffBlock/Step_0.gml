@@ -1,5 +1,9 @@
-if bonked && visible {
+if bonked && (visible || secret) {
 
+	if room == rm_forest_spotTheDifference global.dialogueVariables.solvedForestPuzzle = true;
+
+	visible = true;
+	
 	bonked = false;
 	
 	gravity = 0.5;
