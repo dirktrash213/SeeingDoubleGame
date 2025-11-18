@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Walls and Platforms",
-    "path": "folders/Objects/Walls and Platforms.yy",
+    "name": "Moving Platforms",
+    "path": "folders/Objects/Walls and Platforms/Moving Platforms.yy",
   },
   "parentObjectId": {
     "name": "obj_block_wall_semiSolid",

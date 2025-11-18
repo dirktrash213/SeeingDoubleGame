@@ -80,6 +80,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UI","folderPath":"folders/Sprites/UI.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Moving Platforms","folderPath":"folders/Objects/Walls and Platforms/Moving Platforms.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"scribble_license.txt","CopyToMask":-1,"filePath":"datafiles",},
@@ -522,6 +523,7 @@
     {"id":{"name":"spr_background_picnicBasket","path":"sprites/spr_background_picnicBasket/spr_background_picnicBasket.yy",},},
     {"id":{"name":"spr_Door_strip","path":"sprites/spr_Door_strip/spr_Door_strip.yy",},},
     {"id":{"name":"spr_interactable_cherry_test","path":"sprites/spr_interactable_cherry_test/spr_interactable_cherry_test.yy",},},
+    {"id":{"name":"path_platform_forest3","path":"paths/path_platform_forest3/path_platform_forest3.yy",},},
     {"id":{"name":"spr_background_parallax_forest_long","path":"sprites/spr_background_parallax_forest_long/spr_background_parallax_forest_long.yy",},},
     {"id":{"name":"scribble_typists_add_event","path":"scripts/scribble_typists_add_event/scribble_typists_add_event.yy",},},
     {"id":{"name":"scribble_anim_disabled","path":"scripts/scribble_anim_disabled/scribble_anim_disabled.yy",},},
