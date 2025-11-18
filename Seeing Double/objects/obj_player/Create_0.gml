@@ -120,6 +120,7 @@ enemyKilledPlayer = false;
 jumpOffEnemySpeed[0] = -5.34;
 jumpOffEnemySpeed[1] = -8;
 
+gemPowerupDoubleJump = false;
 
 onGround = true;
 

@@ -13,8 +13,8 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9475856b-cac9-494e-9d0b-5162725e9d4c",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ef29cf34-5701-461e-a312-fc3ee38b0e4f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9475856b-cac9-494e-9d0b-5162725e9d4c",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9475856b-cac9-494e-9d0b-5162725e9d4c","path":"sprites/spr_interactable_gem/spr_interactable_gem.yy",},},},"Disabled":false,"id":"c5de6226-eb7b-4ed0-9895-44f1c646abeb","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ef29cf34-5701-461e-a312-fc3ee38b0e4f","path":"sprites/spr_interactable_gem/spr_interactable_gem.yy",},},},"Disabled":false,"id":"61530e6b-3633-4ae4-97d2-d21f671f26c7","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ef29cf34-5701-461e-a312-fc3ee38b0e4f","path":"sprites/spr_interactable_gem/spr_interactable_gem.yy",},},},"Disabled":false,"id":"61530e6b-3633-4ae4-97d2-d21f671f26c7","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9475856b-cac9-494e-9d0b-5162725e9d4c","path":"sprites/spr_interactable_gem/spr_interactable_gem.yy",},},},"Disabled":false,"id":"c5de6226-eb7b-4ed0-9895-44f1c646abeb","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

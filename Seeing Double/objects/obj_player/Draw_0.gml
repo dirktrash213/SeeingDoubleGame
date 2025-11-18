@@ -12,6 +12,9 @@ if wearingBrokenParachute {
 
 }
 
+//if gemPowerupDoubleJump image_blend = c_green;
+
+image_blend = gemPowerupDoubleJump ? c_lime : c_white;
 
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale*faceDir, image_yscale, image_angle, image_blend, image_alpha);
 

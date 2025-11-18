@@ -114,6 +114,10 @@ function saveGame(){
 	file_text_writeln(_file);
 	file_text_write_real(_file, global.volumeBGM);
 	file_text_writeln(_file);
+	file_text_write_real(_file, global.gotScammed);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.solvedForestPuzzle);
+	file_text_writeln(_file);
 
 	file_text_write_string(_file, _dataJsonString);
 	file_text_writeln(_file);
@@ -171,6 +175,10 @@ function loadGame(){
 		global.volumeSFX = file_text_read_real(_file);
 		file_text_readln(_file);
 		global.volumeBGM = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.gotScammed = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.solvedForestPuzzle = file_text_read_real(_file);
 		file_text_readln(_file);
 		
 		var _dataJsonString = file_text_read_string(_file);

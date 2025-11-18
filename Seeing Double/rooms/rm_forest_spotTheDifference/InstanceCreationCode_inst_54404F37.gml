@@ -1,1 +1,0 @@
-if global.dialogueVariables.solvedForestPuzzle instance_destroy();

@@ -68,3 +68,4 @@ global.dialogueVariables = {
 }
 
 global.gotScammed = false;
+global.solvedForestPuzzle = false;

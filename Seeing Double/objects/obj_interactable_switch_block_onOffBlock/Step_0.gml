@@ -1,6 +1,11 @@
 if bonked && (visible || secret) {
 
-	if room == rm_forest_spotTheDifference global.dialogueVariables.solvedForestPuzzle = true;
+	if room == rm_forest_spotTheDifference {
+		
+		global.dialogueVariables.solvedForestPuzzle = true;
+		global.solvedForestPuzzle = true;
+		
+	}
 
 	visible = true;
 	

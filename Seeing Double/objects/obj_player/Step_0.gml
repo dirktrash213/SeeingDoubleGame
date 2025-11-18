@@ -17,6 +17,15 @@ if global.playerDefeated || global.paused {
 	exit;
 
 }
+//@
+if object_index == obj_player_pitter && global.splitScreenActive {
+
+	show_debug_message("jumpMax: " + string(jumpMax))
+	show_debug_message("jumpCount: " + string(jumpCount))
+	
+	show_debug_message("---------------------------")
+
+}
 
 //Keep patter in sync with pitter
 if object_index == obj_player_patter && global.splitScreenActive {
@@ -303,7 +312,7 @@ if place_meeting(x + xSpeed, y, obj_block_wall) {
 
 }
 
-//@
+
 //Collide with enemy on side
 
 var collidingEnemy = instance_place(x + xSpeed, y, obj_enemy) 
@@ -411,7 +420,7 @@ if instance_exists(myFloorPlat) && (myFloorPlat.object_index == obj_block_wall |
 	_floorIsSolid = true;
 
 }
-
+//@
 if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled && (!moveDown || _floorIsSolid) {
 
 	//Reset jump buffer
@@ -420,6 +429,19 @@ if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled && (!moveDown || _flo
 	
 	//Increase number of performed jumps
 	jumpCount++;
+	
+	if pitterPlayerIsPresent() {
+	
+		if obj_player_pitter.jumpCount >= obj_player_pitter.jumpMax && obj_player_pitter.gemPowerupDoubleJump {
+	
+			obj_player_pitter.jumpMax = 1;
+	
+			obj_player_pitter.gemPowerupDoubleJump = false;
+			if patterPlayerIsPresent() obj_player_patter.gemPowerupDoubleJump = false;
+	
+		}
+	
+	}
 	
 	//Set jump hold timer
 	jumpHoldTimer = jumpHoldFrames[jumpCount-1];
@@ -470,7 +492,7 @@ if ySpeed > termVelocity ySpeed = termVelocity;
 _subPixel = 0.5;
 
 
-//@
+
 //Check if stomped on enemy
 collidingEnemy = instance_place(x, y + ySpeed, obj_enemy) 
 
