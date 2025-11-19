@@ -2,4 +2,4 @@ sprite_index = spr_background_parallax_forest_long;
 
 depth = 850;
 
-parallaxMult = 0.5;
+parallaxMult = 0.5; //0.5

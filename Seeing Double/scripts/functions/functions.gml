@@ -287,6 +287,22 @@ function spawnPitter() {
 	
 	obj_player_pitter.crushed = false;
 	obj_player_pitter.enemyKilledPlayer = false;
+	
+	obj_player_pitter.jumpMax = 1;
+	obj_player_pitter.gemPowerupDoubleJump = false;
+	
+	//if pitterPlayerIsPresent() {
+	//
+	//	if obj_player_pitter.jumpCount >= obj_player_pitter.jumpMax && obj_player_pitter.gemPowerupDoubleJump {
+	//
+	//		obj_player_pitter.jumpMax = 1;
+	//
+	//		obj_player_pitter.gemPowerupDoubleJump = false;
+	//		if patterPlayerIsPresent() obj_player_patter.gemPowerupDoubleJump = false;
+	//
+	//	}
+	//
+	//}
 
 }
 
@@ -301,6 +317,9 @@ function spawnPatter() {
 	
 	obj_player_patter.crushed = false;
 	obj_player_patter.enemyKilledPlayer = false;
+	
+	obj_player_patter.jumpMax = 1;
+	obj_player_patter.gemPowerupDoubleJump = false;
 
 }
 
@@ -345,7 +364,18 @@ function playerDefeated() {
 
 	other.sprite_index = other.defeatSprite;
 	
-	//other.enemyKilledPlayer = false;
+	//if pitterPlayerIsPresent() {
+	//
+	//	if obj_player_pitter.jumpCount >= obj_player_pitter.jumpMax && obj_player_pitter.gemPowerupDoubleJump {
+	//
+	//		obj_player_pitter.jumpMax = 1;
+	//
+	//		obj_player_pitter.gemPowerupDoubleJump = false;
+	//		if patterPlayerIsPresent() obj_player_patter.gemPowerupDoubleJump = false;
+	//
+	//	}
+	//
+	//}
 
 	if other.object_index == obj_player_pitter {
 

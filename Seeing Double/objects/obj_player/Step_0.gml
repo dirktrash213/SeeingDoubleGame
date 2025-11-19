@@ -20,10 +20,10 @@ if global.playerDefeated || global.paused {
 //@
 if object_index == obj_player_pitter && global.splitScreenActive {
 
-	show_debug_message("jumpMax: " + string(jumpMax))
-	show_debug_message("jumpCount: " + string(jumpCount))
+	//show_debug_message("jumpMax: " + string(jumpMax))
+	//show_debug_message("jumpCount: " + string(jumpCount))
 	
-	show_debug_message("---------------------------")
+	//show_debug_message("---------------------------")
 
 }
 
