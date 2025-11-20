@@ -1,3 +1,5 @@
+if global.doubleJumpActive && jumpMax == 1 jumpMax = 2; //Ensure player can double jump if they have unlocked it
+
 if global.playerDefeated || global.paused {
 
 	if global.playerDefeated {
@@ -17,7 +19,7 @@ if global.playerDefeated || global.paused {
 	exit;
 
 }
-//@
+
 if object_index == obj_player_pitter && global.splitScreenActive {
 
 	//show_debug_message("jumpMax: " + string(jumpMax))
@@ -420,7 +422,7 @@ if instance_exists(myFloorPlat) && (myFloorPlat.object_index == obj_block_wall |
 	_floorIsSolid = true;
 
 }
-//@
+
 if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled && (!moveDown || _floorIsSolid) {
 
 	//Reset jump buffer
@@ -929,7 +931,7 @@ if !climbing {
 
 
 
-
+//@
 if global.cutsceneActive {
 	
 	if onGround sprite_index = idleSprite;
@@ -1038,6 +1040,19 @@ if global.cutsceneActive {
 			}
 		
 		} break;
+		
+		case CUTSCENE_ID.DOUBLE_JUMP_BARREL: { 
+			
+			if obj_cutsceneSystem.cutsceneState == DOUBLE_JUMP_BARREL_CUTSCENE_STATE.JUMPING_OUT
+			|| obj_cutsceneSystem.cutsceneState == DOUBLE_JUMP_BARREL_CUTSCENE_STATE.POSING {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_findItem;
+				if object_index == obj_player_patter sprite_index = spr_patter_findItem;
+			
+			}
+			
+		} break;
+		
 	
 	}
 

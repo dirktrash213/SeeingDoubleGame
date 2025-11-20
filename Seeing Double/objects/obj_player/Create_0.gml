@@ -104,7 +104,8 @@ ySpeed = 0;
 
 //Jumping
 
-grav = 0.275;
+//grav = 0.275;
+grav = global.playerDefaultGrav;
 termVelocity = 4;
 
 jumpMax = 1;

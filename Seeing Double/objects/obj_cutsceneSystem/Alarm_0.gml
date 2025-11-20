@@ -1,10 +1,11 @@
-/// @description Cutscene activated
+/// @description Cutscene activated after delay
 
-global.cutsceneActive = true;
-global.playerControl = false;
+//global.cutsceneActive = true;
+//global.playerControl = false;
+//
+//if playerIsPresent() obj_player.jumpDisabled = true;
 
-if playerIsPresent() obj_player.jumpDisabled = true;
-
+activateCutscene();
 
 switch global.currentCutsceneID {
 

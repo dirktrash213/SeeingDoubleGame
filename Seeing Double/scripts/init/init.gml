@@ -23,9 +23,15 @@ global.readytoDisplayTitleScreenMenu = true;
 global.titleScreenMenuActive = false;
 global.delayBeforeTitleScreen = 300;
 
-
+global.playerDefaultGrav = 0.275;
 
 global.splitScreenActive = false;
+
+global.doubleJumpActive = false;
+global.groundPoundActive = false;
+global.dashActive = false;
+global.crouchJumpActive = false;
+
 
 global.volumeMaster = 5;
 global.volumeSFX = 5;

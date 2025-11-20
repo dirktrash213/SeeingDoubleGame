@@ -202,6 +202,24 @@ function drawPauseMenu() {
 	
 }
 
+function activateCutscene() {
+
+	global.cutsceneActive = true;
+	global.playerControl = false;
+
+	if playerIsPresent() obj_player.jumpDisabled = true;
+
+}
+
+function deactivateCutscene() {
+
+	global.cutsceneActive = false;
+	global.playerControl = true;
+
+	if playerIsPresent() obj_player.jumpDisabled = false;
+
+}
+
 function scr_isControllerConnected() {
 
 	var _connected = false;
