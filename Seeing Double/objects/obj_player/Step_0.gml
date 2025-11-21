@@ -505,6 +505,12 @@ if collidingEnemy {
 		if ySpeed > 0 && !climbing {
 	
 			audio_play_sound(sfx_slice, 1, 0, 1, 0, 1.5);
+			
+			if global.doubleJumpActive {
+			
+				if jumpCount == jumpMax jumpCount--;
+			
+			}
 	
 			collidingEnemy.defeated = true;
 			setOnGround(false);
@@ -560,8 +566,12 @@ if place_meeting(x, y + ySpeed, obj_interactable_switch_block_parent) && ySpeed 
 		
 		} else {
 	
-			bonked = true;
-			audio_play_sound(sfx_pause, 1, 0, 1, 0, 2.0);
+			if !inert {
+	
+				bonked = true;
+				if visible audio_play_sound(sfx_pause, 1, 0, 1, 0, 2.0);
+			
+			}
 		
 		}
 	
@@ -582,7 +592,7 @@ if place_meeting(x, y + ySpeed, obj_block_wall) && canCollide {
 	//Bonk head on ceiling 
 	if ySpeed < 0 {
 		
-		audio_play_sound(sfx_footstep, 1, 0, 1, 0, 0.5);
+		if !audio_is_playing(sfx_footstep) audio_play_sound(sfx_footstep, 1, 0, 1, 0, 0.5);
 		jumpHoldTimer = 0;
 		
 	}

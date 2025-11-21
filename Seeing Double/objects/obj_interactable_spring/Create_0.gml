@@ -8,3 +8,6 @@ platform = instance_nearest(x,y,obj_block_wall_semiSolid_moving);
 active = true;
 cooldown = 30;
 springYspeed = -8;
+
+canPlayAudio = true;
+audioCooldown = 5;
