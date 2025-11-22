@@ -32,7 +32,7 @@ if !fallOffLedges && (!place_meeting(x + xSpeed*_mult, y+1, obj_block_wall) && !
 
 }
 
-if defeated xSpeed = 0;
+if defeated || moveDir == WALKING_DIRECTION.NONE xSpeed = 0;
 
 //Move
 x += xSpeed;

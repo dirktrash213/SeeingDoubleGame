@@ -12,6 +12,12 @@ if canPlayAudio {
 	canPlayAudio = false;
 	alarm[1] = audioCooldown;
 	
+	if global.doubleJumpActive {
+			
+		if other.jumpCount == other.jumpMax other.jumpCount--;
+			
+	}
+	
 }
 
 var _ySpeed = springYspeed;
