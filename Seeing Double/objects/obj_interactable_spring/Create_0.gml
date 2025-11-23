@@ -11,3 +11,5 @@ springYspeed = -8;
 
 canPlayAudio = true;
 audioCooldown = 5;
+
+vanishOnTimeout = false;

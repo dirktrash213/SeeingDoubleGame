@@ -18,3 +18,5 @@ itemPriceText = string(itemPrice)+"[spr_interactable_coin]";
 
 detectionRadius = 70;
 secret = false;
+
+inert = false;

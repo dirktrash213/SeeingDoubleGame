@@ -1,0 +1,2 @@
+vanishOnTimeout = true;
+visible = false;

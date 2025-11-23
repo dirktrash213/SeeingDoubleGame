@@ -7,4 +7,8 @@ secret = false;
 timerDuration = 600;
 inert = false;
 
+lastplayedSound = noone;
 
+active = false;
+
+vanishOnTimeout = false;

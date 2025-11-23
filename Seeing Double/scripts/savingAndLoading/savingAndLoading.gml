@@ -14,6 +14,20 @@ global.gameData = {
 
 }
 
+function saveSettings() {
+
+
+
+
+}
+
+function loadSettings() { //Load player's audio, visual, and gameplay settings on game start
+
+
+
+
+}
+
 function saveRoom() {
 
 	var _dataArray = [];

@@ -4,5 +4,6 @@ ySpeed = 0;
 bonked = false;
 secret = false;
 
+vanishOnTimeout = false;
 
 
