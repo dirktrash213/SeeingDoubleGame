@@ -72,6 +72,7 @@
     {"name":"obj_block_wall_semiSolid_branch_right","order":8,"path":"objects/obj_block_wall_semiSolid_branch_right/obj_block_wall_semiSolid_branch_right.yy",},
     {"name":"spr_interactable_ladder_wooden_middle","order":16,"path":"sprites/spr_interactable_ladder_wooden_middle/spr_interactable_ladder_wooden_middle.yy",},
     {"name":"spr_patter_findItem","order":2,"path":"sprites/spr_patter_findItem/spr_patter_findItem.yy",},
+    {"name":"shaderScripts","order":8,"path":"scripts/shaderScripts/shaderScripts.yy",},
     {"name":"spr_pitter_climb","order":14,"path":"sprites/spr_pitter_climb/spr_pitter_climb.yy",},
     {"name":"scribble_flush_everything","order":3,"path":"scripts/scribble_flush_everything/scribble_flush_everything.yy",},
     {"name":"obj_trigger_behindLayer","order":9,"path":"objects/obj_trigger_behindLayer/obj_trigger_behindLayer.yy",},

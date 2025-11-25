@@ -1,3 +1,5 @@
+//layer_alpha_settings("SecretTiles");
+
 function setOnGround(_val = true) {
 
 	if _val {

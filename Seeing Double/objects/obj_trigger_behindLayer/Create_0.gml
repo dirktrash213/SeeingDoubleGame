@@ -1,4 +1,4 @@
-targetLayerID = layer_get_id("SecretTiles");
+layer_alpha_settings("SecretTiles");
 
 
 targetLayerIDalpha = 1.0;

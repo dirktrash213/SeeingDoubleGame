@@ -20,6 +20,8 @@ if global.playerDefeated || global.paused {
 
 }
 
+//make_layer_transparent("SecretTiles", 0, 0.05);
+
 if object_index == obj_player_pitter && global.splitScreenActive {
 
 	//show_debug_message("jumpMax: " + string(jumpMax))

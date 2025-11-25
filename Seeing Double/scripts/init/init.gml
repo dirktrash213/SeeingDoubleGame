@@ -15,6 +15,7 @@ global.yRespawnPitter = 0;
 global.xRespawnPatter = 0;
 global.yRespawnPatter = 0;
 
+global.layer_alpha = 1;
 
 global.controllerPort = 0;
 global.lastInputWasController = false;

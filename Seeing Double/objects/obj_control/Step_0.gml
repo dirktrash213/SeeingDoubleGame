@@ -410,20 +410,26 @@ if global.readytoDisplayTitleScreenMenu {
 
 if confirm && alarm[1] > 1 && global.titleScreenCutsceneState == TITLE_SCREEN_CUTSCENE_STATE.ON_MENU alarm[1] = 1;
 
-//// 1. Get the Layer ID using the string name from the Room Editor
-//var _layerID = layer_get_id("SecretTiles"); // Replace "Tiles_1" with your layer name
+//var _transparentSecretLayer = false;
 //
-//// 2. Get the specific Tilemap Element ID from that layer
-//// We need to store this in an instance variable to use it in the Draw Event
-//tilemapID = layer_tilemap_get_id(_layerID);
+//with obj_trigger_behindLayer {
 //
-//// 3. Hide the actual layer
-//// We do this because we are going to draw it manually. 
-//// If we left it visible, the game would draw it at full opacity underneath our manual draw.
-//layer_set_visible(_layerID, false);
+//	if place_meeting(x, y, obj_player_patter) _transparentSecretLayer = true;
 //
-//// 4. Set your desired alpha variable (0 to 1)
-//tileLayerAlpha = 0.2;
+//}
+//
+//if _transparentSecretLayer {
+//
+//	make_layer_transparent("SecretTiles", 0.0, 0.05);
+//	show_debug_message("layer is transparent")
+//
+//} else {
+//
+//	//make_layer_transparent("SecretTiles", 1.0, 0.05, false);
+//	make_layer_transparent("SecretTiles", 0.5, 0.05, false); //??? This works somehow?
+//	show_debug_message("layer is not transparent")
+//
+//}
 
 
 

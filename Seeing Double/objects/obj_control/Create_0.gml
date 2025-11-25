@@ -36,7 +36,8 @@ audio_group_load(audiogroup_sfx);
 scammedSFXpitch = 1.0; //0.3
 scammedSFXpitchDecreaseAmount = 0.001;
 
-
+//transparentSecretLayer = false;
+//layer_alpha_settings("SecretTiles");
 
 //tilemapID = noone;
 //tileLayerAlpha = 0.5;
