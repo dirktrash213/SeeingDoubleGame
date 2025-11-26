@@ -144,6 +144,196 @@ switch global.currentCutsceneID {
 		}
 
 	} break; 
+	
+	case CUTSCENE_ID.FOREST_HAUNTING: {
+	
+		switch cutsceneState { 
+			
+			case FOREST_HAUNTING_CUTSCENE_STATE.LOOKING_AT_FLOWER: {
+				
+				cutsceneState = FOREST_HAUNTING_CUTSCENE_STATE.WALKING_TO_FLOWER;
+				
+				var _walkDuration = 80;
+		
+				alarm[1] = _walkDuration;
+				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+				
+					obj_player_pitter.hspeed = 1;
+					obj_player_patter.hspeed = 1;
+				
+				}
+		
+			} break;
+			
+			case FOREST_HAUNTING_CUTSCENE_STATE.WALKING_TO_FLOWER: {
+				
+				cutsceneState = FOREST_HAUNTING_CUTSCENE_STATE.PICKING_FLOWER;
+				
+				instance_destroy(obj_interactable_grass_flower_blue);
+				instance_destroy(obj_interactable_grass_flower_pink);
+				
+				var _pickDuration = 120;
+		
+				alarm[1] = _pickDuration;
+				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+				
+					var _elipsesOffsetX = -5;
+		
+					instance_create_layer(obj_player_pitter.x + _elipsesOffsetX, 208, "Instances", obj_background_elipses);
+					instance_create_layer(obj_player_patter.x + _elipsesOffsetX, 528, "Instances", obj_background_elipses);
+				
+					obj_player_pitter.hspeed = 0;
+					obj_player_patter.hspeed = 0;
+				
+				}
+		
+			} break;
+			
+			case FOREST_HAUNTING_CUTSCENE_STATE.PICKING_FLOWER: {
+				
+				cutsceneState = FOREST_HAUNTING_CUTSCENE_STATE.THINKING_ABOUT_PARTNER;
+				
+				var _sadDuration = 300;
+		
+				alarm[1] = _sadDuration;
+				
+				var _offsetY = -12;
+				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+				
+					part_particles_create(global.particleSystemDevice, obj_player_pitter.x, obj_player_pitter.y + _offsetY, global.particleWherePatter, 1);
+					part_particles_create(global.particleSystemDevice, obj_player_patter.x, obj_player_patter.y + _offsetY, global.particleWherePitter, 1);
+				
+				}
+		
+			} break;
+			
+			case FOREST_HAUNTING_CUTSCENE_STATE.THINKING_ABOUT_PARTNER: {
+				
+				cutsceneState = FOREST_HAUNTING_CUTSCENE_STATE.PUTTING_FLOWER_AWAY;
+				
+				var _cutsceneStateDuration = 10;
+		
+				alarm[1] = _cutsceneStateDuration;
+				
+			} break;
+			
+			case FOREST_HAUNTING_CUTSCENE_STATE.PUTTING_FLOWER_AWAY: {
+				
+				cutsceneState = FOREST_HAUNTING_CUTSCENE_STATE.LOOKING_AT_CAVE;
+				
+				var _cutsceneStateDuration = 10;
+		
+				alarm[1] = _cutsceneStateDuration;
+				
+			} break;
+			
+			case FOREST_HAUNTING_CUTSCENE_STATE.LOOKING_AT_CAVE: {
+				
+				cutsceneState = FOREST_HAUNTING_CUTSCENE_STATE.WALKING_TO_CAVE;
+				
+				var _cutsceneStateDuration = 134; //134
+		
+				alarm[1] = _cutsceneStateDuration;
+				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+				
+					obj_player_pitter.hspeed = 1;
+					obj_player_patter.hspeed = 1;
+				
+				}
+				
+			} break;
+			
+			case FOREST_HAUNTING_CUTSCENE_STATE.WALKING_TO_CAVE: {
+				
+				cutsceneState = FOREST_HAUNTING_CUTSCENE_STATE.KNOCKING_ON_BOULDER;
+				
+				var _cutsceneStateDuration = 180;
+		
+				alarm[1] = _cutsceneStateDuration;
+				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+				
+					obj_player_pitter.hspeed = 0;
+					obj_player_patter.hspeed = 0;
+				
+				}
+				
+			} break;
+			
+			case FOREST_HAUNTING_CUTSCENE_STATE.KNOCKING_ON_BOULDER: {
+				
+				cutsceneState = FOREST_HAUNTING_CUTSCENE_STATE.SHAKING_HEAD;
+				
+				var _cutsceneStateDuration = 120;
+		
+				alarm[1] = _cutsceneStateDuration;
+				
+			} break;
+			
+			case FOREST_HAUNTING_CUTSCENE_STATE.SHAKING_HEAD: {
+				
+				cutsceneState = FOREST_HAUNTING_CUTSCENE_STATE.WALKING_BACK;
+				
+				var _cutsceneStateDuration = 120;
+		
+				alarm[1] = _cutsceneStateDuration;
+				
+				audio_play_sound(sfx_mouseChirp, 1, 0, 1, 0, 0.5);
+				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+				
+					obj_player_pitter.hspeed = -1;
+					obj_player_patter.hspeed = -1;
+					
+					obj_player_pitter.image_xscale = -1;
+					obj_player_patter.image_xscale = -1;
+				
+				}
+				
+			} break;
+			
+			case FOREST_HAUNTING_CUTSCENE_STATE.WALKING_BACK: {
+				
+				cutsceneState = FOREST_HAUNTING_CUTSCENE_STATE.THINKING;
+				
+				var _cutsceneStateDuration = 180;
+		
+				alarm[1] = _cutsceneStateDuration;
+				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+				
+					obj_player_pitter.hspeed = 0;
+					obj_player_patter.hspeed = 0;
+					
+					var _elipsesOffsetY = -20;
+		
+					instance_create_layer(obj_player_pitter.x, 208, "Instances", obj_background_elipses);
+					instance_create_layer(obj_player_patter.x, 528, "Instances", obj_background_elipses);
+				
+				}
+				
+			} break;
+			
+			case FOREST_HAUNTING_CUTSCENE_STATE.THINKING: {
+				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+				
+					obj_player_pitter.image_xscale = 1;
+					obj_player_patter.image_xscale = 1;
+				
+				}
+				
+				deactivateCutscene();
+				
+			} break;
+			
+		}
+	
+	} break;
 
 }
 

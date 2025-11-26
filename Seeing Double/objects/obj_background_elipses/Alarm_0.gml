@@ -36,6 +36,12 @@ switch global.currentCutsceneID {
 		audio_play_sound(sfx_mouseChirp, 1, 0);
 	
 	} break;
+	
+	case CUTSCENE_ID.FOREST_HAUNTING: {
+	
+		instance_destroy();
+	
+	} break;
 
 
 }

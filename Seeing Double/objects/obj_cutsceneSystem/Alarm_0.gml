@@ -17,6 +17,23 @@ switch global.currentCutsceneID {
 	
 	
 	} break;
+	
+	case CUTSCENE_ID.FOREST_HAUNTING: {
+	
+		cutsceneState = FOREST_HAUNTING_CUTSCENE_STATE.LOOKING_AT_FLOWER;
+		
+		alarm[1] = 140;
+		
+		audio_sound_gain(bgm_inSync, 0, 3000);
+		
+		var _elipsesOffsetY = -20;
+		
+		//if pitterPlayerIsPresent() instance_create_layer(obj_player_pitter.x, obj_player_pitter.y + _elipsesOffsetY, "Instances", obj_background_elipses);
+		//if patterPlayerIsPresent() instance_create_layer(obj_player_patter.x, obj_player_patter.y + _elipsesOffsetY, "Instances", obj_background_elipses);
+		if pitterPlayerIsPresent() instance_create_layer(obj_player_pitter.x, 208, "Instances", obj_background_elipses);
+		if patterPlayerIsPresent() instance_create_layer(obj_player_patter.x, 528, "Instances", obj_background_elipses);
+
+	} break;
 
 
 }

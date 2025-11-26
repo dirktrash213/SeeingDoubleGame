@@ -912,26 +912,30 @@ if place_meeting(x, y, obj_block_wall) {
 
 //Sprite Control
 
-if !climbing {
+if !global.cutsceneActive {
 
-	if abs(xSpeed) > 0 sprite_index = walkSprite;
+	if !climbing {
 
-	if abs(xSpeed) >= moveSpeed[1] sprite_index = runSprite;
+		if abs(xSpeed) > 0 sprite_index = walkSprite;
+
+		if abs(xSpeed) >= moveSpeed[1] sprite_index = runSprite;
 	
-	if xSpeed == 0 sprite_index = idleSprite;
+		if xSpeed == 0 sprite_index = idleSprite;
 
-	if !onGround sprite_index = jumpSprite;
+		if !onGround sprite_index = jumpSprite;
 
-	if lookingUp sprite_index = lookingUpSprite;
+		if lookingUp sprite_index = lookingUpSprite;
 	
-	if crouching sprite_index = crouchSprite;
+		if crouching sprite_index = crouchSprite;
 
-	mask_index = maskSprite; //Use this collision mask
-	if crouching mask_index = crouchSprite;
+		mask_index = maskSprite; //Use this collision mask
+		if crouching mask_index = crouchSprite;
 
-} else {
+	} else {
 
-	sprite_index = climbingSprite;
+		sprite_index = climbingSprite;
+
+	}
 
 }
 
@@ -946,7 +950,7 @@ if !climbing {
 //@
 if global.cutsceneActive {
 	
-	if onGround sprite_index = idleSprite;
+	//if onGround sprite_index = idleSprite;
 	
 	moveDir = 0;
 	xSpeed = 0;
@@ -1006,6 +1010,8 @@ if global.cutsceneActive {
 		
 		case CUTSCENE_ID.SPLIT_SCREEN_ACTIVATE: {
 		
+			if onGround sprite_index = idleSprite;
+			
 			if onGround && obj_cutsceneSystem.cutsceneState == SPLIT_SCREEN_CUTSCENE_STATE.NONE {
 			
 				obj_cutsceneSystem.cutsceneState = SPLIT_SCREEN_CUTSCENE_STATE.PITTER_PONDERING;
@@ -1065,7 +1071,103 @@ if global.cutsceneActive {
 			
 		} break;
 		
-	
+		case CUTSCENE_ID.FOREST_HAUNTING: { 
+			
+			if obj_cutsceneSystem.cutsceneState == FOREST_HAUNTING_CUTSCENE_STATE.LOOKING_AT_FLOWER {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+				if object_index == obj_player_patter sprite_index = spr_patter_forward;
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == FOREST_HAUNTING_CUTSCENE_STATE.WALKING_TO_FLOWER {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_walk;
+				if object_index == obj_player_patter sprite_index = spr_patter_walk;
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == FOREST_HAUNTING_CUTSCENE_STATE.PICKING_FLOWER {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_holdingPinkFlower;
+				if object_index == obj_player_patter sprite_index = spr_patter_holdingBlueFlower;
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == FOREST_HAUNTING_CUTSCENE_STATE.THINKING_ABOUT_PARTNER {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_holdingPinkFlower_sad;
+				if object_index == obj_player_patter sprite_index = spr_patter_holdingBlueFlower_sad;
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == FOREST_HAUNTING_CUTSCENE_STATE.PUTTING_FLOWER_AWAY {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_sad;
+				if object_index == obj_player_patter sprite_index = spr_patter_sad;
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == FOREST_HAUNTING_CUTSCENE_STATE.LOOKING_AT_CAVE {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+				if object_index == obj_player_patter sprite_index = spr_patter_forward;
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == FOREST_HAUNTING_CUTSCENE_STATE.WALKING_TO_CAVE {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_walk;
+				if object_index == obj_player_patter sprite_index = spr_patter_walk;
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == FOREST_HAUNTING_CUTSCENE_STATE.KNOCKING_ON_BOULDER {
+			
+				if object_index == obj_player_pitter {
+					
+					if sprite_index != spr_pitter_curious_knock {
+						
+						sprite_index = spr_pitter_curious_knock;
+						
+						//show_debug_message("spr_pitter_curious_knockALT sprite set")
+						
+					}
+					
+				}
+				
+			//	if object_index == obj_player_pitter sprite_index = spr_pitter_curious;
+				if object_index == obj_player_patter {
+					
+					if sprite_index != spr_patter_curious_poke sprite_index = spr_patter_curious_poke;
+					
+				}
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == FOREST_HAUNTING_CUTSCENE_STATE.SHAKING_HEAD {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_sad_shakeHead;
+				if object_index == obj_player_patter sprite_index = spr_patter_annoyed;
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == FOREST_HAUNTING_CUTSCENE_STATE.WALKING_BACK {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_walk;
+				if object_index == obj_player_patter sprite_index = spr_patter_walk;
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == FOREST_HAUNTING_CUTSCENE_STATE.THINKING {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_thinking;
+				if object_index == obj_player_patter sprite_index = spr_patter_thinking;
+			
+			}
+			
+		} break;
+		
 	}
 
 }

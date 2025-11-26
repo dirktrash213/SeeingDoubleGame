@@ -8,7 +8,7 @@
 
 	} else {
 	
-		show_debug_message("layer alpha not set!")
+		//show_debug_message("layer alpha not set!")
 	
 	}
 
@@ -16,7 +16,7 @@
 
 function layer_alpha_reset() {
 	
-	show_debug_message("Shader reset!")
+	//show_debug_message("Shader reset!")
 
 	if (shader_current() != -1) shader_reset();
 
@@ -71,6 +71,6 @@ function make_layer_transparent(layer_to_collide, min_alpha, spd_alpha, decrease
 	
 	}
 	
-	show_debug_message("global.layer_alpha:" + string(global.layer_alpha))
+	//show_debug_message("global.layer_alpha:" + string(global.layer_alpha))
 
 } 

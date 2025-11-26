@@ -11,6 +11,7 @@ function particleSetup() {
 	global.particleHeartPink = part_type_create();
 	global.particleHeartBlue = part_type_create();
 	global.particleSparkDevice = part_type_create();
+	global.particleWherePitter = part_type_create();
 	global.particleWherePatter = part_type_create();
 	global.particleCallForPatter = part_type_create();
 	global.particleWhereCherries = part_type_create();
@@ -39,9 +40,15 @@ function particleSetup() {
 	part_type_speed(global.particleSparkDevice, _sparkSpdMin, _sparkSpdMax, 0, 0);
 	part_type_direction(global.particleSparkDevice, _sparkDirMin, _sparkDirMax, 0, 0);
 	
+	part_type_sprite(global.particleWherePitter, spr_particle_wherePitter, 0, 0, 0);
+	part_type_speed(global.particleWherePitter, 0.2, 1, 0, 0);
+	part_type_direction(global.particleWherePitter, 60, 120, 0, 0);
+	part_type_life(global.particleWherePitter, 300, 300);
+	
 	part_type_sprite(global.particleWherePatter, spr_particle_wherePatter, 0, 0, 0);
-	part_type_speed(global.particleWherePatter, 0.2, 2, 0, 0);
+	part_type_speed(global.particleWherePatter, 0.2, 1, 0, 0);
 	part_type_direction(global.particleWherePatter, 60, 120, 0, 0);
+	part_type_life(global.particleWherePatter, 300, 300);
 	
 	part_type_sprite(global.particleWhereCherries, spr_particle_whereCherries, 0, 0, 0);
 	part_type_speed(global.particleWhereCherries, 0.2, 0.2, 0, 0);
