@@ -272,6 +272,8 @@ switch global.currentCutsceneID {
 		
 				alarm[1] = _cutsceneStateDuration;
 				
+				audio_play_sound(sfx_mouseChirp, 1, 0, 1, 0, 0.5);
+				
 			} break;
 			
 			case FOREST_HAUNTING_CUTSCENE_STATE.SHAKING_HEAD: {
@@ -281,8 +283,6 @@ switch global.currentCutsceneID {
 				var _cutsceneStateDuration = 120;
 		
 				alarm[1] = _cutsceneStateDuration;
-				
-				audio_play_sound(sfx_mouseChirp, 1, 0, 1, 0, 0.5);
 				
 				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
 				
@@ -328,6 +328,8 @@ switch global.currentCutsceneID {
 				}
 				
 				deactivateCutscene();
+				
+				obj_manager_spookyForestGhost.timerActive = true;
 				
 			} break;
 			

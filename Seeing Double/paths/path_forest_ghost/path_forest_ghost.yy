@@ -1,0 +1,26 @@
+{
+  "resourceType": "GMPath",
+  "resourceVersion": "1.0",
+  "name": "path_forest_ghost",
+  "closed": false,
+  "kind": 1,
+  "parent": {
+    "name": "Paths",
+    "path": "folders/Paths.yy",
+  },
+  "points": [
+    {"speed":500.0,"x":896.0,"y":0.0,},
+    {"speed":100.0,"x":683.0,"y":0.0,},
+    {"speed":100.0,"x":560.0,"y":-13.0,},
+    {"speed":100.0,"x":482.0,"y":-143.0,},
+    {"speed":100.0,"x":294.0,"y":-47.0,},
+    {"speed":100.0,"x":151.0,"y":-3.0,},
+    {"speed":100.0,"x":104.0,"y":-159.0,},
+    {"speed":50.0,"x":-27.0,"y":-152.0,},
+    {"speed":50.0,"x":-66.0,"y":-65.0,},
+    {"speed":25.0,"x":65.0,"y":37.0,},
+    {"speed":100.0,"x":-60.0,"y":-4.0,},
+    {"speed":200.0,"x":-375.0,"y":-124.0,},
+  ],
+  "precision": 4,
+}

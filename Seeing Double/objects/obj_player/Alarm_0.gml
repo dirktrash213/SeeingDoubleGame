@@ -25,5 +25,24 @@ if searchingForPatterPicnic {
 
 }
 
+if instance_exists(obj_manager_spookyForestGhost) && object_index == obj_player_patter {
+	
+	if sprite_index == spr_patter_scared_shaking && isLastAnimationFrame() && scaredSweating {
+	
+		var _rangeX = 3;
+	
+		var _offsetX = random_range(-_rangeX, _rangeX);
+		var _offsetY = -8;
+		
+		var _numberOfParticles = irandom(2);
+
+		part_particles_create(global.particleSystemDevice, x + _offsetX, y + _offsetY, global.particleSweatdrop, _numberOfParticles);
+	
+		alarm[0] = sweatParticleSpawnRate;
+	
+	}
+
+}
+
 
 

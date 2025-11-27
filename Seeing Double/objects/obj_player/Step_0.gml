@@ -938,7 +938,57 @@ if !global.cutsceneActive {
 	}
 
 }
+//@
+if instance_exists(obj_manager_spookyForestGhost) && object_index == obj_player_patter {
 
+	if obj_manager_spookyForestGhost.textAppearing {
+		
+		var _idleSprite = spr_patter_scared_idle;
+		
+		if place_meeting(x,y,obj_trigger_behindLayer) _idleSprite = spr_patter_scared_shaking;
+	
+		if abs(xSpeed) > 0 sprite_index = spr_patter_scared_walk;
+
+		if abs(xSpeed) >= moveSpeed[1] sprite_index = spr_patter_scared_run;
+	
+		if xSpeed == 0 sprite_index = _idleSprite;
+
+		if !onGround sprite_index = spr_patter_scared_jump;
+
+		if lookingUp sprite_index = _idleSprite;
+	
+		if crouching sprite_index = _idleSprite;
+
+		mask_index = maskSprite; //Use this collision mask
+		if crouching mask_index = crouchSprite;
+		
+		if sprite_index == spr_patter_scared_shaking && isLastAnimationFrame() {
+		
+			image_speed = 0;
+			
+			var _vibrateRange = 0.1;
+
+			var _offsetX = random_range(-_vibrateRange, _vibrateRange);
+			
+			sprite_set_offset(spr_patter_scared_shaking, 8+_offsetX, 16)
+			
+			if !scaredSweating {
+			
+				scaredSweating = true;
+				alarm[0] = sweatParticleSpawnRate;
+			
+			}
+		
+		} else {
+		
+			scaredSweating = false;
+			image_speed = 1;
+		
+		}
+	
+	}
+
+}
 
 
 //Cutscene sprite control
@@ -947,7 +997,7 @@ if !global.cutsceneActive {
 
 
 
-//@
+
 if global.cutsceneActive {
 	
 	//if onGround sprite_index = idleSprite;
