@@ -1,0 +1,1 @@
+if !global.caughtByForestGhost && !global.escapedForestGhost timerActive = true;

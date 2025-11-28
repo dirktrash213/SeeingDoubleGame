@@ -912,7 +912,14 @@ if place_meeting(x, y, obj_block_wall) {
 
 //Sprite Control
 
-if !global.cutsceneActive {
+if sprite_index == spr_patter_scared_shaking {
+
+	lookingUp = false;
+	crouching = false;
+
+}
+
+if !global.cutsceneActive && !recoveringFromFear {
 
 	if !climbing {
 
@@ -938,13 +945,43 @@ if !global.cutsceneActive {
 	}
 
 }
+
+
+if recoveringFromFear {
+
+	if xSpeed == 0 && !standingUp {
+		
+		standingUp = true;
+		
+		image_speed = 1;
+		image_index = 0;
+		sprite_index = spr_patter_scared_recoveringSigh;
+		
+		//show_debug_message("image_speed: " + string(image_speed))
+		
+	}
+	
+}
+
+if standingUp {
+
+	if isLastAnimationFrame() || xSpeed != 0 || !onGround {
+	
+		standingUp = false;
+		recoveringFromFear = false;
+	
+	}
+
+}
+
 //@
 if instance_exists(obj_manager_spookyForestGhost) && object_index == obj_player_patter {
 
-	if obj_manager_spookyForestGhost.textAppearing {
+	if (obj_manager_spookyForestGhost.glitchesAppearing || obj_manager_spookyForestGhost.textAppearing || obj_manager_spookyForestGhost.ghostArriving) && !obj_manager_spookyForestGhost.ghostDeparting {
 		
 		var _idleSprite = spr_patter_scared_idle;
 		
+	//	if place_meeting(x,y,obj_trigger_behindLayer) && !recoveringFromFear _idleSprite = spr_patter_scared_shaking;
 		if place_meeting(x,y,obj_trigger_behindLayer) _idleSprite = spr_patter_scared_shaking;
 	
 		if abs(xSpeed) > 0 sprite_index = spr_patter_scared_walk;
@@ -987,7 +1024,7 @@ if instance_exists(obj_manager_spookyForestGhost) && object_index == obj_player_
 		}
 	
 	}
-
+	
 }
 
 

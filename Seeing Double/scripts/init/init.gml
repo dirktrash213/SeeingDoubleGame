@@ -34,9 +34,9 @@ global.dashActive = false;
 global.crouchJumpActive = false;
 
 
-global.volumeMaster = 5;
-global.volumeSFX = 5;
-global.volumeBGM = 5;
+global.volumeMaster = 8;
+global.volumeSFX = 8;
+global.volumeBGM = 8;
 
 global.moveUp = false;
 global.moveDown = false;
@@ -76,3 +76,6 @@ global.dialogueVariables = {
 
 global.gotScammed = false;
 global.solvedForestPuzzle = false;
+
+global.caughtByForestGhost = false;
+global.escapedForestGhost = false;

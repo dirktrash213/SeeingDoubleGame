@@ -1,4 +1,4 @@
-
+//show_debug_message(timer);
 
 
 
@@ -7,6 +7,28 @@ if !ambienceFadingIn && timer >= ambienceFadingInPoint {
 	ambienceFadingIn = true;
 	
 	show_debug_message("ambienceFadingIn")
+
+	audio_sound_gain(bgm_ghostlyReverberations, 1, 10000);
+
+}
+
+if !ambienceFadingIn2 && timer >= ambienceFadingIn2Point {
+
+	ambienceFadingIn2 = true;
+	
+	show_debug_message("ambienceFadingIn2")
+
+	audio_sound_gain(bgm_ephemeralEcho, 1, 10000);
+
+}
+
+if !ambienceFadingIn3 && timer >= ambienceFadingIn3Point {
+
+	ambienceFadingIn3 = true;
+	
+	show_debug_message("ambienceFadingIn3")
+
+	audio_sound_gain(bgm_cursedAtmosphere, 1, 1000);
 
 }
 
@@ -22,6 +44,8 @@ if !textAppearing && timer >= textAppearingPoint {
 
 	textAppearing = true;
 	
+	alarm[0] = textDuration;
+	
 	show_debug_message("textAppearing")
 
 }
@@ -32,11 +56,39 @@ if !ghostArriving && timer >= ghostArrivingPoint {
 	
 	show_debug_message("ghostArriving")
 	
-	with obj_npc_ghost_forest {
+	if instance_exists(obj_npc_ghost_forest) {
 	
-		path_start(path_forest_ghost, 1, path_action_stop, false);
+		with obj_npc_ghost_forest {
+	
+			x = xstart;
+			y = ystart;
+			path_start(path_forest_ghost, 1, path_action_stop, false);
+	
+		}
 	
 	}
+
+}
+
+if !ambienceFadingOut && timer >= ambienceFadingOutPoint {
+
+	audio_sound_gain(bgm_ghostlyReverberations, 0, 1000);
+	audio_sound_gain(bgm_ephemeralEcho, 0, 1000);
+	audio_sound_gain(bgm_cursedAtmosphere, 0, 1000);
+
+	show_debug_message("ambienceFadingOut")
+
+}
+
+if !ghostDeparting && timer >= ghostDepartingPoint {
+
+	ghostDeparting = true;
+	textAppearing = false;
+	ghostArriving = false;
+	
+	if patterPlayerIsPresent() obj_player_patter.recoveringFromFear = true;
+	
+	show_debug_message("ghostDeparting")
 
 }
 
@@ -56,7 +108,7 @@ if !ghostArriving && timer >= ghostArrivingPoint {
 
 
 
-if timerActive timer++;
+if timerActive && !global.paused timer++;
 
 
 

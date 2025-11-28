@@ -1,4 +1,8 @@
-show_debug_message(path_position);
+//show_debug_message(path_position);
+
+if path_position >= 0.95 instance_destroy();
+
+path_speed = global.paused? 0 : 1;
 
 var _pathCheckpoint = 0.66;
 var _pathCheckpoint2 = 0.77;
@@ -19,7 +23,8 @@ if patterPlayerIsPresent() {
 		
 		}
 
-		if _distance <= detectionRadius && !_playerHidden && path_position <= _pathCheckpoint {
+		//if _distance <= detectionRadius && !_playerHidden && path_position <= _pathCheckpoint {
+		if _distance <= detectionRadius && !_playerHidden && obj_manager_spookyForestGhost.ghostArriving {
     
 			playerDetected = true;
 			path_end();

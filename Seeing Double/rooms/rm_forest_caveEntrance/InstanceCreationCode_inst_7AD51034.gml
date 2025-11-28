@@ -1,0 +1,1 @@
+if global.caughtByForestGhost || global.escapedForestGhost instance_destroy();

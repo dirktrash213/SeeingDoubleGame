@@ -171,9 +171,10 @@ crushTimer = 0;
 crushGraceFrames = 3;
 crushed = false;
 
-sweatParticleSpawnRate = 2; //4
+sweatParticleSpawnRate = 4; //4
 scaredSweating = false;
-
+recoveringFromFear = false;
+standingUp = false;
 
 
 

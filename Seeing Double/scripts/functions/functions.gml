@@ -290,7 +290,7 @@ function startNewGame() {
 
 
 }
-//@
+
 function spawnPitter() {
 
 	var _offsetY = 20;
@@ -382,19 +382,37 @@ function playerDefeated() {
 
 	other.sprite_index = other.defeatSprite;
 	
-	//if pitterPlayerIsPresent() {
-	//
-	//	if obj_player_pitter.jumpCount >= obj_player_pitter.jumpMax && obj_player_pitter.gemPowerupDoubleJump {
-	//
-	//		obj_player_pitter.jumpMax = 1;
-	//
-	//		obj_player_pitter.gemPowerupDoubleJump = false;
-	//		if patterPlayerIsPresent() obj_player_patter.gemPowerupDoubleJump = false;
-	//
-	//	}
-	//
-	//}
+	if other.object_index == obj_player_pitter {
 
+	
+
+	}
+
+}
+//@
+function playerCaughtByForestGhost() {
+
+	if global.playerDefeated exit;
+
+	global.playerDefeated = true;
+	global.defeatCount++;
+
+	audio_play_sound(sfx_hurt, 1, 0);
+	audio_play_sound(sfx_mouseScream, 1, 0);
+	global.playerControl = false;
+	
+	var _extraRespawnTime = 180;
+	
+	obj_control.alarm[0] = global.playerRespawnTime + _extraRespawnTime; 
+
+	other.sprite_index = other.defeatSprite;
+	
+	if audio_is_playing(bgm_abyssalDescent) audio_stop_sound(bgm_abyssalDescent);
+	if audio_is_playing(bgm_cursedAtmosphere) audio_stop_sound(bgm_cursedAtmosphere);
+	if audio_is_playing(bgm_ephemeralEcho) audio_stop_sound(bgm_ephemeralEcho);
+	if audio_is_playing(bgm_ghostlyReverberations) audio_stop_sound(bgm_ghostlyReverberations);
+	if audio_is_playing(bgm_paranormalInfusion) audio_stop_sound(bgm_paranormalInfusion);
+	
 	if other.object_index == obj_player_pitter {
 
 	
