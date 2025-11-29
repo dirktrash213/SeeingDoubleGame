@@ -3,7 +3,7 @@ timer = 0;
 timerActive = false;
 
 ambienceFadingIn = false;
-ambienceFadingInPoint = 600;
+ambienceFadingInPoint = 200;
 ambienceFadingIn2 = false;
 ambienceFadingIn2Point = 1200;
 ambienceFadingIn3 = false;
@@ -32,6 +32,8 @@ ambienceFadingOutPoint = ghostArrivingPoint + 1800;
 ghostDeparting = false;
 ghostDepartingPoint = ghostArrivingPoint + 2300;
 
+ghostGone = false;
+
 //audio_play_sound(bgm_abyssalDescent, 1, 1);
 //audio_sound_gain(bgm_abyssalDescent, 0, 2);
 
@@ -44,6 +46,12 @@ audio_sound_gain(bgm_ephemeralEcho, 0, 0);
 
 audio_play_sound(bgm_cursedAtmosphere, 1, 1);
 audio_sound_gain(bgm_cursedAtmosphere, 0, 0);
+
+audio_play_sound(sfx_glitch_loop, 1, 1);
+audio_sound_gain(sfx_glitch_loop, 0, 0);
+
+audio_play_sound(sfx_glitch_loop2, 1, 1);
+audio_sound_gain(sfx_glitch_loop2, 0, 0);
 
 typist = scribble_typist();
 //typist.in(0.85, 0.9); 
