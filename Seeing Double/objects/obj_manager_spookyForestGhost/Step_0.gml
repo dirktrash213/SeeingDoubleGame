@@ -59,7 +59,7 @@ if !ghostArriving && timer >= ghostArrivingPoint {
 	
 	show_debug_message("ghostArriving")
 	
-	audio_play_sound(sfx_ghost_scream, 1, 0);
+	audio_play_sound(screamSFX, 1, 0);
 	
 	if instance_exists(obj_npc_ghost_forest) {
 	
@@ -75,11 +75,11 @@ if !ghostArriving && timer >= ghostArrivingPoint {
 
 }
 
-if ghostArriving && !ambienceFadingOut && !audio_is_playing(sfx_ghost_scream) && !audio_is_playing(sfx_ghost_scream2) {
+if ghostArriving && !ambienceFadingOut && !audio_is_playing(screamSFX) && !audio_is_playing(screamSFX2) {
 	
 	show_debug_message("playing scream 2")
 	
-	audio_play_sound(sfx_ghost_scream2, 1, 0);
+	audio_play_sound(screamSFX2, 1, 0);
 	
 }
 
@@ -94,7 +94,7 @@ if !ambienceFadingOut && timer >= ambienceFadingOutPoint {
 	audio_sound_gain(bgm_cursedAtmosphere, 0, _fadeOutTime);
 	audio_sound_gain(sfx_glitch_loop, 0, _fadeOutTime);
 	audio_sound_gain(sfx_glitch_loop2, 0, _fadeOutTime);
-	audio_sound_gain(sfx_ghost_scream2, 0, _fadeOutTime);
+	audio_sound_gain(screamSFX2, 0, _fadeOutTime);
 
 	show_debug_message("ambienceFadingOut")
 

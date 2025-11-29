@@ -53,6 +53,9 @@ audio_sound_gain(sfx_glitch_loop, 0, 0);
 audio_play_sound(sfx_glitch_loop2, 1, 1);
 audio_sound_gain(sfx_glitch_loop2, 0, 0);
 
+screamSFX = sfx_ghost_scream_LOUD;
+screamSFX2 = sfx_ghost_scream2_LOUD;
+
 typist = scribble_typist();
 //typist.in(0.85, 0.9); 
 typist.in(0.2, 0.9); 
