@@ -1,8 +1,12 @@
+global.speedrunTimer = 0;
 
 global.coinCount = 0;
 global.cherryCount = 0;
 global.defeatCount = 0;
 //global.grassCount = 0;
+
+global.coinLotsAmount = 5000;
+global.cherryMax = 50;
 
 global.paused = false;
 global.playerControl = true;
@@ -78,4 +82,10 @@ global.gotScammed = false;
 global.solvedForestPuzzle = false;
 
 global.caughtByForestGhost = false;
-global.escapedForestGhost = false;
+//global.escapedForestGhost = false;
+global.escapedForestGhost = true;
+
+
+
+
+global.foundRose = false;

@@ -5,4 +5,17 @@ if !audio_is_playing(bgm_caveDwellers) audio_play_sound(bgm_caveDwellers, 1, 1);
 
 if !global.caughtByForestGhost global.escapedForestGhost = true;
 
+if audio_is_playing(bgm_abyssalDescent) audio_stop_sound(bgm_abyssalDescent);
+if audio_is_playing(bgm_cursedAtmosphere) audio_stop_sound(bgm_cursedAtmosphere);
+if audio_is_playing(bgm_ephemeralEcho) audio_stop_sound(bgm_ephemeralEcho);
+if audio_is_playing(bgm_ghostlyReverberations) audio_stop_sound(bgm_ghostlyReverberations);
+if audio_is_playing(bgm_paranormalInfusion) audio_stop_sound(bgm_paranormalInfusion);
+if audio_is_playing(sfx_ghost_scream) audio_stop_sound(sfx_ghost_scream);
+if audio_is_playing(sfx_ghost_scream_LOUD) audio_stop_sound(sfx_ghost_scream_LOUD);
+if audio_is_playing(sfx_ghost_scream_VERYLOUD) audio_stop_sound(sfx_ghost_scream_VERYLOUD);
+if audio_is_playing(sfx_ghost_scream2) audio_stop_sound(sfx_ghost_scream2);
+if audio_is_playing(sfx_ghost_scream2_LOUD) audio_stop_sound(sfx_ghost_scream2_LOUD);
+if audio_is_playing(sfx_glitch_loop) audio_stop_sound(sfx_glitch_loop);
+if audio_is_playing(sfx_glitch_loop2) audio_stop_sound(sfx_glitch_loop2);
+
 global.verticalLevel = false;
