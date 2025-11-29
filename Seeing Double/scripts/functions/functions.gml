@@ -295,6 +295,8 @@ function spawnPitter() {
 
 	var _offsetY = 20;
 
+	obj_control.canDrawDivider = true;
+
 	//room_goto(obj_player_pitter.roomRespawn);
 	room_goto(asset_get_index(global.roomToSpawnIn));
 
@@ -327,6 +329,8 @@ function spawnPitter() {
 function spawnPatter() {
 	
 	var _offsetY = 20;
+
+	obj_control.canDrawDivider = true;
 
 	//show_debug_message()
 
@@ -407,11 +411,37 @@ function playerCaughtByForestGhost() {
 
 	other.sprite_index = other.defeatSprite;
 	
+	with obj_manager_spookyForestGhost {
+	
+		timer = 0;
+		timerActive = false;
+		ambienceFadingIn = false;
+		ambienceFadingIn2 = false;
+		ambienceFadingIn3 = false;
+		glitchesAppearing = false;
+		textAppearing = false;
+		textFinishedAppearing = false;
+		ghostArriving = false;
+		ambienceFadingOut = false;
+		ghostDeparting = false;
+		ghostGone = false;
+	
+	}
+	
+	obj_control.canDrawDivider = false;
+	
 	if audio_is_playing(bgm_abyssalDescent) audio_stop_sound(bgm_abyssalDescent);
 	if audio_is_playing(bgm_cursedAtmosphere) audio_stop_sound(bgm_cursedAtmosphere);
 	if audio_is_playing(bgm_ephemeralEcho) audio_stop_sound(bgm_ephemeralEcho);
 	if audio_is_playing(bgm_ghostlyReverberations) audio_stop_sound(bgm_ghostlyReverberations);
 	if audio_is_playing(bgm_paranormalInfusion) audio_stop_sound(bgm_paranormalInfusion);
+	if audio_is_playing(sfx_ghost_scream) audio_stop_sound(sfx_ghost_scream);
+	if audio_is_playing(sfx_ghost_scream_LOUD) audio_stop_sound(sfx_ghost_scream_LOUD);
+	if audio_is_playing(sfx_ghost_scream_VERYLOUD) audio_stop_sound(sfx_ghost_scream_VERYLOUD);
+	if audio_is_playing(sfx_ghost_scream2) audio_stop_sound(sfx_ghost_scream2);
+	if audio_is_playing(sfx_ghost_scream2_LOUD) audio_stop_sound(sfx_ghost_scream2_LOUD);
+	if audio_is_playing(sfx_glitch_loop) audio_stop_sound(sfx_glitch_loop);
+	if audio_is_playing(sfx_glitch_loop2) audio_stop_sound(sfx_glitch_loop2);
 	
 	if other.object_index == obj_player_pitter {
 

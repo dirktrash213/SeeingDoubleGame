@@ -115,6 +115,7 @@
     {"name":"inst_654E9DEE","path":"rooms/rm_forest_caveEntrance/rm_forest_caveEntrance.yy",},
     {"name":"inst_699A6338","path":"rooms/rm_forest_caveEntrance/rm_forest_caveEntrance.yy",},
     {"name":"inst_4D81BF72","path":"rooms/rm_forest_caveEntrance/rm_forest_caveEntrance.yy",},
+    {"name":"inst_778D1DFA","path":"rooms/rm_forest_caveEntrance/rm_forest_caveEntrance.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -241,6 +242,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_709BC302","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_caveBoulder","path":"objects/obj_interactable_caveBoulder/obj_interactable_caveBoulder.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":912.0,"y":176.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_E94D2AD","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_caveBoulder","path":"objects/obj_interactable_caveBoulder/obj_interactable_caveBoulder.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":912.0,"y":496.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6DE4A351","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_npc_ghost_forest","path":"objects/obj_npc_ghost_forest/obj_npc_ghost_forest.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1008.0,"y":528.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_778D1DFA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"objBktGlitchDemo","path":"objects/objBktGlitchDemo/objBktGlitchDemo.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":224.0,"y":112.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"LevelTiles","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":37,"SerialiseWidth":60,"TileCompressedData":[
 -30,0,-19,-2147483648,2,0,215,-9,136,-30,0,-19,-2147483648,2,0,215,-9,136,-30,0,-19,-2147483648,2,0,215,-9,136,-30,0,-19,-2147483648,3,0,235,239,-8,136,-30,0,-19,-2147483648,-2,0,3,235,236,239,-6,136,-30,0,-19,-2147483648,1,0,-3,-2147483648,1,215,-6,

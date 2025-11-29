@@ -1,0 +1,19 @@
+/*
+BktGlitch_set_intensity(1.000000);
+BktGlitch_set_line_shift(0.015537);
+BktGlitch_set_line_speed(0.466726);
+BktGlitch_set_line_resolution(2.525621);
+BktGlitch_set_line_drift(0.940387);
+BktGlitch_set_line_vertical_shift(0.062625);
+BktGlitch_set_noise_level(0.638489);
+BktGlitch_set_jumbleness(0.103451);
+BktGlitch_set_jumble_speed(8.168805);
+BktGlitch_set_jumble_resolution(0.145774);
+BktGlitch_set_jumble_shift(0.530043);
+BktGlitch_set_channel_shift(0.045011);
+BktGlitch_set_channel_dispersion(0.345750);
+BktGlitch_set_shakiness(6.414994);
+BktGlitch_set_rng_seed(0.507100);
+//////
+Alternatively:
+BktGlitch_config(0.015537, 0.466726, 2.525621, 0.940387, 0.062625, 0.103451, 8.168805, 0.145774, 0.530043, 0.638489, 0.045011, 0.345750, 6.414994, 1.000000, 0.507100);

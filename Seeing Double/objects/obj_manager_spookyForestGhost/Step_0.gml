@@ -36,8 +36,8 @@ if !glitchesAppearing && timer >= glitchesAppearingPoint {
 
 	glitchesAppearing = true;
 	
-	audio_sound_gain(sfx_glitch_loop, 0.5, 5000);
-	audio_sound_gain(sfx_glitch_loop2, 0.1, 5000);
+	audio_sound_gain(sfx_glitch_loop, 0.5, 15000);
+	audio_sound_gain(sfx_glitch_loop2, 0.1, 15000);
 	
 	show_debug_message("glitchesAppearing")
 
@@ -59,7 +59,7 @@ if !ghostArriving && timer >= ghostArrivingPoint {
 	
 	show_debug_message("ghostArriving")
 	
-	audio_play_sound(screamSFX, 1, 0);
+	audio_play_sound(screamSFX, 1, 0, 0.5);
 	
 	if instance_exists(obj_npc_ghost_forest) {
 	
@@ -79,7 +79,7 @@ if ghostArriving && !ambienceFadingOut && !audio_is_playing(screamSFX) && !audio
 	
 	show_debug_message("playing scream 2")
 	
-	audio_play_sound(screamSFX2, 1, 0);
+	audio_play_sound(screamSFX2, 1, 0, 0.5);
 	
 }
 
