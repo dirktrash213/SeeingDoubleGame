@@ -974,7 +974,7 @@ if standingUp {
 
 }
 
-//@
+
 if instance_exists(obj_manager_spookyForestGhost) && object_index == obj_player_patter {
 
 	if (obj_manager_spookyForestGhost.glitchesAppearing || obj_manager_spookyForestGhost.textAppearing || obj_manager_spookyForestGhost.ghostArriving) && !obj_manager_spookyForestGhost.ghostDeparting {
@@ -1034,7 +1034,7 @@ if instance_exists(obj_manager_spookyForestGhost) && object_index == obj_player_
 
 
 
-
+//@
 if global.cutsceneActive {
 	
 	//if onGround sprite_index = idleSprite;
@@ -1046,51 +1046,120 @@ if global.cutsceneActive {
 	switch global.currentCutsceneID {
 	
 		case CUTSCENE_ID.OPENING: {
+			
+			//show_debug_message("pitter x: " + string(obj_player_pitter.x))
+			
+			//ySpeed = -0.5;
 		
-			if happyPicnic sprite_index = happySprite;
-			if concernedPicnic sprite_index = concernSprite;
-			if scaredPicnic sprite_index = scaredSprite;
+			switch global.titleScreenCutsceneState {
+			
+				case TITLE_SCREEN_CUTSCENE_STATE.ON_MENU: {
+				
+					sprite_index = happySprite;
+				
+				} break;
+				
+				case TITLE_SCREEN_CUTSCENE_STATE.STARTING_CUTSCENE: {
+				
+					sprite_index = happySprite;
+				
+				} break;
+				
+				case TITLE_SCREEN_CUTSCENE_STATE.PITTER_HOLDING_CHERRY: {
+				
+					if object_index == obj_player_pitter sprite_index = spr_pitter_giveCherry;
+					if object_index == obj_player_patter sprite_index = spr_patter_forward_left;
+				
+				} break;
+				
+				case TITLE_SCREEN_CUTSCENE_STATE.PITTER_THROWING_CHERRY: {
+				
+					var _patterSprite = global.titleScreenCherriesEaten == 1 ? spr_patter_happy : spr_patter_happy_eat;
+				
+					if object_index == obj_player_pitter sprite_index = spr_pitter_gaveCherry;
+					if object_index == obj_player_patter sprite_index = _patterSprite;
+				
+				} break;
+				
+				case TITLE_SCREEN_CUTSCENE_STATE.PATTER_HOLDING_CHERRY: {
+				
+					if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+					if object_index == obj_player_patter sprite_index = spr_patter_giveCherry;
+				
+				} break;
+				
+				case TITLE_SCREEN_CUTSCENE_STATE.PATTER_THROWING_CHERRY: {
+				
+					var _pitterSprite = global.titleScreenCherriesEaten == 2 ? spr_pitter_happy : spr_pitter_happy_eat;
+				
+					if object_index == obj_player_pitter sprite_index = _pitterSprite;
+					if object_index == obj_player_patter sprite_index = spr_patter_gaveCherry;
+				
+				} break;
+				
+				case TITLE_SCREEN_CUTSCENE_STATE.PITTER_PATTER_HUGGING: {
+				
+					var _pitterSprite = global.pitterPatterHugging ? spr_pitter_hugPatter : spr_pitter_walk;
+					var _pitterHspeed = global.pitterPatterHugging ? 0.0 : 0.5;
+					
+					if object_index == obj_player_pitter sprite_index = _pitterSprite;
+					if object_index == obj_player_patter sprite_index = spr_patter_walk_left;
+					if object_index == obj_player_pitter hspeed = _pitterHspeed;
+					if object_index == obj_player_patter hspeed = -0.5;
+				
+				} break;
+				
+				case TITLE_SCREEN_CUTSCENE_STATE.PAD_FIRING: {
+				
+				
+				} break;
+			
+			}
+		
+			//if happyPicnic sprite_index = happySprite;
+			//if concernedPicnic sprite_index = concernSprite;
+			//if scaredPicnic sprite_index = scaredSprite;
 			if searchingForPatterPicnic {
-	
+			
 				sprite_index = runScaredSprite;
-
+			
 				if x > 224 && hspeed == freakoutSpeed {
-		
+			
 					hspeed = -freakoutSpeed;
 					image_xscale = -1;
-		
+			
 				}
-	
+			
 				if x < 190 && hspeed == -freakoutSpeed {
-		
+			
 					hspeed = freakoutSpeed;
 					image_xscale = 1;
-		
+			
 				}
-	
+			
 			}
-
+			//
 			if thinkingPicnic {
-
+			
 				hspeed = 0;
 				image_xscale = 1;
 				sprite_index = concernSprite;
-	
+			
 				var _offsetX = -5;
 				var _offsetY = -20;
-	
+			
 				if !instance_exists(obj_background_elipses) {
-		
+			
 					instance_create_layer(x + _offsetX, y + _offsetY, "Instances", obj_background_elipses);
-		
+			
 				} 
-	
+			
 			}
-
+			
 			if wonderingAboutCherriesPicnic {
-
+			
 				sprite_index = curiousSprite;
-
+			
 			}
 			
 		} break;

@@ -44,6 +44,9 @@ global.volumeSFX = 8;
 global.volumeBGM = 8;
 global.fullScreen = false;
 
+global.titleScreenCherriesEaten = 0;
+global.pitterPatterHugging = false;
+global.patterBeamedAway = false;
 
 global.moveUp = false;
 global.moveDown = false;

@@ -8,6 +8,92 @@ switch global.titleScreenCutsceneState {
 	
 	} break;
 	
+	case TITLE_SCREEN_CUTSCENE_STATE.STARTING_CUTSCENE: {
+		
+		global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.PITTER_HOLDING_CHERRY;
+	
+		var _sceneDuration = 120;
+		
+		alarm[1] = _sceneDuration;
+	
+	} break;
+	
+	case TITLE_SCREEN_CUTSCENE_STATE.PITTER_HOLDING_CHERRY: {
+		
+		global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.PITTER_THROWING_CHERRY;
+	
+		var _sceneDuration = 180;
+		
+		alarm[1] = _sceneDuration;
+		
+		var _offsetX = 20;
+		var _offsetY = -30;
+		
+		with instance_create_layer(obj_player_pitter.x+_offsetX, obj_player_pitter.y+_offsetY, "Instances", obj_background_cherry) {
+		
+			hspeed = 0.1;
+			vspeed = -4;
+			gravity = 0.1;
+		
+		}
+	
+	} break;
+	
+	case TITLE_SCREEN_CUTSCENE_STATE.PITTER_THROWING_CHERRY: {
+		
+		global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.PATTER_HOLDING_CHERRY;
+	
+		var _sceneDuration = 120;
+		
+		alarm[1] = _sceneDuration;
+	
+	} break;
+	
+	case TITLE_SCREEN_CUTSCENE_STATE.PATTER_HOLDING_CHERRY: {
+		
+		global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.PATTER_THROWING_CHERRY;
+	
+		var _sceneDuration = 240;
+		
+		alarm[1] = _sceneDuration;
+		
+		var _offsetX = -15;
+		var _offsetY = -30;
+		
+		with instance_create_layer(obj_player_patter.x+_offsetX, obj_player_patter.y+_offsetY, "Instances", obj_background_cherry) {
+		
+			hspeed = -0.1;
+			vspeed = -5;
+			gravity = 0.1;
+		
+		}
+		
+		//var _timeUntilPitterJumps = 60;
+		//
+		//obj_player_pitter.alarm[3] = _timeUntilPitterJumps;
+	
+	} break;
+	
+	case TITLE_SCREEN_CUTSCENE_STATE.PATTER_THROWING_CHERRY: {
+		
+		global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.PITTER_PATTER_HUGGING;
+	
+		var _sceneDuration = 60;
+		
+		alarm[1] = _sceneDuration;
+	
+	} break;
+	
+	case TITLE_SCREEN_CUTSCENE_STATE.PITTER_PATTER_HUGGING: {
+		
+		global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.PAD_WARMING_UP;
+	
+		var _sceneDuration = 120;
+		
+		alarm[1] = _sceneDuration;
+	
+	} break;
+	
 	case TITLE_SCREEN_CUTSCENE_STATE.PAD_WARMING_UP: {
 	
 		with obj_background_device {
@@ -20,6 +106,8 @@ switch global.titleScreenCutsceneState {
 	} break;
 	
 	case TITLE_SCREEN_CUTSCENE_STATE.PAD_FIRING: {
+		
+		global.patterBeamedAway = true;
 		
 		global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.PAD_FIRED;
 	

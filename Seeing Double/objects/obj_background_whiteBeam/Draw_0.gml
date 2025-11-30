@@ -3,15 +3,27 @@ draw_sprite_ext(sprite_index, image_index, x, y, xScale, yScale, 0, -1, image_al
 
 if !fadingOut {
 
+	//show_debug_message("xScale: " + string(xScale))
+
 	xScale += xScaleIncreaseAmount;
 
 	xScaleIncreaseAmount++;
 	
+	if xScale > 20 {
+		
+		//show_debug_message("patter is beamedup")
+		//global.patterBeamedAway = true;
+		
+	}
+	
 	if xScale > 20000 {
+	
+		//show_debug_message("fading out white beam")
 	
 		fadingOut = true;
 		
-		instance_destroy(obj_player_patter);
+		//instance_destroy(obj_player_patter);
+		
 		instance_destroy(obj_background_picnicBasket);
 		
 		obj_background_device.image_blend = c_white;

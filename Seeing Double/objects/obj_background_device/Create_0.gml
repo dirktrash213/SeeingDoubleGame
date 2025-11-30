@@ -19,3 +19,6 @@ pulseTimer = 0;
 // Define the target colors
 colorWhite = c_white;
 colorRed = c_red;
+
+
+alarm2Triggered = false;

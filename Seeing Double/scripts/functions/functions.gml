@@ -284,7 +284,8 @@ function startNewGame() {
 	var _delayUntilCutsceneBegins = 60;
 
 	typingNewGame = false;
-	global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.PAD_WARMING_UP;
+	//global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.PAD_WARMING_UP;
+	global.titleScreenCutsceneState = TITLE_SCREEN_CUTSCENE_STATE.STARTING_CUTSCENE;
 	obj_control.alarm[1] = _delayUntilCutsceneBegins;
 
 

@@ -1,6 +1,9 @@
 /// @description Particles
 
-if happyPicnic {
+//if happyPicnic {
+if global.titleScreenCutsceneState == TITLE_SCREEN_CUTSCENE_STATE.ON_MENU 
+|| global.titleScreenCutsceneState == TITLE_SCREEN_CUTSCENE_STATE.STARTING_CUTSCENE 
+|| global.titleScreenCutsceneState == TITLE_SCREEN_CUTSCENE_STATE.PITTER_PATTER_HUGGING {
 
 	var _offsetY = -10;
 

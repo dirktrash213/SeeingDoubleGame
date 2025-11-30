@@ -68,7 +68,7 @@ climbingSprite = spr_pitter_climb;
 defeatSprite = spr_pitter_defeat;
 crushedSprite = spr_pitter_splat;
 
-happySprite = spr_pitter_happy;
+happySprite = spr_pitter_happy_animated;
 concernSprite = spr_pitter_pause;
 scaredSprite = spr_pitter_scared;
 runScaredSprite = spr_pitter_run_scared;
