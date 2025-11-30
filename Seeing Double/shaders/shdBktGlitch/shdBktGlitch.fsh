@@ -52,6 +52,7 @@ uniform vec2  resolution;      // screen resolution
 uniform float rngSeed;         // seed offset (changes configuration around)
 uniform vec3  randomValues;    // random values changing every frame, passed in by the CPU
 uniform sampler2D noiseTexture;// noise texture sampler
+uniform float split_position;  // 0.0 for full screen, 0.5 for split
 
 //TUNING
 uniform float lineSpeed;       // line speed
@@ -144,7 +145,7 @@ void main()
 	
 	// --- START EDIT: ADD THIS BLOCK ---
     // If the pixel is on the left half (less than 0.5)
-    if (v_vTexcoord.x < 0.5) {
+    if (v_vTexcoord.x < split_position) {
         // Draw the normal pixel
         gl_FragColor = v_vColour * texture2D(gm_BaseTexture, v_vTexcoord);
         // Stop the shader here! (Saves performance)

@@ -1,3 +1,10 @@
+//if (keyboard_check_pressed(ord("T"))) {
+//   
+//   show_debug_message("shader toggle");
+//   
+//   enable_split_screen = !enable_split_screen; // Flip true/false
+//}
+
 __bktgtlich_ui_step();
 
 if instance_exists(obj_manager_spookyForestGhost) {

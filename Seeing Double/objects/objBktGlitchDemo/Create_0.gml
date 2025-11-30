@@ -46,3 +46,8 @@ channelDispersionMax = 0.020000;
 channelDispersionIncreaseAmount = 0.00001;
 channelDispersionDecreaseAmount = 0.00005;
 
+// 1. Get the handle for the new uniform
+u_split_pos = shader_get_uniform(shdBktGlitch, "split_position");
+
+// 2. Create your toggle variable
+enable_split_screen = false;

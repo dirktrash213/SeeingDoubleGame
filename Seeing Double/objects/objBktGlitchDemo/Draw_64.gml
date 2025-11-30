@@ -39,22 +39,64 @@ __bktgtlich_pass_uniforms_from_ui();
 bktglitch_config_zero();
 //bktglitch_config_preset(BktGlitchPreset.E);
 
+// LOGIC: Determine the split value
+var _split_value = 0.0; // Default to Full Screen (0.0 means "clean part" is non-existent)
 
-bktglitch_set_intensity(intensity);
-bktglitch_set_line_shift(0.001333);
-bktglitch_set_line_speed(0.250000);
-bktglitch_set_line_resolution(1.660000);
-bktglitch_set_line_drift(0.493333);
-bktglitch_set_line_vertical_shift(0.740000);
-bktglitch_set_noise_level(0.353333);
-bktglitch_set_jumbleness(0.300000);
-bktglitch_set_jumble_speed(25.000000);
-bktglitch_set_jumble_resolution(.10000000);
-bktglitch_set_jumble_shift(0.086667);
-bktglitch_set_channel_shift(channelShift);
-bktglitch_set_channel_dispersion(channelDispersion);
-bktglitch_set_shakiness(2.266667);
-bktglitch_set_rng_seed(48.666667);
+if (enable_split_screen) {
+    _split_value = 0.5; // Set split to halfway
+}
+
+// Pass the value to the shader
+shader_set_uniform_f(u_split_pos, _split_value);
+
+switch room {
+
+	case rm_forest_caveEntrance: {
+	
+		bktglitch_set_intensity(intensity);
+		bktglitch_set_line_shift(0.001333);
+		bktglitch_set_line_speed(0.250000);
+		bktglitch_set_line_resolution(1.660000);
+		bktglitch_set_line_drift(0.493333);
+		bktglitch_set_line_vertical_shift(0.740000);
+		bktglitch_set_noise_level(0.353333);
+		bktglitch_set_jumbleness(0.300000);
+		bktglitch_set_jumble_speed(25.000000);
+		bktglitch_set_jumble_resolution(.10000000);
+		bktglitch_set_jumble_shift(0.086667);
+		bktglitch_set_channel_shift(channelShift);
+		bktglitch_set_channel_dispersion(channelDispersion);
+		bktglitch_set_shakiness(2.266667);
+		bktglitch_set_rng_seed(48.666667);
+	
+	} break;
+	
+	default: {
+	
+		//bktglitch_set_intensity(0.20000);
+		bktglitch_set_intensity(0.000000);
+		bktglitch_set_line_shift(0.0005333);
+		bktglitch_set_line_speed(0.250000);
+		bktglitch_set_line_resolution(1.660000);
+		bktglitch_set_line_drift(0.493333);
+		bktglitch_set_line_vertical_shift(0.740000);
+		bktglitch_set_noise_level(0.353333);
+		//bktglitch_set_jumbleness(0.300000);
+		bktglitch_set_jumble_speed(25.000000);
+		bktglitch_set_jumble_resolution(.10000000);
+		bktglitch_set_jumble_shift(0.086667);
+		//bktglitch_set_channel_shift(0.001);
+		//bktglitch_set_channel_dispersion(0.001);
+		//bktglitch_set_channel_shift(0.004);
+		//bktglitch_set_channel_dispersion(0.004);
+		bktglitch_set_shakiness(2.266667);
+		bktglitch_set_rng_seed(48.666667);
+	
+	} break;
+
+}
+
+
 
 // Drawing with shader active! 
 // draw_surface(application_surface, 0, 0);
