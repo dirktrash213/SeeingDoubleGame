@@ -139,6 +139,7 @@ if global.paused {
 							
 							case 1: { //Exit game
 							
+								saveSettings();
 								game_end();
 							
 							} break;
@@ -173,8 +174,20 @@ if global.paused {
 							
 							case 1: { //Toggle fullscreen
 						
-								window_set_fullscreen(!window_get_fullscreen());
-						
+								//window_set_fullscreen(!window_get_fullscreen());
+								
+								if global.fullScreen {
+								
+									global.fullScreen = false;
+									window_set_fullscreen(false);
+								
+								} else {
+								
+									global.fullScreen = true;
+									window_set_fullscreen(true);
+								
+								}
+								
 							} break;
 							
 						}

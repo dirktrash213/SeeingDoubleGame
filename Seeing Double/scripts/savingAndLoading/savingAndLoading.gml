@@ -16,15 +16,39 @@ global.gameData = {
 
 function saveSettings() {
 
+	var _file = file_text_open_write("settings.txt");
+	
+	file_text_write_real(_file, global.volumeMaster);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.volumeSFX);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.volumeBGM);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.fullScreen);
+	file_text_writeln(_file);
 
-
+	file_text_close(_file); 
 
 }
 
 function loadSettings() { //Load player's audio, visual, and gameplay settings on game start
 
-
-
+	if file_exists("settings.txt") {
+	
+		var _file = file_text_open_read("settings.txt");
+		
+		global.volumeMaster = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.volumeSFX = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.volumeBGM = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.fullScreen = file_text_read_real(_file);
+		file_text_readln(_file);
+		
+		file_text_close(_file);
+		
+	}
 
 }
 
@@ -33,6 +57,21 @@ function saveRoom() {
 	var _dataArray = [];
 
 	with obj_pickup_coin {
+	
+		var _dataStruct = {
+		
+			objectName: object_get_name(object_index),
+			x: x,
+			y: y,
+			image_index: image_index,
+		
+		}
+		
+		array_push(_dataArray, _dataStruct);
+
+	}
+	
+	with obj_pickup_coin_empty {
 	
 		var _dataStruct = {
 		
@@ -122,17 +161,23 @@ function saveGame(){
 	file_text_writeln(_file);
 	file_text_write_real(_file, global.splitScreenActive);
 	file_text_writeln(_file);
-	file_text_write_real(_file, global.volumeMaster);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.volumeSFX);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.volumeBGM);
-	file_text_writeln(_file);
+	//file_text_write_real(_file, global.volumeMaster);
+	//file_text_writeln(_file);
+	//file_text_write_real(_file, global.volumeSFX);
+	//file_text_writeln(_file);
+	//file_text_write_real(_file, global.volumeBGM);
+	//file_text_writeln(_file);
 	file_text_write_real(_file, global.gotScammed);
 	file_text_writeln(_file);
 	file_text_write_real(_file, global.solvedForestPuzzle);
 	file_text_writeln(_file);
 	file_text_write_real(_file, global.doubleJumpActive);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.caughtByForestGhost);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.escapedForestGhost);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.foundRose);
 	file_text_writeln(_file);
 
 	file_text_write_string(_file, _dataJsonString);
@@ -154,6 +199,7 @@ function loadRoom(){
 		instance_destroy(obj_spawner_enemyCherryGoal);
 		instance_destroy(obj_spawner_cherry);
 		instance_destroy(obj_pickup_cherry);
+		instance_destroy(obj_pickup_coin_empty);
 		instance_destroy(obj_pickup_coin);
 		
 		for(var i = 0; i < array_length(_dataArray); i++) {
@@ -186,17 +232,23 @@ function loadGame(){
 		file_text_readln(_file);
 		global.splitScreenActive = file_text_read_real(_file);
 		file_text_readln(_file);
-		global.volumeMaster = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.volumeSFX = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.volumeBGM = file_text_read_real(_file);
-		file_text_readln(_file);
+		//global.volumeMaster = file_text_read_real(_file);
+		//file_text_readln(_file);
+		//global.volumeSFX = file_text_read_real(_file);
+		//file_text_readln(_file);
+		//global.volumeBGM = file_text_read_real(_file);
+		//file_text_readln(_file);
 		global.gotScammed = file_text_read_real(_file);
 		file_text_readln(_file);
 		global.solvedForestPuzzle = file_text_read_real(_file);
 		file_text_readln(_file);
 		global.doubleJumpActive = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.caughtByForestGhost = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.escapedForestGhost = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.foundRose = file_text_read_real(_file);
 		file_text_readln(_file);
 		
 		var _dataJsonString = file_text_read_string(_file);

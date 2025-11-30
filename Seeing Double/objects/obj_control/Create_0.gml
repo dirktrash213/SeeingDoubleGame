@@ -43,3 +43,9 @@ canDrawDivider = true;
 
 //tilemapID = noone;
 //tileLayerAlpha = 0.5;
+
+//Load player settings
+loadSettings();
+
+//Start game in fullscreen if saved settings are fulllscreen
+if global.fullScreen window_set_fullscreen(true);

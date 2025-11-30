@@ -38,9 +38,12 @@ global.dashActive = false;
 global.crouchJumpActive = false;
 
 
+//Settings
 global.volumeMaster = 8;
 global.volumeSFX = 8;
 global.volumeBGM = 8;
+global.fullScreen = false;
+
 
 global.moveUp = false;
 global.moveDown = false;
@@ -82,8 +85,7 @@ global.gotScammed = false;
 global.solvedForestPuzzle = false;
 
 global.caughtByForestGhost = false;
-//global.escapedForestGhost = false;
-global.escapedForestGhost = true;
+global.escapedForestGhost = false;
 
 
 
