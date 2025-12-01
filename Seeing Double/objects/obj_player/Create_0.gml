@@ -4,9 +4,19 @@ function setOnGround(_val = true) {
 
 	if _val {
 	
+		if !onGround && canLandWithDust {
+			
+			instance_create_layer(x, y, "Instances", obj_vfx_dust_jump);
+			if !audio_is_playing(sfx_footstep) audio_play_sound(sfx_footstep, 1, 0, 1, 0, 0.5);
+			
+			xStretch = 1.5;
+			yStretch = 0.5;
+			
+		}
+	
 		onGround = true;
 		coyoteHangTimer = coyoteHangFrames;
-	
+		
 	} else {
 	
 		onGround = false;
@@ -93,6 +103,9 @@ runType = 0;
 moveSpeed[0] = 2; //Walk speed
 moveSpeed[1] = 3.5; //Run speed
 
+afterimageSpawnRate = 2;
+alarm[4] = afterimageSpawnRate;
+
 climbSpeed[0] = 2;
 climbSpeed[1] = 3.5;
 
@@ -103,6 +116,11 @@ climbing = false;
 
 xSpeed = 0;
 ySpeed = 0;
+
+xStretch = 1;
+yStretch = 1;
+
+stretchAdjustAmount = 0.1;
 
 //Jumping
 
@@ -126,6 +144,10 @@ jumpOffEnemySpeed[1] = -8;
 gemPowerupDoubleJump = false;
 
 onGround = true;
+
+canLandWithDust = false;
+timeUntilCanLandWithDust = 5;
+alarm[3] = timeUntilCanLandWithDust;
 
 //Coyote time
 

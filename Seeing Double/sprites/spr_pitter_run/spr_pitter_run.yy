@@ -44,8 +44,8 @@
     "backdropYOffset": 0.0,
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[
         {"resourceType":"Keyframe<MessageEventKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"MessageEventKeyframe","resourceVersion":"1.0","Events":[
-                "footstep",
-              ],},},"Disabled":false,"id":"610b414c-be9b-42bd-ac56-36a98c090814","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+                "footstepRun",
+              ],},},"Disabled":false,"id":"2656787c-43de-452c-a892-db9cafc2f9d8","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
       ],},
     "eventStubScript": null,
     "eventToFunction": {},

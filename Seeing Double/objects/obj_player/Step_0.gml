@@ -20,6 +20,33 @@ if global.playerDefeated || global.paused {
 
 }
 
+if xStretch > 1 {
+
+	xStretch -= stretchAdjustAmount;
+	xStretch = max(xStretch, 1);
+
+} else {
+
+	xStretch += stretchAdjustAmount;
+	xStretch = min(xStretch, 1);
+
+}
+
+if yStretch > 1 {
+
+	yStretch -= stretchAdjustAmount;
+	yStretch = max(yStretch, 1);
+
+} else {
+
+	yStretch += stretchAdjustAmount;
+	yStretch = min(yStretch, 1);
+
+}
+
+
+
+
 //make_layer_transparent("SecretTiles", 0, 0.05);
 
 if object_index == obj_player_pitter && global.splitScreenActive {
@@ -425,6 +452,7 @@ if instance_exists(myFloorPlat) && (myFloorPlat.object_index == obj_block_wall |
 
 }
 
+//Perform the jump
 if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled && (!moveDown || _floorIsSolid) {
 
 	//Reset jump buffer
@@ -455,7 +483,23 @@ if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled && (!moveDown || _flo
 	
 	var _pitch = random_range(0.9, 1.1);
 	
+	if jumpCount >= 2 {
+		
+		_pitch += 0.3;
+		instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
+		
+	} else {
+	
+		instance_create_layer(x, y, "Instances", obj_vfx_dust_jump);
+	
+	}
+	
 	audio_play_sound(jumpSfx, 1, 0, 1, 0, _pitch);
+	
+	
+	
+	xStretch = 0.5;
+	yStretch = 1.5;
 	
 	climbing = false;
 	
@@ -513,6 +557,8 @@ if collidingEnemy {
 				if jumpCount == jumpMax jumpCount--;
 			
 			}
+			
+			instance_create_layer(x, y, "Instances", obj_vfx_actionLines_enemyImpact);
 	
 			collidingEnemy.defeated = true;
 			setOnGround(false);
@@ -596,6 +642,9 @@ if place_meeting(x, y + ySpeed, obj_block_wall) && canCollide {
 		
 		if !audio_is_playing(sfx_footstep) audio_play_sound(sfx_footstep, 1, 0, 1, 0, 0.5);
 		jumpHoldTimer = 0;
+		
+		//xStretch = 1.5;
+		//yStretch = 0.5;
 		
 	}
 	
@@ -731,31 +780,31 @@ if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
 }
 
 //Manually fall through a semisolid platform
-if moveDown && jumpPressed && !global.cutsceneActive {
-
-	//Make sure we have a floor platform that is a semisolid
-	if instance_exists(myFloorPlat) && (myFloorPlat.object_index == obj_block_wall_semiSolid || object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid)) {
-	
-		//Check if we can go below the semisolid platform
-		
-		var _yCheck = max(1, myFloorPlat.ySpeed+1);
-		if !place_meeting(x, y + _yCheck, obj_block_wall) {
-		
-			y += 1;
-			
-			//Inherit downward movespeed from my platform so it doesn't catch me
-			ySpeed = _yCheck-1;
-			
-			//Forget this platform so we don't get caught on it again
-			forgetSemisolid = myFloorPlat;
-			
-			setOnGround(false);
-		
-		}
-	
-	}
-
-}
+//if moveDown && jumpPressed && !global.cutsceneActive {
+//
+//	//Make sure we have a floor platform that is a semisolid
+//	if instance_exists(myFloorPlat) && (myFloorPlat.object_index == obj_block_wall_semiSolid || object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid)) {
+//	
+//		//Check if we can go below the semisolid platform
+//		
+//		var _yCheck = max(1, myFloorPlat.ySpeed+1);
+//		if !place_meeting(x, y + _yCheck, obj_block_wall) {
+//		
+//			y += 1;
+//			
+//			//Inherit downward movespeed from my platform so it doesn't catch me
+//			ySpeed = _yCheck-1;
+//			
+//			//Forget this platform so we don't get caught on it again
+//			forgetSemisolid = myFloorPlat;
+//			
+//			setOnGround(false);
+//		
+//		}
+//	
+//	}
+//
+//}
 
 
 
@@ -907,7 +956,29 @@ if place_meeting(x, y, obj_block_wall) {
 }
 
 
+if run && (moveLeftPressed || moveRightPressed) && onGround && !climbing {
 
+	var _xScale = moveDir;
+
+	with instance_create_layer(x, y, "Instances", obj_vfx_dust_sprint) {
+	
+		image_xscale = _xScale;
+	
+	}
+	
+}
+
+if runPressed && onGround && !climbing {
+	
+	var _xScale = moveDir;
+
+	with instance_create_layer(x, y, "Instances", obj_vfx_dust_sprint) {
+	
+		image_xscale = _xScale;
+	
+	}
+
+}
 
 
 //Sprite Control
@@ -1034,7 +1105,7 @@ if instance_exists(obj_manager_spookyForestGhost) && object_index == obj_player_
 
 
 
-//@
+
 if global.cutsceneActive {
 	
 	//if onGround sprite_index = idleSprite;

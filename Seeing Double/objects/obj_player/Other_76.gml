@@ -10,6 +10,22 @@ if event_data[? "event_type"] == "sprite event" {
 			
 		} break;
 		
+		case "footstepRun": {
+			
+			var _pitch = random_range(0.7, 1.7);
+			
+			if !audio_is_playing(sfx_footstep) audio_play_sound(sfx_footstep, 1, 0, 1, 0, _pitch);
+			
+			//var _xScale = moveDir;
+			//
+			//with instance_create_layer(x, y, "Instances", obj_vfx_dust_sprint) {
+			//
+			//	image_xscale = _xScale;
+			//
+			//}
+			
+		} break;
+		
 		case "ladder": {
 			
 			var _pitch = random_range(1.5, 2.5);

@@ -27,8 +27,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Particles",
-    "path": "folders/Sprites/Particles.yy",
+    "name": "Particles and VFX",
+    "path": "folders/Sprites/Particles and VFX.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

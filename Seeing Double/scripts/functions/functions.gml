@@ -386,6 +386,8 @@ function playerDefeated() {
 	obj_control.alarm[0] = global.playerRespawnTime; 
 
 	other.sprite_index = other.defeatSprite;
+	other.xStretch = 1;
+	other.yStretch = 1;
 	
 	if other.object_index == obj_player_pitter {
 
