@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "OLD",
-    "path": "folders/Sprites/Capsule Art/OLD.yy",
+    "path": "folders/Sprites/Promo Art/OLD.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

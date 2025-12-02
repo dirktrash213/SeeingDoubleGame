@@ -648,6 +648,8 @@ if place_meeting(x, y + ySpeed, obj_block_wall) && canCollide {
 		
 	}
 	
+	groundCollideSpeed = ySpeed;
+	
 	//Set ySpeed to 0 to collide
 	ySpeed = 0;
 	
@@ -750,9 +752,12 @@ if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
 	
 	y = floor(y);
 	
-	//Collide with ground
+	groundCollideSpeed = ySpeed;
 	ySpeed = 0;
+	
+	//Collide with ground
 	setOnGround(true);
+	
 	
 	if myFloorPlat.object_index == obj_block_wall_semiSolid_moving
 	|| myFloorPlat.object_index == obj_block_wall_moving

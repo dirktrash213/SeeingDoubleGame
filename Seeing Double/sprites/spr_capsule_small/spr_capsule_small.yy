@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Capsule Art",
-    "path": "folders/Sprites/Capsule Art.yy",
+    "name": "Promo Art",
+    "path": "folders/Sprites/Promo Art.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

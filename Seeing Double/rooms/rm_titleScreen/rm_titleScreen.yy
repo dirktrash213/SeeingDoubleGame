@@ -41,6 +41,7 @@
     {"name":"inst_3E241C08","path":"rooms/rm_titleScreen/rm_titleScreen.yy",},
     {"name":"inst_5D5D336C","path":"rooms/rm_titleScreen/rm_titleScreen.yy",},
     {"name":"inst_11DCB89B","path":"rooms/rm_titleScreen/rm_titleScreen.yy",},
+    {"name":"inst_683A3336","path":"rooms/rm_titleScreen/rm_titleScreen.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -90,6 +91,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4D3671C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_grass_flowers","path":"objects/obj_interactable_grass_flowers/obj_interactable_grass_flowers.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":32.0,"y":-32.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3E241C08","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_grass_sprouts","path":"objects/obj_interactable_grass_sprouts/obj_interactable_grass_sprouts.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":400.0,"y":-48.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5D5D336C","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_player_patter","path":"objects/obj_player_patter/obj_player_patter.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":224.0,"y":176.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_683A3336","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_background_controlsDisplay_movement","path":"objects/obj_background_controlsDisplay_movement/obj_background_controlsDisplay_movement.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":208.0,"y":128.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"LevelTiles","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":17,"SerialiseWidth":30,"TileCompressedData":[
 -30,0,1,272,-29,0,1,292,-303,0,4,-2147483648,0,0,270,-11,271,1,272,-17,0,3,290,131,291,-9,131,2,292,270,

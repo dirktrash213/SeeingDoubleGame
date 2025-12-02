@@ -6,11 +6,25 @@ function setOnGround(_val = true) {
 	
 		if !onGround && canLandWithDust {
 			
-			instance_create_layer(x, y, "Instances", obj_vfx_dust_jump);
-			if !audio_is_playing(sfx_footstep) audio_play_sound(sfx_footstep, 1, 0, 1, 0, 0.5);
+			//show_debug_message(groundCollideSpeed)
 			
-			xStretch = 1.5;
-			yStretch = 0.5;
+			//if groundCollideSpeed >= termVelocity {
+			if groundCollideSpeed >= 2 {
+			
+				instance_create_layer(x, y, "Instances", obj_vfx_dust_jump);
+				if !audio_is_playing(sfx_footstep) audio_play_sound(sfx_footstep, 1, 0, 1, 0, 0.5);
+			
+				xStretch = 1.5;
+				yStretch = 0.5;
+			
+			} else {
+			
+				if !audio_is_playing(sfx_footstep) audio_play_sound(sfx_footstep, 1, 0, 1, 0, 0.7);
+				
+				xStretch = 1.2;
+				yStretch = 0.8;
+			
+			}
 			
 		}
 	
@@ -116,6 +130,8 @@ climbing = false;
 
 xSpeed = 0;
 ySpeed = 0;
+
+groundCollideSpeed = 0;
 
 xStretch = 1;
 yStretch = 1;

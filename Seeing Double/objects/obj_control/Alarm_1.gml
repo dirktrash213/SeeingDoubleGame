@@ -131,6 +131,18 @@ switch global.titleScreenCutsceneState {
 		global.playerControl = true;
 		global.cutsceneActive = false;
 		
+		if instance_exists(obj_background_controlsDisplay) {
+		
+			with obj_background_controlsDisplay {
+			
+				var _activationDelay = 300;
+				
+				alarm[0] = _activationDelay;
+			
+			}
+		
+		}
+		
 	} break;
 
 }
