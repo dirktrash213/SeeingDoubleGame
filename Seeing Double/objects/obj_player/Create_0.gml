@@ -183,7 +183,7 @@ searchingForPatterPicnic = false;
 thinkingPicnic = false;
 wonderingAboutCherriesPicnic = false;
 
-freakoutDuration = 300;
+freakoutDuration = 290;
 freakoutSpeed = 1.5;
 
 curiousDuration = 180;

@@ -14,7 +14,13 @@ if global.titleScreenCutsceneState == TITLE_SCREEN_CUTSCENE_STATE.ON_MENU
 
 	part_particles_create(global.particleSystemHearts, x, y + _offsetY, _particleToSpawn, 1);
 
-	alarm[0] = heartParticleSpawnRate;
+	var _r = random_range(-6.0, 6.0);
+
+	alarm[0] = heartParticleSpawnRate + _r;
+	
+	//audio_play_sound(sfx_mouseChirp, 1, 0, 0.1, 0, 6.0);
+	audio_play_sound(sfx_mouseChirp, 1, 0, 1.0, 0, 6.0);
+	//audio_play_sound(sfx_collect_cherry, 1, 0, 1.0, 0, 6.0);
 
 }
 
@@ -23,6 +29,8 @@ if searchingForPatterPicnic {
 	var _offsetY = -16;
 
 	part_particles_create(global.particleSystemHearts, x, y + _offsetY, global.particleWherePatter, 1);
+	
+	audio_play_sound(sfx_mouseChirp, 1, 0, 0.5, 0, 1.2);
 	
 	alarm[0] = wherePatterParticleSpawnRate;
 

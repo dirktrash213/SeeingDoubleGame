@@ -26,6 +26,8 @@ switch global.titleScreenCutsceneState {
 		
 		alarm[1] = _sceneDuration;
 		
+		audio_play_sound(sfx_slice, 1, 0, 1, 0, 3.0);
+		
 		var _offsetX = 20;
 		var _offsetY = -30;
 		
@@ -46,6 +48,8 @@ switch global.titleScreenCutsceneState {
 		var _sceneDuration = 120;
 		
 		alarm[1] = _sceneDuration;
+		
+		
 	
 	} break;
 	
@@ -56,6 +60,8 @@ switch global.titleScreenCutsceneState {
 		var _sceneDuration = 240;
 		
 		alarm[1] = _sceneDuration;
+		
+		audio_play_sound(sfx_slice, 1, 0, 1, 0, 3.0);
 		
 		var _offsetX = -15;
 		var _offsetY = -30;
@@ -81,6 +87,8 @@ switch global.titleScreenCutsceneState {
 		var _sceneDuration = 60;
 		
 		alarm[1] = _sceneDuration;
+		
+		
 	
 	} break;
 	
@@ -91,11 +99,15 @@ switch global.titleScreenCutsceneState {
 		var _sceneDuration = 120;
 		
 		alarm[1] = _sceneDuration;
+		
+		
 	
 	} break;
 	
 	case TITLE_SCREEN_CUTSCENE_STATE.PAD_WARMING_UP: {
 	
+		audio_play_sound(sfx_laser_chargeUp2, 1, 0);
+		
 		with obj_background_device {
 	
 			spawningSparks = true;

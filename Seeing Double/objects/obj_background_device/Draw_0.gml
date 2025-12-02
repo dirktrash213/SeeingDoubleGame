@@ -18,6 +18,12 @@ if spawningSparks {
 
 	// 4. Apply the blended color to the object
 	image_blend = _blendedColor;
+	
+	//show_debug_message(_blendedColor)
+	//show_debug_message(colorRed)
+	//show_debug_message("-------------")
+	
+	//if _blendedColor == colorRed audio_play_sound(sfx_blip, 1, 0, 1, 0, 0.2);
 
 }
 

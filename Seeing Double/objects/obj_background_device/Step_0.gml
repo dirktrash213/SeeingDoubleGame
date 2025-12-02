@@ -1,3 +1,5 @@
+var _delayBeforePadFires = 45;
+
 if spawningSparks {
 
 	pulseSpeed+= 0.001;
@@ -6,6 +8,8 @@ if spawningSparks {
 	
 	if sparkParticleSpawnRate <= 20 && playerIsPresent() {
 	
+		if !audio_is_playing(sfx_laser_chargeUp) audio_play_sound(sfx_laser_chargeUp, 1, 0);
+		
 		sparkParticleSpawnRateDecreaseAmount = 0.1;
 		
 		with obj_player_pitter {
@@ -28,7 +32,8 @@ if spawningSparks {
 			
 			show_debug_message("alarm2 started")
 			alarm2Triggered = true;
-			alarm[2] = 35;
+			//alarm[2] = 35;
+			alarm[2] = _delayBeforePadFires + 5;
 			
 		}
 		
@@ -60,7 +65,7 @@ if spawningSparks {
 			//
 			//}
 			
-			var _delayBeforePadFires = 30;
+		
 			
 			alarm[1] = _delayBeforePadFires;
 		

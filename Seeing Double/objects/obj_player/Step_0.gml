@@ -1219,9 +1219,9 @@ if global.cutsceneActive {
 			
 				hspeed = 0;
 				image_xscale = 1;
-				sprite_index = concernSprite;
+				sprite_index = spr_pitter_curious_nervous;
 			
-				var _offsetX = -5;
+				var _offsetX = -1;
 				var _offsetY = -20;
 			
 				if !instance_exists(obj_background_elipses) {
@@ -1234,7 +1234,7 @@ if global.cutsceneActive {
 			
 			if wonderingAboutCherriesPicnic {
 			
-				sprite_index = curiousSprite;
+				sprite_index = spr_pitter_determined;
 			
 			}
 			
@@ -1285,7 +1285,7 @@ if global.cutsceneActive {
 			
 			if obj_cutsceneSystem.cutsceneState == SPLIT_SCREEN_CUTSCENE_STATE.FADING_IN_WHITE {
 			
-				sprite_index = spr_pitter_curious_nervous;
+				sprite_index = spr_pitter_curious_nervous_questionMarks;
 	
 			}
 		

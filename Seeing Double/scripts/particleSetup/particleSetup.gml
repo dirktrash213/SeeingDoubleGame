@@ -15,6 +15,7 @@ function particleSetup() {
 	global.particleWherePatter = part_type_create();
 	global.particleCallForPatter = part_type_create();
 	global.particleWhereCherries = part_type_create();
+	global.particlePitterFindPatter = part_type_create();
 	
 	global.particleRock = part_type_create();
 	global.particleSweatdrop = part_type_create();
@@ -61,7 +62,7 @@ function particleSetup() {
 	part_type_life(global.particleWherePitter, 300, 300);
 	
 	part_type_sprite(global.particleWherePatter, spr_particle_wherePatter, 0, 0, 0);
-	part_type_speed(global.particleWherePatter, 0.2, 0.5, 0, 0);
+	part_type_speed(global.particleWherePatter, 0.5, 1.5, 0, 0);
 	part_type_direction(global.particleWherePatter, 60, 120, 0, 0);
 	part_type_life(global.particleWherePatter, 300, 300);
 	
@@ -69,6 +70,11 @@ function particleSetup() {
 	part_type_speed(global.particleWhereCherries, 0.2, 0.2, 0, 0);
 	part_type_direction(global.particleWhereCherries, 90, 90, 0, 0);
 	part_type_life(global.particleWhereCherries, 300, 300);
+	
+	part_type_sprite(global.particlePitterFindPatter, spr_particle_pitterFindPatter, 0, 0, 0);
+	part_type_speed(global.particlePitterFindPatter, 0.2, 0.2, 0, 0);
+	part_type_direction(global.particlePitterFindPatter, 90, 90, 0, 0);
+	part_type_life(global.particlePitterFindPatter, 600, 600);
 	
 	part_type_sprite(global.particleCallForPatter, spr_particle_wherePatter_shout, 0, 0, 0);
 	part_type_speed(global.particleCallForPatter, 1, 1, 0, 0);

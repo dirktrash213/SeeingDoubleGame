@@ -17,6 +17,7 @@ switch global.currentCutsceneID {
 					var _offsetY = -16;
 
 					//part_particles_create(global.particleSystemHearts, x, y + _offsetY, global.particleWhereCherries, 1);
+					part_particles_create(global.particleSystemHearts, x, y + _offsetY, global.particlePitterFindPatter, 1);
 		
 					obj_control.alarm[1] = curiousDuration;
 		
