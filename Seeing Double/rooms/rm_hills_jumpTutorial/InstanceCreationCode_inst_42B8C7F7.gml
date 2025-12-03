@@ -1,4 +1,4 @@
-sprite_index = spr_background_parallax_volcano_PLACEHOLDER;
+sprite_index = spr_background_parallax_volcano;
 
 depth = 750;
 

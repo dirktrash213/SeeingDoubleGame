@@ -1,6 +1,6 @@
 //instance_destroy();
 
-sprite_index = spr_background_parallax_volcano_PLACEHOLDER3;
+sprite_index = spr_background_parallax_volcano;
 
 depth = 575;
 
