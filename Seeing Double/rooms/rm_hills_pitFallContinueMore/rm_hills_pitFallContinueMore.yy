@@ -91,7 +91,16 @@
 270,334,290,-16,131,4,292,131,274,272,-6,0,4,270,334,131,290,-16,131,5,292,131,131,274,272,-4,0,5,270,334,
 131,131,290,-16,131,1,292,-3,131,6,274,272,0,0,270,334,-3,131,1,290,-16,131,1,292,-4,131,4,292,0,0,
 290,-4,131,1,290,-9,131,],"TileDataFormat":1,},"tilesetId":{"name":"tiles_standard","path":"tilesets/tiles_standard/tiles_standard.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
-    {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
+    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"BackgroundTiles","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":17,"SerialiseWidth":30,"TileCompressedData":[
+-7,131,1,292,-3,131,3,294,311,312,-6,0,1,290,-16,131,5,292,131,131,294,312,-8,0,1,290,-16,131,4,292,
+311,311,312,-9,0,1,290,-16,131,1,292,-12,0,1,290,-16,131,1,292,-12,0,1,290,-14,131,-22,0,-8,131,-22,
+0,-9,131,1,292,-13,0,-6,131,1,0,-9,131,1,292,-13,0,-6,131,1,0,-9,131,1,292,-13,0,-6,131,1,
+0,-9,131,1,292,-3,0,1,87,-5,88,1,89,-3,0,-6,131,1,0,-9,131,1,292,-3,88,10,108,375,375,805306476,
+375,805306476,268435564,89,0,0,-6,131,1,0,-9,131,1,292,-5,375,1,108,-4,375,3,108,88,290,-6,131,1,0,-9,131,
+2,292,108,-8,375,4,805306476,375,270,290,-6,131,1,0,-9,131,3,292,274,272,-5,375,6,108,375,375,108,334,290,-6,
+131,1,0,-9,131,3,292,131,274,-7,375,4,108,334,131,290,-6,131,1,0,-9,131,14,292,131,131,274,272,375,375,
+1073741932,375,108,334,131,131,290,-6,131,1,0,-3,131,],"TileDataFormat":1,},"tilesetId":{"name":"tiles_standard_background_distant","path":"tilesets/tiles_standard_background_distant/tiles_standard_background_distant.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+    {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":700,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
   "parent": {
     "name": "Rooms",

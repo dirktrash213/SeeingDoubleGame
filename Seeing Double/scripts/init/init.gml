@@ -71,6 +71,8 @@ draw_set_font(font_titleMenu);
 
 global.dialogueVariables = {
 
+	talkedToSmallGhost : false,
+	talkedToSmallGhostTwice : false,
 	talkedToGreenBrother : false,
 	talkedToGreenBrotherTwice : false,
 	talkedToScammer : false,

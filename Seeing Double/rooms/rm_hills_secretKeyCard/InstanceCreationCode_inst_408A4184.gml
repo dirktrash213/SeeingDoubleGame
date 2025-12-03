@@ -1,0 +1,1 @@
+if global.dialogueVariables.talkedToSmallGhostTwice instance_destroy();

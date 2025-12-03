@@ -297,10 +297,24 @@ function spawnPitter() {
 	var _offsetY = 20;
 
 	obj_control.canDrawDivider = true;
-
+	
 	//room_goto(obj_player_pitter.roomRespawn);
-	room_goto(asset_get_index(global.roomToSpawnIn));
-
+	var _roomToSpawnIn = asset_get_index(global.roomToSpawnIn);
+	
+	with obj_background_cloud {
+	
+		if room == _roomToSpawnIn {
+			
+			destroy = false;
+			alarm[0] = 2;
+			
+		}
+		
+	}
+	
+	//room_goto(asset_get_index(global.roomToSpawnIn));
+	room_goto(_roomToSpawnIn);
+	
 	//obj_player_pitter.x = obj_player_pitter.xRespawn;
 	//obj_player_pitter.y = obj_player_pitter.yRespawn - _offsetY;
 	obj_player_pitter.x = global.xRespawnPitter;

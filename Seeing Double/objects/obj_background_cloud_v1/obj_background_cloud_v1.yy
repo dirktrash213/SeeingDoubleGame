@@ -13,7 +13,7 @@
     "name": "obj_background_cloud",
     "path": "objects/obj_background_cloud/obj_background_cloud.yy",
   },
-  "persistent": false,
+  "persistent": true,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
   "physicsFriction": 0.2,
