@@ -6,7 +6,8 @@ if audio_group_is_loaded(audiogroup_bgm) {
 	
 	if !audio_is_playing(bgm_soft_wind) {
 		
-		audio_play_sound_looped_soft_wind();
+		alarm[2] = 5;
+		//audio_play_sound_looped_soft_wind();
 		
 	}
 	

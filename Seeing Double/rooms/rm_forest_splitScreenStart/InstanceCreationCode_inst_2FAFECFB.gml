@@ -8,4 +8,5 @@ if global.splitScreenActive {
 
 
 cutsceneID = CUTSCENE_ID.SPLIT_SCREEN_ACTIVATE;
-delay = 60;
+//delay = 60;
+delay = 600;

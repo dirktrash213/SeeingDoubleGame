@@ -4,7 +4,7 @@ if !audio_is_playing(bgm_forest_ambience) {
 	
 } else {
 
-	audio_sound_gain(bgm_forest_ambience, 1, 1);
+	if !global.splitScreenActive audio_sound_gain(bgm_forest_ambience, 1, 1);
 
 }
 

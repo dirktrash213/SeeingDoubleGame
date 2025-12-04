@@ -1,0 +1,2 @@
+ableToHop = false;
+ableToPeck = true;

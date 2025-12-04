@@ -1,3 +1,12 @@
+enum BIRD_STATE {
+
+	IDLE,
+	HOPPING,
+	PECKING,
+	FLYING,
+
+}
+
 enum CUTSCENE_ID {
 
 	NONE,
