@@ -12,6 +12,12 @@ switch global.currentCutsceneID {
 	case CUTSCENE_ID.SPLIT_SCREEN_ACTIVATE: {
 	
 		cutsceneState = SPLIT_SCREEN_CUTSCENE_STATE.NONE;
+		
+		if audio_is_playing(bgm_forest_ambience) {
+		
+			audio_sound_gain(bgm_forest_ambience, 0, 2000);
+		
+		}
 	
 		//show_debug_message("split screen cutscene active")
 	

@@ -40,10 +40,16 @@ switch global.currentCutsceneID {
 			case SPLIT_SCREEN_CUTSCENE_STATE.PITTER_SAD: {
 	
 				cutsceneState = SPLIT_SCREEN_CUTSCENE_STATE.FADING_IN_WHITE;
+				
+				//audio_play_sound(sfx_effect_for_logo_intro_LONG, 1, 0, 1, 0, 1.0);
+				//audio_play_sound(sfx_effect_for_logo_intro, 1, 0, 1, 0, 1.0);
+				audio_play_sound(sfx_effect_for_logo_intro_v2, 1, 0, 1, 0, 1.0);
+			//	audio_play_sound(sfx_effect_for_logo_intro_v3, 1, 0, 1, 0, 1.0);
 		
 				with instance_create_depth(100, 100, -14000, obj_background_fadeToWhite) {
 		
 					fadingIn = true;
+					//fadeInRate = 0.003;
 					fadeInRate = 0.005;
 		
 				}

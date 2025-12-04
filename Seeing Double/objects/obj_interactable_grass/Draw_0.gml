@@ -24,6 +24,7 @@
 
 if room == rm_titleScreen 
 || room == rm_hills_runTutorial 
+|| (room == rm_hills_secretKeyCard && (!global.dialogueVariables.spookedBySmallGhost || global.dialogueVariables.spookedBySmallGhostOver))
 || room == rm_hills_jumpTutorial 
 || room == rm_forest_canopyUpperFloor 
 || room == rm_forest_canopyUpperFloor_enemy 

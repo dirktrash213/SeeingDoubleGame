@@ -49,3 +49,5 @@ loadSettings();
 
 //Start game in fullscreen if saved settings are fulllscreen
 if global.fullScreen window_set_fullscreen(true);
+
+if !audio_is_playing(bgm_soft_wind) audio_play_sound(bgm_soft_wind, 1, 1);

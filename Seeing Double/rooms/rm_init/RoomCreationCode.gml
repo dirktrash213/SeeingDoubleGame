@@ -1,9 +1,6 @@
-//room_goto_next();
 
 
-
-
-
+//show_debug_message("f49wemg9weg")
 
 
 

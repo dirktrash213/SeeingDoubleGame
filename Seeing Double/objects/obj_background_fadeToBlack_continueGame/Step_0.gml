@@ -32,6 +32,13 @@ if fadingIn {
 		obj_player_pitter.x = global.xRespawnPitter;
 		obj_player_pitter.y = global.yRespawnPitter;
 		
+		if audio_is_playing(bgm_soft_wind) {
+			
+			audio_stop_sound(bgm_soft_wind);
+			//audio_sound_loop(bgm_soft_wind, false);
+			
+		}
+		
 		loadGame();
 		
 		if !global.splitScreenActive instance_destroy(obj_player_patter);

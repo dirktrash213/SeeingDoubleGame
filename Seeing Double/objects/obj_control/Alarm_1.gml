@@ -1,4 +1,4 @@
-/// @description Ttitle screen menu / cutscene
+/// @description Title screen menu / cutscene
 
 switch global.titleScreenCutsceneState {
 

@@ -10,6 +10,10 @@ if fadingIn {
 		
 			case SPLIT_SCREEN_CUTSCENE_STATE.FADING_IN_WHITE: {
 			
+				//audio_sound_gain(sfx_effect_for_logo_intro_LONG, 0, 100);
+				
+				audio_play_sound(sfx_magical_transition, 1, 0);
+			
 				obj_cutsceneSystem.cutsceneState = SPLIT_SCREEN_CUTSCENE_STATE.TEXT_TYPING;
 			
 			} break; 

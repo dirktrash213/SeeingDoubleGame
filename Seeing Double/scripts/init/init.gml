@@ -73,6 +73,8 @@ global.dialogueVariables = {
 
 	talkedToSmallGhost : false,
 	talkedToSmallGhostTwice : false,
+	spookedBySmallGhost : false,
+	spookedBySmallGhostOver : false,
 	talkedToGreenBrother : false,
 	talkedToGreenBrotherTwice : false,
 	talkedToScammer : false,
