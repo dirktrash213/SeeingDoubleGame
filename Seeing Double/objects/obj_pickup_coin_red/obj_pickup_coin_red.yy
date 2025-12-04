@@ -11,7 +11,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Collectables",
-    "path": "folders/Objects/Interactables/Collectables.yy",
+    "path": "folders/Objects/Collectables.yy",
   },
   "parentObjectId": {
     "name": "obj_pickup",

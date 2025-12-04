@@ -28,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_npc_greenFella",
-    "path": "sprites/spr_npc_greenFella/spr_npc_greenFella.yy",
+    "name": "spr_npc_greenFella_kid",
+    "path": "sprites/spr_npc_greenFella_kid/spr_npc_greenFella_kid.yy",
   },
   "spriteMaskId": null,
   "visible": true,
