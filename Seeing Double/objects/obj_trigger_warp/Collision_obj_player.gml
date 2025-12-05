@@ -14,7 +14,11 @@ if pitterPlayerIsPresent() {
 		
 		//show_debug_message(_yOffset)
 
-		obj_player_pitter.x = xSpawn;
+		var _offsetX;
+		
+		_offsetX = xSpawn == 1 ? 3 : -3; //This offset prevents the player from spawning on the target room's warp
+
+		obj_player_pitter.x = xSpawn + _offsetX;
 		obj_player_pitter.y = ySpawn - _yOffset;
 		
 		//global.patterOffsetX = 0;

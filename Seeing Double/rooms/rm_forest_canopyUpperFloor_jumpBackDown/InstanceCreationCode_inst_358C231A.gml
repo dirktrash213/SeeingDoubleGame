@@ -1,6 +1,7 @@
 if global.gotScammed instance_destroy();
 
 wrapAmount = 125;
+typist.sound(sfx_mouseChirp, false, 0.7, 1.5); 
 
 if !global.dialogueVariables.talkedToScammer {
 

@@ -489,7 +489,14 @@ if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled {
 	if jumpCount >= 2 {
 		
 		_pitch += 0.3;
-		instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
+		
+		with obj_player {
+			
+			xStretch = 0.5;
+			yStretch = 1.5;
+			instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
+			
+		}
 		
 	} else {
 	
@@ -629,7 +636,7 @@ if place_meeting(x, y + ySpeed, obj_interactable_switch_block_parent) && ySpeed 
 			if !inert {
 	
 				bonked = true;
-				if visible audio_play_sound(sfx_pause, 1, 0, 1, 0, 2.0);
+				if visible || secret audio_play_sound(sfx_pause, 1, 0, 1, 0, 2.0);
 			
 			}
 		

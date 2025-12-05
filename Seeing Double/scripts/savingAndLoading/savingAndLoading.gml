@@ -94,6 +94,7 @@ function saveRoom() {
 			x: x,
 			y: y,
 			image_index: image_index,
+			visible: visible,
 		
 		}
 		

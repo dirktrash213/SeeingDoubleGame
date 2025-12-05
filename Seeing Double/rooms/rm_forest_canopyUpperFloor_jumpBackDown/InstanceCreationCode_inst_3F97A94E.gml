@@ -6,3 +6,4 @@ if global.dialogueVariables.talkedToScammerThrice {
 }
 
 if global.dialogueVariables.boughtParachuteFromScammer itemBought = true;
+if global.gotScammed instance_destroy();

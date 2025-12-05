@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_vfx_dust_jump",
-    "path": "sprites/spr_vfx_dust_jump/spr_vfx_dust_jump.yy",
+    "name": "spr_vfx_actionLines_doubleJump",
+    "path": "sprites/spr_vfx_actionLines_doubleJump/spr_vfx_actionLines_doubleJump.yy",
   },
   "spriteMaskId": null,
   "visible": true,
