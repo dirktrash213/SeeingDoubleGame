@@ -210,7 +210,7 @@ function drawPauseMenu() {
 	}
 	
 }
-
+//@
 function activateCutscene() {
 
 	global.cutsceneActive = true;
@@ -222,6 +222,15 @@ function activateCutscene() {
 	
 		audio_sound_gain(bgm_forest_ambience, 0, 2000);
 		audio_sound_gain(bgm_inSync, 0, 2000);
+		audio_play_sound(sfx_liquid_splash, 1, 0);
+		audio_play_sound(sfx_cinematic_rumble, 1, 0);
+		
+		if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+		
+			obj_player_pitter.image_alpha = 0;
+			obj_player_patter.image_alpha = 0;
+		
+		}
 	
 	}
 
@@ -454,7 +463,7 @@ function playerDefeated() {
 	}
 
 }
-//@
+
 function playerCaughtByForestGhost() {
 
 	if global.playerDefeated exit;

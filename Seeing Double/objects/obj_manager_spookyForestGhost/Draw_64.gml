@@ -1,6 +1,8 @@
 if !textAppearing exit;
 if textFinishedAppearing exit;
 
+show_debug_message("drawing hide text")
+
 var _hideText = scribble("HIDE.");
 
 _hideText.starting_format("font_pauseMenu", c_white);

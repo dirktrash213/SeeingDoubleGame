@@ -85,7 +85,7 @@ if object_index == obj_player_patter && global.splitScreenActive {
 //show_debug_message("Patter x: " + string(obj_player_patter.x) + ", Patter y: " + string(obj_player_patter.y))
 //show_debug_message("--------------")
 
-if object_index == obj_player_patter && global.splitScreenActive {
+if object_index == obj_player_patter && global.splitScreenActive && !global.cutsceneActive {
 
 	if y < 319 && !global.verticalLevel {
 		

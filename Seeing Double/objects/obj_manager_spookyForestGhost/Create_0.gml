@@ -61,3 +61,4 @@ typist = scribble_typist();
 typist.in(0.2, 0.9); 
 typist.sound(sfx_footstep, false, 1, 1); 
 
+depth = -13000;

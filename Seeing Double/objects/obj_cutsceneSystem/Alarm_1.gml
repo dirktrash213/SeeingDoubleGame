@@ -78,6 +78,11 @@ switch global.currentCutsceneID {
 				var _jumpDuration = 116;
 		
 				alarm[1] = _jumpDuration;
+				
+				audio_stop_sound(sfx_cinematic_rumble);
+				audio_play_sound(sfx_cake_firework, 1, 0);
+				
+				with obj_player image_alpha = 1;
 		
 				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
 		
