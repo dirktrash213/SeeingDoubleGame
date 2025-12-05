@@ -109,6 +109,8 @@ switch global.currentCutsceneID {
 		
 				alarm[1] = _poseDuration;
 		
+				audio_play_sound(sfx_powerup, 1, 0);
+		
 				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
 		
 					obj_player_pitter.vspeed = 0;
@@ -142,6 +144,14 @@ switch global.currentCutsceneID {
 					global.doubleJumpActive = true;
 			
 				}
+				
+				//audio_stop_all();
+				
+				//audio_play_sound(bgm_forest_ambience, 1, 1);
+				//audio_play_sound(bgm_inSync, 1, 1);
+				
+				audio_sound_gain(bgm_forest_ambience, 0.1, 2000);
+				audio_sound_gain(bgm_inSync, 0.8, 2000);
 				
 				deactivateCutscene();
 		

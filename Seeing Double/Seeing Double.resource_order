@@ -107,6 +107,7 @@
     {"name":"spr_pitter_climb","order":14,"path":"sprites/spr_pitter_climb/spr_pitter_climb.yy",},
     {"name":"spr_background_plant_v8","order":44,"path":"sprites/spr_background_plant_v8/spr_background_plant_v8.yy",},
     {"name":"spr_particle_rock","order":11,"path":"sprites/spr_particle_rock/spr_particle_rock.yy",},
+    {"name":"obj_interactable_plant_v5","order":5,"path":"objects/obj_interactable_plant_v5/obj_interactable_plant_v5.yy",},
     {"name":"scribble_flush_everything","order":3,"path":"scripts/scribble_flush_everything/scribble_flush_everything.yy",},
     {"name":"SmokeFX_Lite_SpriteSheet_2A_7","order":7,"path":"sprites/SmokeFX_Lite_SpriteSheet_2A_7/SmokeFX_Lite_SpriteSheet_2A_7.yy",},
     {"name":"spr_background_controlsDisplay_face2","order":9,"path":"sprites/spr_background_controlsDisplay_face2/spr_background_controlsDisplay_face2.yy",},

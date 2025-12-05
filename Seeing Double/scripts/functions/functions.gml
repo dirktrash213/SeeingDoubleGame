@@ -217,6 +217,13 @@ function activateCutscene() {
 	global.playerControl = false;
 
 	if playerIsPresent() obj_player.jumpDisabled = true;
+	
+	if room == rm_forest_doubleJumpGet {
+	
+		audio_sound_gain(bgm_forest_ambience, 0, 2000);
+		audio_sound_gain(bgm_inSync, 0, 2000);
+	
+	}
 
 }
 

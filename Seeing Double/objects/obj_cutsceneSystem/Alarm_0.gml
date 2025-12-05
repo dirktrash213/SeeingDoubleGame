@@ -24,6 +24,18 @@ switch global.currentCutsceneID {
 	
 	} break;
 	
+	//case CUTSCENE_ID.DOUBLE_JUMP_BARREL: {
+	//
+	//	show_debug_message("barrel cutscene active")
+	//	
+	//	if audio_is_playing(bgm_forest_ambience) {
+	//	
+	//		audio_sound_gain(bgm_forest_ambience, 0, 2000);
+	//	
+	//	}
+	//
+	//} break;
+	
 	case CUTSCENE_ID.FOREST_HAUNTING: {
 	
 		cutsceneState = FOREST_HAUNTING_CUTSCENE_STATE.LOOKING_AT_FLOWER;

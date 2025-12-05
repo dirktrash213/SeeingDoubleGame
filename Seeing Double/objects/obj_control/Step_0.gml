@@ -38,6 +38,8 @@ if global.paused {
 					case 0: { //Resume game
 		
 						global.paused = !global.paused;
+						
+						saveSettings();
 	
 						togglePause();
 			
