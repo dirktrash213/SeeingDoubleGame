@@ -1,0 +1,1 @@
+if global.foundRose instance_destroy();

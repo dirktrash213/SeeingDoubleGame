@@ -43,6 +43,7 @@ function drawPauseMenu() {
 				//_coinText.wrap(335); 
 				_statText.align(fa_center, fa_top); 
 	
+				
 	
 				var _offsetX = 0;
 				var _offsetY = 150;
@@ -71,6 +72,14 @@ function drawPauseMenu() {
 				//_menuText.draw(_x + _offsetX, _y + _offsetY, typist2);
 			
 				draw_text_scribble(_x + _offsetX, _y + _offsetY, _resumeString + _optionsString + _exitString);
+				
+				if global.foundRose {
+					
+					show_debug_message("Found Rose")
+					//draw_sprite(spr_interactable_rose_64x64, 0, 500, 200);
+					draw_sprite(spr_interactable_rose_64x64, 0, 1000, 200);
+					
+				}
 			
 			
 			} break;
@@ -249,6 +258,34 @@ function pitterPlayerIsPresent() {
 function patterPlayerIsPresent() {
 
 	return instance_exists(obj_player_patter);
+
+}
+
+function normalizeStretching() {
+
+	if xStretch > 1 {
+
+		xStretch -= stretchAdjustAmount;
+		xStretch = max(xStretch, 1);
+
+	} else {
+
+		xStretch += stretchAdjustAmount;
+		xStretch = min(xStretch, 1);
+
+	}
+
+	if yStretch > 1 {
+
+		yStretch -= stretchAdjustAmount;
+		yStretch = max(yStretch, 1);
+
+	} else {
+
+		yStretch += stretchAdjustAmount;
+		yStretch = min(yStretch, 1);
+
+	}
 
 }
 

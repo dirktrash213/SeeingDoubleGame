@@ -38,3 +38,7 @@ removeDuration = 120;
 active = false;
 
 detectionRadius = 300;
+
+xStretch = 1;
+yStretch = 1;
+stretchAdjustAmount = 0.1;

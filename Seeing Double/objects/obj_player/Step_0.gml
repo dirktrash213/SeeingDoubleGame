@@ -20,29 +20,31 @@ if global.playerDefeated || global.paused {
 
 }
 
-if xStretch > 1 {
+normalizeStretching();
 
-	xStretch -= stretchAdjustAmount;
-	xStretch = max(xStretch, 1);
-
-} else {
-
-	xStretch += stretchAdjustAmount;
-	xStretch = min(xStretch, 1);
-
-}
-
-if yStretch > 1 {
-
-	yStretch -= stretchAdjustAmount;
-	yStretch = max(yStretch, 1);
-
-} else {
-
-	yStretch += stretchAdjustAmount;
-	yStretch = min(yStretch, 1);
-
-}
+//if xStretch > 1 {
+//
+//	xStretch -= stretchAdjustAmount;
+//	xStretch = max(xStretch, 1);
+//
+//} else {
+//
+//	xStretch += stretchAdjustAmount;
+//	xStretch = min(xStretch, 1);
+//
+//}
+//
+//if yStretch > 1 {
+//
+//	yStretch -= stretchAdjustAmount;
+//	yStretch = max(yStretch, 1);
+//
+//} else {
+//
+//	yStretch += stretchAdjustAmount;
+//	yStretch = min(yStretch, 1);
+//
+//}
 
 
 
@@ -221,7 +223,7 @@ if moveUp && onGround {
 
 
 //if moveUpPressed && place_meeting(x, y, obj_block_ladder) {
-if moveUp && place_meeting(x, y, obj_block_ladder) {
+if moveUp && place_meeting(x, y, obj_block_ladder) && canGrabLadder {
 
 	climbing = true;
 	lookingUp = false;
@@ -453,7 +455,8 @@ if instance_exists(myFloorPlat) && (myFloorPlat.object_index == obj_block_wall |
 }
 
 //Perform the jump
-if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled && (!moveDown || _floorIsSolid) {
+//if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled && (!moveDown || _floorIsSolid) {
+if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled {
 
 	//Reset jump buffer
 	jumpKeyBuffered = false;
@@ -500,6 +503,13 @@ if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled && (!moveDown || _flo
 	
 	xStretch = 0.5;
 	yStretch = 1.5;
+	
+	if climbing {
+		
+		canGrabLadder = false;
+		alarm[5] = ladderGrabCooldown;
+		
+	}
 	
 	climbing = false;
 	
@@ -558,9 +568,11 @@ if collidingEnemy {
 			
 			}
 			
-			instance_create_layer(x, y, "Instances", obj_vfx_actionLines_enemyImpact);
+			with obj_player instance_create_layer(x, y, "Instances", obj_vfx_actionLines_enemyImpact);
 	
 			collidingEnemy.defeated = true;
+			collidingEnemy.xStretch = 1.5;
+			collidingEnemy.yStretch = 0.5;
 			setOnGround(false);
 			ySpeed = jump ? jumpOffEnemySpeed[1] : jumpOffEnemySpeed[0];
 			enemyKilledPlayer = false;
@@ -730,6 +742,7 @@ if instance_exists(myFloorPlat) && !place_meeting(x, y + movePlatYspeedMax, myFl
 
 //Land on ground platform if there is one (except if player is climbing up)
 if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
+//if instance_exists(myFloorPlat) && !climbing {
 
 	//Scoot up
 	_subPixel = 0.5;

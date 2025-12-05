@@ -10,3 +10,7 @@ if !global.verticalLevel {
 
 }
 
+xStretch = 1;
+yStretch = 1;
+
+show_debug_message("dopppleganger created")

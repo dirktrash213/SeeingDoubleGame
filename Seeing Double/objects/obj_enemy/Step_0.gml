@@ -1,3 +1,5 @@
+normalizeStretching();
+
 if pitterPlayerIsPresent() && !active {
 
 	var _distance = point_distance(x, y, obj_player_pitter.x, obj_player_pitter.y);

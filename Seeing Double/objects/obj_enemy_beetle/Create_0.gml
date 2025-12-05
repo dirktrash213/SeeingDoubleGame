@@ -17,3 +17,6 @@ walkSprite = spr_enemy_skullBeetle_walk;
 jumpSprite = spr_enemy_skullBeetle_jump;
 defeatSprite = spr_enemy_skullBeetle_defeat;
 
+xStretch = 1;
+yStretch = 1;
+stretchAdjustAmount = 0.1;

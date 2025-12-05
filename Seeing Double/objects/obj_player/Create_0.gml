@@ -4,7 +4,7 @@ function setOnGround(_val = true) {
 
 	if _val {
 	
-		if !onGround && canLandWithDust {
+		if !onGround && canLandWithDust && !climbing {
 			
 			//show_debug_message(groundCollideSpeed)
 			
@@ -122,6 +122,9 @@ alarm[4] = afterimageSpawnRate;
 
 climbSpeed[0] = 2;
 climbSpeed[1] = 3.5;
+
+canGrabLadder = true;
+ladderGrabCooldown = 15;
 
 crouching = false;
 lookingUp = false;

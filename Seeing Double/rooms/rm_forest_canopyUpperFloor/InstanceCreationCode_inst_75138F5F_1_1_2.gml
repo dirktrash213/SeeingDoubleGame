@@ -1,7 +1,7 @@
-sprite_index = spr_background_parallax_forest_long3;
+sprite_index = spr_background_parallax_forest_canopyTop_long;
 
 depth = 850;
 
-parallaxMult = 0.8;
+parallaxMult = 0.95;
 
-visible = false;
+//visible = false;
