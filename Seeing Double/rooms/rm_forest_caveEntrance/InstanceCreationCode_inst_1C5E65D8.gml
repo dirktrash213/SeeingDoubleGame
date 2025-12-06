@@ -8,5 +8,5 @@ if global.caughtByForestGhost || global.escapedForestGhost {
 
 
 cutsceneID = CUTSCENE_ID.FOREST_HAUNTING;
-delay = 2;
+delay = 1;
 

@@ -28,7 +28,9 @@ if !ambienceFadingIn3 && timer >= ambienceFadingIn3Point {
 	
 	show_debug_message("ambienceFadingIn3")
 
-	audio_sound_gain(bgm_cursedAtmosphere, 1, 1000);
+	//audio_sound_gain(bgm_cursedAtmosphere, 1, 1000);
+	audio_sound_gain(bgm_cursedAtmosphere_LOUD, 1, 1000);
+	//audio_sound_gain(bgm_cursedAtmosphere_VERYLOUD, 1, 1000);
 
 }
 
@@ -36,8 +38,11 @@ if !glitchesAppearing && timer >= glitchesAppearingPoint {
 
 	glitchesAppearing = true;
 	
-	audio_sound_gain(sfx_glitch_loop, 0.5, 15000);
-	audio_sound_gain(sfx_glitch_loop2, 0.1, 15000);
+	//audio_sound_gain(sfx_glitch_loop, 0.7, 15000);
+	audio_sound_gain(sfx_glitch_loop2, 0.2, 15000);
+	
+	audio_sound_gain(sfx_glitch_loop, 1.0, 15000);
+	//audio_sound_gain(sfx_glitch_loop2, 0.3, 15000);
 	
 	show_debug_message("glitchesAppearing")
 
@@ -92,6 +97,8 @@ if !ambienceFadingOut && timer >= ambienceFadingOutPoint {
 	audio_sound_gain(bgm_ghostlyReverberations, 0, _fadeOutTime);
 	audio_sound_gain(bgm_ephemeralEcho, 0, _fadeOutTime);
 	audio_sound_gain(bgm_cursedAtmosphere, 0, _fadeOutTime);
+	audio_sound_gain(bgm_cursedAtmosphere_LOUD, 0, _fadeOutTime);
+	audio_sound_gain(bgm_cursedAtmosphere_VERYLOUD, 0, _fadeOutTime);
 	audio_sound_gain(sfx_glitch_loop, 0, _fadeOutTime);
 	audio_sound_gain(sfx_glitch_loop2, 0, _fadeOutTime);
 	audio_sound_gain(screamSFX2, 0, _fadeOutTime);

@@ -1,5 +1,7 @@
 //application_surface_draw_enable(true); //If global glitch shader added, may need to remove this
 
+if !audio_is_playing(bgm_droplets_in_a_cave) audio_play_sound(bgm_droplets_in_a_cave, 1, 1);
+
 objBktGlitchDemo.enable_split_screen = false;
 
 if audio_is_playing(bgm_inSync) audio_stop_sound(bgm_inSync)
@@ -9,6 +11,8 @@ if !global.caughtByForestGhost global.escapedForestGhost = true;
 
 if audio_is_playing(bgm_abyssalDescent) audio_stop_sound(bgm_abyssalDescent);
 if audio_is_playing(bgm_cursedAtmosphere) audio_stop_sound(bgm_cursedAtmosphere);
+if audio_is_playing(bgm_cursedAtmosphere_LOUD) audio_stop_sound(bgm_cursedAtmosphere_LOUD);
+if audio_is_playing(bgm_cursedAtmosphere_VERYLOUD) audio_stop_sound(bgm_cursedAtmosphere_VERYLOUD);
 if audio_is_playing(bgm_ephemeralEcho) audio_stop_sound(bgm_ephemeralEcho);
 if audio_is_playing(bgm_ghostlyReverberations) audio_stop_sound(bgm_ghostlyReverberations);
 if audio_is_playing(bgm_paranormalInfusion) audio_stop_sound(bgm_paranormalInfusion);

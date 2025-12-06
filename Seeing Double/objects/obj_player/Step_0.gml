@@ -1302,11 +1302,11 @@ if global.cutsceneActive {
 				sprite_index = spr_pitter_sad;
 				
 			}
-			
+			//@
 			if obj_cutsceneSystem.cutsceneState == SPLIT_SCREEN_CUTSCENE_STATE.FADING_IN_WHITE {
-			
-				sprite_index = spr_pitter_curious_nervous_questionMarks;
-	
+				
+				sprite_index = faceDir == -1 ? spr_pitter_curious_nervous_questionMarks_mirrored : spr_pitter_curious_nervous_questionMarks;
+
 			}
 		
 		} break;

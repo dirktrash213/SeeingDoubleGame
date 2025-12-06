@@ -5,8 +5,8 @@ global.cherryCount = 0;
 global.defeatCount = 0;
 //global.grassCount = 0;
 
-global.coinLotsAmount = 5000;
-global.cherryMax = 50;
+global.coinLotsAmount = 1000;
+global.cherryMax = 31;
 
 global.paused = false;
 global.playerControl = true;

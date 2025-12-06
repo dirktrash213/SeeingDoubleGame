@@ -1,5 +1,5 @@
 wrapAmount = 455;
-
+typist.sound(sfx_footstep, false, 1.5, 1.7); 
 var _epicGamer = "";
 
 var _speedsterText = global.speedrunTimer <= -50000 ? "\nYou move with purpose." : "";

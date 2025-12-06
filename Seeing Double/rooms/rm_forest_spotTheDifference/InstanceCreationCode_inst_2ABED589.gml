@@ -2,6 +2,7 @@
 if global.solvedForestPuzzle instance_destroy();
 
 wrapAmount = 125;
+typist.sound(sfx_mouseChirp, false, 0.5, 0.7); 
 
 if !global.dialogueVariables.talkedToExplorer {
 

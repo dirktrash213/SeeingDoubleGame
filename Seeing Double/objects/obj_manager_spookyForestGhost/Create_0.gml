@@ -44,8 +44,14 @@ audio_sound_gain(bgm_ghostlyReverberations, 0, 0);
 audio_play_sound(bgm_ephemeralEcho, 1, 1);
 audio_sound_gain(bgm_ephemeralEcho, 0, 0);
 
-audio_play_sound(bgm_cursedAtmosphere, 1, 1);
-audio_sound_gain(bgm_cursedAtmosphere, 0, 0);
+//audio_play_sound(bgm_cursedAtmosphere, 1, 1);
+//audio_sound_gain(bgm_cursedAtmosphere, 0, 0);
+
+audio_play_sound(bgm_cursedAtmosphere_LOUD, 1, 1);
+audio_sound_gain(bgm_cursedAtmosphere_LOUD, 0, 0);
+
+//audio_play_sound(bgm_cursedAtmosphere_VERYLOUD, 1, 1);
+//audio_sound_gain(bgm_cursedAtmosphere_VERYLOUD, 0, 0);
 
 audio_play_sound(sfx_glitch_loop, 1, 1);
 audio_sound_gain(sfx_glitch_loop, 0, 0);

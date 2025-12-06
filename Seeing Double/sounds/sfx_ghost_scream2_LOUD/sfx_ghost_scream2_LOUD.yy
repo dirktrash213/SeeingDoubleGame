@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "sfx_ghost_scream2_LOUD.wav",
   "type": 0,
-  "volume": 0.5,
+  "volume": 1.0,
 }

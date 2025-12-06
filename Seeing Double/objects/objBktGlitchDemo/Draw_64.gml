@@ -49,6 +49,14 @@ if (enable_split_screen) {
 // Pass the value to the shader
 shader_set_uniform_f(u_split_pos, _split_value);
 
+if global.caughtByForestGhost || global.escapedForestGhost {
+
+	intensity = 0;
+	channelShift = 0;
+	channelDispersion = 0;
+
+}
+
 switch room {
 
 	case rm_forest_caveEntrance: {
