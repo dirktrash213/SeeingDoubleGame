@@ -1,13 +1,12 @@
 {
-  "%Name": "iOS",
+  "resourceType": "GMiOSOptions",
+  "resourceVersion": "1.3",
   "name": "iOS",
-  "option_ios_build_number": 0,
   "option_ios_bundle_name": "com.company.game",
   "option_ios_cocoapods_checkbox": true,
   "option_ios_defer_home_indicator": false,
   "option_ios_devices": 2,
   "option_ios_display_name": "Pixel Game",
-  "option_ios_enable_broadcast": false,
   "option_ios_half_ipad1_textures": false,
   "option_ios_icon_ipad_app_152": "${base_options_dir}/ios/icons/app/ipad_152.png",
   "option_ios_icon_ipad_app_76": "${base_options_dir}/ios/icons/app/ipad_76.png",
@@ -44,6 +43,4 @@
   "option_ios_team_id": "",
   "option_ios_texture_page": "2048x2048",
   "option_ios_version": "1.0.0.0",
-  "resourceType": "GMiOSOptions",
-  "resourceVersion": "1.3",
 }

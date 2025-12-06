@@ -352,7 +352,7 @@ var collidingEnemy = instance_place(x + xSpeed, y, obj_enemy)
 
 if collidingEnemy {
 
-	if !collidingEnemy.defeated {
+	if !collidingEnemy.defeated && !collidingEnemy.harmless {
 		
 		//show_debug_message("player defeated x collision")
 		//if instance_place(x, y + ySpeed, obj_enemy) != collidingEnemy playerDefeated();
@@ -577,7 +577,7 @@ if collidingEnemy {
 			
 			with obj_player instance_create_layer(x, y, "Instances", obj_vfx_actionLines_enemyImpact);
 	
-			collidingEnemy.defeated = true;
+			if !collidingEnemy.invincible collidingEnemy.defeated = true;
 			collidingEnemy.xStretch = 1.5;
 			collidingEnemy.yStretch = 0.5;
 			setOnGround(false);
@@ -587,7 +587,7 @@ if collidingEnemy {
 		} else {
 
 			//show_debug_message("player defeated y collision")
-			enemyKilledPlayer = true;
+			if !collidingEnemy.harmless enemyKilledPlayer = true;
 			//playerDefeated();
 	
 		}
@@ -960,10 +960,12 @@ if instance_exists(myFloorPlat)
 	if _pushedDistance > _maxPushDistance y = _startY;
 
 }
-
+//@
 //Check if player is crushed
-image_blend = c_white
-if place_meeting(x, y, obj_block_wall) {
+image_blend = c_white;
+if place_meeting(x, y, obj_block_wall) 
+&& !place_meeting(x, y, obj_interactable_switch_block_parent) 
+&& !place_meeting(x, y, obj_interactable_switch_block_inert) {
 
 	crushTimer++;
 	if crushTimer > crushGraceFrames {
@@ -1302,7 +1304,7 @@ if global.cutsceneActive {
 				sprite_index = spr_pitter_sad;
 				
 			}
-			//@
+			
 			if obj_cutsceneSystem.cutsceneState == SPLIT_SCREEN_CUTSCENE_STATE.FADING_IN_WHITE {
 				
 				sprite_index = faceDir == -1 ? spr_pitter_curious_nervous_questionMarks_mirrored : spr_pitter_curious_nervous_questionMarks;

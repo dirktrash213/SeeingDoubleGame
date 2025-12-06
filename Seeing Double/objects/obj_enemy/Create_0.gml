@@ -13,6 +13,9 @@ function setOnGroundEnemy(_val = true) {
 
 }
 
+harmless = false;
+invincible = false;
+
 onGround = true;
 
 xSpeed = 0;

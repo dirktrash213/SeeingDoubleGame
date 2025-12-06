@@ -1,4 +1,4 @@
-targetRoom = rm_forest_canopyUpperFloor_enemyBasics;
+targetRoom = rm_forest_canopyUpperFloor_enemyJumpTutorial;
 
 xEnter = 959;
 yEnter = 272;

@@ -1,4 +1,4 @@
-//show_debug_message(path_position);
+show_debug_message(path_position);
 
 if path_position >= 0.95 instance_destroy();
 
@@ -9,9 +9,11 @@ var _pathCheckpoint2 = 0.77;
 
 image_xscale = (path_position >= _pathCheckpoint && path_position <= _pathCheckpoint2) ? -1 : 1;
 
+if path_position >= _pathCheckpoint canDetectPlayer = false;
+
 if patterPlayerIsPresent() {
 
-	if !playerDetected {
+	if !playerDetected && canDetectPlayer {
 
 		var _distance = point_distance(x, y, obj_player_patter.x, obj_player_patter.y);
 

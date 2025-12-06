@@ -43,6 +43,8 @@ global.volumeMaster = 8;
 global.volumeSFX = 8;
 global.volumeBGM = 8;
 global.fullScreen = false;
+global.runModeIsToggle = false;
+global.useScreenShake = true;
 
 global.titleScreenCherriesEaten = 0;
 global.pitterPatterHugging = false;
@@ -77,6 +79,7 @@ global.dialogueVariables = {
 	spookedBySmallGhostOver : false,
 	talkedToGreenBrother : false,
 	talkedToGreenBrotherTwice : false,
+	talkedToCrazyGuy : false,
 	talkedToScammer : false,
 	talkedToScammerTwice : false,
 	talkedToScammerThrice : false,

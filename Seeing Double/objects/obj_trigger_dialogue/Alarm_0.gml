@@ -18,6 +18,12 @@ if count == _l-1 {
 		
 	}
 	
+	if room == rm_forest_canopyUpperFloor_enemyJumpTutorial {
+		
+		global.dialogueVariables.talkedToCrazyGuy = true;
+		
+	}
+	
 	if room == rm_forest_canopyUpperFloor_jumpBackDown {
 		
 		if global.dialogueVariables.talkedToScammerTwice {

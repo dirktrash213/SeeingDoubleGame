@@ -86,17 +86,17 @@ with obj_interactable_switch_block_inert {
 
 with obj_interactable_spring {
 	
-	var _visible = visible;
-	
-	if vanishOnTimeout {
-	
-		instance_destroy();
-		with instance_create_layer(x,y, "Instances", obj_interactable_spring_empty) {
-		
-			visible = _visible;
-		
-		}
-	
-	}
+	//var _visible = visible;
+	//
+	//if vanishOnTimeout {
+	//
+	//	instance_destroy();
+	//	with instance_create_layer(x,y, "Instances", obj_interactable_spring_empty) {
+	//	
+	//		visible = _visible;
+	//	
+	//	}
+	//
+	//}
 
 }

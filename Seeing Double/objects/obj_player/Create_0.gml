@@ -145,7 +145,8 @@ stretchAdjustAmount = 0.1;
 
 //grav = 0.275;
 grav = global.playerDefaultGrav;
-termVelocity = 4;
+//termVelocity = 4;
+termVelocity = 3.8;
 
 jumpMax = 1;
 jumpCount = 0;

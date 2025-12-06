@@ -20,3 +20,6 @@ defeatSprite = spr_enemy_skullBeetle_defeat;
 xStretch = 1;
 yStretch = 1;
 stretchAdjustAmount = 0.1;
+
+harmless = false;
+invincible = false;
