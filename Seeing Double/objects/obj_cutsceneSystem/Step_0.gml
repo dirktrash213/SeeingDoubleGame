@@ -1,3 +1,12 @@
+if global.paused {
+
+	alarm[0]++;
+	alarm[1]++;
+	
+	exit;
+
+}
+
 switch global.currentCutsceneID {
 
 	case CUTSCENE_ID.DOUBLE_JUMP_BARREL: { 

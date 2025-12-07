@@ -286,7 +286,17 @@ if moveDir != 0 faceDir = moveDir;
 
 //Get xSpeed
 
-runType = run;
+if !global.runModeIsToggle {
+
+	runType = run;
+
+} else {
+
+	if runPressed runType = !runType;
+
+}
+
+
 xSpeed = moveDir * moveSpeed[runType];
 
 if crouching xSpeed = 0;
@@ -984,16 +994,34 @@ if place_meeting(x, y, obj_block_wall)
 }
 
 
-if run && (moveLeftPressed || moveRightPressed) && onGround && !climbing {
+if !global.runModeIsToggle {
 
-	var _xScale = moveDir;
+	if run && (moveLeftPressed || moveRightPressed) && onGround && !climbing {
 
-	with instance_create_layer(x, y, "Instances", obj_vfx_dust_sprint) {
+		var _xScale = moveDir;
+
+		with instance_create_layer(x, y, "Instances", obj_vfx_dust_sprint) {
 	
-		image_xscale = _xScale;
+			image_xscale = _xScale;
+	
+		}
 	
 	}
+
+} else {
+
+	if runType == 1 && (moveLeftPressed || moveRightPressed) && onGround && !climbing {
+
+		var _xScale = moveDir;
+
+		with instance_create_layer(x, y, "Instances", obj_vfx_dust_sprint) {
 	
+			image_xscale = _xScale;
+	
+		}
+	
+	}
+
 }
 
 if runPressed && onGround && !climbing {

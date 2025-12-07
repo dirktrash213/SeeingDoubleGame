@@ -118,6 +118,18 @@ if global.paused {
 								exit;
 							
 							} break;
+							
+							case 3: { //Go to gameplay settings
+							
+								submenuType = "Gameplay settings";
+								
+								pauseMenuSublevel++;
+						
+								pauseMenuPosition = 0;
+						
+								exit;
+							
+							} break;
 						
 						}
 					
@@ -216,6 +228,34 @@ if global.paused {
 				
 					} break;
 					
+					case "Gameplay settings": {
+					
+						switch pauseMenuPosition { 
+							
+							case 0: { //Back to options menu
+						
+								submenuType = "Options";
+		
+								pauseMenuSublevel--;
+					
+								pauseMenuPosition = 0;
+					
+								exit;
+						
+							} break;
+							
+							case 1: { //Toggle dash mode
+						
+								global.runModeIsToggle = !global.runModeIsToggle;
+						
+							} break;
+							
+						}
+						
+						
+				
+					} break;
+					
 				}
 				
 			}
@@ -255,7 +295,7 @@ if global.paused {
 		
 	}
 	
-	switch pauseMenuSublevel {
+	switch pauseMenuSublevel { //Handle selecting menus
 	
 		case 0: {
 		
@@ -270,8 +310,8 @@ if global.paused {
 				
 				case "Options": {
 				
-					if pauseMenuPosition < 0 pauseMenuPosition = 2;
-					if pauseMenuPosition > 2 pauseMenuPosition = 0;
+					if pauseMenuPosition < 0 pauseMenuPosition = 3;
+					if pauseMenuPosition > 3 pauseMenuPosition = 0;
 				
 				} break;
 				
@@ -301,6 +341,13 @@ if global.paused {
 				
 					if pauseMenuPosition < 0 pauseMenuPosition = 3;
 					if pauseMenuPosition > 3 pauseMenuPosition = 0;
+				
+				} break;
+				
+				case "Gameplay settings": {
+				
+					if pauseMenuPosition < 0 pauseMenuPosition = 1;
+					if pauseMenuPosition > 1 pauseMenuPosition = 0;
 				
 				} break;
 					

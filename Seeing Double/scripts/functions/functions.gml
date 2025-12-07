@@ -93,15 +93,17 @@ function drawPauseMenu() {
 						var _backString = "Back";
 						var _videoString = "\nVideo";
 						var _audioString = "\nAudio";
+						var _gameplayString = "\nGameplay";
 	
 						if pauseMenuPosition == 0 _backString = "[wave]Back[/wave]";
 						if pauseMenuPosition == 1 _videoString = "[wave]\nVideo[/wave]";
 						if pauseMenuPosition == 2 _audioString = "[wave]\nAudio[/wave]";
+						if pauseMenuPosition == 3 _gameplayString = "[wave]\nGameplay[/wave]";
 	
 						var _offsetX = 0;
 						var _offsetY = _masterOffsetY;
 	
-						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _videoString + _audioString);
+						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _videoString + _audioString + _gameplayString);
 			
 					} break;
 				
@@ -185,6 +187,21 @@ function drawPauseMenu() {
 						draw_sprite(volumeSliderSprite, global.volumeBGM, _x + _offsetX, _y + _offsetY + _spacing*2);
 						draw_sprite(volumeMuteIcon, 0, _x + _offsetX - _iconOffsetX, _y + _offsetY + _spacing*2);
 						draw_sprite(volumeLoudIcon, 0, _x + _offsetX + _iconOffsetX, _y + _offsetY + _spacing*2);
+				
+					} break;
+					
+					case "Gameplay settings": {
+				
+						var _backString = "Back";
+						var _fullscreenString = global.runModeIsToggle ? "\nToggle Run: ON" : "\nToggle Run: OFF";
+	
+						if pauseMenuPosition == 0 _backString = "[wave]Back[/wave]";
+						if pauseMenuPosition == 1 _fullscreenString = global.runModeIsToggle ? "[wave]\nToggle Run: ON[/wave]" : "[wave]\nToggle Run: OFF[/wave]";
+				
+						var _offsetX = 0;
+						var _offsetY = _masterOffsetY;
+	
+						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _fullscreenString);
 				
 					} break;
 			
