@@ -559,13 +559,14 @@ _subPixel = 0.5;
 
 
 //Check if stomped on enemy
-collidingEnemy = instance_place(x, y + ySpeed, obj_enemy) 
+collidingEnemy = instance_place(x, y + ySpeed, obj_enemy); 
 
 if collidingEnemy {
 
 	if !collidingEnemy.defeated {
 
-		if ySpeed > 0 && !climbing {
+	//	if ySpeed > 0 && !climbing {
+		if !climbing {
 	
 			audio_play_sound(sfx_slice, 1, 0, 1, 0, 1.5);
 			
@@ -960,7 +961,7 @@ if instance_exists(myFloorPlat)
 	if _pushedDistance > _maxPushDistance y = _startY;
 
 }
-//@
+
 //Check if player is crushed
 image_blend = c_white;
 if place_meeting(x, y, obj_block_wall) 

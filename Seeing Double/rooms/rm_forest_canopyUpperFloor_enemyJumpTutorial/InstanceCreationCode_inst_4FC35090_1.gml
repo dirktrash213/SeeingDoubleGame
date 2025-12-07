@@ -1,4 +1,4 @@
-sprite_index = spr_background_parallax_forest_canopyTop_long;
+sprite_index = spr_background_parallax_forest_canopyTop_long3;
 
 depth = 850;
 

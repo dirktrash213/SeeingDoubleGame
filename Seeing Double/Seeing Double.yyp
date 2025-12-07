@@ -544,6 +544,7 @@
     {"id":{"name":"scribble_font_set_valign_offset","path":"scripts/scribble_font_set_valign_offset/scribble_font_set_valign_offset.yy",},},
     {"id":{"name":"spr_icon_clapboard","path":"sprites/spr_icon_clapboard/spr_icon_clapboard.yy",},},
     {"id":{"name":"scribble_is_text_element","path":"scripts/scribble_is_text_element/scribble_is_text_element.yy",},},
+    {"id":{"name":"spr_background_parallax_forest_canopyTop_long3","path":"sprites/spr_background_parallax_forest_canopyTop_long3/spr_background_parallax_forest_canopyTop_long3.yy",},},
     {"id":{"name":"scribble_font_bake_outline_4dir","path":"scripts/scribble_font_bake_outline_4dir/scribble_font_bake_outline_4dir.yy",},},
     {"id":{"name":"SmokeFX_Lite_SpriteSheet_2A_2","path":"sprites/SmokeFX_Lite_SpriteSheet_2A_2/SmokeFX_Lite_SpriteSheet_2A_2.yy",},},
     {"id":{"name":"bgm_cave_with_water_dripping","path":"sounds/bgm_cave_with_water_dripping/bgm_cave_with_water_dripping.yy",},},

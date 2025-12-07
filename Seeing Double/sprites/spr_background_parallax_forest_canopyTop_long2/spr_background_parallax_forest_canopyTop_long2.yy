@@ -3,9 +3,9 @@
   "resourceVersion": "1.0",
   "name": "spr_background_parallax_forest_canopyTop_long2",
   "bbox_bottom": 269,
-  "bbox_left": 230,
-  "bbox_right": 1807,
-  "bbox_top": 48,
+  "bbox_left": 48,
+  "bbox_right": 1183,
+  "bbox_top": 18,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -15,8 +15,8 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ae092325-469c-4216-a5d6-362bab137b11",},
   ],
-  "gridX": 480,
-  "gridY": 270,
+  "gridX": 16,
+  "gridY": 16,
   "height": 270,
   "HTile": false,
   "layers": [

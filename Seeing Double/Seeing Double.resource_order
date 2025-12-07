@@ -482,6 +482,7 @@
     {"name":"scribble_font_set_valign_offset","order":5,"path":"scripts/scribble_font_set_valign_offset/scribble_font_set_valign_offset.yy",},
     {"name":"spr_icon_clapboard","order":3,"path":"sprites/spr_icon_clapboard/spr_icon_clapboard.yy",},
     {"name":"scribble_is_text_element","order":6,"path":"scripts/scribble_is_text_element/scribble_is_text_element.yy",},
+    {"name":"spr_background_parallax_forest_canopyTop_long3","order":38,"path":"sprites/spr_background_parallax_forest_canopyTop_long3/spr_background_parallax_forest_canopyTop_long3.yy",},
     {"name":"SmokeFX_Lite_SpriteSheet_2A_2","order":2,"path":"sprites/SmokeFX_Lite_SpriteSheet_2A_2/SmokeFX_Lite_SpriteSheet_2A_2.yy",},
     {"name":"bgm_cave_with_water_dripping","order":11,"path":"sounds/bgm_cave_with_water_dripping/bgm_cave_with_water_dripping.yy",},
     {"name":"SmokeFX_Lite_SpriteSheet_2A_5","order":5,"path":"sprites/SmokeFX_Lite_SpriteSheet_2A_5/SmokeFX_Lite_SpriteSheet_2A_5.yy",},

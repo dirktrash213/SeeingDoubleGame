@@ -32,6 +32,8 @@ if !fallOffLedges && (!place_meeting(x + xSpeed*_mult, y+1, obj_block_wall) && !
 
 }
 
+if !walking moveDir = WALKING_DIRECTION.NONE;
+
 if defeated || moveDir == WALKING_DIRECTION.NONE xSpeed = 0;
 
 //Move
@@ -46,7 +48,7 @@ if moveDir != WALKING_DIRECTION.NONE {
 	
 } else {
 
-	sprite_index = idleSprite;
+	sprite_index = walkSprite;
 
 }
 

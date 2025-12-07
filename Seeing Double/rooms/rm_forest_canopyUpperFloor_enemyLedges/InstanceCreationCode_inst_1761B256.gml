@@ -1,1 +1,2 @@
 fallOffLedges = false;
+walking = false;
