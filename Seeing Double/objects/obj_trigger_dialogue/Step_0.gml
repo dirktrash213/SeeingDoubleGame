@@ -8,6 +8,21 @@ if global.paused {
 
 //Special cases
 
+if global.dialogueVariables.beatMinigame && room == rm_forest_canopyUpperFloor_enemyMinigames && !specialDialogueTriggered && allowSpecialDialogue {
+
+	specialDialogueTriggered = true;
+	
+	count = 0;
+	alarm[0] = textDisplayDuration;
+	
+	dialogueString = [];
+
+	dialogueString[0] = "Congratulations! Quite the problem solver you are! Here is your wonderful prize!"
+	//dialogueString[1] = "Enjoy this state of the art parachute. And no refunds!"
+	//dialogueString[2] = "This is even more sample dialogue."
+
+}
+
 if !global.gotScammed && global.dialogueVariables.boughtParachuteFromScammer && room == rm_forest_canopyUpperFloor_jumpBackDown {
 
 	global.gotScammed = true;

@@ -76,7 +76,7 @@ function drawPauseMenu() {
 				
 				if global.foundRose {
 					
-					show_debug_message("Found Rose")
+					//show_debug_message("Found Rose")
 					//draw_sprite(spr_interactable_rose_64x64, 0, 500, 200);
 					draw_sprite(spr_interactable_rose_64x64, 0, 1000, 200);
 					
@@ -202,15 +202,17 @@ function drawPauseMenu() {
 					case "Gameplay settings": {
 				
 						var _backString = "Back";
-						var _fullscreenString = global.runModeIsToggle ? "\nToggle Run: ON" : "\nToggle Run: OFF";
+						var _runModeString = global.runModeIsToggle ? "\nToggle Run: ON" : "\nToggle Run: OFF";
+						var _assistModeString = global.assistMode ? "\nAssistance: ON" : "\nAssistance: OFF";
 	
 						if pauseMenuPosition == 0 _backString = "[wave]Back[/wave]";
-						if pauseMenuPosition == 1 _fullscreenString = global.runModeIsToggle ? "[wave]\nToggle Run: ON[/wave]" : "[wave]\nToggle Run: OFF[/wave]";
+						if pauseMenuPosition == 1 _runModeString = global.runModeIsToggle ? "[wave]\nToggle Run: ON[/wave]" : "[wave]\nToggle Run: OFF[/wave]";
+						if pauseMenuPosition == 2 _assistModeString = global.assistMode ? "[wave]\nAssistance: ON[/wave]" : "[wave]\nAssistance: OFF[/wave]";
 				
 						var _offsetX = 0;
 						var _offsetY = _masterOffsetY;
 	
-						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _fullscreenString);
+						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _runModeString + _assistModeString);
 				
 					} break;
 			

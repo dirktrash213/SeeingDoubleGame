@@ -17,3 +17,4 @@ textDisplayDuration = 240;
 
 wrapAmount = 75;
 specialDialogueTriggered = false;
+allowSpecialDialogue = false;

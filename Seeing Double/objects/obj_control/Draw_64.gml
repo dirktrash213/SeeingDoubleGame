@@ -55,8 +55,12 @@ if global.splitScreenActive {
 			with obj_spawner {
 			
 				instance_create_layer(x,y, "Instances", obj_block_wall_semiSolid);
+				
+				show_debug_message("semisolid wall created")
 			
 			}
+			
+			instance_create_layer(272, 160, "Instances", obj_block_wall_semiSolid);
 			
 			instance_destroy(obj_trigger_cutscene);
 			

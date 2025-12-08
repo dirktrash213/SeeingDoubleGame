@@ -259,6 +259,12 @@ if global.paused {
 						
 							} break;
 							
+							case 2: { //Toggle assist mode
+						
+								global.assistMode = !global.assistMode;
+						
+							} break;
+							
 						}
 						
 						
@@ -336,8 +342,8 @@ if global.paused {
 				
 				case "Gameplay settings": {
 				
-					if pauseMenuPosition < 0 pauseMenuPosition = 1;
-					if pauseMenuPosition > 1 pauseMenuPosition = 0;
+					if pauseMenuPosition < 0 pauseMenuPosition = 2;
+					if pauseMenuPosition > 2 pauseMenuPosition = 0;
 				
 				} break;
 					
