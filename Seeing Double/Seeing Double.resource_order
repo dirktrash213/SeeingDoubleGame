@@ -493,6 +493,7 @@
     {"name":"obj_shopItem_parachute","order":1,"path":"objects/obj_shopItem_parachute/obj_shopItem_parachute.yy",},
     {"name":"robo_factory_bit_03","order":34,"path":"sprites/robo_factory_bit_03/robo_factory_bit_03.yy",},
     {"name":"hitHurt","order":3,"path":"sounds/hitHurt/hitHurt.yy",},
+    {"name":"font_scoreUI","order":4,"path":"fonts/font_scoreUI/font_scoreUI.yy",},
     {"name":"spr_pitter_scared","order":30,"path":"sprites/spr_pitter_scared/spr_pitter_scared.yy",},
     {"name":"sfx_tempSwitchBeep_low","order":12,"path":"sounds/sfx_tempSwitchBeep_low/sfx_tempSwitchBeep_low.yy",},
     {"name":"spr_patter_begPlayer_x4","order":50,"path":"sprites/spr_patter_begPlayer_x4/spr_patter_begPlayer_x4.yy",},

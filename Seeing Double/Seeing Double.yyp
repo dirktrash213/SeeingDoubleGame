@@ -558,6 +558,7 @@
     {"id":{"name":"obj_shopItem_parachute","path":"objects/obj_shopItem_parachute/obj_shopItem_parachute.yy",},},
     {"id":{"name":"robo_factory_bit_03","path":"sprites/robo_factory_bit_03/robo_factory_bit_03.yy",},},
     {"id":{"name":"hitHurt","path":"sounds/hitHurt/hitHurt.yy",},},
+    {"id":{"name":"font_scoreUI","path":"fonts/font_scoreUI/font_scoreUI.yy",},},
     {"id":{"name":"spr_pitter_scared","path":"sprites/spr_pitter_scared/spr_pitter_scared.yy",},},
     {"id":{"name":"sfx_tempSwitchBeep_low","path":"sounds/sfx_tempSwitchBeep_low/sfx_tempSwitchBeep_low.yy",},},
     {"id":{"name":"spr_patter_begPlayer_x4","path":"sprites/spr_patter_begPlayer_x4/spr_patter_begPlayer_x4.yy",},},

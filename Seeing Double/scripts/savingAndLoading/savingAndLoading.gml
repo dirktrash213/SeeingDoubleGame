@@ -30,6 +30,8 @@ function saveSettings() {
 	file_text_writeln(_file);
 	file_text_write_real(_file, global.runModeIsToggle);
 	file_text_writeln(_file);
+	file_text_write_real(_file, global.scoreUIenabled);
+	file_text_writeln(_file);
 
 	file_text_close(_file); 
 
@@ -52,6 +54,8 @@ function loadSettings() { //Load player's audio, visual, and gameplay settings o
 		global.fullScreen = file_text_read_real(_file);
 		file_text_readln(_file);
 		global.runModeIsToggle = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.scoreUIenabled = file_text_read_real(_file);
 		file_text_readln(_file);
 		
 		file_text_close(_file);

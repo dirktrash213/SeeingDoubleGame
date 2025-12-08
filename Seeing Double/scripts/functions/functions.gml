@@ -139,17 +139,19 @@ function drawPauseMenu() {
 				
 						var _backString = "Back";
 						var _fullscreenString = "\nFullscreen";
+						var _scoreUIstring = global.scoreUIenabled ? "\nShow score UI: ON" : "\nShow score UI: OFF";
 	
 						if pauseMenuPosition == 0 _backString = "[wave]Back[/wave]";
 						if pauseMenuPosition == 1 _fullscreenString = "[wave]\nFullscreen[/wave]";
+						if pauseMenuPosition == 2 _scoreUIstring = global.scoreUIenabled ? "[wave]\nShow score UI: ON[/wave]" : "[wave]\nShow score UI: OFF[/wave]";
 				
 						var _offsetX = 0;
 						var _offsetY = _masterOffsetY;
 	
-						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _fullscreenString);
+						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _fullscreenString + _scoreUIstring);
 				
 					} break;
-					//@
+					
 					case "Audio settings": {
 						
 						_canDrawMenuSprites = false;
@@ -683,4 +685,23 @@ function isLastAnimationFrame() {
 
 	return image_index > image_number - 1 ? true : false;
 	
+}
+
+function drawWhiteTextWithBlackOutline() { //For drawing white text with black outline
+
+	var _xx = argument[0];
+	var _yy = argument[1];
+	var _tt = argument[2];
+			
+	draw_set_color(c_black);
+			
+	draw_text_scribble(_xx+1,_yy,_tt);
+	draw_text_scribble(_xx-1,_yy,_tt);
+	draw_text_scribble(_xx,_yy+1,_tt);
+	draw_text_scribble(_xx,_yy-1,_tt);
+
+	draw_set_color(c_white);
+			
+	draw_text_scribble(_xx, _yy, _tt); 
+
 }

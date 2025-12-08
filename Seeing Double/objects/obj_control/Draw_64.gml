@@ -1,3 +1,17 @@
+if global.playerControl && !global.paused && !global.cutsceneActive && global.scoreUIenabled {
+
+	var _oldFont = draw_get_font();
+	
+	draw_set_font(font_scoreUI);
+	
+	//draw_text_scribble(0, 0, "[spr_interactable_coin_x4]" + string(global.coinCount) + " [spr_interactable_cherry_x4]" + string(global.cherryCount));
+	//drawWhiteTextWithBlackOutline(0, 0, "[spr_interactable_coin_x2]" + string(global.coinCount) + " [spr_interactable_cherry_x2]" + string(global.cherryCount));
+	drawWhiteTextWithBlackOutline(0, 0, "[spr_interactable_coin_x2]" + string(global.coinCount) + "\n[spr_interactable_cherry_x2]" + string(global.cherryCount));
+	
+	draw_set_font(_oldFont);
+
+}
+
 if global.splitScreenActive {
 
 	var _x = 720;

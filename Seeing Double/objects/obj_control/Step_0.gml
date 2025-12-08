@@ -205,6 +205,14 @@ if global.paused {
 								
 							} break;
 							
+							case 2: { //Toggle score UI
+						
+								//window_set_fullscreen(!window_get_fullscreen());
+								
+								global.scoreUIenabled = !global.scoreUIenabled;
+								
+							} break;
+							
 						}
 					
 					} break;
@@ -314,8 +322,8 @@ if global.paused {
 				
 				case "Video settings": {
 				
-					if pauseMenuPosition < 0 pauseMenuPosition = 1;
-					if pauseMenuPosition > 1 pauseMenuPosition = 0;
+					if pauseMenuPosition < 0 pauseMenuPosition = 2;
+					if pauseMenuPosition > 2 pauseMenuPosition = 0;
 				
 				} break;
 				
