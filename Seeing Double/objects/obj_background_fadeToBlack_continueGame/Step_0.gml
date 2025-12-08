@@ -32,9 +32,9 @@ if fadingIn {
 		obj_player_pitter.x = global.xRespawnPitter;
 		obj_player_pitter.y = global.yRespawnPitter;
 		
-		if audio_is_playing(bgm_soft_wind) {
+		if audio_is_playing(amb_soft_wind) {
 			
-			audio_stop_sound(bgm_soft_wind);
+			audio_stop_sound(amb_soft_wind);
 			//audio_sound_loop(bgm_soft_wind, false);
 			
 		}

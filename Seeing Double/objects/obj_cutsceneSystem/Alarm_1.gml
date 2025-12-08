@@ -155,7 +155,7 @@ switch global.currentCutsceneID {
 				//audio_play_sound(bgm_forest_ambience, 1, 1);
 				//audio_play_sound(bgm_inSync, 1, 1);
 				
-				audio_sound_gain(bgm_forest_ambience, 0.1, 2000);
+				audio_sound_gain(amb_forest_ambience, 0.1, 2000);
 				audio_sound_gain(bgm_inSync, 0.8, 2000);
 				
 				deactivateCutscene();

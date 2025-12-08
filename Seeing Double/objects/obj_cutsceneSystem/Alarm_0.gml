@@ -13,9 +13,9 @@ switch global.currentCutsceneID {
 	
 		cutsceneState = SPLIT_SCREEN_CUTSCENE_STATE.NONE;
 		
-		if audio_is_playing(bgm_forest_ambience) {
+		if audio_is_playing(amb_forest_ambience) {
 		
-			audio_sound_gain(bgm_forest_ambience, 0, 2000);
+			audio_sound_gain(amb_forest_ambience, 0, 2000);
 		
 		}
 	
@@ -43,7 +43,7 @@ switch global.currentCutsceneID {
 		alarm[1] = 140;
 		
 		audio_sound_gain(bgm_inSync, 0, 3000);
-		audio_sound_gain(bgm_forest_ambience, 0, 3000);
+		audio_sound_gain(amb_forest_ambience, 0, 3000);
 		
 		var _elipsesOffsetY = -20;
 		

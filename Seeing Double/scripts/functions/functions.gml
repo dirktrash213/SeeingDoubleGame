@@ -1,3 +1,4 @@
+
 function drawPauseMenu() {
 
 	if global.paused {
@@ -148,7 +149,7 @@ function drawPauseMenu() {
 						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _fullscreenString);
 				
 					} break;
-				
+					//@
 					case "Audio settings": {
 						
 						_canDrawMenuSprites = false;
@@ -157,17 +158,19 @@ function drawPauseMenu() {
 						var _masterVolumeString = "\nMaster Volume";
 						var _sfxVolumeString = "\nSFX Volume";
 						var _bgmVolumeString = "\nMusic Volume";
+						var _ambVolumeString = "\nAmbience";
 					
 						if pauseMenuPosition == 0 _backString = "[wave]Back[/wave]";
 						if pauseMenuPosition == 1 _masterVolumeString = "[wave]\nMaster Volume[/wave]";
 						if pauseMenuPosition == 2 _sfxVolumeString = "[wave]\nSFX Volume[/wave]";
 						if pauseMenuPosition == 3 _bgmVolumeString = "[wave]\nMusic Volume[/wave]";
+						if pauseMenuPosition == 4 _ambVolumeString = "[wave]\nAmbience[/wave]";
 				
 						var _offsetX = -485;
 						var _offsetY = _masterOffsetY;
 	
 						draw_set_halign(fa_left);
-						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _masterVolumeString + _sfxVolumeString + _bgmVolumeString);
+						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _masterVolumeString + _sfxVolumeString + _bgmVolumeString + _ambVolumeString);
 						draw_set_halign(fa_center);
 				
 						_offsetX = 330;
@@ -187,6 +190,10 @@ function drawPauseMenu() {
 						draw_sprite(volumeSliderSprite, global.volumeBGM, _x + _offsetX, _y + _offsetY + _spacing*2);
 						draw_sprite(volumeMuteIcon, 0, _x + _offsetX - _iconOffsetX, _y + _offsetY + _spacing*2);
 						draw_sprite(volumeLoudIcon, 0, _x + _offsetX + _iconOffsetX, _y + _offsetY + _spacing*2);
+						
+						draw_sprite(volumeSliderSprite, global.volumeAMB, _x + _offsetX, _y + _offsetY + _spacing*3);
+						draw_sprite(volumeMuteIcon, 0, _x + _offsetX - _iconOffsetX, _y + _offsetY + _spacing*3);
+						draw_sprite(volumeLoudIcon, 0, _x + _offsetX + _iconOffsetX, _y + _offsetY + _spacing*3);
 				
 					} break;
 					
@@ -227,7 +234,7 @@ function drawPauseMenu() {
 	}
 	
 }
-//@
+
 function activateCutscene() {
 
 	global.cutsceneActive = true;
@@ -237,7 +244,7 @@ function activateCutscene() {
 	
 	if room == rm_forest_doubleJumpGet {
 	
-		audio_sound_gain(bgm_forest_ambience, 0, 2000);
+		audio_sound_gain(amb_forest_ambience, 0, 2000);
 		audio_sound_gain(bgm_inSync, 0, 2000);
 		audio_play_sound(sfx_liquid_splash, 1, 0);
 		audio_play_sound(sfx_cinematic_rumble, 1, 0);
@@ -454,6 +461,7 @@ function checkForMenuInput() {
 function pauseButtonPressed() {
 
 	return keyboard_check_pressed(vk_enter) || 
+	keyboard_check_pressed(vk_escape) || 
 	gamepad_button_check_pressed(global.controllerPort, gp_start);
 
 }

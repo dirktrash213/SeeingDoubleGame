@@ -1,1 +1,1 @@
-if !audio_is_playing(bgm_forest_ambience) audio_play_sound(bgm_forest_ambience, 1, 1, 0.25);
+if !audio_is_playing(amb_forest_ambience) audio_play_sound(amb_forest_ambience, 1, 1, 0.25);

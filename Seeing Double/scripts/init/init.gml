@@ -42,9 +42,11 @@ global.crouchJumpActive = false;
 global.volumeMaster = 8;
 global.volumeSFX = 8;
 global.volumeBGM = 8;
+global.volumeAMB = 8;
 global.fullScreen = false;
 global.runModeIsToggle = false;
 global.useScreenShake = true;
+global.scoreUIenabled = true;
 
 global.titleScreenCherriesEaten = 0;
 global.pitterPatterHugging = false;

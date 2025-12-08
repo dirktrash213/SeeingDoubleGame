@@ -6,6 +6,7 @@ analogStickMenuMovement();
 audio_master_gain(global.volumeMaster/10);
 audio_group_set_gain(audiogroup_sfx, global.volumeSFX/10, 1);
 audio_group_set_gain(audiogroup_bgm, global.volumeBGM/10, 1);
+audio_group_set_gain(audiogroup_amb, global.volumeAMB/10, 1);
 
 #endregion
 
@@ -264,25 +265,6 @@ if global.paused {
 	
 	}
 	
-	//if back {
-	//
-	//	if pauseMenuSublevel == 0 {
-	//	
-	//		global.paused = !global.paused;
-	//
-	//		togglePause();
-	//		
-	//		exit;
-	//	
-	//	} else {
-	//	
-	//		pauseMenuSublevel--;
-	//	
-	//	}
-	//
-	//
-	//}
-	
 	if moveUp {
 		
 		pauseMenuPosition--;
@@ -339,8 +321,8 @@ if global.paused {
 				
 				case "Audio settings": {
 				
-					if pauseMenuPosition < 0 pauseMenuPosition = 3;
-					if pauseMenuPosition > 3 pauseMenuPosition = 0;
+					if pauseMenuPosition < 0 pauseMenuPosition = 4;
+					if pauseMenuPosition > 4 pauseMenuPosition = 0;
 				
 				} break;
 				
@@ -356,13 +338,13 @@ if global.paused {
 		} break;
 		
 	}
-	//@
+	
 	if submenuType == "Audio settings" {
 	
 		show_debug_message("Audio settings menu active")
 		
 		var _canPlaySelectSFX = true;
-	
+		//@
 		switch pauseMenuPosition {
 		
 			case 1: {
@@ -406,6 +388,20 @@ if global.paused {
 				global.volumeBGM = clamp(global.volumeBGM, 0, 10);
 			
 			} break;
+			
+			case 4: {
+			
+				if global.volumeAMB == 10 && moveRight _canPlaySelectSFX = false;
+				if global.volumeAMB == 0 && moveLeft _canPlaySelectSFX = false;
+			
+				if moveLeft || back global.volumeAMB--;
+				if moveRight || confirm global.volumeAMB++;
+				
+				if (moveLeft || moveRight || back || confirm) && _canPlaySelectSFX audio_play_sound(sfx_jump_patter, 1, 0);
+				
+				global.volumeAMB = clamp(global.volumeAMB, 0, 10);
+			
+			} break;
 		
 		}
 		
@@ -416,8 +412,16 @@ if global.paused {
 }
 
 if global.playerControl && pauseButtonPressed() {
+	
+	if global.paused {
+	
+		if pauseMenuSublevel == 0 global.paused = !global.paused;
+	
+	} else {
 
-	global.paused = !global.paused;
+		global.paused = !global.paused;
+	
+	}
 	
 	togglePause();
 

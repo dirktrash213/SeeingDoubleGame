@@ -1,1 +1,1 @@
-if !audio_is_playing(bgm_soft_wind) audio_play_sound_looped_soft_wind();
+if !audio_is_playing(amb_soft_wind) audio_play_sound_looped_soft_wind();

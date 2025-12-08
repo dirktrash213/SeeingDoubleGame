@@ -26,12 +26,14 @@ volumeLoudIcon = spr_UI_volumeIcon_loud_x4;
 
 audioBGMLoaded = false;
 audioSFXLoaded = false;
+audioAMBLoaded = false;
 
 dividerYscale = 0;
 dividerYscaleIncreaseAmount = 2;
 
 audio_group_load(audiogroup_bgm);
 audio_group_load(audiogroup_sfx);
+audio_group_load(audiogroup_amb);
 
 scammedSFXpitch = 1.0; //0.3
 scammedSFXpitchDecreaseAmount = 0.001;
@@ -50,4 +52,4 @@ loadSettings();
 //Start game in fullscreen if saved settings are fulllscreen
 if global.fullScreen window_set_fullscreen(true);
 
-if !audio_is_playing(bgm_soft_wind) audio_play_sound(bgm_soft_wind, 1, 1);
+if !audio_is_playing(amb_soft_wind) audio_play_sound(amb_soft_wind, 1, 1);
