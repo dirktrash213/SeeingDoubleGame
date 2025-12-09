@@ -9,6 +9,15 @@ if bonked && (visible || secret) {
 			image_blend = c_aqua;
 		
 		}
+		
+		instance_destroy(obj_enemy_doppleganger);
+		
+		with instance_create_layer(xSpawnDoppleganger, ySpawnDoppleganger, "Instances", obj_enemy_doppleganger) {
+		
+			sprite_index = spr_enemy_skullBeetle_walk;
+			image_blend = c_aqua;
+		
+		}
 	
 	}
 

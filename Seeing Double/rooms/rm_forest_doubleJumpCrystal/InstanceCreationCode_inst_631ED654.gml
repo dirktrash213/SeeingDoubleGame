@@ -1,5 +1,5 @@
 onRails = true;
 stationary = true;
 
-railPath = path_platform_forest3;
+railPath = global.respawnEdgeCases.speedUpForestPlatform ? path_platform_forest3_fast : path_platform_forest3;
 visible = false;

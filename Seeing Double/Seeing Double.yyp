@@ -262,6 +262,7 @@
     {"id":{"name":"__scribble_class_line","path":"scripts/__scribble_class_line/__scribble_class_line.yy",},},
     {"id":{"name":"obj_interactable_grass_v2","path":"objects/obj_interactable_grass_v2/obj_interactable_grass_v2.yy",},},
     {"id":{"name":"spr_enemy_propellerBeetle_idle","path":"sprites/spr_enemy_propellerBeetle_idle/spr_enemy_propellerBeetle_idle.yy",},},
+    {"id":{"name":"path_platform_forest3_fast","path":"paths/path_platform_forest3_fast/path_platform_forest3_fast.yy",},},
     {"id":{"name":"spr_InsideWallTileset_strip","path":"sprites/spr_InsideWallTileset_strip/spr_InsideWallTileset_strip.yy",},},
     {"id":{"name":"spr_particle_whereCherries","path":"sprites/spr_particle_whereCherries/spr_particle_whereCherries.yy",},},
     {"id":{"name":"obj_block_slope2","path":"objects/obj_block_slope2/obj_block_slope2.yy",},},

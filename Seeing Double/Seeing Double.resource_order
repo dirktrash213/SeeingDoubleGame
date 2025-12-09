@@ -223,6 +223,7 @@
     {"name":"__scribble_class_line","order":3,"path":"scripts/__scribble_class_line/__scribble_class_line.yy",},
     {"name":"obj_interactable_grass_v2","order":2,"path":"objects/obj_interactable_grass_v2/obj_interactable_grass_v2.yy",},
     {"name":"spr_enemy_propellerBeetle_idle","order":19,"path":"sprites/spr_enemy_propellerBeetle_idle/spr_enemy_propellerBeetle_idle.yy",},
+    {"name":"path_platform_forest3_fast","order":6,"path":"paths/path_platform_forest3_fast/path_platform_forest3_fast.yy",},
     {"name":"spr_InsideWallTileset_strip","order":5,"path":"sprites/spr_InsideWallTileset_strip/spr_InsideWallTileset_strip.yy",},
     {"name":"spr_particle_whereCherries","order":3,"path":"sprites/spr_particle_whereCherries/spr_particle_whereCherries.yy",},
     {"name":"obj_block_slope2","order":1,"path":"objects/obj_block_slope2/obj_block_slope2.yy",},

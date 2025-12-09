@@ -504,9 +504,26 @@ if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled {
 			
 			xStretch = 0.5;
 			yStretch = 1.5;
-			instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
+			//instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
 			
 		}
+		
+		instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
+		
+		//if pitterPlayerIsPresent() {
+		//	
+		//	show_debug_message("pitter double jump vfx created")
+		//	instance_create_layer(obj_player_pitter.x, obj_player_pitter.y, "Instances", obj_vfx_actionLines_doubleJump);
+		//	
+		//}
+		//
+		//
+		//if patterPlayerIsPresent() {
+		//	
+		//	show_debug_message("patter double jump vfx created")
+		//	instance_create_layer(obj_player_patter.x, obj_player_patter.y, "Instances", obj_vfx_actionLines_doubleJump);
+		//	
+		//}
 		
 	} else {
 	
@@ -575,8 +592,8 @@ if collidingEnemy {
 
 	if !collidingEnemy.defeated {
 
-	//	if ySpeed > 0 && !climbing {
-		if !climbing {
+		if ySpeed > 0 && !climbing {
+	//	if !climbing {
 	
 			audio_play_sound(sfx_slice, 1, 0, 1, 0, 1.5);
 			
@@ -599,6 +616,7 @@ if collidingEnemy {
 
 			//show_debug_message("player defeated y collision")
 			if !collidingEnemy.harmless enemyKilledPlayer = true;
+			//enemyKilledPlayer = true;
 			//playerDefeated();
 	
 		}
