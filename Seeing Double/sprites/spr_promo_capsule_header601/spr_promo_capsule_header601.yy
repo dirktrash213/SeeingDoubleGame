@@ -30,8 +30,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Promo Art",
-    "path": "folders/Sprites/Promo Art.yy",
+    "name": "OLD",
+    "path": "folders/Sprites/Promo Art/OLD.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

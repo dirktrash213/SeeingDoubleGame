@@ -1,10 +1,10 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_promo_capsule_vertical600",
-  "bbox_bottom": 895,
+  "name": "spr_pitterAndPatter_coverArt_big",
+  "bbox_bottom": 623,
   "bbox_left": 0,
-  "bbox_right": 747,
+  "bbox_right": 575,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,26 +13,26 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a4760da9-4dd4-40fb-b56d-1b640fd0ad0e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2c0e6a46-2992-4a76-946f-220b90229257",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 896,
+  "height": 624,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"74948c82-868e-4902-87ee-7708fe284cfd","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"418ea65f-a5e7-492c-b617-88de5112d731","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Promo Art",
-    "path": "folders/Sprites/Promo Art.yy",
+    "name": "Pitter And Patter",
+    "path": "folders/Sprites/Pitter And Patter.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_promo_capsule_vertical",
+    "name": "spr_pitterAndPatter_coverArt_big",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a4760da9-4dd4-40fb-b56d-1b640fd0ad0e","path":"sprites/spr_promo_capsule_vertical600/spr_promo_capsule_vertical600.yy",},},},"Disabled":false,"id":"11f1edcd-c40a-4fac-b07a-b2ac5733c74e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2c0e6a46-2992-4a76-946f-220b90229257","path":"sprites/spr_pitterAndPatter_coverArt_big/spr_pitterAndPatter_coverArt_big.yy",},},},"Disabled":false,"id":"c3c34f36-0829-4337-8ff3-50cd7a4f044f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 748,
+  "width": 576,
 }

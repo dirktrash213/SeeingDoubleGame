@@ -21,7 +21,8 @@
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"483d1429-fa76-4f99-a7fb-9fe5970b9770","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"0540195c-d5f1-4e43-9d5c-bfe1b65bfb54","blendMode":0,"displayName":"Layer 2","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"c4d28f92-ea67-47db-b225-a2bb531366e1","blendMode":0,"displayName":"Layer 4","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"0540195c-d5f1-4e43-9d5c-bfe1b65bfb54","blendMode":0,"displayName":"Layer 2","isLocked":false,"opacity":100.0,"visible":false,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f425245f-9571-4664-9962-737a67a68b26","blendMode":0,"displayName":"Layer 3","isLocked":false,"opacity":100.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"74948c82-868e-4902-87ee-7708fe284cfd","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
@@ -57,7 +58,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a4760da9-4dd4-40fb-b56d-1b640fd0ad0e","path":"sprites/spr_promo_capsule_vertical/spr_promo_capsule_vertical.yy",},},},"Disabled":false,"id":"9453e23f-2ae7-40ef-99d1-077f6a575375","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a4760da9-4dd4-40fb-b56d-1b640fd0ad0e","path":"sprites/spr_promo_capsule_vertical/spr_promo_capsule_vertical.yy",},},},"Disabled":false,"id":"57e951d2-d120-4a8d-9172-7153228df216","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
