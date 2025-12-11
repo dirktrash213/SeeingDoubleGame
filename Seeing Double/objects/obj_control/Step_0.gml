@@ -14,6 +14,10 @@ audio_group_set_gain(audiogroup_amb, global.volumeAMB/10, 1);
 
 if global.paused {
 
+	//show_debug_message("pauseMenuSublevel: " + string(pauseMenuSublevel))
+
+	
+
 	if confirm {
 		
 		if pauseMenuSublevel != 0 || pauseMenuPosition != 0 {
@@ -355,12 +359,24 @@ if global.paused {
 	
 	if submenuType == "Audio settings" {
 	
-		show_debug_message("Audio settings menu active")
+		//show_debug_message("Audio settings menu active")
 		
 		var _canPlaySelectSFX = true;
-		//@
+		
 		switch pauseMenuPosition {
 		
+			case 0: {
+			
+				if back	{
+				
+					audio_play_sound(sfx_jump_patter, 1, 0);
+					pauseMenuSublevel--;
+					submenuType = "Options";
+				
+				}
+			
+			} break;
+			
 			case 1: {
 				
 				if global.volumeMaster == 10 && moveRight _canPlaySelectSFX = false;
@@ -424,21 +440,59 @@ if global.paused {
 	}
 
 }
-
+//@
 if global.playerControl && pauseButtonPressed() {
 	
 	if global.paused {
 	
-		if pauseMenuSublevel == 0 global.paused = !global.paused;
+		if pauseMenuSublevel == 0 {
+			
+			global.paused = !global.paused;
+			togglePause();
+			
+		}
 	
 	} else {
 
 		global.paused = !global.paused;
+		togglePause();
 	
 	}
 	
-	togglePause();
+}
 
+if back {
+	
+	//if !global.paused audio_play_sound(sfx_jump_patter, 1, 0);
+	
+	if pauseMenuSublevel != 0 audio_play_sound(sfx_jump_patter, 1, 0);
+	
+	//show_debug_message("submenuType: " + string(submenuType))
+	
+	switch (submenuType) {
+	   
+		case "Video settings": {
+	    
+			submenuType = "Options";
+		
+		} break;
+		
+		//case "Audio settings": {
+	    //
+		//	submenuType = "Options";
+		//
+		//} break;
+		
+		case "Gameplay settings": {
+	    
+			submenuType = "Options";
+		
+		} break;
+	  
+	}
+	
+	if pauseMenuSublevel > 0 pauseMenuSublevel--;
+	
 }
 
 #endregion

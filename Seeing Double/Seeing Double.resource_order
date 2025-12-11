@@ -17,6 +17,7 @@
     {"name":"Grass","order":21,"path":"folders/Objects/Interactables/Grass.yy",},
     {"name":"Plants","order":22,"path":"folders/Objects/Interactables/Plants.yy",},
     {"name":"Managers","order":7,"path":"folders/Objects/Managers.yy",},
+    {"name":"Assist Mode","order":7,"path":"folders/Objects/Managers/Assist Mode.yy",},
     {"name":"Menus","order":6,"path":"folders/Objects/Menus.yy",},
     {"name":"NPCs","order":10,"path":"folders/Objects/NPCs.yy",},
     {"name":"Shader Objects","order":13,"path":"folders/Objects/Shader Objects.yy",},
@@ -96,7 +97,6 @@
     {"name":"UI","order":17,"path":"folders/Sprites/UI.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"Assist Mode","order":7,"path":"folders/Objects/Managers/Assist Mode.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"FX052_02","order":2,"path":"sprites/FX052_02/FX052_02.yy",},

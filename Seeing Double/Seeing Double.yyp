@@ -31,6 +31,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Grass","folderPath":"folders/Objects/Interactables/Grass.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Plants","folderPath":"folders/Objects/Interactables/Plants.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Managers","folderPath":"folders/Objects/Managers.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Assist Mode","folderPath":"folders/Objects/Managers/Assist Mode.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Menus","folderPath":"folders/Objects/Menus.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"NPCs","folderPath":"folders/Objects/NPCs.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Shader Objects","folderPath":"folders/Objects/Shader Objects.yy",},
@@ -115,7 +116,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UI","folderPath":"folders/Sprites/UI.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Assist Mode","folderPath":"folders/Objects/Managers/Assist Mode.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"assist_data.json","CopyToMask":-1,"filePath":"datafiles",},
