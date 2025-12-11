@@ -1,0 +1,1 @@
+assist_file = "rm_forest_canopyUpperFloor_enemyBasics5_assistData.json"; //Shows the way back to the secret
