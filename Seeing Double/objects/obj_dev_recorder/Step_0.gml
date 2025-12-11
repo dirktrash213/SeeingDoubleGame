@@ -1,0 +1,40 @@
+// START RECORDING (Press R)
+if (keyboard_check_pressed(ord("Q"))) {
+    recording = true;
+    frames = []; // Clear old data
+    show_debug_message("--- RECORDING STARTED ---");
+}
+
+// STOP AND SAVE (Press S)
+if (keyboard_check_pressed(ord("E")) && recording) {
+    recording = false;
+    
+    // Convert array to JSON string
+    var _json_string = json_stringify(frames);
+    
+    // Save to a file
+    var _buffer = buffer_create(string_byte_length(_json_string) + 1, buffer_fixed, 1);
+    buffer_write(_buffer, buffer_string, _json_string);
+    buffer_save(_buffer, save_name);
+    buffer_delete(_buffer);
+    
+    show_debug_message("--- SAVED TO: " + save_name + " ---");
+}
+
+// CAPTURE FRAME
+if (recording && instance_exists(obj_player)) {
+    // Create a struct for this single frame of data
+    var _frame_data = {
+        x: obj_player.x,
+        y: obj_player.y,
+        spr: obj_player.sprite_index,
+        img: obj_player.image_index,
+        scale: obj_player.image_xscale,
+		faceDir: obj_player.faceDir
+    };
+    
+    // Add to our list
+    array_push(frames, _frame_data);
+}
+
+

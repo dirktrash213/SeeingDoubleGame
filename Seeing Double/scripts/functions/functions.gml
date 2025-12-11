@@ -372,7 +372,7 @@ function startNewGame() {
 
 
 }
-
+//@
 function spawnPitter() {
 
 	var _offsetY = 20;
@@ -407,18 +407,31 @@ function spawnPitter() {
 	obj_player_pitter.jumpMax = 1;
 	obj_player_pitter.gemPowerupDoubleJump = false;
 	
-	//if pitterPlayerIsPresent() {
-	//
-	//	if obj_player_pitter.jumpCount >= obj_player_pitter.jumpMax && obj_player_pitter.gemPowerupDoubleJump {
-	//
-	//		obj_player_pitter.jumpMax = 1;
-	//
-	//		obj_player_pitter.gemPowerupDoubleJump = false;
-	//		if patterPlayerIsPresent() obj_player_patter.gemPowerupDoubleJump = false;
-	//
-	//	}
-	//
-	//}
+	//Reset checkpoint defeat count for new checkpoints
+	if instance_nearest(x, y, obj_trigger_checkPoint) != global.currentCheckpoint {
+		
+		global.currentCheckpointDefeatCount = 0;
+		show_debug_message("Checkpoint defeat count reset")
+		
+	}
+	
+	//Track number of defeats at this checkpoint
+	global.currentCheckpoint = instance_nearest(x, y, obj_trigger_checkPoint);
+	
+	global.currentCheckpointDefeatCount++;
+	
+	show_debug_message("global.currentCheckpointDefeatCount: " + string(global.currentCheckpointDefeatCount))
+
+	//Spawn the assist mode helper if player died enough times	
+	if (global.currentCheckpointDefeatCount >= global.currentCheckpoint.trigger_threshold) {
+	  
+		show_debug_message("Attempting to create shadow assist")
+	
+		var _delayUntilShadowSpawn = 5;
+		
+		obj_control.alarm[3] = _delayUntilShadowSpawn;
+	
+	}
 
 }
 

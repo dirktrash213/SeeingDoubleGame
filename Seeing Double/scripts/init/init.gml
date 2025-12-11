@@ -18,6 +18,8 @@ global.xRespawnPitter = 0;
 global.yRespawnPitter = 0;
 global.xRespawnPatter = 0;
 global.yRespawnPatter = 0;
+global.currentCheckpoint = noone;
+global.currentCheckpointDefeatCount = 0;
 
 global.layer_alpha = 1;
 
