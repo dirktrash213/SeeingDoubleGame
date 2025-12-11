@@ -114,6 +114,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UI","folderPath":"folders/Sprites/UI.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Text Popups","folderPath":"folders/Objects/Collectables/Text Popups.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"scribble_license.txt","CopyToMask":-1,"filePath":"datafiles",},
@@ -300,6 +301,7 @@
     {"id":{"name":"rm_forest_canopyUpperFloor_enemyMinigames2","path":"rooms/rm_forest_canopyUpperFloor_enemyMinigames2/rm_forest_canopyUpperFloor_enemyMinigames2.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_background_cloud_v4","path":"objects/obj_background_cloud_v4/obj_background_cloud_v4.yy",},},
+    {"id":{"name":"obj_textPopup","path":"objects/obj_textPopup/obj_textPopup.yy",},},
     {"id":{"name":"spr_patter_scared","path":"sprites/spr_patter_scared/spr_patter_scared.yy",},},
     {"id":{"name":"obj_vfx_afterimage","path":"objects/obj_vfx_afterimage/obj_vfx_afterimage.yy",},},
     {"id":{"name":"__scribble_class_page","path":"scripts/__scribble_class_page/__scribble_class_page.yy",},},
@@ -551,6 +553,7 @@
     {"id":{"name":"spr_background_plant_v27","path":"sprites/spr_background_plant_v27/spr_background_plant_v27.yy",},},
     {"id":{"name":"spr_block_collision","path":"sprites/spr_block_collision/spr_block_collision.yy",},},
     {"id":{"name":"__scribble_config_colours","path":"scripts/__scribble_config_colours/__scribble_config_colours.yy",},},
+    {"id":{"name":"sfx_bonk","path":"sounds/sfx_bonk/sfx_bonk.yy",},},
     {"id":{"name":"spr_interactable_flower_blue","path":"sprites/spr_interactable_flower_blue/spr_interactable_flower_blue.yy",},},
     {"id":{"name":"sfx_effect_for_logo_intro_v3","path":"sounds/sfx_effect_for_logo_intro_v3/sfx_effect_for_logo_intro_v3.yy",},},
     {"id":{"name":"scribble_external_sound_remove","path":"scripts/scribble_external_sound_remove/scribble_external_sound_remove.yy",},},

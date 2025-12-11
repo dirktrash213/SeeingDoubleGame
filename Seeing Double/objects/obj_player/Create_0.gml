@@ -1,4 +1,4 @@
-//layer_alpha_settings("SecretTiles");
+//player_alpha_settings("SecretTiles");
 
 function setOnGround(_val = true) {
 
@@ -116,6 +116,8 @@ moveDir = 0;
 runType = 0;
 moveSpeed[0] = 2; //Walk speed
 moveSpeed[1] = 3.5; //Run speed
+
+wallStretching = false;
 
 afterimageSpawnRate = 2;
 alarm[4] = afterimageSpawnRate;

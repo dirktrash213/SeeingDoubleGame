@@ -345,16 +345,39 @@ if place_meeting(x + xSpeed, y, obj_block_wall) {
 	
 			}
 	
-
+			
+			//Stretch when hitting wall
+			if !wallStretching {
+				
+				wallStretching = true;
+			
+				if abs(xSpeed) >= moveSpeed[1] {
+				
+					xStretch = 0.5;
+					yStretch = 1.5;
+					
+					if !audio_is_playing(sfx_bonk) audio_play_sound(sfx_bonk, 1, 0, 1, 0, 0.5);
+				
+				} else {
+			
+					xStretch = 0.8;
+					yStretch = 1.2;
+					
+					if !audio_is_playing(sfx_bonk) audio_play_sound(sfx_bonk, 1, 0, 1, 0, 0.7);
+				
+				}
+			
+			}
 			//Collide
 			xSpeed = 0;
-		
+			
 		}
 	
 	}
 
 }
 
+if (!moveLeft && !moveRight) || (moveLeft && moveRight) wallStretching = false;
 
 //Collide with enemy on side
 
@@ -1026,7 +1049,7 @@ if !global.runModeIsToggle {
 	
 	}
 
-} else {
+} else { //"Toggle run" mode on
 
 	if runType == 1 && (moveLeftPressed || moveRightPressed) && onGround && !climbing {
 

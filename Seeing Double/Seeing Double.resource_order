@@ -95,6 +95,7 @@
     {"name":"UI","order":17,"path":"folders/Sprites/UI.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
+    {"name":"Text Popups","order":10,"path":"folders/Objects/Collectables/Text Popups.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"FX052_02","order":2,"path":"sprites/FX052_02/FX052_02.yy",},
@@ -490,6 +491,7 @@
     {"name":"obj_block_wall_moving","order":4,"path":"objects/obj_block_wall_moving/obj_block_wall_moving.yy",},
     {"name":"spr_background_plant_v27","order":21,"path":"sprites/spr_background_plant_v27/spr_background_plant_v27.yy",},
     {"name":"__scribble_config_colours","order":1,"path":"scripts/__scribble_config_colours/__scribble_config_colours.yy",},
+    {"name":"sfx_bonk","order":37,"path":"sounds/sfx_bonk/sfx_bonk.yy",},
     {"name":"spr_interactable_flower_blue","order":42,"path":"sprites/spr_interactable_flower_blue/spr_interactable_flower_blue.yy",},
     {"name":"sfx_effect_for_logo_intro_v3","order":31,"path":"sounds/sfx_effect_for_logo_intro_v3/sfx_effect_for_logo_intro_v3.yy",},
     {"name":"scribble_external_sound_remove","order":5,"path":"scripts/scribble_external_sound_remove/scribble_external_sound_remove.yy",},
