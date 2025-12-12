@@ -1,3 +1,3 @@
 horizontal = true;
-radius = -128;
-rotationSpeed = 270/360;
+radius = -64;
+//rotationSpeed = 270/360;

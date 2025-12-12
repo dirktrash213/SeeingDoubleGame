@@ -1,4 +1,4 @@
 horizontal = true;
-radius = -128;
+radius = -64;
 visible = false;
-rotationSpeed = 270/360;
+//rotationSpeed = 270/360;

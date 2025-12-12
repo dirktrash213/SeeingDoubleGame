@@ -372,7 +372,7 @@ function startNewGame() {
 
 
 }
-//@
+
 function spawnPitter() {
 
 	var _offsetY = 20;
@@ -408,7 +408,7 @@ function spawnPitter() {
 	obj_player_pitter.gemPowerupDoubleJump = false;
 	
 	//Reset checkpoint defeat count for new checkpoints
-	if instance_nearest(x, y, obj_trigger_checkPoint) != global.currentCheckpoint {
+	if instance_nearest(obj_player_pitter.x, obj_player_pitter.y, obj_trigger_checkPoint) != global.currentCheckpoint {
 		
 		global.currentCheckpointDefeatCount = 0;
 		show_debug_message("Checkpoint defeat count reset")
@@ -416,22 +416,30 @@ function spawnPitter() {
 	}
 	
 	//Track number of defeats at this checkpoint
-	global.currentCheckpoint = instance_nearest(x, y, obj_trigger_checkPoint);
+	global.currentCheckpoint = instance_nearest(obj_player_pitter.x, obj_player_pitter.y, obj_trigger_checkPoint);
 	
 	global.currentCheckpointDefeatCount++;
 	
 	show_debug_message("global.currentCheckpointDefeatCount: " + string(global.currentCheckpointDefeatCount))
-
+	//@
 	//Spawn the assist mode helper if player died enough times	
 	if (global.currentCheckpointDefeatCount >= global.currentCheckpoint.trigger_threshold) {
 	  
 		show_debug_message("Attempting to create shadow assist")
 	
-		var _delayUntilShadowSpawn = 5;
+		var _delayUntilShadowSpawn = 2;
 		
 		obj_control.alarm[3] = _delayUntilShadowSpawn;
 	
 	}
+	
+	//with obj_dev_recorder {
+	//
+	//	recording = true;
+	//    frames = []; // Clear old data
+	//    show_debug_message("--- RECORDING STARTED ---");
+	//
+	//}
 
 }
 
@@ -538,7 +546,7 @@ function playerCaughtByForestGhost() {
 
 }
 
-//@
+
 function checkForMenuInput() {
 
 	confirm = keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter) ||

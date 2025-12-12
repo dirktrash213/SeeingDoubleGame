@@ -1,5 +1,7 @@
 image_alpha = global.assistMode ? 0.5 : 0.0;
 
+if !loaded image_alpha = 0.0;
+
 if global.paused exit;
 
 if (loaded && array_length(frames) > 0) {

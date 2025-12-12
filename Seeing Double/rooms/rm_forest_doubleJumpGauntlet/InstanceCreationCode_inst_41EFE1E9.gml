@@ -1,1 +1,1 @@
-assist_file = "rm_forest_doubleJumpCrystalGauntlet5_assistData.json";
+assist_file = "rm_forest_doubleJumpGauntlet5_assistData.json";

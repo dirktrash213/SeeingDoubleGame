@@ -22,19 +22,49 @@ if (keyboard_check_pressed(ord("E")) && recording) {
 }
 
 // CAPTURE FRAME
-if (recording && instance_exists(obj_player)) {
+//if (recording && instance_exists(obj_player)) {
+//    // Create a struct for this single frame of data
+//    var _frame_data = {
+//        x: obj_player.x,
+//        y: obj_player.y,
+//        spr: obj_player.sprite_index,
+//        img: obj_player.image_index,
+//        scale: obj_player.image_xscale,
+//		faceDir: obj_player.faceDir
+//    };
+//    
+//    // Add to our list
+//    array_push(frames, _frame_data);
+//}
+
+if (recording && pitterPlayerIsPresent()) {
     // Create a struct for this single frame of data
     var _frame_data = {
-        x: obj_player.x,
-        y: obj_player.y,
-        spr: obj_player.sprite_index,
-        img: obj_player.image_index,
-        scale: obj_player.image_xscale,
-		faceDir: obj_player.faceDir
+        x: obj_player_pitter.x,
+        y: obj_player_pitter.y,
+        spr: obj_player_pitter.sprite_index,
+        img: obj_player_pitter.image_index,
+        scale: obj_player_pitter.image_xscale,
+		faceDir: obj_player_pitter.faceDir
     };
     
     // Add to our list
     array_push(frames, _frame_data);
 }
+
+//if (recording && patterPlayerIsPresent()) {
+//    // Create a struct for this single frame of data
+//    var _frame_data = {
+//        x: obj_player_patter.x,
+//        y: obj_player_patter.y,
+//        spr: obj_player_patter.sprite_index,
+//        img: obj_player_patter.image_index,
+//        scale: obj_player_patter.image_xscale,
+//		faceDir: obj_player_patter.faceDir
+//    };
+//    
+//    // Add to our list
+//    array_push(frames, _frame_data);
+//}
 
 

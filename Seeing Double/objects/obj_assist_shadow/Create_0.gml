@@ -18,6 +18,7 @@ function load_recording(_filename) {
         loaded = true;
     } else {
 	
+		loaded = false;
 		show_debug_message("Could not find file: " + string(_filename))
 	
 	}
