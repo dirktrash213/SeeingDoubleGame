@@ -23,3 +23,5 @@ stretchAdjustAmount = 0.1;
 
 harmless = false;
 invincible = false;
+
+removeDuration = 15;

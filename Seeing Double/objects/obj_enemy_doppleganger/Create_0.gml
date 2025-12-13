@@ -13,4 +13,15 @@ if !global.verticalLevel {
 xStretch = 1;
 yStretch = 1;
 
+enemyToCopyObjectIndex = noone;
+
+enemyToCopyIsVisible = true;
+
+if instance_exists(enemyToCopy) {
+
+	enemyToCopyObjectIndex = enemyToCopy.object_index;
+	enemyToCopyIsVisible = enemyToCopy.visible;
+
+}
+
 //show_debug_message("dopppleganger created")

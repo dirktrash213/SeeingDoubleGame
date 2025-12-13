@@ -2,6 +2,18 @@
 
 if !instance_exists(enemyToCopy) {
 
+	var _visible = visible;
+
+	if enemyToCopyObjectIndex == obj_enemy_beetle {
+		
+		with instance_create_layer(x, y, "Instances", obj_enemy_beetle_dead) {
+		
+			visible = _visible;
+		
+		}
+	
+	}
+
 	instance_destroy();
 	exit;
 

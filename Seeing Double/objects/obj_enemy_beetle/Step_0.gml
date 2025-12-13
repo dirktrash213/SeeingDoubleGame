@@ -52,4 +52,9 @@ if moveDir != WALKING_DIRECTION.NONE {
 
 }
 
-if defeated sprite_index = defeatSprite;
+if defeated {
+	
+	//instance_destroy();
+	sprite_index = defeatSprite;
+	
+}

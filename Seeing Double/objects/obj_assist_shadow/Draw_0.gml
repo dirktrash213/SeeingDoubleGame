@@ -1,6 +1,6 @@
 draw_self();
 
-
+//Draw patter shadow
 if patterPlayerIsPresent() {
 
 	var _sprite = spr_patter_idle;

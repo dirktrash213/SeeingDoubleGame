@@ -215,6 +215,8 @@ crushTimer = 0;
 crushGraceFrames = 3;
 crushed = false;
 
+immuneToOnOffBlockCollision = false;
+
 sweatParticleSpawnRate = 4; //4
 scaredSweating = false;
 recoveringFromFear = false;

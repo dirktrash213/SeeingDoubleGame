@@ -76,6 +76,7 @@
     {"name":"inst_A7968DF","path":"rooms/rm_forest_parachuteBase/rm_forest_parachuteBase.yy",},
     {"name":"inst_22AD6E8F","path":"rooms/rm_forest_parachuteBase/rm_forest_parachuteBase.yy",},
     {"name":"inst_561B23D6","path":"rooms/rm_forest_parachuteBase/rm_forest_parachuteBase.yy",},
+    {"name":"inst_64CCF0DB","path":"rooms/rm_forest_parachuteBase/rm_forest_parachuteBase.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -236,6 +237,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_A7968DF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_bird","path":"objects/obj_interactable_bird/obj_interactable_bird.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":416.0,"y":544.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_22AD6E8F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_bird","path":"objects/obj_interactable_bird/obj_interactable_bird.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":400.0,"y":544.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_561B23D6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_bird","path":"objects/obj_interactable_bird/obj_interactable_bird.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":432.0,"y":544.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_64CCF0DB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_birds","path":"objects/obj_trigger_birds/obj_trigger_birds.yy",},"properties":[],"rotation":0.0,"scaleX":34.0,"scaleY":1.0,"x":576.0,"y":48.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"ForegroundTiles","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":37,"SerialiseWidth":30,"TileCompressedData":[
 -42,-2147483648,1,0,-14,-2147483648,-3,0,-12,-2147483648,1,0,-29,-2147483648,-18,0,-10,-2147483648,2,0,-2147483648,-18,0,-9,-2147483648,-21,0,-9,-2147483648,-21,

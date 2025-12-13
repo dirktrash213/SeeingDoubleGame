@@ -266,6 +266,8 @@ if global.paused {
 							case 2: { //Toggle assist mode
 						
 								global.assistMode = !global.assistMode;
+								
+								with obj_assist_shadow current_frame = 0;
 						
 							} break;
 							

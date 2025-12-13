@@ -531,7 +531,15 @@ if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled {
 			
 		}
 		
-		instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
+		if global.doubleJumpActive {
+		
+			instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
+		
+		} else {
+		
+			with obj_player instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
+		
+		}
 		
 		//if pitterPlayerIsPresent() {
 		//	
@@ -626,7 +634,15 @@ if collidingEnemy {
 			
 			}
 			
-			with obj_player instance_create_layer(x, y, "Instances", obj_vfx_actionLines_enemyImpact);
+			if !collidingEnemy.invincible {
+			
+				with obj_player instance_create_layer(x, y, "Instances", obj_vfx_actionLines_enemyImpact);
+			
+			} else {
+			
+				instance_create_layer(x, y, "Instances", obj_vfx_actionLines_enemyImpact);
+			
+			}
 	
 			if !collidingEnemy.invincible collidingEnemy.defeated = true;
 			collidingEnemy.xStretch = 1.5;
@@ -1016,6 +1032,7 @@ if instance_exists(myFloorPlat)
 //Check if player is crushed
 image_blend = c_white;
 if place_meeting(x, y, obj_block_wall) 
+//&& !place_meeting(x, y, obj_interactable_onOff_block_on) 
 && !place_meeting(x, y, obj_interactable_switch_block_parent) 
 && !place_meeting(x, y, obj_interactable_switch_block_inert) {
 
@@ -1032,6 +1049,25 @@ if place_meeting(x, y, obj_block_wall)
 
 	crushTimer = 0;
 
+}
+
+//Prevent player from getting crushed by onOffBlocks
+var _onOffBlock = instance_place(x, y, obj_interactable_onOff_block_on);
+if _onOffBlock != noone && crushTimer > 0 {
+
+	crushTimer = 0;
+	
+	x = faceDir = 1 ? _onOffBlock.x + 18 : _onOffBlock.x - 2; 
+	y = _onOffBlock.y + 8;
+	
+}
+
+var _switchBlock = instance_place(x, y, obj_interactable_switch_block_parent);
+if _switchBlock != noone {
+
+	//x = faceDir = 1 ? _onOffBlock.x + 18 : _onOffBlock.x - 2; 
+	y = _switchBlock.y + 20;
+	
 }
 
 

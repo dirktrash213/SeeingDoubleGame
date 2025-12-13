@@ -1,2 +1,2 @@
 //vanishOnTimeout = true;
-timerDuration = 660;
+timerDuration = 720;
