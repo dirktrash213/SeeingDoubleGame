@@ -1061,12 +1061,12 @@ if _onOffBlock != noone && crushTimer > 0 {
 	y = _onOffBlock.y + 8;
 	
 }
-
+//@
 var _switchBlock = instance_place(x, y, obj_interactable_switch_block_parent);
 if _switchBlock != noone {
 
 	//x = faceDir = 1 ? _onOffBlock.x + 18 : _onOffBlock.x - 2; 
-	y = _switchBlock.y + 20;
+	y = _switchBlock.y + 22;
 	
 }
 
