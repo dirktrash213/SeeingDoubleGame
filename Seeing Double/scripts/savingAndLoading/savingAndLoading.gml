@@ -102,6 +102,21 @@ function saveRoom() {
 
 	}
 	
+	with obj_pickup_coin_temporary {
+	
+		var _dataStruct = {
+		
+			objectName: object_get_name(object_index),
+			x: x,
+			y: y,
+			image_index: image_index,
+		
+		}
+		
+		array_push(_dataArray, _dataStruct);
+
+	}
+	
 	with obj_pickup_cherry {
 	
 		var _dataStruct = {
@@ -217,6 +232,7 @@ function loadRoom(){
 		instance_destroy(obj_spawner_cherry);
 		instance_destroy(obj_pickup_cherry);
 		instance_destroy(obj_pickup_coin_empty);
+		instance_destroy(obj_pickup_coin_temporary);
 		instance_destroy(obj_pickup_coin);
 		
 		for(var i = 0; i < array_length(_dataArray); i++) {
@@ -224,6 +240,13 @@ function loadRoom(){
 			var _dataStruct = _dataArray[i];
 			
 			var _inst = instance_create_layer(_dataStruct.x, _dataStruct.y, "Instances", asset_get_index(_dataStruct.objectName), _dataStruct);
+			
+			if _inst.object_index == obj_pickup_coin_temporary {
+			
+				instance_create_layer(_inst.x, _inst.y, "Instances", obj_pickup_coin_empty);
+				instance_destroy(_inst);
+			
+			}
 		
 		}
 	

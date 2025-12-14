@@ -37,13 +37,17 @@ if bonked && !inert && (visible || secret) {
 	
 	var _otherSwitchIsActive = false;
 	
+	var _timerDuration = timerDuration;
+	
 	with obj_interactable_switch_block_tempActivator_oneTimeUse {
 	
 		if active {
 		
 			_otherSwitchIsActive = true;
 			
-			alarm[0] = timerDuration;
+			alarm[0] = _timerDuration;
+			
+			//show_debug_message("timer of block set to: " + string(timerDuration))
 		
 		}
 	
@@ -52,6 +56,8 @@ if bonked && !inert && (visible || secret) {
 	if !_otherSwitchIsActive {
 	
 		alarm[0] = timerDuration;
+		
+		//show_debug_message("timer of block set to: " + string(timerDuration))
 	
 		active = true;
 	

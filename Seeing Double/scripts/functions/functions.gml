@@ -423,13 +423,17 @@ function spawnPitter() {
 	show_debug_message("global.currentCheckpointDefeatCount: " + string(global.currentCheckpointDefeatCount))
 	//@
 	//Spawn the assist mode helper if player died enough times	
-	if (global.currentCheckpointDefeatCount >= global.currentCheckpoint.trigger_threshold) {
-	  
-		show_debug_message("Attempting to create shadow assist")
+	if  global.currentCheckpoint != noone {
 	
-		var _delayUntilShadowSpawn = 2;
+		if (global.currentCheckpointDefeatCount >= global.currentCheckpoint.trigger_threshold) {
+	  
+			show_debug_message("Attempting to create shadow assist")
+	
+			var _delayUntilShadowSpawn = 2;
 		
-		obj_control.alarm[3] = _delayUntilShadowSpawn;
+			obj_control.alarm[3] = _delayUntilShadowSpawn;
+	
+		}
 	
 	}
 	

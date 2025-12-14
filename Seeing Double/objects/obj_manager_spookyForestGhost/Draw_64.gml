@@ -5,7 +5,8 @@ show_debug_message("drawing hide text")
 
 var _hideText = scribble("HIDE.");
 
-_hideText.starting_format("font_pauseMenu", c_white);
+//_hideText.starting_format("font_pauseMenu", c_white);
+_hideText.starting_format("font_hideText", c_white);
 //_hideText.wrap(335); 
 _hideText.align(fa_center, fa_top); 
 

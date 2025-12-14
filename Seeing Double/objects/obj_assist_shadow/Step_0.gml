@@ -19,6 +19,7 @@ if (loaded && array_length(frames) > 0) {
 	if sprite_index = spr_pitter_run sprite_index = spr_pitter_run_silent;
 	if sprite_index = spr_patter_walk sprite_index = spr_patter_walk_silent;
 	if sprite_index = spr_patter_run sprite_index = spr_patter_run_silent;
+	if sprite_index = spr_patter_climb sprite_index = spr_patter_climb_silent;
     
     // 3. Advance Frame
     current_frame++;

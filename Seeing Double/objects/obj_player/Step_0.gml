@@ -1070,6 +1070,14 @@ if _switchBlock != noone {
 	
 }
 
+var _barrel = instance_place(x, y, obj_scienceJuice_doubleJump);
+if _barrel != noone {
+
+	//x = _barrel.x + 8;
+	//y = _switchBlock.y + 22;
+	
+}
+
 
 if !global.runModeIsToggle {
 

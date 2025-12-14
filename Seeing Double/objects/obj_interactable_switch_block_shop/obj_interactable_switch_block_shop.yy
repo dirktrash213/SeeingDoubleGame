@@ -33,8 +33,8 @@
   "properties": [],
   "solid": true,
   "spriteId": {
-    "name": "spr_interactable_switch_on",
-    "path": "sprites/spr_interactable_switch_on/spr_interactable_switch_on.yy",
+    "name": "spr_interactable_switch_shop",
+    "path": "sprites/spr_interactable_switch_shop/spr_interactable_switch_shop.yy",
   },
   "spriteMaskId": null,
   "visible": true,

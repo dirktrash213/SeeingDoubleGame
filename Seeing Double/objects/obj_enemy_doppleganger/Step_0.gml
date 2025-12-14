@@ -4,7 +4,7 @@ if !instance_exists(enemyToCopy) {
 
 	var _visible = visible;
 
-	if enemyToCopyObjectIndex == obj_enemy_beetle {
+	if enemyToCopyObjectIndex == obj_enemy_beetle && room != rm_forest_canopyUpperFloor_enemyMinigames {
 		
 		with instance_create_layer(x, y, "Instances", obj_enemy_beetle_dead) {
 		

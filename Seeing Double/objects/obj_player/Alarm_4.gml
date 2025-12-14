@@ -33,8 +33,6 @@ if abs(xSpeed) >= moveSpeed[1] {
 
 if spawnAfterimages {
 
-	show_debug_message("f4ey4ey")
-
 	var _sprite_index = sprite_index;
 	var _image_index = image_index;
 	//var _xScale = moveDir;

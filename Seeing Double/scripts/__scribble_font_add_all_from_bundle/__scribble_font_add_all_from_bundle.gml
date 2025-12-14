@@ -2,11 +2,12 @@
 
 function __scribble_font_add_all_from_bundle()
 {
-	
+	//BUNKA
 	__scribble_font_add_from_bundle(font_titleMenu);
 	__scribble_font_add_from_bundle(font_pauseMenu);
 	__scribble_font_add_from_bundle(font_npc);
 	__scribble_font_add_from_bundle(font_scoreUI);
+	__scribble_font_add_from_bundle(font_hideText);
 	
 	exit; 
 	

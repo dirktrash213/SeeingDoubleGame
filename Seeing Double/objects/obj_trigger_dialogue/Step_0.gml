@@ -27,14 +27,28 @@ if !global.gotScammed && global.dialogueVariables.boughtParachuteFromScammer && 
 
 	global.gotScammed = true;
 	
-	count = 0;
-	alarm[0] = textDisplayDuration;
+	if (count == 5 || global.dialogueVariables.talkedToScammer) {
 	
-	dialogueString = [];
+		
+		count = 0;
+		alarm[0] = textDisplayDuration;
+	
+		dialogueString = [];
 
-	dialogueString[0] = "Wisely bought, my guy! I knew you were a smart one."
-	dialogueString[1] = "Enjoy this state of the art parachute. And no refunds!"
-	//dialogueString[2] = "This is even more sample dialogue."
+		dialogueString[0] = "Wisely bought, my guy! I knew you were a smart one."
+		dialogueString[1] = "Enjoy this state of the art parachute, which! May I reiterate! Is [slant]absolutely unbreakable.[/slant] And no refunds!"
+	
+	} else {
+	
+		count = 0;
+		alarm[0] = textDisplayDuration;
+	
+		dialogueString = [];
+
+		dialogueString[0] = "Wow, guy! You went and bought that parachute before I could even finish selling you it!"
+		dialogueString[1] = "Enjoy this unbreakable parachute, you go-getter! And no refunds!"
+	
+	}
 
 }
 

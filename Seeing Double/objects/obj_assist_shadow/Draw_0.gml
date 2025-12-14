@@ -10,6 +10,7 @@ if patterPlayerIsPresent() {
 	    case spr_pitter_idle: _sprite = spr_patter_idle break;
 	    case spr_pitter_walk_silent: _sprite = spr_patter_walk_silent break;
 	    case spr_pitter_run_silent: _sprite = spr_patter_run_silent break;
+	    case spr_pitter_climb_silent: _sprite = spr_patter_climb_silent break;
 	    case spr_pitter_jump: _sprite = spr_patter_jump break;
 	    case spr_pitter_crouch: _sprite = spr_patter_crouch break;
 	    case spr_pitter_climb: _sprite = spr_patter_climb break;
