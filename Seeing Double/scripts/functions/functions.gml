@@ -249,7 +249,7 @@ function activateCutscene() {
 	if room == rm_forest_doubleJumpGet {
 	
 		audio_sound_gain(amb_forest_ambience, 0, 2000);
-		audio_sound_gain(bgm_inSync, 0, 2000);
+		audio_sound_gain(obj_control.bgmForest, 0, 2000);
 		audio_play_sound(sfx_liquid_splash, 1, 0);
 		audio_play_sound(sfx_cinematic_rumble, 1, 0);
 		

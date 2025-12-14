@@ -1167,6 +1167,7 @@
     {"id":{"name":"spr_tilemap_backround","path":"sprites/spr_tilemap_backround/spr_tilemap_backround.yy",},},
     {"id":{"name":"spr_pitter_happy","path":"sprites/spr_pitter_happy/spr_pitter_happy.yy",},},
     {"id":{"name":"spr_particle_nothing","path":"sprites/spr_particle_nothing/spr_particle_nothing.yy",},},
+    {"id":{"name":"spr_particle_scienceJuiceSparks_doubleJump","path":"sprites/spr_particle_scienceJuiceSparks_doubleJump/spr_particle_scienceJuiceSparks_doubleJump.yy",},},
     {"id":{"name":"rmSimpleExample","path":"rooms/rmSimpleExample/rmSimpleExample.yy",},},
     {"id":{"name":"rm_forest_doubleJumpGauntlet","path":"rooms/rm_forest_doubleJumpGauntlet/rm_forest_doubleJumpGauntlet.yy",},},
     {"id":{"name":"__scribble_gen_6_build_lines","path":"scripts/__scribble_gen_6_build_lines/__scribble_gen_6_build_lines.yy",},},

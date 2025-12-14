@@ -42,7 +42,7 @@ switch global.currentCutsceneID {
 		
 		alarm[1] = 140;
 		
-		audio_sound_gain(bgm_inSync, 0, 3000);
+		audio_sound_gain(obj_control.bgmForest, 0, 3000);
 		audio_sound_gain(amb_forest_ambience, 0, 3000);
 		
 		var _elipsesOffsetY = -20;

@@ -143,6 +143,8 @@ yStretch = 1;
 
 stretchAdjustAmount = 0.1;
 
+spawnAfterimages = false;
+
 //Jumping
 
 //grav = 0.275;

@@ -1020,6 +1020,7 @@
     {"name":"spr_tilemap_backround","order":1,"path":"sprites/spr_tilemap_backround/spr_tilemap_backround.yy",},
     {"name":"spr_pitter_happy","order":89,"path":"sprites/spr_pitter_happy/spr_pitter_happy.yy",},
     {"name":"spr_particle_nothing","order":17,"path":"sprites/spr_particle_nothing/spr_particle_nothing.yy",},
+    {"name":"spr_particle_scienceJuiceSparks_doubleJump","order":23,"path":"sprites/spr_particle_scienceJuiceSparks_doubleJump/spr_particle_scienceJuiceSparks_doubleJump.yy",},
     {"name":"rmSimpleExample","order":40,"path":"rooms/rmSimpleExample/rmSimpleExample.yy",},
     {"name":"rm_forest_doubleJumpGauntlet","order":35,"path":"rooms/rm_forest_doubleJumpGauntlet/rm_forest_doubleJumpGauntlet.yy",},
     {"name":"__scribble_gen_6_build_lines","order":7,"path":"scripts/__scribble_gen_6_build_lines/__scribble_gen_6_build_lines.yy",},

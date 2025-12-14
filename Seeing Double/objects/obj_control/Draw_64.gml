@@ -66,7 +66,8 @@ if global.splitScreenActive {
 			
 			audio_sound_gain(amb_forest_ambience, 1, 5000);
 			
-			if !audio_is_playing(bgm_inSync) audio_play_sound(bgm_inSync, 1, 1);
+			//if !audio_is_playing(bgm_inSync) audio_play_sound(bgm_inSync, 1, 1);
+			if !audio_is_playing(obj_control.bgmForest) audio_play_sound(obj_control.bgmForest, 1, 1);
 		
 		}
 

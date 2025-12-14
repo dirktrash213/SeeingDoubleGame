@@ -31,5 +31,41 @@ if abs(xSpeed) >= moveSpeed[1] {
 
 }
 
+if spawnAfterimages {
+
+	show_debug_message("f4ey4ey")
+
+	var _sprite_index = sprite_index;
+	var _image_index = image_index;
+	//var _xScale = moveDir;
+	var _depth = depth;
+	var _xStretch = xStretch;
+	var _yStretch = yStretch;
+	var _blend = c_lime;
+	
+	with instance_create_layer(x,y, "Instances", obj_vfx_afterimage) {
+	
+		sprite_index = _sprite_index;
+		image_index = _image_index;
+		//image_xscale = _xScale * _xStretch;
+		image_xscale = _xStretch;
+		image_yscale = image_yscale * _yStretch;
+		image_speed = 0;
+		//image_alpha = 1.0;
+		//depth = -12000;
+		image_blend = _blend;
+		
+		if sprite_index == spr_pitter_run sprite_index = spr_pitter_run_silent;
+		if sprite_index == spr_patter_run sprite_index = spr_patter_run_silent;
+		if sprite_index == spr_patter_scared_run sprite_index = spr_patter_scared_run_silent;
+		
+	
+	
+	}
+
+}
+
+
+
 alarm[4] = afterimageSpawnRate;
 

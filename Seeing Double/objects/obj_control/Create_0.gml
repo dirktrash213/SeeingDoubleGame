@@ -46,6 +46,8 @@ canDrawDivider = true;
 //tilemapID = noone;
 //tileLayerAlpha = 0.5;
 
+bgmForest = bgm_inSync;
+
 //Load player settings
 loadSettings();
 

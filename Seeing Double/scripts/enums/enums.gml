@@ -7,6 +7,15 @@ enum BIRD_STATE {
 
 }
 
+enum BARREL_STRETCH_STATE {
+
+	NONE,
+	SQUISHING,
+	SHOOTING,
+	RETRACTING,
+
+}
+
 enum CUTSCENE_ID {
 
 	NONE,

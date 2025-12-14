@@ -21,6 +21,7 @@ function particleSetup() {
 	global.particleSweatdrop = part_type_create();
 	global.particleCoinSparkle = part_type_create();
 	global.particleCoinSparkleRed = part_type_create();
+	global.scienceJuiceSparksDoubleJump = part_type_create();
 
 	var _heartDirMin = 60;
 	var _heartDirMax = 120;
@@ -49,6 +50,12 @@ function particleSetup() {
 	part_type_life(global.particleRock, 300, 300);
 	part_type_gravity(global.particleRock, 0.1, 270);
 	part_type_orientation(global.particleRock, 0, 360, 60, 0, false);
+	
+	part_type_sprite(global.scienceJuiceSparksDoubleJump, spr_particle_scienceJuiceSparks_doubleJump, 0, 0, 0);
+	part_type_speed(global.scienceJuiceSparksDoubleJump, 10.5, 11.5, 0, 0);
+	part_type_direction(global.scienceJuiceSparksDoubleJump, 0, 180, 0, 0);
+	part_type_life(global.scienceJuiceSparksDoubleJump, 300, 300);
+	part_type_gravity(global.scienceJuiceSparksDoubleJump, 0.1, 270);
 	
 	part_type_sprite(global.particleSweatdrop, spr_particle_sweat, 0, 0, 0);
 	part_type_speed(global.particleSweatdrop, 0.5, 1.5, 0, 0);

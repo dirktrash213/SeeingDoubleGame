@@ -65,24 +65,29 @@ switch global.currentCutsceneID {
 		switch cutsceneState {
 
 			case DOUBLE_JUMP_BARREL_CUTSCENE_STATE.SOAKING: {
-	
+				//@
 				cutsceneState = DOUBLE_JUMP_BARREL_CUTSCENE_STATE.JUMPING_OUT;
 				
-				with obj_scienceJuice_doubleJump {
-				
-					instance_create_layer(x, y, "Collision", obj_scienceJuice_empty);
-					instance_destroy();
-				
-				}
-		
 				var _jumpDuration = 116;
 		
 				alarm[1] = _jumpDuration;
 				
+				obj_scienceJuice_doubleJump.state = BARREL_STRETCH_STATE.SHOOTING;
+				
+				var _offsetY = -16;
+
+				with obj_scienceJuice_doubleJump part_particles_create(global.particleSystemDevice, x, y + _offsetY, global.scienceJuiceSparksDoubleJump, 100);
+				
 				audio_stop_sound(sfx_cinematic_rumble);
 				audio_play_sound(sfx_cake_firework, 1, 0);
 				
-				with obj_player image_alpha = 1;
+				with obj_player {
+					
+					image_alpha = 1;
+					spawnAfterimages = true;
+					alarm[4] = afterimageSpawnRate;
+					
+				}
 		
 				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
 		
@@ -133,6 +138,12 @@ switch global.currentCutsceneID {
 					alarm[0] = textDisplayDuration;
 
 				}
+				
+				with obj_player {
+					
+					spawnAfterimages = false;
+					
+				}
 		
 			} break;
 			
@@ -156,7 +167,7 @@ switch global.currentCutsceneID {
 				//audio_play_sound(bgm_inSync, 1, 1);
 				
 				audio_sound_gain(amb_forest_ambience, 0.1, 2000);
-				audio_sound_gain(bgm_inSync, 0.8, 2000);
+				audio_sound_gain(obj_control.bgmForest, 0.8, 2000);
 				
 				deactivateCutscene();
 		

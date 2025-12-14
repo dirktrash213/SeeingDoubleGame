@@ -4,7 +4,7 @@ if !audio_is_playing(amb_droplets_in_a_cave) audio_play_sound(amb_droplets_in_a_
 
 objBktGlitchDemo.enable_split_screen = false;
 
-if audio_is_playing(bgm_inSync) audio_stop_sound(bgm_inSync)
+if audio_is_playing(obj_control.bgmForest) audio_stop_sound(obj_control.bgmForest)
 if !audio_is_playing(bgm_caveDwellers) audio_play_sound(bgm_caveDwellers, 1, 1);
 
 if !global.caughtByForestGhost global.escapedForestGhost = true;
