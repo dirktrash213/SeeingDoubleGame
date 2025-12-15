@@ -69,6 +69,7 @@
     {"name":"inst_3F37B457","path":"rooms/rm_forest_treeBase/rm_forest_treeBase.yy",},
     {"name":"inst_3EEAB061","path":"rooms/rm_forest_treeBase/rm_forest_treeBase.yy",},
     {"name":"inst_7F0A76DA","path":"rooms/rm_forest_treeBase/rm_forest_treeBase.yy",},
+    {"name":"inst_D93DA53","path":"rooms/rm_forest_treeBase/rm_forest_treeBase.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -227,6 +228,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3F37B457","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_grass_sprouts","path":"objects/obj_interactable_grass_sprouts/obj_interactable_grass_sprouts.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":192.0,"y":528.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3EEAB061","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_grass_sprouts","path":"objects/obj_interactable_grass_sprouts/obj_interactable_grass_sprouts.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":528.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7F0A76DA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_grass_sprouts","path":"objects/obj_interactable_grass_sprouts/obj_interactable_grass_sprouts.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":368.0,"y":528.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_D93DA53","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_firework","path":"objects/obj_interactable_firework/obj_interactable_firework.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":32.0,"y":224.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"LevelTiles","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":37,"SerialiseWidth":30,"TileCompressedData":[
 -9,0,1,188,-29,0,1,188,-10,0,1,188,-18,0,1,188,-10,0,1,188,-13,0,1,188,-4,0,1,188,-10,0,

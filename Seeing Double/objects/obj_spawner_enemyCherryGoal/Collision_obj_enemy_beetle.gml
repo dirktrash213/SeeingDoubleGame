@@ -4,6 +4,18 @@ if room == rm_forest_canopyUpperFloor_enemyMinigames global.dialogueVariables.be
 
 with obj_interactable_switch_block_inert instance_destroy();
 
+with obj_interactable_firework {
+	
+	triggered = true;
+	
+	audio_play_sound(sfx_cake_firework, 1, 0, 0.5, 0, 1.5);
+	audio_play_sound(sfx_powerup, 1, 0, 0.5, 0, 2.0);
+
+	instance_create_layer(x, y, "Instances", obj_interactable_fireworkBall);
+	
+}
+
+
 with obj_trigger_dialogue allowSpecialDialogue = true;
 
 audio_play_sound(sfx_pause, 1, 0, 1, 0, 2.0);

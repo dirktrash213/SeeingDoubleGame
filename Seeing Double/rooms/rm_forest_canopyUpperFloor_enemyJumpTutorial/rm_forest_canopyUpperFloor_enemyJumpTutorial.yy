@@ -71,6 +71,7 @@
     {"name":"inst_1BDA5940","path":"rooms/rm_forest_canopyUpperFloor_enemyJumpTutorial/rm_forest_canopyUpperFloor_enemyJumpTutorial.yy",},
     {"name":"inst_16BB484A","path":"rooms/rm_forest_canopyUpperFloor_enemyJumpTutorial/rm_forest_canopyUpperFloor_enemyJumpTutorial.yy",},
     {"name":"inst_3B7E2054","path":"rooms/rm_forest_canopyUpperFloor_enemyJumpTutorial/rm_forest_canopyUpperFloor_enemyJumpTutorial.yy",},
+    {"name":"inst_69EA2321","path":"rooms/rm_forest_canopyUpperFloor_enemyJumpTutorial/rm_forest_canopyUpperFloor_enemyJumpTutorial.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -223,6 +224,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7D9C631","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_beetle_dead","path":"objects/obj_enemy_beetle_dead/obj_enemy_beetle_dead.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":448.0,"y":192.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7BA1A23A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_beetle_dead","path":"objects/obj_enemy_beetle_dead/obj_enemy_beetle_dead.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":232.0,"y":192.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6647FD8B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_beetle_dead","path":"objects/obj_enemy_beetle_dead/obj_enemy_beetle_dead.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":432.0,"y":192.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_69EA2321","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_firework","path":"objects/obj_interactable_firework/obj_interactable_firework.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":32.0,"y":192.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"LevelTiles","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":37,"SerialiseWidth":30,"TileCompressedData":[
 -360,0,2,181,201,-4,181,1,201,-4,181,1,201,-4,181,1,201,-4,181,1,201,-4,181,1,201,-3,181,2,0,47,

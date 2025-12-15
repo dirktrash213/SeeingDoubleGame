@@ -77,6 +77,7 @@
     {"name":"inst_22AD6E8F","path":"rooms/rm_forest_parachuteBase/rm_forest_parachuteBase.yy",},
     {"name":"inst_561B23D6","path":"rooms/rm_forest_parachuteBase/rm_forest_parachuteBase.yy",},
     {"name":"inst_64CCF0DB","path":"rooms/rm_forest_parachuteBase/rm_forest_parachuteBase.yy",},
+    {"name":"inst_609DC03B","path":"rooms/rm_forest_parachuteBase/rm_forest_parachuteBase.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -252,6 +253,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_16F49FB0_1_1_3","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_background_parallax_double","path":"objects/obj_background_parallax_double/obj_background_parallax_double.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-192.0,"y":-288.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_614626A6_1_1_3","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_background_parallax_double","path":"objects/obj_background_parallax_double/obj_background_parallax_double.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-192.0,"y":-272.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_75138F5F_1_1_3","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_background_parallax_double","path":"objects/obj_background_parallax_double/obj_background_parallax_double.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-192.0,"y":-256.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_609DC03B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_firework","path":"objects/obj_interactable_firework/obj_interactable_firework.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":448.0,"y":224.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"LevelTiles","depth":700,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":37,"SerialiseWidth":30,"TileCompressedData":[
 -21,0,1,268435644,-18,0,1,268435644,-10,0,1,268435644,-18,0,1,268435644,-10,0,1,268435644,-14,0,1,268435644,-3,0,1,268435644,-10,0,

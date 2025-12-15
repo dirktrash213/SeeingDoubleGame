@@ -22,6 +22,8 @@ function particleSetup() {
 	global.particleCoinSparkle = part_type_create();
 	global.particleCoinSparkleRed = part_type_create();
 	global.scienceJuiceSparksDoubleJump = part_type_create();
+	global.particleFireworkSpark = part_type_create();
+	global.particleFireworkSparkBall = part_type_create();
 
 	var _heartDirMin = 60;
 	var _heartDirMax = 120;
@@ -56,6 +58,18 @@ function particleSetup() {
 	part_type_direction(global.scienceJuiceSparksDoubleJump, 0, 180, 0, 0);
 	part_type_life(global.scienceJuiceSparksDoubleJump, 300, 300);
 	part_type_gravity(global.scienceJuiceSparksDoubleJump, 0.1, 270);
+	
+	part_type_sprite(global.particleFireworkSparkBall, spr_particle_sweat, 0, 0, 0);
+	part_type_speed(global.particleFireworkSparkBall, 2.5, 3.5, 0, 0);
+	part_type_direction(global.particleFireworkSparkBall, 0, 360, 0, 0);
+	part_type_life(global.particleFireworkSparkBall, 300, 300);
+	part_type_gravity(global.particleFireworkSparkBall, 0.1, 270);
+	
+	part_type_sprite(global.particleFireworkSpark, spr_particle_sweat, 0, 0, 0);
+	part_type_speed(global.particleFireworkSpark, 2.5, 3.5, 0, 0);
+	part_type_direction(global.particleFireworkSpark, 80, 100, 0, 0);
+	part_type_life(global.particleFireworkSpark, 15, 30);
+	part_type_gravity(global.particleFireworkSpark, 0.0, 270);
 	
 	part_type_sprite(global.particleSweatdrop, spr_particle_sweat, 0, 0, 0);
 	part_type_speed(global.particleSweatdrop, 0.5, 1.5, 0, 0);

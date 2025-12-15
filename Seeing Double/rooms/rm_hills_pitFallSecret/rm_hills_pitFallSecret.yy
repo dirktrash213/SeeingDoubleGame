@@ -28,6 +28,7 @@
     {"name":"inst_6B74CF82","path":"rooms/rm_hills_pitFallSecret/rm_hills_pitFallSecret.yy",},
     {"name":"inst_481DC650","path":"rooms/rm_hills_pitFallSecret/rm_hills_pitFallSecret.yy",},
     {"name":"inst_6571583C","path":"rooms/rm_hills_pitFallSecret/rm_hills_pitFallSecret.yy",},
+    {"name":"inst_79295164","path":"rooms/rm_hills_pitFallSecret/rm_hills_pitFallSecret.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -68,7 +69,9 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_54C6F8B7_1_1_1_1_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_pickup_coin","path":"objects/obj_pickup_coin/obj_pickup_coin.yy",},"properties":[],"rotation":11.158227,"scaleX":1.0,"scaleY":1.0,"x":792.20465,"y":-236.00723,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5F3DC3B9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_pickup_cherry","path":"objects/obj_pickup_cherry/obj_pickup_cherry.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":56.0,"y":168.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
-    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":500,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
+    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":500,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_79295164","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_firework","path":"objects/obj_interactable_firework/obj_interactable_firework.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":368.0,"y":176.0,},
+      ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"LevelTiles","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":17,"SerialiseWidth":30,"TileCompressedData":[
 -24,0,1,290,-5,131,-24,0,1,290,-5,131,-24,0,1,290,-5,131,-24,0,1,290,-5,131,-24,0,1,290,-5,131,
 -24,0,1,290,-5,131,-24,0,1,290,-5,131,-24,0,1,290,-5,131,-24,0,1,290,-5,131,-84,0,1,290,-5,131,
