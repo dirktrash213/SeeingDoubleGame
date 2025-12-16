@@ -148,7 +148,23 @@ function saveRoom() {
 
 	}
 	
-	with obj_interactable_firework {
+	//with obj_interactable_firework {
+	//
+	//	var _dataStruct = {
+	//	
+	//		objectName: object_get_name(object_index),
+	//		x: x,
+	//		y: y,
+	//		image_index: image_index,
+	//		triggered: triggered,
+	//	
+	//	}
+	//	
+	//	array_push(_dataArray, _dataStruct);
+	//
+	//}
+	
+	with obj_interactable_pot {
 	
 		var _dataStruct = {
 		
@@ -229,7 +245,8 @@ function loadRoom(){
 		instance_destroy(obj_pickup_coin_empty);
 		instance_destroy(obj_pickup_coin_temporary);
 		instance_destroy(obj_pickup_coin);
-		instance_destroy(obj_interactable_firework);
+		//instance_destroy(obj_interactable_firework);
+		instance_destroy(obj_interactable_pot);
 		
 		for(var i = 0; i < array_length(_dataArray); i++) {
 		

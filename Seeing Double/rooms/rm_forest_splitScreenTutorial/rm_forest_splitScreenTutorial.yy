@@ -73,7 +73,7 @@
     {"name":"inst_75138F5F","path":"rooms/rm_forest_splitScreenTutorial/rm_forest_splitScreenTutorial.yy",},
     {"name":"inst_F6D0425","path":"rooms/rm_forest_splitScreenTutorial/rm_forest_splitScreenTutorial.yy",},
     {"name":"inst_4683BBFC","path":"rooms/rm_forest_splitScreenTutorial/rm_forest_splitScreenTutorial.yy",},
-    {"name":"inst_2C909930","path":"rooms/rm_forest_splitScreenTutorial/rm_forest_splitScreenTutorial.yy",},
+    {"name":"inst_7EA97BE2","path":"rooms/rm_forest_splitScreenTutorial/rm_forest_splitScreenTutorial.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -160,7 +160,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_75138F5F","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_background_parallax_double","path":"objects/obj_background_parallax_double/obj_background_parallax_double.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-64.0,"y":16.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_F6D0425","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_plant_v1","path":"objects/obj_interactable_plant_v1/obj_interactable_plant_v1.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":208.0,"y":448.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4683BBFC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_plant_v1","path":"objects/obj_interactable_plant_v1/obj_interactable_plant_v1.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":64.0,"y":144.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2C909930","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_firework","path":"objects/obj_interactable_firework/obj_interactable_firework.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":16.0,"y":160.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7EA97BE2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_pot","path":"objects/obj_interactable_pot/obj_interactable_pot.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":16.0,"y":160.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"LevelTiles","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":37,"SerialiseWidth":30,"TileCompressedData":[
 -300,0,-4,271,1,272,-25,0,-4,131,1,292,-22,0,3,270,271,271,-4,131,1,292,-3,0,3,270,271,272,-16,0,
