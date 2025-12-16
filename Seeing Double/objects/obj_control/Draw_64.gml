@@ -9,7 +9,20 @@ if global.playerControl && !global.paused && !global.cutsceneActive && global.sc
 	if pitterPlayerIsPresent() {
 	
 		if obj_player_pitter.wearingParachute _parachuteString = "\n[spr_parachute_32x32]PARACHUTE STATUS: NEW";
-		if obj_player_pitter.wearingBrokenParachute _parachuteString = "\n[spr_parachute_broken_32x32]PARACHUTE STATUS: [shake]BROKEN![/shake]";
+		if obj_player_pitter.wearingBrokenParachute {
+			
+			if room == rm_forest_parachuteFallingArea {
+				
+				_parachuteString = "\n[spr_parachute_broken_32x32]PARACHUTE STATUS: [shake]BROKEN![/shake]";
+				
+			} else {
+			
+				_parachuteString = "\n[spr_parachute_broken_32x32]PARACHUTE STATUS: BROKEN";
+			
+			}
+			
+		}
+		
 		
 		//if obj_player_pitter.wearingParachute _parachuteString = "\n[spr_parachute_32x32]PARACHUTE HP: 1,000,000/1,000,000";
 		//if obj_player_pitter.wearingBrokenParachute _parachuteString = "\n[spr_parachute_broken_32x32][shake]PARACHUTE HP: 0/1,000,000![/shake]";
