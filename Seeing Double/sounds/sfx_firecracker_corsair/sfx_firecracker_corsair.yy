@@ -12,12 +12,12 @@
   "conversionMode": 0,
   "duration": 2.928,
   "parent": {
-    "name": "NEW",
-    "path": "folders/Sounds/NEW.yy",
+    "name": "SFX",
+    "path": "folders/Sounds/SFX.yy",
   },
   "preload": false,
   "sampleRate": 44100,
   "soundFile": "sfx_firecracker_corsair.mp3",
   "type": 0,
-  "volume": 1.0,
+  "volume": 0.5,
 }

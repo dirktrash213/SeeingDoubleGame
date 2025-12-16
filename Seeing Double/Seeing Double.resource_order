@@ -324,7 +324,7 @@
     {"name":"obj_player_patter","order":2,"path":"objects/obj_player_patter/obj_player_patter.yy",},
     {"name":"arm_large_45","order":18,"path":"sprites/arm_large_45/arm_large_45.yy",},
     {"name":"sfx_laser_chargeUp","order":24,"path":"sounds/sfx_laser_chargeUp/sfx_laser_chargeUp.yy",},
-    {"name":"sfx_firecracker_corsair","order":3,"path":"sounds/sfx_firecracker_corsair/sfx_firecracker_corsair.yy",},
+    {"name":"sfx_firecracker_corsair","order":38,"path":"sounds/sfx_firecracker_corsair/sfx_firecracker_corsair.yy",},
     {"name":"spr_interactable_caveBoulder","order":43,"path":"sprites/spr_interactable_caveBoulder/spr_interactable_caveBoulder.yy",},
     {"name":"amb_scifiCave","order":3,"path":"sounds/amb_scifiCave/amb_scifiCave.yy",},
     {"name":"_38","order":31,"path":"sprites/_38/_38.yy",},

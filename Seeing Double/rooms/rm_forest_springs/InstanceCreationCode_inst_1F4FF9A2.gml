@@ -1,0 +1,2 @@
+attachedToPlatform = true;
+visible = false;
