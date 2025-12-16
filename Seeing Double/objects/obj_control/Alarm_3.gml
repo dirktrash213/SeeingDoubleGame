@@ -1,12 +1,16 @@
 /// @description Spawn assist mode shadows
 
-//with obj_dev_recorder {
-//
-//	recording = true;
-//    frames = []; // Clear old data
-//    show_debug_message("--- RECORDING STARTED ---");
-//
-//}
+if global.devTools {
+
+	with obj_dev_recorder {
+
+		recording = true;
+	    frames = []; // Clear old data
+	    show_debug_message("--- RECORDING STARTED ---");
+
+	}
+
+}
 
 if !instance_exists(global.currentCheckpoint) exit;
 

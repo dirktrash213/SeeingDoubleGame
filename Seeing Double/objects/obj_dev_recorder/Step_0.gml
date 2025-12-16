@@ -1,25 +1,27 @@
-// START RECORDING (Press R)
-//if (keyboard_check_pressed(ord("Q"))) {
-//    recording = true;
-//    frames = []; // Clear old data
-//    show_debug_message("--- RECORDING STARTED ---");
-//}
+if !global.devTools exit;
 
-// STOP AND SAVE (Press S)
-//if (keyboard_check_pressed(ord("E")) && recording) {
-//    recording = false;
-//    
-//    // Convert array to JSON string
-//    var _json_string = json_stringify(frames);
-//    
-//    // Save to a file
-//    var _buffer = buffer_create(string_byte_length(_json_string) + 1, buffer_fixed, 1);
-//    buffer_write(_buffer, buffer_string, _json_string);
-//    buffer_save(_buffer, save_name);
-//    buffer_delete(_buffer);
-//    
-//    show_debug_message("--- SAVED TO: " + save_name + " ---");
-//}
+// START RECORDING (Press Q)
+if (keyboard_check_pressed(ord("Q"))) {
+    recording = true;
+    frames = []; // Clear old data
+    show_debug_message("--- RECORDING STARTED ---");
+}
+
+// STOP AND SAVE (Press E)
+if (keyboard_check_pressed(ord("E")) && recording) {
+    recording = false;
+    
+    // Convert array to JSON string
+    var _json_string = json_stringify(frames);
+    
+    // Save to a file
+    var _buffer = buffer_create(string_byte_length(_json_string) + 1, buffer_fixed, 1);
+    buffer_write(_buffer, buffer_string, _json_string);
+    buffer_save(_buffer, save_name);
+    buffer_delete(_buffer);
+    
+    show_debug_message("--- SAVED TO: " + save_name + " ---");
+}
 
 // CAPTURE FRAME
 if (recording && pitterPlayerIsPresent()) {

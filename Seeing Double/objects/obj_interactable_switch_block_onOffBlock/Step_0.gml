@@ -21,10 +21,15 @@ if bonked && (visible || secret) {
 		if canSwap {
 		
 			instance_destroy();
-			with instance_create_layer(x,y, "Instances", obj_interactable_onOff_block_off) {
 			
-				canSwap = false;
-				visible = _visible;
+			if room != rm_forest_spotTheDifference {
+			
+				with instance_create_layer(x,y, "Instances", obj_interactable_onOff_block_off) {
+			
+					canSwap = false;
+					visible = _visible;
+			
+				}
 			
 			}
 		

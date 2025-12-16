@@ -1,3 +1,5 @@
+global.devTools = false;
+
 global.speedrunTimer = 0;
 
 global.coinCount = 0;
@@ -5,7 +7,7 @@ global.cherryCount = 0;
 global.defeatCount = 0;
 //global.grassCount = 0;
 
-global.coinLotsAmount = 1000;
+global.coinLotsAmount = 800;
 global.cherryMax = 34;
 
 global.paused = false;

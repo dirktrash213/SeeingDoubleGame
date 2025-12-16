@@ -29,9 +29,9 @@ function getControls() {
 		moveLeftPressed = keyboard_check_pressed(ord("A")) || global.moveLeft;
 		moveRight = keyboard_check(ord("D")) || gamepad_axis_value(global.controllerPort,gp_axislh) > 0;
 		moveRightPressed = keyboard_check_pressed(ord("D")) || global.moveRight;
-		moveUp = keyboard_check(ord("W")) || gamepad_axis_value(global.controllerPort,gp_axislv) < 0;
+		moveUp = keyboard_check(ord("W")) || gamepad_axis_value(global.controllerPort,gp_axislv) < -0.95;
 		moveUpPressed = keyboard_check_pressed(ord("W")) || global.moveUp;
-		moveDown = keyboard_check(ord("S")) || gamepad_axis_value(global.controllerPort,gp_axislv) > 0;
+		moveDown = keyboard_check(ord("S")) || gamepad_axis_value(global.controllerPort,gp_axislv) > 0.95;
 		jump = keyboard_check(vk_space) || gamepad_button_check(global.controllerPort, gp_face1);
 		jumpPressed = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(global.controllerPort, gp_face1);
 		pause = keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(global.controllerPort,gp_start);

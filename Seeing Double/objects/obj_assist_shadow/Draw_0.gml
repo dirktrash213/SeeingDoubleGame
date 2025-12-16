@@ -17,6 +17,8 @@ if patterPlayerIsPresent() {
 	    case spr_pitter_curious: _sprite = spr_patter_curious break;
 	  
 	}
+	
+	_sprite = spr_patter_ball;
 
 	if !global.verticalLevel {
 
