@@ -69,6 +69,7 @@
     {"name":"Parallax Backgrounds","order":23,"path":"folders/Sprites/Background/Parallax Backgrounds.yy",},
     {"name":"OLD","order":31,"path":"folders/Sprites/Background/Parallax Backgrounds/OLD.yy",},
     {"name":"Plants","order":84,"path":"folders/Sprites/Background/Plants.yy",},
+    {"name":"MISC","order":28,"path":"folders/Sprites/Background/Plants/MISC.yy",},
     {"name":"Blocks","order":9,"path":"folders/Sprites/Blocks.yy",},
     {"name":"demo (IGNORE)","order":24,"path":"folders/Sprites/demo (IGNORE).yy",},
     {"name":"Enemies","order":6,"path":"folders/Sprites/Enemies.yy",},
@@ -97,7 +98,6 @@
     {"name":"UI","order":17,"path":"folders/Sprites/UI.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"MISC","order":28,"path":"folders/Sprites/Background/Plants/MISC.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"FX052_02","order":2,"path":"sprites/FX052_02/FX052_02.yy",},
@@ -643,6 +643,7 @@
     {"name":"spr_background_grassPiece6","order":5,"path":"sprites/spr_background_grassPiece6/spr_background_grassPiece6.yy",},
     {"name":"spr_background_elipses_questionMark","order":24,"path":"sprites/spr_background_elipses_questionMark/spr_background_elipses_questionMark.yy",},
     {"name":"rm_forest_doubleJumpGet","order":34,"path":"rooms/rm_forest_doubleJumpGet/rm_forest_doubleJumpGet.yy",},
+    {"name":"getInputSource","order":13,"path":"scripts/getInputSource/getInputSource.yy",},
     {"name":"sfx_glitch_loop","order":16,"path":"sounds/sfx_glitch_loop/sfx_glitch_loop.yy",},
     {"name":"font_npc","order":2,"path":"fonts/font_npc/font_npc.yy",},
     {"name":"sfx_jump_pitter","order":4,"path":"sounds/sfx_jump_pitter/sfx_jump_pitter.yy",},

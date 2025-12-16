@@ -421,7 +421,7 @@ function spawnPitter() {
 	global.currentCheckpointDefeatCount++;
 	
 	show_debug_message("global.currentCheckpointDefeatCount: " + string(global.currentCheckpointDefeatCount))
-	//@
+	
 	//Spawn the assist mode helper if player died enough times	
 	if  global.currentCheckpoint != noone {
 	
@@ -437,14 +437,6 @@ function spawnPitter() {
 	
 	}
 	
-	//with obj_dev_recorder {
-	//
-	//	recording = true;
-	//    frames = []; // Clear old data
-	//    show_debug_message("--- RECORDING STARTED ---");
-	//
-	//}
-
 }
 
 function spawnPatter() {
@@ -590,17 +582,7 @@ function togglePause() {
 		show_debug_message("Game is now paused")
 		
 		obj_control.pauseMenuPosition = 0;
-		
-		//if playerIsPresent() {
-		//
-		//	with obj_player {
-		//	
-		//		wasPaused = true;
-		//	
-		//	}
-		//
-		//}
-		
+	
 		with (all) {
 		
 			//Save all instance image speeds

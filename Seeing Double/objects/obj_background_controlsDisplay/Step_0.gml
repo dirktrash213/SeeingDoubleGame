@@ -1,13 +1,23 @@
 if !active || global.paused exit;
 
-if scr_isControllerConnected() {
+//if scr_isControllerConnected() {
+//
+//	sprite_index = controllerSprite;
+//
+//} else {
+//
+//	sprite_index = keyboardSprite;
+//
+//}
 
-	sprite_index = controllerSprite;
-
+if (global.input_source == 1) {
+	
+    sprite_index = controllerSprite;
+	
 } else {
-
-	sprite_index = keyboardSprite;
-
+	
+    sprite_index = keyboardSprite;
+	
 }
 
 var _distance = point_distance(x, y, obj_player_pitter.x, obj_player_pitter.y);

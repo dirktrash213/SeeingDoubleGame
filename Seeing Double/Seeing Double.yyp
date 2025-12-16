@@ -86,6 +86,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"OLD","folderPath":"folders/Sprites/Background/Parallax Backgrounds/OLD.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Plants","folderPath":"folders/Sprites/Background/Plants.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Colored","folderPath":"folders/Sprites/Background/Plants/Colored.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"MISC","folderPath":"folders/Sprites/Background/Plants/MISC.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Blocks","folderPath":"folders/Sprites/Blocks.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"demo (IGNORE)","folderPath":"folders/Sprites/demo (IGNORE).yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Enemies","folderPath":"folders/Sprites/Enemies.yy",},
@@ -116,7 +117,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UI","folderPath":"folders/Sprites/UI.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"MISC","folderPath":"folders/Sprites/Background/Plants/MISC.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"assist_data.json","CopyToMask":-1,"filePath":"datafiles",},
@@ -758,6 +758,7 @@
     {"id":{"name":"spr_background_elipses_questionMark","path":"sprites/spr_background_elipses_questionMark/spr_background_elipses_questionMark.yy",},},
     {"id":{"name":"rm_forest_doubleJumpGet","path":"rooms/rm_forest_doubleJumpGet/rm_forest_doubleJumpGet.yy",},},
     {"id":{"name":"spr_background_plant_grass","path":"sprites/spr_background_plant_grass/spr_background_plant_grass.yy",},},
+    {"id":{"name":"getInputSource","path":"scripts/getInputSource/getInputSource.yy",},},
     {"id":{"name":"sfx_glitch_loop","path":"sounds/sfx_glitch_loop/sfx_glitch_loop.yy",},},
     {"id":{"name":"scribble_anim_blink","path":"scripts/scribble_anim_blink/scribble_anim_blink.yy",},},
     {"id":{"name":"font_npc","path":"fonts/font_npc/font_npc.yy",},},

@@ -1,5 +1,6 @@
 checkForMenuInput();
 analogStickMenuMovement();
+input_check_source(); //Check if player's most recent input is keyboard or gamepad
 
 #region Audio
 
