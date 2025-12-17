@@ -47,6 +47,7 @@ canDrawDivider = true;
 //tileLayerAlpha = 0.5;
 
 bgmForest = bgm_inSync;
+bgmCave = bgm_caveDwellers;
 
 //Load player settings
 loadSettings();

@@ -11,7 +11,8 @@ if global.playerControl && !global.paused && !global.cutsceneActive && global.sc
 		if obj_player_pitter.wearingParachute _parachuteString = "\n[spr_parachute_32x32]PARACHUTE STATUS: NEW";
 		if obj_player_pitter.wearingBrokenParachute {
 			
-			if room == rm_forest_parachuteFallingArea {
+			if room == rm_forest_parachuteFallingArea
+			|| room == rm_forest_canopyUpperFloor_jumpBackDown {
 				
 				_parachuteString = "\n[spr_parachute_broken_32x32]PARACHUTE STATUS: [shake]BROKEN![/shake]";
 				
@@ -29,9 +30,8 @@ if global.playerControl && !global.paused && !global.cutsceneActive && global.sc
 	
 	}
 	
-	//draw_text_scribble(0, 0, "[spr_interactable_coin_x4]" + string(global.coinCount) + " [spr_interactable_cherry_x4]" + string(global.cherryCount));
-	//drawWhiteTextWithBlackOutline(0, 0, "[spr_interactable_coin_x2]" + string(global.coinCount) + " [spr_interactable_cherry_x2]" + string(global.cherryCount));
-	drawWhiteTextWithBlackOutline(0, 0, "[spr_interactable_coin_x2]" + string(global.coinCount) + "\n[spr_interactable_cherry_x2]" + string(global.cherryCount) + _parachuteString);
+	//drawWhiteTextWithBlackOutline(0, 0, "[spr_interactable_coin_x2]" + string(global.coinCount) + "\n[spr_interactable_cherry_x2]" + string(global.cherryCount) + _parachuteString);
+	drawWhiteTextWithBlackOutline(0, 0, "[spr_interactable_coin_x2]" + string(global.coinCount) + "\n[spr_interactable_cherry_x2]" + string(global.cherryCount) + "/" + string(global.cherryMax) + _parachuteString);
 	
 	draw_set_font(_oldFont);
 

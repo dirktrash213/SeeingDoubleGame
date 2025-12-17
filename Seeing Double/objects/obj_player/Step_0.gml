@@ -626,7 +626,7 @@ if collidingEnemy {
 		if ySpeed > 0 && !climbing {
 	//	if !climbing {
 	
-			audio_play_sound(sfx_slice, 1, 0, 1, 0, 1.5);
+			if !audio_is_playing(sfx_slice) audio_play_sound(sfx_slice, 1, 0, 1, 0, 1.5);
 			
 			if global.doubleJumpActive {
 			

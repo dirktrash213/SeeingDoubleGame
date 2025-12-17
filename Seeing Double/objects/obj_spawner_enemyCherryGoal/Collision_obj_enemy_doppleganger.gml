@@ -8,8 +8,8 @@ with obj_interactable_firework {
 	
 	triggered = true;
 	
-	audio_play_sound(sfx_cake_firework, 1, 0, 0.5, 0, 1.5);
-	audio_play_sound(sfx_powerup, 1, 0, 0.5, 0, 2.0);
+	if !audio_is_playing(sfx_cake_firework) audio_play_sound(sfx_cake_firework, 1, 0, 0.5, 0, 1.5);
+	if !audio_is_playing(sfx_powerup) audio_play_sound(sfx_powerup, 1, 0, 0.5, 0, 2.0);
 
 	instance_create_layer(x, y, "Instances", obj_interactable_fireworkBall);
 	
