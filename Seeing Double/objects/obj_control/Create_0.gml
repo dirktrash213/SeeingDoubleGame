@@ -46,8 +46,13 @@ canDrawDivider = true;
 //tilemapID = noone;
 //tileLayerAlpha = 0.5;
 
-bgmForest = bgm_inSync;
-bgmCave = bgm_caveDwellers;
+//bgmForest = bgm_inSync;
+//bgmCave = bgm_caveDwellers;
+
+bgmForest = bgm_forestNightThemeLoop;
+//bgmForest = bgm_relax_in_the_forest_background;
+//bgmCave = bgm_in_the_cave;
+bgmCave = bgm_burrowedBelow;
 
 //Load player settings
 loadSettings();
