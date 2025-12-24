@@ -2,16 +2,31 @@
 
 
 
+if room == rm_forest_caveEntrance {
 
+	if place_meeting(x, y, obj_player_patter) {
 
-if place_meeting(x, y, obj_player_patter) {
+		make_layer_transparent("SecretTiles", 0.0, 0.05);
 
-	make_layer_transparent("SecretTiles", 0.0, 0.05);
+	} else {
+
+		//make_layer_transparent("SecretTiles", 1.0, 0.05, false);
+		make_layer_transparent("SecretTiles", 0.5, 0.05, false); //??? This works somehow?
+
+	}
 
 } else {
 
-	//make_layer_transparent("SecretTiles", 1.0, 0.05, false);
-	make_layer_transparent("SecretTiles", 0.5, 0.05, false); //??? This works somehow?
+	if place_meeting(x, y, obj_player) {
+
+		make_layer_transparent("SecretTiles", 0.0, 0.05);
+
+	} else {
+
+		//make_layer_transparent("SecretTiles", 1.0, 0.05, false);
+		make_layer_transparent("SecretTiles", 0.5, 0.05, false); //??? This works somehow?
+
+	}
 
 }
 
