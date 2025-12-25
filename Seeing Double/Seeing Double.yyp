@@ -561,6 +561,7 @@
     {"id":{"name":"obj_cameraOLD","path":"objects/obj_cameraOLD/obj_cameraOLD.yy",},},
     {"id":{"name":"spr_vfx_actionLines_enemyImpact","path":"sprites/spr_vfx_actionLines_enemyImpact/spr_vfx_actionLines_enemyImpact.yy",},},
     {"id":{"name":"obj_trigger_patterRespawn","path":"objects/obj_trigger_patterRespawn/obj_trigger_patterRespawn.yy",},},
+    {"id":{"name":"rm_cave_bigCavern","path":"rooms/rm_cave_bigCavern/rm_cave_bigCavern.yy",},},
     {"id":{"name":"spr_library_logo","path":"sprites/spr_library_logo/spr_library_logo.yy",},},
     {"id":{"name":"_12","path":"sprites/_12/_12.yy",},},
     {"id":{"name":"bgm_paranormalInfusion","path":"sounds/bgm_paranormalInfusion/bgm_paranormalInfusion.yy",},},
@@ -1326,6 +1327,7 @@
     {"roomId":{"name":"rm_cave_spikes","path":"rooms/rm_cave_spikes/rm_cave_spikes.yy",},},
     {"roomId":{"name":"rm_cave_spikesMore","path":"rooms/rm_cave_spikesMore/rm_cave_spikesMore.yy",},},
     {"roomId":{"name":"rm_cave_fakeWalls","path":"rooms/rm_cave_fakeWalls/rm_cave_fakeWalls.yy",},},
+    {"roomId":{"name":"rm_cave_bigCavern","path":"rooms/rm_cave_bigCavern/rm_cave_bigCavern.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

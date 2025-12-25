@@ -462,6 +462,7 @@
     {"name":"obj_cameraOLD","order":4,"path":"objects/obj_cameraOLD/obj_cameraOLD.yy",},
     {"name":"spr_vfx_actionLines_enemyImpact","order":15,"path":"sprites/spr_vfx_actionLines_enemyImpact/spr_vfx_actionLines_enemyImpact.yy",},
     {"name":"obj_trigger_patterRespawn","order":5,"path":"objects/obj_trigger_patterRespawn/obj_trigger_patterRespawn.yy",},
+    {"name":"rm_cave_bigCavern","order":46,"path":"rooms/rm_cave_bigCavern/rm_cave_bigCavern.yy",},
     {"name":"spr_library_logo","order":17,"path":"sprites/spr_library_logo/spr_library_logo.yy",},
     {"name":"_12","order":76,"path":"sprites/_12/_12.yy",},
     {"name":"bgm_paranormalInfusion","order":10,"path":"sounds/bgm_paranormalInfusion/bgm_paranormalInfusion.yy",},

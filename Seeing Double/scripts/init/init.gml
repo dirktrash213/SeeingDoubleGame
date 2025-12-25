@@ -70,6 +70,7 @@ global.patterOffsetX = 528; //528
 global.patterOffsetY = 320;
 
 global.verticalLevel = false;
+global.customLevel = false;
 
 global.cutsceneActive = true;
 //global.currentCutsceneID = CUTSCENE_ID.NONE;

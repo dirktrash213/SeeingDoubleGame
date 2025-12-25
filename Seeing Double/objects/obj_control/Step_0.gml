@@ -529,6 +529,16 @@ gamepad_button_check_pressed(global.controllerPort,gp_start) {
 
 #endregion
 
+if global.customLevel {
+
+	global.patterOffsetY = 591; 
+
+} else {
+
+	global.patterOffsetY = 320; 
+
+}
+
 if audio_is_playing(sfx_purchase_scammed) {
 
 	audio_sound_pitch(sfx_purchase_scammed, scammedSFXpitch)

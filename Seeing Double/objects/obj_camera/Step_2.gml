@@ -13,7 +13,19 @@ camera_set_view_size(VIEW2, view_width, view_height); //If the camera has zoomin
 
 //camera_set_view_size(view_camera[0], view_wport[0]/4, view_hport[0]/2);
 
-if global.splitScreenActive {
+if global.customLevel {
+
+	pitterCameraOffsetY = 272;
+	patterCameraOffsetY = 864; 
+
+} else {
+
+	pitterCameraOffsetY = 0;
+	patterCameraOffsetY = 320; 
+
+}
+
+if global.splitScreenActive { //Halve viewport sizes if two exist
 
 	camera_set_view_size(VIEW, view_width/2, view_height);
 	camera_set_view_size(VIEW2, view_width/2, view_height);
@@ -72,9 +84,12 @@ if pitterPlayerIsPresent() {
 	
 	if !global.verticalLevel {
 	
+		var _customMaxClampY = 273; 
+	
 		//Vars that center the camera on player
 		var _x = clamp((obj_player_pitter.x-view_width/_cameraClampValue) + cameraLeadingX, 0, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
 		var _y = clamp(obj_player_pitter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue);
+		if global.customLevel _y = clamp(obj_player_pitter.y-view_height + 100, 0, _customMaxClampY);
 	
 	} else {
 	
@@ -105,7 +120,8 @@ if pitterPlayerIsPresent() {
 		
 		if !global.verticalLevel {
 		
-			camera_set_view_pos(VIEW, _x, 0); //TODO: change camera movement type depending on level type? Or find a way to draw bounds for the cameras
+			camera_set_view_pos(VIEW, _x, pitterCameraOffsetY); //TODO: change camera movement type depending on level type? Or find a way to draw bounds for the cameras
+			if global.customLevel camera_set_view_pos(VIEW, _x, _y); 
 	
 		} else {
 		
@@ -147,7 +163,7 @@ if pitterPlayerIsPresent() {
 	
 }
 
-
+//@
 if patterPlayerIsPresent() {
 
 	if obj_player_patter.moveDir == 1 {
@@ -164,18 +180,14 @@ if patterPlayerIsPresent() {
 		
 	}
 	
-	//if global.verticalLevel {
-	//
-	//	_cameraClampValue = 4;
-	//	_cameraRoomBoundValue = 2;
-	//
-	//}
-	
 	if !global.verticalLevel {
 	
-		//Vars that center the camera on player
+		var _customMinClampY = 592; //591
+	
+		//Vars that center the camera on patter
 		var _x = clamp(obj_player_patter.x-view_width/_cameraClampValue + cameraLeadingX, 0, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
 		var _y = clamp(obj_player_patter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue);
+		if global.customLevel _y = clamp(obj_player_patter.y-view_height + 100, _customMinClampY, room_height-view_height);
 	
 	} else {
 	
@@ -205,7 +217,8 @@ if patterPlayerIsPresent() {
 		//camera_set_view_pos(VIEW, _x, _y);
 		if !global.verticalLevel {
 			
-			camera_set_view_pos(VIEW2, _x, patterCameraOffsetY); //TODO: change camera movement type depending on level type? Or find a way to draw bounds for the cameras
+		camera_set_view_pos(VIEW2, _x, patterCameraOffsetY); 
+		if global.customLevel camera_set_view_pos(VIEW2, _x, _y); 
 		
 		} else {
 		
