@@ -23,6 +23,8 @@ if !stationary && !onRails {
 
 if onRails {
 
+	//show_debug_message(path_speed)
+
 	if !stationary && !movingOnRails {
 	
 		movingOnRails = true;
@@ -30,5 +32,5 @@ if onRails {
 		path_start(railPath, pathSpeed, path_action_reverse, false);
 	
 	}
-
+	
 }

@@ -22,3 +22,4 @@ previousY = y;
 //pathHspeed = 0;
 //pathVspeed = 0;
 
+storedSpeed = 1;
