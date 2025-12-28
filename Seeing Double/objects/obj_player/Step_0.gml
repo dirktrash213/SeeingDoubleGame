@@ -4,6 +4,8 @@ if global.playerDefeated || global.paused {
 
 	if global.playerDefeated {
 		
+		setOnGround(false); //This prevents a weird bug where if the player dies on a platform their respawn location is messed up
+		
 		moveDir = 0;
 		
 		sprite_index = defeatSprite;
@@ -11,7 +13,6 @@ if global.playerDefeated || global.paused {
 		if crushed sprite_index = crushedSprite;
 		
 	}
-	
 	
 	x = x;
 	y = y;
@@ -21,33 +22,6 @@ if global.playerDefeated || global.paused {
 }
 
 normalizeStretching();
-
-//if xStretch > 1 {
-//
-//	xStretch -= stretchAdjustAmount;
-//	xStretch = max(xStretch, 1);
-//
-//} else {
-//
-//	xStretch += stretchAdjustAmount;
-//	xStretch = min(xStretch, 1);
-//
-//}
-//
-//if yStretch > 1 {
-//
-//	yStretch -= stretchAdjustAmount;
-//	yStretch = max(yStretch, 1);
-//
-//} else {
-//
-//	yStretch += stretchAdjustAmount;
-//	yStretch = min(yStretch, 1);
-//
-//}
-
-
-
 
 //make_layer_transparent("SecretTiles", 0, 0.05);
 
@@ -814,7 +788,7 @@ if instance_exists(myFloorPlat) && !place_meeting(x, y + movePlatYspeedMax, myFl
 	myFloorPlat = noone;
 
 }
-
+//@
 //Land on ground platform if there is one (except if player is climbing up)
 if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
 //if instance_exists(myFloorPlat) && !climbing {
@@ -845,6 +819,12 @@ if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
 	
 	//Collide with ground
 	setOnGround(true);
+	
+	//if myFloorPlat.object_index == obj_interactable_breakableFloor {
+	//
+	//	myFloorPlat.triggered = true;
+	//
+	//}
 	
 	
 	if myFloorPlat.object_index == obj_block_wall_semiSolid_moving
@@ -1034,6 +1014,7 @@ image_blend = c_white;
 if place_meeting(x, y, obj_block_wall) 
 //&& !place_meeting(x, y, obj_interactable_onOff_block_on) 
 && !place_meeting(x, y, obj_interactable_switch_block_parent) 
+&& !place_meeting(x, y, obj_interactable_breakableFloor) 
 && !place_meeting(x, y, obj_interactable_switch_block_inert) {
 
 	crushTimer++;
@@ -1050,6 +1031,45 @@ if place_meeting(x, y, obj_block_wall)
 	crushTimer = 0;
 
 }
+//@
+
+// 1. Create a temporary list to hold the results
+var __breakableFloorList = ds_list_create();
+
+// 2. Check for collisions and store the count
+// instance_place_list(x, y, obj, list, ordered)
+var _num = instance_place_list(x, y+1, obj_interactable_breakableFloor, __breakableFloorList, false);
+
+// 3. If we hit something (count > 0)
+if (_num > 0) {
+    // Loop through every object in the list
+    for (var i = 0; i < _num; i++) {
+        
+        // Get the specific instance ID from the list
+        var _inst = __breakableFloorList[| i];
+        
+        // --- DO YOUR LOGIC HERE ---
+        // Example: Break the floor
+        with (_inst) {
+			triggered = true;
+            //instance_destroy();
+        }
+    }
+}
+
+// 4. IMPORTANT: Clean up the list to prevent memory leaks
+ds_list_destroy(_list);
+
+
+//Prevent player from getting crushed by breakable floors
+var _breakableFloor = instance_place(x, y, obj_interactable_breakableFloor);
+if _breakableFloor != noone {
+
+	crushTimer = 0;
+	
+	y = _breakableFloor.y - 0;
+	
+}
 
 //Prevent player from getting crushed by onOffBlocks
 var _onOffBlock = instance_place(x, y, obj_interactable_onOff_block_on);
@@ -1061,7 +1081,7 @@ if _onOffBlock != noone && crushTimer > 0 {
 	y = _onOffBlock.y + 8;
 	
 }
-//@
+
 var _switchBlock = instance_place(x, y, obj_interactable_switch_block_parent);
 if _switchBlock != noone {
 
@@ -1070,13 +1090,13 @@ if _switchBlock != noone {
 	
 }
 
-var _barrel = instance_place(x, y, obj_scienceJuice_doubleJump);
-if _barrel != noone {
-
-	//x = _barrel.x + 8;
-	//y = _switchBlock.y + 22;
-	
-}
+//var _barrel = instance_place(x, y, obj_scienceJuice_doubleJump);
+//if _barrel != noone {
+//
+//	//x = _barrel.x + 8;
+//	//y = _switchBlock.y + 22;
+//	
+//}
 
 
 if !global.runModeIsToggle {

@@ -372,8 +372,10 @@ function startNewGame() {
 
 
 }
-
+//@
 function spawnPitter() {
+	
+	show_debug_message("Respawning")
 
 	var _offsetY = 20;
 
@@ -396,10 +398,16 @@ function spawnPitter() {
 	//room_goto(asset_get_index(global.roomToSpawnIn));
 	room_goto(_roomToSpawnIn);
 	
+	show_debug_message("global.xRespawnPitter: " + string(global.xRespawnPitter))
+	show_debug_message("global.yRespawnPitter: " + string(global.yRespawnPitter))
+	
 	//obj_player_pitter.x = obj_player_pitter.xRespawn;
 	//obj_player_pitter.y = obj_player_pitter.yRespawn - _offsetY;
 	obj_player_pitter.x = global.xRespawnPitter;
 	obj_player_pitter.y = global.yRespawnPitter - _offsetY;
+	
+	//show_debug_message("obj_player_pitter.x: " + string(obj_player_pitter.x))
+	//show_debug_message("obj_player_pitter.y: " + string(obj_player_pitter.y))
 	
 	obj_player_pitter.crushed = false;
 	obj_player_pitter.enemyKilledPlayer = false;
@@ -411,7 +419,7 @@ function spawnPitter() {
 	if instance_nearest(obj_player_pitter.x, obj_player_pitter.y, obj_trigger_checkPoint) != global.currentCheckpoint {
 		
 		global.currentCheckpointDefeatCount = 0;
-		show_debug_message("Checkpoint defeat count reset")
+		//show_debug_message("Checkpoint defeat count reset")
 		
 	}
 	
@@ -420,14 +428,14 @@ function spawnPitter() {
 	
 	global.currentCheckpointDefeatCount++;
 	
-	show_debug_message("global.currentCheckpointDefeatCount: " + string(global.currentCheckpointDefeatCount))
+	//show_debug_message("global.currentCheckpointDefeatCount: " + string(global.currentCheckpointDefeatCount))
 	
 	//Spawn the assist mode helper if player died enough times	
 	if  global.currentCheckpoint != noone {
 	
 		if (global.currentCheckpointDefeatCount >= global.currentCheckpoint.trigger_threshold) {
 	  
-			show_debug_message("Attempting to create shadow assist")
+			//show_debug_message("Attempting to create shadow assist")
 	
 			var _delayUntilShadowSpawn = 2;
 		
