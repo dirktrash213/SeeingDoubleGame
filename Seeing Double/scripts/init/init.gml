@@ -116,3 +116,4 @@ global.escapedForestGhost = false;
 
 
 global.foundRose = false;
+global.foundLily = false;
