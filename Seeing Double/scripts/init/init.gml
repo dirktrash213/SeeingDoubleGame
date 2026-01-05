@@ -103,6 +103,7 @@ global.dialogueVariables = {
 	talkedToExplorer : false,
 	talkedToExplorerTwice : false,
 	solvedForestPuzzle : false,
+	talkedToMiner : false,
 
 }
 

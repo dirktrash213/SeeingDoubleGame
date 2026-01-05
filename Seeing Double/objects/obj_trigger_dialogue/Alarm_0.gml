@@ -53,6 +53,12 @@ if count == _l-1 {
 		
 	}
 	
+	if room == rm_cave_miner { 
+		
+		global.dialogueVariables.talkedToMiner = true;
+		
+	}
+	
 	exit;
 	
 }
