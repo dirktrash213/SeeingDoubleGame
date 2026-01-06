@@ -76,9 +76,13 @@ function drawPauseMenu() {
 				
 				if global.foundRose {
 					
-					//show_debug_message("Found Rose")
-					//draw_sprite(spr_interactable_rose_64x64, 0, 500, 200);
 					draw_sprite(spr_interactable_rose_64x64, 0, 1000, 200);
+					
+				}
+				
+				if global.foundLily {
+					
+					draw_sprite(spr_interactable_lily_64x64, 0, 1185, 200);
 					
 				}
 			

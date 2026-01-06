@@ -1,4 +1,4 @@
-global.foundRose = true;
+global.foundLily = true;
 
 //var _sparkleCount = 5;
 

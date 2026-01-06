@@ -597,7 +597,7 @@ if collidingEnemy {
 
 	if !collidingEnemy.defeated {
 
-		if ySpeed > 0 && !climbing {
+		if ySpeed > 0 && !climbing && !collidingEnemy.spikey {
 	//	if !climbing {
 	
 			if !audio_is_playing(sfx_slice) audio_play_sound(sfx_slice, 1, 0, 1, 0, 1.5);
@@ -788,7 +788,7 @@ if instance_exists(myFloorPlat) && !place_meeting(x, y + movePlatYspeedMax, myFl
 	myFloorPlat = noone;
 
 }
-//@
+
 //Land on ground platform if there is one (except if player is climbing up)
 if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
 //if instance_exists(myFloorPlat) && !climbing {
@@ -1031,13 +1031,13 @@ if place_meeting(x, y, obj_block_wall)
 	crushTimer = 0;
 
 }
-//@
+
+//Breakable floor logic
 
 // 1. Create a temporary list to hold the results
 var __breakableFloorList = ds_list_create();
 
 // 2. Check for collisions and store the count
-// instance_place_list(x, y, obj, list, ordered)
 var _num = instance_place_list(x, y+1, obj_interactable_breakableFloor, __breakableFloorList, false);
 
 // 3. If we hit something (count > 0)
