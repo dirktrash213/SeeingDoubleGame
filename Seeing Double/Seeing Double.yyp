@@ -936,6 +936,7 @@
     {"id":{"name":"spr_interactable_checkpointPlant633","path":"sprites/spr_interactable_checkpointPlant633/spr_interactable_checkpointPlant633.yy",},},
     {"id":{"name":"scribble_font_has_character","path":"scripts/scribble_font_has_character/scribble_font_has_character.yy",},},
     {"id":{"name":"scribble_super_create","path":"scripts/scribble_super_create/scribble_super_create.yy",},},
+    {"id":{"name":"spr_promo_capsule_vertical_twitch","path":"sprites/spr_promo_capsule_vertical_twitch/spr_promo_capsule_vertical_twitch.yy",},},
     {"id":{"name":"spr_tilemap_scienceProps","path":"sprites/spr_tilemap_scienceProps/spr_tilemap_scienceProps.yy",},},
     {"id":{"name":"spr_background_plant_v41","path":"sprites/spr_background_plant_v41/spr_background_plant_v41.yy",},},
     {"id":{"name":"__shd_scribble_bake_shadow","path":"shaders/__shd_scribble_bake_shadow/__shd_scribble_bake_shadow.yy",},},

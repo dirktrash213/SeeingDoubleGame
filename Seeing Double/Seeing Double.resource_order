@@ -810,6 +810,7 @@
     {"name":"spr_interactable_checkpointPlant633","order":3,"path":"sprites/spr_interactable_checkpointPlant633/spr_interactable_checkpointPlant633.yy",},
     {"name":"scribble_font_has_character","order":6,"path":"scripts/scribble_font_has_character/scribble_font_has_character.yy",},
     {"name":"scribble_super_create","order":1,"path":"scripts/scribble_super_create/scribble_super_create.yy",},
+    {"name":"spr_promo_capsule_vertical_twitch","order":24,"path":"sprites/spr_promo_capsule_vertical_twitch/spr_promo_capsule_vertical_twitch.yy",},
     {"name":"spr_tilemap_scienceProps","order":4,"path":"sprites/spr_tilemap_scienceProps/spr_tilemap_scienceProps.yy",},
     {"name":"spr_background_plant_v41","order":17,"path":"sprites/spr_background_plant_v41/spr_background_plant_v41.yy",},
     {"name":"__shd_scribble_bake_shadow","order":3,"path":"shaders/__shd_scribble_bake_shadow/__shd_scribble_bake_shadow.yy",},
