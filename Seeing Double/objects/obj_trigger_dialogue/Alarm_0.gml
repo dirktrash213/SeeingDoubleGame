@@ -59,6 +59,14 @@ if count == _l-1 {
 		
 	}
 	
+	if room == rm_cave_descentSecret { 
+		
+		if global.dialogueVariables.talkedToCamper global.dialogueVariables.talkedToCamperTwice = true;
+		
+		global.dialogueVariables.talkedToCamper = true;
+		
+	}
+	
 	exit;
 	
 }
