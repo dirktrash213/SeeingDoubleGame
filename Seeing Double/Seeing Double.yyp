@@ -117,6 +117,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UI","folderPath":"folders/Sprites/UI.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"OLD","folderPath":"folders/Sprites/Tilemaps/OLD.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"assist_data.json","CopyToMask":-1,"filePath":"datafiles",},
@@ -431,6 +432,7 @@
     {"id":{"name":"amb_scifiCave","path":"sounds/amb_scifiCave/amb_scifiCave.yy",},},
     {"id":{"name":"_38","path":"sprites/_38/_38.yy",},},
     {"id":{"name":"tiles_standard_background","path":"tilesets/tiles_standard_background/tiles_standard_background.yy",},},
+    {"id":{"name":"spr_interactable_spikes_falling_ALT","path":"sprites/spr_interactable_spikes_falling_ALT/spr_interactable_spikes_falling_ALT.yy",},},
     {"id":{"name":"spr_library_capsule_header","path":"sprites/spr_library_capsule_header/spr_library_capsule_header.yy",},},
     {"id":{"name":"spr_interactable_switch_resetMinigame","path":"sprites/spr_interactable_switch_resetMinigame/spr_interactable_switch_resetMinigame.yy",},},
     {"id":{"name":"spr_interactable_spikes_right","path":"sprites/spr_interactable_spikes_right/spr_interactable_spikes_right.yy",},},
