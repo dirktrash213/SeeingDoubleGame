@@ -20,3 +20,5 @@ specialDialogueTriggered = false;
 allowSpecialDialogue = false;
 
 //boughtParachuteEarly = false;
+
+dialogueSpawner = instance_nearest(x,y,obj_spawner_dialogue);

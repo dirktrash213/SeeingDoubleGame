@@ -1,0 +1,13 @@
+vspeed = vSpeedAmount;
+gravity = gravAmount;
+
+
+
+
+
+
+
+
+
+
+
