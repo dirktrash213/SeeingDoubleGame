@@ -106,6 +106,7 @@ global.dialogueVariables = {
 	talkedToMiner : false,
 	talkedToCamper : false,
 	talkedToCamperTwice : false,
+	talkedToMinerGroup : false,
 
 }
 

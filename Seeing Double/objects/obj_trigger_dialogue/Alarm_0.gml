@@ -67,6 +67,12 @@ if count == _l-1 {
 		
 	}
 	
+	if room == rm_cave_missingMiner { 
+		
+		global.dialogueVariables.talkedToMinerGroup = true;
+		
+	}
+	
 	exit;
 	
 }
