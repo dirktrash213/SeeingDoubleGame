@@ -11,7 +11,7 @@ onRails = false;
 movingOnRails = false;
 stationary = false;
 
-railPath = path_platform_test;
+railPath = path_platform_elevator_up;
 pathSpeed = 1;
 
 // Store the object's position from the previous step

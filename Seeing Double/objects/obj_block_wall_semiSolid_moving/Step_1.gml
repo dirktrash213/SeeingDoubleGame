@@ -25,6 +25,7 @@ if onRails {
 
 	//show_debug_message(path_speed)
 
+	//if !stationary && !movingOnRails && object_index != obj_block_wall_semiSolid_moving_elevator {
 	if !stationary && !movingOnRails {
 	
 		movingOnRails = true;

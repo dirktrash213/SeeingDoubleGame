@@ -61,15 +61,18 @@ if object_index == obj_player_patter && global.splitScreenActive {
 
 if object_index == obj_player_patter && global.splitScreenActive && !global.cutsceneActive {
 
+	//if y < 319 && !global.verticalLevel && !global.customLevel {
 	if y < 319 && !global.verticalLevel {
 		
 		obj_player_patter.image_alpha = 0;
 		obj_player_patter.canCollide = false;
+		//obj_player_patter.spawnAfterimages = false;
 		
 	} else {
 	
 		obj_player_patter.image_alpha = 1;
 		obj_player_patter.canCollide = true;
+		//obj_player_patter.spawnAfterimages = true;
 	
 	}
 	
@@ -788,13 +791,14 @@ if instance_exists(myFloorPlat) && !place_meeting(x, y + movePlatYspeedMax, myFl
 	myFloorPlat = noone;
 
 }
-
+//@
 //Land on ground platform if there is one (except if player is climbing up)
 if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
 //if instance_exists(myFloorPlat) && !climbing {
 
 	//Scoot up
 	_subPixel = 0.5;
+
 	while !place_meeting(x, y + _subPixel, myFloorPlat) && !place_meeting(x, y, obj_block_wall) {
 	
 		y += _subPixel;
