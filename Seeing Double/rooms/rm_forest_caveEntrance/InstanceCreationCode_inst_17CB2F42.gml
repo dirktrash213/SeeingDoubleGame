@@ -1,9 +1,9 @@
-targetRoom = rm_forest_doubleJumpGauntletDash;
+targetRoom = rm_forest_loreRoomFacility;
 
 xEnter = 1;
 yEnter = 224;
 
-xSpawn = 5279;
+xSpawn = 959;
 ySpawn = 224;
 
 

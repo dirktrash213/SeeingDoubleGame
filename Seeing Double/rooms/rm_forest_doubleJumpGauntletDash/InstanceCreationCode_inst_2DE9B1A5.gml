@@ -1,4 +1,4 @@
-targetRoom = rm_forest_caveEntrance;
+targetRoom = rm_forest_loreRoomFacility;
 
 xEnter = 5279;
 yEnter = 224;

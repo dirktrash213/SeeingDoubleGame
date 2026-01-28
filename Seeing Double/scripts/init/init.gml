@@ -41,6 +41,7 @@ global.groundPoundActive = false;
 global.dashActive = false;
 global.crouchJumpActive = false;
 
+global.dontReactivateForestBGM = false;
 
 //Settings
 global.volumeMaster = 8;

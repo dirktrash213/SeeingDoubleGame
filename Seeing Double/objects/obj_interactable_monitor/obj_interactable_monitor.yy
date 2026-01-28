@@ -12,7 +12,10 @@
     "name": "Interactables",
     "path": "folders/Objects/Interactables.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_interactable_monitor_parent",
+    "path": "objects/obj_interactable_monitor_parent/obj_interactable_monitor_parent.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
