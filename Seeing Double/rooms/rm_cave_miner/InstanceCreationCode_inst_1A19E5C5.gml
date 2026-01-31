@@ -10,7 +10,8 @@ if !global.dialogueVariables.talkedToMiner {
 		dialogueString[1] = "Miners be vanishin' without a trace lately, aye.";
 		dialogueString[2] = "And some even talk of a scupperin' [slant]ghost[/slant] roamin' the forests.";
 		dialogueString[3] = "Now, I ain't one for superstitions. But, laddie, I hafta be honest...";
-		dialogueString[4] = "It be feelin' as if this whole damn island is cursed.";
+		dialogueString[4] = "Lately it be feelin' like this whole damn island's cursed.";
+		//dialogueString[4] = "It be feelin' as if this whole damn island is cursed.";
 	
 	} else {
 	

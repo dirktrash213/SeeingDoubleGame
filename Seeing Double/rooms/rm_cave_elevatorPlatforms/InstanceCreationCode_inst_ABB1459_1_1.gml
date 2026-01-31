@@ -1,1 +1,0 @@
-dropDelay = 3;
