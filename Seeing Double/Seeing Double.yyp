@@ -674,6 +674,7 @@
     {"id":{"name":"spr_interactable_door_closed","path":"sprites/spr_interactable_door_closed/spr_interactable_door_closed.yy",},},
     {"id":{"name":"__scribble_class_generator_state","path":"scripts/__scribble_class_generator_state/__scribble_class_generator_state.yy",},},
     {"id":{"name":"shd_plant_bump","path":"shaders/shd_plant_bump/shd_plant_bump.yy",},},
+    {"id":{"name":"rm_cave_maze","path":"rooms/rm_cave_maze/rm_cave_maze.yy",},},
     {"id":{"name":"rm_forest_switches","path":"rooms/rm_forest_switches/rm_forest_switches.yy",},},
     {"id":{"name":"spr_npc_camper","path":"sprites/spr_npc_camper/spr_npc_camper.yy",},},
     {"id":{"name":"spr_enemy_helmetBeetle_defeat","path":"sprites/spr_enemy_helmetBeetle_defeat/spr_enemy_helmetBeetle_defeat.yy",},},
@@ -1416,6 +1417,7 @@
     {"roomId":{"name":"rm_cave_missingMiner","path":"rooms/rm_cave_missingMiner/rm_cave_missingMiner.yy",},},
     {"roomId":{"name":"rm_cave_elevatorPlatforms","path":"rooms/rm_cave_elevatorPlatforms/rm_cave_elevatorPlatforms.yy",},},
     {"roomId":{"name":"rm_forest_loreRoomFacility","path":"rooms/rm_forest_loreRoomFacility/rm_forest_loreRoomFacility.yy",},},
+    {"roomId":{"name":"rm_cave_maze","path":"rooms/rm_cave_maze/rm_cave_maze.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

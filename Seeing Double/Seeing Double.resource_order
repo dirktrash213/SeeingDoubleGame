@@ -571,6 +571,7 @@
     {"name":"FX052_01","order":1,"path":"sprites/FX052_01/FX052_01.yy",},
     {"name":"spr_interactable_door_closed","order":2,"path":"sprites/spr_interactable_door_closed/spr_interactable_door_closed.yy",},
     {"name":"shd_plant_bump","order":4,"path":"shaders/shd_plant_bump/shd_plant_bump.yy",},
+    {"name":"rm_cave_maze","order":58,"path":"rooms/rm_cave_maze/rm_cave_maze.yy",},
     {"name":"rm_forest_switches","order":18,"path":"rooms/rm_forest_switches/rm_forest_switches.yy",},
     {"name":"spr_npc_camper","order":18,"path":"sprites/spr_npc_camper/spr_npc_camper.yy",},
     {"name":"spr_enemy_helmetBeetle_defeat","order":14,"path":"sprites/spr_enemy_helmetBeetle_defeat/spr_enemy_helmetBeetle_defeat.yy",},
