@@ -108,6 +108,7 @@ global.dialogueVariables = {
 	talkedToCamper : false,
 	talkedToCamperTwice : false,
 	talkedToMinerGroup : false,
+	beatCaveMinigame : false,
 
 }
 
