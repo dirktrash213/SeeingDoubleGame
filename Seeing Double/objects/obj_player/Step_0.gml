@@ -23,6 +23,17 @@ if global.playerDefeated || global.paused {
 
 normalizeStretching();
 
+if ridingMinecart {
+
+	var _offsetY = 0;
+
+	x = currentMinecart.x;
+	y = currentMinecart.y  + _offsetY;
+
+	exit;
+
+}
+
 //make_layer_transparent("SecretTiles", 0, 0.05);
 
 if object_index == obj_player_pitter && global.splitScreenActive {

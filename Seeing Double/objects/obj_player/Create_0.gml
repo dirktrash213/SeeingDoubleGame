@@ -132,6 +132,8 @@ crouching = false;
 lookingUp = false;
 climbing = false;
 
+ridingMinecart = false;
+currentMinecart = noone;
 
 xSpeed = 0;
 ySpeed = 0;

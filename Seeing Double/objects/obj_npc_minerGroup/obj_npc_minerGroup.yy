@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_npc_minerGroup",
-    "path": "sprites/spr_npc_minerGroup/spr_npc_minerGroup.yy",
+    "name": "spr_npc_minerGroupALT692",
+    "path": "sprites/spr_npc_minerGroupALT692/spr_npc_minerGroupALT692.yy",
   },
   "spriteMaskId": null,
   "visible": true,
