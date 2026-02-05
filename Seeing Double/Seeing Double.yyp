@@ -1035,6 +1035,7 @@
     {"id":{"name":"__scribble_config_behaviours","path":"scripts/__scribble_config_behaviours/__scribble_config_behaviours.yy",},},
     {"id":{"name":"spr_background_plant_v13","path":"sprites/spr_background_plant_v13/spr_background_plant_v13.yy",},},
     {"id":{"name":"spr_interactable_rose","path":"sprites/spr_interactable_rose/spr_interactable_rose.yy",},},
+    {"id":{"name":"path_platform_minecart","path":"paths/path_platform_minecart/path_platform_minecart.yy",},},
     {"id":{"name":"spr_particle_wherePitter","path":"sprites/spr_particle_wherePitter/spr_particle_wherePitter.yy",},},
     {"id":{"name":"obj_spawner_elevatorPlatforms_up","path":"objects/obj_spawner_elevatorPlatforms_up/obj_spawner_elevatorPlatforms_up.yy",},},
     {"id":{"name":"spr_patter_idle","path":"sprites/spr_patter_idle/spr_patter_idle.yy",},},

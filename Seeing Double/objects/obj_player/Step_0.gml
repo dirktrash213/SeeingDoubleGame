@@ -4,6 +4,9 @@ if global.playerDefeated || global.paused {
 
 	if global.playerDefeated {
 		
+		ridingMinecart = false;
+		currentMinecart = noone;
+		
 		setOnGround(false); //This prevents a weird bug where if the player dies on a platform their respawn location is messed up
 		
 		moveDir = 0;
@@ -84,11 +87,37 @@ getControls();
 //@
 if ridingMinecart {
 
-	show_debug_message("jumpKeyBuffered: " + string(jumpKeyBuffered))
-	show_debug_message("jumpCount: " + string(jumpCount))
-	show_debug_message("jumpMax: " + string(jumpMax))
-	show_debug_message("jumpDisabled: " + string(jumpDisabled))
-	show_debug_message("--------------")
+	//show_debug_message("jumpKeyBuffered: " + string(jumpKeyBuffered))
+	//show_debug_message("jumpCount: " + string(jumpCount))
+	//show_debug_message("jumpMax: " + string(jumpMax))
+	//show_debug_message("jumpDisabled: " + string(jumpDisabled))
+	//show_debug_message("--------------")
+	
+	//if place_meeting(x, y+1, obj_block_wall) {
+	var _wall = instance_place(x, y, obj_block_wall); 
+	var _wallSemiSolid = instance_place(x, y, obj_block_wall_semiSolid); 
+	
+	if _wall != noone {
+	
+		y = _wall.y-2;
+	
+		ridingMinecart = false;
+		currentMinecart = noone;
+		
+		exit;
+	
+	}
+	
+	if _wallSemiSolid != noone {
+	
+		y = _wallSemiSolid.y-2;
+	
+		ridingMinecart = false;
+		currentMinecart = noone;
+		
+		exit;
+	
+	}
 	
 	if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled {
 		
@@ -163,7 +192,7 @@ if ridingMinecart {
 	}
 
 	//Jump based on the timer/holding the button (unless player is climbing)
-	if jumpHoldTimer > 0 && !climbing {
+	if jumpHoldTimer > 0 && !climbing && jumpCount > 0 {
 	
 		//Constantly set ySpeed to be the jumping speed
 		ySpeed = jumpSpeed[jumpCount-1];

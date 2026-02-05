@@ -905,6 +905,7 @@
     {"name":"obj_trigger_birds","order":12,"path":"objects/obj_trigger_birds/obj_trigger_birds.yy",},
     {"name":"spr_background_plant_v13","order":6,"path":"sprites/spr_background_plant_v13/spr_background_plant_v13.yy",},
     {"name":"spr_interactable_rose","order":16,"path":"sprites/spr_interactable_rose/spr_interactable_rose.yy",},
+    {"name":"path_platform_minecart","order":11,"path":"paths/path_platform_minecart/path_platform_minecart.yy",},
     {"name":"spr_particle_wherePitter","order":9,"path":"sprites/spr_particle_wherePitter/spr_particle_wherePitter.yy",},
     {"name":"obj_spawner_elevatorPlatforms_up","order":5,"path":"objects/obj_spawner_elevatorPlatforms_up/obj_spawner_elevatorPlatforms_up.yy",},
     {"name":"spr_patter_idle","order":3,"path":"sprites/spr_patter_idle/spr_patter_idle.yy",},
