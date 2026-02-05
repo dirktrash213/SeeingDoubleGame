@@ -23,16 +23,6 @@ if global.playerDefeated || global.paused {
 
 normalizeStretching();
 
-if ridingMinecart {
-
-	var _offsetY = 0;
-
-	x = currentMinecart.x;
-	y = currentMinecart.y  + _offsetY;
-
-	exit;
-
-}
 
 //make_layer_transparent("SecretTiles", 0, 0.05);
 
@@ -90,6 +80,117 @@ if object_index == obj_player_patter && global.splitScreenActive && !global.cuts
 }
 
 getControls();
+
+//@
+if ridingMinecart {
+
+	show_debug_message("jumpKeyBuffered: " + string(jumpKeyBuffered))
+	show_debug_message("jumpCount: " + string(jumpCount))
+	show_debug_message("jumpMax: " + string(jumpMax))
+	show_debug_message("jumpDisabled: " + string(jumpDisabled))
+	show_debug_message("--------------")
+	
+	if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled {
+		
+		//show_debug_message("jump in minecart")
+		
+		//Reset jump buffer
+		jumpKeyBuffered = false;
+		jumpKeyBufferTimer = 0;
+	
+		//Increase number of performed jumps
+		jumpCount++;
+	
+		if pitterPlayerIsPresent() {
+	
+			if obj_player_pitter.jumpCount >= obj_player_pitter.jumpMax && obj_player_pitter.gemPowerupDoubleJump {
+	
+				obj_player_pitter.jumpMax = 1;
+	
+				obj_player_pitter.gemPowerupDoubleJump = false;
+				if patterPlayerIsPresent() obj_player_patter.gemPowerupDoubleJump = false;
+	
+			}
+	
+		}
+	
+		//Set jump hold timer
+		jumpHoldTimer = jumpHoldFrames[jumpCount-1];
+	
+		setOnGround(false);
+		coyoteJumpTimer = 0;
+	
+		var _pitch = random_range(0.9, 1.1);
+	
+		if jumpCount >= 2 {
+		
+			_pitch += 0.3;
+		
+			with obj_player {
+			
+				xStretch = 0.5;
+				yStretch = 1.5;
+			
+			}
+		
+			if global.doubleJumpActive {
+		
+				instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
+		
+			} else {
+		
+				with obj_player instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
+		
+			}
+		
+		} else {
+	
+			instance_create_layer(x, y, "Instances", obj_vfx_dust_jump);
+	
+		}
+	
+		audio_play_sound(jumpSfx, 1, 0, 1, 0, _pitch);
+	
+		xStretch = 0.5;
+		yStretch = 1.5;
+	
+	}
+	
+	if !jump {
+
+		jumpHoldTimer = 0;
+
+	}
+
+	//Jump based on the timer/holding the button (unless player is climbing)
+	if jumpHoldTimer > 0 && !climbing {
+	
+		//Constantly set ySpeed to be the jumping speed
+		ySpeed = jumpSpeed[jumpCount-1];
+	
+		//Count down the timer
+		jumpHoldTimer--;
+
+	}
+	
+	ySpeed += grav;
+	if ySpeed > termVelocity ySpeed = termVelocity;
+	
+	var _offsetX = 5;
+	var _offsetY = 2;
+	
+	var _maxY = currentMinecart.y  + _offsetY;
+
+	x = currentMinecart.x + _offsetX;
+	y += ySpeed;
+	
+	y = clamp(y, -1000, _maxY);
+	
+	if y == _maxY jumpCount = 0;
+
+	exit;
+
+}
 
 
 //Unstick from moving solid platforms
@@ -414,16 +515,32 @@ if ySpeed >= 0 && !place_meeting(x + xSpeed, y + 1, obj_block_wall) && place_mee
 
 
 
+//@
+//Move X
 
-//Move
-
-if !global.cutsceneActive x += xSpeed;
+if !global.cutsceneActive {
+	
+	x += xSpeed;
+	
+	//if ridingMinecart {
+	//
+	//	var _offsetX = 5;
+	//
+	//	x = currentMinecart.x + _offsetX;
+	//
+	//} else {
+	//
+	//	x += xSpeed;
+	//
+	//}
+	
+}
 
 
 //Y movement
 
 //Gravity
-
+//@
 if coyoteHangTimer > 0 {
 
 	coyoteHangTimer--;
@@ -474,7 +591,7 @@ if instance_exists(myFloorPlat) && (myFloorPlat.object_index == obj_block_wall |
 	_floorIsSolid = true;
 
 }
-
+//@
 //Perform the jump
 //if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled && (!moveDown || _floorIsSolid) {
 if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled {
@@ -802,7 +919,7 @@ if instance_exists(myFloorPlat) && !place_meeting(x, y + movePlatYspeedMax, myFl
 	myFloorPlat = noone;
 
 }
-//@
+
 //Land on ground platform if there is one (except if player is climbing up)
 if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
 //if instance_exists(myFloorPlat) && !climbing {
@@ -936,7 +1053,7 @@ if climbing {
 
 
 //Move
-
+//@
 if !place_meeting(x, y+ySpeed, obj_block_wall) {
 	
 	y += ySpeed;

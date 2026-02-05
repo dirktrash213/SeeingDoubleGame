@@ -1,4 +1,4 @@
-if !triggered exit;
+/*if !triggered exit;
 
 // 1. Find the current height and the height slightly ahead on the path
 var curr_y = path_get_y(pth_minecart_track, path_position);
@@ -29,3 +29,8 @@ if image_angle > 90 && image_angle < 270 image_angle += 180; //Keeps the minecar
 
 
 
+if path_position == 1.0 {
+
+
+
+}
