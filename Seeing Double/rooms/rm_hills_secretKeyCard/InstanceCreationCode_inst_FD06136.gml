@@ -16,7 +16,7 @@ if !global.dialogueVariables.talkedToSmallGhost {
 
 	dialogueString[0] = "Heh. Ghosts. You'd be crazy for believing in that nonsense, right?"
 	//dialogueString[1] = "That's what I thought at first."
-	dialogueString[1] = "Anyways. I should get back home. My wife's been worried sick."
-	dialogueString[2] = "Can't wait to see junior too. That little green bundle of joy."
+	//dialogueString[1] = "Anyways. I should get back home. My wife's been worried sick."
+	//dialogueString[2] = "Can't wait to see junior too. That little green bundle of joy."
 
 }

@@ -1,5 +1,8 @@
 if !triggered exit;
 
+var _id = id;
+depth = 100;
+
 // 1. Find the current height and the height slightly ahead on the path
 var curr_y = path_get_y(pth_minecart_track, path_position);
 var next_pos = path_position + 0.01; // Look 1% ahead on the path
@@ -19,7 +22,7 @@ cart_speed = clamp(cart_speed, min_speed, max_speed);
 
 // 5. Update the path movement
 // path_speed is pixels per step; we convert our speed to the path's movement
-path_speed = cart_speed;
+path_speed = global.paused ? 0 : cart_speed;
 
 
 
@@ -34,10 +37,14 @@ if image_angle > 90 && image_angle < 270 image_angle += 180; //Keeps the minecar
 if path_position == 1.0 {
 
 	with obj_player {
+		
+		if currentMinecart == _id {
 	
-		ridingMinecart = false;
-		currentMinecart = noone;
+			ridingMinecart = false;
+			currentMinecart = noone;
+
+		}
 
 	}
-
+		
 }

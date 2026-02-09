@@ -4,8 +4,9 @@ if !global.dialogueVariables.talkedToGreenBrother {
 
 //dialogueString[0] = "Have you seen my little bro, mister?"
 dialogueString[0] = "Have you seen my papa, mister?"
-dialogueString[1] = "He ain't came back from the hills."
-dialogueString[2] = "Mama said there's spikes there."
+dialogueString[1] = "He ain't came back from the mines."
+//dialogueString[2] = "Mama said there's spikes there."
+dialogueString[2] = "Mama said people's gone missin' there."
 //dialogueString[3] = "I told him not to go, but he didn't listen."
 dialogueString[3] = "I begged him not to go, but he didn't listen."
 dialogueString[4] = "Please mister. I'm mighty worried about him."

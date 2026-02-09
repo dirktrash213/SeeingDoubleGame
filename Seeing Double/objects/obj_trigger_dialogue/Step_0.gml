@@ -85,6 +85,6 @@ if global.dialogueVariables.solvedForestPuzzle && room == rm_forest_spotTheDiffe
 	//dialogueString[0] = "Ah! What fortioutous luck! The way ahead is clear!"
 	//dialogueString[1] = "I mustn't keep the missus waiting any longer. Oh how she shines a light into my heart!"
 	dialogueString[0] = "Aha! The way ahead is clear! My sleuthing skills save the day!"
-	dialogueString[1] = "I mustn't keep the missus waiting any longer. Oh how she shines a light into my heart!"
+	//dialogueString[1] = "I mustn't keep the missus waiting any longer. Oh how she shines a light into my heart!"
 
 }

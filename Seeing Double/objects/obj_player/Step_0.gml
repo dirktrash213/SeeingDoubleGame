@@ -85,12 +85,15 @@ if object_index == obj_player_patter && global.splitScreenActive && !global.cuts
 getControls();
 
 //@
+//show_debug_message("ridingMinecart: " + string(ridingMinecart))
 if ridingMinecart {
 
 	//show_debug_message("jumpKeyBuffered: " + string(jumpKeyBuffered))
 	//show_debug_message("jumpCount: " + string(jumpCount))
 	//show_debug_message("jumpMax: " + string(jumpMax))
 	//show_debug_message("jumpDisabled: " + string(jumpDisabled))
+	
+	//show_debug_message("currentMinecart: " + string(currentMinecart))
 	//show_debug_message("--------------")
 	
 	//if place_meeting(x, y+1, obj_block_wall) {
