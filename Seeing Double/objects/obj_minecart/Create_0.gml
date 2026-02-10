@@ -2,7 +2,7 @@ triggered = false;
 
 // Speed and momentum variables
 cart_speed = 0;       // Current velocity
-min_speed = 2;        // Lower Speed limit //2
+min_speed = 2.2;        // Lower Speed limit //2
 max_speed = 6;        // Upper Speed limit
 gravity_power = 0.02;  // How fast it accelerates downhill //0.2
 friction_power = 0.05; // Natural slowdown over time //0.05
