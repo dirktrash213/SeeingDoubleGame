@@ -5,6 +5,7 @@ walking = true;
 
 moveDir = WALKING_DIRECTION.LEFT;
 
+
 walkSpeed = 0.5;
 
 followPlayer = false; //Track if this enemy attempts to follow the player
