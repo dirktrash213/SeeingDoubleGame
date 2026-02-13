@@ -6,11 +6,11 @@ typist.sound(sfx_mouseChirp, false, 0.5, 0.7);
 
 if !global.dialogueVariables.talkedToExplorerCave {
 
-	dialogueString[0] = "I, the great explorer, Beckett, have once again been stymied.";
+	dialogueString[0] = "I, the great explorer Beckett, have once again been stymied.";
 	dialogueString[1] = "But not for long! My astute powers of observation tell me...";
 	//dialogueString[2] = "Me? Stumped? Never!";
 	dialogueString[2] = "That there must be a secret switch hidden somewhere!";
-	dialogueString[3] = "Yes, yes indeed. I must keep a keen eye open for anything out of the ordinary.";
+	dialogueString[3] = "Yes, yes indeed. I must once again keep a keen eye open for anything out of the ordinary.";
 	
 	//dialogueString[0] = "How strange... This wasn't here earlier.";
 	//dialogueString[1] = "The way ahead appears to be blocked by some odd mechanism.";

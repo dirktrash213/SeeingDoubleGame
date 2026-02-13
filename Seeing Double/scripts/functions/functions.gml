@@ -430,6 +430,16 @@ function spawnPitter() {
 	//Track number of defeats at this checkpoint
 	global.currentCheckpoint = instance_nearest(obj_player_pitter.x, obj_player_pitter.y, obj_trigger_checkPoint);
 	
+	if !global.currentCheckpoint.portalCheckpoint {
+		
+		global.portalsActive = false;
+		
+	} else {
+	
+		global.portalsActive = true;
+	
+	}
+	
 	global.currentCheckpointDefeatCount++;
 	
 	//show_debug_message("global.currentCheckpointDefeatCount: " + string(global.currentCheckpointDefeatCount))
@@ -471,7 +481,7 @@ function spawnPatter() {
 }
 
 
-
+//@
 function playerDefeated() {
 
 	if global.playerDefeated exit;
