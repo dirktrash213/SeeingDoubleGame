@@ -535,7 +535,11 @@ if global.customLevel {
 
 } else {
 
-	global.patterOffsetY = 320; 
+	if !global.portalsActive {
+	
+		global.patterOffsetY = global.defaultPatterOffsetY; 
+	
+	}
 
 }
 

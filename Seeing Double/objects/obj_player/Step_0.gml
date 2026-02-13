@@ -66,7 +66,7 @@ if object_index == obj_player_patter && global.splitScreenActive {
 if object_index == obj_player_patter && global.splitScreenActive && !global.cutsceneActive {
 
 	//if y < 319 && !global.verticalLevel && !global.customLevel {
-	if y < 319 && !global.verticalLevel {
+	if y < 319 && !global.verticalLevel && !global.portalsActive {
 		
 		obj_player_patter.image_alpha = 0;
 		obj_player_patter.canCollide = false;

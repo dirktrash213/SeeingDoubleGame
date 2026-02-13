@@ -67,6 +67,12 @@ global.hasMovedDown = false;
 global.hasMovedLeft = false;
 global.hasMovedRight = false;
 
+//THESE TWO VALUES SHOULD NOT BE EDITED
+global.defaultPatterOffsetX = 528; 
+global.defaultPatterOffsetY = 320;
+
+global.portalsActive = false;
+
 global.patterOffsetX = 528; //528
 global.patterOffsetY = 320;
 
@@ -109,6 +115,8 @@ global.dialogueVariables = {
 	talkedToCamperTwice : false,
 	talkedToMinerGroup : false,
 	beatCaveMinigame : false,
+	talkedToExplorerCave : false,
+	talkedToExplorerCaveTwice : false,
 
 }
 
@@ -118,7 +126,7 @@ global.solvedForestPuzzle = false;
 global.caughtByForestGhost = false;
 global.escapedForestGhost = false;
 
-
+global.solvedCavePuzzle = false;
 
 
 global.foundRose = false;
