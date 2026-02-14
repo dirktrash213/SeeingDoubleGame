@@ -148,22 +148,6 @@ function saveRoom() {
 
 	}
 	
-	//with obj_interactable_firework {
-	//
-	//	var _dataStruct = {
-	//	
-	//		objectName: object_get_name(object_index),
-	//		x: x,
-	//		y: y,
-	//		image_index: image_index,
-	//		triggered: triggered,
-	//	
-	//	}
-	//	
-	//	array_push(_dataArray, _dataStruct);
-	//
-	//}
-	
 	with obj_interactable_pot {
 	
 		var _dataStruct = {
@@ -204,12 +188,6 @@ function saveGame(){
 	file_text_writeln(_file);
 	file_text_write_real(_file, global.splitScreenActive);
 	file_text_writeln(_file);
-	//file_text_write_real(_file, global.volumeMaster);
-	//file_text_writeln(_file);
-	//file_text_write_real(_file, global.volumeSFX);
-	//file_text_writeln(_file);
-	//file_text_write_real(_file, global.volumeBGM);
-	//file_text_writeln(_file);
 	file_text_write_real(_file, global.gotScammed);
 	file_text_writeln(_file);
 	file_text_write_real(_file, global.solvedForestPuzzle);
@@ -239,13 +217,11 @@ function loadRoom(){
 
 	if _dataArray != undefined {
 	
-		//instance_destroy(obj_spawner_enemyCherryGoal);
 		instance_destroy(obj_spawner_cherry);
 		instance_destroy(obj_pickup_cherry);
 		instance_destroy(obj_pickup_coin_empty);
 		instance_destroy(obj_pickup_coin_temporary);
 		instance_destroy(obj_pickup_coin);
-		//instance_destroy(obj_interactable_firework);
 		instance_destroy(obj_interactable_pot);
 		
 		for(var i = 0; i < array_length(_dataArray); i++) {
@@ -254,17 +230,7 @@ function loadRoom(){
 			
 			var _inst = instance_create_layer(_dataStruct.x, _dataStruct.y, "Instances", asset_get_index(_dataStruct.objectName), _dataStruct);
 			
-			//if _inst.object_index == obj_interactable_firework {
-			//
-			//	with instance_create_layer(_inst.x, _inst.y, "Instances", obj_interactable_firework) {
-			//	
-			//		triggered = true;
-			//	
-			//	}
-			//	
-			//	instance_destroy(_inst);
-			//
-			//}
+			
 			
 			if _inst.object_index == obj_pickup_coin_temporary {
 			
@@ -297,12 +263,6 @@ function loadGame(){
 		file_text_readln(_file);
 		global.splitScreenActive = file_text_read_real(_file);
 		file_text_readln(_file);
-		//global.volumeMaster = file_text_read_real(_file);
-		//file_text_readln(_file);
-		//global.volumeSFX = file_text_read_real(_file);
-		//file_text_readln(_file);
-		//global.volumeBGM = file_text_read_real(_file);
-		//file_text_readln(_file);
 		global.gotScammed = file_text_read_real(_file);
 		file_text_readln(_file);
 		global.solvedForestPuzzle = file_text_read_real(_file);

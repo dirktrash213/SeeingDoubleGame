@@ -2,6 +2,9 @@ checkForMenuInput();
 analogStickMenuMovement();
 input_check_source(); //Check if player's most recent input is keyboard or gamepad
 
+show_debug_message("portals active: " + string(global.portalsActive))
+show_debug_message("global.patterOffsetY: " + string(global.patterOffsetY))
+
 #region Audio
 
 audio_master_gain(global.volumeMaster/10);

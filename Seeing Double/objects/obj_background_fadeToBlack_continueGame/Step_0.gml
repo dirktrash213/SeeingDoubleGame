@@ -29,6 +29,25 @@ if fadingIn {
 		room_goto(asset_get_index(global.roomToSpawnIn));
 		//room_goto(obj_player_patter.roomRespawn);
 		
+		//global.currentCheckpoint = instance_nearest(obj_player_pitter.x, obj_player_pitter.y, obj_trigger_checkPoint);
+		//
+		//if !global.currentCheckpoint.portalCheckpoint {
+		//
+		//	global.portalsActive = false;
+		//
+		//} else {
+		//
+		//	show_debug_message("Portals have been activated via respawn")
+		//	global.portalsActive = true;
+		//	//global.yRespawnPitter = global.currentCheckpoint.portalPatterYspawnOffset;
+		//	global.yRespawnPitter = -144;
+		//
+		//}
+		
+		//TEMP
+		//global.portalsActive = true;
+		//global.patterOffsetY = -144;
+		
 		obj_player_pitter.x = global.xRespawnPitter;
 		obj_player_pitter.y = global.yRespawnPitter;
 		

@@ -405,6 +405,10 @@ function spawnPitter() {
 	show_debug_message("global.xRespawnPitter: " + string(global.xRespawnPitter))
 	show_debug_message("global.yRespawnPitter: " + string(global.yRespawnPitter))
 	
+	//TEMP
+	//global.portalsActive = true;
+	//global.patterOffsetY = -144;
+	
 	//obj_player_pitter.x = obj_player_pitter.xRespawn;
 	//obj_player_pitter.y = obj_player_pitter.yRespawn - _offsetY;
 	obj_player_pitter.x = global.xRespawnPitter;
@@ -427,18 +431,23 @@ function spawnPitter() {
 		
 	}
 	
+	
 	//Track number of defeats at this checkpoint
 	global.currentCheckpoint = instance_nearest(obj_player_pitter.x, obj_player_pitter.y, obj_trigger_checkPoint);
 	
-	if !global.currentCheckpoint.portalCheckpoint {
-		
-		global.portalsActive = false;
-		
-	} else {
+	//if !global.currentCheckpoint.portalCheckpoint {
+	//	
+	//	show_debug_message("Portals have been de-activated via respawn")
+	//	global.portalsActive = false;
+	//	
+	//} else {
+	//
+	//	show_debug_message("Portals have been activated via respawn")
+	//	global.portalsActive = true;
+	//
+	//}
 	
-		global.portalsActive = true;
-	
-	}
+	global.portalsActive = false;
 	
 	global.currentCheckpointDefeatCount++;
 	

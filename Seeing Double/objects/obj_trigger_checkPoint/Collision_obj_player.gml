@@ -17,6 +17,14 @@ if pitterPlayerIsPresent() {
 		global.yRespawnPitter = y;
 		global.roomToSpawnIn = room_get_name(room);
 		
+		//global.portalsActiveStoredValue = global.portalsActive;
+		//
+		//if global.portalsActive {
+		//
+		//	global.portalsStoredPatterOffsetY = global.patterOffsetY;
+		//
+		//}
+		
 		//show_debug_message("global.xRespawnPitter: " + string(global.xRespawnPitter))
 		//show_debug_message("global.yRespawnPitter: " + string(global.yRespawnPitter))
 		

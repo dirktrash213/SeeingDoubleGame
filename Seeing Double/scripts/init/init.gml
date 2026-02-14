@@ -72,6 +72,9 @@ global.defaultPatterOffsetX = 528;
 global.defaultPatterOffsetY = 320;
 
 global.portalsActive = false;
+global.portalsActiveStoredValue = false;
+global.portalsStoredPatterOffsetY = 320;
+//global.portalsActive = true;
 
 global.patterOffsetX = 528; //528
 global.patterOffsetY = 320;

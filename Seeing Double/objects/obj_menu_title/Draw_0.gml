@@ -42,15 +42,15 @@ if typingNewGame {
 
 if confirm && _newGameTextFinishedTyping >= 1 && global.titleScreenCutsceneState == TITLE_SCREEN_CUTSCENE_STATE.ON_MENU {
 	
-	if !file_exists("save.txt") {
+	if !file_exists("save.txt") { //Start new game
 	
 		startNewGame();
-	
-	} else {
+	//@
+	} else { 
 	
 		if !confirmingNewGame {
 		
-			if menuPosition == 0 { //Continue game
+			if menuPosition == 0 { //Continue game from save file
 			
 				//Fade to black, then load player's last room and load game
 				

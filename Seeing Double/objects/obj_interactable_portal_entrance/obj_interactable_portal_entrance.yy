@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_background_fan",
-    "path": "sprites/spr_background_fan/spr_background_fan.yy",
+    "name": "spr_background_fan_green",
+    "path": "sprites/spr_background_fan_green/spr_background_fan_green.yy",
   },
   "spriteMaskId": null,
   "visible": true,
