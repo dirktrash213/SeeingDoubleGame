@@ -1357,6 +1357,7 @@
     {"id":{"name":"__scribble_no_preprocessing","path":"scripts/__scribble_no_preprocessing/__scribble_no_preprocessing.yy",},},
     {"id":{"name":"spr_UI_volumeSlider","path":"sprites/spr_UI_volumeSlider/spr_UI_volumeSlider.yy",},},
     {"id":{"name":"scribble_external_sprite_remove","path":"scripts/scribble_external_sprite_remove/scribble_external_sprite_remove.yy",},},
+    {"id":{"name":"obj_block_wall_temp_reverse","path":"objects/obj_block_wall_temp_reverse/obj_block_wall_temp_reverse.yy",},},
     {"id":{"name":"sfx_hurt","path":"sounds/sfx_hurt/sfx_hurt.yy",},},
     {"id":{"name":"obj_background_controlsDisplay_jump","path":"objects/obj_background_controlsDisplay_jump/obj_background_controlsDisplay_jump.yy",},},
     {"id":{"name":"obj_background_picnicBasket","path":"objects/obj_background_picnicBasket/obj_background_picnicBasket.yy",},},

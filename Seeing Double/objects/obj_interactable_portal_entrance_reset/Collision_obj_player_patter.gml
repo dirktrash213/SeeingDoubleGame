@@ -8,6 +8,7 @@ global.portalsActive = false;
 global.patterOffsetY = global.defaultPatterOffsetY;
 
 instance_deactivate_object(obj_block_wall_temp);
+//instance_activate_object(obj_block_wall_temp_reverse);
 
 
 

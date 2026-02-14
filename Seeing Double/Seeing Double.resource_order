@@ -1208,6 +1208,7 @@
     {"name":"__scribble_no_preprocessing","order":13,"path":"scripts/__scribble_no_preprocessing/__scribble_no_preprocessing.yy",},
     {"name":"spr_UI_volumeSlider","order":7,"path":"sprites/spr_UI_volumeSlider/spr_UI_volumeSlider.yy",},
     {"name":"scribble_external_sprite_remove","order":8,"path":"scripts/scribble_external_sprite_remove/scribble_external_sprite_remove.yy",},
+    {"name":"obj_block_wall_temp_reverse","order":20,"path":"objects/obj_block_wall_temp_reverse/obj_block_wall_temp_reverse.yy",},
     {"name":"sfx_hurt","order":2,"path":"sounds/sfx_hurt/sfx_hurt.yy",},
     {"name":"obj_background_controlsDisplay_jump","order":2,"path":"objects/obj_background_controlsDisplay_jump/obj_background_controlsDisplay_jump.yy",},
     {"name":"obj_background_picnicBasket","order":1,"path":"objects/obj_background_picnicBasket/obj_background_picnicBasket.yy",},
