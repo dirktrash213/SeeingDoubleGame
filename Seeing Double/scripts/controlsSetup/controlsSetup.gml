@@ -12,6 +12,7 @@ function controlsSetup() {
 	moveUp = 0;
 	moveUpPressed = 0;
 	moveDown = 0;
+	moveDownPressed = 0;
 	jump = 0;
 	jumpPressed = 0;
 	pause = 0;
@@ -32,6 +33,7 @@ function getControls() {
 		moveUp = keyboard_check(ord("W")) || gamepad_axis_value(global.controllerPort,gp_axislv) < -0.95; //-0.95
 		moveUpPressed = keyboard_check_pressed(ord("W")) || global.moveUp;
 		moveDown = keyboard_check(ord("S")) || gamepad_axis_value(global.controllerPort,gp_axislv) > 0.95; //0.95
+		moveDownPressed = keyboard_check_pressed(ord("S")) || global.moveDown;
 		jump = keyboard_check(vk_space) || gamepad_button_check(global.controllerPort, gp_face1);
 		jumpPressed = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(global.controllerPort, gp_face1);
 		pause = keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(global.controllerPort,gp_start);
@@ -47,6 +49,7 @@ function getControls() {
 	moveUp = clamp(moveUp, 0, 1);
 	moveUpPressed = clamp(moveUpPressed, 0, 1);
 	moveDown = clamp(moveDown, 0, 1);
+	moveDownPressed = clamp(moveDownPressed, 0, 1);
 	jumpPressed = clamp(jumpPressed, 0, 1);
 	jump = clamp(jump, 0, 1);
 	run = clamp(run, 0, 1);

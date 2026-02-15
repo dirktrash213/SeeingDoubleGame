@@ -168,8 +168,17 @@ jumpOffEnemySpeed[0] = -5.34;
 jumpOffEnemySpeed[1] = -8;
 
 gemPowerupDoubleJump = false;
+gemPowerupGroundPound = false;
 
 onGround = true;
+
+groundPounding = false;
+groundPoundRising = false;
+groundPoundFalling = false;
+
+groundPoundJumpSpeed = -3.25;
+groundPoundGravity = 0.2;
+groundPoundFallSpeed = 15;
 
 canLandWithDust = false;
 timeUntilCanLandWithDust = 5;

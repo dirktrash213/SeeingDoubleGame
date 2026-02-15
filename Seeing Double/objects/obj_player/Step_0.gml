@@ -4,6 +4,11 @@ if global.playerDefeated || global.paused {
 
 	if global.playerDefeated {
 		
+		groundPounding = false;
+		groundPoundRising = false;
+		groundPoundFalling = false;
+		vspeed = 0;
+		gravity = 0;
 		ridingMinecart = false;
 		currentMinecart = noone;
 		
@@ -84,7 +89,7 @@ if object_index == obj_player_patter && global.splitScreenActive && !global.cuts
 
 getControls();
 
-//@
+
 //show_debug_message("ridingMinecart: " + string(ridingMinecart))
 if ridingMinecart {
 
@@ -223,7 +228,62 @@ if ridingMinecart {
 	exit;
 
 }
+//@
+if moveDownPressed && !onGround && !groundPounding && gemPowerupGroundPound {
 
+	groundPounding = true;
+	groundPoundRising = true;
+	gemPowerupGroundPound = false;
+	ySpeed = 0;
+	
+	vspeed = groundPoundJumpSpeed;
+	gravity = groundPoundGravity;
+
+}
+
+if groundPounding {
+
+	if vspeed >= 0 && groundPoundRising {
+	
+		groundPoundRising = false;
+		groundPoundFalling = true;
+		
+		gravity = 0;
+		vspeed = groundPoundFallSpeed;
+	
+	}
+	
+	if groundPoundRising && place_meeting(x, y, obj_block_wall) {
+	
+		groundPounding = false;
+		groundPoundRising = false;
+		groundPoundFalling = false;
+		vspeed = 0;
+		gravity = 0;
+		
+		exit;
+	
+	}
+	
+	var _detectionOffsetY = 10;
+
+	var _wall = instance_place(x,y+_detectionOffsetY,obj_block_wall);
+
+	if _wall != noone && groundPoundFalling {
+	
+		//if groundPoundFalling y = _wall.y;
+		y = _wall.y;
+		groundPounding = false;
+		groundPoundRising = false;
+		groundPoundFalling = false;
+		vspeed = 0;
+		gravity = 0;
+	
+	}
+
+	exit; 
+
+}
 
 //Unstick from moving solid platforms
 
@@ -547,24 +607,12 @@ if ySpeed >= 0 && !place_meeting(x + xSpeed, y + 1, obj_block_wall) && place_mee
 
 
 
-//@
+
 //Move X
 
 if !global.cutsceneActive {
 	
 	x += xSpeed;
-	
-	//if ridingMinecart {
-	//
-	//	var _offsetX = 5;
-	//
-	//	x = currentMinecart.x + _offsetX;
-	//
-	//} else {
-	//
-	//	x += xSpeed;
-	//
-	//}
 	
 }
 
@@ -572,7 +620,7 @@ if !global.cutsceneActive {
 //Y movement
 
 //Gravity
-//@
+
 if coyoteHangTimer > 0 {
 
 	coyoteHangTimer--;
@@ -623,7 +671,7 @@ if instance_exists(myFloorPlat) && (myFloorPlat.object_index == obj_block_wall |
 	_floorIsSolid = true;
 
 }
-//@
+
 //Perform the jump
 //if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled && (!moveDown || _floorIsSolid) {
 if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled {
@@ -1085,7 +1133,7 @@ if climbing {
 
 
 //Move
-//@
+
 if !place_meeting(x, y+ySpeed, obj_block_wall) {
 	
 	y += ySpeed;
@@ -1195,7 +1243,7 @@ if place_meeting(x, y, obj_block_wall)
 	crushTimer = 0;
 
 }
-
+//@
 //Breakable floor logic
 
 // 1. Create a temporary list to hold the results

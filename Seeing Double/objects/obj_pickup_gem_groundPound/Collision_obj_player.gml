@@ -15,15 +15,15 @@ audio_play_sound(sfx_collect_cherry, 1, 0);
 sprite_index = emptySprite;
 
 
-/*
 if pitterPlayerIsPresent() {
 
+	obj_player_pitter.gemPowerupGroundPound = true;
 
 }
 
 if patterPlayerIsPresent() {
 
-
+	obj_player_patter.gemPowerupGroundPound = true;
 
 }
 
