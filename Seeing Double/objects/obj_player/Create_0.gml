@@ -91,6 +91,8 @@ lookingUpSprite = spr_pitter_curious;
 climbingSprite = spr_pitter_climb;
 defeatSprite = spr_pitter_defeat;
 crushedSprite = spr_pitter_splat;
+groundPoundJumpSprite = spr_pitter_groundPound_jump;
+groundPoundFallSprite = spr_pitter_groundPound_fall;
 
 happySprite = spr_pitter_happy_animated;
 concernSprite = spr_pitter_pause;

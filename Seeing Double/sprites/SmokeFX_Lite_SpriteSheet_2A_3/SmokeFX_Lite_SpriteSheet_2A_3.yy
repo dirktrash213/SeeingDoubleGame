@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "SmokeFX_Lite_SpriteSheet_2A_3",
-  "bbox_bottom": 40,
-  "bbox_left": 21,
-  "bbox_right": 336,
+  "bbox_bottom": 36,
+  "bbox_left": 27,
+  "bbox_right": 338,
   "bbox_top": 18,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e82c2d9a-ef5d-4f14-b009-6973bed66e42",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4896cc64-f561-46ee-a42b-00c04fea9369",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 64,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"7e61d6e6-0828-4f49-969d-8f018daf22c7","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"79459c60-87e8-4257-8c18-c212aa70256c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e82c2d9a-ef5d-4f14-b009-6973bed66e42","path":"sprites/SmokeFX_Lite_SpriteSheet_2A_3/SmokeFX_Lite_SpriteSheet_2A_3.yy",},},},"Disabled":false,"id":"8f65efc9-5cc2-41ef-bb8e-1d91a0d3a23f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4896cc64-f561-46ee-a42b-00c04fea9369","path":"sprites/SmokeFX_Lite_SpriteSheet_2A_3/SmokeFX_Lite_SpriteSheet_2A_3.yy",},},},"Disabled":false,"id":"9041eb2e-4e14-416d-8cd9-08a4c57e986c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -766,3 +766,65 @@ function triggerFireworkMachines() {
 	}
 
 }
+
+function spawnGroundPoundFloorPieces() {
+
+	var _piecesAmount = 4;
+	
+	var _hSpeedMin = -3;
+	var _hSpeedMax = 3;
+	var _vSpeedMin = -5;
+	var _vSpeedMax = -2;
+	
+	var _rotationSpeed = random_range(2, 900);
+	
+	var _rotationSpeedMin = 1;
+	var _rotationSpeedMax = 10;
+	
+	var _gravity = 0.05;
+		
+	for(var i = 0; i < _piecesAmount; i++) {
+
+		with instance_create_layer(x, y, "Instances", obj_background_groundPoundFloorPiece) {
+	
+			sprite_index = choose(
+			
+				spr_background_groundPoundFloorPiece,
+				spr_background_groundPoundFloorPiece2,
+				spr_background_groundPoundFloorPiece3,
+			
+			);
+	
+			hspeed = random_range(_hSpeedMin, _hSpeedMax);
+			vspeed = random_range(_vSpeedMin, _vSpeedMax);
+			
+			gravity = _gravity;
+			
+			image_angle = random_range(0, 360);
+			rotationSpeed = random_range(_rotationSpeedMin, _rotationSpeedMax);
+			
+			//image_angle = _rotationSpeed;
+	
+		}
+	
+	}
+	
+	var _pitch = random_range(0.25, 0.35);
+	
+	//if !audio_is_playing(sfx_slice) audio_play_sound(sfx_slice, 1, 0, 1, 0, _pitch);
+	if audio_is_playing(sfx_slice) audio_stop_sound(sfx_slice);
+	
+	audio_play_sound(sfx_slice, 1, 0, 1, 0, _pitch);
+
+}
+
+function shakeScreen(_mag, _frames) {
+    // We tell the camera object to start shaking
+    with (obj_camera) {
+        if (_mag > shake_remain) { // Only override if the new shake is stronger
+            shake_magnitude = _mag;
+            shake_remain = _mag;
+            shake_length = _frames;
+        }
+    }
+}

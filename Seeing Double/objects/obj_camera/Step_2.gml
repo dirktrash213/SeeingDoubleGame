@@ -265,6 +265,31 @@ if patterPlayerIsPresent() {
 
 }
 
+// Update the shake intensity
+// This slowly reduces the shake over the duration of the effect
+shake_remain = max(0, shake_remain - ((1 / shake_length) * shake_magnitude));
+
+// Apply the shake to the camera position
+// Replace 'view_camera[0]' with your actual camera index if different
+var _cam_x = camera_get_view_x(view_camera[0]);
+var _cam_y = camera_get_view_y(view_camera[0]);
+
+camera_set_view_pos(view_camera[0], 
+    _cam_x + random_range(-shake_remain, shake_remain), 
+    _cam_y + random_range(-shake_remain, shake_remain)
+);
+
+var _cam_x2 = camera_get_view_x(view_camera[1]);
+var _cam_y2 = camera_get_view_y(view_camera[1]);
+
+camera_set_view_pos(view_camera[1], 
+    _cam_x2 + random_range(-shake_remain, shake_remain), 
+    _cam_y2 + random_range(-shake_remain, shake_remain)
+);
+
+
+
+
 /*
 if(instance_exists(obj_cameraMover)) { //For camera movements during cutscenes, the camera follows obj_cameraMover (top left origin)
 

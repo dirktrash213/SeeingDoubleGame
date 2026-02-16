@@ -37,3 +37,9 @@ verticalLevelOffsetYMax = -100;
 //verticalLevelOffsetYMax = 200;
 
 verticalLevelOffsetYUpdateAmount = 2;
+
+
+//Camera shake variables
+shake_length = 0;    // How long the shake lasts (in frames)
+shake_magnitude = 0; // How intense the shake is
+shake_remain = 0;    // The current remaining intensity

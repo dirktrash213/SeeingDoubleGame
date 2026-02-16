@@ -16,3 +16,5 @@ happySprite = spr_patter_happy_animated;
 concernSprite = spr_patter_pause;
 scaredSprite = spr_patter_scared;
 curiousSprite = spr_patter_curious;
+groundPoundJumpSprite = spr_patter_groundPound_jump;
+groundPoundFallSprite = spr_patter_groundPound_fall;

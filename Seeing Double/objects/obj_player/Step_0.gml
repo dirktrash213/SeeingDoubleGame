@@ -238,10 +238,17 @@ if moveDownPressed && !onGround && !groundPounding && gemPowerupGroundPound {
 	
 	vspeed = groundPoundJumpSpeed;
 	gravity = groundPoundGravity;
+	
+	var _pitch = random_range(1.50, 1.60);
+	
+	audio_play_sound(sfx_jump_pitter, 1, 0, 1, 0, _pitch);
 
 }
 
 if groundPounding {
+
+	if groundPoundRising sprite_index = groundPoundJumpSprite;
+	if groundPoundFalling sprite_index = groundPoundFallSprite;
 
 	if vspeed >= 0 && groundPoundRising {
 	
@@ -250,6 +257,12 @@ if groundPounding {
 		
 		gravity = 0;
 		vspeed = groundPoundFallSpeed;
+		
+		var _pitch = random_range(2.50, 2.60);
+		audio_play_sound(sfx_slice, 1, 0, 1, 0, _pitch);
+		
+		xStretch = 0.5;
+		yStretch = 1.5;
 	
 	}
 	
@@ -267,30 +280,40 @@ if groundPounding {
 	//@
 	var _detectionOffsetY = 10;
 
-	// 1. Create a temporary list to hold the results
-	var __groundPoundFloorList = ds_list_create();
+	if groundPoundFalling {
 
-	// 2. Check for collisions and store the count
-	var _num = instance_place_list(x, y+_detectionOffsetY, obj_interactable_groundPoundFloor, __groundPoundFloorList, false);
+		//xStretch = 0.5;
+		//yStretch = 1.5;
 
-	// 3. If we hit something (count > 0)
-	if (_num > 0) {
-	    // Loop through every object in the list
-	    for (var i = 0; i < _num; i++) {
+		// 1. Create a temporary list to hold the results
+		var __groundPoundFloorList = ds_list_create();
+
+		// 2. Check for collisions and store the count
+		var _num = instance_place_list(x, y+_detectionOffsetY, obj_interactable_groundPoundFloor, __groundPoundFloorList, false);
+
+		// 3. If we hit something (count > 0)
+		if (_num > 0) {
+		    // Loop through every object in the list
+		    for (var i = 0; i < _num; i++) {
         
-	        // Get the specific instance ID from the list
-	        var _inst = __groundPoundFloorList[| i];
+		        // Get the specific instance ID from the list
+		        var _inst = __groundPoundFloorList[| i];
         
-	        // --- DO YOUR LOGIC HERE ---
-	        // Example: Break the floor
-	        with (_inst) {
-	            instance_destroy();
-	        }
-	    }
+		        // --- DO YOUR LOGIC HERE ---
+		        // Example: Break the floor
+		        with (_inst) {
+				
+					spawnGroundPoundFloorPieces();
+					instance_destroy();
+				
+		        }
+		    }
+		}
+
+		// 4. IMPORTANT: Clean up the list to prevent memory leaks
+		ds_list_destroy(__groundPoundFloorList);
+	
 	}
-
-	// 4. IMPORTANT: Clean up the list to prevent memory leaks
-	ds_list_destroy(__groundPoundFloorList);
 
 	var _wall = instance_place(x,y+_detectionOffsetY,obj_block_wall);
 	
@@ -306,6 +329,25 @@ if groundPounding {
 			vspeed = 0;
 			gravity = 0;
 			jumpCount = 0;
+			
+			//xStretch = 1.5;
+			//yStretch = 0.5;
+			
+		//	var _pitch = random_range(0.10, 0.20);
+		//	audio_play_sound(sfx_bonk, 1, 0, 1, 0, _pitch);
+		
+			var _offsetX = 5;
+		
+			instance_create_layer(x - _offsetX, y, "Instances", obj_vfx_dust_groundPound);
+			instance_create_layer(x + _offsetX, y, "Instances", obj_vfx_dust_groundPound, {image_xscale : -1});
+		
+			var _pitch = random_range(1.10, 1.20);
+			audio_play_sound(sfx_explosion, 1, 0, 1, 0, _pitch);
+			
+			var _screenShakeMagnitude = 2;
+			var _screenShakeFrames = 10;
+			
+			shakeScreen(_screenShakeMagnitude, _screenShakeFrames);
 		
 		}
 	
