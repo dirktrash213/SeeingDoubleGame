@@ -1,13 +1,13 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_block_groundPound",
+  "name": "obj_interactable_groundPoundFloor",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Walls and Platforms",
-    "path": "folders/Objects/Walls and Platforms.yy",
+    "name": "Interactables",
+    "path": "folders/Objects/Interactables.yy",
   },
   "parentObjectId": {
     "name": "obj_block_wall",
@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_block_groundPound",
-    "path": "sprites/spr_block_groundPound/spr_block_groundPound.yy",
+    "name": "spr_interactable_groundPoundFloor",
+    "path": "sprites/spr_interactable_groundPoundFloor/spr_interactable_groundPoundFloor.yy",
   },
   "spriteMaskId": null,
   "visible": true,

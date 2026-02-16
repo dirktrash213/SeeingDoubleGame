@@ -228,13 +228,13 @@ if ridingMinecart {
 	exit;
 
 }
-//@
+
 if moveDownPressed && !onGround && !groundPounding && gemPowerupGroundPound {
 
 	groundPounding = true;
 	groundPoundRising = true;
 	gemPowerupGroundPound = false;
-	ySpeed = 0;
+	ySpeed = -7;
 	
 	vspeed = groundPoundJumpSpeed;
 	gravity = groundPoundGravity;
@@ -264,20 +264,50 @@ if groundPounding {
 		exit;
 	
 	}
-	
+	//@
 	var _detectionOffsetY = 10;
 
-	var _wall = instance_place(x,y+_detectionOffsetY,obj_block_wall);
+	// 1. Create a temporary list to hold the results
+	var __groundPoundFloorList = ds_list_create();
 
+	// 2. Check for collisions and store the count
+	var _num = instance_place_list(x, y+_detectionOffsetY, obj_interactable_groundPoundFloor, __groundPoundFloorList, false);
+
+	// 3. If we hit something (count > 0)
+	if (_num > 0) {
+	    // Loop through every object in the list
+	    for (var i = 0; i < _num; i++) {
+        
+	        // Get the specific instance ID from the list
+	        var _inst = __groundPoundFloorList[| i];
+        
+	        // --- DO YOUR LOGIC HERE ---
+	        // Example: Break the floor
+	        with (_inst) {
+	            instance_destroy();
+	        }
+	    }
+	}
+
+	// 4. IMPORTANT: Clean up the list to prevent memory leaks
+	ds_list_destroy(__groundPoundFloorList);
+
+	var _wall = instance_place(x,y+_detectionOffsetY,obj_block_wall);
+	
 	if _wall != noone && groundPoundFalling {
 	
-		//if groundPoundFalling y = _wall.y;
-		y = _wall.y;
-		groundPounding = false;
-		groundPoundRising = false;
-		groundPoundFalling = false;
-		vspeed = 0;
-		gravity = 0;
+		if _wall.object_index != obj_interactable_groundPoundFloor {
+			
+			//if groundPoundFalling y = _wall.y;
+			y = _wall.y;
+			groundPounding = false;
+			groundPoundRising = false;
+			groundPoundFalling = false;
+			vspeed = 0;
+			gravity = 0;
+			jumpCount = 0;
+		
+		}
 	
 	}
 
@@ -1270,7 +1300,8 @@ if (_num > 0) {
 }
 
 // 4. IMPORTANT: Clean up the list to prevent memory leaks
-ds_list_destroy(_list);
+ds_list_destroy(__breakableFloorList);
+//ds_list_destroy(_list);
 
 
 //Prevent player from getting crushed by breakable floors
