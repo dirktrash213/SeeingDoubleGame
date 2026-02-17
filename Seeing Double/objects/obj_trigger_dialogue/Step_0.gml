@@ -88,3 +88,19 @@ if global.dialogueVariables.solvedForestPuzzle && room == rm_forest_spotTheDiffe
 	//dialogueString[1] = "I mustn't keep the missus waiting any longer. Oh how she shines a light into my heart!"
 
 }
+
+if global.dialogueVariables.eatenCaveCherry && room == rm_cave_groundPoundCrystal_highJumpTutorial && !specialDialogueTriggered && eatenCaveCherry {
+
+	//show_debug_message("cave cherry step dialogue triggered")
+	
+	specialDialogueTriggered = true;
+
+	count = 0;
+	alarm[0] = textDisplayDuration;
+	//triggered = false;
+	
+	dialogueString = [];
+
+	dialogueString[0] = "NOOOO!! How could you!?";
+
+}

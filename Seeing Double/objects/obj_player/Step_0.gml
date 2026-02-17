@@ -317,42 +317,12 @@ if groundPounding {
 
 	var _wall = instance_place(x,y+_detectionOffsetY,obj_block_wall);
 	
-	if _wall != noone && groundPoundFalling {
+	detectFloorDuringGroundPound(_wall);
 	
-		if _wall.object_index != obj_interactable_groundPoundFloor {
-			
-			//if groundPoundFalling y = _wall.y;
-			y = _wall.y;
-			groundPounding = false;
-			groundPoundRising = false;
-			groundPoundFalling = false;
-			vspeed = 0;
-			gravity = 0;
-			jumpCount = 0;
-			
-			//xStretch = 1.5;
-			//yStretch = 0.5;
-			
-		//	var _pitch = random_range(0.10, 0.20);
-		//	audio_play_sound(sfx_bonk, 1, 0, 1, 0, _pitch);
-		
-			var _offsetX = 5;
-		
-			instance_create_layer(x - _offsetX, y, "Instances", obj_vfx_dust_groundPound);
-			instance_create_layer(x + _offsetX, y, "Instances", obj_vfx_dust_groundPound, {image_xscale : -1});
-		
-			var _pitch = random_range(1.10, 1.20);
-			audio_play_sound(sfx_explosion, 1, 0, 1, 0, _pitch);
-			
-			var _screenShakeMagnitude = 2;
-			var _screenShakeFrames = 10;
-			
-			shakeScreen(_screenShakeMagnitude, _screenShakeFrames);
-		
-		}
+	var _wallSemisolid = instance_place(x,y+_detectionOffsetY,obj_block_wall_semiSolid);
 	
-	}
-
+	detectFloorDuringGroundPound(_wallSemisolid);
+	
 	exit; 
 
 }

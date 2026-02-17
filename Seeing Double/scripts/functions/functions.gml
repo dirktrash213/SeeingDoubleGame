@@ -839,3 +839,36 @@ function shakeScreen(_mag, _frames) {
         }
     }
 }
+
+function detectFloorDuringGroundPound(_floor) {
+
+	if _floor != noone && groundPoundFalling {
+	
+		if _floor.object_index != obj_interactable_groundPoundFloor {
+			
+			y = _floor.y;
+			groundPounding = false;
+			groundPoundRising = false;
+			groundPoundFalling = false;
+			vspeed = 0;
+			gravity = 0;
+			jumpCount = 0;
+					
+			var _offsetX = 5;
+		
+			instance_create_layer(x - _offsetX, y, "Instances", obj_vfx_dust_groundPound);
+			instance_create_layer(x + _offsetX, y, "Instances", obj_vfx_dust_groundPound, {image_xscale : -1});
+		
+			var _pitch = random_range(1.10, 1.20);
+			audio_play_sound(sfx_explosion, 1, 0, 1, 0, _pitch);
+			
+			var _screenShakeMagnitude = 2;
+			var _screenShakeFrames = 10;
+			
+			shakeScreen(_screenShakeMagnitude, _screenShakeFrames);
+		
+		}
+	
+	}
+
+}

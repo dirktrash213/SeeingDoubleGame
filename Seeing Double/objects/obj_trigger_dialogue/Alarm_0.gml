@@ -73,6 +73,12 @@ if count == _l-1 {
 		
 	}
 	
+	if room == rm_cave_groundPoundCrystal_highJumpTutorial { 
+		
+		global.dialogueVariables.talkedToHungryMiner = true;
+		
+	}
+	
 	exit;
 	
 }

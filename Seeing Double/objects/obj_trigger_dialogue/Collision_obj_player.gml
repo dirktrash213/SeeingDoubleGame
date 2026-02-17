@@ -10,7 +10,6 @@ if instance_exists(obj_interactable_monitor_parent) {
 	
 		image_speed = 1;
 	
-	
 	}
 
 }

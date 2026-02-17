@@ -121,6 +121,8 @@ global.dialogueVariables = {
 	beatCaveMinigame : false,
 	talkedToExplorerCave : false,
 	talkedToExplorerCaveTwice : false,
+	talkedToHungryMiner : false,
+	eatenCaveCherry : false,
 
 }
 
