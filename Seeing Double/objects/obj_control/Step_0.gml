@@ -464,6 +464,12 @@ if global.playerControl && pauseButtonPressed() {
 	
 	} else {
 
+		if playerIsPresent() {
+		
+			if obj_player.groundPounding exit;
+		
+		}
+
 		global.paused = !global.paused;
 		togglePause();
 	

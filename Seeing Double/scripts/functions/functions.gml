@@ -608,8 +608,14 @@ function pauseButtonPressed() {
 
 function togglePause() {
 	
+	//if playerIsPresent() {
+	//
+	//	if obj_player.groundPounding return;
+	//
+	//}
+	
 	audio_play_sound(sfx_pause, 1, 0);
-
+	
 	if global.paused {
 	
 		show_debug_message("Game is now paused")

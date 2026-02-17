@@ -1315,7 +1315,7 @@ if place_meeting(x, y, obj_block_wall)
 	crushTimer = 0;
 
 }
-//@
+
 //Breakable floor logic
 
 // 1. Create a temporary list to hold the results
