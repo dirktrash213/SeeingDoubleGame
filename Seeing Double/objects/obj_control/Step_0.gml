@@ -275,10 +275,14 @@ if global.paused {
 						
 							} break;
 							
+							case 3: { //Toggle screen shake
+						
+								global.screenShake = !global.screenShake;
+						
+							} break;
+							
 						}
 						
-						
-				
 					} break;
 					
 				}
@@ -352,8 +356,8 @@ if global.paused {
 				
 				case "Gameplay settings": {
 				
-					if pauseMenuPosition < 0 pauseMenuPosition = 2;
-					if pauseMenuPosition > 2 pauseMenuPosition = 0;
+					if pauseMenuPosition < 0 pauseMenuPosition = 3;
+					if pauseMenuPosition > 3 pauseMenuPosition = 0;
 				
 				} break;
 					

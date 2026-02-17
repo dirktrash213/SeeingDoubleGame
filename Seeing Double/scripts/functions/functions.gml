@@ -136,7 +136,7 @@ function drawPauseMenu() {
 			} break;
 		
 			case 2: {
-		
+				
 				switch submenuType {
 			
 					case "Video settings": {
@@ -202,21 +202,23 @@ function drawPauseMenu() {
 						draw_sprite(volumeLoudIcon, 0, _x + _offsetX + _iconOffsetX, _y + _offsetY + _spacing*3);
 				
 					} break;
-					
+					//@
 					case "Gameplay settings": {
 				
 						var _backString = "Back";
 						var _runModeString = global.runModeIsToggle ? "\nToggle Run: ON" : "\nToggle Run: OFF";
 						var _assistModeString = global.assistMode ? "\nAssistance: ON" : "\nAssistance: OFF";
+						var _screenShakeString = global.screenShake ? "\nScreen Shake: ON" : "\nScreen Shake: OFF";
 	
 						if pauseMenuPosition == 0 _backString = "[wave]Back[/wave]";
 						if pauseMenuPosition == 1 _runModeString = global.runModeIsToggle ? "[wave]\nToggle Run: ON[/wave]" : "[wave]\nToggle Run: OFF[/wave]";
 						if pauseMenuPosition == 2 _assistModeString = global.assistMode ? "[wave]\nAssistance: ON[/wave]" : "[wave]\nAssistance: OFF[/wave]";
+						if pauseMenuPosition == 3 _screenShakeString = global.screenShake ? "[wave]\nScreen Shake: ON" : "[wave]\nScreen Shake: OFF";
 				
 						var _offsetX = 0;
 						var _offsetY = _masterOffsetY;
 	
-						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _runModeString + _assistModeString);
+						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _runModeString + _assistModeString + _screenShakeString);
 				
 					} break;
 			
@@ -819,7 +821,10 @@ function spawnGroundPoundFloorPieces() {
 }
 
 function shakeScreen(_mag, _frames) {
-    // We tell the camera object to start shaking
+    
+	if !global.screenShake return;
+	
+	// We tell the camera object to start shaking
     with (obj_camera) {
         if (_mag > shake_remain) { // Only override if the new shake is stronger
             shake_magnitude = _mag;

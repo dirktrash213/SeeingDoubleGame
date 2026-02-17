@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_vfx_dust_groundPound2",
-    "path": "sprites/spr_vfx_dust_groundPound2/spr_vfx_dust_groundPound2.yy",
+    "name": "spr_vfx_dust_groundPound",
+    "path": "sprites/spr_vfx_dust_groundPound/spr_vfx_dust_groundPound.yy",
   },
   "spriteMaskId": null,
   "visible": true,

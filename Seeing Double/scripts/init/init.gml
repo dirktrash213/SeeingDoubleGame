@@ -53,6 +53,7 @@ global.runModeIsToggle = false;
 global.useScreenShake = true;
 global.scoreUIenabled = true;
 global.assistMode = true;
+global.screenShake = true;
 
 global.titleScreenCherriesEaten = 0;
 global.pitterPatterHugging = false;

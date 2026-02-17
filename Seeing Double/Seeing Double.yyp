@@ -81,6 +81,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Background","folderPath":"folders/Sprites/Background.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Controls Display","folderPath":"folders/Sprites/Background/Controls Display.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Grass Pieces","folderPath":"folders/Sprites/Background/Grass Pieces.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Ground Pound Floor Pieces","folderPath":"folders/Sprites/Background/Ground Pound Floor Pieces.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"MISC","folderPath":"folders/Sprites/Background/MISC.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Parallax Backgrounds","folderPath":"folders/Sprites/Background/Parallax Backgrounds.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"OLD","folderPath":"folders/Sprites/Background/Parallax Backgrounds/OLD.yy",},
@@ -118,7 +119,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UI","folderPath":"folders/Sprites/UI.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Ground Pound Floor Pieces","folderPath":"folders/Sprites/Background/Ground Pound Floor Pieces.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"assist_data.json","CopyToMask":-1,"filePath":"datafiles",},

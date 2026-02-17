@@ -65,6 +65,7 @@
     {"name":"Background","order":4,"path":"folders/Sprites/Background.yy",},
     {"name":"Controls Display","order":25,"path":"folders/Sprites/Background/Controls Display.yy",},
     {"name":"Grass Pieces","order":26,"path":"folders/Sprites/Background/Grass Pieces.yy",},
+    {"name":"Ground Pound Floor Pieces","order":50,"path":"folders/Sprites/Background/Ground Pound Floor Pieces.yy",},
     {"name":"MISC","order":39,"path":"folders/Sprites/Background/MISC.yy",},
     {"name":"Parallax Backgrounds","order":23,"path":"folders/Sprites/Background/Parallax Backgrounds.yy",},
     {"name":"OLD","order":31,"path":"folders/Sprites/Background/Parallax Backgrounds/OLD.yy",},
@@ -99,7 +100,6 @@
     {"name":"UI","order":17,"path":"folders/Sprites/UI.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"Ground Pound Floor Pieces","order":50,"path":"folders/Sprites/Background/Ground Pound Floor Pieces.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"FX052_02","order":2,"path":"sprites/FX052_02/FX052_02.yy",},
