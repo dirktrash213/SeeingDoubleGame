@@ -483,6 +483,7 @@
     {"id":{"name":"bgm_cursedAtmosphere","path":"sounds/bgm_cursedAtmosphere/bgm_cursedAtmosphere.yy",},},
     {"id":{"name":"spr_UI_volumeIcon_mute","path":"sprites/spr_UI_volumeIcon_mute/spr_UI_volumeIcon_mute.yy",},},
     {"id":{"name":"spr_pitter_jump_x4","path":"sprites/spr_pitter_jump_x4/spr_pitter_jump_x4.yy",},},
+    {"id":{"name":"rm_cave_groundPoundCrystal_highJump","path":"rooms/rm_cave_groundPoundCrystal_highJump/rm_cave_groundPoundCrystal_highJump.yy",},},
     {"id":{"name":"spr_promo_capsule_header_v3","path":"sprites/spr_promo_capsule_header_v3/spr_promo_capsule_header_v3.yy",},},
     {"id":{"name":"spr_interactable_key","path":"sprites/spr_interactable_key/spr_interactable_key.yy",},},
     {"id":{"name":"spr_background_controlsDisplay_analogStick_down","path":"sprites/spr_background_controlsDisplay_analogStick_down/spr_background_controlsDisplay_analogStick_down.yy",},},
@@ -1480,6 +1481,7 @@
     {"roomId":{"name":"rm_cave_portalsSpikes","path":"rooms/rm_cave_portalsSpikes/rm_cave_portalsSpikes.yy",},},
     {"roomId":{"name":"rm_cave_groundPoundCrystal","path":"rooms/rm_cave_groundPoundCrystal/rm_cave_groundPoundCrystal.yy",},},
     {"roomId":{"name":"rm_cave_groundPoundCrystal_highJumpTutorial","path":"rooms/rm_cave_groundPoundCrystal_highJumpTutorial/rm_cave_groundPoundCrystal_highJumpTutorial.yy",},},
+    {"roomId":{"name":"rm_cave_groundPoundCrystal_highJump","path":"rooms/rm_cave_groundPoundCrystal_highJump/rm_cave_groundPoundCrystal_highJump.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [
