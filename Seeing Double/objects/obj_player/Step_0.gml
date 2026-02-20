@@ -284,6 +284,32 @@ if groundPounding {
 
 		//xStretch = 0.5;
 		//yStretch = 1.5;
+		
+		// 1. Create a temporary list to hold the results
+		var __breakableFloorList = ds_list_create();
+
+		// 2. Check for collisions and store the count
+		var _num2 = instance_place_list(x, y+_detectionOffsetY, obj_interactable_breakableFloor, __breakableFloorList, false);
+
+		// 3. If we hit something (count > 0)
+		if (_num2 > 0) {
+		    // Loop through every object in the list
+		    for (var i = 0; i < _num2; i++) {
+        
+		        // Get the specific instance ID from the list
+		        var _inst = __breakableFloorList[| i];
+        
+		        // --- DO YOUR LOGIC HERE ---
+		        // Example: Break the floor
+		        with (_inst) {
+					triggered = true;
+		            //instance_destroy();
+		        }
+		    }
+		}
+
+		// 4. IMPORTANT: Clean up the list to prevent memory leaks
+		ds_list_destroy(__breakableFloorList);
 
 		// 1. Create a temporary list to hold the results
 		var __groundPoundFloorList = ds_list_create();
@@ -1287,7 +1313,7 @@ if place_meeting(x, y, obj_block_wall)
 }
 
 //Breakable floor logic
-
+//@
 // 1. Create a temporary list to hold the results
 var __breakableFloorList = ds_list_create();
 
