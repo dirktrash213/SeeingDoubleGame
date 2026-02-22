@@ -427,6 +427,7 @@
     {"id":{"name":"arm_grip_45_closed","path":"sprites/arm_grip_45_closed/arm_grip_45_closed.yy",},},
     {"id":{"name":"tiles_scienceProps_transparent","path":"tilesets/tiles_scienceProps_transparent/tiles_scienceProps_transparent.yy",},},
     {"id":{"name":"arm_grip_spritesheet","path":"sprites/arm_grip_spritesheet/arm_grip_spritesheet.yy",},},
+    {"id":{"name":"rm_cave_groundPoundCrystal_enemyJump","path":"rooms/rm_cave_groundPoundCrystal_enemyJump/rm_cave_groundPoundCrystal_enemyJump.yy",},},
     {"id":{"name":"spr_pitter_walk","path":"sprites/spr_pitter_walk/spr_pitter_walk.yy",},},
     {"id":{"name":"spr_interactable_coin_test","path":"sprites/spr_interactable_coin_test/spr_interactable_coin_test.yy",},},
     {"id":{"name":"Smoke_VFX3","path":"sprites/Smoke_VFX3/Smoke_VFX3.yy",},},
@@ -567,6 +568,7 @@
     {"id":{"name":"_68","path":"sprites/_68/_68.yy",},},
     {"id":{"name":"Door","path":"sprites/Door/Door.yy",},},
     {"id":{"name":"_5_plants_v_1","path":"sprites/_5_plants_v_1/_5_plants_v_1.yy",},},
+    {"id":{"name":"obj_enemy_beetle_horned_dead","path":"objects/obj_enemy_beetle_horned_dead/obj_enemy_beetle_horned_dead.yy",},},
     {"id":{"name":"powerUp","path":"sounds/powerUp/powerUp.yy",},},
     {"id":{"name":"Flowers_Without_Outline_Spritesheet630","path":"sprites/Flowers_Without_Outline_Spritesheet630/Flowers_Without_Outline_Spritesheet630.yy",},},
     {"id":{"name":"spr_patter_curious_x4","path":"sprites/spr_patter_curious_x4/spr_patter_curious_x4.yy",},},
@@ -1488,6 +1490,7 @@
     {"roomId":{"name":"rm_cave_groundPoundCrystal","path":"rooms/rm_cave_groundPoundCrystal/rm_cave_groundPoundCrystal.yy",},},
     {"roomId":{"name":"rm_cave_groundPoundCrystal_highJumpTutorial","path":"rooms/rm_cave_groundPoundCrystal_highJumpTutorial/rm_cave_groundPoundCrystal_highJumpTutorial.yy",},},
     {"roomId":{"name":"rm_cave_groundPoundCrystal_highJump","path":"rooms/rm_cave_groundPoundCrystal_highJump/rm_cave_groundPoundCrystal_highJump.yy",},},
+    {"roomId":{"name":"rm_cave_groundPoundCrystal_enemyJump","path":"rooms/rm_cave_groundPoundCrystal_enemyJump/rm_cave_groundPoundCrystal_enemyJump.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

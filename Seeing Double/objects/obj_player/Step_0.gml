@@ -9,6 +9,7 @@ if global.playerDefeated || global.paused {
 		groundPoundFalling = false;
 		vspeed = 0;
 		gravity = 0;
+		ySpeed = -3;
 		ridingMinecart = false;
 		currentMinecart = noone;
 		
@@ -282,9 +283,6 @@ if groundPounding {
 
 	if groundPoundFalling {
 
-		//xStretch = 0.5;
-		//yStretch = 1.5;
-		
 		// 1. Create a temporary list to hold the results
 		var __breakableFloorList = ds_list_create();
 
@@ -348,6 +346,14 @@ if groundPounding {
 	var _wallSemisolid = instance_place(x,y+_detectionOffsetY,obj_block_wall_semiSolid);
 	
 	detectFloorDuringGroundPound(_wallSemisolid);
+	
+	var _enemy = instance_place(x,y+_detectionOffsetY,obj_enemy);
+	
+	detectEnemyDuringGroundPound(_enemy);
+	
+	var _enemyDoppleganger = instance_place(x,y+_detectionOffsetY,obj_enemy_doppleganger);
+	
+	detectEnemyDuringGroundPound(_enemyDoppleganger);
 	
 	exit; 
 

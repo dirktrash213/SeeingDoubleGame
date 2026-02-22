@@ -846,6 +846,8 @@ function detectFloorDuringGroundPound(_floor) {
 	
 		if _floor.object_index != obj_interactable_groundPoundFloor {
 			
+			show_debug_message("floor ground pounded")
+			
 			y = _floor.y;
 			groundPounding = false;
 			groundPoundRising = false;
@@ -869,6 +871,46 @@ function detectFloorDuringGroundPound(_floor) {
 		
 		}
 	
+	}
+
+}
+
+function detectEnemyDuringGroundPound(_enemy) {
+
+	if _enemy != noone && groundPoundFalling {
+	
+		show_debug_message("enemy ground pounded")
+	
+		y = _enemy.y;
+		groundPounding = false;
+		groundPoundRising = false;
+		groundPoundFalling = false;
+		vspeed = 0;
+		gravity = 0;
+		jumpCount = 0;
+				
+		var _offsetX = 5;
+		
+		var _launchSpeed = -10;
+		
+		_enemy.defeated = true;
+		_enemy.xStretch = 1.5;
+		_enemy.yStretch = 0.5;
+		setOnGround(false);
+		ySpeed = _launchSpeed;
+		enemyKilledPlayer = false;
+		
+		//instance_create_layer(x - _offsetX, y, "Instances", obj_vfx_dust_groundPound);
+		//instance_create_layer(x + _offsetX, y, "Instances", obj_vfx_dust_groundPound, {image_xscale : -1});
+		
+		var _pitch = random_range(1.10, 1.20);
+		audio_play_sound(sfx_explosion, 1, 0, 1, 0, _pitch);
+		
+		var _screenShakeMagnitude = 2;
+		var _screenShakeFrames = 10;
+		
+		shakeScreen(_screenShakeMagnitude, _screenShakeFrames);
+		
 	}
 
 }
