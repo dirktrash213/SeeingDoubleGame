@@ -882,7 +882,7 @@ collidingEnemy = instance_place(x, y + ySpeed, obj_enemy);
 if collidingEnemy {
 
 	if !collidingEnemy.defeated {
-		//@
+		
 		if ySpeed > 0 && !climbing && !collidingEnemy.spikey {
 	//	if !climbing {
 	

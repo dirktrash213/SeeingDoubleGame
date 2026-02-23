@@ -811,7 +811,7 @@ function spawnGroundPoundFloorPieces() {
 			image_angle = random_range(0, 360);
 			rotationSpeed = random_range(_rotationSpeedMin, _rotationSpeedMax);
 			
-			//image_angle = _rotationSpeed;
+			depth = -10000;
 	
 		}
 	
@@ -891,12 +891,15 @@ function detectEnemyDuringGroundPound(_enemy) {
 				
 		var _offsetX = 5;
 		
-		var _launchSpeed = -10;
+		//var _launchSpeed = jumpOffEnemySpeed[1];
+		var _launchSpeed = -9;
 		
 		if _enemy.object_index != obj_enemy_beetle_dead
 		&& _enemy.object_index != obj_enemy_beetle_horned_dead _enemy.defeated = true;
-		_enemy.xStretch = 1.5;
-		_enemy.yStretch = 0.5;
+		//_enemy.xStretch = 1.5;
+		//_enemy.yStretch = 0.5;
+		_enemy.xStretch = 1.9;
+		_enemy.yStretch = 0.1;
 		setOnGround(false);
 		ySpeed = _launchSpeed;
 		enemyKilledPlayer = false;
@@ -904,7 +907,9 @@ function detectEnemyDuringGroundPound(_enemy) {
 		//instance_create_layer(x - _offsetX, y, "Instances", obj_vfx_dust_groundPound);
 		//instance_create_layer(x + _offsetX, y, "Instances", obj_vfx_dust_groundPound, {image_xscale : -1});
 		
-		instance_create_layer(x, y-15, "Instances", obj_vfx_actionLines_enemyImpact);
+		var _actionLinesOffsetY = -15;
+		
+		instance_create_layer(x, y + _actionLinesOffsetY, "Instances", obj_vfx_actionLines_enemyImpact);
 		
 		var _pitch = random_range(1.10, 1.20);
 		audio_play_sound(sfx_explosion, 1, 0, 1, 0, _pitch);
