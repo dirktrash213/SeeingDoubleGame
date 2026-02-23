@@ -13,6 +13,16 @@ if !instance_exists(enemyToCopy) {
 		}
 	
 	}
+	
+	if enemyToCopyObjectIndex == obj_enemy_beetle_horned {
+		
+		with instance_create_layer(x, y, "Instances", obj_enemy_beetle_horned_dead) {
+		
+			visible = _visible;
+		
+		}
+	
+	}
 
 	instance_destroy();
 	exit;

@@ -280,6 +280,7 @@ if groundPounding {
 	}
 	//@
 	var _detectionOffsetY = 10;
+	var _detectionOffsetYExtra = 5;
 
 	if groundPoundFalling {
 
@@ -339,6 +340,14 @@ if groundPounding {
 	
 	}
 
+	var _enemy = instance_place(x,y+_detectionOffsetY+_detectionOffsetYExtra,obj_enemy);
+	
+	detectEnemyDuringGroundPound(_enemy);
+	
+	var _enemyDoppleganger = instance_place(x,y+_detectionOffsetY+_detectionOffsetYExtra,obj_enemy_doppleganger);
+	
+	detectEnemyDuringGroundPound(_enemyDoppleganger);
+
 	var _wall = instance_place(x,y+_detectionOffsetY,obj_block_wall);
 	
 	detectFloorDuringGroundPound(_wall);
@@ -346,14 +355,6 @@ if groundPounding {
 	var _wallSemisolid = instance_place(x,y+_detectionOffsetY,obj_block_wall_semiSolid);
 	
 	detectFloorDuringGroundPound(_wallSemisolid);
-	
-	var _enemy = instance_place(x,y+_detectionOffsetY,obj_enemy);
-	
-	detectEnemyDuringGroundPound(_enemy);
-	
-	var _enemyDoppleganger = instance_place(x,y+_detectionOffsetY,obj_enemy_doppleganger);
-	
-	detectEnemyDuringGroundPound(_enemyDoppleganger);
 	
 	exit; 
 
@@ -881,7 +882,7 @@ collidingEnemy = instance_place(x, y + ySpeed, obj_enemy);
 if collidingEnemy {
 
 	if !collidingEnemy.defeated {
-
+		//@
 		if ySpeed > 0 && !climbing && !collidingEnemy.spikey {
 	//	if !climbing {
 	

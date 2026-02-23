@@ -202,7 +202,7 @@ function drawPauseMenu() {
 						draw_sprite(volumeLoudIcon, 0, _x + _offsetX + _iconOffsetX, _y + _offsetY + _spacing*3);
 				
 					} break;
-					//@
+					
 					case "Gameplay settings": {
 				
 						var _backString = "Back";
@@ -378,7 +378,7 @@ function startNewGame() {
 
 
 }
-//@
+
 function spawnPitter() {
 	
 	show_debug_message("Respawning")
@@ -492,7 +492,7 @@ function spawnPatter() {
 }
 
 
-//@
+
 function playerDefeated() {
 
 	if global.playerDefeated exit;
@@ -874,7 +874,7 @@ function detectFloorDuringGroundPound(_floor) {
 	}
 
 }
-
+//@
 function detectEnemyDuringGroundPound(_enemy) {
 
 	if _enemy != noone && groundPoundFalling {
@@ -893,7 +893,8 @@ function detectEnemyDuringGroundPound(_enemy) {
 		
 		var _launchSpeed = -10;
 		
-		_enemy.defeated = true;
+		if _enemy.object_index != obj_enemy_beetle_dead
+		&& _enemy.object_index != obj_enemy_beetle_horned_dead _enemy.defeated = true;
 		_enemy.xStretch = 1.5;
 		_enemy.yStretch = 0.5;
 		setOnGround(false);
@@ -903,6 +904,8 @@ function detectEnemyDuringGroundPound(_enemy) {
 		//instance_create_layer(x - _offsetX, y, "Instances", obj_vfx_dust_groundPound);
 		//instance_create_layer(x + _offsetX, y, "Instances", obj_vfx_dust_groundPound, {image_xscale : -1});
 		
+		instance_create_layer(x, y-15, "Instances", obj_vfx_actionLines_enemyImpact);
+		
 		var _pitch = random_range(1.10, 1.20);
 		audio_play_sound(sfx_explosion, 1, 0, 1, 0, _pitch);
 		
@@ -910,6 +913,8 @@ function detectEnemyDuringGroundPound(_enemy) {
 		var _screenShakeFrames = 10;
 		
 		shakeScreen(_screenShakeMagnitude, _screenShakeFrames);
+		
+		exit;
 		
 	}
 

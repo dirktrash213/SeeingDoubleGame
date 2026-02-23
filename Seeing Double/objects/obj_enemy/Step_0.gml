@@ -29,6 +29,8 @@ if global.paused || !active {
 
 if defeated && !beingRemoved {
 
+	//show_debug_message("being removed via parent")
+
 	beingRemoved = true;
 	alarm[0] = removeDuration;
 
