@@ -19,6 +19,8 @@ if bonked && (visible || secret) {
 		
 		}
 	
+		with obj_trigger_wrongBuzzer triggered = false;
+	
 	}
 
 	visible = true;

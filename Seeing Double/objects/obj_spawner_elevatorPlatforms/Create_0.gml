@@ -1,4 +1,4 @@
-platformRailPath = path_platform_elevator_up;
+platformRailPath = path_platform_elevator_rightCurved;
 platformSpawnRate = 120;
 platformToSpawn = obj_block_wall_semiSolid_moving_elevator;
 platformSpawnSpeed = 1.0;
