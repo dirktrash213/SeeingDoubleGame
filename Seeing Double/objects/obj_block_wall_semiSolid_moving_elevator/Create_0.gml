@@ -4,3 +4,5 @@ event_inherited();
 
 onRails = true;
 //movingOnRails = true;
+
+customePathStartPoint = 0.9;
