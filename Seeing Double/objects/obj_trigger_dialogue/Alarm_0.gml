@@ -53,6 +53,24 @@ if count == _l-1 {
 		
 	}
 	
+	if room == rm_cave_entrance { 
+		
+		with obj_interactable_switch_block_discord {
+			
+			visible = true;
+			triggered = true;
+			
+		}
+		
+		with obj_interactable_switch_block_steamPage {
+			
+			visible = true;
+			triggered = true;
+			
+		}
+		
+	}
+	
 	if room == rm_cave_miner { 
 		
 		global.dialogueVariables.talkedToMiner = true;
