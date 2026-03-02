@@ -148,6 +148,7 @@ yStretch = 1;
 stretchAdjustAmount = 0.1;
 
 spawnAfterimages = false;
+afterimageSpawnColor = c_lime;
 
 //Jumping
 
@@ -177,10 +178,12 @@ onGround = true;
 groundPounding = false;
 groundPoundRising = false;
 groundPoundFalling = false;
+groundPoundOnCooldown = false;
 
 groundPoundJumpSpeed = -3.25;
 groundPoundGravity = 0.2;
 groundPoundFallSpeed = 15;
+groundPoundCooldown = 30;
 
 canLandWithDust = false;
 timeUntilCanLandWithDust = 5;

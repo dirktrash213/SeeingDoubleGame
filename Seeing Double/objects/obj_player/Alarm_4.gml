@@ -41,7 +41,7 @@ if spawnAfterimages {
 	var _depth = depth;
 	var _xStretch = xStretch;
 	var _yStretch = yStretch;
-	var _blend = c_lime;
+	var _blend = afterimageSpawnColor;
 	
 	with instance_create_layer(x,y, "Instances", obj_vfx_afterimage) {
 	

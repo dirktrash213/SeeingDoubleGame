@@ -230,11 +230,15 @@ if ridingMinecart {
 
 }
 
-if moveDownPressed && !onGround && !groundPounding && gemPowerupGroundPound {
+if moveDownPressed && !onGround && !groundPounding && !groundPoundOnCooldown && (gemPowerupGroundPound || global.groundPoundActive) {
 
 	groundPounding = true;
 	groundPoundRising = true;
 	gemPowerupGroundPound = false;
+	
+	groundPoundOnCooldown = true;
+	alarm[6] = groundPoundCooldown;
+	
 	ySpeed = -7;
 	
 	vspeed = groundPoundJumpSpeed;
@@ -853,6 +857,7 @@ if !jump {
 
 //Jump based on the timer/holding the button (unless player is climbing)
 if jumpHoldTimer > 0 && !climbing {
+//if jumpHoldTimer > 0 && !climbing && jumpCount > 0 { //THIS MIGHT WORK BETTER BUT NEEDS TESTING FIRST
 	
 	//Constantly set ySpeed to be the jumping speed
 	ySpeed = jumpSpeed[jumpCount-1];
@@ -1320,7 +1325,7 @@ if place_meeting(x, y, obj_block_wall)
 }
 
 //Breakable floor logic
-//@
+
 // 1. Create a temporary list to hold the results
 var __breakableFloorList = ds_list_create();
 
@@ -1739,6 +1744,18 @@ if global.cutsceneActive {
 			
 			if obj_cutsceneSystem.cutsceneState == DOUBLE_JUMP_BARREL_CUTSCENE_STATE.JUMPING_OUT
 			|| obj_cutsceneSystem.cutsceneState == DOUBLE_JUMP_BARREL_CUTSCENE_STATE.POSING {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_findItem;
+				if object_index == obj_player_patter sprite_index = spr_patter_findItem;
+			
+			}
+			
+		} break;
+		
+		case CUTSCENE_ID.GROUND_POUND_BARREL: { 
+			
+			if obj_cutsceneSystem.cutsceneState == GROUND_POUND_BARREL_CUTSCENE_STATE.JUMPING_OUT
+			|| obj_cutsceneSystem.cutsceneState == GROUND_POUND_BARREL_CUTSCENE_STATE.POSING {
 			
 				if object_index == obj_player_pitter sprite_index = spr_pitter_findItem;
 				if object_index == obj_player_patter sprite_index = spr_patter_findItem;

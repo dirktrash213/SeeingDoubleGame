@@ -368,6 +368,124 @@ switch global.currentCutsceneID {
 		}
 	
 	} break;
+	
+	case CUTSCENE_ID.GROUND_POUND_BARREL: {
+	
+		switch cutsceneState {
+
+			case GROUND_POUND_BARREL_CUTSCENE_STATE.SOAKING: {
+				
+				cutsceneState = GROUND_POUND_BARREL_CUTSCENE_STATE.JUMPING_OUT;
+				
+				var _jumpDuration = 116;
+		
+				alarm[1] = _jumpDuration;
+				
+				obj_scienceJuice_groundPound.state = BARREL_STRETCH_STATE.SHOOTING;
+				
+				var _offsetY = -16;
+
+				with obj_scienceJuice_groundPound part_particles_create(global.particleSystemDevice, x, y + _offsetY, global.scienceJuiceSparksGroundPound, 100);
+				
+				audio_stop_sound(sfx_cinematic_rumble);
+				audio_play_sound(sfx_cake_firework, 1, 0);
+				
+				with obj_player {
+					
+					image_alpha = 1;
+					spawnAfterimages = true;
+					afterimageSpawnColor = c_orange;
+					alarm[4] = afterimageSpawnRate;
+					
+				}
+		
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+		
+					//obj_player_pitter.ySpeed = -5;
+					//obj_player_patter.ySpeed = -5;
+					
+					obj_player_pitter.grav = 0;
+					obj_player_patter.grav = 0;
+					
+					obj_player_pitter.vspeed = -15;
+					obj_player_patter.vspeed = -15;
+					
+					obj_player_pitter.gravity = 0.25;
+					obj_player_patter.gravity = 0.25;
+			
+				}
+		
+				//show_debug_message("done soaking")
+	
+			} break;
+	
+			case GROUND_POUND_BARREL_CUTSCENE_STATE.JUMPING_OUT: {
+				
+				//show_debug_message("posing")
+	
+				cutsceneState = GROUND_POUND_BARREL_CUTSCENE_STATE.POSING;
+				
+				var _poseDuration = 300;
+		
+				alarm[1] = _poseDuration;
+		
+				audio_play_sound(sfx_powerup, 1, 0);
+		
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+		
+					obj_player_pitter.vspeed = 0;
+					obj_player_patter.vspeed = 0;
+			
+					obj_player_pitter.gravity = 0;
+					obj_player_patter.gravity = 0;
+		
+				}
+				
+				with obj_trigger_dialogue {
+				
+					triggered = true;
+
+					alarm[0] = textDisplayDuration;
+
+				}
+				
+				with obj_player {
+					
+					spawnAfterimages = false;
+					
+				}
+		
+			} break;
+			
+			case GROUND_POUND_BARREL_CUTSCENE_STATE.POSING: {
+				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+				
+					obj_player_pitter.grav = global.playerDefaultGrav;
+					obj_player_patter.grav = global.playerDefaultGrav;
+					
+					obj_player_pitter.jumpMax = 2;
+					obj_player_patter.jumpMax = 2;
+				
+					global.groundPoundActive = true;
+			
+				}
+				
+				//audio_stop_all();
+				
+				//audio_play_sound(bgm_forest_ambience, 1, 1);
+				//audio_play_sound(bgm_inSync, 1, 1);
+				
+				audio_sound_gain(amb_cave_with_water_dripping, 0.1, 2000);
+				audio_sound_gain(obj_control.bgmCave, 0.8, 2000);
+				
+				deactivateCutscene();
+		
+			} break;
+
+		}
+
+	} break; 
 
 }
 

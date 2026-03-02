@@ -267,6 +267,22 @@ function activateCutscene() {
 		}
 	
 	}
+	
+	if room == rm_cave_groundPoundGet {
+	
+		audio_sound_gain(amb_cave_with_water_dripping, 0, 2000);
+		audio_sound_gain(obj_control.bgmCave, 0, 2000);
+		audio_play_sound(sfx_liquid_splash, 1, 0);
+		audio_play_sound(sfx_cinematic_rumble, 1, 0);
+		
+		if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+		
+			obj_player_pitter.image_alpha = 0;
+			obj_player_patter.image_alpha = 0;
+		
+		}
+	
+	}
 
 }
 
