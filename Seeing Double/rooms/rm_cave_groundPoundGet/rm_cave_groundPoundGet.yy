@@ -239,6 +239,7 @@
     {"name":"inst_37C7308F","path":"rooms/rm_cave_groundPoundGet/rm_cave_groundPoundGet.yy",},
     {"name":"inst_622ACDEA","path":"rooms/rm_cave_groundPoundGet/rm_cave_groundPoundGet.yy",},
     {"name":"inst_754ADF08","path":"rooms/rm_cave_groundPoundGet/rm_cave_groundPoundGet.yy",},
+    {"name":"inst_16066353","path":"rooms/rm_cave_groundPoundGet/rm_cave_groundPoundGet.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -471,6 +472,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5B080F3F","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_dialogue","path":"objects/obj_trigger_dialogue/obj_trigger_dialogue.yy",},"properties":[],"rotation":0.0,"scaleX":3.0,"scaleY":4.0,"x":560.0,"y":192.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6E84032B","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_dialogue","path":"objects/obj_trigger_dialogue/obj_trigger_dialogue.yy",},"properties":[],"rotation":0.0,"scaleX":3.0,"scaleY":4.0,"x":800.0,"y":800.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_45031778","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_spawner_dialogue","path":"objects/obj_spawner_dialogue/obj_spawner_dialogue.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":704.0,"y":992.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_16066353","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_warp","path":"objects/obj_trigger_warp/obj_trigger_warp.yy",},"properties":[],"rotation":0.0,"scaleX":3.0,"scaleY":1.0,"x":64.0,"y":544.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"ForegroundTiles","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":71,"SerialiseWidth":60,"TileCompressedData":[
 -72,-2147483648,1,0,-14,-2147483648,-3,0,-42,-2147483648,1,0,-59,-2147483648,-18,0,-40,-2147483648,2,0,-2147483648,-18,0,-39,-2147483648,-21,0,-39,-2147483648,-21,0,-39,-2147483648,-2,0,1,-2147483648,-18,0,-30,-2147483648,-17,0,1,-2147483648,-3,0,1,-2147483648,-8,0,-30,-2147483648,-17,0,1,-2147483648,-3,0,1,

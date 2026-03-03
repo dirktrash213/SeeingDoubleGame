@@ -210,6 +210,7 @@
     {"name":"obj_block_wall_semiSolid_moving_cave_block","order":12,"path":"objects/obj_block_wall_semiSolid_moving_cave_block/obj_block_wall_semiSolid_moving_cave_block.yy",},
     {"name":"spr_interactable_door_open","order":4,"path":"sprites/spr_interactable_door_open/spr_interactable_door_open.yy",},
     {"name":"spr_promo_capsule_header_v2","order":18,"path":"sprites/spr_promo_capsule_header_v2/spr_promo_capsule_header_v2.yy",},
+    {"name":"rm_cave_groundPoundGauntletSprings","order":73,"path":"rooms/rm_cave_groundPoundGauntletSprings/rm_cave_groundPoundGauntletSprings.yy",},
     {"name":"spr_patter_happy_animated","order":18,"path":"sprites/spr_patter_happy_animated/spr_patter_happy_animated.yy",},
     {"name":"spr_particle_leaf","order":18,"path":"sprites/spr_particle_leaf/spr_particle_leaf.yy",},
     {"name":"scribble_glyph_set","order":7,"path":"scripts/scribble_glyph_set/scribble_glyph_set.yy",},

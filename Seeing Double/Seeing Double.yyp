@@ -287,6 +287,7 @@
     {"id":{"name":"obj_block_wall_semiSolid_moving_cave_block","path":"objects/obj_block_wall_semiSolid_moving_cave_block/obj_block_wall_semiSolid_moving_cave_block.yy",},},
     {"id":{"name":"spr_interactable_door_open","path":"sprites/spr_interactable_door_open/spr_interactable_door_open.yy",},},
     {"id":{"name":"spr_promo_capsule_header_v2","path":"sprites/spr_promo_capsule_header_v2/spr_promo_capsule_header_v2.yy",},},
+    {"id":{"name":"rm_cave_groundPoundGauntletSprings","path":"rooms/rm_cave_groundPoundGauntletSprings/rm_cave_groundPoundGauntletSprings.yy",},},
     {"id":{"name":"spr_patter_happy_animated","path":"sprites/spr_patter_happy_animated/spr_patter_happy_animated.yy",},},
     {"id":{"name":"spr_particle_leaf","path":"sprites/spr_particle_leaf/spr_particle_leaf.yy",},},
     {"id":{"name":"scribble_glyph_set","path":"scripts/scribble_glyph_set/scribble_glyph_set.yy",},},
@@ -1510,6 +1511,7 @@
     {"roomId":{"name":"rm_cave_groundPoundCrystal_aboveBarrelRoom","path":"rooms/rm_cave_groundPoundCrystal_aboveBarrelRoom/rm_cave_groundPoundCrystal_aboveBarrelRoom.yy",},},
     {"roomId":{"name":"rm_cave_descendingToGroundPoundBarrel","path":"rooms/rm_cave_descendingToGroundPoundBarrel/rm_cave_descendingToGroundPoundBarrel.yy",},},
     {"roomId":{"name":"rm_cave_groundPoundGet","path":"rooms/rm_cave_groundPoundGet/rm_cave_groundPoundGet.yy",},},
+    {"roomId":{"name":"rm_cave_groundPoundGauntletSprings","path":"rooms/rm_cave_groundPoundGauntletSprings/rm_cave_groundPoundGauntletSprings.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

@@ -4,7 +4,7 @@ alarm[0] = duration;
 
 
 
-
+breakSpeed = 1;
 
 
 
