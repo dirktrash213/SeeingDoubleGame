@@ -864,6 +864,23 @@ function detectFloorDuringGroundPound(_floor) {
 			
 			show_debug_message("floor ground pounded")
 			
+			if _floor.object_index == obj_interactable_switch_block_onOffBlock {
+			
+				//show_debug_message("switch block ground pounded")
+				
+				with _floor {
+				
+					if !inert {
+	
+						bonked = true;
+						if visible || secret audio_play_sound(sfx_pause, 1, 0, 1, 0, 2.0);
+			
+					}
+				
+				}
+				
+			}
+			
 			y = _floor.y;
 			groundPounding = false;
 			groundPoundRising = false;
