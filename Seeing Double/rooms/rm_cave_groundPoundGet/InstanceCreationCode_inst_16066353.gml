@@ -1,4 +1,4 @@
-targetRoom = rm_cave_groundPoundGauntletSprings;
+targetRoom = rm_cave_groundPoundGauntlet;
 
 xEnter = 65;
 yEnter = 544;

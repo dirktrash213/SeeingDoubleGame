@@ -26,6 +26,8 @@ if fadingIn {
 		
 		//show_debug_message("Room to spawn in: " + string(asset_get_index(global.roomToSpawnIn)))
 		
+		global.roomToSpawnIn = "rm_cave_groundPoundGauntlet_horizontalElevators"; //TEMP
+		
 		room_goto(asset_get_index(global.roomToSpawnIn));
 		//room_goto(obj_player_patter.roomRespawn);
 		
