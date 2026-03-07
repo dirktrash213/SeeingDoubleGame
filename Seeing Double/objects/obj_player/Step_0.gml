@@ -68,11 +68,15 @@ if object_index == obj_player_patter && global.splitScreenActive {
 //show_debug_message("Pitter x: " + string(obj_player_pitter.x) + ", Pitter y: " + string(obj_player_pitter.y))
 //show_debug_message("Patter x: " + string(obj_player_patter.x) + ", Patter y: " + string(obj_player_patter.y))
 //show_debug_message("--------------")
-
+//@
 if object_index == obj_player_patter && global.splitScreenActive && !global.cutsceneActive {
 
+	var _verticalThreshold = 319;
+	
+	if global.customLevel _verticalThreshold = 600;
+
 	//if y < 319 && !global.verticalLevel && !global.customLevel {
-	if y < 319 && !global.verticalLevel && !global.portalsActive {
+	if y < _verticalThreshold && !global.verticalLevel && !global.portalsActive {
 		
 		obj_player_patter.image_alpha = 0;
 		obj_player_patter.canCollide = false;
@@ -1315,6 +1319,8 @@ if place_meeting(x, y, obj_block_wall)
 		//image_blend = c_blue;
 		crushed = true;
 		playerDefeated();
+		
+		show_debug_message("crush")
 	
 	}
 
