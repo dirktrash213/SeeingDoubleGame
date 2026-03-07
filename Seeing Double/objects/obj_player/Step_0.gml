@@ -856,8 +856,8 @@ if !jump {
 }
 
 //Jump based on the timer/holding the button (unless player is climbing)
-if jumpHoldTimer > 0 && !climbing {
-//if jumpHoldTimer > 0 && !climbing && jumpCount > 0 { //THIS MIGHT WORK BETTER BUT NEEDS TESTING FIRST
+//if jumpHoldTimer > 0 && !climbing {
+if jumpHoldTimer > 0 && !climbing && jumpCount > 0 { //THIS MIGHT WORK BETTER BUT NEEDS TESTING FIRST, TEMP
 	
 	//Constantly set ySpeed to be the jumping speed
 	ySpeed = jumpSpeed[jumpCount-1];
