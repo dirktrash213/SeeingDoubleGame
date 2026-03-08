@@ -13,3 +13,8 @@ canPlayAudio = true;
 audioCooldown = 5;
 
 vanishOnTimeout = false;
+
+attachedToBreakableFloor = false;
+breakableFloor = instance_nearest(x,y,obj_interactable_breakableFloor);
+
+falling = false;

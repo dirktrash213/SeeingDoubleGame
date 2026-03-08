@@ -14,3 +14,12 @@ if attachedToPlatform {
 
 
 
+		
+if attachedToBreakableFloor && !instance_exists(breakableFloor) && !falling {
+
+	falling = true;
+	
+	gravity = 0.5;
+	
+}
+

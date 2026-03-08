@@ -1,0 +1,1 @@
+attachedToBreakableFloor = true;

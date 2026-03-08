@@ -1,4 +1,4 @@
-if !active || global.playerDefeated || !other.groundPoundFalling exit;
+if !active || global.playerDefeated || !other.groundPoundFalling || falling exit;
 active = false;
 alarm[0] = cooldown;
 

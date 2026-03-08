@@ -1,0 +1,2 @@
+visible = false;
+attachedToBreakableFloor = true;
