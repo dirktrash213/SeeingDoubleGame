@@ -68,7 +68,7 @@ if object_index == obj_player_patter && global.splitScreenActive {
 //show_debug_message("Pitter x: " + string(obj_player_pitter.x) + ", Pitter y: " + string(obj_player_pitter.y))
 //show_debug_message("Patter x: " + string(obj_player_patter.x) + ", Patter y: " + string(obj_player_patter.y))
 //show_debug_message("--------------")
-//@
+
 if object_index == obj_player_patter && global.splitScreenActive && !global.cutsceneActive {
 
 	var _verticalThreshold = 319;
@@ -94,6 +94,22 @@ if object_index == obj_player_patter && global.splitScreenActive && !global.cuts
 
 getControls();
 
+if stuckOnBoulder {
+
+	//show_debug_message("player stuck on boulder")
+	
+	var _boulder = instance_nearest(x,y, obj_interactable_demoBoulder);
+	
+	if !instance_exists(_boulder) exit;
+	
+	//x = _boulder.x;
+	y = _boulder.y + _boulder.fallingSpeed;
+	
+	sprite_index = groundPoundFallBoulderSprite;
+	
+	exit;
+
+}
 
 //show_debug_message("ridingMinecart: " + string(ridingMinecart))
 if ridingMinecart {

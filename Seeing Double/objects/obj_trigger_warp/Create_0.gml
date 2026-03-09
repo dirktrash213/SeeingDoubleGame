@@ -12,3 +12,5 @@ horizontalWarp = true;
 
 switchToVertical = false;
 switchToHorizontal = false;
+
+boulderFallingWarp = false;

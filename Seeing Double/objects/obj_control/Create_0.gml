@@ -61,3 +61,5 @@ loadSettings();
 if global.fullScreen window_set_fullscreen(true);
 
 if !audio_is_playing(amb_soft_wind) audio_play_sound(amb_soft_wind, 1, 1);
+
+playerFallingWithBoulder = false; //Tracks if the player is falling with a boulder from one room to another

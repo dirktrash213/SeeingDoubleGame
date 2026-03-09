@@ -93,6 +93,7 @@ defeatSprite = spr_pitter_defeat;
 crushedSprite = spr_pitter_splat;
 groundPoundJumpSprite = spr_pitter_groundPound_jump;
 groundPoundFallSprite = spr_pitter_groundPound_fall;
+groundPoundFallBoulderSprite = spr_pitter_groundPound_fall_scared;
 
 happySprite = spr_pitter_happy_animated;
 concernSprite = spr_pitter_pause;
@@ -240,5 +241,5 @@ scaredSweating = false;
 recoveringFromFear = false;
 standingUp = false;
 
-
+stuckOnBoulder = false;
 

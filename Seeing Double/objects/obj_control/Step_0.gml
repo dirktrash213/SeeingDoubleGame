@@ -595,7 +595,14 @@ if confirm && alarm[1] > 1 && global.titleScreenCutsceneState == TITLE_SCREEN_CU
 //
 //}
 
+if playerFallingWithBoulder {
 
+	var _screenShakeMagnitude = 2;
+	var _screenShakeFrames = 2;
+
+	shakeScreen(_screenShakeMagnitude, _screenShakeFrames);
+
+}
 
 
 

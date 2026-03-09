@@ -1,3 +1,6 @@
+//obj_player.stuckOnBoulder = false;
+
+
 room_goto(targetRoom);
 part_system_clear(global.particleSystemDevice);
 
@@ -44,6 +47,13 @@ if pitterPlayerIsPresent() {
 	//}
 
 }
+
+if boulderFallingWarp {
+
+	obj_control.alarm[4] = 2;
+
+}
+
 /*
 if patterPlayerIsPresent() {
 

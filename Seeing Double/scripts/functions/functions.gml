@@ -862,7 +862,7 @@ function detectFloorDuringGroundPound(_floor) {
 	
 		if _floor.object_index != obj_interactable_groundPoundFloor {
 			
-			show_debug_message("floor ground pounded")
+			//show_debug_message("floor ground pounded")
 			
 			if _floor.object_index == obj_interactable_switch_block_onOffBlock {
 			
@@ -878,6 +878,32 @@ function detectFloorDuringGroundPound(_floor) {
 					}
 				
 				}
+				
+			}
+			
+			if _floor.object_index == obj_interactable_demoBoulder && (room != rm_cave_bigBreakableRockFloor) {
+			
+				//show_debug_message("boulder ground pounded")
+				
+				if _floor.moveDistance >= 24 {
+			//	if _floor.moveDistance >= 2 {
+				
+					//var _fallSpeed = _floor.fallingSpeed; //8
+				
+					//_floor.vspeed = _fallSpeed;
+					_floor.vspeed = _floor.fallingSpeed;
+					
+					stuckOnBoulder = true;
+					
+					ySpeed = 0;
+					
+					obj_control.playerFallingWithBoulder = true;
+				
+				}
+				
+				_floor.y += _floor.moveDistance;
+				
+				_floor.moveDistance *= 2;
 				
 			}
 			
