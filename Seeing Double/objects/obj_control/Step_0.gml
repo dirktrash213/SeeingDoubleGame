@@ -601,6 +601,29 @@ if playerFallingWithBoulder {
 	var _screenShakeFrames = 2;
 
 	shakeScreen(_screenShakeMagnitude, _screenShakeFrames);
+	
+	audio_play_sound(sfx_hurt, 1, 0, 0.4);
+	
+	var _rangeX = 3;
+	var _offsetX = random_range(-_rangeX, _rangeX);
+	var _offsetY = 16;
+		
+	//var _numberOfParticles = irandom(2);
+	var _numberOfParticles = 20;
+	
+	//show_debug_message(part_system_exists(global.particleSystemDevice))
+	
+	//if room == rm_cave_descendingOnBigBoulder && part_system_exists(global.particleSystemDevice) {
+	if room == rm_cave_descendingOnBigBoulder && instance_exists(obj_interactable_demoBoulder) {
+	
+		with obj_interactable_demoBoulder {
+	
+			part_particles_create(global.particleSystemDevice, x + _offsetX, y + _offsetY, global.particleSparkDevice, _numberOfParticles);
+			part_particles_create(global.particleSystemDevice, x + _offsetX + sprite_width, y + _offsetY, global.particleSparkDevice, _numberOfParticles);
+	
+		}
+	
+	}
 
 }
 
