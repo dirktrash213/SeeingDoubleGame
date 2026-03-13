@@ -157,6 +157,7 @@ afterimageSpawnColor = c_lime;
 grav = global.playerDefaultGrav;
 //termVelocity = 4;
 termVelocity = 3.8;
+termVelocityMinecart = 7.0;
 
 jumpMax = 1;
 jumpCount = 0;

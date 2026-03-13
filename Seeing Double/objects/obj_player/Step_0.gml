@@ -232,7 +232,7 @@ if ridingMinecart {
 	}
 	
 	ySpeed += grav;
-	if ySpeed > termVelocity ySpeed = termVelocity;
+	if ySpeed > termVelocityMinecart ySpeed = termVelocityMinecart;
 	
 	var _offsetX = 5;
 	var _offsetY = 2;
