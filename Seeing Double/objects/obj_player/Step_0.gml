@@ -113,6 +113,10 @@ if stuckOnBoulder {
 
 //show_debug_message("ridingMinecart: " + string(ridingMinecart))
 if ridingMinecart {
+	
+	//groundPounding = false;
+	//groundPoundRising = false;
+	//groundPoundFalling = false;
 
 	//show_debug_message("jumpKeyBuffered: " + string(jumpKeyBuffered))
 	//show_debug_message("jumpCount: " + string(jumpCount))

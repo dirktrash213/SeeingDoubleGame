@@ -10,6 +10,15 @@ other.ridingMinecart = true;
 other.currentMinecart = id;
 other.jumpCount = 0;
 other.faceDir = 1;
+other.moveDir = 1;
+
+other.groundPounding = false;
+other.groundPoundRising = false;
+other.groundPoundFalling = false;
+other.vspeed = 0;
+other.ySpeed = 0;
+other.gravity = 0;
+other.sprite_index = other.jumpSprite;
 
 var _offsetX = 5;
 var _offsetY = 2;

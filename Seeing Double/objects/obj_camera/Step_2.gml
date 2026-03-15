@@ -52,15 +52,53 @@ if pitterPlayerIsPresent() {
 		
 	if obj_player_pitter.moveDir == 1 {
 		
-		cameraLeadingX += cameraLeadAdjustSpeedX * _runningMult;
-		cameraLeadingX = min(cameraLeadingX, cameraLeadingXmax)
+		//cameraLeadingX += cameraLeadAdjustSpeedX * _runningMult;
+		
+		if obj_player_pitter.ridingMinecart {
+			
+			cameraLeadingX += cameraLeadAdjustSpeedMinecartX * _runningMult;
+			cameraLeadingX = min(cameraLeadingX, cameraLeadingXMinecartMax);
+			
+		} else {
+		
+			if cameraLeadingX > cameraLeadingXmax {
+			
+				cameraLeadingX -= cameraLeadAdjustSpeedX * _runningMult;
+			
+			} else {
+		
+				cameraLeadingX += cameraLeadAdjustSpeedX * _runningMult;
+				cameraLeadingX = min(cameraLeadingX, cameraLeadingXmax);
+			
+			}
+		
+		}
 		
 	}
 	
 	if obj_player_pitter.moveDir == -1 {
 		
-		cameraLeadingX -= cameraLeadAdjustSpeedX * _runningMult;
-		cameraLeadingX = max(cameraLeadingX, -cameraLeadingXmax)
+		//cameraLeadingX -= cameraLeadAdjustSpeedX * _runningMult;
+		
+		if obj_player_pitter.ridingMinecart {
+			
+			cameraLeadingX -= cameraLeadAdjustSpeedMinecartX * _runningMult;
+			cameraLeadingX = min(cameraLeadingX, -cameraLeadingXMinecartMax);
+			
+		} else {
+		
+			if cameraLeadingX < -cameraLeadingXmax {
+			
+				cameraLeadingX += cameraLeadAdjustSpeedX * _runningMult;
+			
+			} else {
+		
+				cameraLeadingX -= cameraLeadAdjustSpeedX * _runningMult;
+				cameraLeadingX = max(cameraLeadingX, -cameraLeadingXmax);
+			
+			}
+		
+		}
 		
 	}
 	
@@ -168,15 +206,53 @@ if patterPlayerIsPresent() {
 
 	if obj_player_patter.moveDir == 1 {
 		
-		cameraLeadingX += cameraLeadAdjustSpeedX;
-		cameraLeadingX = min(cameraLeadingX, cameraLeadingXmax)
+		//cameraLeadingX += cameraLeadAdjustSpeedX * _runningMult;
+		
+		if obj_player_patter.ridingMinecart {
+			
+			cameraLeadingX += cameraLeadAdjustSpeedMinecartX;
+			cameraLeadingX = min(cameraLeadingX, cameraLeadingXMinecartMax);
+			
+		} else {
+		
+			if cameraLeadingX > cameraLeadingXmax {
+			
+				cameraLeadingX -= cameraLeadAdjustSpeedX;
+			
+			} else {
+		
+				cameraLeadingX += cameraLeadAdjustSpeedX;
+				cameraLeadingX = min(cameraLeadingX, cameraLeadingXmax);
+			
+			}
+		
+		}
 		
 	}
 	
 	if obj_player_patter.moveDir == -1 {
 		
-		cameraLeadingX -= cameraLeadAdjustSpeedX;
-		cameraLeadingX = max(cameraLeadingX, -cameraLeadingXmax)
+		//cameraLeadingX -= cameraLeadAdjustSpeedX * _runningMult;
+		
+		if obj_player_patter.ridingMinecart {
+			
+			cameraLeadingX -= cameraLeadAdjustSpeedMinecartX;
+			cameraLeadingX = min(cameraLeadingX, -cameraLeadingXMinecartMax);
+			
+		} else {
+		
+			if cameraLeadingX < -cameraLeadingXmax {
+			
+				cameraLeadingX += cameraLeadAdjustSpeedX;
+			
+			} else {
+		
+				cameraLeadingX -= cameraLeadAdjustSpeedX;
+				cameraLeadingX = max(cameraLeadingX, -cameraLeadingXmax);
+			
+			}
+		
+		}
 		
 	}
 	

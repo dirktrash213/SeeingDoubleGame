@@ -221,6 +221,7 @@
     {"id":{"name":"spr_block_hider_enemy","path":"sprites/spr_block_hider_enemy/spr_block_hider_enemy.yy",},},
     {"id":{"name":"spr_particle_coinSparkleRed","path":"sprites/spr_particle_coinSparkleRed/spr_particle_coinSparkleRed.yy",},},
     {"id":{"name":"scribble_whitelist_sprite","path":"scripts/scribble_whitelist_sprite/scribble_whitelist_sprite.yy",},},
+    {"id":{"name":"path_platform_minecart_chase2","path":"paths/path_platform_minecart_chase2/path_platform_minecart_chase2.yy",},},
     {"id":{"name":"spr_enemy_skullBeetle_jump","path":"sprites/spr_enemy_skullBeetle_jump/spr_enemy_skullBeetle_jump.yy",},},
     {"id":{"name":"sfx_ghost_scream2_LOUD","path":"sounds/sfx_ghost_scream2_LOUD/sfx_ghost_scream2_LOUD.yy",},},
     {"id":{"name":"objSimpleExample","path":"objects/objSimpleExample/objSimpleExample.yy",},},
