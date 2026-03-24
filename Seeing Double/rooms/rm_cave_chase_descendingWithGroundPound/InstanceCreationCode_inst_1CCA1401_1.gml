@@ -1,9 +1,9 @@
-targetRoom = rm_cave_groundPoundGet;
+targetRoom = rm_cave_chase_bigBreakableRock;
 
-xEnter = 145;
-yEnter = 1088;
+xEnter = 144;
+yEnter = 1103;
 
-xSpawn = 145;
+xSpawn = 176;
 ySpawn = 5;
 
 horizontalWarp = false;

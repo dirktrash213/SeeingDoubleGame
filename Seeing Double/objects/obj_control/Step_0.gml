@@ -614,7 +614,7 @@ if playerFallingWithBoulder {
 	//show_debug_message(part_system_exists(global.particleSystemDevice))
 	
 	//if room == rm_cave_descendingOnBigBoulder && part_system_exists(global.particleSystemDevice) {
-	if room == rm_cave_descendingOnBigBoulder && instance_exists(obj_interactable_demoBoulder) {
+	if (room == rm_cave_descendingOnBigBoulder || room == rm_cave_chase_descendingOnBigBoulder) && instance_exists(obj_interactable_demoBoulder) {
 	
 		with obj_interactable_demoBoulder {
 	

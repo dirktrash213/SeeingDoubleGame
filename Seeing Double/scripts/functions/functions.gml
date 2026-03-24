@@ -881,7 +881,7 @@ function detectFloorDuringGroundPound(_floor) {
 				
 			}
 			
-			if _floor.object_index == obj_interactable_demoBoulder && (room != rm_cave_bigBreakableRockFloor) {
+			if _floor.object_index == obj_interactable_demoBoulder && (room != rm_cave_bigBreakableRockFloor && room != rm_cave_chase_bigBreakableRockFloor) {
 			
 				//show_debug_message("boulder ground pounded")
 				

@@ -22,6 +22,20 @@ switch (room) {
 		_spawnX2 = 176;
 
 	} break;
+	
+	case rm_cave_chase_descendingOnBigBoulder: {
+
+		_spawnX = 144;
+		_spawnX2 = 672;
+
+	} break;
+	
+	case rm_cave_chase_bigBreakableRockFloor: {
+
+		_spawnX = 176;
+		_spawnX2 = 176;
+
+	} break;
    
 }
 
