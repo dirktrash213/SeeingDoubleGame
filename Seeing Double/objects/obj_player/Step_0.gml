@@ -264,6 +264,7 @@ if moveDownPressed && !onGround && !groundPounding && !groundPoundOnCooldown && 
 	alarm[6] = groundPoundCooldown;
 	
 	ySpeed = -7;
+	//xSpeed = 0; //TEMP
 	
 	vspeed = groundPoundJumpSpeed;
 	gravity = groundPoundGravity;
@@ -295,13 +296,17 @@ if groundPounding {
 	
 	}
 	
-	if groundPoundRising && place_meeting(x, y, obj_block_wall) {
+	var _detectionBufferY = -5; //Needed to prevent player from crushing self
+	
+	if groundPoundRising && place_meeting(x, y+_detectionBufferY, obj_block_wall) { //Player hit head on ceiling before ground pound completed, cancel ground pound
 	
 		groundPounding = false;
 		groundPoundRising = false;
 		groundPoundFalling = false;
 		vspeed = 0;
 		gravity = 0;
+		
+		xSpeed = 0; //TEMP
 		
 		exit;
 	

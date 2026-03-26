@@ -1,4 +1,4 @@
-global.portalsActive = false;
+if disablePortals global.portalsActive = false;
 
 //var _nearestExitPortal = instance_nearest(x,y,obj_interactable_portal_exit);
 //var _offsetY = 10;

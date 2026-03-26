@@ -1,6 +1,6 @@
-portalID = 1;
-//patterOffsetY = -144;
-
+portalID = 0;
+patterOffsetY = global.defaultPatterOffsetY;
+disablePortals = true;
 
 
 

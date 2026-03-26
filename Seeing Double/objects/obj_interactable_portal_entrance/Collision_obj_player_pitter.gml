@@ -1,7 +1,16 @@
 global.portalsActive = true;
 
-var _nearestExitPortal = instance_nearest(x,y,obj_interactable_portal_exit);
+//var _nearestExitPortal = instance_nearest(x,y,obj_interactable_portal_exit);
+var _nearestExitPortal;
 //var _offsetY = 10;
+
+var _portalID = portalID;
+
+with obj_interactable_portal_exit {
+
+	if portalID = _portalID _nearestExitPortal = id;
+
+}
 
 
 //global.patterOffsetY = _nearestExitPortal.y - obj_player_pitter.y + _offsetY;
