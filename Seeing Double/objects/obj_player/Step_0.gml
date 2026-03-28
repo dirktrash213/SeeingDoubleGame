@@ -296,6 +296,7 @@ if groundPounding {
 	
 	}
 	
+	var _detectionBufferX = 2; //Needed to prevent player from crushing self
 	var _detectionBufferY = -5; //Needed to prevent player from crushing self
 	
 	if groundPoundRising && place_meeting(x, y+_detectionBufferY, obj_block_wall) { //Player hit head on ceiling before ground pound completed, cancel ground pound
@@ -308,10 +309,13 @@ if groundPounding {
 		
 		xSpeed = 0; //TEMP
 		
+		if place_meeting(x+_detectionBufferX, y, obj_block_wall) x -= _detectionBufferX;
+		if place_meeting(x-_detectionBufferX, y, obj_block_wall) x += _detectionBufferX;
+		
 		exit;
 	
 	}
-	//@
+	
 	var _detectionOffsetY = 10;
 	var _detectionOffsetYExtra = 5;
 

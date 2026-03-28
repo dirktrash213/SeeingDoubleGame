@@ -16,7 +16,7 @@ camera_set_view_size(VIEW2, view_width, view_height); //If the camera has zoomin
 if global.customLevel {
 
 	pitterCameraOffsetY = 272;
-	patterCameraOffsetY = 864; 
+	patterCameraOffsetY = 864; //864
 
 } else {
 
@@ -258,12 +258,12 @@ if patterPlayerIsPresent() {
 	
 	if !global.verticalLevel {
 	
-		var _customMinClampY = 592; //591
+		var _customMinClampY = 592;
 	
 		//Vars that center the camera on patter
 		var _x = clamp(obj_player_patter.x-view_width/_cameraClampValue + cameraLeadingX, 0, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
 		var _y = clamp(obj_player_patter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue);
-		if global.customLevel _y = clamp(obj_player_patter.y-view_height + 100, _customMinClampY, room_height-view_height);
+		if global.customLevel _y = clamp(obj_player_patter.y-view_height + 100, _customMinClampY, room_height-view_height-1); 
 	
 	} else {
 	

@@ -541,10 +541,10 @@ gamepad_button_check_pressed(global.controllerPort,gp_start) {
 }
 
 #endregion
-
+//@
 if global.customLevel {
 
-	global.patterOffsetY = 591; 
+	global.patterOffsetY = global.defaultCustomLevelPatterOffsetY;
 
 } else {
 
