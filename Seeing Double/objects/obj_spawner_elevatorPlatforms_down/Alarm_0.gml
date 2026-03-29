@@ -9,6 +9,7 @@ with instance_create_layer(x, y, "Instances", platformToSpawn) {
 	visible = _visible;
 	railPath = path_platform_elevator_down;
 	path_start(railPath, _platformSpawnSpeed, path_action_stop, false);
+	//path_start(path_platform_elevator_down_fast, _platformSpawnSpeed, path_action_stop, false);
 
 
 }

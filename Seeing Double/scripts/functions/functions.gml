@@ -864,7 +864,8 @@ function detectFloorDuringGroundPound(_floor) {
 			
 			//show_debug_message("floor ground pounded")
 			
-			if _floor.object_index == obj_interactable_switch_block_onOffBlock {
+			if _floor.object_index == obj_interactable_switch_block_onOffBlock 
+			|| _floor.object_index == obj_interactable_switch_block_tempActivator_oneTimeUse {
 			
 				//show_debug_message("switch block ground pounded")
 				
