@@ -883,6 +883,7 @@
     {"name":"rm_cave_spikeyEnemies","order":50,"path":"rooms/rm_cave_spikeyEnemies/rm_cave_spikeyEnemies.yy",},
     {"name":"SP103_04","order":3,"path":"sprites/SP103_04/SP103_04.yy",},
     {"name":"spr_interactable_breakableFloorWide","order":72,"path":"sprites/spr_interactable_breakableFloorWide/spr_interactable_breakableFloorWide.yy",},
+    {"name":"rm_cave_chase_longRun","order":94,"path":"rooms/rm_cave_chase_longRun/rm_cave_chase_longRun.yy",},
     {"name":"obj_interactable_plant_v4","order":4,"path":"objects/obj_interactable_plant_v4/obj_interactable_plant_v4.yy",},
     {"name":"obj_background_cloud_v3","order":3,"path":"objects/obj_background_cloud_v3/obj_background_cloud_v3.yy",},
     {"name":"_51","order":46,"path":"sprites/_51/_51.yy",},

@@ -1008,6 +1008,7 @@
     {"id":{"name":"rm_cave_spikeyEnemies","path":"rooms/rm_cave_spikeyEnemies/rm_cave_spikeyEnemies.yy",},},
     {"id":{"name":"SP103_04","path":"sprites/SP103_04/SP103_04.yy",},},
     {"id":{"name":"spr_interactable_breakableFloorWide","path":"sprites/spr_interactable_breakableFloorWide/spr_interactable_breakableFloorWide.yy",},},
+    {"id":{"name":"rm_cave_chase_longRun","path":"rooms/rm_cave_chase_longRun/rm_cave_chase_longRun.yy",},},
     {"id":{"name":"obj_interactable_plant_v4","path":"objects/obj_interactable_plant_v4/obj_interactable_plant_v4.yy",},},
     {"id":{"name":"obj_background_cloud_v3","path":"objects/obj_background_cloud_v3/obj_background_cloud_v3.yy",},},
     {"id":{"name":"_51","path":"sprites/_51/_51.yy",},},
@@ -1581,6 +1582,7 @@
     {"roomId":{"name":"rm_cave_chase_narrowDescentFloor","path":"rooms/rm_cave_chase_narrowDescentFloor/rm_cave_chase_narrowDescentFloor.yy",},},
     {"roomId":{"name":"rm_cave_chase_rustySprings","path":"rooms/rm_cave_chase_rustySprings/rm_cave_chase_rustySprings.yy",},},
     {"roomId":{"name":"rm_cave_chase_timedBlocks","path":"rooms/rm_cave_chase_timedBlocks/rm_cave_chase_timedBlocks.yy",},},
+    {"roomId":{"name":"rm_cave_chase_longRun","path":"rooms/rm_cave_chase_longRun/rm_cave_chase_longRun.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [
