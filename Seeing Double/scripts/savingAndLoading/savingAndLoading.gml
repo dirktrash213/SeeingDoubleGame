@@ -167,7 +167,7 @@ function saveRoom() {
 	struct_set(global.gameData.roomData, room_get_name(room), _dataArray);
 	
 }
-
+//@
 function saveGame(){
 
 	saveRoom();
@@ -199,6 +199,20 @@ function saveGame(){
 	file_text_write_real(_file, global.escapedForestGhost);
 	file_text_writeln(_file);
 	file_text_write_real(_file, global.foundRose);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.groundPoundActive);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.foundLily);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.dashActive);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.foundForgetMeNot);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.crouchJumpActive);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.foundSunflower);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.foundTulip);
 	file_text_writeln(_file);
 
 	file_text_write_string(_file, _dataJsonString);
@@ -244,7 +258,7 @@ function loadRoom(){
 	}
 
 }
-
+//@
 function loadGame(){
 
 	if file_exists("save.txt") {
@@ -274,6 +288,20 @@ function loadGame(){
 		global.escapedForestGhost = file_text_read_real(_file);
 		file_text_readln(_file);
 		global.foundRose = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.groundPoundActive = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.foundLily = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.dashActive = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.foundForgetMeNot = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.crouchJumpActive = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.foundSunflower = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.foundTulip = file_text_read_real(_file);
 		file_text_readln(_file);
 		
 		var _dataJsonString = file_text_read_string(_file);

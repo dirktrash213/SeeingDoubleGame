@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_background_controlsDisplay_D",
-    "path": "sprites/spr_background_controlsDisplay_D/spr_background_controlsDisplay_D.yy",
+    "name": "spr_background_controlsDisplay_S",
+    "path": "sprites/spr_background_controlsDisplay_S/spr_background_controlsDisplay_S.yy",
   },
   "spriteMaskId": null,
   "visible": true,

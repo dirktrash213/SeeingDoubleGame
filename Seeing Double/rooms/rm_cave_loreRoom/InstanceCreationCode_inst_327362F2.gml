@@ -1,0 +1,1 @@
+if global.foundLily instance_destroy();

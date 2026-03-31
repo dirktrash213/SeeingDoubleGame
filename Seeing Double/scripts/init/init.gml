@@ -135,8 +135,10 @@ global.escapedForestGhost = false;
 
 global.solvedCavePuzzle = false;
 
-
 global.foundRose = false;
 global.foundLily = false;
+global.foundForgetMeNot = false;
+global.foundSunflower = false;
+global.foundTulip = false;
 
 // r/playtester 
