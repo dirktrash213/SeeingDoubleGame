@@ -17,7 +17,7 @@ if global.dialogueVariables.beatMinigame && room == rm_forest_canopyUpperFloor_e
 	
 	dialogueString = [];
 
-	dialogueString[0] = "[rainbow]Congratulations![/rainbow] Quite the problem solver you are! Here is your wonderful prize!"
+	dialogueString[0] = "[rainbow]Congratulations![/rainbow] Quite the problem solver you are! Here is your wonderful prize!";
 	//dialogueString[1] = "Enjoy this state of the art parachute. And no refunds!"
 	//dialogueString[2] = "This is even more sample dialogue."
 

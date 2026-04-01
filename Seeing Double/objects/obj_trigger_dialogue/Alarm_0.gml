@@ -2,6 +2,7 @@ var _l = array_length(dialogueString);
 
 if count == _l-1 {
 	
+	//Edge cases
 	if room == rm_hills_secretKeyCard {
 		
 		if global.dialogueVariables.talkedToSmallGhost global.dialogueVariables.talkedToSmallGhostTwice = true;
@@ -104,8 +105,62 @@ if count == _l-1 {
 
 
 count++;
+//@
 
-alarm[0] = textDisplayDuration;
+if variableTextDisplayDuration {
+
+	switch dialogueString[count] {
+		
+		case "Well, on the bright side, at least I won't run into that blue sucker I scammed in the forest. Heh, what a grade-A sap...": {
+	      
+			alarm[0] = textDisplayDuration;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pleading;
+		
+		} break;
+		
+		case "Oh... it's just a pretty little lady. Well how do [slant]you[/slant] do, ma'am? Lookin' to buy some authentic jewelry?": {
+	      
+			alarm[0] = textDisplayDuration;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer;
+		
+		} break;
+		
+		case "Hm? What's that? Bluey was your husband? And you overheard what I said about scamming him?": {
+	      
+			alarm[0] = textDisplayDuration;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pensive;
+		
+		} break;
+			
+		case "HA! So [slant]what[/slant] if I did? Sorry to break it to ya, missy, but all sales are final! He can chalk it up as a learning experience!": {
+	      
+			alarm[0] = textDisplayDuration;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_laugh;
+		
+		} break;
+		
+		case "Oh, what now? What are you gonna do, [c_orange]pound[/color] the money out of me!? I'd like to see you try!!": {
+	      
+			alarm[0] = textDisplayDuration;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer;
+		
+		} break;
+	
+		default: {
+		
+			//show_debug_message("Default duration value")
+			alarm[0] = textDisplayDuration;
+	
+		} break;
+	
+	}
+
+} else {
+
+	//show_debug_message("No variable text duration")
+	alarm[0] = textDisplayDuration;
+
+}
 
 
 

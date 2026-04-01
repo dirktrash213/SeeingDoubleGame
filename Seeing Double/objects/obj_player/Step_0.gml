@@ -1895,7 +1895,105 @@ if global.cutsceneActive {
 			}
 			
 		} break;
+		//@
+		case CUTSCENE_ID.CAVES_HAUNTING: { 
+			
+			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_CUTSCENE_STATE.LOOKING_AT_SCAMMER {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+				if object_index == obj_player_patter sprite_index = spr_patter_forward;
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_CUTSCENE_STATE.WALKING_TO_SCAMMER {
+			
+				if global.gotScammed {
+					
+					if object_index == obj_player_pitter sprite_index = spr_pitter_walk;
+					if object_index == obj_player_patter sprite_index = spr_patter_walk;
+				
+				} else {
+				
+					if object_index == obj_player_pitter sprite_index = spr_pitter_walk;
+					if object_index == obj_player_patter sprite_index = spr_patter_walk;
+				
+				}
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_CUTSCENE_STATE.BEHIND_SCAMMER {
+			
+				if global.gotScammed {
+				
+					if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+					
+					if object_index == obj_player_patter {
+						
+						if obj_trigger_dialogue.count == 2 {
+					
+							sprite_index = spr_patter_angry;
+					
+						} else {
+						
+							sprite_index = spr_patter_forward;
+						
+						}
+						
+					}
+				
+				} else {
+				
+					if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+					if object_index == obj_player_patter sprite_index = spr_patter_forward;
+				
+				}
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_CUTSCENE_STATE.POKING_SCAMMER {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+				if object_index == obj_player_patter sprite_index = spr_patter_poke_angry;
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_CUTSCENE_STATE.TALKING_TO_SCAMMER {
+			
+				if object_index == obj_player_pitter {
+					
+					sprite_index = spr_pitter_forward;
+					
+				}
+				
+				if object_index == obj_player_patter {
+					
+					if obj_trigger_dialogue.count == 4 {
+					
+						aboutToBeatUpScammer = true;
+						sprite_index = spr_patter_veryAngry;
+					
+					} else {
+						
+						sprite_index = spr_patter_angry;
+						
+					}
+					
+				}
+			
+			}
+			
+		} break;
 		
+	}
+	
+	if aboutToBeatUpScammer {
+	
+		var _vibrateRange = 0.1;
+
+		var _offsetX = random_range(-_vibrateRange, _vibrateRange);
+		
+		sprite_set_offset(spr_patter_veryAngry, 8+_offsetX, 16)
+	
 	}
 
 }

@@ -128,6 +128,7 @@ global.dialogueVariables = {
 }
 
 global.gotScammed = false;
+//global.gotScammed = true;
 global.solvedForestPuzzle = false;
 
 global.caughtByForestGhost = false;

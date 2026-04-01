@@ -1,4 +1,4 @@
-/// @description Cutscene progression
+//Cutscene progression
 
 switch global.currentCutsceneID {
 
@@ -65,7 +65,7 @@ switch global.currentCutsceneID {
 		switch cutsceneState {
 
 			case DOUBLE_JUMP_BARREL_CUTSCENE_STATE.SOAKING: {
-				//@
+				
 				cutsceneState = DOUBLE_JUMP_BARREL_CUTSCENE_STATE.JUMPING_OUT;
 				
 				var _jumpDuration = 116;
@@ -176,7 +176,7 @@ switch global.currentCutsceneID {
 		}
 
 	} break; 
-	
+	//@
 	case CUTSCENE_ID.FOREST_HAUNTING: {
 	
 		switch cutsceneState { 
@@ -486,6 +486,141 @@ switch global.currentCutsceneID {
 		}
 
 	} break; 
+	//@
+	case CUTSCENE_ID.CAVES_HAUNTING: {
+	
+		switch cutsceneState { 
+			
+			case CAVES_HAUNTING_CUTSCENE_STATE.LOOKING_AT_SCAMMER: {
+				
+				cutsceneState = CAVES_HAUNTING_CUTSCENE_STATE.WALKING_TO_SCAMMER;
+				
+				var _walkDuration = 60;
+				
+				alarm[1] = _walkDuration;
+				
+				with obj_trigger_dialogue {
+				
+					triggered = true;
+
+					alarm[0] = textDisplayDuration;
+
+				}
+				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+				
+					obj_player_pitter.hspeed = 1;
+					
+				}
+		
+			} break;
+			
+			case CAVES_HAUNTING_CUTSCENE_STATE.WALKING_TO_SCAMMER: {
+				
+				cutsceneState = CAVES_HAUNTING_CUTSCENE_STATE.BEHIND_SCAMMER;
+				
+				var _lookDuration = 1000;
+				
+				alarm[1] = _lookDuration;
+				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+			
+					obj_player_pitter.hspeed = 0;
+					
+				}
+				
+			} break;
+			
+			case CAVES_HAUNTING_CUTSCENE_STATE.BEHIND_SCAMMER: {
+				
+				cutsceneState = CAVES_HAUNTING_CUTSCENE_STATE.POKING_SCAMMER;
+				
+				var _duration = 60;
+				
+				alarm[1] = _duration;
+				
+				with obj_trigger_dialogue {
+				
+					count = 0;
+					alarm[0] = textDisplayDuration;
+					dialogueString = [];
+					
+					if global.gotScammed {
+
+						dialogueString[0] = "WAH!";
+						
+					} else {
+
+						dialogueString[0] = "Player was not scammed.";
+
+					}
+
+				}
+				
+				with obj_npc_scammer_mines {
+				
+					image_xscale = 1;
+					sprite_index = spr_npc_scammer_shocked;
+					
+					vspeed = vSpeedAmount;
+					gravity = gravAmount;
+				
+				}
+				
+			} break;
+			
+			case CAVES_HAUNTING_CUTSCENE_STATE.POKING_SCAMMER: {
+				
+				cutsceneState = CAVES_HAUNTING_CUTSCENE_STATE.TALKING_TO_SCAMMER;
+				
+				var _duration = 1600;
+				
+				alarm[1] = _duration;
+				
+				with obj_trigger_dialogue {
+				
+					var _customTextDisplayDuration = 120;
+				
+					count = 0;
+					alarm[0] = _customTextDisplayDuration;
+					dialogueString = [];
+					
+					if global.gotScammed {
+
+						//dialogueString[0] = "[shake]YOU!? HOW!?";
+						//dialogueString[1] = "I, um, take it you weren't fully satisfied with your state of the art unbreakable parachute?";
+						//dialogueString[2] = "Well, sorry to break it to ya, chump, but all sales are final! Chalk it up as a learning experience, bub!";
+						//dialogueString[3] = "Oh, what now? What are you gonna do, [c_orange]pound[/color] the money out of me!? I'd like to see you try!!";
+						
+						dialogueString[0] = "[shake]WHO'S THERE!?";
+						dialogueString[1] = "Oh... it's just a pretty little lady. Well how do [slant]you[/slant] do, ma'am? Lookin' to buy some authentic jewelry?";
+					//	dialogueString[2] = "Hm? Scammer? Me? How preposterous! I'll have you know all of my wares";
+						//dialogueString[2] = "Hm? What's that? Bluey was your husband? And you overheard what I said about scamming him?";
+						dialogueString[2] = "Hm? What's that? Bluey was your husband? And you overheard what I said about scamming him?";
+						//dialogueString[3] = "So what if I did? Sorry to break it to ya, missy, but all sales are final! He can chalk it up as a learning experience!";
+						dialogueString[3] = "HA! So [slant]what[/slant] if I did? Sorry to break it to ya, missy, but all sales are final! He can chalk it up as a learning experience!";
+						dialogueString[4] = "Oh, what now? What are you gonna do, [c_orange]pound[/color] the money out of me!? I'd like to see you try!!";
+						
+
+					} else {
+
+						dialogueString[0] = "Player was not scammed.";
+
+					}
+
+				}
+				
+			} break;
+			
+			case CAVES_HAUNTING_CUTSCENE_STATE.TALKING_TO_SCAMMER: {
+			
+				deactivateCutscene();
+			
+			}
+			
+		}
+	
+	} break;
 
 }
 

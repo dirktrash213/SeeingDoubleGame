@@ -1,0 +1,1 @@
+attachToNPC = true;

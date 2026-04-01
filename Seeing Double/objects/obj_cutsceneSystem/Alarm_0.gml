@@ -53,6 +53,16 @@ switch global.currentCutsceneID {
 		if patterPlayerIsPresent() instance_create_layer(obj_player_patter.x, 528, "Instances", obj_background_elipses);
 
 	} break;
+	
+	case CUTSCENE_ID.CAVES_HAUNTING: {
+		
+		cutsceneState = CAVES_HAUNTING_CUTSCENE_STATE.LOOKING_AT_SCAMMER;
+		
+		alarm[1] = 140;
+		
+		if pitterPlayerIsPresent() instance_create_layer(obj_player_pitter.x, obj_player_pitter.y - 20, "Instances", obj_background_elipses);
+
+	} break;
 
 
 }
