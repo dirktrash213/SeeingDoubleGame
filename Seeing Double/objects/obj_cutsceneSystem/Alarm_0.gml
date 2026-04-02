@@ -64,6 +64,24 @@ switch global.currentCutsceneID {
 
 	} break;
 	
+	case CUTSCENE_ID.CAVES_HAUNTING_PART2: {
+		
+		cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.WALKING_BACK;
+		
+		alarm[1] = 45;
+		
+		if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+		
+			obj_player_pitter.hspeed = -1;
+			obj_player_pitter.image_xscale = -1;
+			
+			obj_player_patter.hspeed = -1;
+			obj_player_patter.image_xscale = -1;
+		
+		}
+
+	} break;
+	
 	case CUTSCENE_ID.GO_BEAT_UP_SCAMMER_FIRST: {
 		
 		cutsceneState = GO_BEAT_UP_SCAMMER_FIRST_CUTSCENE_STATE.SHAKING_HEAD;

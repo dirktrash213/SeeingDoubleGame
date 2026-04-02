@@ -1013,12 +1013,11 @@ function detectScammerDuringGroundPound(_scammer) {
 		
 		with obj_trigger_dialogue {
 		
-			//var _text = "OW, WHAT THE HELL!? STOP THAT!";
-			var _text = choose("OW, OW, STOP!", "OW, MY COINS!", "THE PAIN!", "UNCLE, UNCLE!", "OW, MY HEAD!", "OW, PLEASE LADY!");
+			var _text = choose("OW, OW, STOP!", "MY COINS!", "SO MUCH PAIN!", "UNCLE, UNCLE!", "MY HEAD!", "OW, PLEASE LADY!", "IT HURTS!", "OW, MOMMY!!");
 			
 			while _text == dialogueString[0] {
 			
-				_text = choose("OW, OW, STOP!", "OW, MY COINS!", "THE PAIN!", "UNCLE, UNCLE!", "OW, MY HEAD!", "OW, PLEASE LADY!");
+				_text = choose("OW, OW, STOP!", "MY COINS!", "SO MUCH PAIN!", "UNCLE, UNCLE!", "MY HEAD!", "OW, PLEASE LADY!", "IT HURTS!", "OW, MOMMY!!");
 			
 			}
 		
@@ -1027,6 +1026,34 @@ function detectScammerDuringGroundPound(_scammer) {
 			dialogueString = [];
 			//dialogueString[0] = _scammerGroundPoundCount == 1 ? "OW, WHAT THE HELL!? STOP THAT!" : choose("OW, OW, STOP!", "OW, MY COINS!", "THE PAIN!", "UNCLE, UNCLE!", "OW, MY HEAD!", "OW, PLEASE LADY!");
 			dialogueString[0] = _scammerGroundPoundCount == 1 ? "OW, WHAT THE HELL!? STOP THAT!" : _text;
+			
+			if _scammerGroundPoundCount >= 10 {
+			
+				var _cutsceneID = 10;
+				var _delay = 10;
+				
+				global.currentCutsceneID = CUTSCENE_ID.CAVES_HAUNTING_PART2;	
+				obj_cutsceneSystem.alarm[0] = _delay;	
+				
+				obj_player_patter.aboutToBeatUpScammer = false;
+				
+				dialogueString[0] = global.dialogueStringArrays.cavesHauntingPart2[0];
+				dialogueString[1] = global.dialogueStringArrays.cavesHauntingPart2[1];
+				dialogueString[2] = global.dialogueStringArrays.cavesHauntingPart2[2];
+				dialogueString[3] = global.dialogueStringArrays.cavesHauntingPart2[3];
+				dialogueString[4] = global.dialogueStringArrays.cavesHauntingPart2[4];
+				dialogueString[5] = global.dialogueStringArrays.cavesHauntingPart2[5];
+				
+				
+				//dialogueString[0] = "NO MORE, PLEASE! I YIELD! I YIEEEEEELD!!";
+				//dialogueString[1] = "I'm sorry for scamming your husband, miss!! I won't scam anyone ever again, I promise!!";
+				//dialogueString[2] = "Look, I'll even throw in my best parachute, on the house. This one actually works, for real! Just please no more beatings!";
+				//dialogueString[3] = "It is a one time use though. B-but I'm sure it'll come in handy sooner or later!";
+				//dialogueString[4] = "Sheesh, lady. I'm gonna be feeling that next morning. You really care about Bluey, eh? How touching. Makes me wanna barf.";
+				//dialogueString[5] = "So, uh. Any chance you know how to get us out of this dump?";
+			
+			
+			}
 		
 		}
 	

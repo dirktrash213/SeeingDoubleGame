@@ -2011,6 +2011,30 @@ if global.cutsceneActive {
 			
 		} break;
 		
+		case CUTSCENE_ID.CAVES_HAUNTING_PART2: { 
+			
+			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_PART2_CUTSCENE_STATE.WALKING_BACK {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_walk;
+				if object_index == obj_player_patter sprite_index = spr_patter_walk_veryAngry;
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_PART2_CUTSCENE_STATE.HEARING_SCAMMER_BEG {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+				if object_index == obj_player_patter {
+				
+					if obj_trigger_dialogue.count <= 3 sprite_index = spr_patter_veryAngry;
+					if obj_trigger_dialogue.count == 4 sprite_index = spr_patter_angry;
+					if obj_trigger_dialogue.count == 5 sprite_index = spr_patter_forward;
+				
+				}
+			
+			}
+			
+		} break;
+		
 	}
 	
 	if aboutToBeatUpScammer {

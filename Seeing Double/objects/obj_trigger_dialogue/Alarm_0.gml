@@ -107,42 +107,57 @@ if count == _l-1 {
 count++;
 //@
 
+//For line-specific text display durations/sprite expressions, use below block
 if variableTextDisplayDuration {
 
-	switch dialogueString[count] {
+	switch dialogueString[count] { //Check which dialogue string is currently displaying
 		
-		case "Well, on the bright side, at least I won't run into that blue sucker I scammed in the forest. Heh, what a grade-A sap...": {
+		case global.dialogueStringArrays.cavesHaunting[2]: { //Dialogue strings can be found in the dialogueStrings script
 	      
 			alarm[0] = textDisplayDuration;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pleading;
 		
 		} break;
 		
-		case "Oh... it's just a pretty little lady. Well how do [slant]you[/slant] do, ma'am? Lookin' to buy some authentic jewelry?": {
+		case global.dialogueStringArrays.cavesHaunting[5]: {
 	      
 			alarm[0] = textDisplayDuration;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer;
 		
 		} break;
 		
-		case "Hm? What's that? Bluey was your husband? And you overheard what I said about scamming him?": {
+		case global.dialogueStringArrays.cavesHaunting[6]: {
 	      
 			alarm[0] = textDisplayDuration;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pensive;
 		
 		} break;
 			
-		case "HA! So [slant]what[/slant] if I did? Sorry to break it to ya, missy, but all sales are final! He can chalk it up as a learning experience!": {
+		case global.dialogueStringArrays.cavesHaunting[7]: {
 	      
 			alarm[0] = textDisplayDuration;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_laugh;
 		
 		} break;
 		
-		case "Oh, what now? What are you gonna do, [c_orange]pound[/color] the money out of me!? I'd like to see you try!!": {
+		case global.dialogueStringArrays.cavesHaunting[8]: {
 	      
 			alarm[0] = textDisplayDuration;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer;
+		
+		} break;
+		
+		case global.dialogueStringArrays.cavesHauntingPart2[2]: {
+	      
+			alarm[0] = textDisplayDuration;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_scared;
+		
+		} break;
+		
+		case global.dialogueStringArrays.cavesHauntingPart2[3]: {
+	      
+			alarm[0] = textDisplayDuration;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pensive;
 		
 		} break;
 	

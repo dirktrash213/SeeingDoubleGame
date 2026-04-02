@@ -659,6 +659,7 @@
     {"name":"__scribble_sprite_get_texture_index","order":17,"path":"scripts/__scribble_sprite_get_texture_index/__scribble_sprite_get_texture_index.yy",},
     {"name":"spr_capsule_small_v6","order":5,"path":"sprites/spr_capsule_small_v6/spr_capsule_small_v6.yy",},
     {"name":"font_pauseMenu","order":1,"path":"fonts/font_pauseMenu/font_pauseMenu.yy",},
+    {"name":"dialogueStrings","order":14,"path":"scripts/dialogueStrings/dialogueStrings.yy",},
     {"name":"obj_shopItem_parachute","order":1,"path":"objects/obj_shopItem_parachute/obj_shopItem_parachute.yy",},
     {"name":"robo_factory_bit_03","order":34,"path":"sprites/robo_factory_bit_03/robo_factory_bit_03.yy",},
     {"name":"spr_pitterAndPatter_coverArt","order":108,"path":"sprites/spr_pitterAndPatter_coverArt/spr_pitterAndPatter_coverArt.yy",},

@@ -6,12 +6,9 @@ typist.sound(sfx_footstep, false, 1.5, 1.7);
 
 if global.gotScammed {
 
-	dialogueString[0] = "Well, salt my eggs. This is not good I tell ya, [slant]not[/slant] good! What was I [slant]thinkin'[/slant], followin' that yellow moron?";
-	//dialogueString[0] = "Crap! I done went and got myself lost! What was I [slant]thinkin'[/slant], followin' that yellow idiot?";
-	//dialogueString[0] = "Oh, crap. This is not good I tell ya, [slant]not[/slant] good!";
-	//dialogueString[1] = "What was I thinkin', followin' that yellow idiot? I'm totally lost!";
-	dialogueString[1] = "Now I done went and fell in some weird portal and got myself lost! I'm a goner for sure! No one's gonna find me down here!";
-	dialogueString[2] = "Well, on the bright side, at least I won't run into that blue sucker I scammed in the forest. Heh, what a grade-A sap...";
+	dialogueString[0] = global.dialogueStringArrays.cavesHaunting[0];
+	dialogueString[1] = global.dialogueStringArrays.cavesHaunting[1];
+	dialogueString[2] = global.dialogueStringArrays.cavesHaunting[2];
 
 } else {
 

@@ -766,6 +766,7 @@
     {"id":{"name":"__scribble_sprite_get_texture_index","path":"scripts/__scribble_sprite_get_texture_index/__scribble_sprite_get_texture_index.yy",},},
     {"id":{"name":"spr_capsule_small_v6","path":"sprites/spr_capsule_small_v6/spr_capsule_small_v6.yy",},},
     {"id":{"name":"font_pauseMenu","path":"fonts/font_pauseMenu/font_pauseMenu.yy",},},
+    {"id":{"name":"dialogueStrings","path":"scripts/dialogueStrings/dialogueStrings.yy",},},
     {"id":{"name":"obj_shopItem_parachute","path":"objects/obj_shopItem_parachute/obj_shopItem_parachute.yy",},},
     {"id":{"name":"robo_factory_bit_03","path":"sprites/robo_factory_bit_03/robo_factory_bit_03.yy",},},
     {"id":{"name":"spr_pitterAndPatter_coverArt","path":"sprites/spr_pitterAndPatter_coverArt/spr_pitterAndPatter_coverArt.yy",},},

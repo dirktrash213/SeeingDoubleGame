@@ -547,7 +547,7 @@ switch global.currentCutsceneID {
 					
 					if global.gotScammed {
 
-						dialogueString[0] = "WAH!";
+						dialogueString[0] = global.dialogueStringArrays.cavesHaunting[3];
 						
 					} else {
 
@@ -592,14 +592,11 @@ switch global.currentCutsceneID {
 						//dialogueString[2] = "Well, sorry to break it to ya, chump, but all sales are final! Chalk it up as a learning experience, bub!";
 						//dialogueString[3] = "Oh, what now? What are you gonna do, [c_orange]pound[/color] the money out of me!? I'd like to see you try!!";
 						
-						dialogueString[0] = "[shake]WHO'S THERE!?";
-						dialogueString[1] = "Oh... it's just a pretty little lady. Well how do [slant]you[/slant] do, ma'am? Lookin' to buy some authentic jewelry?";
-					//	dialogueString[2] = "Hm? Scammer? Me? How preposterous! I'll have you know all of my wares";
-						//dialogueString[2] = "Hm? What's that? Bluey was your husband? And you overheard what I said about scamming him?";
-						dialogueString[2] = "Hm? What's that? Bluey was your husband? And you overheard what I said about scamming him?";
-						//dialogueString[3] = "So what if I did? Sorry to break it to ya, missy, but all sales are final! He can chalk it up as a learning experience!";
-						dialogueString[3] = "HA! So [slant]what[/slant] if I did? Sorry to break it to ya, missy, but all sales are final! He can chalk it up as a learning experience!";
-						dialogueString[4] = "Oh, what now? What are you gonna do, [c_orange]pound[/color] the money out of me!? I'd like to see you try!!";
+						dialogueString[0] = global.dialogueStringArrays.cavesHaunting[4];
+						dialogueString[1] = global.dialogueStringArrays.cavesHaunting[5];
+						dialogueString[2] = global.dialogueStringArrays.cavesHaunting[6];
+						dialogueString[3] = global.dialogueStringArrays.cavesHaunting[7];
+						dialogueString[4] = global.dialogueStringArrays.cavesHaunting[8];
 						
 
 					} else {
@@ -669,6 +666,36 @@ switch global.currentCutsceneID {
 				deactivateCutscene();
 			
 			}
+			
+		}
+		
+	} break;
+	
+	case CUTSCENE_ID.CAVES_HAUNTING_PART2: {
+		
+		switch cutsceneState { 
+			
+			case CAVES_HAUNTING_PART2_CUTSCENE_STATE.WALKING_BACK: {
+				
+				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.HEARING_SCAMMER_BEG;
+				
+				var _duration = 2000;
+				
+				alarm[1] = _duration;
+				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+					
+					obj_player_pitter.hspeed = 0;
+					obj_player_pitter.image_xscale = 1;
+					obj_player_pitter.faceDir = 1;
+					
+					obj_player_patter.hspeed = 0;
+					obj_player_patter.image_xscale = 1;
+					obj_player_patter.faceDir = 1;
+					
+				}
+				
+			} break;
 			
 		}
 		
