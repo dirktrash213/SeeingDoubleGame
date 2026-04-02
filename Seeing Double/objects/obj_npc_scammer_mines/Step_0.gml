@@ -1,3 +1,5 @@
+normalizeStretching();
+
 if y > ystart {
 
 	y = ystart;
@@ -6,4 +8,8 @@ if y > ystart {
 
 }
 
+if lookingAtPlayer {
 
+	image_xscale = obj_player_pitter.x > x ? -1 : 1;
+
+}

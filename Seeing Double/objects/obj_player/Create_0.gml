@@ -245,3 +245,4 @@ standingUp = false;
 stuckOnBoulder = false;
 
 aboutToBeatUpScammer = false;
+scammerGroundPoundCount = 0;

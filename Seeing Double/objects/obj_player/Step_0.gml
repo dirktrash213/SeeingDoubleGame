@@ -376,7 +376,16 @@ if groundPounding {
 		ds_list_destroy(__groundPoundFloorList);
 	
 	}
+	//@
 
+	if aboutToBeatUpScammer {
+	
+		var _scammer = instance_place(x,y+_detectionOffsetY+_detectionOffsetYExtra,obj_npc_scammer_mines);
+	
+		detectScammerDuringGroundPound(_scammer);
+	
+	}
+	
 	var _enemy = instance_place(x,y+_detectionOffsetY+_detectionOffsetYExtra,obj_enemy);
 	
 	detectEnemyDuringGroundPound(_enemy);
@@ -1979,6 +1988,24 @@ if global.cutsceneActive {
 					}
 					
 				}
+			
+			}
+			
+		} break;
+		
+		case CUTSCENE_ID.GO_BEAT_UP_SCAMMER_FIRST: { 
+			
+			if obj_cutsceneSystem.cutsceneState == GO_BEAT_UP_SCAMMER_FIRST_CUTSCENE_STATE.SHAKING_HEAD {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+				if object_index == obj_player_patter sprite_index = spr_patter_shakeHead_veryAngry;
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == GO_BEAT_UP_SCAMMER_FIRST_CUTSCENE_STATE.WALKING_BACK {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_walk;
+				if object_index == obj_player_patter sprite_index = spr_patter_walk_veryAngry;
 			
 			}
 			

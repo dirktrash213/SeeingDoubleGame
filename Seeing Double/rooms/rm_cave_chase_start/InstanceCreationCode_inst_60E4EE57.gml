@@ -1,0 +1,3 @@
+cutsceneID = CUTSCENE_ID.GO_BEAT_UP_SCAMMER_FIRST;
+delay = 1;
+

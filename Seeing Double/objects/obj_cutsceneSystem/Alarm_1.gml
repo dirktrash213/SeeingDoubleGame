@@ -614,12 +614,64 @@ switch global.currentCutsceneID {
 			
 			case CAVES_HAUNTING_CUTSCENE_STATE.TALKING_TO_SCAMMER: {
 			
+				obj_npc_scammer_mines.lookingAtPlayer = true;
+				
+				//if patterPlayerIsPresent() obj_player_patter.aboutToBeatUpScammer = false;
+				setPatterAngrySprites();
 				deactivateCutscene();
 			
 			}
 			
 		}
 	
+	} break;
+	
+	case CUTSCENE_ID.GO_BEAT_UP_SCAMMER_FIRST: {
+		
+		switch cutsceneState { 
+			
+			case GO_BEAT_UP_SCAMMER_FIRST_CUTSCENE_STATE.SHAKING_HEAD: {
+				
+				cutsceneState = GO_BEAT_UP_SCAMMER_FIRST_CUTSCENE_STATE.WALKING_BACK;
+				
+				var _duration = 60;
+				
+				alarm[1] = _duration;
+				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+					
+					obj_player_pitter.hspeed = -1;
+					obj_player_pitter.image_xscale = -1;
+					
+					obj_player_patter.hspeed = -1;
+					obj_player_patter.image_xscale = -1;
+					
+					//part_particles_create(global.particleSystemDevice, obj_player_patter.x, obj_player_patter.y - 10, global.particleBeatUpScammer, 1);
+					
+				}
+				
+			} break;
+			
+			case GO_BEAT_UP_SCAMMER_FIRST_CUTSCENE_STATE.WALKING_BACK: {
+			
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+					
+					obj_player_pitter.hspeed = 0;
+					obj_player_pitter.image_xscale = 1;
+					
+					obj_player_patter.hspeed = 0;
+					obj_player_patter.image_xscale = 1;
+					
+				}
+				
+				with obj_trigger_beatUpScammerFirst triggered = false;
+				
+				deactivateCutscene();
+			
+			}
+			
+		}
+		
 	} break;
 
 }

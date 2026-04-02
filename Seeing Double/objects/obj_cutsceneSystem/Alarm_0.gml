@@ -58,9 +58,21 @@ switch global.currentCutsceneID {
 		
 		cutsceneState = CAVES_HAUNTING_CUTSCENE_STATE.LOOKING_AT_SCAMMER;
 		
-		alarm[1] = 140;
+		alarm[1] = 10;
 		
-		if pitterPlayerIsPresent() instance_create_layer(obj_player_pitter.x, obj_player_pitter.y - 20, "Instances", obj_background_elipses);
+		//if patterPlayerIsPresent() instance_create_layer(obj_player_patter.x - 8, obj_player_patter.y + 80, "Instances", obj_background_elipses);
+
+	} break;
+	
+	case CUTSCENE_ID.GO_BEAT_UP_SCAMMER_FIRST: {
+		
+		cutsceneState = GO_BEAT_UP_SCAMMER_FIRST_CUTSCENE_STATE.SHAKING_HEAD;
+		
+		if patterPlayerIsPresent() part_particles_create(global.particleSystemDevice, obj_player_patter.x, obj_player_patter.y - 10, global.particleBeatUpScammer, 1);
+		
+		alarm[1] = 120;
+		
+		//if patterPlayerIsPresent() instance_create_layer(obj_player_patter.x - 8, obj_player_patter.y + 80, "Instances", obj_background_elipses);
 
 	} break;
 

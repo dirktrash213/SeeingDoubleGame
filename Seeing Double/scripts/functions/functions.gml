@@ -934,7 +934,7 @@ function detectFloorDuringGroundPound(_floor) {
 	}
 
 }
-//@
+
 function detectEnemyDuringGroundPound(_enemy) {
 
 	if _enemy != noone && groundPoundFalling {
@@ -981,6 +981,145 @@ function detectEnemyDuringGroundPound(_enemy) {
 		
 		exit;
 		
+	}
+
+}
+//@
+function detectScammerDuringGroundPound(_scammer) {
+
+	if _scammer != noone if groundPoundFalling {
+	
+		//show_debug_message("scammer ground pounded")
+		
+		scammerGroundPoundCount++;
+		
+		var _scammerGroundPoundCount = scammerGroundPoundCount;
+	
+		_scammer.sprite_index = spr_npc_scammer_pain;
+		
+		var _coinsToSpawn = irandom_range(8, 12);
+		
+		for (var i = 0; i < _coinsToSpawn; ++i) {
+		   
+			with instance_create_layer(_scammer.x, _scammer.y, "Instances", obj_pickup_coin_gravity) {
+		 
+				gravity = 0.5;
+				speed = random_range(5, 15);
+				direction = random_range(40, 140);
+		
+			}
+		  
+		}
+		
+		with obj_trigger_dialogue {
+		
+			//var _text = "OW, WHAT THE HELL!? STOP THAT!";
+			var _text = choose("OW, OW, STOP!", "OW, MY COINS!", "THE PAIN!", "UNCLE, UNCLE!", "OW, MY HEAD!", "OW, PLEASE LADY!");
+			
+			while _text == dialogueString[0] {
+			
+				_text = choose("OW, OW, STOP!", "OW, MY COINS!", "THE PAIN!", "UNCLE, UNCLE!", "OW, MY HEAD!", "OW, PLEASE LADY!");
+			
+			}
+		
+			count = 0;
+			alarm[0] = textDisplayDuration;
+			dialogueString = [];
+			//dialogueString[0] = _scammerGroundPoundCount == 1 ? "OW, WHAT THE HELL!? STOP THAT!" : choose("OW, OW, STOP!", "OW, MY COINS!", "THE PAIN!", "UNCLE, UNCLE!", "OW, MY HEAD!", "OW, PLEASE LADY!");
+			dialogueString[0] = _scammerGroundPoundCount == 1 ? "OW, WHAT THE HELL!? STOP THAT!" : _text;
+		
+		}
+	
+		y = _scammer.y;
+		groundPounding = false;
+		groundPoundRising = false;
+		groundPoundFalling = false;
+		vspeed = 0;
+		gravity = 0;
+		jumpCount = 0;
+				
+		
+		
+		//var _launchSpeed = jumpOffEnemySpeed[1];
+		var _launchSpeed = -9;
+		
+	
+		_scammer.xStretch = 1.9;
+		_scammer.yStretch = 0.1;
+		setOnGround(false);
+		ySpeed = _launchSpeed;
+	
+		var _actionLinesOffsetY = -15;
+		
+		instance_create_layer(x, y + _actionLinesOffsetY, "Instances", obj_vfx_actionLines_enemyImpact);
+		
+		var _offsetX = 5;
+		
+		instance_create_layer(x - _offsetX, y, "Instances", obj_vfx_dust_groundPound);
+		instance_create_layer(x + _offsetX, y, "Instances", obj_vfx_dust_groundPound, {image_xscale : -1});
+		
+		var _pitch = random_range(1.10, 1.20);
+		//audio_play_sound(sfx_explosion, 1, 0, 1, 0, _pitch);
+		
+		var _screenShakeMagnitude = 2;
+		var _screenShakeFrames = 10;
+		
+		shakeScreen(_screenShakeMagnitude, _screenShakeFrames);
+		
+		exit;
+		
+	}
+
+}
+
+function setPatterAngrySprites() {
+
+	with obj_player_patter {
+
+		maskSprite = spr_patter_idle; 
+		idleSprite = spr_patter_idle_veryAngry;
+		walkSprite = spr_patter_walk_veryAngry;
+		runSprite = spr_patter_run_veryAngry;
+		jumpSprite = spr_patter_jump_veryAngry;
+		crouchSprite = spr_patter_crouch_veryAngry;
+		lookingUpSprite = spr_patter_lookUp_veryAngry;
+		climbingSprite = spr_patter_climb;
+		defeatSprite = spr_patter_defeat;
+		crushedSprite = spr_patter_splat;
+		happySprite = spr_patter_happy_animated;
+		concernSprite = spr_patter_pause;
+		scaredSprite = spr_patter_scared;
+		curiousSprite = spr_patter_curious;
+		groundPoundJumpSprite = spr_patter_groundPound_jump_veryAngry;
+		groundPoundFallSprite = spr_patter_groundPound_fall_veryAngry;
+		groundPoundFallBoulderSprite = spr_patter_groundPound_fall_angry;
+	
+	}
+
+}
+
+function resetPatterSprites() {
+
+	with obj_player_patter {
+
+		maskSprite = spr_patter_idle; 
+		idleSprite = spr_patter_idle;
+		walkSprite = spr_patter_walk;
+		runSprite = spr_patter_run;
+		jumpSprite = spr_patter_jump;
+		crouchSprite = spr_patter_crouch;
+		lookingUpSprite = spr_patter_curious;
+		climbingSprite = spr_patter_climb;
+		defeatSprite = spr_patter_defeat;
+		crushedSprite = spr_patter_splat;
+		happySprite = spr_patter_happy_animated;
+		concernSprite = spr_patter_pause;
+		scaredSprite = spr_patter_scared;
+		curiousSprite = spr_patter_curious;
+		groundPoundJumpSprite = spr_patter_groundPound_jump;
+		groundPoundFallSprite = spr_patter_groundPound_fall;
+		groundPoundFallBoulderSprite = spr_patter_groundPound_fall_angry;
+	
 	}
 
 }
