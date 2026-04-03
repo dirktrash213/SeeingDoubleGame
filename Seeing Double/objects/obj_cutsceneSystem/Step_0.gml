@@ -15,12 +15,14 @@ switch global.currentCutsceneID {
 
 			case DOUBLE_JUMP_BARREL_CUTSCENE_STATE.SOAKING: {
 	
-				with obj_camera {
-	
-					if cameraLeadingX > 0 cameraLeadingX--;
-					if cameraLeadingX < 0 cameraLeadingX++;
-	
-				}
+				//with obj_camera {
+				//
+				//	if cameraLeadingX > 0 cameraLeadingX--;
+				//	if cameraLeadingX < 0 cameraLeadingX++;
+				//
+				//}
+				
+				resetCameraLeading(); 
 		
 			} break;
 			
@@ -34,17 +36,33 @@ switch global.currentCutsceneID {
 
 			case GROUND_POUND_BARREL_CUTSCENE_STATE.SOAKING: {
 	
-				with obj_camera {
-	
-					if cameraLeadingX > 0 cameraLeadingX--;
-					if cameraLeadingX < 0 cameraLeadingX++;
-	
-				}
+				//with obj_camera {
+				//
+				//	if cameraLeadingX > 0 cameraLeadingX--;
+				//	if cameraLeadingX < 0 cameraLeadingX++;
+				//
+				//}
+				
+				resetCameraLeading(); 
 		
 			} break;
 			
 		}
 	
+	} break;
+	
+	case CUTSCENE_ID.CAVES_HAUNTING_PART2: { 
+		
+		switch cutsceneState {
+
+			case CAVES_HAUNTING_PART2_CUTSCENE_STATE.WALKING_BACK: {
+	
+				resetCameraLeading(); 
+		
+			} break;
+			
+		}
+		
 	} break;
 
 }

@@ -1150,3 +1150,14 @@ function resetPatterSprites() {
 	}
 
 }
+
+function resetCameraLeading() {
+
+	with obj_camera {
+	
+		if cameraLeadingX > 0 cameraLeadingX--;
+		if cameraLeadingX < 0 cameraLeadingX++;
+	
+	}
+
+}

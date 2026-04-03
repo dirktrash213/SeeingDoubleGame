@@ -376,7 +376,7 @@ if groundPounding {
 		ds_list_destroy(__groundPoundFloorList);
 	
 	}
-	//@
+	
 
 	if aboutToBeatUpScammer {
 	
@@ -1904,7 +1904,7 @@ if global.cutsceneActive {
 			}
 			
 		} break;
-		//@
+		
 		case CUTSCENE_ID.CAVES_HAUNTING: { 
 			
 			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_CUTSCENE_STATE.LOOKING_AT_SCAMMER {
@@ -2010,7 +2010,7 @@ if global.cutsceneActive {
 			}
 			
 		} break;
-		
+		//@
 		case CUTSCENE_ID.CAVES_HAUNTING_PART2: { 
 			
 			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_PART2_CUTSCENE_STATE.WALKING_BACK {
@@ -2030,6 +2030,13 @@ if global.cutsceneActive {
 					if obj_trigger_dialogue.count == 5 sprite_index = spr_patter_forward;
 				
 				}
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_PART2_CUTSCENE_STATE.THINKING {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+				if object_index == obj_player_patter sprite_index = spr_patter_thinking;
 			
 			}
 			
