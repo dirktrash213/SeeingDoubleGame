@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_npc_scammer_scared",
-    "path": "sprites/spr_npc_scammer_scared/spr_npc_scammer_scared.yy",
+    "name": "spr_npc_scammer_worried",
+    "path": "sprites/spr_npc_scammer_worried/spr_npc_scammer_worried.yy",
   },
   "spriteMaskId": null,
   "visible": true,

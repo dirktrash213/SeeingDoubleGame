@@ -640,8 +640,6 @@ switch global.currentCutsceneID {
 					obj_player_patter.hspeed = -1;
 					obj_player_patter.image_xscale = -1;
 					
-					//part_particles_create(global.particleSystemDevice, obj_player_patter.x, obj_player_patter.y - 10, global.particleBeatUpScammer, 1);
-					
 				}
 				
 			} break;
@@ -676,7 +674,7 @@ switch global.currentCutsceneID {
 				
 				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.HEARING_SCAMMER_BEG;
 				
-				var _duration = 2000;
+				var _duration = 1800;
 				
 				alarm[1] = _duration;
 				
@@ -698,15 +696,15 @@ switch global.currentCutsceneID {
 				
 				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.THINKING;
 				
-				var _duration = 120;
+				var _duration = 180;
 				
 				alarm[1] = _duration;
 				
-				if patterPlayerIsPresent() instance_create_layer(obj_player_patter.x - 8, obj_player_patter.y + 80, "Instances", obj_background_elipses);
+				if patterPlayerIsPresent() instance_create_layer(obj_player_patter.x, obj_player_patter.y - 15, "Instances", obj_background_elipses);
 				
 				with obj_trigger_dialogue {
 				
-					var _customTextDisplayDuration = 300;
+					var _customTextDisplayDuration = 120;
 				
 					count = 0;
 					alarm[0] = _customTextDisplayDuration;
@@ -722,13 +720,13 @@ switch global.currentCutsceneID {
 				
 				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.HEARING_GHOST_APPROACH;
 				
-				var _duration = 1500;
+				var _duration = 1400;
 				
 				alarm[1] = _duration;
 				
 				with obj_trigger_dialogue {
 				
-					var _customTextDisplayDuration = 120;
+					var _customTextDisplayDuration = 200;
 				
 					count = 0;
 					alarm[0] = _customTextDisplayDuration;
@@ -738,6 +736,7 @@ switch global.currentCutsceneID {
 					dialogueString[1] = global.dialogueStringArrays.cavesHauntingPart2[7];
 					dialogueString[2] = global.dialogueStringArrays.cavesHauntingPart2[8];
 					dialogueString[3] = global.dialogueStringArrays.cavesHauntingPart2[9];
+					dialogueString[4] = global.dialogueStringArrays.cavesHauntingPart2[10];
 						
 				}
 				
@@ -745,9 +744,9 @@ switch global.currentCutsceneID {
 			
 			case CAVES_HAUNTING_PART2_CUTSCENE_STATE.HEARING_GHOST_APPROACH: {
 				
-				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.RUNNING_TO_HIGING_SPOT;
+				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.RUNNING_TO_HIDING_SPOT;
 				
-				var _duration = 300;
+				var _duration = 60;
 				
 				alarm[1] = _duration;
 				
@@ -759,13 +758,28 @@ switch global.currentCutsceneID {
 					alarm[0] = _customTextDisplayDuration;
 					dialogueString = [];
 					
-					dialogueString[0] = global.dialogueStringArrays.cavesHauntingPart2[10];
+					dialogueString[0] = global.dialogueStringArrays.cavesHauntingPart2[11];
 				
+				}
+				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+					
+					var _runSpeed = 5;
+					
+					obj_player_pitter.hspeed = -_runSpeed;
+					obj_player_pitter.image_xscale = -1;
+					
+					obj_player_patter.hspeed = -_runSpeed;
+					obj_player_patter.image_xscale = -1;
+					
+					obj_npc_scammer_mines.hspeed = -_runSpeed;
+					obj_npc_scammer_mines.image_xscale = -1;
+					
 				}
 				
 			} break;
 			
-			case CAVES_HAUNTING_PART2_CUTSCENE_STATE.RUNNING_TO_HIGING_SPOT: {
+			case CAVES_HAUNTING_PART2_CUTSCENE_STATE.RUNNING_TO_HIDING_SPOT: {
 				
 				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.HIDING;
 				
@@ -785,6 +799,21 @@ switch global.currentCutsceneID {
 				
 				}
 				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+					
+					obj_player_pitter.hspeed = 0;
+					obj_player_pitter.image_xscale = 1;
+					obj_player_pitter.faceDir = 1;
+					
+					obj_player_patter.hspeed = 0;
+					obj_player_patter.image_xscale = 1;
+					obj_player_patter.faceDir = 1;
+					
+					obj_npc_scammer_mines.hspeed = 0;
+					obj_npc_scammer_mines.image_xscale = 1;
+					
+				}
+				
 			} break;
 			
 			case CAVES_HAUNTING_PART2_CUTSCENE_STATE.HIDING: {
@@ -795,7 +824,20 @@ switch global.currentCutsceneID {
 				
 				alarm[1] = _duration;
 				
-				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+					
+					var _walkSpeed = 1;
+					
+					obj_player_pitter.hspeed = _walkSpeed;
+					obj_player_pitter.image_xscale = 1;
+					
+					obj_player_patter.hspeed = _walkSpeed;
+					obj_player_patter.image_xscale = 1;
+					
+					obj_npc_scammer_mines.hspeed = _walkSpeed;
+					obj_npc_scammer_mines.image_xscale = 1;
+					
+				}
 				
 			} break;
 			
@@ -803,7 +845,7 @@ switch global.currentCutsceneID {
 				
 				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.SCAMMER_YELLING;
 				
-				var _duration = 120;
+				var _duration = 900;
 				
 				alarm[1] = _duration;
 				
@@ -815,10 +857,25 @@ switch global.currentCutsceneID {
 					alarm[0] = _customTextDisplayDuration;
 					dialogueString = [];
 					
-					dialogueString[0] =  global.dialogueStringArrays.cavesHauntingPart2[11];
-					dialogueString[1] =  global.dialogueStringArrays.cavesHauntingPart2[12];
-					dialogueString[2] =  global.dialogueStringArrays.cavesHauntingPart2[13];
+					dialogueString[0] =  global.dialogueStringArrays.cavesHauntingPart2[12];
+					dialogueString[1] =  global.dialogueStringArrays.cavesHauntingPart2[13];
+					dialogueString[2] =  global.dialogueStringArrays.cavesHauntingPart2[14];
 				
+				}
+				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+					
+					obj_player_pitter.hspeed = 0;
+					obj_player_pitter.image_xscale = 1;
+					obj_player_pitter.faceDir = 1;
+					
+					obj_player_patter.hspeed = 0;
+					obj_player_patter.image_xscale = 1;
+					obj_player_patter.faceDir = 1;
+					
+					obj_npc_scammer_mines.hspeed = 0;
+					obj_npc_scammer_mines.image_xscale = 1;
+					
 				}
 				
 			} break;

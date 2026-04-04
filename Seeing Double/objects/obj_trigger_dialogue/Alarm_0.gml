@@ -150,7 +150,7 @@ if variableTextDisplayDuration {
 		case global.dialogueStringArrays.cavesHauntingPart2[2]: {
 	      
 			alarm[0] = textDisplayDuration;
-			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_scared;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_worried;
 		
 		} break;
 		
@@ -158,9 +158,45 @@ if variableTextDisplayDuration {
 	      
 			alarm[0] = textDisplayDuration;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pensive;
+			
+			with instance_create_layer(obj_npc_scammer_mines.x, obj_npc_scammer_mines.y, "Collectables", obj_pickup_parachute_gold) {
+			
+				speed = 3.5;
+				direction = 135;
+				gravity = 0.25;
+			
+			}
 		
 		} break;
-	
+		
+		case global.dialogueStringArrays.cavesHauntingPart2[7]: {
+	      
+			alarm[0] = textDisplayDuration;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_laugh;
+		
+		} break;
+		
+		case global.dialogueStringArrays.cavesHauntingPart2[8]: {
+	      
+			alarm[0] = 90;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pensive;
+		
+		} break;
+		
+		case global.dialogueStringArrays.cavesHauntingPart2[9]: {
+	      
+			alarm[0] = textDisplayDuration;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_eyebrowRaise;
+		
+		} break;
+		
+		case global.dialogueStringArrays.cavesHauntingPart2[10]: {
+	      
+			alarm[0] = textDisplayDuration;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_scared;
+		
+		} break;
+		
 		default: {
 		
 			//show_debug_message("Default duration value")

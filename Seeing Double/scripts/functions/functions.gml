@@ -250,7 +250,13 @@ function activateCutscene() {
 	global.cutsceneActive = true;
 	global.playerControl = false;
 
-	if playerIsPresent() obj_player.jumpDisabled = true;
+	if playerIsPresent() {
+		
+		obj_player.jumpDisabled = true;
+		
+		cancelGroundPound();
+		
+	}
 	
 	if room == rm_forest_doubleJumpGet {
 	
@@ -1020,17 +1026,37 @@ function detectScammerDuringGroundPound(_scammer) {
 				_text = choose("OW, OW, STOP!", "MY COINS!", "SO MUCH PAIN!", "UNCLE, UNCLE!", "MY HEAD!", "OW, PLEASE LADY!", "IT HURTS!", "OW, MOMMY!!");
 			
 			}
+			
+			var _textArray = [
+			
+				"OW!",
+				"OW, WHAT THE HELL!? STOP THAT!",
+				"OW, OW, STOP!",
+				"MY COINS!", 
+				"SO MUCH PAIN!", 
+				"UNCLE, UNCLE!", 
+				"MY HEAD!", 
+				"OW, PLEASE LADY!", 
+				"IT HURTS!", 
+				"OW, MOMMY!!",
+				"BLEAUGH!!",
+			
+			];
 		
 			count = 0;
 			alarm[0] = textDisplayDuration;
 			dialogueString = [];
 			//dialogueString[0] = _scammerGroundPoundCount == 1 ? "OW, WHAT THE HELL!? STOP THAT!" : choose("OW, OW, STOP!", "OW, MY COINS!", "THE PAIN!", "UNCLE, UNCLE!", "OW, MY HEAD!", "OW, PLEASE LADY!");
-			dialogueString[0] = _scammerGroundPoundCount == 1 ? "OW, WHAT THE HELL!? STOP THAT!" : _text;
+			//dialogueString[0] = _scammerGroundPoundCount == 1 ? "OW, WHAT THE HELL!? STOP THAT!" : _text;
+			dialogueString[0] = _textArray[_scammerGroundPoundCount];
 			
 			if _scammerGroundPoundCount >= 10 {
 			
 				var _cutsceneID = 10;
 				var _delay = 10;
+				var _customtextDisplayDuration = 180;
+				
+				alarm[0] = _customtextDisplayDuration;
 				
 				global.currentCutsceneID = CUTSCENE_ID.CAVES_HAUNTING_PART2;	
 				obj_cutsceneSystem.alarm[0] = _delay;	
@@ -1157,6 +1183,20 @@ function resetCameraLeading() {
 	
 		if cameraLeadingX > 0 cameraLeadingX--;
 		if cameraLeadingX < 0 cameraLeadingX++;
+	
+	}
+
+}
+
+function cancelGroundPound() {
+
+	with obj_player {
+			
+		groundPounding = false;
+		groundPoundRising = false;
+		groundPoundFalling = false;
+		vspeed = 0;
+		gravity = 0;
 	
 	}
 

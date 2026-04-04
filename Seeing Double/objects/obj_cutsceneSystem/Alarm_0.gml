@@ -77,6 +77,8 @@ switch global.currentCutsceneID {
 			
 			obj_player_patter.hspeed = -1;
 			obj_player_patter.image_xscale = -1;
+			
+			
 		
 		}
 

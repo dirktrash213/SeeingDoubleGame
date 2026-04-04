@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "spr_npc_scammer_scared",
   "bbox_bottom": 16,
-  "bbox_left": 5,
-  "bbox_right": 10,
+  "bbox_left": 0,
+  "bbox_right": 15,
   "bbox_top": 8,
   "bboxMode": 2,
   "collisionKind": 1,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e6673ca2-3946-4da2-8548-4d77a867fe5a","path":"sprites/spr_npc_scammer_scared/spr_npc_scammer_scared.yy",},},},"Disabled":false,"id":"25e1ba0d-ce38-4689-9a49-27340670d2ad","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e6673ca2-3946-4da2-8548-4d77a867fe5a","path":"sprites/spr_npc_scammer_scared/spr_npc_scammer_scared.yy",},},},"Disabled":false,"id":"e58357d7-8c8c-409d-8643-fc4a38ee9d10","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

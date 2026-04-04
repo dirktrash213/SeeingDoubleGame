@@ -2040,6 +2040,21 @@ if global.cutsceneActive {
 			
 			}
 			
+			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_PART2_CUTSCENE_STATE.HEARING_GHOST_APPROACH {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+				if object_index == obj_player_patter {
+				
+					if obj_trigger_dialogue.count == 0 sprite_index = spr_patter_forward;
+					if obj_trigger_dialogue.count == 1 sprite_index = spr_patter_scared_facingRight;
+					if obj_trigger_dialogue.count == 2 sprite_index = spr_patter_scared_shakeHead;
+					if obj_trigger_dialogue.count == 3 sprite_index = spr_patter_scared_facingRight;
+					if obj_trigger_dialogue.count == 4 sprite_index = spr_patter_scared_idle;
+				
+				}
+			
+			}
+			
 		} break;
 		
 	}
