@@ -1151,6 +1151,84 @@ function setPatterAngrySprites() {
 
 }
 
+function setPitterScaredSprites() {
+
+	with obj_player_pitter {
+
+		maskSprite = spr_pitter_idle; 
+		idleSprite = spr_pitter_scared_idle;
+		walkSprite = spr_pitter_scared_walk;
+		runSprite = spr_pitter_scared_run;
+		jumpSprite = spr_pitter_scared_jump;
+		crouchSprite = spr_pitter_crouch;
+		lookingUpSprite = spr_pitter_scared_lookUp;
+		climbingSprite = spr_pitter_climb;
+		defeatSprite = spr_pitter_defeat;
+		crushedSprite = spr_pitter_splat;
+		happySprite = spr_pitter_happy_animated;
+		concernSprite = spr_pitter_pause;
+		scaredSprite = spr_pitter_scared;
+		curiousSprite = spr_pitter_curious;
+		groundPoundJumpSprite = spr_pitter_scared_groundPound_jump;
+		groundPoundFallSprite = spr_pitter_scared_groundPound_fall;
+		//groundPoundFallBoulderSprite = spr_pitter_groundPound_fall_angry;
+	
+	}
+
+}
+
+function setPatterScaredSprites() {
+
+	with obj_player_patter {
+
+		maskSprite = spr_patter_idle; 
+		idleSprite = spr_patter_scared_idle;
+		walkSprite = spr_patter_scared_walk;
+		runSprite = spr_patter_scared_run;
+		jumpSprite = spr_patter_scared_jump;
+		crouchSprite = spr_patter_crouch;
+		lookingUpSprite = spr_patter_scared_lookUp;
+		climbingSprite = spr_patter_climb;
+		defeatSprite = spr_patter_defeat;
+		crushedSprite = spr_patter_splat;
+		happySprite = spr_patter_happy_animated;
+		concernSprite = spr_patter_pause;
+		scaredSprite = spr_patter_scared;
+		curiousSprite = spr_patter_curious;
+		groundPoundJumpSprite = spr_patter_scared_groundPound_jump;
+		groundPoundFallSprite = spr_patter_scared_groundPound_fall;
+		groundPoundFallBoulderSprite = spr_patter_groundPound_fall_angry;
+	
+	}
+
+}
+
+function resetPitterSprites() {
+
+	with obj_player_pitter {
+
+		maskSprite = spr_pitter_idle; 
+		idleSprite = spr_pitter_idle;
+		walkSprite = spr_pitter_walk;
+		runSprite = spr_pitter_run;
+		jumpSprite = spr_pitter_jump;
+		crouchSprite = spr_pitter_crouch;
+		lookingUpSprite = spr_pitter_curious;
+		climbingSprite = spr_pitter_climb;
+		defeatSprite = spr_pitter_defeat;
+		crushedSprite = spr_pitter_splat;
+		happySprite = spr_pitter_happy_animated;
+		concernSprite = spr_pitter_pause;
+		scaredSprite = spr_pitter_scared;
+		curiousSprite = spr_pitter_curious;
+		groundPoundJumpSprite = spr_pitter_groundPound_jump;
+		groundPoundFallSprite = spr_pitter_groundPound_fall;
+		groundPoundFallBoulderSprite = spr_pitter_groundPound_fall_angry;
+	
+	}
+
+}
+
 function resetPatterSprites() {
 
 	with obj_player_patter {

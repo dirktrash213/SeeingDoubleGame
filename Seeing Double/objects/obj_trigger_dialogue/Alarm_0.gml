@@ -197,6 +197,22 @@ if variableTextDisplayDuration {
 		
 		} break;
 		
+		case global.dialogueStringArrays.cavesHauntingPart2[12]: {
+	      
+			alarm[0] = 200;
+			//obj_npc_scammer_mines.sprite_index = spr_npc_scammer_shocked;
+			
+			with obj_npc_scammer_mines {
+				
+					sprite_index = spr_npc_scammer_shocked;
+					
+					vspeed = -5;
+					gravity = gravAmount;
+				
+				}
+		
+		} break;
+		
 		case global.dialogueStringArrays.cavesHauntingPart2[13]: {
 	      
 			alarm[0] = 200;

@@ -2067,7 +2067,7 @@ if global.cutsceneActive {
 				if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
 				if object_index == obj_player_patter {
 					
-					sprite_index = spr_patter_scared;
+					sprite_index = spr_patter_scared_facingRight;
 						
 				}
 			
