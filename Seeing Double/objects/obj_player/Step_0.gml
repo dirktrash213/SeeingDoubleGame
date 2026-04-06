@@ -299,7 +299,7 @@ if groundPounding {
 	var _detectionBufferX = 2; //Needed to prevent player from crushing self
 	var _detectionBufferY = -5; //Needed to prevent player from crushing self
 	
-	if groundPoundRising && place_meeting(x, y+_detectionBufferY, obj_block_wall) { //Player hit head on ceiling before ground pound completed, cancel ground pound
+	if (groundPoundRising && place_meeting(x, y+_detectionBufferY, obj_block_wall)) || global.cutsceneActive { //Player hit head on ceiling before ground pound completed, cancel ground pound
 	
 		groundPounding = false;
 		groundPoundRising = false;
@@ -2050,6 +2050,58 @@ if global.cutsceneActive {
 					if obj_trigger_dialogue.count == 2 sprite_index = spr_patter_scared_shakeHead;
 					if obj_trigger_dialogue.count == 3 sprite_index = spr_patter_scared_facingRight;
 					if obj_trigger_dialogue.count == 4 sprite_index = spr_patter_scared_idle;
+				
+				}
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_PART2_CUTSCENE_STATE.RUNNING_TO_HIDING_SPOT {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_run;
+				if object_index == obj_player_patter sprite_index = spr_patter_scared_run;
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_PART2_CUTSCENE_STATE.HIDING {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+				if object_index == obj_player_patter {
+					
+					sprite_index = spr_patter_scared;
+						
+				}
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_PART2_CUTSCENE_STATE.LEAVING_HIDING_SPOT {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_walk;
+				if object_index == obj_player_patter {
+					
+					sprite_index = spr_patter_walk;
+					
+				}
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_PART2_CUTSCENE_STATE.SCAMMER_YELLING {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+				if object_index == obj_player_patter {
+					
+					if obj_trigger_dialogue.count == 0 sprite_index = spr_patter_forward;
+			
+				}
+			
+			}
+			
+			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_PART2_CUTSCENE_STATE.GHOST_RETURNING {
+			
+				if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+				if object_index == obj_player_patter {
+					
+					if obj_trigger_dialogue.count == 0 sprite_index = spr_patter_stunned;
+					if obj_trigger_dialogue.count == 1 sprite_index = spr_patter_stunned;
 				
 				}
 			

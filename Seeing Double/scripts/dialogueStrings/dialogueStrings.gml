@@ -3,12 +3,12 @@ global.dialogueStringArrays = {
 	
 	cavesHaunting : [ 
 	
-		"Well, salt my eggs. This is not good I tell ya, [slant]not[/slant] good! What was I [slant]thinkin'[/slant], followin' that yellow moron?", 
+		"Well, salt my eggs. This is not good I tell ya, [slant]not[/slant] good! What was I [slant]thinkin'[/slant], followin' that yellow moron?", //0
 		"Now I done went and fell in some weird portal and got myself lost! I'm a goner for sure! No one's gonna find me down here!", 
 		"Well, on the bright side, at least I won't run into that blue schmuck I scammed in the forest. Heh, what a grade-A sucker...", 
 		"WAH!", 
 		"WHO'S THERE!?", 
-		"Oh... it's just a pretty little lady. Well how do [slant]you[/slant] do, ma'am? Lookin' to buy some authentic jewelry?", 
+		"Oh... it's just a pretty little lady. Well how do [slant]you[/slant] do, ma'am? Lookin' to buy some authentic jewelry?", //5
 		"Hm? What's that? Bluey is your husband? And you overheard what I said about scamming him?", 
 		"[shake]AHAHA![/shake] So [slant]what[/slant] if I did? Sorry to break it to ya, [slant]missy[/slant], but all sales are final! He can chalk it up as a learning experience!", 
 		"Oh, what now? What are you gonna do, [c_orange]pound[/color] the money out of me!? Ha! I'd like to see you try!!", 
@@ -17,19 +17,19 @@ global.dialogueStringArrays = {
 	
 	cavesHauntingPart2 : [ 
 	
-		"[shake]NO MORE, PLEASE! I YIELD! I YIEEEEEELD!![/shake]", 
+		"[shake]NO MORE, PLEASE! I YIELD! I YIEEEEEELD!![/shake]", //0
 		"[shake]I'm so sorry for scamming your husband, miss!! I won't fleece anyone ever again, I swear on my mum!![/shake]", 
 		"Look, I'll even throw in my best parachute, on the house. This one [slant]actually[/slant] works, for real! Just [slant]please[/slant] no more beatings!", 
 	//	"It is a one time use, but it'll come in handy sooner or later. Like I said, no strings attached. We square? No more tenderizing? Good.", 
 		"It is a one time use, but it'll come in handy. We square now? No more tenderizing?", 
 	//	"We square now? No more tenderizing?", 
 		"Sheesh, lady. I'm gonna be feeling [slant]that[/slant] in the morning. You really care about Bluey, eh? How touching. Makes me wanna barf.", 
-		"So, uh. Any chance you know how to get us out of this dump?", 
+		"So, uh. Any chance you know how to get us out of this dump?", //5
 		"Hold on. Do you hear that? What's that noise?", 
 		"Oh, I know! That must be miners here to rescue us! We're saved!!", 
 		"No?", 
 		"What's with that concerned look? You're making me nervous, lady.", 
-		"Hide!? From [slant]what!?[/slant] [shake]What's coming!?[/shake]", 
+		"Hide!? From [slant]what!?[/slant] [shake]What's coming!?[/shake]", //10
 		"Oh crap oh crap oh crap oh crap oh crap oh crap oh crap oh crap oh crap oh crap!!", 
 		"WHAT THE HELL WAS EVEN THAT!?", 
 		"Oops. My bad.", 

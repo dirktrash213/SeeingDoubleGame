@@ -7,3 +7,7 @@ lookingAtPlayer = false;
 xStretch = 1;
 yStretch = 1;
 stretchAdjustAmount = 0.1;
+
+
+lookingLeftAndRight = false;
+lookingLeftAndRightRate = 35;

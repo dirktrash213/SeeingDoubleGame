@@ -171,7 +171,7 @@ if variableTextDisplayDuration {
 		
 		case global.dialogueStringArrays.cavesHauntingPart2[7]: {
 	      
-			alarm[0] = textDisplayDuration;
+			alarm[0] = 260;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_laugh;
 		
 		} break;
@@ -185,17 +185,31 @@ if variableTextDisplayDuration {
 		
 		case global.dialogueStringArrays.cavesHauntingPart2[9]: {
 	      
-			alarm[0] = textDisplayDuration;
+			alarm[0] = 200;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_eyebrowRaise;
 		
 		} break;
 		
 		case global.dialogueStringArrays.cavesHauntingPart2[10]: {
 	      
-			alarm[0] = textDisplayDuration;
+			alarm[0] = 200;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_scared;
 		
 		} break;
+		
+		case global.dialogueStringArrays.cavesHauntingPart2[13]: {
+	      
+			alarm[0] = 200;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_oops;
+		
+		} break;
+		
+		//case global.dialogueStringArrays.cavesHauntingPart2[11]: {
+	    //  
+		//	alarm[0] = textDisplayDuration;
+		//	obj_npc_scammer_mines.sprite_index = spr_npc_scammer_run_scared;
+		//
+		//} break;
 		
 		default: {
 		

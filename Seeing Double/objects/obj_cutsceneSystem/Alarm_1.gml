@@ -720,7 +720,7 @@ switch global.currentCutsceneID {
 				
 				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.HEARING_GHOST_APPROACH;
 				
-				var _duration = 1400;
+				var _duration = 900;
 				
 				alarm[1] = _duration;
 				
@@ -732,7 +732,7 @@ switch global.currentCutsceneID {
 					alarm[0] = _customTextDisplayDuration;
 					dialogueString = [];
 					
-					dialogueString[0] = global.dialogueStringArrays.cavesHauntingPart2[6];
+					dialogueString[0] = global.dialogueStringArrays.cavesHauntingPart2[6]; //"What's that noise?"
 					dialogueString[1] = global.dialogueStringArrays.cavesHauntingPart2[7];
 					dialogueString[2] = global.dialogueStringArrays.cavesHauntingPart2[8];
 					dialogueString[3] = global.dialogueStringArrays.cavesHauntingPart2[9];
@@ -746,7 +746,7 @@ switch global.currentCutsceneID {
 				
 				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.RUNNING_TO_HIDING_SPOT;
 				
-				var _duration = 60;
+				var _duration = 135;
 				
 				alarm[1] = _duration;
 				
@@ -764,7 +764,7 @@ switch global.currentCutsceneID {
 				
 				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
 					
-					var _runSpeed = 5;
+					var _runSpeed = 2.5;
 					
 					obj_player_pitter.hspeed = -_runSpeed;
 					obj_player_pitter.image_xscale = -1;
@@ -775,6 +775,8 @@ switch global.currentCutsceneID {
 					obj_npc_scammer_mines.hspeed = -_runSpeed;
 					obj_npc_scammer_mines.image_xscale = -1;
 					
+					obj_npc_scammer_mines.sprite_index = spr_npc_scammer_run_scared;
+					
 				}
 				
 			} break;
@@ -783,9 +785,20 @@ switch global.currentCutsceneID {
 				
 				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.HIDING;
 				
-				var _duration = 300;
+				var _duration = 600;
 				
 				alarm[1] = _duration;
+				
+				with obj_npc_scammer_mines {
+				
+					lookingAtPlayer = false;
+					lookingLeftAndRight = true;
+					alarm[0] = lookingLeftAndRightRate;
+					
+					hspeed = 0;
+					sprite_index = spr_npc_scammer_veryScared;
+				
+				}
 				
 				with obj_trigger_dialogue {
 				
@@ -809,8 +822,10 @@ switch global.currentCutsceneID {
 					obj_player_patter.image_xscale = 1;
 					obj_player_patter.faceDir = 1;
 					
-					obj_npc_scammer_mines.hspeed = 0;
-					obj_npc_scammer_mines.image_xscale = 1;
+					//obj_npc_scammer_mines.hspeed = 0;
+					//obj_npc_scammer_mines.image_xscale = 1;
+					
+					//obj_npc_scammer_mines.sprite_index = spr_npc_scammer_veryScared;
 					
 				}
 				
@@ -823,6 +838,15 @@ switch global.currentCutsceneID {
 				var _duration = 120;
 				
 				alarm[1] = _duration;
+				
+				//with obj_npc_scammer_mines {
+				//
+				//	//lookingAtPlayer = false;
+				//	lookingLeftAndRight = false;
+				//	//alarm[0] = lookingLeftAndRightRate;
+				//	
+				//
+				//}
 				
 				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
 					
@@ -837,6 +861,10 @@ switch global.currentCutsceneID {
 					obj_npc_scammer_mines.hspeed = _walkSpeed;
 					obj_npc_scammer_mines.image_xscale = 1;
 					
+					obj_npc_scammer_mines.image_xscale = -1;
+					obj_npc_scammer_mines.sprite_index = spr_npc_scammer_run_scared;
+					obj_npc_scammer_mines.lookingLeftAndRight = false;
+					
 				}
 				
 			} break;
@@ -845,7 +873,7 @@ switch global.currentCutsceneID {
 				
 				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.SCAMMER_YELLING;
 				
-				var _duration = 900;
+				var _duration = 180;
 				
 				alarm[1] = _duration;
 				
@@ -858,8 +886,8 @@ switch global.currentCutsceneID {
 					dialogueString = [];
 					
 					dialogueString[0] =  global.dialogueStringArrays.cavesHauntingPart2[12];
-					dialogueString[1] =  global.dialogueStringArrays.cavesHauntingPart2[13];
-					dialogueString[2] =  global.dialogueStringArrays.cavesHauntingPart2[14];
+					//dialogueString[1] =  global.dialogueStringArrays.cavesHauntingPart2[13];
+					//dialogueString[2] =  global.dialogueStringArrays.cavesHauntingPart2[14];
 				
 				}
 				
@@ -875,6 +903,7 @@ switch global.currentCutsceneID {
 					
 					obj_npc_scammer_mines.hspeed = 0;
 					obj_npc_scammer_mines.image_xscale = 1;
+					obj_npc_scammer_mines.sprite_index = spr_npc_scammer_shocked;
 					
 				}
 				
@@ -882,8 +911,63 @@ switch global.currentCutsceneID {
 			
 			case CAVES_HAUNTING_PART2_CUTSCENE_STATE.SCAMMER_YELLING: {
 				
+				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.GHOST_RETURNING;
 				
+				var _duration = 360;
 				
+				alarm[1] = _duration;
+				
+				obj_npc_scammer_mines.sprite_index = spr_npc_scammer_processing;
+				
+				with obj_trigger_dialogue {
+				
+					var _customTextDisplayDuration = 180;
+				
+					count = 0;
+					alarm[0] = _customTextDisplayDuration;
+					dialogueString = [];
+					
+					dialogueString[0] =  "...";
+					dialogueString[1] =  global.dialogueStringArrays.cavesHauntingPart2[13];
+				
+				}
+				
+			} break;
+			
+			case CAVES_HAUNTING_PART2_CUTSCENE_STATE.GHOST_RETURNING: {
+				
+				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.SCAMMER_FLEEING;
+				
+				var _duration = 60;
+				
+				alarm[1] = _duration;
+				
+				with obj_npc_scammer_mines {
+				
+					sprite_index = spr_npc_scammer_run_terrified;
+					hspeed = 5;
+					image_xscale = -1;
+				
+				}
+				
+				with obj_trigger_dialogue {
+				
+					var _customTextDisplayDuration = 60;
+				
+					count = 0;
+					alarm[0] = _customTextDisplayDuration;
+					dialogueString = [];
+					
+					dialogueString[0] =  global.dialogueStringArrays.cavesHauntingPart2[14];
+				
+				}
+				
+			} break;
+			
+			case CAVES_HAUNTING_PART2_CUTSCENE_STATE.SCAMMER_FLEEING: {
+				
+				resetPatterSprites();
+				instance_destroy(obj_trigger_beatUpScammerFirst);
 				deactivateCutscene();
 				
 			} break;
