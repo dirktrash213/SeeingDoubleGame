@@ -1,10 +1,12 @@
 path_speed = global.paused? 0 : 1;
 
 if playerIsPresent() {
+	
+	var _player = instance_nearest(x,y,obj_player);
 
 	if !playerDetected && canDetectPlayer {
-
-		var _distance = point_distance(x, y, obj_player.x, obj_player.y);
+		
+		var _distance = point_distance(x, y, _player.x, _player.y);
 
 		if _distance <= detectionRadius {
     
@@ -21,7 +23,7 @@ if playerIsPresent() {
 		|| room == rm_cave_chase_timedBlocks
 		|| room == rm_cave_chase_longRun {
 		
-			if obj_player.x < x {
+			if _player.x < x {
 			
 				playerDetected = true;
 				path_end();
@@ -33,7 +35,7 @@ if playerIsPresent() {
 		if room == rm_cave_chase_smallTunnels
 		|| room == rm_cave_chase_narrowGroundPound {
 		
-			if obj_player.x > x {
+			if _player.x > x {
 			
 				playerDetected = true;
 				path_end();
@@ -49,7 +51,7 @@ if playerIsPresent() {
 		|| room == rm_cave_chase_bigBreakableRockFloor 
 		|| room == rm_cave_chase_narrowDescentFloor {
 		
-			if obj_player.y < y {
+			if _player.y < y {
 			
 				playerDetected = true;
 				path_end();
@@ -61,10 +63,10 @@ if playerIsPresent() {
 	}
 
 	if playerDetected {
-
-		var _rushSpeed = 3;
-
-		mp_linear_step(obj_player.x, obj_player.y, _rushSpeed, false);
+		
+		mp_linear_step_object(_player.x, _player.y, rushSpeed, obj_background_device);
+		
+		y = _player.y;
 
 	}
 

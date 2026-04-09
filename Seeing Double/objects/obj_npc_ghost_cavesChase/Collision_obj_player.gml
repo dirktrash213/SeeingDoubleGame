@@ -3,4 +3,5 @@ playerCaught = true;
 
 
 
-
+//TEMP
+playerDefeated();

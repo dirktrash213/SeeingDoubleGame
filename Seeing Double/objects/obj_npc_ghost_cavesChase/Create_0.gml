@@ -1,11 +1,12 @@
-detectionRadius = 5; //500
+detectionRadius = 500; //500
 playerDetected = false;
 playerCaught = false;
 canDetectPlayer = false;
 chasePath = path_platform_test;
 delayBeforeChase = 300;
+rushSpeed = 3.5;
 
-
+if room == rm_cave_chase_longRun rushSpeed = 3.8;
 
 switch room {
 
@@ -19,14 +20,14 @@ switch room {
 	case rm_cave_chase_coins: {
 		
 		chasePath = path_ghost_caveChase_coins;
-		delayBeforeChase = 180;
+		delayBeforeChase = 240;
 			
 	} break;
 	
 	case rm_cave_chase_hiddenWalls: {
 		
 		chasePath = path_ghost_caveChase_coins;
-		delayBeforeChase = 300;
+		delayBeforeChase = 600;
 			
 	} break;
 	
@@ -40,7 +41,7 @@ switch room {
 	case rm_cave_chase_descent: {
 		
 		chasePath = path_ghost_caveChase_descent;
-		delayBeforeChase = 600;
+		delayBeforeChase = 1200;
 			
 	} break;
 	
@@ -75,7 +76,7 @@ switch room {
 	case rm_cave_chase_smallTunnels: {
 		
 		chasePath = path_ghost_caveChase_smallTunnels;
-		delayBeforeChase = 600;
+		delayBeforeChase = 1200;
 			
 	} break;
 	
@@ -103,21 +104,21 @@ switch room {
 	case rm_cave_chase_rustySprings: {
 		
 		chasePath = path_ghost_caveChase_rustySprings;
-		delayBeforeChase = 600;
+		delayBeforeChase = 1200;
 			
 	} break;
 	
 	case rm_cave_chase_timedBlocks: {
 		
 		chasePath = path_ghost_caveChase_coins;
-		delayBeforeChase = 600;
+		delayBeforeChase = 900;
 			
 	} break;
 	
 	case rm_cave_chase_longRun: {
 		
 		chasePath = path_ghost_caveChase_coins;
-		delayBeforeChase = 60;
+		delayBeforeChase = 180;
 			
 	} break;
 
