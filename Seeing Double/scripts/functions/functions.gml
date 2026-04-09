@@ -1279,3 +1279,36 @@ function cancelGroundPound() {
 	}
 
 }
+
+function setUpSpookyGhostAudio() {
+
+	audio_play_sound(bgm_ghostlyReverberations, 1, 1);
+	audio_sound_gain(bgm_ghostlyReverberations, 0, 0);
+
+	audio_play_sound(bgm_ephemeralEcho, 1, 1);
+	audio_sound_gain(bgm_ephemeralEcho, 0, 0);
+
+	audio_play_sound(bgm_cursedAtmosphere_LOUD, 1, 1);
+	audio_sound_gain(bgm_cursedAtmosphere_LOUD, 0, 0);
+
+	audio_play_sound(sfx_glitch_loop, 1, 1);
+	audio_sound_gain(sfx_glitch_loop, 0, 0);
+
+	audio_play_sound(sfx_glitch_loop2, 1, 1);
+	audio_sound_gain(sfx_glitch_loop2, 0, 0);
+
+}
+
+function fadeOutSpookyGhostAudio() {
+
+	var _fadeOutTime = 4000;
+	
+	audio_sound_gain(bgm_ghostlyReverberations, 0, _fadeOutTime);
+	audio_sound_gain(bgm_ephemeralEcho, 0, _fadeOutTime);
+	audio_sound_gain(bgm_cursedAtmosphere, 0, _fadeOutTime);
+	audio_sound_gain(bgm_cursedAtmosphere_LOUD, 0, _fadeOutTime);
+	audio_sound_gain(bgm_cursedAtmosphere_VERYLOUD, 0, _fadeOutTime);
+	audio_sound_gain(sfx_glitch_loop, 0, _fadeOutTime);
+	audio_sound_gain(sfx_glitch_loop2, 0, _fadeOutTime);
+	
+}

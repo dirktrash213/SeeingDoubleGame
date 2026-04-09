@@ -714,6 +714,10 @@ switch global.currentCutsceneID {
 				
 				}
 				
+				setUpSpookyGhostAudio();
+				audio_sound_gain(bgm_ghostlyReverberations, 1, 20000);
+				audio_sound_gain(bgm_ephemeralEcho, 1, 10000);
+				
 			} break;
 			
 			case CAVES_HAUNTING_PART2_CUTSCENE_STATE.THINKING: {
@@ -739,6 +743,8 @@ switch global.currentCutsceneID {
 					dialogueString[4] = global.dialogueStringArrays.cavesHauntingPart2[10];
 						
 				}
+				
+				//audio_sound_gain(bgm_cursedAtmosphere_LOUD, 1, 1000);
 				
 			} break;
 			
@@ -779,13 +785,21 @@ switch global.currentCutsceneID {
 					
 				}
 				
+				with obj_npc_ghost_caves {
+					
+					path_start(path_ghost_caveCutscene, 1, path_action_stop, false);
+					
+				}
+				
+				//audio_play_sound(sfx_ghost_whisper, 1, 0, 1, 0, 1.0); 
+				
 			} break;
 			
 			case CAVES_HAUNTING_PART2_CUTSCENE_STATE.RUNNING_TO_HIDING_SPOT: {
 				
 				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.HIDING;
 				
-				var _duration = 600;
+				var _duration = 1500;
 				
 				alarm[1] = _duration;
 				
@@ -858,6 +872,8 @@ switch global.currentCutsceneID {
 					
 				}
 				
+				//fadeOutSpookyGhostAudio(); //TEMP, relocate to ghost object
+				
 			} break;
 			
 			case CAVES_HAUNTING_PART2_CUTSCENE_STATE.LEAVING_HIDING_SPOT: {
@@ -905,7 +921,7 @@ switch global.currentCutsceneID {
 				
 				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.GHOST_RETURNING;
 				
-				var _duration = 360;
+				var _duration = 480;
 				
 				alarm[1] = _duration;
 				
@@ -913,7 +929,7 @@ switch global.currentCutsceneID {
 				
 				with obj_trigger_dialogue {
 				
-					var _customTextDisplayDuration = 180;
+					var _customTextDisplayDuration = 300;
 				
 					count = 0;
 					alarm[0] = _customTextDisplayDuration;
@@ -923,6 +939,8 @@ switch global.currentCutsceneID {
 					dialogueString[1] =  global.dialogueStringArrays.cavesHauntingPart2[13];
 				
 				}
+				
+				audio_play_sound(sfx_ghost_screamAlerted, 1, 0, 0.5, 0, 0.65); 
 				
 			} break;
 			
@@ -954,6 +972,8 @@ switch global.currentCutsceneID {
 				
 				}
 				
+				audio_play_sound(obj_control.bgmCaveChase, 1, 1);
+				
 			} break;
 			
 			case CAVES_HAUNTING_PART2_CUTSCENE_STATE.SCAMMER_FLEEING: {
@@ -963,6 +983,12 @@ switch global.currentCutsceneID {
 				setPatterScaredSprites();
 				instance_destroy(obj_trigger_beatUpScammerFirst);
 				deactivateCutscene();
+				
+				with obj_npc_ghost_cavesChase {
+				
+					alarm[0] = delayBeforeChase;
+				
+				}
 				
 			} break;
 			

@@ -60,6 +60,9 @@ switch global.currentCutsceneID {
 		
 		alarm[1] = 10;
 		
+		audio_sound_gain(obj_control.bgmCave, 0, 3000);
+		audio_sound_gain(amb_cave_with_water_dripping, 0, 3000);
+		
 		//if patterPlayerIsPresent() instance_create_layer(obj_player_patter.x - 8, obj_player_patter.y + 80, "Instances", obj_background_elipses);
 
 	} break;

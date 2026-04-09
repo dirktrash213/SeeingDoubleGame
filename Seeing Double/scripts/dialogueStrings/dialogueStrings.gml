@@ -31,7 +31,7 @@ global.dialogueStringArrays = {
 		"What's with that concerned look? You're making me nervous, lady.", 
 		"Hide!? From [slant]what!?[/slant] [shake]What's coming!?[/shake]", //10
 		"Oh crap oh crap oh crap oh crap oh crap oh crap oh crap oh crap oh crap oh crap!!", 
-		"WHAT THE HELL WAS EVEN THAT!?", 
+		"[font_scoreUI]WHAT THE HELL IS EVEN THAT!?[/font]", 
 		"Oops. My bad.", 
 		"RUUUUUUN!!!", 
 	
@@ -57,7 +57,7 @@ global.dialogueStringArrays = {
 		"No? What's with that concerned look? You're making me nervous, lady.", 
 		"Hide!? From [slant]what!?[/slant] [shake]What's coming!?[/shake]", 
 		"Oh crap oh crap oh crap oh crap oh crap oh crap oh crap oh crap oh crap oh crap!!", 
-		"WHAT THE HELL WAS EVEN THAT!?", 
+		"[font_scoreUI]WHAT THE HELL IS EVEN THAT!?[/font]", 
 		"Oops. My bad.", 
 		"RUUUUUUN!!!", 
 	

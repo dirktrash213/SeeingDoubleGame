@@ -254,7 +254,7 @@ if ridingMinecart {
 
 }
 
-if moveDownPressed && !onGround && !groundPounding && !groundPoundOnCooldown && (gemPowerupGroundPound || global.groundPoundActive) {
+if moveDownPressed && !onGround && !global.cutsceneActive && !groundPounding && !groundPoundOnCooldown && (gemPowerupGroundPound || global.groundPoundActive) {
 
 	groundPounding = true;
 	groundPoundRising = true;

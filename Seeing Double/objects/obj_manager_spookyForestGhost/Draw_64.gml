@@ -1,7 +1,7 @@
 if !textAppearing exit;
 if textFinishedAppearing exit;
 
-show_debug_message("drawing hide text")
+//show_debug_message("drawing hide text")
 
 var _hideText = scribble("HIDE.");
 

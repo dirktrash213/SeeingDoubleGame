@@ -40,6 +40,7 @@
     {"name":"inst_B8C1F1E","path":"rooms/rm_cave_chase_narrowDescentFloor/rm_cave_chase_narrowDescentFloor.yy",},
     {"name":"inst_3680560B","path":"rooms/rm_cave_chase_narrowDescentFloor/rm_cave_chase_narrowDescentFloor.yy",},
     {"name":"inst_7E6EC6C1","path":"rooms/rm_cave_chase_narrowDescentFloor/rm_cave_chase_narrowDescentFloor.yy",},
+    {"name":"inst_52FE612C","path":"rooms/rm_cave_chase_narrowDescentFloor/rm_cave_chase_narrowDescentFloor.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -89,6 +90,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_350F612E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_groundPoundFloor","path":"objects/obj_interactable_groundPoundFloor/obj_interactable_groundPoundFloor.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":240.0,"y":320.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B8C1F1E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_groundPoundFloor","path":"objects/obj_interactable_groundPoundFloor/obj_interactable_groundPoundFloor.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":240.0,"y":336.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3680560B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_groundPoundFloor","path":"objects/obj_interactable_groundPoundFloor/obj_interactable_groundPoundFloor.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":240.0,"y":352.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_52FE612C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_npc_ghost_cavesChase","path":"objects/obj_npc_ghost_cavesChase/obj_npc_ghost_cavesChase.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":304.0,"y":-32.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"LevelTiles","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":37,"SerialiseWidth":30,"TileCompressedData":[
 -14,136,3,137,0,135,-13,136,-14,131,3,137,0,135,-23,136,-4,156,3,157,0,155,-4,156,1,154,-17,136,1,137,

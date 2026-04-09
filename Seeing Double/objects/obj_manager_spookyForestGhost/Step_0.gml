@@ -6,7 +6,7 @@ if !ambienceFadingIn && timer >= ambienceFadingInPoint {
 
 	ambienceFadingIn = true;
 	
-	show_debug_message("ambienceFadingIn")
+	//show_debug_message("ambienceFadingIn")
 
 	audio_sound_gain(bgm_ghostlyReverberations, 1, 20000);
 
@@ -16,7 +16,7 @@ if !ambienceFadingIn2 && timer >= ambienceFadingIn2Point {
 
 	ambienceFadingIn2 = true;
 	
-	show_debug_message("ambienceFadingIn2")
+	//show_debug_message("ambienceFadingIn2")
 
 	audio_sound_gain(bgm_ephemeralEcho, 1, 10000);
 
@@ -26,7 +26,7 @@ if !ambienceFadingIn3 && timer >= ambienceFadingIn3Point {
 
 	ambienceFadingIn3 = true;
 	
-	show_debug_message("ambienceFadingIn3")
+	//show_debug_message("ambienceFadingIn3")
 
 	//audio_sound_gain(bgm_cursedAtmosphere, 1, 1000);
 	audio_sound_gain(bgm_cursedAtmosphere_LOUD, 1, 1000);
@@ -44,7 +44,7 @@ if !glitchesAppearing && timer >= glitchesAppearingPoint {
 	audio_sound_gain(sfx_glitch_loop, 1.0, 15000);
 	//audio_sound_gain(sfx_glitch_loop2, 0.3, 15000);
 	
-	show_debug_message("glitchesAppearing")
+	//show_debug_message("glitchesAppearing")
 
 }
 
@@ -54,7 +54,7 @@ if !textAppearing && timer >= textAppearingPoint {
 	
 	alarm[0] = textDuration;
 	
-	show_debug_message("textAppearing")
+	//show_debug_message("textAppearing")
 
 }
 
@@ -62,7 +62,7 @@ if !ghostArriving && timer >= ghostArrivingPoint {
 
 	ghostArriving = true;
 	
-	show_debug_message("ghostArriving")
+	//show_debug_message("ghostArriving")
 	
 	audio_play_sound(screamSFX, 1, 0, 0.5);
 	
@@ -82,7 +82,7 @@ if !ghostArriving && timer >= ghostArrivingPoint {
 
 if ghostArriving && !ambienceFadingOut && !audio_is_playing(screamSFX) && !audio_is_playing(screamSFX2) {
 	
-	show_debug_message("playing scream 2")
+	//show_debug_message("playing scream 2")
 	
 	audio_play_sound(screamSFX2, 1, 0, 0.5);
 	
@@ -103,7 +103,7 @@ if !ambienceFadingOut && timer >= ambienceFadingOutPoint {
 	audio_sound_gain(sfx_glitch_loop2, 0, _fadeOutTime);
 	audio_sound_gain(screamSFX2, 0, _fadeOutTime);
 
-	show_debug_message("ambienceFadingOut")
+	//show_debug_message("ambienceFadingOut")
 
 }
 
@@ -116,7 +116,7 @@ if !ghostDeparting && timer >= ghostDepartingPoint {
 	
 	if patterPlayerIsPresent() obj_player_patter.recoveringFromFear = true;
 	
-	show_debug_message("ghostDeparting")
+	//show_debug_message("ghostDeparting")
 	
 	ghostGone = true;
 

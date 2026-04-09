@@ -94,6 +94,7 @@
     {"name":"inst_4EA5D94D","path":"rooms/rm_cave_chase_coins/rm_cave_chase_coins.yy",},
     {"name":"inst_5CF06A98","path":"rooms/rm_cave_chase_coins/rm_cave_chase_coins.yy",},
     {"name":"inst_5C994BAE","path":"rooms/rm_cave_chase_coins/rm_cave_chase_coins.yy",},
+    {"name":"inst_267C14EF","path":"rooms/rm_cave_chase_coins/rm_cave_chase_coins.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -195,7 +196,9 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5CF06A98","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_pickup_coin","path":"objects/obj_pickup_coin/obj_pickup_coin.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1160.0,"y":504.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5C994BAE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_pickup_coin","path":"objects/obj_pickup_coin/obj_pickup_coin.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1488.0,"y":568.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
-    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":500,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
+    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":500,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_267C14EF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_npc_ghost_cavesChase","path":"objects/obj_npc_ghost_cavesChase/obj_npc_ghost_cavesChase.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-48.0,"y":496.0,},
+      ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"LevelTiles","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":37,"SerialiseWidth":120,"TileCompressedData":[
 -290,131,1,134,-16,156,1,154,-31,131,1,134,-12,156,1,154,-4,131,3,134,156,156,-30,131,1,134,-7,156,1,154,-6,131,1,134,-4,156,1,157,-3,0,1,3,-9,0,4,3,0,0,155,-5,156,1,154,-9,131,1,134,-8,156,4,154,131,131,134,-3,156,1,157,-12,0,1,155,-4,156,3,157,0,0,-4,156,1,154,-7,131,1,134,-6,156,3,154,131,134,-8,156,1,157,-7,0,1,155,-6,156,1,157,-8,0,1,23,-9,0,1,23,-8,0,1,155,-9,156,1,157,
 -8,0,4,155,156,156,157,-28,0,1,155,-7,156,1,157,-6,0,3,155,156,157,-32,0,1,23,-9,0,1,23,-109,0,1,23,-9,0,1,23,-109,0,1,23,-9,0,1,23,-109,0,1,44,-9,45,1,46,-39,0,1,73,-118,0,3,115,116,117,-117,0,5,135,136,114,116,117,-115,0,1,135,-3,136,3,114,116,117,-113,0,1,135,-5,136,3,114,116,117,-6,0,2,115,116,-103,0,3,155,156,154,-5,136,1,114,-6,116,2,174,136,-105,0,1,135,-14,136,-105,0,1,

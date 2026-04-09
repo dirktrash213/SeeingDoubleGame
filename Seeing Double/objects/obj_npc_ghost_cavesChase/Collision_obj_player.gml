@@ -1,0 +1,6 @@
+playerCaught = true;
+
+
+
+
+

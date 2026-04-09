@@ -187,6 +187,10 @@ if variableTextDisplayDuration {
 	      
 			alarm[0] = 200;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_eyebrowRaise;
+			
+			audio_sound_gain(bgm_cursedAtmosphere_LOUD, 1, 1000);
+			audio_sound_gain(sfx_glitch_loop2, 0.2, 15000);
+			audio_sound_gain(sfx_glitch_loop, 0.25, 15000);
 		
 		} break;
 		
@@ -194,6 +198,11 @@ if variableTextDisplayDuration {
 	      
 			alarm[0] = 200;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_scared;
+			//audio_sound_gain(bgm_cursedAtmosphere_LOUD, 1, 1000);
+			//audio_sound_gain(sfx_glitch_loop2, 0.2, 15000);
+			//audio_sound_gain(sfx_glitch_loop, 1.0, 15000);
+			
+			audio_play_sound(sfx_ghost_whisper, 1, 0, 1, 0, 1.0); 
 		
 		} break;
 		
@@ -204,12 +213,14 @@ if variableTextDisplayDuration {
 			
 			with obj_npc_scammer_mines {
 				
-					sprite_index = spr_npc_scammer_shocked;
-					
-					vspeed = -5;
-					gravity = gravAmount;
+				sprite_index = spr_npc_scammer_shocked;
 				
-				}
+				vspeed = -7;
+				gravity = gravAmount;
+			
+			}
+			
+			audio_play_sound(sfx_whatIsEvenThat, 1, 0);
 		
 		} break;
 		
