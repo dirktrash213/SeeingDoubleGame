@@ -1,0 +1,1 @@
+lookingAtPlayer = true;

@@ -98,6 +98,16 @@ if count == _l-1 {
 		
 	}
 	
+	if room == rm_cave_chase_longRun { 
+		
+		//show_debug_message("grosdiyjtugdersy")
+		
+		//if global.dialogueVariables.talkedToLostMiner global.dialogueVariables.talkedToLostMinerTwice = true;
+		
+		//global.dialogueVariables.talkedToLostMiner = true;
+		
+	}
+	
 	exit;
 	
 }
@@ -231,12 +241,28 @@ if variableTextDisplayDuration {
 		
 		} break;
 		
-		//case global.dialogueStringArrays.cavesHauntingPart2[11]: {
-	    //  
-		//	alarm[0] = textDisplayDuration;
-		//	obj_npc_scammer_mines.sprite_index = spr_npc_scammer_run_scared;
-		//
-		//} break;
+		//----------------------------------------------------------
+		
+		case global.dialogueStringArrays.cavesMetGreenMinerDad[7]: {
+	      
+			alarm[0] = textDisplayDuration;
+			obj_npc_minerGreenDad.lookingAtPlayer = false;
+		
+		} break;
+		
+		case global.dialogueStringArrays.cavesMetGreenMinerDad[8]: { //"Did that activate something?"
+	      
+			obj_interactable_switch_groundPound.inactive = false;
+			alarm[0] = textDisplayDuration;
+		
+		} break;
+		
+		case global.dialogueStringArrays.cavesWaitingForGhostToLeave[10]: { //"Well, enough yappin'."
+	      
+			global.dialogueVariables.talkedToLostMinerTwice = true;
+			alarm[0] = textDisplayDuration;
+		
+		} break;
 		
 		default: {
 		

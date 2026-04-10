@@ -386,6 +386,10 @@ if groundPounding {
 	
 	}
 	
+	var _groundPoundSwitch = instance_place(x,y+_detectionOffsetY+_detectionOffsetYExtra,obj_interactable_switch_groundPound);
+	
+	detectMiscObjectDuringGroundPound(_groundPoundSwitch);
+	
 	var _enemy = instance_place(x,y+_detectionOffsetY+_detectionOffsetYExtra,obj_enemy);
 	
 	detectEnemyDuringGroundPound(_enemy);

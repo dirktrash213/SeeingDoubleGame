@@ -124,6 +124,8 @@ global.dialogueVariables = {
 	talkedToExplorerCaveTwice : false,
 	talkedToHungryMiner : false,
 	eatenCaveCherry : false,
+	talkedToLostMiner : false,
+	talkedToLostMinerTwice : false,
 
 }
 
@@ -135,6 +137,8 @@ global.caughtByForestGhost = false;
 global.escapedForestGhost = false;
 
 global.solvedCavePuzzle = false;
+
+global.caveChaseOver = false; //Save this variable?
 
 global.foundRose = false;
 global.foundLily = false;

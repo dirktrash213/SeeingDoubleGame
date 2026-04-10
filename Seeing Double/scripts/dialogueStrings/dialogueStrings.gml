@@ -62,6 +62,55 @@ global.dialogueStringArrays = {
 		"RUUUUUUN!!!", 
 	
 	],
+	
+	cavesMetGreenMinerDad : [ 
+	
+		"GET BEHIND THE BARRIER!!", //0
+		"Whoa. Whoa [shake]nelly.[/shake] Talk about a close shave.",
+		"Breathe easy. We're safe now. She can't get through. She's tried before.",
+	//	"Whew. You have [slant]no[/slant] idea how swell it is to see a friendly face down here. Wherever \"here\" is.",
+		"Whew. You have [slant]no[/slant] idea how swell it is to see a friendly face. Like a breath of fresh air!",
+		"I was just minin' away per usual, tryin' to make quota when bam. Cave in.",
+		"Took some uncharted route to regroup. Then I got chased by that angry spectre, much like yourself, and ended up... here.", //5
+		"What you reckon is the deal with this place, anyways? I never in a million years would have expected to stumble upon a lab this far down.",
+		"I've been messin' with this control panel to try to open that door, but no dice. Unless... that button... hmmm.",
+		"Oh. Did that activate something?",
+	//	"What's that? You've seen my mates? And you know the way back? Well hot diggity dog!",
+	//	"What's that? You can tell me the way back!? Well hot diggity dog!",
+	//	"Thank you kindly, stranger. If I had some gold I'd give it to ya, but alas.",
+	//	"By the way, what do you figure this science lab place is about?",
+		
+	],
+	
+	cavesOpenLabDoor : [ 
+	
+		"Well hot diggity dog! I don't know what the heck you did but it did the trick!", //0
+		"I reckon you're heading inside, then? Well good luck. Me? I'm gonna wait for a bit then head back and find my mates.",
+		"Oh, you've seen my mining buddies? You know the way back, perhaps? Can you describe it?",
+		"I see. Well, kind stranger, you may have just saved my hide. Thank you. If I had some gold I'd give it to ya, but alas.",
+		//"My son must be worried sick. Ah, junior. Always worrying about his old man. Warms my heart. ",
+		"My son [spr_npc_greenFella_kid] must be worried sick. Ah, junior. Can't wait to see that green bundle of joy.",
+		"Good luck. And if we meet again, be sure to fill me in on what sorts of wacky gizmos and gadgets you find in there. I'm dyin' to know!", //5
+		
+	],
+	
+	cavesWaitingForGhostToLeave : [ 
+	
+		"Oh, I'm just waitin' a bit to be sure our ghostly friend is gone. Then I'll head out.", //0
+		//"...",
+		"So, what's your story? How'd you end up down here? You don't look like a miner.",
+		"You're searching for your wife? So she's in that lab, huh?",
+		"Not exactly? Hmm. Well I can't say I understand, but I sympathize. I hope you find her.",
+		"Life's been tough lately. For everyone. Seems like all the gold's been dryin' up. So we had to mine deeper.", 
+		"Which of course led to my current predicament, not to mention other miners going missing.", //5
+		//"Ugh. Just wish there was enough gold to go around, y'know? But I suppose it wouldn't be worth much then. Funny, eh?",
+		"Just wish there was enough gold to go around, y'know? Then we wouldn't have to be slaving away.",
+		"Heh. You reckon it's worth the time to have such silly daydreams? I dunno.",
+		"Y'know, the volcano on this island is rumored to have tons of priceless gems.",
+		"Maybe one day I could... nah. It's much too dangerous.",
+		"Well, enough yappin'. You got a wife to find, so I'd better not keep you captive.", //10
+		
+	],
 
 
 }

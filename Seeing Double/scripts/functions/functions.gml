@@ -862,6 +862,20 @@ function shakeScreen(_mag, _frames) {
     }
 }
 
+function detectMiscObjectDuringGroundPound(_object) {
+
+	if _object != noone && groundPoundFalling {
+	
+		if _object.object_index == obj_interactable_switch_groundPound {
+			
+			if !_object.inactive _object.pressed = true;
+			
+		}
+				
+	}
+
+}
+
 function detectFloorDuringGroundPound(_floor) {
 
 	if _floor != noone && groundPoundFalling {
