@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Cave Backgrounds",
-    "path": "folders/Sprites/NEW/Cave Stuff/Cave Backgrounds.yy",
+    "name": "1",
+    "path": "folders/Sprites/NEW/Cave Stuff/Cave Backgrounds/1.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -1,4 +1,4 @@
-sprite_index = spr_background_parallax_caves;
+sprite_index = spr_background_parallax_caves_L1;
 
 depth = 750;
 
