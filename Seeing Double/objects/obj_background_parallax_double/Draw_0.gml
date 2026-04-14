@@ -13,21 +13,18 @@ if bigHorizontalRoom {
 		case spr_background_parallax_caves2_L1Long: {
 	   
 			_offsetY = 296;
-			//sprite_index = Plan_1826;
 		
 	   	} break;
 		
 		case spr_background_parallax_caves2_L2Long: {
 	   
 			_offsetY = 148;
-			//sprite_index = Plan_2827;
 		
 	   	} break;
 		
 		case spr_background_parallax_caves2_L3Long: {
 	   
 			_offsetY = 0;
-			//sprite_index = Plan_3828;
 		
 	   	} break;
 		

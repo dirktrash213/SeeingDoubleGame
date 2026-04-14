@@ -31,8 +31,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "4",
-    "path": "folders/Sprites/NEW/Cave Stuff/Cave Backgrounds/4.yy",
+    "name": "Parallax Backgrounds",
+    "path": "folders/Sprites/Background/Parallax Backgrounds.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

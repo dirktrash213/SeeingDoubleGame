@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_background_parallax_caves2_L2Long",
-  "bbox_bottom": 551,
+  "bbox_bottom": 183,
   "bbox_left": 0,
   "bbox_right": 1279,
   "bbox_top": 0,
@@ -17,7 +17,7 @@
   ],
   "gridX": 320,
   "gridY": 184,
-  "height": 552,
+  "height": 184,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"20d1e0b2-3f5d-43ac-b06a-bdca20b68a0c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
