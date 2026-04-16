@@ -8,38 +8,54 @@ if bigHorizontalRoom {
 
 	var _offsetY = 0;
 	
-	switch sprite_index {
+	//switch sprite_index {
+	//    
+	//	case spr_background_parallax_caves3_L1: {
+	//   
+	//		_offsetY = 113;
+	//	
+	//   	} break;
+	//	
+	//	case spr_background_parallax_caves3_L2: {
+	//   
+	//		_offsetY = 83;
+	//	
+	//   	} break;
+	//	
+	//	case spr_background_parallax_caves4_L1: {
+	//   
+	//		_offsetY = 113;
+	//	
+	//   	} break;
+	//	
+	//	case spr_background_parallax_caves4_L3ALT: {
+	//   	
+	//		_offsetY = 59;
+	//	
+	//   	} break;
+	//   
+	//}
+	
+	switch parallaxMult {
 	    
-		case spr_background_parallax_caves2_L1Long: {
-	   
-			_offsetY = 296;
-		
-	   	} break;
-		
-		case spr_background_parallax_caves2_L2Long: {
-	   
-			_offsetY = 148;
-		
-	   	} break;
-		
-		case spr_background_parallax_caves2_L3Long: {
-	   
-			_offsetY = 0;
-		
-	   	} break;
-		
-		case spr_background_parallax_caves3_L1: {
+		case 0.81: {
 	   
 			_offsetY = 113;
 		
 	   	} break;
 		
-		case spr_background_parallax_caves3_L2: {
+		case 0.86: {
 	   
 			_offsetY = 83;
 		
 	   	} break;
+		
+		case 0.9: {
 	   
+			_offsetY = 59;
+		
+	   	} break;
+		
 	}
 
 	draw_sprite(sprite_index, 0, _x*parallaxMult, _y*parallaxMult);

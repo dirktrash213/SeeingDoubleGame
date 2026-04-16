@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_tilemap_cave2_background",
-  "bbox_bottom": 207,
+  "bbox_bottom": 527,
   "bbox_left": 0,
   "bbox_right": 415,
   "bbox_top": 0,
@@ -17,7 +17,7 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 208,
+  "height": 832,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cc2da288-0509-4e4f-82a0-1c177308c979","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
