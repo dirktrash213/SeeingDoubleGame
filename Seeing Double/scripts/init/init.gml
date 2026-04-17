@@ -120,6 +120,7 @@ global.dialogueVariables = {
 	talkedToCamperTwice : false,
 	talkedToMinerGroup : false,
 	beatCaveMinigame : false,
+	solvedCavePuzzle : false,
 	talkedToExplorerCave : false,
 	talkedToExplorerCaveTwice : false,
 	talkedToHungryMiner : false,
@@ -131,12 +132,16 @@ global.dialogueVariables = {
 
 global.gotScammed = false;
 //global.gotScammed = true;
-global.solvedForestPuzzle = false;
+
 
 global.caughtByForestGhost = false;
 global.escapedForestGhost = false;
 
+global.solvedForestPuzzle = false;
 global.solvedCavePuzzle = false;
+global.solvedLabPuzzle = false;
+global.solvedSewerPuzzle = false;
+global.solvedVolcanoPuzzle = false;
 
 global.caveChaseOver = false; //Save this variable?
 

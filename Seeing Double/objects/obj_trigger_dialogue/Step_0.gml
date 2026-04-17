@@ -89,6 +89,27 @@ if global.dialogueVariables.solvedForestPuzzle && room == rm_forest_spotTheDiffe
 
 }
 
+if global.dialogueVariables.solvedCavePuzzle && room == rm_cave_spotTheDifference && !specialDialogueTriggered {
+
+	specialDialogueTriggered = true;
+
+	count = 0;
+	alarm[0] = -1;
+	triggered = false;
+	
+	dialogueString = [];
+
+	//dialogueString[0] = global.dialogueStringArrays.cavesSolvedSpotTheDifference[0];
+	
+	for (var i = 0; i < array_length(global.dialogueStringArrays.cavesSolvedSpotTheDifference); ++i) {
+	 
+		dialogueString[i] = global.dialogueStringArrays.cavesSolvedSpotTheDifference[i];
+	 
+	}
+
+
+}
+
 if global.dialogueVariables.eatenCaveCherry && room == rm_cave_groundPoundCrystal_highJumpTutorial && !specialDialogueTriggered && eatenCaveCherry {
 
 	//show_debug_message("cave cherry step dialogue triggered")

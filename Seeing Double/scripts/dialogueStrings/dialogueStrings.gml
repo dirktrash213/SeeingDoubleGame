@@ -1,6 +1,35 @@
 global.dialogueStringArrays = {
 
 	
+	cavesSolvingSpotTheDifference : [ 
+	
+		"I, the great explorer Beckett, have once again been stymied.", 
+		"But not for long! My astute powers of observation tell me...",
+		"That there must be a secret switch hidden somewhere!",
+		"Yes, yes indeed. I must once again keep a keen eye open for anything out of the ordinary.",
+	
+	],
+	
+	cavesSpotTheDifferenceHint : [ 
+	
+		"Hmm. I wonder... is something missing? Or perhaps it's my imagination...", 
+	
+	],
+	
+	cavesSpotTheDifferenceHint2 : [ 
+	
+		//"Hmm. I get the feeling that this switch is hidden well. Perhaps high up. If only I could double jump...", 
+		"Hmm. I wonder what became of the miners who built this camp. Were they really going to blow up that doorway?", 
+	
+	],
+	
+	cavesSolvedSpotTheDifference : [ 
+	
+		//"Aha! Once again I, the great explorer Becket, have cracked the uncrackable! My genius knows no bounds!", 
+		"Aha! Once again I, the great explorer Becket, have solved the riddle! An elementary task for a sleuthing expert such as myself.", 
+	
+	],
+	
 	cavesHaunting : [ 
 	
 		"Well, salt my eggs. This is not good I tell ya, [slant]not[/slant] good! What was I [slant]thinkin'[/slant], followin' that yellow moron?", //0

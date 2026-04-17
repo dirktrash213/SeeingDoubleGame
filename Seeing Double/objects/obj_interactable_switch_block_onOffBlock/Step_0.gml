@@ -6,6 +6,13 @@ if bonked && (visible || secret) {
 		global.solvedForestPuzzle = true;
 		
 	}
+	
+	if room == rm_cave_spotTheDifference {
+		
+		global.dialogueVariables.solvedCavePuzzle = true;
+		global.solvedCavePuzzle = true;
+		
+	}
 
 	visible = true;
 	
@@ -22,7 +29,7 @@ if bonked && (visible || secret) {
 		
 			instance_destroy();
 			
-			if room != rm_forest_spotTheDifference {
+			if room != rm_forest_spotTheDifference && room != rm_cave_spotTheDifference {
 			
 				with instance_create_layer(x,y, "Instances", obj_interactable_onOff_block_off) {
 			

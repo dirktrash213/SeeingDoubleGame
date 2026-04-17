@@ -86,6 +86,14 @@ if count == _l-1 {
 		
 	}
 	
+	if room == rm_cave_spotTheDifference { 
+		
+		if global.dialogueVariables.talkedToExplorerCave global.dialogueVariables.talkedToExplorerCaveTwice = true;
+		
+		global.dialogueVariables.talkedToExplorerCave = true;
+		
+	}
+	
 	if room == rm_cave_missingMiner { 
 		
 		global.dialogueVariables.talkedToMinerGroup = true;

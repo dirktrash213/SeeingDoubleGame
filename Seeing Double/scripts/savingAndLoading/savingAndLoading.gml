@@ -190,7 +190,7 @@ function saveGame(){
 	file_text_writeln(_file);
 	file_text_write_real(_file, global.gotScammed);
 	file_text_writeln(_file);
-	file_text_write_real(_file, global.solvedForestPuzzle);
+	file_text_write_real(_file, global.solvedForestPuzzle); //Add other solve variables
 	file_text_writeln(_file);
 	file_text_write_real(_file, global.doubleJumpActive);
 	file_text_writeln(_file);
