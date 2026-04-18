@@ -7,35 +7,7 @@ var _y2 = camera_get_view_y(view_camera[1]);
 if bigHorizontalRoom {
 
 	var _offsetY = 0;
-	
-	//switch sprite_index {
-	//    
-	//	case spr_background_parallax_caves3_L1: {
-	//   
-	//		_offsetY = 113;
-	//	
-	//   	} break;
-	//	
-	//	case spr_background_parallax_caves3_L2: {
-	//   
-	//		_offsetY = 83;
-	//	
-	//   	} break;
-	//	
-	//	case spr_background_parallax_caves4_L1: {
-	//   
-	//		_offsetY = 113;
-	//	
-	//   	} break;
-	//	
-	//	case spr_background_parallax_caves4_L3ALT: {
-	//   	
-	//		_offsetY = 59;
-	//	
-	//   	} break;
-	//   
-	//}
-	
+
 	switch parallaxMult {
 	    
 		case 0.81: {
@@ -57,9 +29,18 @@ if bigHorizontalRoom {
 	   	} break;
 		
 	}
+	
+	var _offsetX = sprite_width;
+	
+	for (var i = 0; i < 3; ++i) {
+		   
+		draw_sprite(sprite_index, 0, _x*parallaxMult + _offsetX*i, _y*parallaxMult);
+		draw_sprite(sprite_index, 0, _x2*parallaxMult + _offsetX*i, (_y2*parallaxMult) + _offsetY);
+	   
+	}
 
-	draw_sprite(sprite_index, 0, _x*parallaxMult, _y*parallaxMult);
-	draw_sprite(sprite_index, 0, _x2*parallaxMult, (_y2*parallaxMult) + _offsetY);
+	//draw_sprite(sprite_index, 0, _x*parallaxMult, _y*parallaxMult);
+	//draw_sprite(sprite_index, 0, _x2*parallaxMult, (_y2*parallaxMult) + _offsetY);
 	
 } else {
 

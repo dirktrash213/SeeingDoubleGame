@@ -30,6 +30,27 @@ global.dialogueStringArrays = {
 	
 	],
 	
+	cavesMinerByScienceJuice : [ 
+	
+		//"I found this barrel of dubious substance just sitting here. What do you suppose it is?", 
+		"I found this barrel of dubious orange substance just sitting over there. Where did it come from?", 
+		//"Looks like toxic sludge if you ask me. I would definitely not jump into that barrel.", 
+		"It must be toxic waste. Only a fool would jump in. A dumb, stupid, blithering idiot. Which I can only assume you are. On you go!", 
+		//"T-that could be cancer causing radiation sludge for all you know!! You could mutate and grow six hands, or tongues where your eyes are, or, or...", 
+	
+	],
+	
+	cavesMinerByScienceJuiceShocked : [ 
+	
+		//"You jumped in!? You're crazy! A madman! Completely, utterly deranged!!", 
+		"I see not only you are unharmed, but you've also gained the magic ability to pound the ground.", 
+		"...I regret not jumping in now.", 
+		//"...I regret not jumping into the toxic sludge.", 
+		//"You've taught me a valuable lesson, friend.", 
+		//"And that lesson is: Always jump into toxic sludge. Which I will do from now on. Thanks!", 
+	
+	],
+	
 	cavesHaunting : [ 
 	
 		"Well, salt my eggs. This is not good I tell ya, [slant]not[/slant] good! What was I [slant]thinkin'[/slant], followin' that yellow moron?", //0

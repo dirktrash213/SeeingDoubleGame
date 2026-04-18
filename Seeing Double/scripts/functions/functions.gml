@@ -1326,3 +1326,11 @@ function fadeOutSpookyGhostAudio() {
 	audio_sound_gain(sfx_glitch_loop2, 0, _fadeOutTime);
 	
 }
+
+function resetDialogueStrings(_textDisplayDuration = textDisplayDuration) {
+
+	count = 0;
+	alarm[0] = _textDisplayDuration;
+	dialogueString = [];
+
+}
