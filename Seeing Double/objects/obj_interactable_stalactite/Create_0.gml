@@ -1,5 +1,5 @@
-dripRate = 50;
-dripRateVariation = 10;
+dripRate = 180;
+dripRateVariation = 60;
 
 alarm[0] = dripRate;
 

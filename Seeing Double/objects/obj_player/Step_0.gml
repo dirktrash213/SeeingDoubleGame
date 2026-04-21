@@ -32,6 +32,9 @@ if global.playerDefeated || global.paused {
 
 normalizeStretching();
 
+//audio_listener_position(x, y, 0);
+
+//if object_index == obj_player_pitter audio_listener_position(x, y, 0);
 
 //make_layer_transparent("SecretTiles", 0, 0.05);
 

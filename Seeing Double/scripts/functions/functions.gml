@@ -1334,3 +1334,24 @@ function resetDialogueStrings(_textDisplayDuration = textDisplayDuration) {
 	dialogueString = [];
 
 }
+
+function playAudioWithFalloff(_audio, _maxDist = 600) {
+
+	//Calculate distance and volume
+	if playerIsPresent() {
+	
+		var _nearestPlayer = instance_nearest(x,y,obj_player);
+	
+	   // var _maxDist = 600; // The distance (in pixels) where the sound becomes silent
+	    var _dist = point_distance(x, y, _nearestPlayer.x, _nearestPlayer.y);
+    
+	    // This creates a value between 1 (on top of player) and 0 (far away)
+	    var _volume = 1 - (_dist / _maxDist);
+	    _volume = clamp(_volume, 0, 1); // Ensure volume doesn't go below 0
+    
+	    // 3. Play the sound with the calculated volume
+	    // Syntax: audio_play_sound(index, priority, loop, gain)
+	    audio_play_sound(_audio, 1, false, _volume);
+	}
+
+}
