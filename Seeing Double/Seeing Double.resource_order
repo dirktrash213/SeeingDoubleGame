@@ -1079,6 +1079,7 @@
     {"name":"SP103_03","order":2,"path":"sprites/SP103_03/SP103_03.yy",},
     {"name":"rm_cave_groundPoundCrystal_aboveBarrelRoom","order":69,"path":"rooms/rm_cave_groundPoundCrystal_aboveBarrelRoom/rm_cave_groundPoundCrystal_aboveBarrelRoom.yy",},
     {"name":"spr_tilemap_ruins_background","order":9,"path":"sprites/spr_tilemap_ruins_background/spr_tilemap_ruins_background.yy",},
+    {"name":"bgm_dramaticCaveTheme","order":13,"path":"sounds/bgm_dramaticCaveTheme/bgm_dramaticCaveTheme.yy",},
     {"name":"obj_interactable_breakableFloorWide","order":43,"path":"objects/obj_interactable_breakableFloorWide/obj_interactable_breakableFloorWide.yy",},
     {"name":"spr_promo_capsule_header582","order":8,"path":"sprites/spr_promo_capsule_header582/spr_promo_capsule_header582.yy",},
     {"name":"spr_interactable_checkpointPlant633","order":3,"path":"sprites/spr_interactable_checkpointPlant633/spr_interactable_checkpointPlant633.yy",},

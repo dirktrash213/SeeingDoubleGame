@@ -2,6 +2,20 @@ var _l = array_length(dialogueString);
 
 if count == _l-1 {
 	
+	with obj_interactable_switch_block_discord {
+			
+		visible = true;
+		triggered = true;
+		
+	}
+	
+	with obj_interactable_switch_block_steamPage {
+		
+		visible = true;
+		triggered = true;
+		
+	}
+	
 	//Edge cases
 	if room == rm_hills_secretKeyCard {
 		
@@ -54,23 +68,24 @@ if count == _l-1 {
 		
 	}
 	
-	if room == rm_cave_entrance { 
-		
-		with obj_interactable_switch_block_discord {
-			
-			visible = true;
-			triggered = true;
-			
-		}
-		
-		with obj_interactable_switch_block_steamPage {
-			
-			visible = true;
-			triggered = true;
-			
-		}
-		
-	}
+	//Moved to top
+	//if room == rm_cave_entrance { 
+	//	
+	//	with obj_interactable_switch_block_discord {
+	//		
+	//		visible = true;
+	//		triggered = true;
+	//		
+	//	}
+	//	
+	//	with obj_interactable_switch_block_steamPage {
+	//		
+	//		visible = true;
+	//		triggered = true;
+	//		
+	//	}
+	//	
+	//}
 	
 	if room == rm_cave_miner { 
 		

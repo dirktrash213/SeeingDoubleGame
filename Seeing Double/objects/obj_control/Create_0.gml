@@ -52,7 +52,8 @@ canDrawDivider = true;
 bgmForest = bgm_forestNightThemeLoop;
 //bgmForest = bgm_relax_in_the_forest_background;
 //bgmCave = bgm_in_the_cave;
-bgmCave = bgm_burrowedBelow;
+bgmCave = bgm_dramaticCaveTheme;
+bgmCaveRestArea = bgm_burrowedBelow;
 bgmCaveChase = bgm_runAway;
 
 //Load player settings
