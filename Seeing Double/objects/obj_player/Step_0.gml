@@ -214,7 +214,8 @@ if ridingMinecart {
 	
 		}
 	
-		audio_play_sound(jumpSfx, 1, 0, 1, 0, _pitch);
+		//audio_play_sound(jumpSfx, 1, 0, 1, 0, _pitch);
+		audio_play_sound_on(obj_control.reverb_emitter, jumpSfx, 0, 1, 1, 0, _pitch);
 	
 		xStretch = 0.5;
 		yStretch = 1.5;
@@ -274,7 +275,8 @@ if moveDownPressed && !onGround && !global.cutsceneActive && !groundPounding && 
 	
 	var _pitch = random_range(1.50, 1.60);
 	
-	audio_play_sound(sfx_jump_pitter, 1, 0, 1, 0, _pitch);
+	//audio_play_sound(sfx_jump_pitter, 1, 0, 1, 0, _pitch);
+	audio_play_sound_on(obj_control.reverb_emitter, sfx_jump_pitter, 0, 1, 1, 0, _pitch);
 
 }
 
@@ -292,7 +294,8 @@ if groundPounding {
 		vspeed = groundPoundFallSpeed;
 		
 		var _pitch = random_range(2.50, 2.60);
-		audio_play_sound(sfx_slice, 1, 0, 1, 0, _pitch);
+		//audio_play_sound(sfx_slice, 1, 0, 1, 0, _pitch);
+		audio_play_sound_on(obj_control.reverb_emitter, sfx_slice, 0, 1, 1, 0, _pitch);
 		
 		xStretch = 0.5;
 		yStretch = 1.5;
@@ -665,14 +668,16 @@ if place_meeting(x + xSpeed, y, obj_block_wall) {
 					xStretch = 0.5;
 					yStretch = 1.5;
 					
-					if !audio_is_playing(sfx_bonk) audio_play_sound(sfx_bonk, 1, 0, 1, 0, 0.5);
+					//if !audio_is_playing(sfx_bonk) audio_play_sound(sfx_bonk, 1, 0, 1, 0, 0.5);
+					if !audio_is_playing(sfx_bonk) audio_play_sound_on(obj_control.reverb_emitter, sfx_bonk, 0, 1, 1, 0, 0.5);
 				
 				} else {
 			
 					xStretch = 0.8;
 					yStretch = 1.2;
 					
-					if !audio_is_playing(sfx_bonk) audio_play_sound(sfx_bonk, 1, 0, 1, 0, 0.7);
+					//if !audio_is_playing(sfx_bonk) audio_play_sound(sfx_bonk, 1, 0, 1, 0, 0.7);
+					if !audio_is_playing(sfx_bonk) audio_play_sound_on(obj_control.reverb_emitter, sfx_bonk, 0, 1, 1, 0, 0.7);
 				
 				}
 			
@@ -875,7 +880,12 @@ if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled {
 	
 	}
 	
-	audio_play_sound(jumpSfx, 1, 0, 1, 0, _pitch);
+	//audio_play_sound(jumpSfx, 1, 0, 1, 0, _pitch);
+	
+	
+	audio_play_sound_on(obj_control.reverb_emitter, jumpSfx, 0, 1, 1, 0, _pitch);
+	
+	
 	
 	
 	
@@ -940,7 +950,8 @@ if collidingEnemy {
 		if ySpeed > 0 && !climbing && !collidingEnemy.spikey {
 	//	if !climbing {
 	
-			if !audio_is_playing(sfx_slice) audio_play_sound(sfx_slice, 1, 0, 1, 0, 1.5);
+		//	if !audio_is_playing(sfx_slice) audio_play_sound(sfx_slice, 1, 0, 1, 0, 1.5);
+			if !audio_is_playing(sfx_slice) audio_play_sound_on(obj_control.reverb_emitter, sfx_slice, 0, 1, 1, 0, 1.5);
 			
 			if global.doubleJumpActive {
 			
@@ -1018,7 +1029,8 @@ if place_meeting(x, y + ySpeed, obj_interactable_switch_block_parent) && ySpeed 
 			if !inert {
 	
 				bonked = true;
-				if visible || secret audio_play_sound(sfx_pause, 1, 0, 1, 0, 2.0);
+				//if visible || secret audio_play_sound(sfx_pause, 1, 0, 1, 0, 2.0);
+				if visible || secret audio_play_sound_on(obj_control.reverb_emitter, sfx_pause, 0, 1, 1, 0, 2.0);
 			
 			}
 		
@@ -1041,7 +1053,8 @@ if place_meeting(x, y + ySpeed, obj_block_wall) && canCollide {
 	//Bonk head on ceiling 
 	if ySpeed < 0 {
 		
-		if !audio_is_playing(sfx_footstep) audio_play_sound(sfx_footstep, 1, 0, 1, 0, 0.5);
+	//	if !audio_is_playing(sfx_footstep) audio_play_sound(sfx_footstep, 1, 0, 1, 0, 0.5);
+		if !audio_is_playing(sfx_footstep) audio_play_sound_on(obj_control.reverb_emitter, sfx_footstep, 0, 1, 1, 0, 0.5);
 		jumpHoldTimer = 0;
 		
 		//xStretch = 1.5;

@@ -64,3 +64,31 @@ if global.fullScreen window_set_fullscreen(true);
 if !audio_is_playing(amb_soft_wind) audio_play_sound(amb_soft_wind, 1, 1);
 
 playerFallingWithBoulder = false; //Tracks if the player is falling with a boulder from one room to another
+
+
+// Create a custom bus and emitter for your delay effects
+reverb_emitter = audio_emitter_create();
+reverb_bus = audio_bus_create();
+audio_emitter_bus(reverb_emitter, reverb_bus);
+
+// Create the reverb effect
+reverb_effect = audio_effect_create(AudioEffectType.Reverb1);
+enableSmallReverb();
+
+//reverb_effect.bypass = false;
+//reverb_effect.size = 0.25;
+//reverb_effect.damp = 0.95;
+//reverb_effect.mix = 0.5;
+
+//reverb_effect.bypass = false;
+//reverb_effect.size = 0.5;
+//reverb_effect.damp = 0.05;
+//reverb_effect.mix = 0.5;
+
+
+
+// Assign the effect to the first slot of your new bus
+reverb_bus.effects[0] = reverb_effect;
+
+// Connect this bus to the main output
+//audio_bus_main.bypass = false;

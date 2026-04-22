@@ -1355,3 +1355,27 @@ function playAudioWithFalloff(_audio, _maxDist = 600) {
 	}
 
 }
+
+function disableReverb() {
+
+	obj_control.reverb_effect.bypass = true;
+
+}
+
+function enableSmallReverb() {
+
+	obj_control.reverb_effect.bypass = false;
+	obj_control.reverb_effect.size = 0.5;
+	obj_control.reverb_effect.damp = 0.95;
+	obj_control.reverb_effect.mix = 0.35;
+
+}
+
+function enableLargeReverb() {
+
+	obj_control.reverb_effect.bypass = false;
+	obj_control.reverb_effect.size = 0.75;
+	obj_control.reverb_effect.damp = 0.95;
+	obj_control.reverb_effect.mix = 0.5;
+
+}

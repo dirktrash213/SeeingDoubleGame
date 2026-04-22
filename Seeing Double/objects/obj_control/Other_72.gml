@@ -11,6 +11,8 @@ if audio_group_is_loaded(audiogroup_bgm) {
 if audio_group_is_loaded(audiogroup_sfx) {
 
 	audioSFXLoaded = true;
+
+	
 	
 }
 

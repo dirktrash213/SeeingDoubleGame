@@ -9,3 +9,5 @@ global.verticalLevel = false;
 global.customLevel = false;
 
 global.groundPoundActive = true;
+
+disableReverb();

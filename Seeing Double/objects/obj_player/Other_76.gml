@@ -8,7 +8,8 @@ if event_data[? "event_type"] == "sprite event" {
 			
 			var _pitch = random_range(0.5, 1.5);
 			
-			audio_play_sound(sfx_footstep, 1, 0, 1, 0, _pitch);
+			//audio_play_sound(sfx_footstep, 1, 0, 1, 0, _pitch);
+			audio_play_sound_on(obj_control.reverb_emitter, sfx_footstep, 0, 1, 1, 0, _pitch);
 			
 		} break;
 		
@@ -16,7 +17,8 @@ if event_data[? "event_type"] == "sprite event" {
 			
 			var _pitch = random_range(0.7, 1.7);
 			
-			if !audio_is_playing(sfx_footstep) audio_play_sound(sfx_footstep, 1, 0, 1, 0, _pitch);
+			//if !audio_is_playing(sfx_footstep) audio_play_sound(sfx_footstep, 1, 0, 1, 0, _pitch);
+			if !audio_is_playing(sfx_footstep) audio_play_sound_on(obj_control.reverb_emitter, sfx_footstep, 0, 1, 1, 0, _pitch);
 			
 			//var _xScale = moveDir;
 			//
@@ -32,7 +34,8 @@ if event_data[? "event_type"] == "sprite event" {
 			
 			var _pitch = random_range(1.5, 2.5);
 			
-			audio_play_sound(sfx_footstep, 1, 0, 0.35, 0, _pitch);
+			//audio_play_sound(sfx_footstep, 1, 0, 0.35, 0, _pitch);
+			audio_play_sound_on(obj_control.reverb_emitter, sfx_footstep, 0, 1, 0.35, 0, _pitch);
 			
 		} break;
 		
@@ -40,7 +43,8 @@ if event_data[? "event_type"] == "sprite event" {
 			
 			var _pitch = random_range(1.5, 2.5);
 			
-			audio_play_sound(sfx_footstep, 1, 0, 0.35, 0, _pitch);
+			//audio_play_sound(sfx_footstep, 1, 0, 0.35, 0, _pitch);
+			audio_play_sound_on(obj_control.reverb_emitter, sfx_footstep, 0, 1, 0.35, 0, _pitch);
 			
 		} break;
 		
