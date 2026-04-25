@@ -28,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_particle_sweat",
-    "path": "sprites/spr_particle_sweat/spr_particle_sweat.yy",
+    "name": "spr_interactable_waterDroplet",
+    "path": "sprites/spr_interactable_waterDroplet/spr_interactable_waterDroplet.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -848,6 +848,57 @@ function spawnGroundPoundFloorPieces() {
 
 }
 
+function spawnBreakableFloorPieces() {
+
+	var _piecesAmount = 4;
+	
+	var _hSpeedMin = -2;
+	var _hSpeedMax = 2;
+	var _vSpeedMin = -5;
+	var _vSpeedMax = -2;
+	
+	var _rotationSpeed = random_range(2, 900);
+	
+	var _rotationSpeedMin = 1;
+	var _rotationSpeedMax = 10;
+	
+	var _gravity = 0.05;
+		
+	for(var i = 0; i < _piecesAmount; i++) {
+
+		with instance_create_layer(x, y, "Instances", obj_background_breakableFloorPiece) {
+	
+			sprite_index = choose(
+			
+				spr_background_breakableFloorPiece,
+				spr_background_breakableFloorPiece2,
+				spr_background_breakableFloorPiece3,
+			
+			);
+	
+			hspeed = random_range(_hSpeedMin, _hSpeedMax);
+			vspeed = random_range(_vSpeedMin, _vSpeedMax);
+			
+			gravity = _gravity;
+			
+			image_angle = random_range(0, 360);
+			rotationSpeed = random_range(_rotationSpeedMin, _rotationSpeedMax);
+			
+			depth = -10000;
+	
+		}
+	
+	}
+	
+	//var _pitch = random_range(0.25, 0.35);
+	
+	//if !audio_is_playing(sfx_slice) audio_play_sound(sfx_slice, 1, 0, 1, 0, _pitch);
+	//if audio_is_playing(sfx_slice) audio_stop_sound(sfx_slice);
+	
+	//audio_play_sound(sfx_slice, 1, 0, 1, 0, _pitch);
+
+}
+
 function shakeScreen(_mag, _frames) {
     
 	if !global.screenShake return;

@@ -1,6 +1,14 @@
 global.dialogueStringArrays = {
 
 	
+	cavesEntanceMiner : [ 
+	
+		"D-d-did you s-s-see th-that!?", 
+		//"W-was that a g-g-ghost?", 
+		"", 
+		
+	],
+	
 	cavesSolvingSpotTheDifference : [ 
 	
 		"I, the great explorer Beckett, have once again been stymied.", 

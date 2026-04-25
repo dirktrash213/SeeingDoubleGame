@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_tilemap",
-  "bbox_bottom": 415,
+  "bbox_bottom": 639,
   "bbox_left": 0,
   "bbox_right": 319,
   "bbox_top": 0,
