@@ -9,6 +9,19 @@ global.dialogueStringArrays = {
 		
 	],
 	
+	cavesDiary : [ 
+	
+		"A house in cave. He really does get the craziest ideas.", 
+		"But I have to admit it's beautiful here. And so much to study, too!", 
+		"I reckon there's hundreds of unknown species waiting to be discovered. Ooh, how exciting!", 
+		"Oh, he's giving me that look... I might have to wrap this entry up~", 
+		//"Wait a minute... He's peeking at my journal again!! Son of a-", 
+		//"Wait a minute... He's peeking at my journal again!! That sneaky rat!", 
+		"Wait a minute... He's peeking at my journal again!!", 
+		"Simon, if you ever read this I SWEAR I'll kill you.", 
+		
+	],
+	
 	cavesSolvingSpotTheDifference : [ 
 	
 		"I, the great explorer Beckett, have once again been stymied.", 
