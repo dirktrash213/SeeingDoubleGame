@@ -14,6 +14,8 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f25a726d-b4ef-4000-b2a0-09cb017c6c7f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2fa3014d-4819-4057-8293-b04e73b39478",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"af080227-b108-4fc5-baae-f062daf11d4a",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -43,11 +45,11 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 1.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
-    "playbackSpeed": 10.0,
+    "playbackSpeed": 0.0,
     "playbackSpeedType": 0,
     "showBackdrop": true,
     "showBackdropImage": false,
@@ -55,6 +57,8 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f25a726d-b4ef-4000-b2a0-09cb017c6c7f","path":"sprites/spr_tilemap_cave2_backgroundDistance/spr_tilemap_cave2_backgroundDistance.yy",},},},"Disabled":false,"id":"77ae1fa7-d9e8-4ed5-b047-dae3aaa67b77","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2fa3014d-4819-4057-8293-b04e73b39478","path":"sprites/spr_tilemap_cave2_backgroundDistance/spr_tilemap_cave2_backgroundDistance.yy",},},},"Disabled":false,"id":"fdf8f27c-c42e-4dab-98fa-e00821e4fdea","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"af080227-b108-4fc5-baae-f062daf11d4a","path":"sprites/spr_tilemap_cave2_backgroundDistance/spr_tilemap_cave2_backgroundDistance.yy",},},},"Disabled":false,"id":"9db917b6-bf1f-49b1-b768-089200090d6d","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

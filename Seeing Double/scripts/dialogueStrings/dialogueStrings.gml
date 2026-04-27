@@ -3,9 +3,18 @@ global.dialogueStringArrays = {
 	
 	cavesEntanceMiner : [ 
 	
-		"D-d-did you s-s-see th-that!?", 
+		"D-d-did you s-s-see th-that!? That was a g-g-ghost!!", 
 		//"W-was that a g-g-ghost?", 
-		"", 
+		"That does it! I do NOT get paid enough for this nonsense! I quit!!", 
+		"If the boss wants his ore so damn bad they can come down here and say hello to ol' spooky themselves!!", 
+		"What? You want to go in there? HaHAA! Buddy, your funeral!", 
+	//	"Me? I'll gladly find another way to make a living. One that doesn't involve killer ghosts!", 
+		//"The mines have become a deathtrap recently.", 
+		//"The mines have become a deathtrap recently. Someone's gotta do it, though.", 
+	//	"And that someone ain't me! I'll find another way to make a living. One free of killer ghosts!", 
+	//	"Y!", 
+	//	"Mine for ore, I mean. It's pretty much the only way to make a living, ain't it?", 
+	//	"Mine for ore, I mean. It's pretty much the only way to make a living, ain't it?", 
 		
 	],
 	
