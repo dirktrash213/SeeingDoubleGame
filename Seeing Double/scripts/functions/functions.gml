@@ -1403,6 +1403,7 @@ function playAudioWithFalloff(_audio, _maxDist = 600) {
 	    // 3. Play the sound with the calculated volume
 	    // Syntax: audio_play_sound(index, priority, loop, gain)
 	    audio_play_sound(_audio, 1, false, _volume);
+		
 	}
 
 }
