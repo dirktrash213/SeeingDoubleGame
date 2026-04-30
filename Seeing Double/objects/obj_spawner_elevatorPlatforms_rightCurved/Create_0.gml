@@ -38,3 +38,4 @@ for (var i = 0; i < _startingPlatforms; i++;)  {
    
 }
 
+//playAudioWithFalloff(sfx_elevator, 600, 1.0, true);

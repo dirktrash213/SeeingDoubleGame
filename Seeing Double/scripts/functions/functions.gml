@@ -1386,7 +1386,7 @@ function resetDialogueStrings(_textDisplayDuration = textDisplayDuration) {
 
 }
 
-function playAudioWithFalloff(_audio, _maxDist = 600, _pitch = 1.0) {
+function playAudioWithFalloff(_audio, _maxDist = 600, _pitch = 1.0, _loop = false) {
 
 	//Calculate distance and volume
 	if playerIsPresent() {
@@ -1402,7 +1402,7 @@ function playAudioWithFalloff(_audio, _maxDist = 600, _pitch = 1.0) {
     
 	    // 3. Play the sound with the calculated volume
 	    // Syntax: audio_play_sound(index, priority, loop, gain)
-	    audio_play_sound(_audio, 1, false, _volume, 0, _pitch);
+	    audio_play_sound(_audio, 1, _loop, _volume, 0, _pitch);
 		
 	}
 

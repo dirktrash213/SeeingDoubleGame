@@ -1519,6 +1519,7 @@
     {"id":{"name":"obj_trigger_dialogue","path":"objects/obj_trigger_dialogue/obj_trigger_dialogue.yy",},},
     {"id":{"name":"Waterfall_Middle","path":"sprites/Waterfall_Middle/Waterfall_Middle.yy",},},
     {"id":{"name":"spr_BigKey_strip","path":"sprites/spr_BigKey_strip/spr_BigKey_strip.yy",},},
+    {"id":{"name":"amb_elevator","path":"sounds/amb_elevator/amb_elevator.yy",},},
     {"id":{"name":"spr_InsideTiles","path":"sprites/spr_InsideTiles/spr_InsideTiles.yy",},},
     {"id":{"name":"spr_background_parallax_caves_L1","path":"sprites/spr_background_parallax_caves_L1/spr_background_parallax_caves_L1.yy",},},
     {"id":{"name":"Angel_Statue","path":"sprites/Angel_Statue/Angel_Statue.yy",},},
