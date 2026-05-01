@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "spr_tilemap_cave2_backgroundDistance",
-    "path": "sprites/spr_tilemap_cave2_backgroundDistance/spr_tilemap_cave2_backgroundDistance.yy",
+    "name": "spr_tilemap_cave2_background_distant",
+    "path": "sprites/spr_tilemap_cave2_background_distant/spr_tilemap_cave2_background_distant.yy",
   },
   "spriteNoExport": false,
   "textureGroupId": {

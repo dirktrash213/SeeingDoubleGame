@@ -14,5 +14,7 @@ image_speed = 0;
 // Start the path (at speed 0, we will control speed manually)
 
 
+flyOffTrackAtEnd = false;
+
 //xSpeed = 0;
 //ySpeed = 0;

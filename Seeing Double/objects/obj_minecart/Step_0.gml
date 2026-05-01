@@ -24,6 +24,21 @@ cart_speed = clamp(cart_speed, min_speed, max_speed);
 // path_speed is pixels per step; we convert our speed to the path's movement
 path_speed = global.paused ? 0 : cart_speed;
 
+// 6. Sync animation to speed
+// We divide current speed by a "reference speed" to get a multiplier.
+// Using abs() ensures the wheels turn even if cart_speed is negative.
+var _reference_speed = max_speed; 
+
+if path_speed != 0 {
+	
+	var _anim_multiplier = 1.5; // Crank this up to make wheels spin faster overall
+	image_speed = (abs(cart_speed) / max_speed) * _anim_multiplier;
+
+} else {
+	
+    image_speed = 0;
+	
+}
 
 
 image_angle = direction;

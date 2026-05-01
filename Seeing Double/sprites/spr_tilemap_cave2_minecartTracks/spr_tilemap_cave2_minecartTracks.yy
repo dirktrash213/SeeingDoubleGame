@@ -1,8 +1,8 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_tilemap_cave2_backgroundDistance",
-  "bbox_bottom": 527,
+  "name": "spr_tilemap_cave2_minecartTracks",
+  "bbox_bottom": 639,
   "bbox_left": 0,
   "bbox_right": 415,
   "bbox_top": 0,
@@ -14,8 +14,7 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f25a726d-b4ef-4000-b2a0-09cb017c6c7f",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2fa3014d-4819-4057-8293-b04e73b39478",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"af080227-b108-4fc5-baae-f062daf11d4a",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"aa37fc3d-c42c-4731-9848-d4643221c7ce",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -23,6 +22,7 @@
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cc2da288-0509-4e4f-82a0-1c177308c979","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"88a44958-d7b9-4c29-89fe-2692eb86f204","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -34,7 +34,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_tilemap_cave2_backgroundDistance",
+    "name": "spr_tilemap_cave2_minecartTracks",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -45,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 3.0,
+    "length": 2.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -56,9 +56,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f25a726d-b4ef-4000-b2a0-09cb017c6c7f","path":"sprites/spr_tilemap_cave2_backgroundDistance/spr_tilemap_cave2_backgroundDistance.yy",},},},"Disabled":false,"id":"77ae1fa7-d9e8-4ed5-b047-dae3aaa67b77","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2fa3014d-4819-4057-8293-b04e73b39478","path":"sprites/spr_tilemap_cave2_backgroundDistance/spr_tilemap_cave2_backgroundDistance.yy",},},},"Disabled":false,"id":"fdf8f27c-c42e-4dab-98fa-e00821e4fdea","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"af080227-b108-4fc5-baae-f062daf11d4a","path":"sprites/spr_tilemap_cave2_backgroundDistance/spr_tilemap_cave2_backgroundDistance.yy",},},},"Disabled":false,"id":"9db917b6-bf1f-49b1-b768-089200090d6d","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f25a726d-b4ef-4000-b2a0-09cb017c6c7f","path":"sprites/spr_tilemap_cave2_minecartTracks/spr_tilemap_cave2_minecartTracks.yy",},},},"Disabled":false,"id":"9cbc0968-df62-4855-9089-a10d6ca42112","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"aa37fc3d-c42c-4731-9848-d4643221c7ce","path":"sprites/spr_tilemap_cave2_minecartTracks/spr_tilemap_cave2_minecartTracks.yy",},},},"Disabled":false,"id":"d15e2931-9657-42bc-9bb3-d195df32d83e","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
