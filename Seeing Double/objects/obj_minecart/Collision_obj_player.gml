@@ -2,9 +2,11 @@ if triggered exit;
 
 triggered = true; 
 
-show_debug_message("Minecart has been triggered")
+//show_debug_message("Minecart has been triggered")
 
 path_start(pth_minecart_track, 0, path_action_stop, false);
+
+image_speed = 1.0;
 
 other.ridingMinecart = true;
 other.currentMinecart = id;

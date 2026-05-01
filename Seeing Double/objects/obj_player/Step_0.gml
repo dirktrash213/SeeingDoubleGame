@@ -113,7 +113,7 @@ if stuckOnBoulder {
 	exit;
 
 }
-
+//@
 //show_debug_message("ridingMinecart: " + string(ridingMinecart))
 if ridingMinecart {
 	
@@ -133,7 +133,7 @@ if ridingMinecart {
 	var _wall = instance_place(x, y, obj_block_wall); 
 	var _wallSemiSolid = instance_place(x, y, obj_block_wall_semiSolid); 
 	
-	if _wall != noone {
+	if _wall != noone { //Exit minecart early if player touches wall/ceiling
 	
 		y = _wall.y-2;
 	
@@ -144,7 +144,7 @@ if ridingMinecart {
 	
 	}
 	
-	if _wallSemiSolid != noone {
+	if _wallSemiSolid != noone { //Exit minecart early if player touches semisolid wall/ceiling
 	
 		y = _wallSemiSolid.y-2;
 	
@@ -243,7 +243,37 @@ if ridingMinecart {
 	if ySpeed > termVelocityMinecart ySpeed = termVelocityMinecart;
 	
 	var _offsetX = 5;
-	var _offsetY = 2;
+	var _offsetY = -10; //2
+	
+	if currentMinecart.image_angle >= 314 && currentMinecart.image_angle < 340 {
+	
+		_offsetX = 15;
+		_offsetY = -3;
+	
+	}
+	
+	if currentMinecart.image_angle >= 15 && currentMinecart.image_angle < 46 {
+	
+		_offsetX = -5;
+		_offsetY = -10;
+	
+	}
+	
+	//switch (currentMinecart.image_angle) {
+	//	
+	//	case 315: {
+	//
+	//		_offsetX = 15;
+	//
+	//	} break;
+	//	
+	//	case 45: {
+	//
+	//		_offsetX = -5;
+	//
+	//	} break;
+	//
+	//}
 	
 	var _maxY = currentMinecart.y  + _offsetY;
 
@@ -2030,7 +2060,7 @@ if global.cutsceneActive {
 			}
 			
 		} break;
-		//@
+		
 		case CUTSCENE_ID.CAVES_HAUNTING_PART2: { 
 			
 			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_PART2_CUTSCENE_STATE.WALKING_BACK {

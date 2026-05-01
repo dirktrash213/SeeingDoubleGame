@@ -36,6 +36,8 @@ if image_angle > 90 && image_angle < 270 image_angle += 180; //Keeps the minecar
 
 if path_position == 1.0 {
 
+	image_speed = 0;
+
 	with obj_player {
 		
 		if currentMinecart == _id {

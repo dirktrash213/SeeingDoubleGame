@@ -9,6 +9,7 @@ friction_power = 0.05; // Natural slowdown over time //0.05
 pth_minecart_track = path_platform_minecart_test; //Minecart path
 
 
+image_speed = 0;
 
 // Start the path (at speed 0, we will control speed manually)
 
