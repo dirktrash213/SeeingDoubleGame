@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "path_platform_minecart5",
   "closed": false,
-  "kind": 1,
+  "kind": 0,
   "parent": {
     "name": "Paths",
     "path": "folders/Paths.yy",
@@ -12,7 +12,7 @@
     {"speed":100.0,"x":0.0,"y":-64.0,},
     {"speed":100.0,"x":64.0,"y":-64.0,},
     {"speed":100.0,"x":96.0,"y":-64.0,},
-    {"speed":100.0,"x":160.0,"y":-128.0,},
+    {"speed":100.0,"x":160.0,"y":0.0,},
     {"speed":100.0,"x":224.0,"y":-64.0,},
     {"speed":100.0,"x":288.0,"y":0.0,},
   ],

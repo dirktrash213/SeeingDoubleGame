@@ -21,6 +21,7 @@ function particleSetup() {
 	global.particleRock = part_type_create();
 	global.particleSweatdrop = part_type_create();
 	global.particlePickaxeSpark = part_type_create();
+	global.particleMinecartSpark = part_type_create();
 	global.particleCoinSparkle = part_type_create();
 	global.particleCoinSparkleRed = part_type_create();
 	global.scienceJuiceSparksDoubleJump = part_type_create();
@@ -85,6 +86,12 @@ function particleSetup() {
 	part_type_direction(global.particleSweatdrop, 0, 180, 0, 0);
 	part_type_life(global.particleSweatdrop, 300, 300);
 	part_type_gravity(global.particleSweatdrop, 0.1, 270);
+	
+	part_type_sprite(global.particleMinecartSpark, spr_particle_sweat, 0, 0, 0);
+	part_type_speed(global.particleMinecartSpark, 1.5, 3.5, 0, 0);
+	part_type_direction(global.particleMinecartSpark, 90, 180, 0, 0);
+	part_type_life(global.particleMinecartSpark, 45, 45);
+	part_type_gravity(global.particleMinecartSpark, 0.1, 270);
 	
 	part_type_sprite(global.particlePickaxeSpark, spr_particle_sweat, 0, 0, 0);
 	part_type_speed(global.particlePickaxeSpark, 0.5, 1.5, 0, 0);

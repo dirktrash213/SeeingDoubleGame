@@ -6,6 +6,8 @@ triggered = true;
 
 path_start(pth_minecart_track, 0, path_action_stop, false);
 
+//travelSoundID = audio_play_sound(amb_elevator, 1, false);
+
 image_speed = 1.0;
 
 other.ridingMinecart = true;

@@ -1,5 +1,5 @@
 draw_self();
-//draw_path(pth_minecart_track, xstart, ystart, false);
+draw_path(pth_minecart_track, xstart, ystart, false);
 
 
 
