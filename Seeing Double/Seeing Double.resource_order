@@ -815,6 +815,7 @@
     {"name":"spr_background_plant_v27","order":21,"path":"sprites/spr_background_plant_v27/spr_background_plant_v27.yy",},
     {"name":"obj_interactable_hazard_spikes_upsideDown","order":29,"path":"objects/obj_interactable_hazard_spikes_upsideDown/obj_interactable_hazard_spikes_upsideDown.yy",},
     {"name":"__scribble_config_colours","order":1,"path":"scripts/__scribble_config_colours/__scribble_config_colours.yy",},
+    {"name":"path_platform_minecart7Copy","order":40,"path":"paths/path_platform_minecart7Copy/path_platform_minecart7Copy.yy",},
     {"name":"sfx_bonk","order":37,"path":"sounds/sfx_bonk/sfx_bonk.yy",},
     {"name":"obj_npc_hungryMiner","order":17,"path":"objects/obj_npc_hungryMiner/obj_npc_hungryMiner.yy",},
     {"name":"spr_interactable_flower_blue","order":42,"path":"sprites/spr_interactable_flower_blue/spr_interactable_flower_blue.yy",},
