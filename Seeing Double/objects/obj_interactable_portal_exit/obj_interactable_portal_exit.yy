@@ -28,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_background_fan_empty",
-    "path": "sprites/spr_background_fan_empty/spr_background_fan_empty.yy",
+    "name": "spr_interactable_portal",
+    "path": "sprites/spr_interactable_portal/spr_interactable_portal.yy",
   },
   "spriteMaskId": null,
   "visible": true,

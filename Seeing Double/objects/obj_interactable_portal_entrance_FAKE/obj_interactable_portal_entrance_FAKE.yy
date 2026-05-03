@@ -26,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_background_fan_green",
-    "path": "sprites/spr_background_fan_green/spr_background_fan_green.yy",
+    "name": "spr_interactable_portal",
+    "path": "sprites/spr_interactable_portal/spr_interactable_portal.yy",
   },
   "spriteMaskId": null,
   "visible": true,

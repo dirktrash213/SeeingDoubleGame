@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_background_fan_red",
-    "path": "sprites/spr_background_fan_red/spr_background_fan_red.yy",
+    "name": "spr_interactable_portal",
+    "path": "sprites/spr_interactable_portal/spr_interactable_portal.yy",
   },
   "spriteMaskId": null,
   "visible": true,
