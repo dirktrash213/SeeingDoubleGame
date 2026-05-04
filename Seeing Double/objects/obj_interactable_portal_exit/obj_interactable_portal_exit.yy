@@ -4,6 +4,9 @@
   "name": "obj_interactable_portal_exit",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -11,7 +14,10 @@
     "name": "Interactables",
     "path": "folders/Objects/Interactables.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_interactable_portal_parent",
+    "path": "objects/obj_interactable_portal_parent/obj_interactable_portal_parent.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -28,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_interactable_portal",
-    "path": "sprites/spr_interactable_portal/spr_interactable_portal.yy",
+    "name": "spr_interactable_portalCircle_idle_red",
+    "path": "sprites/spr_interactable_portalCircle_idle_red/spr_interactable_portalCircle_idle_red.yy",
   },
   "spriteMaskId": null,
   "visible": true,

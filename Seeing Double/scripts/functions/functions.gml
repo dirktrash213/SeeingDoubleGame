@@ -423,6 +423,8 @@ function spawnPitter() {
 		
 	}
 	
+	audio_stop_sound(sfx_portal_idle);
+	
 	//room_goto(asset_get_index(global.roomToSpawnIn));
 	room_goto(_roomToSpawnIn);
 	
@@ -1429,5 +1431,60 @@ function enableLargeReverb() {
 	obj_control.reverb_effect.size = 0.75;
 	obj_control.reverb_effect.damp = 0.95;
 	obj_control.reverb_effect.mix = 0.5;
+
+}
+
+function switchGreenPortalSprite() {
+
+	if isLastAnimationFrame() && active && sprite_index == spr_interactable_portalCircle_forming_green {
+
+		sprite_index = spr_interactable_portalCircle_idle_green;
+		image_index = 1;
+		
+		//if !audio_is_playing(sfx_portal_idle) portal_snd_instance = audio_play_sound(sfx_portal_idle, 1, true);
+		portal_snd_instance = audio_play_sound(sfx_portal_idle, 1, true);
+
+	}
+	
+}
+
+function switchRedPortalSprite() {
+
+	if isLastAnimationFrame() && active && sprite_index == spr_interactable_portalCircle_forming_red {
+
+		sprite_index = spr_interactable_portalCircle_idle_red;
+		image_index = 1;
+		
+		//if !audio_is_playing(sfx_portal_idle) portal_snd_instance = audio_play_sound(sfx_portal_idle, 1, true);
+		portal_snd_instance = audio_play_sound(sfx_portal_idle, 1, true);
+
+	}
+	
+}
+
+function setPortalFloat() {
+
+	// The starting Y position to hover around
+	anchor_y = y;
+
+	// How fast it floats (higher = faster)
+	float_speed = 2; 
+
+	// How far it floats up and down (in pixels)
+	float_distance = 8; 
+
+	// A timer to keep track of the wave progression
+	float_timer = 0;
+
+}
+
+function portalFloat() {
+
+	// Increase the timer
+	float_timer += float_speed;
+
+	// Calculate the new Y position
+	// dsin() returns a value between -1 and 1
+	y = anchor_y + dsin(float_timer) * float_distance;
 
 }

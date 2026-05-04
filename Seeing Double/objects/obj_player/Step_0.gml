@@ -30,6 +30,8 @@ if global.playerDefeated || global.paused {
 
 }
 
+
+
 normalizeStretching();
 
 //audio_listener_position(x, y, 0);

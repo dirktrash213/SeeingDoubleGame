@@ -1,3 +1,5 @@
+if sprite_index != spr_interactable_portalCircle_idle_green exit;
+
 global.portalsActive = true;
 
 //var _nearestExitPortal = instance_nearest(x,y,obj_interactable_portal_exit);
@@ -24,7 +26,7 @@ other.y = _nearestExitPortal.y;
 instance_deactivate_object(obj_block_wall_temp_reverse);
 
 
-
+audio_play_sound(sfx_portal_jump, 1, false);
 
 
 
