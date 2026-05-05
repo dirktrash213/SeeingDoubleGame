@@ -18,6 +18,15 @@ switch room {
 	   
 	   }
 	   
+	   
+	   with obj_npc_hungryMiner {
+	   
+		   vspeed = vSpeedAmount;
+		   gravity = gravAmount;
+		   lookingAtPlayer = true;
+	   
+	   }
+	   
 	} break;
     
 }

@@ -145,6 +145,19 @@ if variableTextDisplayDuration {
 
 	switch dialogueString[count] { //Check which dialogue string is currently displaying
 		
+		case global.dialogueStringArrays.cavesHungryMiner[1]: { //Dialogue strings can be found in the dialogueStrings script
+	      
+			alarm[0] = textDisplayDuration;
+			
+			with obj_npc_hungryMiner {
+		
+				sprite_index = spr_npc_hungryMiner;
+				lookingAtPlayer = false;
+		
+			}
+		
+		} break;
+		
 		case global.dialogueStringArrays.cavesHaunting[2]: { //Dialogue strings can be found in the dialogueStrings script
 	      
 			alarm[0] = textDisplayDuration;

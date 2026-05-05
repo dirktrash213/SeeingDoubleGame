@@ -868,7 +868,7 @@ function spawnBreakableFloorPieces() {
 		
 	for(var i = 0; i < _piecesAmount; i++) {
 
-		with instance_create_layer(x, y, "Instances", obj_background_breakableFloorPiece) {
+		with instance_create_layer(x + (sprite_width/2), y, "Instances", obj_background_breakableFloorPiece) {
 	
 			sprite_index = choose(
 			

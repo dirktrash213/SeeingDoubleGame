@@ -3,12 +3,13 @@ global.dialogueStringArrays = {
 	
 	cavesEntanceMiner : [ 
 	
-		"D-d-did you s-s-see th-that!? That was a g-g-ghost!!", 
+		"[shake]D-d-did you s-s-see th-that!? That was a g-g-ghost!! And it busted through solid rock like it was nothing!", 
 		//"W-was that a g-g-ghost?", 
-		"That does it! I do NOT get paid enough for this nonsense! I quit!!", 
-		"If the boss wants his ore so damn bad they can come down here and say hello to ol' spooky themselves!!", 
-		"What? You want to go in there? HaHAA! Buddy, your funeral!", 
-	//	"Me? I'll gladly find another way to make a living. One that doesn't involve killer ghosts!", 
+	//	"That [slant]does[/slant] it! That's the [slant]last[/slant] straw! I do [slant]NOT[/slant] get paid enough for this nonsense! I [shake]quit!!", 
+		"That [slant]does[/slant] it! I do [slant]NOT[/slant] get paid enough for this nonsense! I [shake]quit!!", 
+		"If the boss wants his ore so damn bad he can come down here and say hello to ol' spooky himselves!!", 
+		"What? You want to go [slant]into[/slant] that dank deathtrap? HaHAA! Buddy, your funeral!", 
+		"Me? I'll gladly find another way to make a living. One that doesn't involve saying hi to wailing banshees!", 
 		//"The mines have become a deathtrap recently.", 
 		//"The mines have become a deathtrap recently. Someone's gotta do it, though.", 
 	//	"And that someone ain't me! I'll find another way to make a living. One free of killer ghosts!", 
@@ -57,6 +58,28 @@ global.dialogueStringArrays = {
 	
 		//"Aha! Once again I, the great explorer Becket, have cracked the uncrackable! My genius knows no bounds!", 
 		"Aha! Once again I, the great explorer Becket, have solved the riddle! An elementary task for a sleuthing expert such as myself.", 
+	
+	],
+	
+	cavesHungryMiner : [ 
+	
+		"Hey! [shake]Back off[/shake], jack! I saw it first!!",
+		//"Oh delicious cherry! Won't you be a good girl and come down? [wave]Pretty please?",
+		"Oh delicious cherry! Won't you be good and come down? [wave][rainbow]Pretty please?",
+		"Try as I may, I simply can't reach you. Not even with my double jump!",
+		"If only there was a way to gain a little more height, then I'd feast on your succulent red innards...",
+	
+	],
+	
+	cavesHungryMinerHint : [ 
+	
+		"More height! I need more height! How irritating! It makes me want to [shake]pound the ground[/shake] in anger!",
+	
+	],
+	
+	cavesHungryMinerSad : [ 
+	
+		"I would have gotten it eventually...",
 	
 	],
 	

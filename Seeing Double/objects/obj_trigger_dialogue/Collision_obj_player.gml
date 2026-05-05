@@ -14,6 +14,21 @@ if instance_exists(obj_interactable_monitor_parent) {
 
 }
 
+switch room { 
+		
+	case rm_cave_groundPoundCrystal_highJumpTutorial: {
+		
+		if dialogueString[0] == global.dialogueStringArrays.cavesHungryMiner[0] {
+		
+			with obj_npc_hungryMiner {
+		
+				sprite_index = spr_npc_hungryMiner_annoyed;
+				lookingAtPlayer = true;
+		
+			}
+		
+		}
+	
+	} break;
 
-
-
+}
