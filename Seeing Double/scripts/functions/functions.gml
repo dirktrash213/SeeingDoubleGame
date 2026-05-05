@@ -1434,7 +1434,7 @@ function enableLargeReverb() {
 
 }
 
-function switchGreenPortalSprite() {
+function playPortalAnimationGreenSprite() {
 
 	if isLastAnimationFrame() && active && sprite_index == spr_interactable_portalCircle_forming_green {
 
@@ -1448,7 +1448,7 @@ function switchGreenPortalSprite() {
 	
 }
 
-function switchRedPortalSprite() {
+function playPortalAnimationRedSprite() {
 
 	if isLastAnimationFrame() && active && sprite_index == spr_interactable_portalCircle_forming_red {
 
@@ -1460,6 +1460,28 @@ function switchRedPortalSprite() {
 
 	}
 	
+}
+
+function managePortalAudioFalloff() {
+
+	if playerIsPresent() {
+	
+		var _nearestPlayer = instance_nearest(x, y, obj_player);
+	
+	    var _dist = point_distance(x, y, _nearestPlayer.x, _nearestPlayer.y);
+	    var _max_dist = 300; // Distance where sound is silent
+    
+	    // Calculate volume: 1 at 0px distance, 0 at 600px distance
+	    var _vol = clamp(1 - (_dist / _max_dist), 0, 0.8);
+	
+		//show_debug_message("_vol in green portal: " + string(_vol))
+    
+	    // Apply volume to a sound that is already playing
+	    // (Note: You'd need to start the sound once in the Create event)
+	    audio_sound_gain(portal_snd_instance, _vol, 0);
+	
+	}
+
 }
 
 function setPortalFloat() {
@@ -1486,5 +1508,49 @@ function portalFloat() {
 	// Calculate the new Y position
 	// dsin() returns a value between -1 and 1
 	y = anchor_y + dsin(float_timer) * float_distance;
+
+}
+
+function playGreenPortalJumpEffects() {
+	
+	var _nearestExitPortal;
+	var _portalID = portalID;
+
+	with obj_interactable_portal_exit {
+
+		if portalID = _portalID _nearestExitPortal = id;
+
+	}
+
+	audio_play_sound(sfx_portal_jump, 1, false);
+
+	xStretch = 0.5;
+	yStretch = 1.5;
+
+	//with instance_nearest(x, y, obj_interactable_portal_exit) {
+	with _nearestExitPortal {
+
+		xStretch = 0.5;
+		yStretch = 1.5;
+
+	}
+
+	var _rangeX = 3;
+	
+	var _offsetX = 0;
+	var _offsetY = 0;
+
+	var _numberOfParticles = irandom_range(8,10);
+
+	part_particles_create(global.particleSystemDevice, x + _offsetX, y + _offsetY, global.particlePortalGreen, _numberOfParticles);
+
+	//with instance_nearest(x, y, obj_interactable_portal_exit) { 
+	with _nearestExitPortal { 
+	
+		_numberOfParticles = irandom_range(8,10);
+	
+		part_particles_create(global.particleSystemDevice, x + _offsetX, y + _offsetY, global.particlePortalRed, _numberOfParticles);	
+		
+	}
 
 }

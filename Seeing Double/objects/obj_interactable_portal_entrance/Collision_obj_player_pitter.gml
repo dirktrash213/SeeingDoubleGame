@@ -25,8 +25,9 @@ other.y = _nearestExitPortal.y;
 //instance_activate_object(obj_block_wall_temp);
 instance_deactivate_object(obj_block_wall_temp_reverse);
 
+playGreenPortalJumpEffects();
 
-audio_play_sound(sfx_portal_jump, 1, false);
+//audio_play_sound(sfx_portal_jump, 1, false);
 
 
 

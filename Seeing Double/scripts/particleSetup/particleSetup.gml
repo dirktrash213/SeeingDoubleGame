@@ -28,6 +28,8 @@ function particleSetup() {
 	global.scienceJuiceSparksGroundPound = part_type_create();
 	global.particleFireworkSpark = part_type_create();
 	global.particleFireworkSparkBall = part_type_create();
+	global.particlePortalGreen = part_type_create();
+	global.particlePortalRed = part_type_create();
 
 	var _heartDirMin = 60;
 	var _heartDirMax = 120;
@@ -92,6 +94,24 @@ function particleSetup() {
 	part_type_direction(global.particleMinecartSpark, 90, 180, 0, 0);
 	part_type_life(global.particleMinecartSpark, 45, 45);
 	part_type_gravity(global.particleMinecartSpark, 0.1, 270);
+	
+	//part_type_sprite(global.particlePortalGreen, spr_particle_portalSparkGreen, 0, 0, 0);
+	//part_type_speed(global.particlePortalGreen, 1.5, 3.5, 0, 0);
+	//part_type_direction(global.particlePortalGreen, 0, 359, 0, 10);
+	//part_type_life(global.particlePortalGreen, 90, 90);
+	//part_type_gravity(global.particlePortalGreen, 0, 0);
+	
+	part_type_sprite(global.particlePortalGreen, spr_particle_portalSparkGreen, 0, 0, 0);
+	part_type_speed(global.particlePortalGreen, 0.5, 1.5, 0, 0);
+	part_type_direction(global.particlePortalGreen, 0, 180, 0, 10);
+	part_type_life(global.particlePortalGreen, 45, 45);
+	part_type_gravity(global.particlePortalGreen, 0.1, 270);
+	
+	part_type_sprite(global.particlePortalRed, spr_particle_portalSparkRed, 0, 0, 0);
+	part_type_speed(global.particlePortalRed, 0.5, 1.5, 0, 0);
+	part_type_direction(global.particlePortalRed, 0, 180, 0, 10);
+	part_type_life(global.particlePortalRed, 45, 45);
+	part_type_gravity(global.particlePortalRed, 0.1, 270);
 	
 	part_type_sprite(global.particlePickaxeSpark, spr_particle_sweat, 0, 0, 0);
 	part_type_speed(global.particlePickaxeSpark, 0.5, 1.5, 0, 0);
