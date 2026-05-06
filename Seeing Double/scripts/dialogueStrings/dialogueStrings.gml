@@ -86,7 +86,7 @@ global.dialogueStringArrays = {
 	cavesMinerByScienceJuice : [ 
 	
 		//"I found this barrel of dubious substance just sitting here. What do you suppose it is?", 
-		"I found this barrel of dubious orange substance just sitting over there. Where did it come from?", 
+		"I found that barrel of dubious orange substance just sitting over there. Where did it come from?", 
 		//"Looks like toxic sludge if you ask me. I would definitely not jump into that barrel.", 
 		"It must be toxic waste. Only a fool would jump in. A dumb, stupid, blithering idiot. Which I can only assume you are. On you go!", 
 		//"T-that could be cancer causing radiation sludge for all you know!! You could mutate and grow six hands, or tongues where your eyes are, or, or...", 
