@@ -856,6 +856,7 @@
     {"name":"sfx_effect_for_logo_intro_v3","order":31,"path":"sounds/sfx_effect_for_logo_intro_v3/sfx_effect_for_logo_intro_v3.yy",},
     {"name":"Background_Sky_Layer_01","order":9,"path":"sprites/Background_Sky_Layer_01/Background_Sky_Layer_01.yy",},
     {"name":"scribble_external_sound_remove","order":5,"path":"scripts/scribble_external_sound_remove/scribble_external_sound_remove.yy",},
+    {"name":"path_platform_minecart_chase2ALT","order":41,"path":"paths/path_platform_minecart_chase2ALT/path_platform_minecart_chase2ALT.yy",},
     {"name":"obj_block_wall_semiSolid","order":6,"path":"objects/obj_block_wall_semiSolid/obj_block_wall_semiSolid.yy",},
     {"name":"spr_background_cloud_v2_x2","order":3,"path":"sprites/spr_background_cloud_v2_x2/spr_background_cloud_v2_x2.yy",},
     {"name":"obj_background_massiveFishFossil","order":29,"path":"objects/obj_background_massiveFishFossil/obj_background_massiveFishFossil.yy",},

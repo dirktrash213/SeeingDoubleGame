@@ -1057,7 +1057,7 @@ function detectEnemyDuringGroundPound(_enemy) {
 	}
 
 }
-//@
+
 function detectScammerDuringGroundPound(_scammer) {
 
 	if _scammer != noone if groundPoundFalling {
@@ -1511,10 +1511,55 @@ function portalFloat() {
 
 }
 
+//@
 function playGreenPortalJumpEffects() {
 	
 	var _nearestExitPortal;
 	var _portalID = portalID;
+
+	var _fakeEntrancePortal = collision_line(x, 0, x, room_height, obj_interactable_portal_entrance_FAKE, false, true);
+	
+	if _fakeEntrancePortal != noone {
+	
+		with _fakeEntrancePortal {
+		
+			xStretch = 0.5;
+			yStretch = 1.5;
+			
+			//var _rangeX = 3;
+	
+			var _offsetX = 0;
+			var _offsetY = 0;
+
+			var _numberOfParticles = irandom_range(8,10);
+
+			part_particles_create(global.particleSystemDevice, x + _offsetX, y + _offsetY, global.particlePortalGreen, _numberOfParticles);
+		
+		}
+	
+	}
+	
+	var _fakeEntranceResetPortal = collision_line(x, 0, x, room_height, obj_interactable_portal_entrance_reset_FAKE, false, true);
+	
+	if _fakeEntranceResetPortal != noone {
+	
+		with _fakeEntranceResetPortal {
+		
+			xStretch = 0.5;
+			yStretch = 1.5;
+			
+			//var _rangeX = 3;
+	
+			var _offsetX = 0;
+			var _offsetY = 0;
+
+			var _numberOfParticles = irandom_range(8,10);
+
+			part_particles_create(global.particleSystemDevice, x + _offsetX, y + _offsetY, global.particlePortalGreen, _numberOfParticles);
+		
+		}
+	
+	}
 
 	with obj_interactable_portal_exit {
 
@@ -1535,7 +1580,7 @@ function playGreenPortalJumpEffects() {
 
 	}
 
-	var _rangeX = 3;
+	//var _rangeX = 3;
 	
 	var _offsetX = 0;
 	var _offsetY = 0;
@@ -1550,6 +1595,28 @@ function playGreenPortalJumpEffects() {
 		_numberOfParticles = irandom_range(8,10);
 	
 		part_particles_create(global.particleSystemDevice, x + _offsetX, y + _offsetY, global.particlePortalRed, _numberOfParticles);	
+		
+		var _extraExitPortal = collision_line(x, 0, x, room_height, obj_interactable_portal_exit, false, true);
+	
+		if _extraExitPortal != noone {
+	
+			with _extraExitPortal {
+		
+				xStretch = 0.5;
+				yStretch = 1.5;
+			
+				//_rangeX = 3;
+	
+				_offsetX = 0;
+				_offsetY = 0;
+
+				_numberOfParticles = irandom_range(8,10);
+
+				part_particles_create(global.particleSystemDevice, x + _offsetX, y + _offsetY, global.particlePortalRed, _numberOfParticles);
+		
+			}
+	
+		}
 		
 	}
 

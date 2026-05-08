@@ -5,7 +5,7 @@ with obj_spawner {
 
 }
 
-
+instance_destroy(obj_block_wall_temp_reverse);
 
 
 
