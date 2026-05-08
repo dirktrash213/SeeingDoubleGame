@@ -5,5 +5,5 @@ spawnRateVariance = 2;
 alarm[0] = spawnRate + random_range(-spawnRateVariance, spawnRateVariance);
 
 
-
-
+active = false;
+detectionRadius = 600;

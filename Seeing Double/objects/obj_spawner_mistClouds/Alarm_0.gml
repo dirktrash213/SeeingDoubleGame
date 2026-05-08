@@ -1,3 +1,7 @@
+alarm[0] = spawnRate + random_range(-spawnRateVariance, spawnRateVariance);
+
+if !active exit;
+
 var _range = 10;
 
 var _offsetX = random_range(-_range, _range);
@@ -24,7 +28,7 @@ with instance_create_layer(x + _offsetX, y + _offsetY, "Instances", obj_backgrou
 
 }
 
-alarm[0] = spawnRate + random_range(-spawnRateVariance, spawnRateVariance);
+
 
 
 

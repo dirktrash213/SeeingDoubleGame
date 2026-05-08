@@ -1114,6 +1114,7 @@
     {"name":"GandalfHardcore_Background_layers_layer_21035","order":2,"path":"sprites/GandalfHardcore_Background_layers_layer_21035/GandalfHardcore_Background_layers_layer_21035.yy",},
     {"name":"spr_patter_begPlayer","order":49,"path":"sprites/spr_patter_begPlayer/spr_patter_begPlayer.yy",},
     {"name":"spr_interactable_ladder_steel_top","order":14,"path":"sprites/spr_interactable_ladder_steel_top/spr_interactable_ladder_steel_top.yy",},
+    {"name":"obj_trigger_scammerSkip","order":24,"path":"objects/obj_trigger_scammerSkip/obj_trigger_scammerSkip.yy",},
     {"name":"timeflow_56706","order":14,"path":"sounds/timeflow_56706/timeflow_56706.yy",},
     {"name":"spr_interactable_ladder_steel_bottom","order":21,"path":"sprites/spr_interactable_ladder_steel_bottom/spr_interactable_ladder_steel_bottom.yy",},
     {"name":"_0002_books_21","order":4,"path":"sprites/_0002_books_21/_0002_books_21.yy",},
