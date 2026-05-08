@@ -30,7 +30,18 @@ if global.playerDefeated || global.paused {
 
 }
 
+//@
+//if place_meeting(x,y,obj_trigger_waterfall)
 
+underWaterfall = place_meeting(x,y,obj_trigger_waterfall) ? true : false;
+
+if underWaterfall {
+
+	//if alarm[7] <= -1 alarm[7] = waterfallVFXspawnRate;
+	if alarm[7] <= -1 alarm[7] = 1;
+
+
+}
 
 normalizeStretching();
 
@@ -115,7 +126,7 @@ if stuckOnBoulder {
 	exit;
 
 }
-//@
+
 //show_debug_message("ridingMinecart: " + string(ridingMinecart))
 if ridingMinecart {
 	

@@ -135,6 +135,9 @@ crouching = false;
 lookingUp = false;
 climbing = false;
 
+underWaterfall = false;
+waterfallVFXspawnRate = 8; 
+
 ridingMinecart = false;
 currentMinecart = noone;
 

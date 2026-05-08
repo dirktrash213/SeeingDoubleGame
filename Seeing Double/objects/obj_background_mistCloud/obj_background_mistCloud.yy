@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_background_mistCloud",
-    "path": "sprites/spr_background_mistCloud/spr_background_mistCloud.yy",
+    "name": "spr_background_mistCloudSmall",
+    "path": "sprites/spr_background_mistCloudSmall/spr_background_mistCloudSmall.yy",
   },
   "spriteMaskId": null,
   "visible": true,

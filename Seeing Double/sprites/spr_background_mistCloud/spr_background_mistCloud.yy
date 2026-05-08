@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Waterfalls",
-    "path": "folders/Sprites/NEW/Cave Stuff/Waterfalls.yy",
+    "name": "Background",
+    "path": "folders/Sprites/Background.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

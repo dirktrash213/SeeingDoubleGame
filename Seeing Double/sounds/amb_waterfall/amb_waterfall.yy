@@ -10,14 +10,14 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 82.15509,
+  "duration": 80.10916,
   "parent": {
-    "name": "NEW",
-    "path": "folders/Sounds/NEW.yy",
+    "name": "AMB",
+    "path": "folders/Sounds/AMB.yy",
   },
   "preload": false,
   "sampleRate": 44100,
-  "soundFile": "amb_waterfall.mp3",
+  "soundFile": "amb_waterfall.wav",
   "type": 0,
   "volume": 0.6,
 }

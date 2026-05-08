@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_tilemap_cave2_background",
-  "bbox_bottom": 527,
+  "bbox_bottom": 575,
   "bbox_left": 0,
   "bbox_right": 415,
   "bbox_top": 0,

@@ -1,4 +1,4 @@
-spawnRate = 5;
+spawnRate = 4;
 spawnRateVariance = 2;
 
 
