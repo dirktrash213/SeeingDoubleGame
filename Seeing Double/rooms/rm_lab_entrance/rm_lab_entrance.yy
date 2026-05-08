@@ -22,6 +22,8 @@
     {"name":"inst_74BFF45B","path":"rooms/rm_lab_entrance/rm_lab_entrance.yy",},
     {"name":"inst_76B4E671","path":"rooms/rm_lab_entrance/rm_lab_entrance.yy",},
     {"name":"inst_64FA7C97","path":"rooms/rm_lab_entrance/rm_lab_entrance.yy",},
+    {"name":"inst_577838E7","path":"rooms/rm_lab_entrance/rm_lab_entrance.yy",},
+    {"name":"inst_1917F537","path":"rooms/rm_lab_entrance/rm_lab_entrance.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -52,7 +54,10 @@
 -2147483648,-25,0,-2,-2147483648,3,0,-2147483648,-2147483648,-25,0,1,-2147483648,-3,0,1,-2147483648,-35,0,-3,-2147483648,-27,0,-3,-2147483648,-27,0,-3,-2147483648,-27,
 0,-603,-2147483648,],"TileDataFormat":1,},"tilesetId":{"name":"tiles_standard_transparent","path":"tilesets/tiles_standard_transparent/tiles_standard_transparent.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Collectables","depth":400,"effectEnabled":true,"effectType":null,"gridX":8,"gridY":8,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
-    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":500,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
+    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":500,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_577838E7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_labDoor","path":"objects/obj_interactable_labDoor/obj_interactable_labDoor.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":464.0,"y":128.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1917F537","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_labDoor","path":"objects/obj_interactable_labDoor/obj_interactable_labDoor.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":464.0,"y":448.0,},
+      ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"LevelTiles","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":37,"SerialiseWidth":30,"TileCompressedData":[
 -61,131,1,285,-26,392,4,286,131,131,373,-26,0,4,371,131,131,373,-26,0,4,371,131,131,373,-26,0,4,371,131,
 131,373,-26,0,4,371,131,392,393,-26,0,2,391,392,-180,0,-30,352,-30,131,-2,136,-28,131,-90,49,-61,131,1,285,
