@@ -1,1 +1,2 @@
 vertical = true;
+visible = false;

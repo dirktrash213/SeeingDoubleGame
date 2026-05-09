@@ -1388,7 +1388,7 @@ function resetDialogueStrings(_textDisplayDuration = textDisplayDuration) {
 
 }
 
-function playAudioWithFalloff(_audio, _maxDist = 600, _pitch = 1.0, _loop = false) {
+function playAudioWithFalloff(_audio, _maxDist = 600, _pitch = 1.0, _loop = false, _useReverb = false) {
 
 	//Calculate distance and volume
 	if playerIsPresent() {
@@ -1404,7 +1404,16 @@ function playAudioWithFalloff(_audio, _maxDist = 600, _pitch = 1.0, _loop = fals
     
 	    // 3. Play the sound with the calculated volume
 	    // Syntax: audio_play_sound(index, priority, loop, gain)
-	    audio_play_sound(_audio, 1, _loop, _volume, 0, _pitch);
+		
+		if _useReverb {
+		
+			audio_play_sound_on(obj_control.reverb_emitter, _audio, _loop, 1, _volume, 0, _pitch);
+		
+		} else {
+		
+			audio_play_sound(_audio, 1, _loop, _volume, 0, _pitch);
+		
+		}
 		
 	}
 
@@ -1416,7 +1425,7 @@ function disableReverb() {
 
 }
 
-function enableSmallReverb() {
+function enableTinyReverb() {
 
 	obj_control.reverb_effect.bypass = false;
 	obj_control.reverb_effect.size = 0.5;
@@ -1425,12 +1434,21 @@ function enableSmallReverb() {
 
 }
 
+function enableSmallReverb() {
+
+	obj_control.reverb_effect.bypass = false;
+	obj_control.reverb_effect.size = 0.65;
+	obj_control.reverb_effect.damp = 0.95;
+	obj_control.reverb_effect.mix = 0.55;
+
+}
+
 function enableLargeReverb() {
 
 	obj_control.reverb_effect.bypass = false;
-	obj_control.reverb_effect.size = 0.75;
+	obj_control.reverb_effect.size = 0.85;
 	obj_control.reverb_effect.damp = 0.95;
-	obj_control.reverb_effect.mix = 0.5;
+	obj_control.reverb_effect.mix = 0.75;
 
 }
 

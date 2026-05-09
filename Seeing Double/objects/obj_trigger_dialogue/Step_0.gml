@@ -1,4 +1,4 @@
-dialogueSpawner = instance_nearest(x,y,obj_spawner_dialogue);
+if updateDialogueSpawner dialogueSpawner = instance_nearest(x,y,obj_spawner_dialogue);
 
 if global.paused {
 	

@@ -7,10 +7,12 @@ global.speedrunTimer = 0;
 global.coinCount = 0;
 global.cherryCount = 0;
 global.defeatCount = 0;
+global.storedCoins = 0;
+global.storedCherries = 0;
 //global.grassCount = 0;
 
-global.coinLotsAmount = 800;
-global.cherryMax = 34;
+global.coinLotsAmount = global.demoBuild ? 800 : 1600; //TEMP, find actual number
+global.cherryMax = global.demoBuild ? 34 : 68; //TEMP, find actual number
 
 global.paused = false;
 global.playerControl = true;

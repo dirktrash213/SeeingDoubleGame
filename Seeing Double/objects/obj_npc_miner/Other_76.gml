@@ -7,7 +7,8 @@ if event_data[? "event_type"] == "sprite event" {
 			var _pitch = random_range(4.0, 6.0);
 			
 			//if !audio_is_playing(sfx_footstep) audio_play_sound(sfx_footstep, 1, 0, 1, 0, _pitch);
-			if !audio_is_playing(sfx_footstep) audio_play_sound_on(obj_control.reverb_emitter, sfx_footstep, 0, 1, 1, 0, _pitch);
+			//if !audio_is_playing(sfx_footstep) audio_play_sound_on(obj_control.reverb_emitter, sfx_footstep, 0, 1, 1, 0, _pitch);
+			audio_play_sound_on(obj_control.reverb_emitter, sfx_footstep, 0, 1, 1, 0, _pitch);
 			
 			//Create spark particles
 			

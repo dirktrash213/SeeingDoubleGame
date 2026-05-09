@@ -47,6 +47,39 @@ global.dialogueStringArrays = {
 		
 	],
 	
+	cavesCamper : [ 
+	
+		"Huh... so ya found my little hidey hole, eh sonny? Like what I've done with the place?",
+		"What brings ya down to these cavernous depths? Ya don't look like a miner. Or an explorer.",
+		"Ya looking for something? Or someone? Heh. Good luck finding anything in these pits.",
+		"Y'know. These caves connect to some sort of hi tech facility deeper in.",
+		"Seems like it's been there for ages, too. Makes me wonder who built it, and why.",
+		"Could never figure out how to open that door, though, so we'll probably never know.",
+		"But... you seem like a resourceful young feller. Maybe you'll succeed where I couldn't.",
+		"And who knows? Maybe inside you'll find just what you're looking fer.",
+		
+	],
+	
+	cavesCamperMore : [ 
+	
+		"What brings ya back here, sonny? Wondering why I'm holed up in this little nook, that it?",
+		"Well, to put it simply... I like explorin'. Findin' little unknown places like this...",
+		"It makes me feel so young! Like a kid, almost. Guess I never quite grew up, heheh.",
+		"Y'know, sonny... between you and me... I've seen things you probably wouldn't believe.",
+		"There's a whole 'nother world out there. And I ain't talkin' 'bout beyond the island.",
+		"It's right here, all around us. In this very room even, I'd wager.",
+		"Heh. You must think I'm crazy. I used to get that a lot. Part of the reason I live here now.",
+		"Probably provin' 'em right by doin' so, but I could care less.",
+		"You're alright, kid. Probably should get going, though. Don't wanna keep anyone waitin', do ya?",
+		
+	],
+	
+	cavesCamperSleep : [ 
+	
+		"[wave]zzzzzzz...",
+
+	],
+	
 	cavesSolvingSpotTheDifference : [ 
 	
 		"I, the great explorer Beckett, have once again been stymied.", 

@@ -13,7 +13,8 @@ if global.doubleJumpActive {
 //if !audio_is_playing(sfx_jump_patter) audio_play_sound(sfx_jump_patter, 1, 0, 1, 0, 0.15);
 if canPlayAudio {
 	
-	audio_play_sound(sfx_jump_patter, 1, 0, 1, 0, 0.15);
+	//audio_play_sound(sfx_jump_patter, 1, 0, 1, 0, 0.15);
+	audio_play_sound_on(obj_control.reverb_emitter, sfx_jump_patter, false, 1, 1, 0, 0.15);
 	
 	canPlayAudio = false;
 	alarm[1] = audioCooldown;
