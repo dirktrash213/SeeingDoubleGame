@@ -1,3 +1,5 @@
+if !global.demoBuild instance_destroy();
+
 wrapAmount = 455;
 typist.sound(sfx_footstep, false, 1.5, 1.7); 
 var _epicGamer = "";

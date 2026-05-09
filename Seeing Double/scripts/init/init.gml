@@ -1,5 +1,7 @@
 global.devTools = false;
 
+global.demoBuild = false; //Determines if this build is the demo version vs full version
+
 global.speedrunTimer = 0;
 
 global.coinCount = 0;
@@ -115,6 +117,7 @@ global.dialogueVariables = {
 	talkedToExplorer : false,
 	talkedToExplorerTwice : false,
 	solvedForestPuzzle : false,
+	talkedToScaredMiner : false,
 	talkedToMiner : false,
 	talkedToCamper : false,
 	talkedToCamperTwice : false,

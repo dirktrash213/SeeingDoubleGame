@@ -5,6 +5,8 @@ triggered = true;
 alarm[0] = textDisplayDuration;
 
 if instance_exists(obj_interactable_monitor_parent) {
+	
+	audio_play_sound(sfx_monitorOn, 1, false);
 
 	with instance_nearest(x, y, obj_interactable_monitor_parent) {
 	

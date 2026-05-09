@@ -1,0 +1,1 @@
+if !global.demoBuild instance_destroy();

@@ -68,6 +68,12 @@ if count == _l-1 {
 		
 	}
 	
+	if room == rm_cave_entrance { 
+		
+		global.dialogueVariables.talkedToScaredMiner = true;
+		
+	}
+	
 	//Moved to top
 	//if room == rm_cave_entrance { 
 	//	
@@ -143,9 +149,85 @@ count++;
 //For line-specific text display durations/sprite expressions, use below block
 if variableTextDisplayDuration {
 
-	switch dialogueString[count] { //Check which dialogue string is currently displaying
+	switch dialogueString[count] { //Check which dialogue string is currently displaying 
+								   //Dialogue strings can be found in the dialogueStrings script
 		
-		case global.dialogueStringArrays.cavesHungryMiner[1]: { //Dialogue strings can be found in the dialogueStrings script
+		case global.dialogueStringArrays.cavesEntanceExplorer[4]: { 
+	      
+			alarm[0] = 360;
+			
+		} break;
+		
+		case global.dialogueStringArrays.cavesEntanceMiner[1]: { 
+	      
+			alarm[0] = textDisplayDuration;
+			
+			with obj_npc_scaredMiner {
+		
+				sprite_index = spr_npc_scaredMiner_angry;
+				jumping = true;
+				vspeed = vSpeedAmount;
+				gravity = gravAmount;
+
+		
+			}
+		
+		} break;
+		
+		case global.dialogueStringArrays.cavesEntanceMiner[2]: { 
+	      
+			alarm[0] = 400;
+			
+			var _pitch = 3.0;
+			
+			audio_play_sound(sfx_slice, 1, false, 1.0, 0, _pitch);
+			
+			with obj_npc_scaredMiner {
+		
+				sprite_index = spr_npc_scaredMiner_angry_noPickaxe;
+				jumping = false;
+		
+			}
+			
+			with instance_create_layer(obj_npc_scaredMiner.x, obj_npc_scaredMiner.y, "Instances", obj_background_pickaxe) {
+			
+				gravity = 0.2;
+				speed = 7;
+				direction = obj_npc_scaredMiner.image_xscale == -1 ? 45 : 135;
+				imageAngleIncreaseAmount = obj_npc_scaredMiner.image_xscale == -1 ? -31 : 31;
+			
+			}
+		
+		} break;
+		
+		case global.dialogueStringArrays.cavesEntanceMiner[3]: { 
+	      
+			alarm[0] = textDisplayDuration;
+			
+			with obj_npc_scaredMiner {
+		
+				sprite_index = spr_npc_scaredMiner_noPickaxe;
+				
+		
+			}
+		
+		} break;
+		
+		case global.dialogueStringArrays.cavesEntanceMiner[5]: { 
+	      
+			alarm[0] = textDisplayDuration;
+			
+			with obj_npc_scaredMiner {
+		
+				sprite_index = spr_npc_scaredMiner_noPickaxe_run;
+				hspeed = -5;
+				lookingAtPlayer = false;
+		
+			}
+		
+		} break;
+		
+		case global.dialogueStringArrays.cavesHungryMiner[1]: { 
 	      
 			alarm[0] = textDisplayDuration;
 			
@@ -158,7 +240,7 @@ if variableTextDisplayDuration {
 		
 		} break;
 		
-		case global.dialogueStringArrays.cavesHaunting[2]: { //Dialogue strings can be found in the dialogueStrings script
+		case global.dialogueStringArrays.cavesHaunting[2]: {
 	      
 			alarm[0] = textDisplayDuration;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pleading;

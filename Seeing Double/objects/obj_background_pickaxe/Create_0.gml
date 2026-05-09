@@ -1,0 +1,8 @@
+imageAngleIncreaseAmount = 0;
+
+
+
+
+
+
+

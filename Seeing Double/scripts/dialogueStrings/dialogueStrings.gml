@@ -1,15 +1,30 @@
 global.dialogueStringArrays = {
 
 	
+	cavesEntanceExplorer : [ 
+	
+		"Ho hum. It would appear the great Beckett has been momentarily stumped yet again.", //0
+		"Sadly, this time I fear a way forward is a moot gesture.",
+		"Or, to put it another way: this is the end of the demo.",
+		"We sincerely thank you for your time, and we hope you enjoyed.",
+		//"If you enjoyed, why not purchase wishlist Seeing Double on Steam? It would really help us out.",
+		"If you enjoyed, why not purchase the full version of Seeing Double on Steam? It would really help us out.",
+		"Thanks again, and until next time.", //5
+	
+	],
+	
 	cavesEntanceMiner : [ 
 	
-		"[shake]D-d-did you s-s-see th-that!? That was a g-g-ghost!! And it busted through solid rock like it was nothing!", 
+		"[shake]D-d-did you s-s-see th-that!? That was a bloody g-g-ghost!! And it busted through solid rock like it was nothing!", //0
 		//"W-was that a g-g-ghost?", 
 	//	"That [slant]does[/slant] it! That's the [slant]last[/slant] straw! I do [slant]NOT[/slant] get paid enough for this nonsense! I [shake]quit!!", 
-		"That [slant]does[/slant] it! I do [slant]NOT[/slant] get paid enough for this nonsense! I [shake]quit!!", 
-		"If the boss wants his ore so damn bad he can come down here and say hello to ol' spooky himselves!!", 
-		"What? You want to go [slant]into[/slant] that dank deathtrap? HaHAA! Buddy, your funeral!", 
-		"Me? I'll gladly find another way to make a living. One that doesn't involve saying hi to wailing banshees!", 
+		"That right [slant]does[/slant] it! That simply teas my crumpets! I do [slant]NOT[/slant] get paid enough for this balderdash!", 
+		"I [slant]quit!![/slant] If the boss wants his ore so bad that fat tub o' lard can come down here and say 'ello to ol' spooky himself!!", 
+		//"If the boss wants his ore so damn bad he can come down here and say hello to ol' spooky himselves!!", 
+		"What? You want to go [slant]into[/slant] that deathtrap? [shake]HaHAA![/shake] Your funeral, bloke!", 
+		"Me? I'll happily find a new way to make a living. One that doesn't require making acquaintance to wailing banshees!", 
+		//"Later, loser!", //5
+		"Tally ho, imbecile!", //5
 		//"The mines have become a deathtrap recently.", 
 		//"The mines have become a deathtrap recently. Someone's gotta do it, though.", 
 	//	"And that someone ain't me! I'll find another way to make a living. One free of killer ghosts!", 

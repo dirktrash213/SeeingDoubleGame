@@ -8,7 +8,7 @@ if triggered exit;
 
 triggered = true;
 
-audio_play_sound(sfx_slice, 1, 0);
+audio_play_sound(sfx_deflate, 1, 0);
 
 if pitterPlayerIsPresent() {
 
