@@ -1970,6 +1970,8 @@ if global.cutsceneActive {
 		
 		case CUTSCENE_ID.CAVES_HAUNTING: { 
 			
+			
+			
 			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_CUTSCENE_STATE.LOOKING_AT_SCAMMER {
 			
 				if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
@@ -2033,7 +2035,7 @@ if global.cutsceneActive {
 			
 				if object_index == obj_player_pitter {
 					
-					sprite_index = spr_pitter_forward;
+					sprite_index = spr_pitter_resting;
 					
 				}
 				
@@ -2160,7 +2162,7 @@ if global.cutsceneActive {
 			
 			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_PART2_CUTSCENE_STATE.GHOST_RETURNING {
 			
-				if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+				if object_index == obj_player_pitter sprite_index = spr_pitter_scared;
 				if object_index == obj_player_patter {
 					
 					if obj_trigger_dialogue.count == 0 sprite_index = spr_patter_stunned;

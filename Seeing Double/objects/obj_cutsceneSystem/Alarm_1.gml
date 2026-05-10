@@ -504,7 +504,7 @@ switch global.currentCutsceneID {
 		}
 
 	} break; 
-	
+	//@
 	case CUTSCENE_ID.CAVES_HAUNTING: {
 	
 		switch cutsceneState { 
@@ -537,7 +537,7 @@ switch global.currentCutsceneID {
 				
 				cutsceneState = CAVES_HAUNTING_CUTSCENE_STATE.BEHIND_SCAMMER;
 				
-				var _lookDuration = 1000;
+				var _lookDuration = global.gotScammed ? 1000 : 1360;
 				
 				alarm[1] = _lookDuration;
 				
@@ -569,7 +569,7 @@ switch global.currentCutsceneID {
 						
 					} else {
 
-						dialogueString[0] = "Player was not scammed.";
+						dialogueString[0] = global.dialogueStringArrays.cavesHauntingNotScammed[4];
 
 					}
 
@@ -591,7 +591,7 @@ switch global.currentCutsceneID {
 				
 				cutsceneState = CAVES_HAUNTING_CUTSCENE_STATE.TALKING_TO_SCAMMER;
 				
-				var _duration = 1600;
+				var _duration = global.gotScammed ? 1600 : 2200;
 				
 				alarm[1] = _duration;
 				
@@ -616,7 +616,13 @@ switch global.currentCutsceneID {
 
 					} else {
 
-						dialogueString[0] = "Player was not scammed.";
+						dialogueString[0] = global.dialogueStringArrays.cavesHauntingNotScammed[5];
+						dialogueString[1] = global.dialogueStringArrays.cavesHauntingNotScammed[6];
+						dialogueString[2] = global.dialogueStringArrays.cavesHauntingNotScammed[7];
+						dialogueString[3] = global.dialogueStringArrays.cavesHauntingNotScammed[8];
+						dialogueString[4] = global.dialogueStringArrays.cavesHauntingNotScammed[9];
+						dialogueString[5] = global.dialogueStringArrays.cavesHauntingNotScammed[10];
+						dialogueString[6] = global.dialogueStringArrays.cavesHauntingNotScammed[11];
 
 					}
 
@@ -626,11 +632,27 @@ switch global.currentCutsceneID {
 			
 			case CAVES_HAUNTING_CUTSCENE_STATE.TALKING_TO_SCAMMER: {
 			
-				obj_npc_scammer_mines.lookingAtPlayer = true;
+				if global.gotScammed {
+			
+					obj_npc_scammer_mines.lookingAtPlayer = true;
 				
-				//if patterPlayerIsPresent() obj_player_patter.aboutToBeatUpScammer = false;
-				setPatterAngrySprites();
-				deactivateCutscene();
+					//if patterPlayerIsPresent() obj_player_patter.aboutToBeatUpScammer = false;
+					setPatterAngrySprites();
+					deactivateCutscene();
+				
+				} else {
+				
+					var _duration = 2;
+					alarm[1] = _duration;
+					
+					//setUpSpookyGhostAudio();
+					//audio_sound_gain(bgm_ghostlyReverberations, 1, 20000);
+					//audio_sound_gain(bgm_ephemeralEcho, 1, 10000);
+				
+					global.currentCutsceneID = CUTSCENE_ID.CAVES_HAUNTING_PART2;
+					cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.THINKING;
+				
+				}
 			
 			}
 			
@@ -732,6 +754,8 @@ switch global.currentCutsceneID {
 				
 				}
 				
+				//show_debug_message("scammer beg state")
+				
 				setUpSpookyGhostAudio();
 				audio_sound_gain(bgm_ghostlyReverberations, 1, 20000);
 				audio_sound_gain(bgm_ephemeralEcho, 1, 10000);
@@ -742,13 +766,13 @@ switch global.currentCutsceneID {
 				
 				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.HEARING_GHOST_APPROACH;
 				
-				var _duration = 900;
+				var _duration = 1100;
 				
 				alarm[1] = _duration;
 				
 				with obj_trigger_dialogue {
 				
-					var _customTextDisplayDuration = 200;
+					var _customTextDisplayDuration = 330;
 				
 					count = 0;
 					alarm[0] = _customTextDisplayDuration;
@@ -770,7 +794,7 @@ switch global.currentCutsceneID {
 				
 				cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.RUNNING_TO_HIDING_SPOT;
 				
-				var _duration = 135;
+				var _duration = 145;
 				
 				alarm[1] = _duration;
 				
@@ -797,7 +821,7 @@ switch global.currentCutsceneID {
 					obj_player_patter.image_xscale = -1;
 					
 					obj_npc_scammer_mines.hspeed = -_runSpeed;
-					obj_npc_scammer_mines.image_xscale = -1;
+					obj_npc_scammer_mines.image_xscale = 1;
 					
 					obj_npc_scammer_mines.sprite_index = spr_npc_scammer_run_scared;
 					
@@ -829,6 +853,7 @@ switch global.currentCutsceneID {
 					
 					hspeed = 0;
 					sprite_index = spr_npc_scammer_veryScared;
+					//image_xscale = 1;
 				
 				}
 				
@@ -958,7 +983,8 @@ switch global.currentCutsceneID {
 				
 				}
 				
-				audio_play_sound(sfx_ghost_screamAlerted, 1, 0, 0.5, 0, 0.65); 
+				//audio_play_sound(sfx_ghost_screamAlerted, 1, 0, 0.5, 0, 0.65); 
+				audio_play_sound_on(obj_control.reverb_emitter, sfx_ghost_screamAlerted, false, 1, 0.5, 0, 0.65); 
 				
 			} break;
 			

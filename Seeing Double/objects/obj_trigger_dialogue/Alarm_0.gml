@@ -275,6 +275,51 @@ if variableTextDisplayDuration {
 		
 		} break;
 		
+		case global.dialogueStringArrays.cavesHauntingNotScammed[7]: {
+	      
+			alarm[0] = textDisplayDuration;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pensive;
+		
+		} break;
+		
+		case global.dialogueStringArrays.cavesHauntingNotScammed[8]: {
+	      
+			alarm[0] = textDisplayDuration;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer;
+		
+		} break;
+		
+		case global.dialogueStringArrays.cavesHauntingNotScammed[9]: {
+	      
+			alarm[0] = textDisplayDuration;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pleadingSweat;
+			
+			//spawnGoldenParachute();
+		
+		} break;
+		
+		case global.dialogueStringArrays.cavesHauntingNotScammed[10]: {
+	      
+			alarm[0] = textDisplayDuration;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pleading;
+			
+			spawnGoldenParachute();
+		
+		} break;
+		
+		case global.dialogueStringArrays.cavesHauntingNotScammed[11]: {
+	      
+			alarm[0] = 360;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pensive;
+			
+			setUpSpookyGhostAudio();
+			audio_sound_gain(bgm_ghostlyReverberations, 1, 20000);
+			audio_sound_gain(bgm_ephemeralEcho, 1, 10000);
+			
+			//spawnGoldenParachute();
+		
+		} break;
+		
 		case global.dialogueStringArrays.cavesHauntingPart2[2]: {
 	      
 			alarm[0] = textDisplayDuration;
@@ -287,13 +332,14 @@ if variableTextDisplayDuration {
 			alarm[0] = textDisplayDuration;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pensive;
 			
-			with instance_create_layer(obj_npc_scammer_mines.x, obj_npc_scammer_mines.y, "Collectables", obj_pickup_parachute_gold) {
-			
-				speed = 3.5;
-				direction = 135;
-				gravity = 0.25;
-			
-			}
+			spawnGoldenParachute();
+		
+		} break;
+		
+		case global.dialogueStringArrays.cavesHauntingPart2[6]: {
+	      
+			alarm[0] = 300;	
+			//obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pensive;
 		
 		} break;
 		

@@ -11,3 +11,6 @@ global.customLevel = false;
 global.groundPoundActive = true;
 
 enableSmallReverb();
+
+
+//global.gotScammed = true;

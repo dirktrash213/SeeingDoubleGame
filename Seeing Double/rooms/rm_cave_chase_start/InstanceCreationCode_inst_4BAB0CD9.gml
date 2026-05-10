@@ -1,8 +1,9 @@
 //if global.groundPoundActive instance_destroy();
 textDisplayDuration = 360;
+typist.sound(sfx_mouseChirp, false, 0.7, 1.5); 
 variableTextDisplayDuration = true;
 wrapAmount = 125;
-typist.sound(sfx_footstep, false, 1.5, 1.7); 
+//typist.sound(sfx_footstep, false, 1.5, 1.7); 
 
 if global.gotScammed {
 
@@ -12,7 +13,10 @@ if global.gotScammed {
 
 } else {
 
-	dialogueString[0] = "Player was not scammed.";
+	dialogueString[0] = global.dialogueStringArrays.cavesHauntingNotScammed[0];
+	dialogueString[1] = global.dialogueStringArrays.cavesHauntingNotScammed[1];
+	dialogueString[2] = global.dialogueStringArrays.cavesHauntingNotScammed[2];
+	dialogueString[3] = global.dialogueStringArrays.cavesHauntingNotScammed[3];
 
 }
 

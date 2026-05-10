@@ -154,7 +154,7 @@ global.dialogueStringArrays = {
 	
 	cavesHaunting : [ 
 	
-		"Well, salt my eggs. This is not good I tell ya, [slant]not[/slant] good! What was I [slant]thinkin'[/slant], followin' that yellow moron?", //0
+		"Well, salt my eggs. This is not good I tell ya, [slant]not[/slant] good! What was I [slant]thinkin'[/slant], followin' that yellow moron?[spr_npc_explorer]", //0
 		"Now I done went and fell in some weird portal and got myself lost! I'm a goner for sure! No one's gonna find me down here!", 
 		"Well, on the bright side, at least I won't run into that blue schmuck I scammed in the forest. Heh, what a grade-A sucker...", 
 		"WAH!", 
@@ -184,29 +184,33 @@ global.dialogueStringArrays = {
 		"Oh crap oh crap oh crap oh crap oh crap oh crap oh crap oh crap oh crap oh crap!!", 
 		"[font_scoreUI]WHAT THE HELL IS EVEN THAT!?[/font]", 
 		"Oops. My bad.", 
-		"RUUUUUUN!!!", 
+		//"RUUUUUUN!!!", 
+		"[font_scoreUI]RUN!!!", 
 	
 	],
 	
 	cavesHauntingNotScammed : [ 
 	
-		"Well, salt my eggs. This is not good I tell ya, [slant]not[/slant] good! What was I [slant]thinkin'[/slant], followin' that yellow moron?", 
+		"Well, salt my eggs. This is not good I tell ya, [slant]not[/slant] good! What was I [slant]thinkin'[/slant], followin' that yellow moron?[spr_npc_explorer]",//0 
 		"Now I done went and fell in some weird portal and got myself lost! I'm a goner for sure! No one's gonna find me down here!", 
-		"And I'm still flat broke to top it off! I couldn't even scam that blue schmuck in the forest.", 
+		"And I'm still flat broke to top it off! I couldn't even scam that blue schmuck[spr_pitter_forward] in the forest.", 
 		"He just walked right past my parachute and jumped off a cliff without a care in the world! Who [slant]does[/slant] that!?", 
 		"WAH!", 
-		"WHO'S THERE!?", 
+		"WHO'S THERE!?",//5
 		"Oh... it's just a pretty little lady. Well how do [slant]you[/slant] do, ma'am? Lookin' to buy some authentic jewelry?", 
 		"Hm? What's that? Bluey is your husband? And you overheard what I said about wanting to scam him?", 
-		"I assure you, m'lady, that I would never do such a thing as sell a sucker- I mean a savvy customer like him a broken, useless parachute.", 
+		"I assure you, m'lady, that I would never do such a thing as sell a sucker- I mean a [slant]savvy[/slant] customer like him a broken, useless parachute.", 
 		"B-but don't take my word for it!! Here, look! A state of the art parachute, on the house! This is my good one! Really!", 
 		//"See? No reason to get all worked up, miss. I'm sure your husband is a lovely, intelligent, good-looking guy who would never fall for a scam.",
-		"See? No reason to get all worked up, miss. I'm sure your husband is an intelligent gentleman who would never fall victim to a scam.",
+		//"See? No reason to get all worked up, miss. I'm sure your husband is an intelligent gentleman.",//10
+		"See? No reason to get all worked up, miss. Free stuff makes everything better, doesn't it?",//10
+	//	"Phew. For a second or two I thought you were going to turn me into a punching bag. Sheesh.",//10
+	//	"Sheesh, lady. If looks could kill you'd be a serial killer.",//10
 		"So, uh. Any chance you know how to get us out of this dump?", 
 		"Hold on. Do you hear that? What's that noise?", 
 		"Oh, I know! That must be the miners! We're saved!!", 
 		"No? What's with that concerned look? You're making me nervous, lady.", 
-		"Hide!? From [slant]what!?[/slant] [shake]What's coming!?[/shake]", 
+		"Hide!? From [slant]what!?[/slant] [shake]What's coming!?[/shake]",//15 
 		"Oh crap oh crap oh crap oh crap oh crap oh crap oh crap oh crap oh crap oh crap!!", 
 		"[font_scoreUI]WHAT THE HELL IS EVEN THAT!?[/font]", 
 		"Oops. My bad.", 

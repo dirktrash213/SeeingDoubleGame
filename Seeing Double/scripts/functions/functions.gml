@@ -1639,3 +1639,15 @@ function playGreenPortalJumpEffects() {
 	}
 
 }
+
+function spawnGoldenParachute() {
+
+	with instance_create_layer(obj_npc_scammer_mines.x, obj_npc_scammer_mines.y, "Collectables", obj_pickup_parachute_gold) {
+			
+		speed = 3.5;
+		direction = 100;
+		gravity = 0.25;
+	
+	}
+
+}
