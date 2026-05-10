@@ -10,4 +10,4 @@ global.customLevel = false;
 
 global.groundPoundActive = true;
 
-disableReverb();
+enableSmallReverb();

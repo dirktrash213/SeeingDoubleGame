@@ -7,3 +7,5 @@ if audio_is_playing(amb_elevator) audio_stop_sound(amb_elevator);
 
 global.verticalLevel = false;
 global.customLevel = false;
+
+enableSmallReverb();

@@ -6,3 +6,5 @@ if !audio_is_playing(amb_elevator) audio_play_sound_on(obj_control.reverb_emitte
 
 global.verticalLevel = false;
 global.customLevel = false;
+
+enableSmallReverb();

@@ -124,6 +124,6 @@ if global.dialogueVariables.eatenCaveCherry && room == rm_cave_groundPoundCrysta
 	
 	dialogueString = [];
 
-	dialogueString[0] = "NOOOO!! How could you!?";
+	dialogueString[0] = "[shake]NOOOO!![/shake] How could you!?";
 
 }

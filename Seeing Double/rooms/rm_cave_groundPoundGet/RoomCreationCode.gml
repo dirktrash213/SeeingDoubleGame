@@ -10,3 +10,6 @@ if !audio_is_playing(amb_waterfall) audio_play_sound_on(obj_control.reverb_emitt
 
 global.verticalLevel = false;
 global.customLevel = true;
+
+
+enableLargeReverb();

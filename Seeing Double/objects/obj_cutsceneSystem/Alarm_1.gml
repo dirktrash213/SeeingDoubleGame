@@ -476,8 +476,8 @@ switch global.currentCutsceneID {
 				//audio_play_sound(bgm_forest_ambience, 1, 1);
 				//audio_play_sound(bgm_inSync, 1, 1);
 				
-				audio_sound_gain(amb_cave_with_water_dripping, 0.1, 2000);
-				audio_sound_gain(obj_control.bgmCave, 0.8, 2000);
+				audio_sound_gain(amb_cave_with_water_dripping, 1.0, 2000);
+				audio_sound_gain(obj_control.bgmCave, 1.0, 2000);
 				
 				with obj_trigger_dialogue {
 				

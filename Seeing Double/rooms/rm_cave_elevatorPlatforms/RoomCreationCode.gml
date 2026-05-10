@@ -8,3 +8,5 @@ if audio_is_playing(amb_drizzle) audio_stop_sound(amb_drizzle);
 
 global.verticalLevel = false;
 global.customLevel = false;
+
+enableSmallReverb();

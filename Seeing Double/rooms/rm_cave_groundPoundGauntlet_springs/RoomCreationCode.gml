@@ -12,3 +12,5 @@ global.verticalLevel = false;
 global.customLevel = true;
 
 global.groundPoundActive = true;
+
+enableLargeReverb();

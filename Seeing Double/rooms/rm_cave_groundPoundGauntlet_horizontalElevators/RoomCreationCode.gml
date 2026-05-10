@@ -7,6 +7,12 @@ if !audio_is_playing(amb_elevator) audio_play_sound_on(obj_control.reverb_emitte
 if !audio_is_playing(obj_control.bgmCave) audio_play_sound(obj_control.bgmCave, 1, 1);
 if !audio_is_playing(amb_waterfall) audio_play_sound_on(obj_control.reverb_emitter, amb_waterfall, true, 1);
 
+if audio_is_playing(amb_caveWaterflow) audio_stop_sound(amb_caveWaterflow);
+if audio_is_playing(amb_caveWaterflow2) audio_stop_sound(amb_caveWaterflow2);
+
 global.verticalLevel = true;
 
 global.groundPoundActive = true;
+
+
+enableLargeReverb();

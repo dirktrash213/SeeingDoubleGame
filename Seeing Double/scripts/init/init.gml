@@ -12,7 +12,7 @@ global.storedCherries = 0;
 //global.grassCount = 0;
 
 global.coinLotsAmount = global.demoBuild ? 800 : 1600; //TEMP, find actual number
-global.cherryMax = global.demoBuild ? 34 : 68; //TEMP, find actual number
+global.cherryMax = global.demoBuild ? 34 : 84; 
 
 global.paused = false;
 global.playerControl = true;

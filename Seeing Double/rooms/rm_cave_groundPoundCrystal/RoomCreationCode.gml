@@ -7,3 +7,5 @@ if audio_is_playing(sfx_portal_idle) audio_stop_sound(sfx_portal_idle);
 
 global.verticalLevel = false;
 global.customLevel = false;
+
+enableSmallReverb();
