@@ -505,6 +505,100 @@ switch global.currentCutsceneID {
 
 	} break; 
 	//@
+	case CUTSCENE_ID.CAVES_HAUNTING_FAKEOUT: {
+	
+		switch cutsceneState { 
+			
+			case CAVES_HAUNTING_FAKEOUT_CUTSCENE_STATE.LOOKING_AT_SCAMMER: {
+				
+				cutsceneState = CAVES_HAUNTING_FAKEOUT_CUTSCENE_STATE.WALKING_TO_SCAMMER;
+				
+				var _walkDuration = 60;
+				
+				alarm[1] = _walkDuration;
+				
+				with obj_trigger_dialogue {
+				
+					triggered = true;
+
+					alarm[0] = textDisplayDuration;
+
+				}
+				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+				
+					obj_player_pitter.hspeed = 1;
+					
+				}
+		
+			} break;
+			
+			case CAVES_HAUNTING_FAKEOUT_CUTSCENE_STATE.WALKING_TO_SCAMMER: {
+				
+				cutsceneState = CAVES_HAUNTING_FAKEOUT_CUTSCENE_STATE.BEHIND_SCAMMER;
+				
+				var _duration = 300;
+				
+				alarm[1] = _duration;
+				
+				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
+			
+					obj_player_pitter.hspeed = 0;
+					
+				}
+				
+			} break;
+			
+			case CAVES_HAUNTING_FAKEOUT_CUTSCENE_STATE.BEHIND_SCAMMER: {
+				
+				cutsceneState = CAVES_HAUNTING_FAKEOUT_CUTSCENE_STATE.SCAMMER_FLEEING;
+				
+				var _duration = 5;
+				
+				alarm[1] = _duration;
+				
+				with obj_trigger_dialogue {
+				
+					count = 0;
+					alarm[0] = textDisplayDuration;
+					dialogueString = [];
+					
+					dialogueString[0] = global.dialogueStringArrays.cavesHauntingFakeout[2];
+						
+				}
+				
+				with obj_npc_scammer_mines {
+				
+					//Flee
+					
+					sprite_index = spr_npc_scammer_run_terrified;
+					image_index = -1;
+					hspeed = 5;
+				
+				}
+				
+			} break;
+			
+			case CAVES_HAUNTING_FAKEOUT_CUTSCENE_STATE.SCAMMER_FLEEING: {
+				
+				caveGhostIsClose();
+				setPitterScaredSprites();
+				setPatterScaredSprites();
+				instance_destroy(obj_trigger_beatUpScammerFirst);
+				deactivateCutscene();
+				
+				with obj_npc_ghost_cavesChase {
+				
+					alarm[0] = 5;
+				
+				}
+				
+			} break;
+			
+		}
+		
+	}
+	
 	case CUTSCENE_ID.CAVES_HAUNTING: {
 	
 		switch cutsceneState { 
@@ -889,6 +983,8 @@ switch global.currentCutsceneID {
 					//obj_npc_scammer_mines.sprite_index = spr_npc_scammer_veryScared;
 					
 				}
+				
+				audio_play_sound(sfx_ghost_whisper, 1, false, 1, 0, 1.0); 
 				
 			} break;
 			

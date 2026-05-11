@@ -400,14 +400,34 @@ function startNewGame() {
 
 
 }
-
+//@
 function spawnPitter() {
 	
-	show_debug_message("Respawning")
+	//show_debug_message("Respawning")
 
 	var _offsetY = 20;
 
 	obj_control.canDrawDivider = true;
+	
+	with objBktGlitchDemo {
+	
+		intensity = 0;
+		channelShift = 0;
+		channelDispersion = 0;
+		intensityIncrementType = INCREMENT_TYPE.DECREASING_TO_ZERO;
+	
+	}
+	
+	if audio_is_playing(obj_control.bgmCaveChase) {
+	
+		audio_stop_sound(obj_control.bgmCaveChase);
+		audio_sound_pitch(obj_control.bgmCaveChase, 1.0);
+	
+	}
+	
+	instance_destroy(obj_background_blackScreen);
+	
+	//application_surface_draw_enable(true);
 	
 	//room_goto(obj_player_pitter.roomRespawn);
 	var _roomToSpawnIn = asset_get_index(global.roomToSpawnIn);
@@ -428,8 +448,8 @@ function spawnPitter() {
 	//room_goto(asset_get_index(global.roomToSpawnIn));
 	room_goto(_roomToSpawnIn);
 	
-	show_debug_message("global.xRespawnPitter: " + string(global.xRespawnPitter))
-	show_debug_message("global.yRespawnPitter: " + string(global.yRespawnPitter))
+	//show_debug_message("global.xRespawnPitter: " + string(global.xRespawnPitter))
+	//show_debug_message("global.yRespawnPitter: " + string(global.yRespawnPitter))
 	
 	//TEMP
 	//global.portalsActive = true;
@@ -539,7 +559,7 @@ function playerDefeated() {
 	}
 
 }
-//@
+
 function playerCaughtByForestGhost() {
 
 	if global.playerDefeated exit;
@@ -1354,7 +1374,7 @@ function cancelGroundPound() {
 	}
 
 }
-
+//@
 function setUpSpookyGhostAudio() {
 
 	audio_play_sound(bgm_ghostlyReverberations, 1, 1);
@@ -1376,7 +1396,7 @@ function setUpSpookyGhostAudio() {
 
 function fadeOutSpookyGhostAudio() {
 
-	var _fadeOutTime = 4000;
+	var _fadeOutTime = 12000;
 	
 	audio_sound_gain(bgm_ghostlyReverberations, 0, _fadeOutTime);
 	audio_sound_gain(bgm_ephemeralEcho, 0, _fadeOutTime);
@@ -1385,6 +1405,7 @@ function fadeOutSpookyGhostAudio() {
 	audio_sound_gain(bgm_cursedAtmosphere_VERYLOUD, 0, _fadeOutTime);
 	audio_sound_gain(sfx_glitch_loop, 0, _fadeOutTime);
 	audio_sound_gain(sfx_glitch_loop2, 0, _fadeOutTime);
+	audio_sound_gain(sfx_ghost_whisper, 0, _fadeOutTime);
 	
 }
 
@@ -1660,11 +1681,69 @@ function spawnGoldenParachute() {
 
 }
 //@
+function caughtByCaveGhost() {
+
+	if global.playerDefeated exit;
+
+	global.playerDefeated = true;
+	global.defeatCount++;
+	
+	global.caughtByCaveGhostAmount++;
+	
+	instance_create_depth(x, y, -10000, obj_background_blackScreen);
+	
+	//application_surface_draw_enable(false);
+	
+	//with objBktGlitchDemo {
+	//
+	//	intensity = 0;
+	//	channelShift = 0;
+	//	channelDispersion = 0;
+	//
+	//}
+
+	audio_play_sound(sfx_hurt, 1, 0);
+	audio_play_sound(sfx_mouseScream, 1, 0);
+	global.playerControl = false;
+	
+	var _extraRespawnTime = 180;
+	
+	obj_control.alarm[0] = global.playerRespawnTime + _extraRespawnTime; 
+
+	other.sprite_index = other.defeatSprite;
+	
+	obj_control.canDrawDivider = false;
+	
+	if audio_is_playing(sfx_glitch_loop) audio_stop_sound(sfx_glitch_loop);
+	if audio_is_playing(sfx_glitch_loop2) audio_stop_sound(sfx_glitch_loop2);
+	
+	//objBktGlitchDemo.intensityIncrementType = INCREMENT_TYPE.DECREASING_TO_ZERO;
+
+}
+
+
 function caveGhostIsFar() {
+	
+	//audio_play_sound(bgm_ghostlyReverberations, 1, 1);
+	audio_sound_gain(bgm_ghostlyReverberations, 0, 0);
+
+	//audio_play_sound(bgm_ephemeralEcho, 1, 1);
+	audio_sound_gain(bgm_ephemeralEcho, 0, 0);
+
+	//audio_play_sound(bgm_cursedAtmosphere_LOUD, 1, 1);
+	audio_sound_gain(bgm_cursedAtmosphere_LOUD, 0, 0);
+
+	//audio_play_sound(sfx_glitch_loop, 1, true);
+	audio_sound_gain(sfx_glitch_loop, 0, 0);
+
+	//audio_play_sound(sfx_glitch_loop2, 1, true);
+	audio_sound_gain(sfx_glitch_loop2, 0, 0);
 
 	with objBktGlitchDemo {
 	
 		intensityIncrementType = INCREMENT_TYPE.INCREASING_TO_TINY;
+		audio_sound_gain(sfx_glitch_loop, 0.025, 2000);
+		audio_sound_gain(sfx_glitch_loop2,  0.025, 2000);
 	
 	}
 
@@ -1675,6 +1754,8 @@ function caveGhostIsClose() {
 	with objBktGlitchDemo {
 	
 		intensityIncrementType = INCREMENT_TYPE.INCREASING_TO_SMALL;
+		audio_sound_gain(sfx_glitch_loop, 0.04, 2000);
+		audio_sound_gain(sfx_glitch_loop2,  0.04, 2000);
 	
 	}
 
@@ -1685,7 +1766,18 @@ function caveGhostIsVeryClose() {
 	with objBktGlitchDemo {
 	
 		intensityIncrementType = INCREMENT_TYPE.INCREASING_TO_LARGE;
+		audio_sound_gain(sfx_glitch_loop, 0.1, 2000);
+		audio_sound_gain(sfx_glitch_loop2,  0.1, 2000);
 	
 	}
+
+}
+
+function breakCaveBoulder() {
+
+	//Break nearest cave boulder
+
+	instance_destroy(instance_nearest(x, y, obj_interactable_caveBoulder));
+
 
 }

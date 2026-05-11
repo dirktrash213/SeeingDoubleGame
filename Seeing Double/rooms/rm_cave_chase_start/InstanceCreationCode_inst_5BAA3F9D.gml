@@ -1,1 +1,3 @@
+if global.caughtByCaveGhostAmount > 1 instance_destroy();
+
 attachToNPC = true;

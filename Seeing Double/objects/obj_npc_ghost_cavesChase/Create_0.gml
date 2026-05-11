@@ -5,8 +5,9 @@ canDetectPlayer = false;
 chasePath = path_platform_test;
 delayBeforeChase = 300;
 rushSpeed = 3.5;
+chaseMusicPitch = 1.0;
 
-if room != rm_cave_chase_start caveGhostIsClose();
+if room != rm_cave_chase_start && room != rm_cave_bigBreakableRockFloor caveGhostIsClose();
 
 if room == rm_cave_chase_longRun rushSpeed = 3.8;
 

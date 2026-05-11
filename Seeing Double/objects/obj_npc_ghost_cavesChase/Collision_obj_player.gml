@@ -4,4 +4,5 @@ playerCaught = true;
 
 
 //TEMP
-playerDefeated();
+//playerDefeated();
+caughtByCaveGhost();

@@ -218,6 +218,14 @@ global.dialogueStringArrays = {
 	
 	],
 	
+	cavesHauntingFakeout : [ 
+	
+		"Well, salt my eggs. This is not good I tell ya, [slant]not[/slant] good! What was I [slant]thinkin'[/slant], followin' that yellow moron?[spr_npc_explorer]", //0
+		"Now I done went and fell in some weird portal and got myself lost! I'm a goner for sure! No one's gonna find me down here!", 
+		"WHAT THE HAUHGUEASEHLSWHSEPGSGEPSRFSERTSEPTSEPT!?", 
+	
+	],
+	
 	cavesMetGreenMinerDad : [ 
 	
 		"GET BEHIND THE BARRIER!!", //0

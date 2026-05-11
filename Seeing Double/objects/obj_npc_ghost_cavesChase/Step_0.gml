@@ -73,3 +73,13 @@ if playerIsPresent() {
 	}
 
 }
+
+if playerCaught {
+
+	var _pitchDecreaseAmount = 0.01;
+	
+	chaseMusicPitch -= _pitchDecreaseAmount;
+	
+	audio_sound_pitch(obj_control.bgmCaveChase, chaseMusicPitch);
+
+}

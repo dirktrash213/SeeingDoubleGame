@@ -627,7 +627,12 @@ if playerFallingWithBoulder {
 
 }
 
-
+//if instance_exists(obj_npc_ghost_cavesChase) {
+//
+//
+//
+//
+//}
 
 
 

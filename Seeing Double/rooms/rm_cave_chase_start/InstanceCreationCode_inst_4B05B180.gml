@@ -1,0 +1,1 @@
+if global.caughtByCaveGhostAmount < 2 instance_destroy();

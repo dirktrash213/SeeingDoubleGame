@@ -4,3 +4,5 @@ if audio_is_playing(amb_droplets_in_a_cave) audio_stop_sound(amb_droplets_in_a_c
 if audio_is_playing(amb_scifiCave) audio_stop_sound(amb_scifiCave);
 
 disableReverb();
+
+//application_surface_draw_enable(true);

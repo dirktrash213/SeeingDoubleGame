@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "sfx_ghost_whisper.mp3",
   "type": 0,
-  "volume": 0.45,
+  "volume": 1.0,
 }
