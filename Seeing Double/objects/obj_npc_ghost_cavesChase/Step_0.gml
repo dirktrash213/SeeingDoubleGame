@@ -64,9 +64,11 @@ if playerIsPresent() {
 
 	if playerDetected {
 		
+		caveGhostIsVeryClose();
+		
 		mp_linear_step_object(_player.x, _player.y, rushSpeed, obj_background_device);
 		
-		y = _player.y;
+		if room == rm_cave_chase_longRun y = _player.y;
 
 	}
 

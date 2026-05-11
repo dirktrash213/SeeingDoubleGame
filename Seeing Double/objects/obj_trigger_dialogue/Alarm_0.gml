@@ -362,7 +362,9 @@ if variableTextDisplayDuration {
 			alarm[0] = 200;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_eyebrowRaise;
 			
-			audio_sound_gain(bgm_cursedAtmosphere_LOUD, 1, 1000);
+			//fadeInGlitchVFX();
+			objBktGlitchDemo.intensityIncrementType = INCREMENT_TYPE.INCREASING_TO_TINY;
+			audio_sound_gain(bgm_cursedAtmosphere_LOUD, 1, 10000);
 			audio_sound_gain(sfx_glitch_loop2, 0.2, 15000);
 			audio_sound_gain(sfx_glitch_loop, 0.25, 15000);
 		
@@ -376,7 +378,7 @@ if variableTextDisplayDuration {
 			//audio_sound_gain(sfx_glitch_loop2, 0.2, 15000);
 			//audio_sound_gain(sfx_glitch_loop, 1.0, 15000);
 			
-			audio_play_sound(sfx_ghost_whisper, 1, 0, 1, 0, 1.0); 
+			audio_play_sound(sfx_ghost_whisper, 1, false, 1, 0, 1.0); 
 		
 		} break;
 		

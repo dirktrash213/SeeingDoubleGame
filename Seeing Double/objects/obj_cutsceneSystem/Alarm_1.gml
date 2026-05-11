@@ -798,6 +798,8 @@ switch global.currentCutsceneID {
 				
 				alarm[1] = _duration;
 				
+				objBktGlitchDemo.intensityIncrementType = INCREMENT_TYPE.INCREASING_TO_SMALL;
+				
 				with obj_trigger_dialogue {
 				
 					var _customTextDisplayDuration = 300;
@@ -844,6 +846,8 @@ switch global.currentCutsceneID {
 				var _duration = 1500;
 				
 				alarm[1] = _duration;
+				
+				objBktGlitchDemo.intensityIncrementType = INCREMENT_TYPE.INCREASING_TO_LARGE;
 				
 				with obj_npc_scammer_mines {
 				
@@ -984,6 +988,8 @@ switch global.currentCutsceneID {
 				}
 				
 				//audio_play_sound(sfx_ghost_screamAlerted, 1, 0, 0.5, 0, 0.65); 
+				objBktGlitchDemo.enable_split_screen = false;
+				caveGhostIsFar();
 				audio_play_sound_on(obj_control.reverb_emitter, sfx_ghost_screamAlerted, false, 1, 0.5, 0, 0.65); 
 				
 			} break;
@@ -1023,6 +1029,8 @@ switch global.currentCutsceneID {
 			case CAVES_HAUNTING_PART2_CUTSCENE_STATE.SCAMMER_FLEEING: {
 				
 				//resetPatterSprites();
+				//objBktGlitchDemo.enable_split_screen = false;
+				caveGhostIsClose();
 				setPitterScaredSprites();
 				setPatterScaredSprites();
 				instance_destroy(obj_trigger_beatUpScammerFirst);

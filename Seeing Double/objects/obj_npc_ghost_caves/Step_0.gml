@@ -1,15 +1,18 @@
 //show_debug_message(path_position);
 
-if path_position >= 0.95 {
+if path_position >= 0.95 && !fadeOutTriggered {
+
+	fadeOutTriggered = true;
 
 	fadeOutSpookyGhostAudio();
+	objBktGlitchDemo.intensityIncrementType = INCREMENT_TYPE.DECREASING_TO_ZERO;
 
 }
 
 path_speed = global.paused? 0 : 1;
 
 
-
+if path_position >= 0.99 image_alpha = 0;
 
 //var _pathCheckpoint = 0.66;
 //var _pathCheckpoint2 = 0.77;

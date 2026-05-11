@@ -28,9 +28,22 @@ intensity = 0.000000;
 intensityMax = 1.000000;
 intensityMax2 = 1.500000;
 
+intensityMaxTiny = 0.200000;
+intensityMaxSmall = 0.500000;
+intensityMaxLarge = 1.000000;
+
+intensityIncrementType = INCREMENT_TYPE.NONE;
+
+//increasingIntensityToMaxTiny = false;
+//increasingIntensityToMaxSmall = false;
+//increasingIntensityToMaxLarge = false;
+//
+//decreasingIntensityToZero = false;
+
 intensityIncreaseAmount = 0.001;
 intensityIncreaseAmount2 = 0.001;
 intensityDecreaseAmount = 0.003;
+intensityDecreaseAmount2 = 0.002;
 
 
 channelShift = 0.000000;
@@ -45,6 +58,14 @@ channelDispersionMax = 0.020000;
 
 channelDispersionIncreaseAmount = 0.00001;
 channelDispersionDecreaseAmount = 0.00005;
+
+
+
+
+
+
+
+
 
 // 1. Get the handle for the new uniform
 u_split_pos = shader_get_uniform(shdBktGlitch, "split_position");

@@ -7,3 +7,4 @@ playerCaught = false;
 //path_start(path_ghost_caveCutscene, 1, path_action_stop, false);
 
 
+fadeOutTriggered = false;

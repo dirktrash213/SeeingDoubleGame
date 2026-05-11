@@ -539,13 +539,21 @@ function playerDefeated() {
 	}
 
 }
-
+//@
 function playerCaughtByForestGhost() {
 
 	if global.playerDefeated exit;
 
 	global.playerDefeated = true;
 	global.defeatCount++;
+	
+	with objBktGlitchDemo {
+	
+		intensity = 0;
+		channelShift = 0;
+		channelDispersion = 0;
+	
+	}
 
 	audio_play_sound(sfx_hurt, 1, 0);
 	audio_play_sound(sfx_mouseScream, 1, 0);
@@ -1529,7 +1537,7 @@ function portalFloat() {
 
 }
 
-//@
+
 function playGreenPortalJumpEffects() {
 	
 	var _nearestExitPortal;
@@ -1647,6 +1655,36 @@ function spawnGoldenParachute() {
 		speed = 3.5;
 		direction = 100;
 		gravity = 0.25;
+	
+	}
+
+}
+//@
+function caveGhostIsFar() {
+
+	with objBktGlitchDemo {
+	
+		intensityIncrementType = INCREMENT_TYPE.INCREASING_TO_TINY;
+	
+	}
+
+}
+
+function caveGhostIsClose() {
+
+	with objBktGlitchDemo {
+	
+		intensityIncrementType = INCREMENT_TYPE.INCREASING_TO_SMALL;
+	
+	}
+
+}
+
+function caveGhostIsVeryClose() {
+
+	with objBktGlitchDemo {
+	
+		intensityIncrementType = INCREMENT_TYPE.INCREASING_TO_LARGE;
 	
 	}
 
