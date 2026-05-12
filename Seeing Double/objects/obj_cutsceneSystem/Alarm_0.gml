@@ -54,6 +54,17 @@ switch global.currentCutsceneID {
 
 	} break;
 	
+	case CUTSCENE_ID.CAVES_HAUNTING_FAKEOUT: {
+		
+		cutsceneState = CAVES_HAUNTING_FAKEOUT_CUTSCENE_STATE.LOOKING_AT_SCAMMER;
+		
+		alarm[1] = 10;
+		
+		audio_sound_gain(obj_control.bgmCave, 0, 3000);
+		audio_sound_gain(amb_cave_with_water_dripping, 0, 3000);
+
+	} break;
+	
 	case CUTSCENE_ID.CAVES_HAUNTING: {
 		
 		cutsceneState = CAVES_HAUNTING_CUTSCENE_STATE.LOOKING_AT_SCAMMER;
@@ -62,8 +73,6 @@ switch global.currentCutsceneID {
 		
 		audio_sound_gain(obj_control.bgmCave, 0, 3000);
 		audio_sound_gain(amb_cave_with_water_dripping, 0, 3000);
-		
-		//if patterPlayerIsPresent() instance_create_layer(obj_player_patter.x - 8, obj_player_patter.y + 80, "Instances", obj_background_elipses);
 
 	} break;
 	

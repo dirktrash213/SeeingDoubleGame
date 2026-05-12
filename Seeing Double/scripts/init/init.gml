@@ -156,6 +156,6 @@ global.foundForgetMeNot = false;
 global.foundSunflower = false;
 global.foundTulip = false;
 
-global.caughtByCaveGhostAmount = 0;
+global.caughtByCaveGhostAmount = 1;
 
 // r/playtester 
