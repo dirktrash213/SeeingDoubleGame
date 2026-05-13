@@ -3,6 +3,8 @@ path_speed = global.paused? 0 : 1;
 if playerIsPresent() {
 	
 	var _player = instance_nearest(x,y,obj_player);
+	
+	image_xscale = obj_player_pitter.x > x ? -1 : 1;
 
 	if !playerDetected && canDetectPlayer {
 		
@@ -66,7 +68,7 @@ if playerIsPresent() {
 		
 		caveGhostIsVeryClose();
 		
-		mp_linear_step_object(_player.x, _player.y, rushSpeed, obj_background_device);
+		if !global.paused mp_linear_step_object(_player.x, _player.y, rushSpeed, obj_background_device);
 		
 		if room == rm_cave_chase_longRun y = _player.y;
 
@@ -83,3 +85,7 @@ if playerCaught {
 	audio_sound_pitch(obj_control.bgmCaveChase, chaseMusicPitch);
 
 }
+
+if global.paused && alarm[0] != -1 alarm[0]++;
+
+//show_debug_message("alarm[0]: " + string(alarm[0]))

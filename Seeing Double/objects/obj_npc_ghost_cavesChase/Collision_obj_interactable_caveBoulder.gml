@@ -18,7 +18,10 @@ with other {
 		with instance_create_layer(x, y, "Instances", obj_background_squareRockPiece) {
 	
 			speed = random_range(10, 15);
-			direction = random_range(330, 350);
+			
+			if global.caughtByCaveGhostAmount == 1 direction = random_range(330, 350);
+			if global.caughtByCaveGhostAmount == 2 direction = random_range(250, 290);
+			if global.caughtByCaveGhostAmount >= 3 direction = random_range(0, 40);
 			
 			gravity = _gravity;
 			

@@ -425,6 +425,8 @@ function spawnPitter() {
 	
 	}
 	
+	
+	
 	instance_destroy(obj_background_blackScreen);
 	
 	//application_surface_draw_enable(true);
@@ -1112,6 +1114,32 @@ function detectScammerDuringGroundPound(_scammer) {
 		  
 		}
 		
+		var _spitParticlesToSpawn = irandom_range(8, 12);
+		
+		for (var i = 0; i < _spitParticlesToSpawn; ++i) {
+		   
+			with instance_create_layer(_scammer.x, _scammer.y, "Instances", obj_background_mistCloud) {
+		 
+				gravity = 0.5;
+				speed = random_range(5, 15);
+				direction = random_range(40, 140);
+				
+				var _scale = 0.25;
+				
+				image_xscale = _scale;
+				image_yscale = _scale;
+		
+			}
+		  
+		}
+		
+		with _scammer {
+		
+			vspeed = vSpeedAmount2;
+			gravity = gravAmount;
+
+		}
+		
 		with obj_trigger_dialogue {
 		
 			var _text = choose("OW, OW, STOP!", "MY COINS!", "SO MUCH PAIN!", "UNCLE, UNCLE!", "MY HEAD!", "OW, PLEASE LADY!", "IT HURTS!", "OW, MOMMY!!");
@@ -1165,13 +1193,14 @@ function detectScammerDuringGroundPound(_scammer) {
 				dialogueString[4] = global.dialogueStringArrays.cavesHauntingPart2[4];
 				dialogueString[5] = global.dialogueStringArrays.cavesHauntingPart2[5];
 				
+				with obj_npc_scammer_mines {
 				
-				//dialogueString[0] = "NO MORE, PLEASE! I YIELD! I YIEEEEEELD!!";
-				//dialogueString[1] = "I'm sorry for scamming your husband, miss!! I won't scam anyone ever again, I promise!!";
-				//dialogueString[2] = "Look, I'll even throw in my best parachute, on the house. This one actually works, for real! Just please no more beatings!";
-				//dialogueString[3] = "It is a one time use though. B-but I'm sure it'll come in handy sooner or later!";
-				//dialogueString[4] = "Sheesh, lady. I'm gonna be feeling that next morning. You really care about Bluey, eh? How touching. Makes me wanna barf.";
-				//dialogueString[5] = "So, uh. Any chance you know how to get us out of this dump?";
+					jumping = true;
+					alarm[1] = delayBeforeJump;
+				
+				}
+				
+				
 			
 			
 			}
@@ -1673,8 +1702,8 @@ function spawnGoldenParachute() {
 
 	with instance_create_layer(obj_npc_scammer_mines.x, obj_npc_scammer_mines.y, "Collectables", obj_pickup_parachute_gold) {
 			
-		speed = 3.5;
-		direction = 100;
+		speed = 4.5;
+		direction = 135;
 		gravity = 0.25;
 	
 	}
@@ -1691,6 +1720,9 @@ function caughtByCaveGhost() {
 	global.caughtByCaveGhostAmount++;
 	
 	instance_create_depth(x, y, -10000, obj_background_blackScreen);
+	
+	if audio_is_playing(sfx_ghost_screamAlerted) audio_stop_sound(sfx_ghost_screamAlerted);
+	//if audio_is_playing(sfx_ghost_screamAlerted) audio_stop_sound(sfx_ghost_screamAlerted);
 	
 	resetPitterSprites();
 	resetPatterSprites();
@@ -1759,6 +1791,19 @@ function caveGhostIsClose() {
 		intensityIncrementType = INCREMENT_TYPE.INCREASING_TO_SMALL;
 		audio_sound_gain(sfx_glitch_loop, 0.04, 2000);
 		audio_sound_gain(sfx_glitch_loop2,  0.04, 2000);
+	
+	}
+
+}
+
+function caveGhostIsCloseInstant() {
+
+	with objBktGlitchDemo {
+	
+		intensity = intensityMaxSmall;
+		intensityIncrementType = INCREMENT_TYPE.INCREASING_TO_SMALL;
+		audio_sound_gain(sfx_glitch_loop, 0.04, 5);
+		audio_sound_gain(sfx_glitch_loop2,  0.04, 5);
 	
 	}
 

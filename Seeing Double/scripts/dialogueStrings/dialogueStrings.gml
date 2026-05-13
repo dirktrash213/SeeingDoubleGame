@@ -156,7 +156,7 @@ global.dialogueStringArrays = {
 	
 		"Well, salt my eggs. This is not good I tell ya, [slant]not[/slant] good! What was I [slant]thinkin'[/slant], followin' that yellow moron?[spr_npc_explorer]", //0
 		"Now I done went and fell in some weird portal and got myself lost! I'm a goner for sure! No one's gonna find me down here!", 
-		"Well, on the bright side, at least I won't run into that blue schmuck I scammed in the forest. Heh, what a grade-A sucker...", 
+		"Well, on the bright side, at least I won't run into that blue schmuck[spr_pitter_forward] I scammed in the forest. Heh, what a grade-A sucker...", 
 		"WAH!", 
 		"WHO'S THERE!?", 
 		"Oh... it's just a pretty little lady. Well how do [slant]you[/slant] do, ma'am? Lookin' to buy some authentic jewelry?", //5
@@ -223,7 +223,8 @@ global.dialogueStringArrays = {
 		//"Well, salt my eggs. This is not good I tell ya, [slant]not[/slant] good! What was I [slant]thinkin'[/slant], followin' that yellow moron?[spr_npc_explorer]", //0
 		//"Now I done went and fell in some weird portal and got myself lost! I'm a goner for sure! No one's gonna find me down here!", 
 		"[shake]Uh... wh-wh-what's that sound?", 
-		"WHAT THE HAUHGUEASEHLSWHSEPGSGEPSRFSERTSEPTSEPT!?", 
+		//"WHAT THE HAUHGUEASEHLSWHSEPGSGEPSRFSERTSEPTSEPT!?", 
+		"NOPE!!", 
 	
 	],
 	

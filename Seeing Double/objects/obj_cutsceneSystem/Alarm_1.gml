@@ -632,6 +632,8 @@ switch global.currentCutsceneID {
 					obj_player_pitter.hspeed = 1;
 					
 				}
+				
+				objBktGlitchDemo.enable_split_screen = true;
 		
 			} break;
 			
@@ -909,10 +911,11 @@ switch global.currentCutsceneID {
 				}
 				
 				//show_debug_message("scammer beg state")
-				
-				setUpSpookyGhostAudio();
-				audio_sound_gain(bgm_ghostlyReverberations, 1, 20000);
-				audio_sound_gain(bgm_ephemeralEcho, 1, 10000);
+				//@
+				//setUpSpookyGhostAudio();
+				//audio_sound_gain(bgm_ghostlyReverberations, 1, 20000);
+				//audio_sound_gain(bgm_ephemeralEcho, 1, 10000);
+				//objBktGlitchDemo.intensityIncrementType = INCREMENT_TYPE.INCREASING_TO_TINY;
 				
 			} break;
 			
@@ -1197,7 +1200,7 @@ switch global.currentCutsceneID {
 				with obj_npc_ghost_cavesChase {
 				
 					//alarm[0] = delayBeforeChase;
-					alarm[0] = 5;
+					alarm[0] = global.caughtByCaveGhostAmount == 1 ? 5 : delayBeforeChase;
 				
 				}
 				

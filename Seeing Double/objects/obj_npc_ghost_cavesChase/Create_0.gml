@@ -8,12 +8,19 @@ delayBeforeChase = 300;
 rushSpeed = 3.5;
 chaseMusicPitch = 1.0;
 
-if room != rm_cave_chase_start && room != rm_cave_bigBreakableRockFloor caveGhostIsClose();
+
 
 if room == rm_cave_chase_longRun rushSpeed = 3.8;
 
 switch room {
 
+	case rm_cave_bigBreakableRockFloor: {
+		
+		chasePath = path_ghost_caveChase_coins;
+		delayBeforeChase = 300;
+			
+	} break;
+	
 	case rm_cave_chase_start: {
 		
 		chasePath = path_ghost_caveChase_chaseStart;
@@ -128,7 +135,14 @@ switch room {
 
 }
 
+//show_debug_message("delayBeforeChase: " + string(delayBeforeChase))
 
 
+if room != rm_cave_chase_start && room != rm_cave_bigBreakableRockFloor {
+	
+	caveGhostIsClose();
+	alarm[0] = delayBeforeChase;
+	
+}
 
-if room != rm_cave_chase_start alarm[0] = delayBeforeChase;
+if room == rm_cave_chase_start && global.caughtByCaveGhostAmount >= 3 alarm[0] = delayBeforeChase;

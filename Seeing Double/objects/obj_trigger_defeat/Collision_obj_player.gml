@@ -1,4 +1,16 @@
-if other.canCollide playerDefeated();
+if other.canCollide {
+	
+	if room == rm_cave_chase_minecarts 
+	|| room == rm_cave_chase_timedBlocks {
+	
+		caughtByCaveGhost();
+		exit;
+	
+	}
+	
+	playerDefeated();
+
+}
 
 if edgeCase {
 

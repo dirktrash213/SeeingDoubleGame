@@ -239,7 +239,7 @@ if variableTextDisplayDuration {
 			}
 		
 		} break;
-		//@
+		
 		case global.dialogueStringArrays.cavesHaunting[1]: {
 	      
 			if global.caughtByCaveGhostAmount == 1 {
@@ -262,7 +262,7 @@ if variableTextDisplayDuration {
 		case global.dialogueStringArrays.cavesHaunting[2]: {
 	      
 			alarm[0] = textDisplayDuration;
-			//obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pleading;
+			if global.caughtByCaveGhostAmount == 0 obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pleading;
 			
 		} break;
 		
@@ -332,7 +332,7 @@ if variableTextDisplayDuration {
 			spawnGoldenParachute();
 		
 		} break;
-		
+		//@
 		case global.dialogueStringArrays.cavesHauntingNotScammed[11]: {
 	      
 			alarm[0] = 360;
@@ -350,6 +350,7 @@ if variableTextDisplayDuration {
 	      
 			alarm[0] = textDisplayDuration;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_worried;
+			obj_npc_scammer_mines.jumping = false;
 		
 		} break;
 		

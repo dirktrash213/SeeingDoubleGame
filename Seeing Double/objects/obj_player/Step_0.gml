@@ -1674,6 +1674,12 @@ if global.cutsceneActive {
 	moveDir = 0;
 	xSpeed = 0;
 	//ySpeed = 0;
+	
+	if room == rm_cave_chase_start {
+	
+		if x < 75 x = 75;
+	
+	}
 
 	switch global.currentCutsceneID {
 	
