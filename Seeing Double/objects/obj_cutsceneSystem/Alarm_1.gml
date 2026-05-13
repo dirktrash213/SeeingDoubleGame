@@ -645,16 +645,16 @@ switch global.currentCutsceneID {
 					
 				}
 				
-				if global.caughtByCaveGhostAmount == 1 {
+				if global.caughtByCaveGhostAmount == 1 { //Fakeout cutscene
 				
-					var _duration = 550;
+					var _duration = 600;
 					alarm[1] = _duration;
 					
 					//objBktGlitchDemo.enable_split_screen = false;
 					//caveGhostIsFar();
 					//audio_play_sound_on(obj_control.reverb_emitter, sfx_ghost_screamAlerted, false, 1, 0.5, 0, 0.65); 
 					
-				} else {
+				} else {  //Non fakeout cutscene
 				
 					var _duration = global.gotScammed ? 1000 : 1360;
 					alarm[1] = _duration;
@@ -665,7 +665,7 @@ switch global.currentCutsceneID {
 			//@
 			case CAVES_HAUNTING_CUTSCENE_STATE.BEHIND_SCAMMER: {
 				
-				if global.caughtByCaveGhostAmount == 1 {
+				if global.caughtByCaveGhostAmount == 1 { //Fakeout cutscene
 				
 					var _duration = 5;
 					alarm[1] = _duration;
@@ -694,14 +694,14 @@ switch global.currentCutsceneID {
 						alarm[0] = textDisplayDuration;
 						dialogueString = [];
 				
-						dialogueString[0] = global.dialogueStringArrays.cavesHauntingFakeout[0];
+						dialogueString[0] = global.dialogueStringArrays.cavesHauntingFakeout[1];
 						
 					}
 				
 					global.currentCutsceneID = CUTSCENE_ID.CAVES_HAUNTING_PART2;
 					cutsceneState = CAVES_HAUNTING_PART2_CUTSCENE_STATE.SCAMMER_FLEEING;
 				
-				} else {
+				} else { //Non fakeout cutscene
 				
 					cutsceneState = CAVES_HAUNTING_CUTSCENE_STATE.POKING_SCAMMER;
 				
@@ -1191,6 +1191,8 @@ switch global.currentCutsceneID {
 				setPatterScaredSprites();
 				instance_destroy(obj_trigger_beatUpScammerFirst);
 				deactivateCutscene();
+				
+				if global.caughtByCaveGhostAmount == 1 spawnGoldenParachute();
 				
 				with obj_npc_ghost_cavesChase {
 				

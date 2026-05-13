@@ -1478,6 +1478,7 @@
     {"name":"Torch","order":15,"path":"sprites/Torch/Torch.yy",},
     {"name":"spr_background_sunbeam","order":7,"path":"sprites/spr_background_sunbeam/spr_background_sunbeam.yy",},
     {"name":"spr_interactable_coin_empty","order":12,"path":"sprites/spr_interactable_coin_empty/spr_interactable_coin_empty.yy",},
+    {"name":"obj_background_squareRockPiece","order":33,"path":"objects/obj_background_squareRockPiece/obj_background_squareRockPiece.yy",},
     {"name":"spr_pitter_curious_nervous_questionMarks","order":58,"path":"sprites/spr_pitter_curious_nervous_questionMarks/spr_pitter_curious_nervous_questionMarks.yy",},
     {"name":"sfx_lurkin","order":62,"path":"sounds/sfx_lurkin/sfx_lurkin.yy",},
     {"name":"pixelated_fish_skeleton_pixel_art1124","order":19,"path":"sprites/pixelated_fish_skeleton_pixel_art1124/pixelated_fish_skeleton_pixel_art1124.yy",},

@@ -1,17 +1,33 @@
-with obj_interactable_caveBoulder {
+with other {
 	
 	audio_play_sound(sfx_explosion, 1, 0);
 	
-	var _rangeX = 32;
-	var _rangeY = 32;
-	
-	var _offsetX = random_range(-_rangeX, _rangeX);
-	var _offsetY = random_range(-_rangeY, _rangeY);
-	
-	var _numberOfParticles = 20;
+	var _piecesAmount = 20;
 
-	part_particles_create(global.particleSystemDevice, x + _offsetX, y + _offsetY, global.particleRock, _numberOfParticles);
+	//var _rotationSpeedMin = 1;
+	//var _rotationSpeedMax = 10;
 	
+	var _gravity = 0.05;
+	
+	//var _speed = random_range(5, 10);
+	//var _direction = random_range(230, 310);
+	//var _direction = random_range(0, 0);
+	
+	for(var i = 0; i < _piecesAmount; i++) {
+
+		with instance_create_layer(x, y, "Instances", obj_background_squareRockPiece) {
+	
+			speed = random_range(10, 15);
+			direction = random_range(330, 350);
+			
+			gravity = _gravity;
+			
+			image_angle = random_range(0, 360);
+			//rotationSpeed = random_range(_rotationSpeedMin, _rotationSpeedMax);
+				
+		}
+	
+	}
 	
 	instance_destroy();
 	

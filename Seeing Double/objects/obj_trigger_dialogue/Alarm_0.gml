@@ -144,7 +144,7 @@ if count == _l-1 {
 
 
 count++;
-//@
+
 
 //For line-specific text display durations/sprite expressions, use below block
 if variableTextDisplayDuration {
@@ -242,19 +242,34 @@ if variableTextDisplayDuration {
 		//@
 		case global.dialogueStringArrays.cavesHaunting[1]: {
 	      
-			alarm[0] = textDisplayDuration;
-			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pleading;
+			if global.caughtByCaveGhostAmount == 1 {
 			
-			objBktGlitchDemo.enable_split_screen = false;
-			caveGhostIsFar();
-			audio_play_sound_on(obj_control.reverb_emitter, sfx_ghost_screamAlerted, false, 1, 0.5, 0, 0.65); 
+				alarm[0] = 120;
+				//obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pleading;
+			
+				objBktGlitchDemo.enable_split_screen = false;
+				caveGhostIsFar();
+				audio_play_sound_on(obj_control.reverb_emitter, sfx_ghost_screamAlerted, false, 1, 0.5, 0, 0.65); 
+			
+			} else {
+			
+				alarm[0] = textDisplayDuration;
+			
+			}
 			
 		} break;
 		
 		case global.dialogueStringArrays.cavesHaunting[2]: {
 	      
 			alarm[0] = textDisplayDuration;
-			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pleading;
+			//obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pleading;
+			
+		} break;
+		
+		case global.dialogueStringArrays.cavesHauntingFakeout[0]: {
+	      
+			alarm[0] = textDisplayDuration;
+			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_scared;
 			
 		} break;
 		

@@ -1318,7 +1318,7 @@ function resetPitterSprites() {
 		curiousSprite = spr_pitter_curious;
 		groundPoundJumpSprite = spr_pitter_groundPound_jump;
 		groundPoundFallSprite = spr_pitter_groundPound_fall;
-		groundPoundFallBoulderSprite = spr_pitter_groundPound_fall_angry;
+		groundPoundFallBoulderSprite = spr_pitter_groundPound_fall_scared;
 	
 	}
 
@@ -1691,6 +1691,9 @@ function caughtByCaveGhost() {
 	global.caughtByCaveGhostAmount++;
 	
 	instance_create_depth(x, y, -10000, obj_background_blackScreen);
+	
+	resetPitterSprites();
+	resetPatterSprites();
 	
 	//application_surface_draw_enable(false);
 	

@@ -30,7 +30,7 @@ if global.playerDefeated || global.paused {
 
 }
 
-//@
+
 //if place_meeting(x,y,obj_trigger_waterfall)
 
 underWaterfall = place_meeting(x,y,obj_trigger_waterfall) ? true : false;
@@ -1997,28 +1997,50 @@ if global.cutsceneActive {
 			
 			if obj_cutsceneSystem.cutsceneState == CAVES_HAUNTING_CUTSCENE_STATE.BEHIND_SCAMMER {
 			
-				if global.gotScammed {
+				if global.caughtByCaveGhostAmount == 1 { 
+					
+					if object_index == obj_player_pitter {
 				
-					if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+						if obj_trigger_dialogue.count == 0 sprite_index = spr_pitter_forward;
+						if obj_trigger_dialogue.count == 1 sprite_index = spr_pitter_forward;
+						if obj_trigger_dialogue.count == 2 sprite_index = spr_pitter_scared;
+
+					}
 					
 					if object_index == obj_player_patter {
-						
-						if obj_trigger_dialogue.count == 2 {
-					
-							sprite_index = spr_patter_angry;
-					
-						} else {
-						
-							sprite_index = spr_patter_forward;
-						
-						}
-						
-					}
 				
+						if obj_trigger_dialogue.count == 0 sprite_index = spr_patter_forward;
+						if obj_trigger_dialogue.count == 1 sprite_index = spr_patter_forward;
+						if obj_trigger_dialogue.count == 2 sprite_index = spr_patter_scared_facingRight;
+
+					}
+					
 				} else {
 				
-					if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
-					if object_index == obj_player_patter sprite_index = spr_patter_forward;
+					if global.gotScammed {
+				
+						if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+					
+						if object_index == obj_player_patter {
+						
+							if obj_trigger_dialogue.count == 2 {
+					
+								sprite_index = spr_patter_angry;
+					
+							} else {
+						
+								sprite_index = spr_patter_forward;
+						
+							}
+						
+						}
+				
+					} else {
+				
+						if object_index == obj_player_pitter sprite_index = spr_pitter_forward;
+						if object_index == obj_player_patter sprite_index = spr_patter_forward;
+				
+					}
 				
 				}
 			

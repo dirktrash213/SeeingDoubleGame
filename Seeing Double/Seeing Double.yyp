@@ -1633,6 +1633,7 @@
     {"id":{"name":"Torch","path":"sprites/Torch/Torch.yy",},},
     {"id":{"name":"spr_background_sunbeam","path":"sprites/spr_background_sunbeam/spr_background_sunbeam.yy",},},
     {"id":{"name":"spr_interactable_coin_empty","path":"sprites/spr_interactable_coin_empty/spr_interactable_coin_empty.yy",},},
+    {"id":{"name":"obj_background_squareRockPiece","path":"objects/obj_background_squareRockPiece/obj_background_squareRockPiece.yy",},},
     {"id":{"name":"spr_pitter_curious_nervous_questionMarks","path":"sprites/spr_pitter_curious_nervous_questionMarks/spr_pitter_curious_nervous_questionMarks.yy",},},
     {"id":{"name":"sfx_lurkin","path":"sounds/sfx_lurkin/sfx_lurkin.yy",},},
     {"id":{"name":"pixelated_fish_skeleton_pixel_art1124","path":"sprites/pixelated_fish_skeleton_pixel_art1124/pixelated_fish_skeleton_pixel_art1124.yy",},},
