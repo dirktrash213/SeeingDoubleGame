@@ -56,6 +56,7 @@ bgmCave = bgm_dramaticCaveTheme;
 bgmCaveRestArea = bgm_burrowedBelow;
 bgmCaveChase = bgm_runAway;
 
+bgmLab = bgm_lostInThought;
 //Load player settings
 loadSettings();
 

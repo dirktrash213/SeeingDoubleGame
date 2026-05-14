@@ -18,10 +18,13 @@ if pressed && !triggered {
 
 	triggered = true;
 
+	audio_play_sound(sfx_blip, 1, false);
+
 	with obj_interactable_labDoor {
 	
 		lifting = true;
 		alarm[0] = 60;
+		audio_play_sound(sfx_mechanicalDoor, 1, false);
 	
 	}
 	

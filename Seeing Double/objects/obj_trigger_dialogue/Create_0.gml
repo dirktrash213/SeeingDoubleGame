@@ -29,3 +29,5 @@ eatenCaveCherry = false;
 triggerID = "";
 
 updateDialogueSpawner = true;
+
+ignoreDiscordBlock = false;

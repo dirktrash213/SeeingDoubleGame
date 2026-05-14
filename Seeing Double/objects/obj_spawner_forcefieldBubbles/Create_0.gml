@@ -1,0 +1,9 @@
+spawnRate = 4;
+spawnRateVariance = 2;
+
+
+alarm[0] = spawnRate + random_range(-spawnRateVariance, spawnRateVariance);
+
+
+active = true; //TEMP
+detectionRadius = 600;

@@ -13,4 +13,4 @@ global.groundPoundActive = true;
 enableSmallReverb();
 
 
-global.gotScammed = false;
+//global.gotScammed = false; //TEMP

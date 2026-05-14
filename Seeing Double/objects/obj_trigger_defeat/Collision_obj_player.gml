@@ -1,8 +1,10 @@
 if other.canCollide {
 	
 	if room == rm_cave_chase_minecarts 
-	|| room == rm_cave_chase_timedBlocks {
+	|| room == rm_cave_chase_timedBlocks 
+	|| room == rm_cave_chase_longRun {
 	
+		obj_npc_ghost_cavesChase.playerCaught = true;
 		caughtByCaveGhost();
 		exit;
 	

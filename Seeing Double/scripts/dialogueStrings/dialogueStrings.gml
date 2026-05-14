@@ -232,7 +232,8 @@ global.dialogueStringArrays = {
 	
 		"GET BEHIND THE BARRIER!!", //0
 		"Whoa. Whoa [shake]nelly.[/shake] Talk about a close shave.",
-		"Breathe easy. We're safe now. She can't get through. She's tried before.",
+		//"Breathe easy. We're safe now. She can't get through. She's tried before.",
+		"Doubt she's putting herself back together after running into... whatever that thing is.",
 	//	"Whew. You have [slant]no[/slant] idea how swell it is to see a friendly face down here. Wherever \"here\" is.",
 		"Whew. You have [slant]no[/slant] idea how swell it is to see a friendly face. Like a breath of fresh air!",
 		"I was just minin' away per usual, tryin' to make quota when bam. Cave in.",
@@ -254,14 +255,15 @@ global.dialogueStringArrays = {
 		"Oh, you've seen my mining buddies? You know the way back, perhaps? Can you describe it?",
 		"I see. Well, kind stranger, you may have just saved my hide. Thank you. If I had some gold I'd give it to ya, but alas.",
 		//"My son must be worried sick. Ah, junior. Always worrying about his old man. Warms my heart. ",
-		"My son [spr_npc_greenFella_kid] must be worried sick. Ah, junior. Can't wait to see that green bundle of joy.",
+		"My family must be worried sick. Ah, junior[spr_npc_greenFella_kid]. Can't wait to see that green bundle of joy.",
 		"Good luck. And if we meet again, be sure to fill me in on what sorts of wacky gizmos and gadgets you find in there. I'm dyin' to know!", //5
 		
 	],
 	
 	cavesWaitingForGhostToLeave : [ 
 	
-		"Oh, I'm just waitin' a bit to be sure our ghostly friend is gone. Then I'll head out.", //0
+		//"Oh, I'm just waitin' a bit to be sure our ghostly friend is gone. Then I'll head out.", //0
+		"Oh, I'm just waitin' a bit to be sure our ghostly friend is gone for good. Can't be too careful, yeah?", //0
 		//"...",
 		"So, what's your story? How'd you end up down here? You don't look like a miner.",
 		"You're searching for your wife? So she's in that lab, huh?",
@@ -276,6 +278,31 @@ global.dialogueStringArrays = {
 		"Well, enough yappin'. You got a wife to find, so I'd better not keep you captive.", //10
 		
 	],
+	
+	labJournalEntryEntrance : [ 
+	
+		"Log Entry No. 1. Wow. Feels surreal to type that out.", //0
+		"It's been a long and arduous road, but with the lab up and running we can finally conduct our research.",
+		"To say I'm excited is an understatement. What we find here has the potential to change [slant]everything.",
+		"These anomalies seem to defy all conventional models of physics. It may be years before we even begin to grasp their true nature.",
+		//"This will be a challenge, to be sure, but I believe there's nothing we can't understand, given enough time and effort.",
+		"That said, I believe there's nothing we can't understand, given enough time and effort.",
+		//"Our team, Helena, and I will make sure of it. [slant]-S", //5
+		"Helena and I will make sure of it. [slant]-S", //5
+	
+	],
+	
+	labExplorerEntrance : [ 
+	
+		"Well bust my britches. Could it be that the great explorer Beckett has been thwarted once more?", //0
+		"This time by what appears to be some infernal metal wall. How conundrumious.", 
+		"No matter. It will only be a matter of time before I crack this shiny new puzzle. Perhaps a few months.", 
+		"In the meantime, we graciously thank you for completing the current Early Access build of Seeing Double.", 
+		"New updates will unlock upcoming areas, such as this research lab. Free of charge, of course.", 
+		"Don't forget to join the Discord to stay up to date on said updates.", //5
+		"Thanks again, and until next time.",
+	
+	],
 
 
 }
@@ -283,6 +310,19 @@ global.dialogueStringArrays = {
 
 
 /*
+
+"Ho hum. It would appear the great Beckett has been momentarily stumped yet again.", //0
+		"Sadly, this time I fear a way forward is a moot gesture.",
+		"Or, to put it another way: this is the end of the demo.",
+		"We sincerely thank you for your time, and we hope you enjoyed.",
+		//"If you enjoyed, why not purchase wishlist Seeing Double on Steam? It would really help us out.",
+		"If you enjoyed, why not purchase the full version of Seeing Double on Steam? It would really help us out.",
+		"Thanks again, and until next time.", //5
+
+dialogueString[0] = "Log Entry No. {data_corrupt} \nTreatment failed. Again. Nothing I try works. Nothing."
+dialogueString[1] = "At this rate my body will almost certainly {data_corrupt} before I succeed."
+dialogueString[2] = "There is only one other option now. I don't like to gamble, but what choice do I have?"
+dialogueString[3] = "I just wish I could say sorry. [slant]-S"
 
 //dialogueString[0] = "[shake]YOU!? HOW!?";
 						//dialogueString[1] = "I, um, take it you weren't fully satisfied with your state of the art unbreakable parachute?";

@@ -791,6 +791,8 @@ switch global.currentCutsceneID {
 				if global.gotScammed {
 			
 					obj_npc_scammer_mines.lookingAtPlayer = true;
+					
+					audio_stop_sound(sfx_enraged);
 				
 					//if patterPlayerIsPresent() obj_player_patter.aboutToBeatUpScammer = false;
 					setPatterAngrySprites();

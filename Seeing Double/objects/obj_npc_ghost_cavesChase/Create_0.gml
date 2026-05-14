@@ -138,7 +138,7 @@ switch room {
 //show_debug_message("delayBeforeChase: " + string(delayBeforeChase))
 
 
-if room != rm_cave_chase_start && room != rm_cave_bigBreakableRockFloor {
+if room != rm_cave_chase_start && room != rm_cave_bigBreakableRockFloor && !global.caveChaseOver {
 	
 	caveGhostIsClose();
 	alarm[0] = delayBeforeChase;

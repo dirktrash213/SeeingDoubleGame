@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 31.662937,
   "parent": {
-    "name": "NEW",
-    "path": "folders/Sounds/NEW.yy",
+    "name": "AMB",
+    "path": "folders/Sounds/AMB.yy",
   },
   "preload": false,
   "sampleRate": 44100,

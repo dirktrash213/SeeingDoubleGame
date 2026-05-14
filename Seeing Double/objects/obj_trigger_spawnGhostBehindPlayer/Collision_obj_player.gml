@@ -11,7 +11,11 @@ with obj_npc_ghost_cavesChase {
 
 }
 
+var _pitch = 0.85;
+var _gain = 0.10;
 
+//audio_play_sound(sfx_ghost_scream2_LOUD, 1, false, _gain, 0, _pitch);
+audio_play_sound(sfx_ghost_scream_LOUD, 1, false, _gain, 0, _pitch);
 
 
 

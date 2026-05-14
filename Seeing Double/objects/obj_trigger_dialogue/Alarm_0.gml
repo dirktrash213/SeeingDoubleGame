@@ -2,11 +2,15 @@ var _l = array_length(dialogueString);
 
 if count == _l-1 {
 	
-	with obj_interactable_switch_block_discord {
+	if !ignoreDiscordBlock {
+	
+		with obj_interactable_switch_block_discord {
 			
-		visible = true;
-		triggered = true;
+			visible = true;
+			triggered = true;
 		
+		}
+	
 	}
 	
 	with obj_interactable_switch_block_steamPage {
@@ -298,6 +302,8 @@ if variableTextDisplayDuration {
 	      
 			alarm[0] = textDisplayDuration;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer;
+			
+			audio_play_sound(sfx_enraged, 1, false);
 		
 		} break;
 		
@@ -320,6 +326,8 @@ if variableTextDisplayDuration {
 			alarm[0] = textDisplayDuration;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pleadingSweat;
 			
+			audio_play_sound(sfx_enraged, 1, false);
+			
 			//spawnGoldenParachute();
 		
 		} break;
@@ -328,6 +336,8 @@ if variableTextDisplayDuration {
 	      
 			alarm[0] = textDisplayDuration;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_pleading;
+			
+			audio_stop_sound(sfx_enraged);
 			
 			spawnGoldenParachute();
 		
@@ -445,6 +455,8 @@ if variableTextDisplayDuration {
 		
 		case global.dialogueStringArrays.cavesMetGreenMinerDad[8]: { //"Did that activate something?"
 	      
+			audio_play_sound(sfx_buttonPress, 1, false);
+			
 			obj_interactable_switch_groundPound.inactive = false;
 			alarm[0] = textDisplayDuration;
 		

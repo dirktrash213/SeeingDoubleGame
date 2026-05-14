@@ -1719,7 +1719,15 @@ function caughtByCaveGhost() {
 	
 	global.caughtByCaveGhostAmount++;
 	
-	instance_create_depth(x, y, -10000, obj_background_blackScreen);
+	with obj_player {
+	
+		instance_create_depth(x, y, -10000, obj_background_blackScreen);
+	
+	}
+	
+	//instance_create_depth(obj_player.x, obj_player.y, -10000, obj_background_blackScreen);
+	//instance_create_depth(x, y, -10000, obj_background_blackScreen);
+	//instance_create_depth(0, 0, -10000, obj_background_blackScreen);
 	
 	if audio_is_playing(sfx_ghost_screamAlerted) audio_stop_sound(sfx_ghost_screamAlerted);
 	//if audio_is_playing(sfx_ghost_screamAlerted) audio_stop_sound(sfx_ghost_screamAlerted);
