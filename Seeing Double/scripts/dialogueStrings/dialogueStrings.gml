@@ -1,6 +1,12 @@
 global.dialogueStringArrays = {
 
 	
+	forestTreeCarving : [ 
+	
+		"\"S + H\" is carved into the tree.", //0
+	
+	],
+	
 	cavesEntanceExplorer : [ 
 	
 		"Ho hum. It would appear the great Beckett has been momentarily stumped yet again.", //0
