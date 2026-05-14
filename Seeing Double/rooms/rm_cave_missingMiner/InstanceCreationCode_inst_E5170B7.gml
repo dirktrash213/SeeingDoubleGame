@@ -14,9 +14,9 @@ if !global.dialogueVariables.talkedToMinerGroup {
 	//dialogueString[7] = "He's a tough one. He'll be alright. We need to get back to work.";
 	dialogueString[6] = "[#00AEF0]True's that. This mine ain't worth it. Just ain't worth it.";
 	dialogueString[7] = "[#E5898C]Quit your blubberin'! We've got a job to do and we're gonna do it, dangit!";
-	dialogueString[8] = "[#00AEF0]...";
-	dialogueString[9] = "[#E5898C]...besides, he's a tough'un. He'll be fine.";
-	dialogueString[10] = "[#3CB878]Y-yeah! That's right!";
+	//dialogueString[8] = "[#00AEF0]...";
+	dialogueString[8] = "[#E5898C]...besides, he's a tough'un. He'll be fine.";
+	dialogueString[9] = "[#3CB878]Y-yeah! That's right!";
 	
 } else {
 

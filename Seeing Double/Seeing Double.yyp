@@ -680,6 +680,7 @@
     {"id":{"name":"obj_interactable_portal_parent","path":"objects/obj_interactable_portal_parent/obj_interactable_portal_parent.yy",},},
     {"id":{"name":"spr_interactable_key","path":"sprites/spr_interactable_key/spr_interactable_key.yy",},},
     {"id":{"name":"spr_background_controlsDisplay_analogStick_down","path":"sprites/spr_background_controlsDisplay_analogStick_down/spr_background_controlsDisplay_analogStick_down.yy",},},
+    {"id":{"name":"savingAndLoadingCOPY","path":"scripts/savingAndLoadingCOPY/savingAndLoadingCOPY.yy",},},
     {"id":{"name":"tileset_all","path":"sprites/tileset_all/tileset_all.yy",},},
     {"id":{"name":"rm_cave_spikeyEnemiesLedges","path":"rooms/rm_cave_spikeyEnemiesLedges/rm_cave_spikeyEnemiesLedges.yy",},},
     {"id":{"name":"spr_background_brokenGlassContainer","path":"sprites/spr_background_brokenGlassContainer/spr_background_brokenGlassContainer.yy",},},

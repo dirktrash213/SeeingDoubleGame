@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "bgm_cursedAtmosphere",
   "audioGroupId": {
-    "name": "audiogroup_bgm",
-    "path": "audiogroups/audiogroup_bgm",
+    "name": "audiogroup_sfx",
+    "path": "audiogroups/audiogroup_sfx",
   },
   "bitDepth": 1,
   "bitRate": 128,

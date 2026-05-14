@@ -167,63 +167,88 @@ function saveRoom() {
 	struct_set(global.gameData.roomData, room_get_name(room), _dataArray);
 	
 }
-//@
-function saveGame(){
 
-	saveRoom();
-	
-	var _dataJsonString = json_stringify(global.gameData);
+//function saveGameOLD(){
+//
+//	saveRoom();
+//	
+//	var _dataJsonString = json_stringify(global.gameData);
+//
+//	var _file = file_text_open_write("save.txt");
+//	
+//	file_text_write_real(_file, global.coinCount);
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.cherryCount);
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.defeatCount);
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.xRespawnPitter);
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.yRespawnPitter);
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.splitScreenActive);
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.gotScammed);
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.solvedForestPuzzle); //Add other solve variables
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.doubleJumpActive);
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.caughtByForestGhost);
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.escapedForestGhost);
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.foundRose);
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.groundPoundActive);
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.foundLily);
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.dashActive);
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.foundForgetMeNot);
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.crouchJumpActive);
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.foundSunflower);
+//	file_text_writeln(_file);
+//	file_text_write_real(_file, global.foundTulip);
+//	file_text_writeln(_file);
+//
+//	file_text_write_string(_file, _dataJsonString);
+//	file_text_writeln(_file);
+//	
+//	file_text_write_string(_file, global.roomToSpawnIn);
+//	//file_text_writeln(_file);
+//	
+//	file_text_close(_file); 
+//
+//}
 
-	var _file = file_text_open_write("save.txt");
-	
-	file_text_write_real(_file, global.coinCount);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.cherryCount);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.defeatCount);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.xRespawnPitter);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.yRespawnPitter);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.splitScreenActive);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.gotScammed);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.solvedForestPuzzle); //Add other solve variables
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.doubleJumpActive);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.caughtByForestGhost);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.escapedForestGhost);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.foundRose);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.groundPoundActive);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.foundLily);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.dashActive);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.foundForgetMeNot);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.crouchJumpActive);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.foundSunflower);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.foundTulip);
-	file_text_writeln(_file);
 
-	file_text_write_string(_file, _dataJsonString);
-	file_text_writeln(_file);
-	
-	file_text_write_string(_file, global.roomToSpawnIn);
-	//file_text_writeln(_file);
-	
-	file_text_close(_file); 
 
-}
+//function saveGame(){
+//    saveRoom(); // Keeps your roomData updated
+//    
+//    // Create a sub-struct for player progress
+//    global.gameData.stats = {
+//        coinCount : global.coinCount,
+//        cherryCount : global.cherryCount,
+//        defeatCount : global.defeatCount,
+//        xRespawn : global.xRespawnPitter,
+//        yRespawn : global.yRespawnPitter,
+//        solvedForestPuzzle : global.solvedForestPuzzle,
+//        doubleJumpActive : global.doubleJumpActive,
+//        roomToSpawnIn : global.roomToSpawnIn
+//        // Add new variables here whenever you want!
+//    };
+//
+//    var _dataJsonString = json_stringify(global.gameData);
+//    var _file = file_text_open_write("save.txt");
+//    file_text_write_string(_file, _dataJsonString);
+//    file_text_close(_file); 
+//	
+//}
 
 function loadRoom(){
 
@@ -259,62 +284,195 @@ function loadRoom(){
 
 }
 //@
-function loadGame(){
+function saveGame() {
+    // 1. Update the room-specific data first
+    saveRoom();
+    
+    // 2. Pack all global variables into a "stats" struct within gameData
+    global.gameData.stats = {
+        coinCount: global.coinCount,
+        cherryCount: global.cherryCount,
+        defeatCount: global.defeatCount,
+        xRespawnPitter: global.xRespawnPitter,
+        yRespawnPitter: global.yRespawnPitter,
+        splitScreenActive: global.splitScreenActive,
+        gotScammed: global.gotScammed,
+        solvedForestPuzzle: global.solvedForestPuzzle,
+        caughtByForestGhost: global.caughtByForestGhost,
+        escapedForestGhost: global.escapedForestGhost,
+        foundRose: global.foundRose,
+		foundLily: global.foundLily,
+		foundForgetMeNot: global.foundForgetMeNot,
+		foundSunflower: global.foundSunflower,
+		foundTulip: global.foundTulip,
+		doubleJumpActive: global.doubleJumpActive,
+        groundPoundActive: global.groundPoundActive,
+        dashActive: global.dashActive,
+        crouchJumpActive: global.crouchJumpActive,
+        roomToSpawnIn: global.roomToSpawnIn,
+		caughtByCaveGhostAmount: global.caughtByCaveGhostAmount,
+		caveChaseOver: global.caveChaseOver,
+		storedCoins: global.storedCoins,
+		storedCherries: global.storedCherries,
+		
+		
+		
+		
+		//dialogueVariables: global.dialogueVariables,
+		
+    };
 
-	if file_exists("save.txt") {
-	
-		var _file = file_text_open_read("save.txt");
-		
-		global.coinCount = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.cherryCount = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.defeatCount = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.xRespawnPitter = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.yRespawnPitter = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.splitScreenActive = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.gotScammed = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.solvedForestPuzzle = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.doubleJumpActive = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.caughtByForestGhost = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.escapedForestGhost = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.foundRose = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.groundPoundActive = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.foundLily = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.dashActive = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.foundForgetMeNot = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.crouchJumpActive = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.foundSunflower = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.foundTulip = file_text_read_real(_file);
-		file_text_readln(_file);
-		
-		var _dataJsonString = file_text_read_string(_file);
-		file_text_readln(_file);
-		
-		global.gameData = json_parse(_dataJsonString);
-		
-		global.roomToSpawnIn = file_text_read_string(_file);
-		
-		loadRoom();
-		
-		file_text_close(_file);
-	
-	}
+    // 3. Convert the entire master struct to a single JSON string
+    var _dataJsonString = json_stringify(global.gameData);
 
+    // 4. Save to file
+    var _file = file_text_open_write("save.txt");
+    file_text_write_string(_file, _dataJsonString);
+    file_text_close(_file); 
 }
+//@
+function loadGame() {
+    if (file_exists("save.txt")) {
+        var _file = file_text_open_read("save.txt");
+        var _json = file_text_read_string(_file);
+        file_text_close(_file);
+        
+        // Parse the big JSON string back into a temporary struct
+        var _loadData = json_parse(_json);
+        
+        // Safely restore roomData
+        if (struct_exists(_loadData, "roomData")) {
+            global.gameData.roomData = _loadData.roomData;
+        }
+
+        // Safely restore stats using the accessor [$ "name"] 
+        // If the key doesn't exist in an old save, it uses the ?? default value
+        var _s = _loadData.stats;
+        
+        global.coinCount           = _s[$ "coinCount"] ?? 0;
+        global.cherryCount         = _s[$ "cherryCount"] ?? 0;
+        global.defeatCount         = _s[$ "defeatCount"] ?? 0;
+        global.xRespawnPitter      = _s[$ "xRespawnPitter"] ?? 0;
+        global.yRespawnPitter      = _s[$ "yRespawnPitter"] ?? 0;
+        global.splitScreenActive   = _s[$ "splitScreenActive"] ?? false;
+        global.gotScammed          = _s[$ "gotScammed"] ?? false;
+        global.solvedForestPuzzle  = _s[$ "solvedForestPuzzle"] ?? false;
+        global.doubleJumpActive    = _s[$ "doubleJumpActive"] ?? false;
+        global.caughtByForestGhost = _s[$ "caughtByForestGhost"] ?? false;
+        global.escapedForestGhost  = _s[$ "escapedForestGhost"] ?? false;
+        global.foundRose           = _s[$ "foundRose"] ?? false;
+        global.groundPoundActive   = _s[$ "groundPoundActive"] ?? false;
+        global.foundLily           = _s[$ "foundLily"] ?? false;
+        global.dashActive          = _s[$ "dashActive"] ?? false;
+        global.foundForgetMeNot    = _s[$ "foundForgetMeNot"] ?? false;
+        global.crouchJumpActive    = _s[$ "crouchJumpActive"] ?? false;
+        global.foundSunflower      = _s[$ "foundSunflower"] ?? false;
+        global.foundTulip          = _s[$ "foundTulip"] ?? false;
+        global.roomToSpawnIn       = _s[$ "roomToSpawnIn"] ?? "rm_titleScreen"; // Replace with your actual starting room name
+		global.caughtByCaveGhostAmount    = _s[$ "caughtByCaveGhostAmount"] ?? 0;
+        global.caveChaseOver    = _s[$ "caveChaseOver"] ?? false;
+        global.storedCoins      = _s[$ "storedCoins"] ?? 0;
+        global.storedCherries          = _s[$ "storedCherries"] ?? 0;
+       
+	 
+	 
+	 
+	    //global.dialogueVariables          = _s[$ "dialogueVariables"] ?? {};
+		
+	
+        // Re-populate the room based on the newly loaded data
+        loadRoom();
+    }
+}
+
+//function loadGame(){
+//    if !file_exists("save.txt") exit;
+//
+//    var _file = file_text_open_read("save.txt");
+//    var _json = file_text_read_string(_file);
+//    file_text_close(_file);
+//
+//    var _loadData = json_parse(_json);
+//    
+//    // 1. Restore the room data
+//    global.gameData.roomData = _loadData.roomData;
+//
+//    // 2. Safely restore stats
+//    var _s = _loadData.stats;
+//    
+//    // We use "variable_struct_get" or a null-check to provide defaults for old saves
+//    global.coinCount   = _s[$ "coinCount"] ?? 0;
+//    global.cherryCount = _s[$ "cherryCount"] ?? 0;
+//    global.defeatCount = _s[$ "defeatCount"] ?? 0;
+//    global.xRespawnPitter = _s[$ "xRespawn"] ?? 100; // Default if missing
+//    global.yRespawnPitter = _s[$ "yRespawn"] ?? 100;
+//    
+//    // This is the "Magic" part: 
+//    // If an old save doesn't have 'solvedForestPuzzle', it just stays 'false' 
+//    // instead of breaking the whole file.
+//    global.solvedForestPuzzle = _s[$ "solvedForestPuzzle"] ?? false;
+//    global.doubleJumpActive   = _s[$ "doubleJumpActive"] ?? false;
+//    global.roomToSpawnIn      = _s[$ "roomToSpawnIn"] ?? "rm_start";
+//
+//    loadRoom();
+//}
+
+//function loadGameOLD(){
+//
+//	if file_exists("save.txt") {
+//	
+//		var _file = file_text_open_read("save.txt");
+//		
+//		global.coinCount = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.cherryCount = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.defeatCount = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.xRespawnPitter = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.yRespawnPitter = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.splitScreenActive = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.gotScammed = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.solvedForestPuzzle = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.doubleJumpActive = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.caughtByForestGhost = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.escapedForestGhost = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.foundRose = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.groundPoundActive = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.foundLily = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.dashActive = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.foundForgetMeNot = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.crouchJumpActive = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.foundSunflower = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		global.foundTulip = file_text_read_real(_file);
+//		file_text_readln(_file);
+//		
+//		var _dataJsonString = file_text_read_string(_file);
+//		file_text_readln(_file);
+//		
+//		global.gameData = json_parse(_dataJsonString);
+//		
+//		global.roomToSpawnIn = file_text_read_string(_file);
+//		
+//		loadRoom();
+//		
+//		file_text_close(_file);
+//	
+//	}
+//
+//}

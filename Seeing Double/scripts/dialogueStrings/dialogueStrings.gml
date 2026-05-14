@@ -1,9 +1,24 @@
 global.dialogueStringArrays = {
 
-	
+
 	forestTreeCarving : [ 
 	
 		"\"S + H\" is carved into the tree.", //0
+	
+	],
+	
+	forestContainmentFailure : [ 
+	
+		"Containment status: FAILURE. Subject hazard level: 10/10. [c_red]DANGER IMMINENT. LEAVE VICINITY NOW.",
+	
+	],
+	
+	forestJournalEntry : [ 
+	
+		"Log Entry No. {data_corrupt} \nTreatment failed. Again. Nothing I try works. Nothing.",
+		"At this rate my body will almost certainly {data_corrupt} before I succeed.",
+		"There is only one other option now. I don't like to gamble, but what choice do I have?",
+		"I just wish I could say sorry. [slant]-S",
 	
 	],
 	
@@ -73,7 +88,8 @@ global.dialogueStringArrays = {
 		"It makes me feel so young! Like a kid, almost. Guess I never quite grew up, heheh.",
 		"Y'know, sonny... between you and me... I've seen things you probably wouldn't believe.",
 		"There's a whole 'nother world out there. And I ain't talkin' 'bout beyond the island.",
-		"It's right here, all around us. In this very room even, I'd wager.",
+		//"It's right here, all around us. In this very room even, I'd wager.",
+		"It's right here, all around us. In this very room even.",
 		"Heh. You must think I'm crazy. I used to get that a lot. Part of the reason I live here now.",
 		"Probably provin' 'em right by doin' so, but I could care less.",
 		"You're alright, kid. Probably should get going, though. Don't wanna keep anyone waitin', do ya?",
