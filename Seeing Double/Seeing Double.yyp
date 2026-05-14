@@ -970,6 +970,7 @@
     {"id":{"name":"obj_background_barrels","path":"objects/obj_background_barrels/obj_background_barrels.yy",},},
     {"id":{"name":"obj_block_wall_semiSolid_moving_forest_long","path":"objects/obj_block_wall_semiSolid_moving_forest_long/obj_block_wall_semiSolid_moving_forest_long.yy",},},
     {"id":{"name":"blipSelect__3_","path":"sounds/blipSelect__3_/blipSelect__3_.yy",},},
+    {"id":{"name":"spr_npc_minerGreenDadZoomed","path":"sprites/spr_npc_minerGreenDadZoomed/spr_npc_minerGreenDadZoomed.yy",},},
     {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
     {"id":{"name":"spr_background_botanicalHouse","path":"sprites/spr_background_botanicalHouse/spr_background_botanicalHouse.yy",},},
     {"id":{"name":"spr_enemy_helmetBeetle_jump","path":"sprites/spr_enemy_helmetBeetle_jump/spr_enemy_helmetBeetle_jump.yy",},},

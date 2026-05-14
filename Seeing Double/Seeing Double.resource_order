@@ -858,6 +858,7 @@
     {"name":"obj_background_barrels","order":4,"path":"objects/obj_background_barrels/obj_background_barrels.yy",},
     {"name":"obj_block_wall_semiSolid_moving_forest_long","order":1,"path":"objects/obj_block_wall_semiSolid_moving_forest_long/obj_block_wall_semiSolid_moving_forest_long.yy",},
     {"name":"blipSelect__3_","order":2,"path":"sounds/blipSelect__3_/blipSelect__3_.yy",},
+    {"name":"spr_npc_minerGreenDadZoomed","order":54,"path":"sprites/spr_npc_minerGreenDadZoomed/spr_npc_minerGreenDadZoomed.yy",},
     {"name":"rm_init","order":1,"path":"rooms/rm_init/rm_init.yy",},
     {"name":"spr_background_botanicalHouse","order":11,"path":"sprites/spr_background_botanicalHouse/spr_background_botanicalHouse.yy",},
     {"name":"spr_enemy_helmetBeetle_jump","order":16,"path":"sprites/spr_enemy_helmetBeetle_jump/spr_enemy_helmetBeetle_jump.yy",},

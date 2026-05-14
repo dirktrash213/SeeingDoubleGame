@@ -9,9 +9,11 @@ if global.playerDefeated || global.paused {
 		groundPoundFalling = false;
 		vspeed = 0;
 		gravity = 0;
-		ySpeed = -3;
+		//ySpeed = -3;
+		ySpeed = 0;
 		ridingMinecart = false;
 		currentMinecart = noone;
+		climbing = false;
 		
 		setOnGround(false); //This prevents a weird bug where if the player dies on a platform their respawn location is messed up
 		
