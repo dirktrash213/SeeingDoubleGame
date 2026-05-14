@@ -1,0 +1,1 @@
+if global.caveChaseOver instance_activate_object(id);

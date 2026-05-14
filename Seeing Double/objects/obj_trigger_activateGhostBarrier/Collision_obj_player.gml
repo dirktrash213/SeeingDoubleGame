@@ -1,6 +1,7 @@
 global.caveChaseOver = true;
 
-
+resetPitterSprites();
+resetPatterSprites();
 
 var _numberOfGhostParticles = 30;
 
@@ -32,6 +33,8 @@ for (var i = 0; i < _numberOfGhostParticles; ++i) {
 	
 }
 
+obj_spawner_forcefieldBubbles.active = true;
+
 instance_destroy(obj_npc_ghost_cavesChase);
 
 fadeOutSpookyGhostAudio();
@@ -44,7 +47,7 @@ objBktGlitchDemo.intensityIncrementType = INCREMENT_TYPE.DECREASING_TO_ZERO;
 
 //if !audio_is_playing(sfx_ghost_scream4) audio_play_sound(sfx_ghost_scream4, 0, false, 0.25);
 audio_play_sound(sfx_ghost_scream4, 0, false, 0.5);
-audio_play_sound(sfx_portal_idle, 0, true, 0.5, 0, 0.25);
+audio_play_sound(sfx_portal_idle, 0, true, 0.5, 0, 3.0);
 
 
 

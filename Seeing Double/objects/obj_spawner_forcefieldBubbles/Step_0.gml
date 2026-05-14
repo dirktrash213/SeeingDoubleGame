@@ -15,3 +15,5 @@
 //	}
 //
 //}
+
+if global.caveChaseOver active = true;

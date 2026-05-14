@@ -3,7 +3,7 @@
 if !global.dialogueVariables.talkedToGreenBrother {
 
 //dialogueString[0] = "Have you seen my little bro, mister?"
-dialogueString[0] = "Have you seen my papa, mister?"
+dialogueString[0] = "Have you seen my papa,[spr_npc_minerGreenDad] mister?"
 dialogueString[1] = "He ain't came back from the mines."
 //dialogueString[2] = "Mama said there's spikes there."
 dialogueString[2] = "Mama said people's gone missin' there."
