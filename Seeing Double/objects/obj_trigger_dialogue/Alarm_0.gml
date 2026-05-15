@@ -464,7 +464,9 @@ if variableTextDisplayDuration {
 		
 		case global.dialogueStringArrays.cavesOpenLabDoor[4]: { //"Take cherry"
 	      
-			instance_create_layer(obj_npc_minerGreenDad.x, obj_npc_minerGreenDad.y, "Instances", obj_pickup_cherry);
+			instance_create_layer(obj_npc_minerGreenDad.x, obj_npc_minerGreenDad.y - 24, "Instances", obj_pickup_cherry);
+			
+			global.savedGreenMiner = true;
 			
 			alarm[0] = textDisplayDuration;
 		

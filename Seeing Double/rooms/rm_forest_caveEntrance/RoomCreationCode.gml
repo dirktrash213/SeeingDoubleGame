@@ -7,3 +7,5 @@ if audio_is_playing(obj_control.bgmCaveRestArea) audio_stop_sound(obj_control.bg
 
 
 disableReverb();
+
+global.doubleJumpActive = true;

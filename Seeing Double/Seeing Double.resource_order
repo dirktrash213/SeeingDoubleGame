@@ -81,6 +81,7 @@
     {"name":"Enemies","order":6,"path":"folders/Sprites/Enemies.yy",},
     {"name":"Icons","order":10,"path":"folders/Sprites/Icons.yy",},
     {"name":"Interactables","order":2,"path":"folders/Sprites/Interactables.yy",},
+    {"name":"Bat","order":118,"path":"folders/Sprites/Interactables/Bat.yy",},
     {"name":"Bird","order":49,"path":"folders/Sprites/Interactables/Bird.yy",},
     {"name":"MISC","order":51,"path":"folders/Sprites/Interactables/MISC.yy",},
     {"name":"1 bit forest","order":41,"path":"folders/Sprites/NEW/1 bit forest.yy",},
@@ -126,7 +127,6 @@
     {"name":"UI","order":17,"path":"folders/Sprites/UI.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"Bat","order":118,"path":"folders/Sprites/Interactables/Bat.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_npc_smartassMiner","order":23,"path":"objects/obj_npc_smartassMiner/obj_npc_smartassMiner.yy",},

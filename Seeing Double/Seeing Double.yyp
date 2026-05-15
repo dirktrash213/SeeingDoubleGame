@@ -98,6 +98,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Enemies","folderPath":"folders/Sprites/Enemies.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Icons","folderPath":"folders/Sprites/Icons.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Interactables","folderPath":"folders/Sprites/Interactables.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Bat","folderPath":"folders/Sprites/Interactables/Bat.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Bird","folderPath":"folders/Sprites/Interactables/Bird.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"MISC","folderPath":"folders/Sprites/Interactables/MISC.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"NEW","folderPath":"folders/Sprites/NEW.yy",},
@@ -146,7 +147,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UI","folderPath":"folders/Sprites/UI.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Bat","folderPath":"folders/Sprites/Interactables/Bat.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"assist_data.json","CopyToMask":-1,"filePath":"datafiles",},

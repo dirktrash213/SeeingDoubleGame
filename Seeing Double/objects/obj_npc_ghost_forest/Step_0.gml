@@ -1,4 +1,4 @@
-show_debug_message(path_position);
+//show_debug_message(path_position);
 
 if path_position >= 0.95 instance_destroy();
 

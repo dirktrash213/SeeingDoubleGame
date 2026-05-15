@@ -2,6 +2,8 @@ global.devTools = false;
 
 global.demoBuild = false; //Determines if this build is the demo version vs full version
 
+window_set_caption("Seeing Double");
+
 global.speedrunTimer = 0;
 
 global.coinCount = 0;
@@ -148,7 +150,8 @@ global.solvedLabPuzzle = false;
 global.solvedSewerPuzzle = false;
 global.solvedVolcanoPuzzle = false;
 
-global.caveChaseOver = false; //Save this variable?
+global.savedGreenMiner = false;
+global.caveChaseOver = false;
 
 global.foundRose = false;
 global.foundLily = false;

@@ -1837,3 +1837,26 @@ function breakCaveBoulder() {
 
 
 }
+
+function showGlitchDemoVariables() {
+
+	with objBktGlitchDemo {
+
+		show_debug_message("=============================================================================================" )
+		show_debug_message("intensity: " + string(intensity))
+		show_debug_message("intensityIncreaseAmount: " + string(intensityIncreaseAmount))
+		show_debug_message("intensityIncreaseAmount2: " + string(intensityIncreaseAmount2))
+		show_debug_message("intensityMax: " + string(intensityMax))
+		show_debug_message("intensityMax2: " + string(intensityMax2))
+		show_debug_message("channelShift: " + string(channelShift))
+		show_debug_message("channelShiftMax: " + string(channelShiftMax))
+		show_debug_message("channelShiftIncreaseAmount: " + string(channelShiftIncreaseAmount))
+		show_debug_message("channelDispersion: " + string(channelDispersion))
+		show_debug_message("channelDispersionMax: " + string(channelDispersionMax))
+		show_debug_message("channelDispersionIncreaseAmount: " + string(channelDispersionIncreaseAmount))
+		show_debug_message("---------------------------------------------------------------------------------------------" )
+		
+	
+	}
+
+}
