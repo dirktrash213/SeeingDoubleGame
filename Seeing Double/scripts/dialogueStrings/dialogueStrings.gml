@@ -17,7 +17,10 @@ global.dialogueStringArrays = {
 	
 		"Log Entry No. {data_corrupt} \nTreatment failed. Again. Nothing I try works. Nothing.",
 		"At this rate my body will almost certainly {data_corrupt} before I succeed.",
+		//"There is only one other option now. I don't like to gamble, but what choice do I have?",
 		"There is only one other option now. I don't like to gamble, but what choice do I have?",
+		"A lab in a cave. What an assinine idea that turned out to be.",
+		//"A lab in a cave. Turned out to be as assinine in practice as it is cliche.",
 		"I just wish I could say sorry. [slant]-S",
 	
 	],
@@ -57,13 +60,14 @@ global.dialogueStringArrays = {
 	
 	cavesDiary : [ 
 	
-		"A house in cave. He really does get the craziest ideas.", 
-		"But I have to admit it's beautiful here. And so much to study, too!", 
-		"I reckon there's hundreds of unknown species waiting to be discovered. Ooh, how exciting!", 
+		//"A house in cave. He really does get the craziest ideas.", 
+		"He really does get the craziest ideas. Building a house in a cave? Who'd think of that?", 
+		"But I have to admit it's beautiful in this little alcove, tucked away from the world. And so much to study, too!", 
+		"I reckon there's hundreds - no, [slant]thousands[/slant] of unknown fungi waiting to be discovered. How exciting!", 
 		"Oh, he's giving me that look... I might have to wrap this entry up~", 
 		//"Wait a minute... He's peeking at my journal again!! Son of a-", 
 		//"Wait a minute... He's peeking at my journal again!! That sneaky rat!", 
-		"Wait a minute... He's peeking at my journal again!!", 
+		"Wait a minute... no he's not! He's peeking at my journal! [/slant]Again!!", 
 		"Simon, if you ever read this I SWEAR I'll kill you.", 
 		
 	],
@@ -275,9 +279,11 @@ global.dialogueStringArrays = {
 		"Well hot diggity dog! I don't know what the heck you did but it did the trick!", //0
 		"I reckon you're heading inside, then? Well good luck. Me? I'm gonna wait for a bit then head back and find my mates.",
 		"Oh, you've seen my mining buddies? You know the way back, perhaps? Can you describe it?",
-		"I see. Well, kind stranger, you may have just saved my hide. Thank you. If I had some gold I'd give it to ya, but alas.",
+		//"I see. Well, kind stranger, you may have just saved my hide. Thank you. If I had some gold I'd give it to ya, but alas.",
+		"I see. Well, kind stranger, you may have just saved my hide. Thank you.",
+		"If I had some gold I'd give it to ya, but alas, all I have is this cherry I found. Please, take it.",
 		//"My son must be worried sick. Ah, junior. Always worrying about his old man. Warms my heart. ",
-		"My family must be worried sick. Ah, junior[spr_npc_greenFella_kid]. Can't wait to see that green bundle of joy.",
+		"My family must be worried sick. Ah, junior[spr_npc_greenFella_kid]. Can't wait to see that green bundle of joy.", //5
 		"Good luck. And if we meet again, be sure to fill me in on what sorts of wacky gizmos and gadgets you find in there. I'm dyin' to know!", //5
 		
 	],
@@ -293,7 +299,7 @@ global.dialogueStringArrays = {
 		"Life's been tough lately. For everyone. Seems like all the gold's been dryin' up. So we had to mine deeper.", 
 		"Which of course led to my current predicament, not to mention other miners going missing.", //5
 		//"Ugh. Just wish there was enough gold to go around, y'know? But I suppose it wouldn't be worth much then. Funny, eh?",
-		"Just wish there was enough gold to go around, y'know? Then we wouldn't have to be slaving away.",
+		"Just wish there was enough gold to go around, y'know? Then we wouldn't have to be slaving away for the bigwigs.",
 		"Heh. You reckon it's worth the time to have such silly daydreams? I dunno.",
 		"Y'know, the volcano on this island is rumored to have tons of priceless gems.",
 		"Maybe one day I could... nah. It's much too dangerous.",
@@ -310,7 +316,8 @@ global.dialogueStringArrays = {
 		//"This will be a challenge, to be sure, but I believe there's nothing we can't understand, given enough time and effort.",
 		"That said, I believe there's nothing we can't understand, given enough time and effort.",
 		//"Our team, Helena, and I will make sure of it. [slant]-S", //5
-		"Helena and I will make sure of it. [slant]-S", //5
+		//"Helena and I will make sure of it. [slant]-S", //5
+		"Helly and I will make sure of it. [slant]-S", //5
 	
 	],
 	

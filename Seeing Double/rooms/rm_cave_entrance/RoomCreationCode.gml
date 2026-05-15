@@ -37,4 +37,6 @@ if audio_is_playing(sfx_glitch_loop2) audio_stop_sound(sfx_glitch_loop2);
 
 global.verticalLevel = false;
 
+global.doubleJumpActive = true;
+
 enableSmallReverb();

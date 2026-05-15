@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "Bat",
+  "name": "Bat1178",
   "bbox_bottom": 118,
   "bbox_left": 8,
   "bbox_right": 95,
@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Cave Stuff",
-    "path": "folders/Sprites/NEW/Cave Stuff.yy",
+    "name": "Bat",
+    "path": "folders/Sprites/Interactables/Bat.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4a25cce6-0510-417d-891f-16e3faf65504","path":"sprites/Bat/Bat.yy",},},},"Disabled":false,"id":"9898f855-b645-4459-a6dc-958184ba9c83","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4a25cce6-0510-417d-891f-16e3faf65504","path":"sprites/Bat1178/Bat1178.yy",},},},"Disabled":false,"id":"ff9506b9-2edd-4b7e-a227-9567e9430c9d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

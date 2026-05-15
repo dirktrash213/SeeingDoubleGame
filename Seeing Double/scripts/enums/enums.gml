@@ -7,6 +7,13 @@ enum BIRD_STATE {
 
 }
 
+enum BAT_STATE {
+
+	IDLE,
+	FLYING,
+
+}
+
 enum WALKING_DIRECTION {
 
 	NONE,

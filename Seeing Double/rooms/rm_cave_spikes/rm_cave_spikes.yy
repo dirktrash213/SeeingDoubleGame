@@ -71,6 +71,8 @@
     {"name":"inst_68477141","path":"rooms/rm_cave_spikes/rm_cave_spikes.yy",},
     {"name":"inst_746256D1","path":"rooms/rm_cave_spikes/rm_cave_spikes.yy",},
     {"name":"inst_62904E26","path":"rooms/rm_cave_spikes/rm_cave_spikes.yy",},
+    {"name":"inst_1B306850","path":"rooms/rm_cave_spikes/rm_cave_spikes.yy",},
+    {"name":"inst_52BB5A04","path":"rooms/rm_cave_spikes/rm_cave_spikes.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -150,6 +152,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3E9FD61E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_mushrooms_v5","path":"objects/obj_interactable_mushrooms_v5/obj_interactable_mushrooms_v5.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":400.0,"y":208.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_31A6FB60","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_mushrooms_v4","path":"objects/obj_interactable_mushrooms_v4/obj_interactable_mushrooms_v4.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":640.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_74B48BA3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_mushrooms_v1","path":"objects/obj_interactable_mushrooms_v1/obj_interactable_mushrooms_v1.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":272.0,"y":528.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1B306850","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_bat","path":"objects/obj_interactable_bat/obj_interactable_bat.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":144.0,"y":64.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_52BB5A04","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_interactable_bat","path":"objects/obj_interactable_bat/obj_interactable_bat.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":416.0,"y":368.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"LevelTiles","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":37,"SerialiseWidth":30,"TileCompressedData":[
 -9,136,4,1073742302,1073742282,1073742262,1073742242,-26,136,4,1073742303,1073742283,1073742263,1073742243,-9,136,-5,131,3,134,156,156,-3,136,-15,131,15,134,156,156,

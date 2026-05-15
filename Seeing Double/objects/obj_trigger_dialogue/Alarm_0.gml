@@ -462,6 +462,14 @@ if variableTextDisplayDuration {
 		
 		} break;
 		
+		case global.dialogueStringArrays.cavesOpenLabDoor[4]: { //"Take cherry"
+	      
+			instance_create_layer(obj_npc_minerGreenDad.x, obj_npc_minerGreenDad.y, "Instances", obj_pickup_cherry);
+			
+			alarm[0] = textDisplayDuration;
+		
+		} break;
+		
 		case global.dialogueStringArrays.cavesWaitingForGhostToLeave[10]: { //"Well, enough yappin'."
 	      
 			global.dialogueVariables.talkedToLostMinerTwice = true;

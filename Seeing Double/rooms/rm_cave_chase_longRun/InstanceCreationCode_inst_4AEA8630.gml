@@ -3,7 +3,7 @@ wrapAmount = 125;
 typist.sound(sfx_mouseChirp, false, 0.7, 1.5); 
 textDisplayDuration = 360;
 
-if !global.dialogueVariables.talkedToLostMiner {
+if !global.dialogueVariables.talkedToLostMiner && !global.caveChaseOver {
 
 	for (var i = 0; i < array_length(global.dialogueStringArrays.cavesMetGreenMinerDad); ++i) {
 	 
