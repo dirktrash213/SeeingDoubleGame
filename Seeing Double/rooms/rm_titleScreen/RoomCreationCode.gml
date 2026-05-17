@@ -6,3 +6,5 @@ if audio_is_playing(amb_scifiCave) audio_stop_sound(amb_scifiCave);
 disableReverb();
 
 //application_surface_draw_enable(true);
+
+//global.doubleJumpActive = true; //TEMP

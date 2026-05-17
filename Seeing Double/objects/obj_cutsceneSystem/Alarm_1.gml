@@ -63,7 +63,7 @@ switch global.currentCutsceneID {
 	case CUTSCENE_ID.DOUBLE_JUMP_BARREL: {
 	
 		switch cutsceneState {
-
+			//@
 			case DOUBLE_JUMP_BARREL_CUTSCENE_STATE.SOAKING: {
 				
 				cutsceneState = DOUBLE_JUMP_BARREL_CUTSCENE_STATE.JUMPING_OUT;
@@ -93,6 +93,12 @@ switch global.currentCutsceneID {
 		
 					//obj_player_pitter.ySpeed = -5;
 					//obj_player_patter.ySpeed = -5;
+					
+					var _barrelPitter = instance_nearest(obj_player_pitter.x, obj_player_pitter.y, obj_scienceJuice_doubleJump);
+					var _barrelPatter = instance_nearest(obj_player_patter.x, obj_player_patter.y, obj_scienceJuice_doubleJump);
+					
+					obj_player_pitter.y = _barrelPitter.y;
+					obj_player_patter.y = _barrelPatter.y;
 					
 					obj_player_pitter.grav = 0;
 					obj_player_patter.grav = 0;
@@ -403,6 +409,12 @@ switch global.currentCutsceneID {
 		
 					//obj_player_pitter.ySpeed = -5;
 					//obj_player_patter.ySpeed = -5;
+					
+					var _barrelPitter = instance_nearest(obj_player_pitter.x, obj_player_pitter.y, obj_scienceJuice_groundPound);
+					var _barrelPatter = instance_nearest(obj_player_patter.x, obj_player_patter.y, obj_scienceJuice_groundPound);
+					
+					obj_player_pitter.y = _barrelPitter.y;
+					obj_player_patter.y = _barrelPatter.y;
 					
 					obj_player_pitter.grav = 0;
 					obj_player_patter.grav = 0;

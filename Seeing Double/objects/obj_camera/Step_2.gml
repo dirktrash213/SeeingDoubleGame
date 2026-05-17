@@ -117,6 +117,12 @@ if pitterPlayerIsPresent() {
 			verticalLevelOffsetY = max(verticalLevelOffsetY, verticalLevelOffsetYMin)
 	
 		}
+		
+		if room == rm_cave_descent { //Edge cases for certain descending rooms so the player can see ahead
+		
+			verticalLevelOffsetY = verticalLevelOffsetYMax;
+		
+		}
 	
 	}
 	

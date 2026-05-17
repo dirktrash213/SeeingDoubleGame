@@ -61,6 +61,9 @@ if path_position == 1.0 {
 	
 			ridingMinecart = false;
 			currentMinecart = noone;
+			
+			sprite_set_offset(spr_pitter_jump, 8, 16); 
+			sprite_set_offset(spr_patter_jump, 8, 16);
 
 		}
 

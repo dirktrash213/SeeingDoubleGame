@@ -15,6 +15,9 @@ if global.playerDefeated || global.paused {
 		currentMinecart = noone;
 		climbing = false;
 		
+		sprite_set_offset(spr_pitter_jump, 8, 16); 
+		sprite_set_offset(spr_patter_jump, 8, 16);
+		
 		setOnGround(false); //This prevents a weird bug where if the player dies on a platform their respawn location is messed up
 		
 		moveDir = 0;
@@ -129,6 +132,7 @@ if stuckOnBoulder {
 
 }
 
+
 //show_debug_message("ridingMinecart: " + string(ridingMinecart))
 if ridingMinecart {
 	
@@ -155,6 +159,9 @@ if ridingMinecart {
 		ridingMinecart = false;
 		currentMinecart = noone;
 		
+		sprite_set_offset(spr_pitter_jump, 8, 16); 
+		sprite_set_offset(spr_patter_jump, 8, 16);
+		
 		exit;
 	
 	}
@@ -165,6 +172,9 @@ if ridingMinecart {
 	
 		ridingMinecart = false;
 		currentMinecart = noone;
+		
+		sprite_set_offset(spr_pitter_jump, 8, 16); 
+		sprite_set_offset(spr_patter_jump, 8, 16);
 		
 		exit;
 	
@@ -253,23 +263,23 @@ if ridingMinecart {
 		jumpHoldTimer--;
 
 	}
-	
+	//@
 	ySpeed += grav;
 	if ySpeed > termVelocityMinecart ySpeed = termVelocityMinecart;
 	
-	var _offsetX = 5;
+	var _offsetX = -5; //5
 	var _offsetY = -10; //2
 	
 	if currentMinecart.image_angle >= 314 && currentMinecart.image_angle < 340 {
 	
-		_offsetX = 15;
+		_offsetX = -15; //15
 		_offsetY = -3;
-	
+		
 	}
 	
 	if currentMinecart.image_angle >= 15 && currentMinecart.image_angle < 46 {
 	
-		_offsetX = -5;
+		_offsetX = 5; //-5
 		_offsetY = -10;
 	
 	}
@@ -292,12 +302,21 @@ if ridingMinecart {
 	
 	var _maxY = currentMinecart.y  + _offsetY;
 
-	x = currentMinecart.x + _offsetX;
+	sprite_set_offset(spr_pitter_jump, 8, 16);
+	sprite_set_offset(spr_patter_jump, 8, 16);
+	
+	x = currentMinecart.x;
 	y += ySpeed;
 	
 	y = clamp(y, -1000, _maxY);
 	
-	if y == _maxY jumpCount = 0;
+	if y == _maxY {
+		
+		jumpCount = 0;
+		sprite_set_offset(spr_pitter_jump, 8+_offsetX, 16); //Moving the sprite instead of the object prevents camera jittering
+		sprite_set_offset(spr_patter_jump, 8+_offsetX, 16);
+		
+	}
 
 	exit;
 
@@ -643,13 +662,19 @@ if moveDir != 0 faceDir = moveDir;
 
 //Get xSpeed
 
-if !global.runModeIsToggle {
+if !global.runModeIsToggle { //"Toggle run" mode is off
 
 	runType = run;
 
-} else {
+} else { //"Toggle run" mode is on
 
-	if runPressed runType = !runType;
+	if runPressed {
+		
+		runType = !runType;
+		
+		obj_player_patter.runType = obj_player_pitter.runType;
+		
+	}
 
 }
 
@@ -1501,7 +1526,7 @@ if _switchBlock != noone {
 //}
 
 
-if !global.runModeIsToggle {
+if !global.runModeIsToggle { //"Toggle run" mode off
 
 	if run && (moveLeftPressed || moveRightPressed) && onGround && !climbing {
 
