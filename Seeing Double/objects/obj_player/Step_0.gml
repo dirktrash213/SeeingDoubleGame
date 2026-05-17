@@ -672,7 +672,7 @@ if !global.runModeIsToggle { //"Toggle run" mode is off
 		
 		runType = !runType;
 		
-		obj_player_patter.runType = obj_player_pitter.runType;
+		if patterPlayerIsPresent() obj_player_patter.runType = obj_player_pitter.runType;
 		
 	}
 

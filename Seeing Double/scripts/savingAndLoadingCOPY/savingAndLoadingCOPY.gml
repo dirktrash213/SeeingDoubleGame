@@ -1,5 +1,61 @@
 //NOTE: if running into saving/loading performance issues, use buffers
 /*
+
+//@
+function saveSettings() {
+
+	var _file = file_text_open_write("settings.txt");
+	
+	file_text_write_real(_file, global.volumeMaster);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.volumeSFX);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.volumeBGM);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.volumeAMB);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.fullScreen);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.runModeIsToggle);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.scoreUIenabled);
+	file_text_writeln(_file);
+	file_text_write_real(_file, global.assistMode);
+	file_text_writeln(_file);
+
+	file_text_close(_file); 
+
+}
+//@
+function loadSettings() { //Load player's audio, visual, and gameplay settings on game start
+
+	if file_exists("settings.txt") {
+	
+		var _file = file_text_open_read("settings.txt");
+		
+		global.volumeMaster = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.volumeSFX = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.volumeBGM = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.volumeAMB = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.fullScreen = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.runModeIsToggle = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.scoreUIenabled = file_text_read_real(_file);
+		file_text_readln(_file);
+		global.assistMode = file_text_read_real(_file);
+		file_text_readln(_file);
+		
+		file_text_close(_file);
+		
+	}
+
+}
+
 global.gameData = {
 
 	roomData : {

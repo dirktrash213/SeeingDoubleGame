@@ -14,57 +14,129 @@ global.gameData = {
 
 }
 
-function saveSettings() {
-
-	var _file = file_text_open_write("settings.txt");
+global.settingsData = {
 	
-	file_text_write_real(_file, global.volumeMaster);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.volumeSFX);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.volumeBGM);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.volumeAMB);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.fullScreen);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.runModeIsToggle);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.scoreUIenabled);
-	file_text_writeln(_file);
-	file_text_write_real(_file, global.assistMode);
-	file_text_writeln(_file);
-
-	file_text_close(_file); 
+	settings : {
+	
+	
+	
+	}
 
 }
 
+//@
+function saveSettings() {
+
+	global.settingsData.settings = {
+		
+        volumeMaster: global.volumeMaster,
+        volumeSFX: global.volumeSFX,
+        volumeBGM: global.volumeBGM,
+        volumeAMB: global.volumeAMB,
+        fullScreen: global.fullScreen,
+        runModeIsToggle: global.runModeIsToggle,
+        scoreUIenabled: global.scoreUIenabled,
+        assistMode: global.assistMode,
+        screenShake: global.screenShake,
+ 
+    };
+	
+    var _dataJsonString = json_stringify(global.settingsData);
+
+    //Save to file
+    var _file = file_text_open_write("settings.txt");
+    file_text_write_string(_file, _dataJsonString);
+    file_text_close(_file); 
+
+	//var _file = file_text_open_write("settings.txt");
+	//
+	//file_text_write_real(_file, global.volumeMaster);
+	//file_text_writeln(_file);
+	//file_text_write_real(_file, global.volumeSFX);
+	//file_text_writeln(_file);
+	//file_text_write_real(_file, global.volumeBGM);
+	//file_text_writeln(_file);
+	//file_text_write_real(_file, global.volumeAMB);
+	//file_text_writeln(_file);
+	//file_text_write_real(_file, global.fullScreen);
+	//file_text_writeln(_file);
+	//file_text_write_real(_file, global.runModeIsToggle);
+	//file_text_writeln(_file);
+	//file_text_write_real(_file, global.scoreUIenabled);
+	//file_text_writeln(_file);
+	//file_text_write_real(_file, global.assistMode);
+	//file_text_writeln(_file);
+	//
+	//file_text_close(_file); 
+
+}
+//@
 function loadSettings() { //Load player's audio, visual, and gameplay settings on game start
 
-	if file_exists("settings.txt") {
+	 if (file_exists("settings.txt")) {
+        var _file = file_text_open_read("settings.txt");
+        var _json = file_text_read_string(_file);
+        file_text_close(_file);
+        
+        // Parse the big JSON string back into a temporary struct
+        var _loadData = json_parse(_json);
+		
+		//_loadData = {}; //TEMP
+		
+		if !variable_struct_exists(_loadData, "settings") {
+		
+			show_debug_message("Settings struct not found, creating backup")
+		
+			_loadData = {
+			
+				settings : {}
+			
+			}
+		
+		}
+		
+		//show_debug_message("_loadData.settings: " + string(_loadData.settings))
+        
+        // Safely restore stats using the accessor [$ "name"] 
+        // If the key doesn't exist in an old save, it uses the ?? default value
+        var _s = _loadData.settings;
+        
+        global.volumeMaster           = _s[$ "volumeMaster"] ?? 0;
+        global.volumeSFX   = _s[$ "volumeSFX"] ?? 0;
+        global.volumeBGM   = _s[$ "volumeBGM"] ?? 0;
+        global.volumeAMB   = _s[$ "volumeAMB"] ?? 0;
+        global.fullScreen   = _s[$ "fullScreen"] ?? false;
+        global.runModeIsToggle   = _s[$ "runModeIsToggle"] ?? false;
+        global.scoreUIenabled   = _s[$ "scoreUIenabled"] ?? false;
+        global.assistMode   = _s[$ "assistMode"] ?? false;
+        global.screenShake   = _s[$ "screenShake"] ?? false;
+
+    }
 	
-		var _file = file_text_open_read("settings.txt");
-		
-		global.volumeMaster = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.volumeSFX = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.volumeBGM = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.volumeAMB = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.fullScreen = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.runModeIsToggle = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.scoreUIenabled = file_text_read_real(_file);
-		file_text_readln(_file);
-		global.assistMode = file_text_read_real(_file);
-		file_text_readln(_file);
-		
-		file_text_close(_file);
-		
-	}
+	//if file_exists("settings.txt") {
+	//
+	//	var _file = file_text_open_read("settings.txt");
+	//	
+	//	global.volumeMaster = file_text_read_real(_file);
+	//	file_text_readln(_file);
+	//	global.volumeSFX = file_text_read_real(_file);
+	//	file_text_readln(_file);
+	//	global.volumeBGM = file_text_read_real(_file);
+	//	file_text_readln(_file);
+	//	global.volumeAMB = file_text_read_real(_file);
+	//	file_text_readln(_file);
+	//	global.fullScreen = file_text_read_real(_file);
+	//	file_text_readln(_file);
+	//	global.runModeIsToggle = file_text_read_real(_file);
+	//	file_text_readln(_file);
+	//	global.scoreUIenabled = file_text_read_real(_file);
+	//	file_text_readln(_file);
+	//	global.assistMode = file_text_read_real(_file);
+	//	file_text_readln(_file);
+	//	
+	//	file_text_close(_file);
+	//	
+	//}
 
 }
 
