@@ -54,7 +54,7 @@ if boulderFallingWarp {
 
 }
 
-if room == rm_hills_warpRoom {
+if room == rm_hills_warpRoom && !ignoreDoorWarp {
 	
 	global.splitScreenActive = true;
 	

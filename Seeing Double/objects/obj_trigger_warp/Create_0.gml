@@ -14,3 +14,5 @@ switchToVertical = false;
 switchToHorizontal = false;
 
 boulderFallingWarp = false;
+
+ignoreDoorWarp = false;

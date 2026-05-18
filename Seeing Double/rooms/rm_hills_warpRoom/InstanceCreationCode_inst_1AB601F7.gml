@@ -5,3 +5,5 @@ yEnter = 32;
 
 xSpawn = 1;
 ySpawn = 32;
+
+ignoreDoorWarp = true;
