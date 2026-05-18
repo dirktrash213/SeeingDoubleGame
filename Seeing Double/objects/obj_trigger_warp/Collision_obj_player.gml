@@ -54,6 +54,45 @@ if boulderFallingWarp {
 
 }
 
+if room == rm_hills_warpRoom {
+	
+	global.splitScreenActive = true;
+	
+	instance_create_layer(x, y, "Instances", obj_player_patter);
+
+	audio_stop_sound(amb_scifiCave);
+	audio_play_sound(sfx_portal_jump, 1, false);
+
+	if targetRoom == rm_forest_splitScreenTutorial {
+	
+		global.cherryCount = 3;
+	
+	}
+	
+	if targetRoom == rm_cave_entrance {
+	
+		global.coinCount = 800;
+		global.cherryCount = 34;
+		
+		global.doubleJumpActive = true;
+		global.escapedForestGhost = true;
+		
+	}
+	
+	if targetRoom == rm_lab_entrance {
+	
+		global.coinCount = 1600;
+		global.cherryCount = 85;
+		
+		global.doubleJumpActive = true;
+		global.groundPoundActive = true;
+		global.escapedForestGhost = true;
+		global.caveChaseOver = true;
+		
+	}
+
+}
+
 /*
 if patterPlayerIsPresent() {
 

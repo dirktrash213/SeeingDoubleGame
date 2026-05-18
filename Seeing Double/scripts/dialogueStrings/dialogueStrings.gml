@@ -1,6 +1,46 @@
 global.dialogueStringArrays = {
 
 
+	hillsWarpRoomGuy : [ 
+	
+		"My, my, my! You're quite the inquisitive one, aren't you? Did someone tell you about this room, you trailblazer?", //0
+		"Looking to jump ahead? Save file corrupted but don't want to start from scratch? Then look no further!",
+		"Welcome to the [wave][rainbow]WARP ROOM![/wave][/rainbow] Pick any door to instantly warp to the start of that chapter!",
+		"Of course, if this is your first playthrough you probably won't want to skip a bunch of stuff. But it's your call!",
+		"Go ahead, pick a door! Or you can go back the way you came if you want a regular ol' playthrough.",
+	
+	],
+	
+	hillsWarpRoomForest : [ 
+	
+		"Forest", //0
+	
+	],
+	
+	hillsWarpRoomCave : [ 
+	
+		"Cave", //0
+	
+	],
+	
+	hillsWarpRoomLab : [ 
+	
+		"Lab", //0
+	
+	],
+	
+	hillsWarpRoomSewer : [ 
+	
+		"Sewer", //0
+	
+	],
+	
+	hillsWarpRoomVolcano : [ 
+	
+		"Volcano", //0
+	
+	],
+	
 	forestTreeCarving : [ 
 	
 		"\"S + H\" is carved into the tree.", //0

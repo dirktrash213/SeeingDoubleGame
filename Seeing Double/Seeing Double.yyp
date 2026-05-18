@@ -1224,6 +1224,7 @@
     {"id":{"name":"spr_patter_sigh","path":"sprites/spr_patter_sigh/spr_patter_sigh.yy",},},
     {"id":{"name":"path_platform_minecart4","path":"paths/path_platform_minecart4/path_platform_minecart4.yy",},},
     {"id":{"name":"obj_enemy_doppleganger","path":"objects/obj_enemy_doppleganger/obj_enemy_doppleganger.yy",},},
+    {"id":{"name":"rm_hills_warpRoom","path":"rooms/rm_hills_warpRoom/rm_hills_warpRoom.yy",},},
     {"id":{"name":"_30","path":"sprites/_30/_30.yy",},},
     {"id":{"name":"spr_npc_crazyGuy","path":"sprites/spr_npc_crazyGuy/spr_npc_crazyGuy.yy",},},
     {"id":{"name":"obj_background_grassPiece","path":"objects/obj_background_grassPiece/obj_background_grassPiece.yy",},},
@@ -2200,6 +2201,7 @@
     {"roomId":{"name":"rm_cave_chase_timedBlocks","path":"rooms/rm_cave_chase_timedBlocks/rm_cave_chase_timedBlocks.yy",},},
     {"roomId":{"name":"rm_cave_chase_longRun","path":"rooms/rm_cave_chase_longRun/rm_cave_chase_longRun.yy",},},
     {"roomId":{"name":"rm_lab_entrance","path":"rooms/rm_lab_entrance/rm_lab_entrance.yy",},},
+    {"roomId":{"name":"rm_hills_warpRoom","path":"rooms/rm_hills_warpRoom/rm_hills_warpRoom.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

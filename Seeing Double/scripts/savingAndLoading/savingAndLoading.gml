@@ -48,26 +48,7 @@ function saveSettings() {
     file_text_write_string(_file, _dataJsonString);
     file_text_close(_file); 
 
-	//var _file = file_text_open_write("settings.txt");
-	//
-	//file_text_write_real(_file, global.volumeMaster);
-	//file_text_writeln(_file);
-	//file_text_write_real(_file, global.volumeSFX);
-	//file_text_writeln(_file);
-	//file_text_write_real(_file, global.volumeBGM);
-	//file_text_writeln(_file);
-	//file_text_write_real(_file, global.volumeAMB);
-	//file_text_writeln(_file);
-	//file_text_write_real(_file, global.fullScreen);
-	//file_text_writeln(_file);
-	//file_text_write_real(_file, global.runModeIsToggle);
-	//file_text_writeln(_file);
-	//file_text_write_real(_file, global.scoreUIenabled);
-	//file_text_writeln(_file);
-	//file_text_write_real(_file, global.assistMode);
-	//file_text_writeln(_file);
-	//
-	//file_text_close(_file); 
+	
 
 }
 //@
@@ -80,8 +61,6 @@ function loadSettings() { //Load player's audio, visual, and gameplay settings o
         
         // Parse the big JSON string back into a temporary struct
         var _loadData = json_parse(_json);
-		
-		//_loadData = {}; //TEMP
 		
 		if !variable_struct_exists(_loadData, "settings") {
 		
@@ -113,31 +92,6 @@ function loadSettings() { //Load player's audio, visual, and gameplay settings o
 
     }
 	
-	//if file_exists("settings.txt") {
-	//
-	//	var _file = file_text_open_read("settings.txt");
-	//	
-	//	global.volumeMaster = file_text_read_real(_file);
-	//	file_text_readln(_file);
-	//	global.volumeSFX = file_text_read_real(_file);
-	//	file_text_readln(_file);
-	//	global.volumeBGM = file_text_read_real(_file);
-	//	file_text_readln(_file);
-	//	global.volumeAMB = file_text_read_real(_file);
-	//	file_text_readln(_file);
-	//	global.fullScreen = file_text_read_real(_file);
-	//	file_text_readln(_file);
-	//	global.runModeIsToggle = file_text_read_real(_file);
-	//	file_text_readln(_file);
-	//	global.scoreUIenabled = file_text_read_real(_file);
-	//	file_text_readln(_file);
-	//	global.assistMode = file_text_read_real(_file);
-	//	file_text_readln(_file);
-	//	
-	//	file_text_close(_file);
-	//	
-	//}
-
 }
 
 function saveRoom() {
