@@ -122,7 +122,7 @@ switch room {
 	case rm_cave_chase_timedBlocks: {
 		
 		chasePath = path_ghost_caveChase_coins;
-		delayBeforeChase = 900;
+		delayBeforeChase = 1200;
 			
 	} break;
 	

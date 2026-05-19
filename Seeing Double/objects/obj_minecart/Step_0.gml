@@ -64,6 +64,9 @@ if path_position == 1.0 {
 			
 			sprite_set_offset(spr_pitter_jump, 8, 16); 
 			sprite_set_offset(spr_patter_jump, 8, 16);
+			
+			sprite_set_offset(spr_pitter_scared_jump, 8, 16); 
+			sprite_set_offset(spr_patter_scared_jump, 8, 16);
 
 		}
 

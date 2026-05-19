@@ -18,6 +18,9 @@ if global.playerDefeated || global.paused {
 		sprite_set_offset(spr_pitter_jump, 8, 16); 
 		sprite_set_offset(spr_patter_jump, 8, 16);
 		
+		sprite_set_offset(spr_pitter_scared_jump, 8, 16); 
+		sprite_set_offset(spr_patter_scared_jump, 8, 16);
+		
 		setOnGround(false); //This prevents a weird bug where if the player dies on a platform their respawn location is messed up
 		
 		moveDir = 0;
@@ -162,6 +165,9 @@ if ridingMinecart {
 		sprite_set_offset(spr_pitter_jump, 8, 16); 
 		sprite_set_offset(spr_patter_jump, 8, 16);
 		
+		sprite_set_offset(spr_pitter_scared_jump, 8, 16); 
+		sprite_set_offset(spr_patter_scared_jump, 8, 16);
+		
 		exit;
 	
 	}
@@ -175,6 +181,9 @@ if ridingMinecart {
 		
 		sprite_set_offset(spr_pitter_jump, 8, 16); 
 		sprite_set_offset(spr_patter_jump, 8, 16);
+		
+		sprite_set_offset(spr_pitter_scared_jump, 8, 16); 
+		sprite_set_offset(spr_patter_scared_jump, 8, 16);
 		
 		exit;
 	
@@ -305,6 +314,9 @@ if ridingMinecart {
 	sprite_set_offset(spr_pitter_jump, 8, 16);
 	sprite_set_offset(spr_patter_jump, 8, 16);
 	
+	sprite_set_offset(spr_pitter_scared_jump, 8, 16); 
+	sprite_set_offset(spr_patter_scared_jump, 8, 16);
+	
 	x = currentMinecart.x;
 	y += ySpeed;
 	
@@ -315,6 +327,9 @@ if ridingMinecart {
 		jumpCount = 0;
 		sprite_set_offset(spr_pitter_jump, 8+_offsetX, 16); //Moving the sprite instead of the object prevents camera jittering
 		sprite_set_offset(spr_patter_jump, 8+_offsetX, 16);
+		
+		sprite_set_offset(spr_pitter_scared_jump, 8+_offsetX, 16); 
+		sprite_set_offset(spr_patter_scared_jump, 8+_offsetX, 16);
 		
 	}
 
