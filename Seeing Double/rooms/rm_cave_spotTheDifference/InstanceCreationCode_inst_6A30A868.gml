@@ -1,4 +1,4 @@
-targetRoom = rm_cave_portalsIntro;
+targetRoom = rm_cave_minerGroup;
 
 xEnter = 959;
 yEnter = 224;

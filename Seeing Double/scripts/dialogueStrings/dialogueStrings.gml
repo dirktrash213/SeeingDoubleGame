@@ -175,6 +175,16 @@ global.dialogueStringArrays = {
 	
 	],
 	
+	cavesDwarfMiners : [ 
+	
+		"[shake]ROCK AND STONE, BROTHER!!",
+		"[shake]STONE AND ROCK, BROTHER!!",
+		"[shake]ROCK AND ROLL, BROTHER!!",
+		//"Personally I'm more of a free-form jazz aficionado.",
+		"I hate mining.",
+	
+	],
+	
 	cavesHungryMiner : [ 
 	
 		"Hey! [shake]Back off[/shake], jack! I saw it first!!",

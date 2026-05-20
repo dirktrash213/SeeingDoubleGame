@@ -1,4 +1,4 @@
-targetRoom = rm_cave_spotTheDifference;
+targetRoom = rm_cave_minerGroup;
 
 xEnter = 1;
 yEnter = 224;

@@ -436,6 +436,7 @@
     {"name":"inst_41879169","path":"rooms/rm_cave_chase_timedBlocks/rm_cave_chase_timedBlocks.yy",},
     {"name":"inst_778B9C81","path":"rooms/rm_cave_chase_timedBlocks/rm_cave_chase_timedBlocks.yy",},
     {"name":"inst_21D3B5B2","path":"rooms/rm_cave_chase_timedBlocks/rm_cave_chase_timedBlocks.yy",},
+    {"name":"inst_264A115B","path":"rooms/rm_cave_chase_timedBlocks/rm_cave_chase_timedBlocks.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -466,6 +467,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4CF05D2F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_block_wall","path":"objects/obj_block_wall/obj_block_wall.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":1.0,"x":1888.0,"y":352.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_69B9FB5E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_block_wall","path":"objects/obj_block_wall/obj_block_wall.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":2.0,"x":1888.0,"y":320.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7A92431E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_block_wall","path":"objects/obj_block_wall/obj_block_wall.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":2.0,"x":1872.0,"y":304.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_264A115B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_block_wall","path":"objects/obj_block_wall/obj_block_wall.yy",},"properties":[],"rotation":0.0,"scaleX":134.0,"scaleY":1.0,"x":-272.0,"y":-80.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"SecretTiles","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":37,"SerialiseWidth":120,"TileCompressedData":[
 -4440,0,],"TileDataFormat":1,},"tilesetId":{"name":"tiles_standard","path":"tilesets/tiles_standard/tiles_standard.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
