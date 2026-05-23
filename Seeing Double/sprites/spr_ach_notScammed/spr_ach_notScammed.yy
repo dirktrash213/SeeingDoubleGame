@@ -13,8 +13,8 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"66f4cafa-f5a1-44dd-a809-1d470aa5440b",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f785a37f-2f81-4262-9a88-b892a2e92048",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f9a10407-f1c5-4acc-b15e-91ebeed689e3",},
   ],
   "gridX": 32,
   "gridY": 32,
@@ -58,8 +58,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f785a37f-2f81-4262-9a88-b892a2e92048","path":"sprites/spr_ach_notScammed/spr_ach_notScammed.yy",},},},"Disabled":false,"id":"922c40a3-70e4-4165-9ff2-784b479cd619","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f9a10407-f1c5-4acc-b15e-91ebeed689e3","path":"sprites/spr_ach_notScammed/spr_ach_notScammed.yy",},},},"Disabled":false,"id":"64da13ce-e8b7-47b0-8f71-16c3a4428cf0","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"66f4cafa-f5a1-44dd-a809-1d470aa5440b","path":"sprites/spr_ach_notScammed/spr_ach_notScammed.yy",},},},"Disabled":false,"id":"71b30398-2297-42c6-88bb-be055936db85","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f785a37f-2f81-4262-9a88-b892a2e92048","path":"sprites/spr_ach_notScammed/spr_ach_notScammed.yy",},},},"Disabled":false,"id":"885cc5e2-255d-4fed-ba67-83d75a3c026e","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
