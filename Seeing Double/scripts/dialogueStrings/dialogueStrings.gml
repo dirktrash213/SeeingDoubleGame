@@ -85,10 +85,10 @@ global.dialogueStringArrays = {
 		"That right [slant]does[/slant] it! That simply teas my crumpets! I do [slant]NOT[/slant] get paid enough for this balderdash!", 
 		"I [slant]quit!![/slant] If the boss wants his ore so bad that fat tub o' lard can come down here and say 'ello to ol' spooky himself!!", 
 		//"If the boss wants his ore so damn bad he can come down here and say hello to ol' spooky himselves!!", 
-		"What? You want to go [slant]into[/slant] that deathtrap? [shake]HaHAA![/shake] Your funeral, bloke!", 
-		"Me? I'll happily find a new way to make a living. One that doesn't require making acquaintance to wailing banshees!", 
-		//"Later, loser!", //5
-		"Tally ho, imbecile!", //5
+		"What? You want to go [slant]into[/slant] that deathtrap and find some science lab? [shake]HaHAA![/shake] That deserves a right good laugh!", 
+		"There's nothing in that cave except rocks and misery, my deluded blue blowhard. You should save yourself the time and go home, bloke.", 
+		"As for me? I'll happily find a new way to make a living. One that doesn't require making acquaintance to wailing banshees!", //5
+		"Tally ho, imbecile!",
 		//"The mines have become a deathtrap recently.", 
 		//"The mines have become a deathtrap recently. Someone's gotta do it, though.", 
 	//	"And that someone ain't me! I'll find another way to make a living. One free of killer ghosts!", 

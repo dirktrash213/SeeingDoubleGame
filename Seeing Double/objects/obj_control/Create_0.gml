@@ -54,9 +54,11 @@ bgmForest = bgm_forestNightThemeLoop;
 //bgmCave = bgm_in_the_cave;
 bgmCave = bgm_dramaticCaveTheme;
 bgmCaveRestArea = bgm_burrowedBelow;
-bgmCaveChase = bgm_runAway;
+//bgmCaveChase = bgm_battleDemonic;
+bgmCaveChase = bgm_quirkyBossLoop;
+//bgmCaveChase = bgm_doomIncoming;
 
-bgmLab = bgm_lostInThought;
+bgmLab = bgm_abstraction;
 
 //saveSettings();
 //Load player settings

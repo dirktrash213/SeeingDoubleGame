@@ -217,7 +217,7 @@ if variableTextDisplayDuration {
 		
 		} break;
 		
-		case global.dialogueStringArrays.cavesEntanceMiner[5]: { 
+		case global.dialogueStringArrays.cavesEntanceMiner[6]: { 
 	      
 			alarm[0] = textDisplayDuration;
 			
