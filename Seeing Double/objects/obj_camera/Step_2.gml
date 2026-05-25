@@ -118,7 +118,10 @@ if pitterPlayerIsPresent() {
 	
 		}
 		
-		if room == rm_cave_descent { //Edge cases for certain descending rooms so the player can see ahead
+		if room == rm_cave_descent  //Edge cases for certain descending rooms so the player can see ahead
+		|| room == rm_cave_descendingOnBigBoulder 
+		|| room == rm_cave_chase_descent 
+		|| room == rm_cave_chase_descendingWithGroundPound {
 		
 			verticalLevelOffsetY = verticalLevelOffsetYMax;
 		

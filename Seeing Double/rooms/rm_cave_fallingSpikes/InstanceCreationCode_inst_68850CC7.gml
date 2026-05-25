@@ -1,2 +1,2 @@
 fallOffLedges = false;
-visible = false;
+//visible = false;
