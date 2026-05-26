@@ -9,3 +9,5 @@ if audio_is_playing(obj_control.bgmCave) audio_stop_sound(obj_control.bgmCave);
 global.verticalLevel = false;
 
 enableSmallReverb();
+
+awardPlayerAchievement("CAMPER");

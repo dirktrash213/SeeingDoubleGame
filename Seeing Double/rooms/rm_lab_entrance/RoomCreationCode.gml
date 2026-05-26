@@ -12,3 +12,23 @@ global.groundPoundActive = true;
 global.doubleJumpActive = true;
 
 disableReverb();
+
+awardPlayerAchievement("COMPLETE_CAVE");
+
+if global.cherryCountRegional == global.cherryMaxCave {
+
+	awardPlayerAchievement("CHERRIES_CAVE");
+
+}
+
+if global.coinCountRegional >= global.coinLotsAmountCave {
+
+	awardPlayerAchievement("COINS_CAVE");
+
+}
+
+show_debug_message("Player collected this many cherries in cave: " + string(global.cherryCountRegional))
+show_debug_message("Player collected this many coins in cave: " + string(global.coinCountRegional))
+
+global.coinCountRegional = 0;
+global.cherryCountRegional = 0;

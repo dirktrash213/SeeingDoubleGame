@@ -1,5 +1,8 @@
 global.devTools = false;
 
+global.steamTracking = false; //ENABLE FOR DEMO AND EA RELEASE
+//global.steamStatsReady = false;
+
 global.demoBuild = false; //Determines if this build is the demo version vs full version
 
 window_set_caption("Seeing Double");
@@ -8,13 +11,21 @@ global.speedrunTimer = 0;
 
 global.coinCount = 0;
 global.cherryCount = 0;
+global.coinCountRegional = 0;
+global.cherryCountRegional = 0;
 global.defeatCount = 0;
 global.storedCoins = 0;
 global.storedCherries = 0;
 //global.grassCount = 0;
 
-global.coinLotsAmount = global.demoBuild ? 800 : 1600; //TEMP, find actual number
+global.coinLotsAmount = global.demoBuild ? 800 : 2000; 
 global.cherryMax = global.demoBuild ? 34 : 85; 
+
+global.cherryMaxForest = 34;
+global.cherryMaxCave = 51;
+
+global.coinLotsAmountForest = 800;
+global.coinLotsAmountCave = 1200;
 
 global.paused = false;
 global.playerControl = true;

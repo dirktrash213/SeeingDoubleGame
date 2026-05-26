@@ -7,6 +7,8 @@ global.foundRose = true;
 audio_play_sound(sfx_collect_cherry, 1, 0);
 audio_play_sound(sfx_magical_transition, 1, 0);
 
+awardPlayerAchievement("ROSE");
+
 instance_destroy();
 
 

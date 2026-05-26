@@ -1,6 +1,7 @@
 if !canCollect exit;
 
 global.coinCount++;
+global.coinCountRegional++;
 
 var _sparkleCount = 5;
 

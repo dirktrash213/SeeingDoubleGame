@@ -235,7 +235,9 @@ function saveGame() {
     // 2. Pack all global variables into a "stats" struct within gameData
     global.gameData.stats = {
         coinCount: global.coinCount,
+        coinCountRegional: global.coinCountRegional,
         cherryCount: global.cherryCount,
+        cherryCountRegional: global.cherryCountRegional,
         defeatCount: global.defeatCount,
         xRespawnPitter: global.xRespawnPitter,
         yRespawnPitter: global.yRespawnPitter,
@@ -295,7 +297,9 @@ function loadGame() {
         var _s = _loadData.stats;
         
         global.coinCount           = _s[$ "coinCount"] ?? 0;
+        global.coinCountRegional   = _s[$ "coinCountRegional"] ?? 0;
         global.cherryCount         = _s[$ "cherryCount"] ?? 0;
+        global.cherryCountRegional = _s[$ "cherryCountRegional"] ?? 0;
         global.defeatCount         = _s[$ "defeatCount"] ?? 0;
         global.xRespawnPitter      = _s[$ "xRespawnPitter"] ?? 0;
         global.yRespawnPitter      = _s[$ "yRespawnPitter"] ?? 0;

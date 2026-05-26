@@ -40,3 +40,23 @@ global.verticalLevel = false;
 global.doubleJumpActive = true;
 
 enableSmallReverb();
+
+awardPlayerAchievement("COMPLETE_FOREST");
+
+if global.cherryCountRegional == global.cherryMaxForest {
+
+	awardPlayerAchievement("CHERRIES_FOREST");
+
+}
+
+if global.coinCountRegional >= global.coinLotsAmountForest {
+
+	awardPlayerAchievement("COINS_FOREST");
+
+}
+
+show_debug_message("Player collected this many cherries in forest: " + string(global.cherryCountRegional))
+show_debug_message("Player collected this many coins in forest: " + string(global.coinCountRegional))
+
+global.coinCountRegional = 0;
+global.cherryCountRegional = 0;

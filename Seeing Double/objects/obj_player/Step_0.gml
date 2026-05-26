@@ -1089,6 +1089,7 @@ if place_meeting(x, y + ySpeed, obj_interactable_switch_block_parent) && ySpeed 
 			
 					itemBought = true;
 					global.coinCount -= itemPrice;
+					global.coinCountRegional -= itemPrice;
 					bonked = true;
 					
 					if instance_exists(obj_shopItem_parachute) {

@@ -19,6 +19,8 @@ with obj_trigger_dialogue allowSpecialDialogue = true;
 
 audio_play_sound(sfx_pause, 1, 0, 1, 0, 2.0);
 
+awardPlayerAchievement("MINIGAME_FOREST");
+
 instance_destroy(instance_nearest(x,y,obj_enemy));
 //instance_destroy(obj_enemy_beetle_dead);
 instance_destroy();

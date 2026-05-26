@@ -1856,6 +1856,38 @@ function showGlitchDemoVariables() {
 		show_debug_message("channelDispersionIncreaseAmount: " + string(channelDispersionIncreaseAmount))
 		show_debug_message("---------------------------------------------------------------------------------------------" )
 		
+	}
+
+}
+
+function awardPlayerAchievement(_name) { //_name = String
+
+	if global.steamTracking {
+	
+		steam_update();
+		steam_init();
+		steam_update();
+	
+		if steam_stats_ready() {
+		
+			if !steam_get_achievement(_name) {
+			
+				steam_set_achievement(_name);
+				show_debug_message("Achievement awarded: " + string(_name))
+			
+			} else {
+			
+				show_debug_message("Achievement has already been awarded: " + string(_name))
+			
+			}
+			
+			steam_update();
+		
+		}
+	
+	} else {
+	
+		show_debug_message("Achievement awarded (test): " + string(_name))
 	
 	}
 

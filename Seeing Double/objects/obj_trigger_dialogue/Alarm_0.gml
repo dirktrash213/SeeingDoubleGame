@@ -466,6 +466,8 @@ if variableTextDisplayDuration {
 	      
 			instance_create_layer(obj_npc_minerGreenDad.x, obj_npc_minerGreenDad.y - 24, "Instances", obj_pickup_cherry);
 			
+			awardPlayerAchievement("SAVED_MINER");
+			
 			global.savedGreenMiner = true;
 			
 			alarm[0] = textDisplayDuration;
