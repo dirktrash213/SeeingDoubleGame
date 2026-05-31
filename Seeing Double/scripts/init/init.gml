@@ -1,9 +1,9 @@
 global.devTools = false;
 
-global.steamTracking = true; //ENABLE FOR DEMO AND EA RELEASE
+global.steamTracking = false; //ENABLE FOR DEMO AND EA RELEASE
 //global.steamStatsReady = false;
 
-global.demoBuild = true; //Determines if this build is the demo version vs full version
+global.demoBuild = false; //Determines if this build is the demo version vs full version
 
 window_set_caption("Seeing Double");
 

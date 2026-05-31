@@ -31,6 +31,12 @@ if patterPlayerIsPresent() {
 			playerDetected = true;
 			path_end();
 			//show_debug_message("player detected!!")
+			
+			if instance_exists(obj_interactable_caveBoulder) {
+			
+				destroyForestBoulder();
+		
+			}
 		
 		} 
 

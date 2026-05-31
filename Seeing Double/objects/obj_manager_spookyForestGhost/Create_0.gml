@@ -5,23 +5,23 @@ timerActive = false;
 ambienceFadingIn = false;
 ambienceFadingInPoint = 200;
 ambienceFadingIn2 = false;
-ambienceFadingIn2Point = 1200;
+ambienceFadingIn2Point = 600; //1200
 ambienceFadingIn3 = false;
-ambienceFadingIn3Point = 2400;
+ambienceFadingIn3Point = 1200; //2400
 
 
 glitchesAppearing = false;
-glitchesAppearingPoint = 2400; //600
+glitchesAppearingPoint = 1200; //2400
 
 
 textAppearing = false;
-textAppearingPoint = 3600; //900
+textAppearingPoint = 1800; //3600
 
 textFinishedAppearing = false;
 textDuration = 300;
 
 ghostArriving = false;
-ghostArrivingPoint = 4200; //1200
+ghostArrivingPoint = 2400; //4200
 
 
 
