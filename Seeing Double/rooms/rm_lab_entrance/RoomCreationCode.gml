@@ -32,3 +32,16 @@ show_debug_message("Player collected this many coins in cave: " + string(global.
 
 global.coinCountRegional = 0;
 global.cherryCountRegional = 0;
+
+//if global.gameTimeMilliseconds <= global.speedrunGoalCave && !global.disableSpeedrunCave {
+if global.gameTimeMillisecondsRegional <= global.speedrunGoalCave && !global.disableSpeedrunCave {
+
+	awardPlayerAchievement("SPEEDRUN_CAVE");
+
+}
+
+show_debug_message("Milliseconds so far: " + string(global.gameTimeMilliseconds))
+show_debug_message("Milliseconds needed to beat cave: " + string(global.gameTimeMillisecondsRegional))
+show_debug_message("Milliseconds needed for cave goal: " + string(global.speedrunGoalCave))
+
+global.gameTimeMillisecondsRegional = 0;

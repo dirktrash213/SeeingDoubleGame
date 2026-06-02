@@ -5,6 +5,18 @@ input_check_source(); //Check if player's most recent input is keyboard or gamep
 //show_debug_message("portals active: " + string(global.portalsActive))
 //show_debug_message("global.patterOffsetY: " + string(global.patterOffsetY))
 
+if !global.paused {
+	
+    global.gameTimeMilliseconds += delta_time / 1000; 
+    global.gameTimeMilliseconds = floor(global.gameTimeMilliseconds);
+	
+    global.gameTimeMillisecondsRegional += delta_time / 1000; 
+    global.gameTimeMillisecondsRegional = floor(global.gameTimeMillisecondsRegional);
+   
+}
+
+calculateElapsedTime(); //Calculate speedrun timer
+
 #region Audio
 
 audio_master_gain(global.volumeMaster/10);

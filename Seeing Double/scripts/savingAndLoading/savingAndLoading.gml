@@ -38,6 +38,11 @@ function saveSettings() {
         scoreUIenabled: global.scoreUIenabled,
         assistMode: global.assistMode,
         screenShake: global.screenShake,
+        displayGameTime: global.displayGameTime,
+        disableSpeedrunForest: global.disableSpeedrunForest,
+        disableSpeedrunCave: global.disableSpeedrunCave,
+        disableSpeedrunLab: global.disableSpeedrunLab,
+        disableSpeedrunSewer: global.disableSpeedrunSewer,
  
     };
 	
@@ -89,6 +94,11 @@ function loadSettings() { //Load player's audio, visual, and gameplay settings o
         global.scoreUIenabled   = _s[$ "scoreUIenabled"] ?? false;
         global.assistMode   = _s[$ "assistMode"] ?? false;
         global.screenShake   = _s[$ "screenShake"] ?? false;
+        global.displayGameTime   = _s[$ "displayGameTime"] ?? true; //TEMP, set to false
+        global.disableSpeedrunForest   = _s[$ "disableSpeedrunForest"] ?? true;
+        global.disableSpeedrunCave   = _s[$ "disableSpeedrunCave"] ?? true;
+        global.disableSpeedrunLab   = _s[$ "disableSpeedrunLab"] ?? true;
+        global.disableSpeedrunSewer   = _s[$ "disableSpeedrunSewer"] ?? true;
 
     }
 	

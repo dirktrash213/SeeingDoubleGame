@@ -60,3 +60,16 @@ show_debug_message("Player collected this many coins in forest: " + string(globa
 
 global.coinCountRegional = 0;
 global.cherryCountRegional = 0;
+
+//if global.gameTimeMilliseconds <= global.speedrunGoalForest && !global.disableSpeedrunForest {
+if global.gameTimeMillisecondsRegional <= global.speedrunGoalForest && !global.disableSpeedrunForest {
+
+	awardPlayerAchievement("SPEEDRUN_FOREST");
+
+}
+
+show_debug_message("Milliseconds so far: " + string(global.gameTimeMilliseconds))
+show_debug_message("Milliseconds to beat forest: " + string(global.gameTimeMillisecondsRegional))
+show_debug_message("Milliseconds needed for forest goal: " + string(global.speedrunGoalForest))
+
+global.gameTimeMillisecondsRegional = 0;

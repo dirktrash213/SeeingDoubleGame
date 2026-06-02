@@ -29,8 +29,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Regular",
-    "path": "folders/Sprites/Achievement Icons/Regular.yy",
+    "name": "Achievement Icons",
+    "path": "folders/Sprites/Achievement Icons.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

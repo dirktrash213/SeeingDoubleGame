@@ -1,13 +1,14 @@
 global.devTools = false;
 
-global.steamTracking = false; //ENABLE FOR DEMO AND EA RELEASE
+global.steamTracking = false; //ENABLE FOR EVERY DEMO AND EA RELEASE
 //global.steamStatsReady = false;
 
 global.demoBuild = false; //Determines if this build is the demo version vs full version
 
 window_set_caption("Seeing Double");
 
-global.speedrunTimer = 0;
+global.speedrunTimer = 0; //OLD
+
 
 global.coinCount = 0;
 global.cherryCount = 0;
@@ -171,5 +172,18 @@ global.foundSunflower = false;
 global.foundTulip = false;
 
 global.caughtByCaveGhostAmount = 0;
+
+global.gameTimeMilliseconds = 0;
+global.gameTimeMillisecondsRegional = 0;
+global.gameTimeString = "";
+global.displayGameTime = true;
+
+global.speedrunGoalForest = 900000; //15 minutes        600000 = 10 minutes
+global.speedrunGoalCave = 1200000; //20 minutes
+
+global.disableSpeedrunForest = false;
+global.disableSpeedrunCave = false;
+global.disableSpeedrunLab = false;
+global.disableSpeedrunSewer = false;
 
 // r/playtester 

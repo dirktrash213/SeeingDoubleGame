@@ -1,7 +1,26 @@
-if global.playerControl && !global.paused && !global.cutsceneActive && global.scoreUIenabled {
+//draw_set_color(c_white);
+//draw_text(32, 32, "Elapsed Time: " + global.gameTimeString);
+
+if global.displayGameTime {
 
 	var _oldFont = draw_get_font();
+	draw_set_font(font_scoreUI);
 	
+	var _offsetY = 0;
+	
+	//if global.playerControl && !global.paused && !global.cutsceneActive && global.scoreUIenabled _offsetY = 70;
+	if global.playerControl && !global.cutsceneActive && global.scoreUIenabled _offsetY = 70;
+	
+	drawWhiteTextWithBlackOutline(0, _offsetY, "[spr_icon_clock_x2]" + global.gameTimeString);
+	
+	draw_set_font(_oldFont);
+
+}
+
+//if global.playerControl && !global.paused && !global.cutsceneActive && global.scoreUIenabled {
+if global.playerControl && !global.cutsceneActive && global.scoreUIenabled {
+
+	var _oldFont = draw_get_font();
 	draw_set_font(font_scoreUI);
 	
 	var _parachuteString = "";

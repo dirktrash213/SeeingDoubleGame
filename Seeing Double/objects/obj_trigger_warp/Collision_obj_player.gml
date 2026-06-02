@@ -77,6 +77,8 @@ if room == rm_hills_warpRoom && !ignoreDoorWarp {
 		global.doubleJumpActive = true;
 		global.escapedForestGhost = true;
 		
+		global.disableSpeedrunForest = true;
+		
 	}
 	
 	if targetRoom == rm_lab_entrance {
@@ -88,6 +90,8 @@ if room == rm_hills_warpRoom && !ignoreDoorWarp {
 		global.groundPoundActive = true;
 		global.escapedForestGhost = true;
 		global.caveChaseOver = true;
+		
+		global.disableSpeedrunCave = true;
 		
 	}
 
