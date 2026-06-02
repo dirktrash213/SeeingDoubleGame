@@ -66,6 +66,8 @@ if room == rm_hills_warpRoom && !ignoreDoorWarp {
 	if targetRoom == rm_forest_splitScreenTutorial {
 	
 		global.cherryCount = 3;
+		
+		global.disableSpeedrunForest = true;
 	
 	}
 	

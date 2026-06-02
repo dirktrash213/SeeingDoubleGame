@@ -68,8 +68,11 @@ if global.gameTimeMillisecondsRegional <= global.speedrunGoalForest && !global.d
 
 }
 
-show_debug_message("Milliseconds so far: " + string(global.gameTimeMilliseconds))
-show_debug_message("Milliseconds to beat forest: " + string(global.gameTimeMillisecondsRegional))
+show_debug_message("Total milliseconds so far: " + string(global.gameTimeMilliseconds))
+show_debug_message("Milliseconds for this region: " + string(global.gameTimeMillisecondsRegional))
 show_debug_message("Milliseconds needed for forest goal: " + string(global.speedrunGoalForest))
 
+if !global.disableSpeedrunForest displayRegionalTime();
+
 global.gameTimeMillisecondsRegional = 0;
+global.disableSpeedrunForest = true;

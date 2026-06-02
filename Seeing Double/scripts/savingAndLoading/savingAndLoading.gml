@@ -39,11 +39,7 @@ function saveSettings() {
         assistMode: global.assistMode,
         screenShake: global.screenShake,
         displayGameTime: global.displayGameTime,
-        disableSpeedrunForest: global.disableSpeedrunForest,
-        disableSpeedrunCave: global.disableSpeedrunCave,
-        disableSpeedrunLab: global.disableSpeedrunLab,
-        disableSpeedrunSewer: global.disableSpeedrunSewer,
- 
+       
     };
 	
     var _dataJsonString = json_stringify(global.settingsData);
@@ -94,12 +90,8 @@ function loadSettings() { //Load player's audio, visual, and gameplay settings o
         global.scoreUIenabled   = _s[$ "scoreUIenabled"] ?? false;
         global.assistMode   = _s[$ "assistMode"] ?? false;
         global.screenShake   = _s[$ "screenShake"] ?? false;
-        global.displayGameTime   = _s[$ "displayGameTime"] ?? true; //TEMP, set to false
-        global.disableSpeedrunForest   = _s[$ "disableSpeedrunForest"] ?? true;
-        global.disableSpeedrunCave   = _s[$ "disableSpeedrunCave"] ?? true;
-        global.disableSpeedrunLab   = _s[$ "disableSpeedrunLab"] ?? true;
-        global.disableSpeedrunSewer   = _s[$ "disableSpeedrunSewer"] ?? true;
-
+        global.displayGameTime   = _s[$ "displayGameTime"] ?? false;
+       
     }
 	
 }
@@ -244,7 +236,14 @@ function saveGame() {
     
     // 2. Pack all global variables into a "stats" struct within gameData
     global.gameData.stats = {
-        coinCount: global.coinCount,
+		
+        gameTimeMilliseconds: global.gameTimeMilliseconds,
+        gameTimeMillisecondsRegional: global.gameTimeMillisecondsRegional,
+        disableSpeedrunForest: global.disableSpeedrunForest,
+        disableSpeedrunCave: global.disableSpeedrunCave,
+        disableSpeedrunLab: global.disableSpeedrunLab,
+        disableSpeedrunSewer: global.disableSpeedrunSewer,
+		coinCount: global.coinCount,
         coinCountRegional: global.coinCountRegional,
         cherryCount: global.cherryCount,
         cherryCountRegional: global.cherryCountRegional,
@@ -271,9 +270,11 @@ function saveGame() {
 		storedCoins: global.storedCoins,
 		storedCherries: global.storedCherries,
 		savedGreenMiner: global.savedGreenMiner,
-		
-		
-		
+
+
+
+
+
 		
 		//dialogueVariables: global.dialogueVariables,
 		
@@ -306,6 +307,12 @@ function loadGame() {
         // If the key doesn't exist in an old save, it uses the ?? default value
         var _s = _loadData.stats;
         
+		global.gameTimeMilliseconds   = _s[$ "gameTimeMilliseconds"] ?? 0;
+        global.gameTimeMillisecondsRegional   = _s[$ "gameTimeMillisecondsRegional"] ?? 0;
+        global.disableSpeedrunForest   = _s[$ "disableSpeedrunForest"] ?? false;
+        global.disableSpeedrunCave   = _s[$ "disableSpeedrunCave"] ?? false;
+        global.disableSpeedrunLab   = _s[$ "disableSpeedrunLab"] ?? false;
+        global.disableSpeedrunSewer   = _s[$ "disableSpeedrunSewer"] ?? false;
         global.coinCount           = _s[$ "coinCount"] ?? 0;
         global.coinCountRegional   = _s[$ "coinCountRegional"] ?? 0;
         global.cherryCount         = _s[$ "cherryCount"] ?? 0;
@@ -327,7 +334,7 @@ function loadGame() {
         global.crouchJumpActive    = _s[$ "crouchJumpActive"] ?? false;
         global.foundSunflower      = _s[$ "foundSunflower"] ?? false;
         global.foundTulip          = _s[$ "foundTulip"] ?? false;
-        global.roomToSpawnIn       = _s[$ "roomToSpawnIn"] ?? "rm_titleScreen"; // Replace with your actual starting room name
+        global.roomToSpawnIn       = _s[$ "roomToSpawnIn"] ?? "rm_titleScreen";
 		global.caughtByCaveGhostAmount    = _s[$ "caughtByCaveGhostAmount"] ?? 0;
         global.caveChaseOver    = _s[$ "caveChaseOver"] ?? false;
         global.storedCoins      = _s[$ "storedCoins"] ?? 0;

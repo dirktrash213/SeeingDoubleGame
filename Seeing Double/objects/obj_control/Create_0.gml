@@ -40,6 +40,9 @@ scammedSFXpitchDecreaseAmount = 0.001;
 
 canDrawDivider = true;
 
+showingBlinkingSpeedrunText = false;
+blinkingSpeedrunText = "";
+
 //transparentSecretLayer = false;
 //layer_alpha_settings("SecretTiles");
 

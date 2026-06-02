@@ -176,7 +176,8 @@ global.caughtByCaveGhostAmount = 0;
 global.gameTimeMilliseconds = 0;
 global.gameTimeMillisecondsRegional = 0;
 global.gameTimeString = "";
-global.displayGameTime = true;
+global.gameTimeStringRegional = "";
+global.displayGameTime = false;
 
 global.speedrunGoalForest = 900000; //15 minutes        600000 = 10 minutes
 global.speedrunGoalCave = 1200000; //20 minutes

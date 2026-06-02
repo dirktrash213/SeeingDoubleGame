@@ -40,8 +40,13 @@ if global.gameTimeMillisecondsRegional <= global.speedrunGoalCave && !global.dis
 
 }
 
-show_debug_message("Milliseconds so far: " + string(global.gameTimeMilliseconds))
-show_debug_message("Milliseconds needed to beat cave: " + string(global.gameTimeMillisecondsRegional))
+show_debug_message("global.disableSpeedrunCave: " + string(global.disableSpeedrunCave))
+
+show_debug_message("Total milliseconds so far: " + string(global.gameTimeMilliseconds))
+show_debug_message("Milliseconds for this region: " + string(global.gameTimeMillisecondsRegional))
 show_debug_message("Milliseconds needed for cave goal: " + string(global.speedrunGoalCave))
 
+if !global.disableSpeedrunCave displayRegionalTime();
+
 global.gameTimeMillisecondsRegional = 0;
+global.disableSpeedrunCave = true;

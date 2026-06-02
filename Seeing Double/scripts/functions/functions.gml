@@ -144,15 +144,17 @@ function drawPauseMenu() {
 						var _backString = "Back";
 						var _fullscreenString = "\nFullscreen";
 						var _scoreUIstring = global.scoreUIenabled ? "\nShow score UI: ON" : "\nShow score UI: OFF";
+						var _timerString = global.displayGameTime ? "\nShow timer: ON" : "\nShow timer: OFF";
 	
 						if pauseMenuPosition == 0 _backString = "[wave]Back[/wave]";
 						if pauseMenuPosition == 1 _fullscreenString = "[wave]\nFullscreen[/wave]";
 						if pauseMenuPosition == 2 _scoreUIstring = global.scoreUIenabled ? "[wave]\nShow score UI: ON[/wave]" : "[wave]\nShow score UI: OFF[/wave]";
+						if pauseMenuPosition == 3 _timerString = global.displayGameTime ? "[wave]\nShow timer: ON[/wave]" : "[wave]\nShow timer: OFF[/wave]";
 				
 						var _offsetX = 0;
 						var _offsetY = _masterOffsetY;
 	
-						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _fullscreenString + _scoreUIstring);
+						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _fullscreenString + _scoreUIstring + _timerString);
 				
 					} break;
 					
@@ -1953,9 +1955,67 @@ function calculateElapsedTime() {
 	//var _time_string = _str_hours + ":" + _str_minutes + ":" + _str_seconds + "." + _str_ms;
 	global.gameTimeString = _str_hours + ":" + _str_minutes + ":" + _str_seconds + "." + _str_ms;
 
-	// 5. Draw it to the screen
-	//draw_set_color(c_white);
-	//draw_text(32, 32, "Elapsed Time: " + _time_string);
-	//draw_text(32, 32, "Elapsed Time: " + global.gameTimeString);
+	
+}
 
+function calculateRegionalTime() {
+
+	// 1. Get the total milliseconds elapsed since launch
+	var _total_ms = global.gameTimeMillisecondsRegional;
+
+	// 2. Break it down into time units using div and mod
+	var _hours   = _total_ms div 3600000;
+	var _minutes = (_total_ms div 60000) mod 60;
+	var _seconds = (_total_ms div 1000) mod 60;
+	var _ms      = _total_ms mod 1000;
+
+	// 3. Legacy Formatting: Convert to strings and manually pad with zeroes
+
+	// Pad Hours (e.g., 5 -> "05")
+	var _str_hours = string(_hours);
+	if (_hours < 10) _str_hours = "0" + _str_hours;
+
+	// Pad Minutes (e.g., 9 -> "09")
+	var _str_minutes = string(_minutes);
+	if (_minutes < 10) _str_minutes = "0" + _str_minutes;
+
+	// Pad Seconds (e.g., 2 -> "02")
+	var _str_seconds = string(_seconds);
+	if (_seconds < 10) _str_seconds = "0" + _str_seconds;
+
+	// Pad Milliseconds (Needs to handle 3 digits: e.g., 5 -> "005", 45 -> "045")
+	var _str_ms = string(_ms);
+	if (_ms < 10) {
+	    _str_ms = "00" + _str_ms;
+	} else if (_ms < 100) {
+	    _str_ms = "0" + _str_ms;
+	}
+
+	// 4. Combine into a single string
+	//var _time_string = _str_hours + ":" + _str_minutes + ":" + _str_seconds + "." + _str_ms;
+	global.gameTimeStringRegional = _str_hours + ":" + _str_minutes + ":" + _str_seconds + "." + _str_ms;
+
+
+
+}
+
+function displayRegionalTime() {
+
+	if global.displayGameTime {
+	
+		scribble_anim_blink(30, 30, 0);
+	
+		calculateRegionalTime();
+
+		with obj_control {
+	
+			//blinkingSpeedrunText = "[blink][spr_icon_clock_x2]" + global.gameTimeStringRegional;
+			blinkingSpeedrunText = "[spr_icon_clock_x2]" + global.gameTimeStringRegional;
+			showingBlinkingSpeedrunText = true;
+			alarm[5] = 600;
+	
+		}
+	
+	}
+	
 }

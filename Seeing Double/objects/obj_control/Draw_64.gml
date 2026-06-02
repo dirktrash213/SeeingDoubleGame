@@ -13,6 +13,8 @@ if global.displayGameTime {
 	
 	drawWhiteTextWithBlackOutline(0, _offsetY, "[spr_icon_clock_x2]" + global.gameTimeString);
 	
+	if showingBlinkingSpeedrunText drawWhiteTextWithBlackOutline(0, _offsetY + 30, blinkingSpeedrunText);
+	
 	draw_set_font(_oldFont);
 
 }
