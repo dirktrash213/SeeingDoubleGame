@@ -60,6 +60,7 @@ if path_position == 1.0 {
 		if currentMinecart == _id {
 	
 			ridingMinecart = false;
+			//adjustingMinecartX = false;
 			currentMinecart = noone;
 			
 			sprite_set_offset(spr_pitter_jump, 8, 16); 

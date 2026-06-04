@@ -140,6 +140,7 @@ waterfallVFXspawnRate = 8;
 
 ridingMinecart = false;
 currentMinecart = noone;
+//adjustingMinecartX = false;
 
 xSpeed = 0;
 ySpeed = 0;

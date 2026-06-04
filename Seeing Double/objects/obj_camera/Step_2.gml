@@ -102,6 +102,12 @@ if pitterPlayerIsPresent() {
 		
 	}
 	
+	if cameraLockedForward {
+	
+		cameraLeadingX = cameraLeadingXMinecartMax;
+	
+	}
+	
 	if global.verticalLevel {
 	
 		if obj_player_pitter.crouching {
@@ -263,6 +269,12 @@ if patterPlayerIsPresent() {
 		
 		}
 		
+	}
+	
+	if cameraLockedForward {
+	
+		cameraLeadingX = cameraLeadingXMinecartMax;
+	
 	}
 	
 	if !global.verticalLevel {

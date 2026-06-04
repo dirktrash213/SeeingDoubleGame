@@ -12,6 +12,7 @@ if global.playerDefeated || global.paused {
 		//ySpeed = -3;
 		ySpeed = 0;
 		ridingMinecart = false;
+		//adjustingMinecartX = false;
 		currentMinecart = noone;
 		climbing = false;
 		
@@ -177,6 +178,7 @@ if ridingMinecart {
 		y = _wallSemiSolid.y-2;
 	
 		ridingMinecart = false;
+		//adjustingMinecartX = false;
 		currentMinecart = noone;
 		
 		sprite_set_offset(spr_pitter_jump, 8, 16); 
@@ -317,7 +319,10 @@ if ridingMinecart {
 	sprite_set_offset(spr_pitter_scared_jump, 8, 16); 
 	sprite_set_offset(spr_patter_scared_jump, 8, 16);
 	
+	
+	
 	x = currentMinecart.x;
+	
 	y += ySpeed;
 	
 	y = clamp(y, -1000, _maxY);

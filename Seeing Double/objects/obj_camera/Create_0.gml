@@ -25,6 +25,7 @@ cameraLeadingXMinecartMax = 80; //How far the camera leads the player during min
 cameraLeadAdjustSpeedX = 0.75; //How fast the camera moves when leading the player
 cameraLeadAdjustSpeedMinecartX = 1.5; //How fast the camera moves when leading the player during minecart rides
 
+cameraLockedForward = false; //Check if camera is locked forward for minecart segments
 
 pitterCameraOffsetY = 0;
 

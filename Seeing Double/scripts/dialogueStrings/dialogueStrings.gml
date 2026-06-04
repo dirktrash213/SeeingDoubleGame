@@ -189,7 +189,9 @@ global.dialogueStringArrays = {
 		"[shake]STONE AND ROCK, BROTHER!!",
 		"[shake]ROCK AND ROLL, BROTHER!!",
 		//"Personally I'm more of a free-form jazz aficionado.",
-		"I hate mining.",
+		//"I hate mining.",
+		//"I hate mining, I hate these idiots, and I hate you.",
+		"I hate all of you.",
 	
 	],
 	
