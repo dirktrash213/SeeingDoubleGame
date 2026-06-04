@@ -5,6 +5,7 @@ if audio_is_playing(amb_caveWaterflow) audio_stop_sound(amb_caveWaterflow);
 if audio_is_playing(amb_caveWaterflow2) audio_stop_sound(amb_caveWaterflow2);
 if audio_is_playing(obj_control.bgmCave) audio_stop_sound(obj_control.bgmCave);
 if audio_is_playing(obj_control.bgmCaveRestArea) audio_stop_sound(obj_control.bgmCaveRestArea);
+if !audio_is_playing(obj_control.bgmSecretFlowerArea) audio_play_sound(obj_control.bgmSecretFlowerArea, 1, true);
 
 global.verticalLevel = false;
 global.customLevel = false;

@@ -57,11 +57,19 @@ global.dialogueStringArrays = {
 	
 		"Log Entry No. {data_corrupt} \nTreatment failed. Again. Nothing I try works. Nothing.",
 		"At this rate my body will almost certainly {data_corrupt} before I succeed.",
-		//"There is only one other option now. I don't like to gamble, but what choice do I have?",
 		"There is only one other option now. I don't like to gamble, but what choice do I have?",
+		//"There is only one other option now. I don't like to gamble, but I'm out of time.",
 		"A lab in a cave. What an assinine idea that turned out to be.",
 		//"A lab in a cave. Turned out to be as assinine in practice as it is cliche.",
-		"I just wish I could say sorry. [slant]-S",
+		//"I just wish I could say sorry. [slant]-S",
+		"I just wish I could say sorry for being such a total failure. [slant]-S",
+		//"I just wish I could say sorry for being such a total failure.",
+		"P.S. If anyone is reading this, [slant]GET OUT OF HERE RIGHT NOW. IT ISN'T SAFE.",
+		//"P.S. If anyone is reading this, [slant]GET THE HELL OUT OF HERE. IT ISN'T SAFE.",
+		//"P.S. If anyone is reading this, [slant]GET THE PHI OUT OF HERE. IT ISN'T SAFE.",
+		//"P.S. If anyone is reading this, [slant]GET FAR AWAY FROM HERE RIGHT NOW. IT ISN'T SAFE.",
+		//"I just wish I could say sorry for being such a total failure all my life. [slant]-S",
+		//"If I could say sorry, I'd say it for the rest of my life. [slant]-S",
 	
 	],
 	

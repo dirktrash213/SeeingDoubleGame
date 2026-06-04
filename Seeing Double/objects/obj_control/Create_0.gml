@@ -53,6 +53,7 @@ blinkingSpeedrunText = "";
 //bgmCave = bgm_caveDwellers;
 
 bgmForest = bgm_forestNightThemeLoop;
+bgmSecretFlowerArea = bgm_spring;
 //bgmForest = bgm_relax_in_the_forest_background;
 //bgmCave = bgm_in_the_cave;
 bgmCave = bgm_dramaticCaveTheme;

@@ -8,7 +8,7 @@ if !global.dialogueVariables.talkedToSmallGhost {
 	dialogueString[0] = "Have you seen the ghost that haunts these woods?"
 	dialogueString[1] = "I hear she comes around this area on occasion."
 	dialogueString[2] = "Rumors, to be sure. But... to see a real ghost!"
-	dialogueString[3] = "They say she has a stange facination with flowers."
+	dialogueString[3] = "They say she has a stange fascination with flowers."
 	dialogueString[4] = "I would give her some, if I had the right ones."
 	dialogueString[5] = "If you see her, would you do so?"
 

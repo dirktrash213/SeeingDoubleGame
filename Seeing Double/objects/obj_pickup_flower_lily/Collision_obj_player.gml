@@ -6,6 +6,9 @@ global.foundLily = true;
 
 audio_play_sound(sfx_collect_cherry, 1, 0);
 audio_play_sound(sfx_magical_transition, 1, 0);
+audio_sound_gain(obj_control.bgmSecretFlowerArea, 0.2, 500);
+
+obj_control.alarm[6] = 450;
 
 awardPlayerAchievement("LILY");
 
