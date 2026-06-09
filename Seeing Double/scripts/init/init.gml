@@ -1,7 +1,6 @@
-global.devTools = false;
+global.devTools = false; //DISABLE FOR EVERY RELEASE
 
 global.steamTracking = false; //ENABLE FOR EVERY DEMO AND EA RELEASE
-//global.steamStatsReady = false;
 
 global.demoBuild = false; //Determines if this build is the demo version vs full version
 
