@@ -951,7 +951,11 @@ function detectMiscObjectDuringGroundPound(_object) {
 
 	if _object != noone && groundPoundFalling {
 	
-		if _object.object_index == obj_interactable_switch_groundPound {
+		if _object.object_index == obj_interactable_switch_groundPound 
+		|| _object.object_index == obj_interactable_switch_groundPound_1 
+		|| _object.object_index == obj_interactable_switch_groundPound_2 
+		|| _object.object_index == obj_interactable_switch_groundPound_3 
+		|| _object.object_index == obj_interactable_switch_groundPound_4 {
 			
 			if !_object.inactive _object.pressed = true;
 			

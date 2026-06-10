@@ -20,13 +20,21 @@ if pressed && !triggered {
 
 	audio_play_sound(sfx_blip, 1, false);
 
-	with obj_interactable_labDoor {
+	//with obj_interactable_labDoor {
+	//
+	//	lifting = true;
+	//	alarm[0] = 60;
+	//	audio_play_sound(sfx_mechanicalDoor, 1, false);
+	//
+	//}
 	
-		lifting = true;
-		alarm[0] = 60;
-		audio_play_sound(sfx_mechanicalDoor, 1, false);
+	if switchType == SWITCH_TYPE.SPIKE_TOGGLE_TIMED {
+	
+		show_debug_message("switch spike toggle on")
+	
 	
 	}
+	
 	
 	if room == rm_cave_chase_longRun {
 	
@@ -36,6 +44,14 @@ if pressed && !triggered {
 			
 			lookingAtPlayer = true;
 			
+		}
+		
+		with obj_interactable_labDoor {
+	
+			lifting = true;
+			alarm[0] = 60;
+			audio_play_sound(sfx_mechanicalDoor, 1, false);
+	
 		}
 		
 		with obj_trigger_dialogue {
