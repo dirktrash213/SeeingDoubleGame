@@ -1385,7 +1385,7 @@
     {"name":"scribble_super_glyph_copy_all","order":3,"path":"scripts/scribble_super_glyph_copy_all/scribble_super_glyph_copy_all.yy",},
     {"name":"__scribble_gen_8_position_glyphs","order":9,"path":"scripts/__scribble_gen_8_position_glyphs/__scribble_gen_8_position_glyphs.yy",},
     {"name":"spr_background_houseGandalfTemplate","order":48,"path":"sprites/spr_background_houseGandalfTemplate/spr_background_houseGandalfTemplate.yy",},
-    {"name":"obj_interactable_hazard_retractable","order":60,"path":"objects/obj_interactable_hazard_retractable/obj_interactable_hazard_retractable.yy",},
+    {"name":"obj_interactable_hazard_spikes_retractable","order":60,"path":"objects/obj_interactable_hazard_spikes_retractable/obj_interactable_hazard_spikes_retractable.yy",},
     {"name":"sfx_glitch_loop2","order":17,"path":"sounds/sfx_glitch_loop2/sfx_glitch_loop2.yy",},
     {"name":"Background_5","order":4,"path":"sprites/Background_5/Background_5.yy",},
     {"name":"spr_interactable_bird_idle","order":1,"path":"sprites/spr_interactable_bird_idle/spr_interactable_bird_idle.yy",},

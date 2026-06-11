@@ -1548,7 +1548,7 @@
     {"id":{"name":"__scribble_gen_8_position_glyphs","path":"scripts/__scribble_gen_8_position_glyphs/__scribble_gen_8_position_glyphs.yy",},},
     {"id":{"name":"spr_background_houseGandalfTemplate","path":"sprites/spr_background_houseGandalfTemplate/spr_background_houseGandalfTemplate.yy",},},
     {"id":{"name":"FX036_01","path":"sprites/FX036_01/FX036_01.yy",},},
-    {"id":{"name":"obj_interactable_hazard_retractable","path":"objects/obj_interactable_hazard_retractable/obj_interactable_hazard_retractable.yy",},},
+    {"id":{"name":"obj_interactable_hazard_spikes_retractable","path":"objects/obj_interactable_hazard_spikes_retractable/obj_interactable_hazard_spikes_retractable.yy",},},
     {"id":{"name":"sfx_glitch_loop2","path":"sounds/sfx_glitch_loop2/sfx_glitch_loop2.yy",},},
     {"id":{"name":"scribble_add_macro","path":"scripts/scribble_add_macro/scribble_add_macro.yy",},},
     {"id":{"name":"Background_5","path":"sprites/Background_5/Background_5.yy",},},

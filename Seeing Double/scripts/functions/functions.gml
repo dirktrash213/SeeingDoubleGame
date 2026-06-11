@@ -402,7 +402,7 @@ function startNewGame() {
 
 
 }
-//@
+
 function spawnPitter() {
 	
 	//show_debug_message("Respawning")
@@ -946,7 +946,7 @@ function shakeScreen(_mag, _frames) {
         }
     }
 }
-
+//@
 function detectMiscObjectDuringGroundPound(_object) {
 
 	if _object != noone && groundPoundFalling {
@@ -1409,7 +1409,7 @@ function cancelGroundPound() {
 	}
 
 }
-//@
+
 function setUpSpookyGhostAudio() {
 
 	audio_play_sound(bgm_ghostlyReverberations, 1, 1);
@@ -1715,7 +1715,7 @@ function spawnGoldenParachute() {
 	}
 
 }
-//@
+
 function caughtByCaveGhost() {
 
 	if global.playerDefeated exit;

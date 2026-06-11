@@ -9,3 +9,4 @@ if attachedToPlatform {
 
 
 image_index = active ? 0 : 1;
+
