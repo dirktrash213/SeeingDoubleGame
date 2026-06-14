@@ -295,6 +295,8 @@ if variableTextDisplayDuration {
 	      
 			alarm[0] = textDisplayDuration;
 			obj_npc_scammer_mines.sprite_index = spr_npc_scammer_laugh;
+			
+			audio_play_sound(sfx_scammerLaugh, 1, false);
 		
 		} break;
 		
