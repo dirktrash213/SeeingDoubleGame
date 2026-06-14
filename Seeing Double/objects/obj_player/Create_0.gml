@@ -142,6 +142,8 @@ ridingMinecart = false;
 currentMinecart = noone;
 //adjustingMinecartX = false;
 
+//onConveyor = false;
+
 xSpeed = 0;
 ySpeed = 0;
 

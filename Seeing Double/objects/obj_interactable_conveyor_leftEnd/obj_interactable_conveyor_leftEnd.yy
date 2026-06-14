@@ -1,17 +1,17 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_block_wall_conveyor_rightEnd",
+  "name": "obj_interactable_conveyor_leftEnd",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Walls and Platforms",
-    "path": "folders/Objects/Walls and Platforms.yy",
+    "name": "Interactables",
+    "path": "folders/Objects/Interactables.yy",
   },
   "parentObjectId": {
-    "name": "obj_block_wall_conveyor",
-    "path": "objects/obj_block_wall_conveyor/obj_block_wall_conveyor.yy",
+    "name": "obj_interactable_conveyor",
+    "path": "objects/obj_interactable_conveyor/obj_interactable_conveyor.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_background_conveyor_right",
-    "path": "sprites/spr_background_conveyor_right/spr_background_conveyor_right.yy",
+    "name": "spr_background_conveyor_left",
+    "path": "sprites/spr_background_conveyor_left/spr_background_conveyor_left.yy",
   },
   "spriteMaskId": null,
   "visible": true,

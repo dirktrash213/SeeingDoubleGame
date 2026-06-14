@@ -832,7 +832,7 @@ if ySpeed >= 0 && !place_meeting(x + xSpeed, y + 1, obj_block_wall) && place_mee
 
 
 //Move X
-
+//@
 if !global.cutsceneActive {
 	
 	x += xSpeed;
@@ -1161,6 +1161,10 @@ if place_meeting(x, y + ySpeed, obj_block_wall) && canCollide {
 	
 
 }
+//@
+
+//Check if on conveyor
+conveyorLogic();
 
 //Check if on ground
 if ySpeed >= 0 && place_meeting(x, y + 1, obj_block_wall) {
@@ -1478,7 +1482,7 @@ if place_meeting(x, y, obj_block_wall)
 	crushTimer = 0;
 
 }
-
+//@
 //Breakable floor logic
 
 // 1. Create a temporary list to hold the results
@@ -1538,13 +1542,7 @@ if _switchBlock != noone {
 	
 }
 
-//var _barrel = instance_place(x, y, obj_scienceJuice_doubleJump);
-//if _barrel != noone {
-//
-//	//x = _barrel.x + 8;
-//	//y = _switchBlock.y + 22;
-//	
-//}
+
 
 
 if !global.runModeIsToggle { //"Toggle run" mode off

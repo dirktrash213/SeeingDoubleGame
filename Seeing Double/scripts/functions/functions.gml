@@ -2023,3 +2023,16 @@ function displayRegionalTime() {
 	}
 	
 }
+
+function conveyorLogic() {
+
+	var _conveyor = instance_place(x, y+1, obj_interactable_conveyor);
+	
+	if _conveyor == noone exit;
+	
+	if _conveyor.facingRight x += _conveyor.conveyorSpeed;
+	if !_conveyor.facingRight x -= _conveyor.conveyorSpeed;
+	
+	
+
+}
