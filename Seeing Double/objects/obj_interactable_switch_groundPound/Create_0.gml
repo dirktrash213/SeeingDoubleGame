@@ -5,5 +5,13 @@ triggered = false;
 
 
 
+//switchType
+//IDnumber
+//timerDuration
+//newSpeed
+//newFacingRight
+
+
+
 
 

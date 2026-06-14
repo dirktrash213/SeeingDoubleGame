@@ -11,3 +11,5 @@ if facingRight {
 	if object_index == obj_interactable_conveyor_rightEnd sprite_index = spr_background_conveyor_right_reverse;
 
 }
+
+image_speed = conveyorSpeed/2;

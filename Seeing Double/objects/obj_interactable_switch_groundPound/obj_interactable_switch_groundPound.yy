@@ -31,6 +31,8 @@
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"switchType","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"SWITCH_TYPE.NONE","varType":1,},
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"IDnumber","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"0","varType":1,},
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"timerDuration","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"300","varType":1,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"newSpeed","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"5","varType":0,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"newFacingRight","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"0","varType":3,},
   ],
   "solid": false,
   "spriteId": {

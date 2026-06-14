@@ -75,6 +75,76 @@ if pressed && !triggered {
 	
 	}
 	
+	if switchType == SWITCH_TYPE.CONVEYOR_ADJUST {
+		
+		var _switchID = IDnumber;
+		
+		var _newSpeed = newSpeed;
+		var _newFacingRight = newFacingRight;
+		
+		audio_play_sound(sfx_mechanicalDoor, 1, false, 1.0, 0, 3.5);
+		
+		with obj_interactable_conveyor {
+		
+			if _switchID == IDnumber {
+			
+				conveyorSpeed = _newSpeed;
+				facingRight = _newFacingRight;
+			
+			}
+		
+		}
+		
+	}
+	
+	if switchType == SWITCH_TYPE.CONVEYOR_ADJUST_TIMED {
+	
+		var _otherSwitchIsActive = false;
+		
+		var _switchID = IDnumber;
+		
+		var _timerDuration = timerDuration;
+		
+		with obj_interactable_switch_groundPound {
+	
+			if triggered && _switchID == IDnumber {
+		
+				_otherSwitchIsActive = true;
+			
+				alarm[0] = _timerDuration;
+		
+			}
+	
+		}
+		
+		
+		if !_otherSwitchIsActive {
+		
+			alarm[0] = timerDuration;
+		
+			audio_play_sound(sfx_mechanicalDoor, 1, false, 1.0, 0, 3.5);
+		
+			var _newSpeed = newSpeed;
+			var _newFacingRight = newFacingRight;
+		
+			with obj_interactable_conveyor {
+		
+				if _switchID == IDnumber {
+			
+					oldSpeed = conveyorSpeed;
+					oldFacingRight = facingRight;
+					
+					conveyorSpeed = _newSpeed;
+					facingRight = _newFacingRight;
+			
+				}
+		
+			}
+		
+		}
+
+	}
+	
 	
 	if room == rm_cave_chase_longRun {
 	
@@ -117,7 +187,7 @@ if pressed && !triggered {
 }
 
 //Timer beeps
-if triggered && switchType == SWITCH_TYPE.SPIKE_TOGGLE_TIMED {
+if triggered && (switchType == SWITCH_TYPE.SPIKE_TOGGLE_TIMED || switchType == SWITCH_TYPE.CONVEYOR_ADJUST_TIMED) {
 
 	if alarm[0] > -1 {
 
