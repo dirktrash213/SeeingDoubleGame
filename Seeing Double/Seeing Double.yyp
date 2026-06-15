@@ -1516,6 +1516,7 @@
     {"id":{"name":"spr_interactable_monitor_bigScreen","path":"sprites/spr_interactable_monitor_bigScreen/spr_interactable_monitor_bigScreen.yy",},},
     {"id":{"name":"_10","path":"sprites/_10/_10.yy",},},
     {"id":{"name":"obj_assist_shadow","path":"objects/obj_assist_shadow/obj_assist_shadow.yy",},},
+    {"id":{"name":"rm_lab_treadmills","path":"rooms/rm_lab_treadmills/rm_lab_treadmills.yy",},},
     {"id":{"name":"rm_hills_secretCave","path":"rooms/rm_hills_secretCave/rm_hills_secretCave.yy",},},
     {"id":{"name":"spr_gm_button","path":"sprites/spr_gm_button/spr_gm_button.yy",},},
     {"id":{"name":"D2","path":"sprites/D2/D2.yy",},},
@@ -2462,6 +2463,7 @@
     {"roomId":{"name":"Room_Steam_Init","path":"rooms/Room_Steam_Init/Room_Steam_Init.yy",},},
     {"roomId":{"name":"rm_lab_switchPuzzle","path":"rooms/rm_lab_switchPuzzle/rm_lab_switchPuzzle.yy",},},
     {"roomId":{"name":"rm_lab_conveyors","path":"rooms/rm_lab_conveyors/rm_lab_conveyors.yy",},},
+    {"roomId":{"name":"rm_lab_treadmills","path":"rooms/rm_lab_treadmills/rm_lab_treadmills.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

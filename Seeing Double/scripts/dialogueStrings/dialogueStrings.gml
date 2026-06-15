@@ -392,6 +392,34 @@ global.dialogueStringArrays = {
 		"Thanks again, and until next time.",
 	
 	],
+	
+	labTreadmillRobots : [ 
+	
+		"We charge our batteries by walking on these treadmills. Pretty nifty, eh?", //0
+		"My sensors indicate a fun value of 8! I love walking in place!", 
+		//"I love walking in place!", 
+		"Father needs us at full capacity.", 
+		"We will perform our tasks in his absence.", 
+		"No rest. No breaks. Only duty.", 
+		"Hah! I'm not like those stupid conformists! Just try and stop me, idiot!", //5 
+		"H-help!! It's out of control! Somebody do something!!", 
+		
+	],
+	
+	labTreadmillRobotsWrecked : [ 
+	
+		//"On second thought, this is really stupid.", //0
+		"On second thought, this is a really stupid way to recharge.", //0
+		//"My sensors indicate a fun value of -683.", 
+		//"My sensors indicate a fun value of 10! I love laying on the ground in agony even more than walking! How did you know?", 
+		"I love laying on the ground in agony even more than walking! How did you know?", 
+		"Father will be most displeased with our failure.", 
+		"", 
+		"", 
+		"Well played.", //5
+		"Pain.", 
+		
+	],
 
 
 }

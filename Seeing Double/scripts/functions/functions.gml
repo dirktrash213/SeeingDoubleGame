@@ -2030,8 +2030,10 @@ function conveyorLogic() {
 	
 	if _conveyor == noone exit;
 	
-	if _conveyor.facingRight x += _conveyor.conveyorSpeed;
-	if !_conveyor.facingRight x -= _conveyor.conveyorSpeed;
+	var _wallPadding = _conveyor.conveyorSpeed; //Prevents player getting crushed in walls
+	
+	if _conveyor.facingRight && !place_meeting(x+_wallPadding, y, obj_block_wall) x += _conveyor.conveyorSpeed;
+	if !_conveyor.facingRight && !place_meeting(x-_wallPadding, y, obj_block_wall) x -= _conveyor.conveyorSpeed;
 	
 	
 

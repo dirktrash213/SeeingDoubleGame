@@ -1354,6 +1354,7 @@
     {"name":"spr_interactable_monitor_bigScreen","order":47,"path":"sprites/spr_interactable_monitor_bigScreen/spr_interactable_monitor_bigScreen.yy",},
     {"name":"_10","order":1,"path":"sprites/_10/_10.yy",},
     {"name":"obj_assist_shadow","order":1,"path":"objects/obj_assist_shadow/obj_assist_shadow.yy",},
+    {"name":"rm_lab_treadmills","order":3,"path":"rooms/rm_lab_treadmills/rm_lab_treadmills.yy",},
     {"name":"rm_hills_secretCave","order":8,"path":"rooms/rm_hills_secretCave/rm_hills_secretCave.yy",},
     {"name":"spr_gm_button","order":1,"path":"sprites/spr_gm_button/spr_gm_button.yy",},
     {"name":"D2","order":21,"path":"sprites/D2/D2.yy",},
