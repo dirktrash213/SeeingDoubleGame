@@ -182,6 +182,28 @@ if pressed && !triggered {
 	
 	}
 	
+	if room == rm_lab_treadmills {
+		
+		global.destroyedLabDoor = true;
+		
+		audio_play_sound(sfx_futuristic_zoom_whoosh_1, 1, false);
+	
+		with obj_npc_robot_running_fast {
+		
+			hspeed = -10;
+		
+		}
+		
+		with obj_npc_robot_broken {
+		
+			visible = true;
+		
+		}
+		
+		obj_interactable_labDoor_piece_parent.visible = true;
+	
+	}
+	
 	triggered = true;
 
 }

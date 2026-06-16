@@ -50,8 +50,8 @@
   },
   "origin": 0,
   "parent": {
-    "name": "NEW",
-    "path": "folders/Sprites/NEW.yy",
+    "name": "Background",
+    "path": "folders/Sprites/Background.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

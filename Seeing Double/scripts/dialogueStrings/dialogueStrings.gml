@@ -396,12 +396,13 @@ global.dialogueStringArrays = {
 	labTreadmillRobots : [ 
 	
 		"We charge our batteries by walking on these treadmills. Pretty nifty, eh?", //0
-		"My sensors indicate a fun value of 8! I love walking in place!", 
+		//My sensors indicate a fun value of 8! I love walking in place!", 
+		"I love treadmills! It's all the effort of walking without actually accomplishing anything!", 
 		//"I love walking in place!", 
 		"Father needs us at full capacity.", 
 		"We will perform our tasks in his absence.", 
 		"No rest. No breaks. Only duty.", 
-		"Hah! I'm not like those stupid conformists! Just try and stop me, idiot!", //5 
+		"Hah! I'm not like those other conformist sheeple! Just try and stop me, idiot!", //5 
 		"H-help!! It's out of control! Somebody do something!!", 
 		
 	],
@@ -417,7 +418,8 @@ global.dialogueStringArrays = {
 		"", 
 		"", 
 		"Well played.", //5
-		"Pain.", 
+		//"Pain.", 
+		"You have made pain my new reality.", 
 		
 	],
 

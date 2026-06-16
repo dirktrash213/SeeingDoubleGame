@@ -1,19 +1,17 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_npc_ringmaster",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-  ],
+  "name": "obj_interactable_labDoor_piece1",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "NPCs",
-    "path": "folders/Objects/NPCs.yy",
+    "name": "Lab Door Pieces",
+    "path": "folders/Objects/Interactables/Lab Door Pieces.yy",
   },
   "parentObjectId": {
-    "name": "obj_npc",
-    "path": "objects/obj_npc/obj_npc.yy",
+    "name": "obj_interactable_labDoor_piece_parent",
+    "path": "objects/obj_interactable_labDoor_piece_parent/obj_interactable_labDoor_piece_parent.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -31,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_npc_ringmaster",
-    "path": "sprites/spr_npc_ringmaster/spr_npc_ringmaster.yy",
+    "name": "spr_interactable_labDoor_piece",
+    "path": "sprites/spr_interactable_labDoor_piece/spr_interactable_labDoor_piece.yy",
   },
   "spriteMaskId": null,
   "visible": true,

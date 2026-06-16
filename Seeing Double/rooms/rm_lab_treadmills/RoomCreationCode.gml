@@ -7,3 +7,4 @@ global.groundPoundActive = true;
 global.doubleJumpActive = true;
 
 
+if !global.destroyedLabDoor with obj_npc_robot_broken visible = false;

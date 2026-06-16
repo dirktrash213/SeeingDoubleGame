@@ -186,4 +186,6 @@ global.disableSpeedrunCave = false;
 global.disableSpeedrunLab = false;
 global.disableSpeedrunSewer = false;
 
+global.destroyedLabDoor = false;
+
 // r/playtester 
