@@ -1,4 +1,6 @@
+if !active exit;
 if triggered exit;
+
 
 triggered = true;
 
@@ -15,7 +17,7 @@ if instance_exists(obj_interactable_monitor_parent) {
 	}
 
 }
-
+ 
 switch room { 
 		
 	case rm_cave_groundPoundCrystal_highJumpTutorial: {

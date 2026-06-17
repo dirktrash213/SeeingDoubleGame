@@ -201,6 +201,20 @@ if pressed && !triggered {
 		}
 		
 		obj_interactable_labDoor_piece_parent.visible = true;
+		
+		with obj_trigger_dialogue {
+		
+			if IDnumber == 1 active = false;
+			if IDnumber == 2 active = true;
+		
+		}
+		
+		with obj_spawner_dialogue {
+		
+			if IDnumber == 1 active = false;
+			if IDnumber == 2 active = true;
+		
+		}
 	
 	}
 	

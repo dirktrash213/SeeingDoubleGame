@@ -303,7 +303,7 @@ global.dialogueStringArrays = {
 		"RUUUUUUN!!!", 
 	
 	],
-	
+	//@
 	cavesHauntingFakeout : [ 
 	
 		//"Well, salt my eggs. This is not good I tell ya, [slant]not[/slant] good! What was I [slant]thinkin'[/slant], followin' that yellow moron?[spr_npc_explorer]", //0
@@ -392,34 +392,34 @@ global.dialogueStringArrays = {
 		"Thanks again, and until next time.",
 	
 	],
-	
+	//@
 	labTreadmillRobots : [ 
 	
-		"We charge our batteries by walking on these treadmills. Pretty nifty, eh?", //0
-		//My sensors indicate a fun value of 8! I love walking in place!", 
-		"I love treadmills! It's all the effort of walking without actually accomplishing anything!", 
-		//"I love walking in place!", 
-		"Father needs us at full capacity.", 
-		"We will perform our tasks in his absence.", 
-		"No rest. No breaks. Only duty.", 
-		"Hah! I'm not like those other conformist sheeple! Just try and stop me, idiot!", //5 
-		"H-help!! It's out of control! Somebody do something!!", 
+		"[font_robot]We charge our batteries by running on these treadmills. Pretty nifty, eh?", //0
+		//"[font_robot]My sensors indicate a fun value of 8! I love walking in place!", 
+		"[font_robot]I [slant]love[/slant] treadmills! It's all the effort of walking without actually accomplishing anything!", 
+		//"[font_robot]I love walking in place!", 
+		"[font_robot]Father needs us at full capacity.", 
+		"[font_robot]We will perform our tasks in his absence.", 
+		"[font_robot]No rest. No breaks. Only duty.", 
+		"[font_robot]Hah! I'm not like those other conformist sheeple! Just try and stop me, idiot!", //5 
+		"[font_robot][shake]H-help!! It's out of control! Somebody do something!!", 
 		
 	],
 	
 	labTreadmillRobotsWrecked : [ 
 	
 		//"On second thought, this is really stupid.", //0
-		"On second thought, this is a really stupid way to recharge.", //0
+		"[font_robot]On second thought, this is a really stupid way to recharge.", //0
 		//"My sensors indicate a fun value of -683.", 
 		//"My sensors indicate a fun value of 10! I love laying on the ground in agony even more than walking! How did you know?", 
-		"I love laying on the ground in agony even more than walking! How did you know?", 
-		"Father will be most displeased with our failure.", 
+		"[font_robot]I love laying on the ground in agony even [slant]more[/slant] than walking! How did you know?", 
+		"[font_robot]Father will be most displeased with our failure.", 
 		"", 
 		"", 
-		"Well played.", //5
+		"[font_robot]Well played.", //5
 		//"Pain.", 
-		"You have made pain my new reality.", 
+		"[font_robot]You have made pain my new reality.", 
 		
 	],
 

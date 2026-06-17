@@ -1,3 +1,4 @@
+if !active exit;
 if !triggered exit;
 
 var _text = scribble(dialogueString[count]);

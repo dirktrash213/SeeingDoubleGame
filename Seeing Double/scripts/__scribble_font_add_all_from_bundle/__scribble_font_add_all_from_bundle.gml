@@ -2,16 +2,19 @@
 
 function __scribble_font_add_all_from_bundle()
 {
-	//BUNKA
+	//When adding new fonts, add a line here
+	//BUNKA (enables easy access of this page, global search BUNKA)
 	__scribble_font_add_from_bundle(font_titleMenu);
 	__scribble_font_add_from_bundle(font_pauseMenu);
 	__scribble_font_add_from_bundle(font_npc);
 	__scribble_font_add_from_bundle(font_scoreUI);
 	__scribble_font_add_from_bundle(font_hideText);
+	__scribble_font_add_from_bundle(font_robot);
+	__scribble_font_add_from_bundle(font_pencil);
 	
 	exit; 
 	
-	//NOTE: the above two lines were added manually since the below was giving error, likely due to gamemaker being outdated for asset_get_ids()
+	//NOTE: the above lines were added manually since the below was giving error, likely due to gamemaker being outdated for asset_get_ids()
 	
     //Try to add all fonts in the project to Scribble
     var _fontArray = asset_get_ids(asset_font);
