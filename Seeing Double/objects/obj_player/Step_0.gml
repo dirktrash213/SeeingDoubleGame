@@ -544,12 +544,14 @@ for(var i = 0; i < _listOfSolidPlatformsSize; i++) {
 }
 
 ds_list_destroy(_listOfSolidPlatforms);
-
+//@
 //Player gets pushed by moving right walls here
 if instance_exists(_rightWall) {
 
 	var _rightDist = bbox_right - x;
 	x = _rightWall.bbox_left - _rightDist;
+	
+	//show_debug_message("player pushed right")
 
 }
 
@@ -558,6 +560,8 @@ if instance_exists(_leftWall) {
 
 	var _leftDist = x - bbox_left;
 	x = _leftWall.bbox_right + _leftDist;
+	
+	//show_debug_message("player pushed left")
 
 }
 
@@ -832,7 +836,7 @@ if ySpeed >= 0 && !place_meeting(x + xSpeed, y + 1, obj_block_wall) && place_mee
 
 
 //Move X
-//@
+
 if !global.cutsceneActive {
 	
 	x += xSpeed;
@@ -1161,7 +1165,7 @@ if place_meeting(x, y + ySpeed, obj_block_wall) && canCollide {
 	
 
 }
-//@
+
 
 //Check if on conveyor
 conveyorLogic();
@@ -1230,69 +1234,110 @@ ds_list_destroy(_list);
 
 if instance_exists(downSlopeSemiSolid) myFloorPlat = downSlopeSemiSolid; //TEMP
 
+//var _paddingX = 0;
+//
+//if instance_exists(myFloorPlat) {
+//
+//	if myFloorPlat.object_index == obj_block_wall_box_small {
+//
+//		//_paddingX = myFloorPlat.xSpeed;
+//		_paddingX = 5;
+//
+//	}
+//
+//}
+
 //One last check to confirm floor platform is infact below us or if platform has moved away
+//if instance_exists(myFloorPlat) && !place_meeting(x + _paddingX, y + movePlatYspeedMax, myFloorPlat) {
 if instance_exists(myFloorPlat) && !place_meeting(x, y + movePlatYspeedMax, myFloorPlat) {
 
 	myFloorPlat = noone;
 
 }
-
+//@
 //Land on ground platform if there is one (except if player is climbing up)
 if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
 //if instance_exists(myFloorPlat) && !climbing {
 
-	//Scoot up
-	_subPixel = 0.5;
+	var _touchingBoxOnSide = false;
 
-	while !place_meeting(x, y + _subPixel, myFloorPlat) && !place_meeting(x, y, obj_block_wall) {
+	if myFloorPlat.object_index == obj_block_wall_box_small {
 	
-		y += _subPixel;
-	
-	}
-	
-	//Make sure we don't end up below the top of a semi soli dplatform
-	if myFloorPlat.object_index == obj_block_wall_semiSolid || object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid) {
-	
-		while place_meeting(x, y, myFloorPlat) {
+		show_debug_message("touching box")
 		
-			y -= _subPixel;
+		var _paddingX = 1;
+		
+		if place_meeting(x + _paddingX, y, myFloorPlat) {
+		
+			show_debug_message("touching box on side")
+			
+			//_touchingBoxOnSide = true;
+			
+			//myFloorPlat = noone;
 		
 		}
-		
+
 	}
 	
-	y = floor(y);
+	if !_touchingBoxOnSide {
+
+		//Scoot up
+		_subPixel = 0.5;
+
+		while !place_meeting(x, y + _subPixel, myFloorPlat) && !place_meeting(x, y, obj_block_wall) {
 	
-	groundCollideSpeed = ySpeed;
-	ySpeed = 0;
+			y += _subPixel;
 	
-	//Collide with ground
-	setOnGround(true);
+		}
 	
-	//if myFloorPlat.object_index == obj_interactable_breakableFloor {
-	//
-	//	myFloorPlat.triggered = true;
-	//
-	//}
+		//Make sure we don't end up below the top of a semi solid platform
+		if myFloorPlat.object_index == obj_block_wall_semiSolid || object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid) {
+	
+			while place_meeting(x, y, myFloorPlat) {
+	
+				y -= _subPixel;
+	
+			}
+	
+		}
+	
+		y = floor(y);
+	
+		groundCollideSpeed = ySpeed;
+		ySpeed = 0;
 	
 	
-	if myFloorPlat.object_index == obj_block_wall_semiSolid_moving
-	|| myFloorPlat.object_index == obj_block_wall_moving
-	|| object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid_moving) 
-	|| object_is_ancestor(myFloorPlat.object_index, obj_block_wall_moving) {
 	
-		if myFloorPlat.onRails {
+		//Collide with ground
+		setOnGround(true);
 	
-			with myFloorPlat {
+		//if myFloorPlat.object_index == obj_interactable_breakableFloor {
+		//
+		//	myFloorPlat.triggered = true;
+		//
+		//}
+	
+	
+		if myFloorPlat.object_index == obj_block_wall_semiSolid_moving
+		|| myFloorPlat.object_index == obj_block_wall_moving
+		|| object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid_moving) 
+		|| object_is_ancestor(myFloorPlat.object_index, obj_block_wall_moving) {
+	
+			if myFloorPlat.onRails {
+	
+				with myFloorPlat {
+	
+					if stationary {
+	
+						//Begin moving platform on rails
+						stationary = false;
+						movingOnRails = true;
+						path_start(railPath, pathSpeed, path_action_reverse, false);
 		
-				if stationary {
-		
-					stationary = false;
-					movingOnRails = true;
-					path_start(railPath, pathSpeed, path_action_reverse, false);
-			
+					}
+	
 				}
-		
+	
 			}
 	
 		}
@@ -1411,10 +1456,12 @@ if !earlyMovePlatXSpeed {
 
 	//Move with platform
 	x += movePlatXspeed;
+	
+	//show_debug_message("xSnap")
 
 }
 
-
+//@
 //Y snap to moving floor platform
 if instance_exists(myFloorPlat) && (myFloorPlat.ySpeed != 0
 || myFloorPlat.object_index == obj_block_wall_moving
@@ -1424,6 +1471,8 @@ if instance_exists(myFloorPlat) && (myFloorPlat.ySpeed != 0
 
 	if !place_meeting(x, myFloorPlat.bbox_top, obj_block_wall) && myFloorPlat.bbox_top >= bbox_bottom-movePlatYspeedMax {
 	
+		//show_debug_message("ySnap")
+		
 		y = myFloorPlat.bbox_top; //Unfloor y when on moving platform
 		
 		if myFloorPlat.onRails y += myFloorPlat.ySpeed;
@@ -1482,7 +1531,7 @@ if place_meeting(x, y, obj_block_wall)
 	crushTimer = 0;
 
 }
-//@
+
 //Breakable floor logic
 
 // 1. Create a temporary list to hold the results
