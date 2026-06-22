@@ -13,8 +13,8 @@
     "path": "folders/Objects/Walls and Platforms/Moving Platforms.yy",
   },
   "parentObjectId": {
-    "name": "obj_block_wall",
-    "path": "objects/obj_block_wall/obj_block_wall.yy",
+    "name": "obj_block_wall_moving",
+    "path": "objects/obj_block_wall_moving/obj_block_wall_moving.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

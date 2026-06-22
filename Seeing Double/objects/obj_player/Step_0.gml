@@ -508,6 +508,7 @@ var _bottomWall = noone;
 var _topWall = noone;
 var _listOfSolidPlatforms = ds_list_create();
 var _listOfSolidPlatformsSize = instance_place_list(x, y, obj_block_wall_moving, _listOfSolidPlatforms, false);
+//var _listOfSolidPlatformsSize = instance_place_list(x, y, obj_block_wall_box_small, _listOfSolidPlatforms, false);
 
 for(var i = 0; i < _listOfSolidPlatformsSize; i++) {
 
