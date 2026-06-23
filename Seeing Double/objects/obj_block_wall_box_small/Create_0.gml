@@ -19,4 +19,5 @@ ySpeed = 0;
 
 onRails = false;
 
-thudSound = noone;
+//thudSound = noone;
+//thudSound = sfx_thud;

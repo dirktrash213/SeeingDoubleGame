@@ -38,7 +38,10 @@ if _wall != noone {
 	ySpeed = 0;
 	y = _wall.y - sprite_height;
 	
+	//if !audio_is_playing(thudSound) playAudioWithFalloff(thudSound, 200);
+	//if !audio_is_playing(thudSound) audio_play_sound(thudSound, 1, false);
 	//if !audio_is_playing(sfx_thud) playAudioWithFalloff(sfx_thud, 200);
+	//if thudSound == noone thudSound = playAudioWithFalloff(sfx_thud);
 	//if thudSound == noone thudSound = playAudioWithFalloff(sfx_thud);
 	
 	
@@ -56,25 +59,27 @@ if _wall != noone {
 
 y += ySpeed;
 
-////Move in a circle
-//dir += rotationSpeed;
-//
-////Get our target positions
-//var _targetX = xstart + lengthdir_x(radius, dir);
-//var _targetY = ystart + lengthdir_y(radius, dir);
-//
-////Get speeds
-//xSpeed = _targetX - x;
-////xSpeed = 0;
-//ySpeed = _targetY - y;
-////ySpeed = 0;
-//
-//
-//
-////Move
-//x += xSpeed;
-//y += ySpeed;
 
-
-
-if place_meeting(x, y+ySpeed, obj_trigger_destroyConveyorBox) instance_destroy();
+if place_meeting(x, y+ySpeed, obj_trigger_destroyConveyorBox) {
+	
+	instance_destroy();
+	
+	var _nearestTrigger = instance_nearest(x, y, obj_trigger_destroyConveyorBox);
+	
+	var _IDnumber = _nearestTrigger.IDnumber;
+	
+	with instance_nearest(x,y,obj_interactable_hazard_spikes_boxes) {
+		
+		
+		
+		if _IDnumber = IDnumber {
+			
+			show_debug_message("spike destroyed")
+			
+			instance_destroy();
+			
+		}
+		
+	}
+	
+}
