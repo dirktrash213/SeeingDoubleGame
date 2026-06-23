@@ -22,6 +22,12 @@ if stackedBoxes {
 	
 }
 
+if bigBoxes {
+
+	_objectToSpawn = obj_block_wall_box_large;
+
+}
+
 with instance_create_layer(x, y, "Instances", _objectToSpawn) {
 
 	if !_spawnVisibleBoxes visible = false;

@@ -1,0 +1,2 @@
+attachedToSolidPlatform = true;
+visible = false;

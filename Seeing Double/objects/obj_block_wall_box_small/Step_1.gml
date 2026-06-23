@@ -62,24 +62,24 @@ y += ySpeed;
 
 if place_meeting(x, y+ySpeed, obj_trigger_destroyConveyorBox) {
 	
-	instance_destroy();
+	//instance_destroy();
 	
 	var _nearestTrigger = instance_nearest(x, y, obj_trigger_destroyConveyorBox);
 	
 	var _IDnumber = _nearestTrigger.IDnumber;
 	
 	with instance_nearest(x,y,obj_interactable_hazard_spikes_boxes) {
-		
-		
-		
+	
 		if _IDnumber = IDnumber {
 			
-			show_debug_message("spike destroyed")
+			//show_debug_message("spike destroyed")
 			
 			instance_destroy();
 			
 		}
 		
 	}
+	
+	instance_destroy();
 	
 }
