@@ -38,6 +38,13 @@ if _wall != noone {
 	ySpeed = 0;
 	y = _wall.y - sprite_height;
 	
+	//if !audio_is_playing(sfx_thud) playAudioWithFalloff(sfx_thud, 200);
+	//if thudSound == noone thudSound = playAudioWithFalloff(sfx_thud);
+	
+	
+	
+	//if thudSound == noone thudSound = audio_play_sound(sfx_thud, 1, false);
+	
 } else {
 
 	falling = true;

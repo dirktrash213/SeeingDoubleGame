@@ -109,6 +109,7 @@ if pitterPlayerIsPresent() {
 	}
 	
 	if global.verticalLevel {
+	//if global.verticalLevel || global.customLevel {
 	
 		if obj_player_pitter.crouching {
 	

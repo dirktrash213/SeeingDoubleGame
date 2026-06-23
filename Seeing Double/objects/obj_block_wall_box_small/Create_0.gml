@@ -18,3 +18,5 @@ ySpeed = 0;
 
 
 onRails = false;
+
+thudSound = noone;

@@ -1260,82 +1260,80 @@ if instance_exists(myFloorPlat) && !place_meeting(x, y + movePlatYspeedMax, myFl
 if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
 //if instance_exists(myFloorPlat) && !climbing {
 
-	var _touchingBoxOnSide = false;
-
-	if myFloorPlat.object_index == obj_block_wall_box_small {
+	//var _touchingBoxOnSide = false;
+	//
+	//if myFloorPlat.object_index == obj_block_wall_box_small {
+	//
+	//	//show_debug_message("touching box")
+	//	
+	//	var _paddingX = 1;
+	//	
+	//	if place_meeting(x + _paddingX, y, myFloorPlat) {
+	//	
+	//		//show_debug_message("touching box on side")
+	//		
+	//		//_touchingBoxOnSide = true;
+	//		
+	//		//myFloorPlat = noone;
+	//	
+	//	}
+	//
+	//}
 	
-		show_debug_message("touching box")
-		
-		var _paddingX = 1;
-		
-		if place_meeting(x + _paddingX, y, myFloorPlat) {
-		
-			show_debug_message("touching box on side")
-			
-			//_touchingBoxOnSide = true;
-			
-			//myFloorPlat = noone;
-		
-		}
+	//if !_touchingBoxOnSide {
 
+	//Scoot up
+	_subPixel = 0.5;
+
+	while !place_meeting(x, y + _subPixel, myFloorPlat) && !place_meeting(x, y, obj_block_wall) {
+	
+		y += _subPixel;
+	
 	}
 	
-	if !_touchingBoxOnSide {
-
-		//Scoot up
-		_subPixel = 0.5;
-
-		while !place_meeting(x, y + _subPixel, myFloorPlat) && !place_meeting(x, y, obj_block_wall) {
+	//Make sure we don't end up below the top of a semi solid platform
+	if myFloorPlat.object_index == obj_block_wall_semiSolid || object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid) {
 	
-			y += _subPixel;
+		while place_meeting(x, y, myFloorPlat) {
+	
+			y -= _subPixel;
 	
 		}
 	
-		//Make sure we don't end up below the top of a semi solid platform
-		if myFloorPlat.object_index == obj_block_wall_semiSolid || object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid) {
+	}
 	
-			while place_meeting(x, y, myFloorPlat) {
+	y = floor(y);
 	
-				y -= _subPixel;
-	
-			}
-	
-		}
-	
-		y = floor(y);
-	
-		groundCollideSpeed = ySpeed;
-		ySpeed = 0;
+	groundCollideSpeed = ySpeed;
+	ySpeed = 0;
 	
 	
 	
-		//Collide with ground
-		setOnGround(true);
+	//Collide with ground
+	setOnGround(true);
 	
-		//if myFloorPlat.object_index == obj_interactable_breakableFloor {
-		//
-		//	myFloorPlat.triggered = true;
-		//
-		//}
+	//if myFloorPlat.object_index == obj_interactable_breakableFloor {
+	//
+	//	myFloorPlat.triggered = true;
+	//
+	//}
 	
 	
-		if myFloorPlat.object_index == obj_block_wall_semiSolid_moving
-		|| myFloorPlat.object_index == obj_block_wall_moving
-		|| object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid_moving) 
-		|| object_is_ancestor(myFloorPlat.object_index, obj_block_wall_moving) {
+	if myFloorPlat.object_index == obj_block_wall_semiSolid_moving
+	|| myFloorPlat.object_index == obj_block_wall_moving
+	|| object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid_moving) 
+	|| object_is_ancestor(myFloorPlat.object_index, obj_block_wall_moving) {
 	
-			if myFloorPlat.onRails {
+		if myFloorPlat.onRails {
 	
-				with myFloorPlat {
+			with myFloorPlat {
 	
-					if stationary {
+				if stationary {
 	
-						//Begin moving platform on rails
-						stationary = false;
-						movingOnRails = true;
-						path_start(railPath, pathSpeed, path_action_reverse, false);
-		
-					}
+					//Begin moving platform on rails
+					stationary = false;
+					movingOnRails = true;
+					path_start(railPath, pathSpeed, path_action_reverse, false);
 	
 				}
 	
@@ -1344,6 +1342,8 @@ if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
 		}
 	
 	}
+	
+	//}
 	
 }
 

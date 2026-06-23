@@ -1471,11 +1471,11 @@ function playAudioWithFalloff(_audio, _maxDist = 600, _pitch = 1.0, _loop = fals
 		
 		if _useReverb {
 		
-			audio_play_sound_on(obj_control.reverb_emitter, _audio, _loop, 1, _volume, 0, _pitch);
+			return audio_play_sound_on(obj_control.reverb_emitter, _audio, _loop, 1, _volume, 0, _pitch);
 		
 		} else {
 		
-			audio_play_sound(_audio, 1, _loop, _volume, 0, _pitch);
+			return audio_play_sound(_audio, 1, _loop, _volume, 0, _pitch);
 		
 		}
 		
