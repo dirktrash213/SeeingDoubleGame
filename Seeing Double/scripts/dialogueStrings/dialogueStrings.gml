@@ -1,5 +1,10 @@
 global.dialogueStringArrays = {
 
+	amogus : [ 
+	
+		"AMOGUS",
+	
+	],
 
 	hillsWarpRoomGuy : [ 
 	
