@@ -21,7 +21,7 @@ function controlsSetup() {
 
 }
 
-
+//TODO: make controller deadzones adjustable
 function getControls() {
 	
 	if global.playerControl && !global.paused && !global.cutsceneActive {
@@ -30,9 +30,9 @@ function getControls() {
 		moveLeftPressed = keyboard_check_pressed(ord("A")) || global.moveLeft;
 		moveRight = keyboard_check(ord("D")) || gamepad_axis_value(global.controllerPort,gp_axislh) > 0.5;
 		moveRightPressed = keyboard_check_pressed(ord("D")) || global.moveRight;
-		moveUp = keyboard_check(ord("W")) || gamepad_axis_value(global.controllerPort,gp_axislv) < -0.5; //-0.95
+		moveUp = keyboard_check(ord("W")) || gamepad_axis_value(global.controllerPort,gp_axislv) < -0.3; //-0.95   0.5
 		moveUpPressed = keyboard_check_pressed(ord("W")) || global.moveUp;
-		moveDown = keyboard_check(ord("S")) || gamepad_axis_value(global.controllerPort,gp_axislv) > 0.5; //0.95
+		moveDown = keyboard_check(ord("S")) || gamepad_axis_value(global.controllerPort,gp_axislv) > 0.3; //0.95   0.5
 		moveDownPressed = keyboard_check_pressed(ord("S")) || global.moveDown;
 		jump = keyboard_check(vk_space) || gamepad_button_check(global.controllerPort, gp_face1);
 		jumpPressed = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(global.controllerPort, gp_face1);
