@@ -114,14 +114,14 @@ global.dialogueStringArrays = {
 	cavesDiary : [ 
 	
 		//"A house in cave. He really does get the craziest ideas.", 
-		"He really does get the craziest ideas. Building a house in a cave? Who'd think of that?", 
-		"But I have to admit it's beautiful in this little alcove, tucked away from the world. And so much to study, too!", 
-		"I reckon there's hundreds - no, [slant]thousands[/slant] of unknown fungi waiting to be discovered. How exciting!", 
-		"Oh, he's giving me that look... I might have to wrap this entry up~", 
+		"[font_pencil]He really does get the craziest ideas. Building a house in a cave? Who'd think of that?", 
+		"[font_pencil]But I have to admit it's beautiful in this little alcove, tucked away from the world. And so much to study, too!", 
+		"[font_pencil]I reckon there's hundreds - no, [slant]thousands[/slant] of unknown fungi waiting to be discovered. How exciting!", 
+		"[font_pencil]Oh, he's giving me that look... I might have to wrap this entry up~", 
 		//"Wait a minute... He's peeking at my journal again!! Son of a-", 
 		//"Wait a minute... He's peeking at my journal again!! That sneaky rat!", 
-		"Wait a minute... no he's not! He's peeking at my journal! [/slant]Again!!", 
-		"Simon, if you ever read this I SWEAR I'll kill you.", 
+		"[font_pencil]Wait a minute... no he's not! He's peeking at my journal! [/slant]Again!!", 
+		"[font_pencil]Simon, if you ever read this I SWEAR I'll kill you.", 
 		
 	],
 	
