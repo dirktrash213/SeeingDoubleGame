@@ -1,4 +1,4 @@
-targetRoom = rm_lab_assemblyLine_start;
+targetRoom = rm_lab_assemblyLine;
 
 xEnter = 2399;
 yEnter = 224;

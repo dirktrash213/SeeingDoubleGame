@@ -552,7 +552,7 @@ if instance_exists(_rightWall) {
 	var _rightDist = bbox_right - x;
 	x = _rightWall.bbox_left - _rightDist;
 	
-	//show_debug_message("player pushed right")
+	show_debug_message("player pushed by right")
 
 }
 
@@ -562,7 +562,7 @@ if instance_exists(_leftWall) {
 	var _leftDist = x - bbox_left;
 	x = _leftWall.bbox_right + _leftDist;
 	
-	//show_debug_message("player pushed left")
+	show_debug_message("player pushed by left")
 
 }
 
@@ -571,6 +571,8 @@ if instance_exists(_bottomWall) {
 
 	var _bottomDist = bbox_bottom - y;
 	y = _bottomWall.bbox_top - _bottomDist;
+	
+	show_debug_message("player pushed by bottom")
 
 }
 
@@ -584,10 +586,26 @@ if instance_exists(_topWall) {
 	if !place_meeting(x, _targetY, obj_block_wall) {
 	
 		y = _targetY;
+		
+		show_debug_message("player pushed by top")
+	
+	} else {
+	
+		show_debug_message("player pushed by top but wall in way")
 	
 	}
 	
 }
+
+//Crusher collision
+
+checkCrusherCollision();
+
+var _rightCrusher = noone;
+var _leftCrusher = noone;
+var _bottomCrusher = noone;
+var _topCrusher = noone;
+
 
 
 //Don't get dropped by moving platform
@@ -1235,19 +1253,6 @@ ds_list_destroy(_list);
 
 if instance_exists(downSlopeSemiSolid) myFloorPlat = downSlopeSemiSolid; //TEMP
 
-//var _paddingX = 0;
-//
-//if instance_exists(myFloorPlat) {
-//
-//	if myFloorPlat.object_index == obj_block_wall_box_small {
-//
-//		//_paddingX = myFloorPlat.xSpeed;
-//		_paddingX = 5;
-//
-//	}
-//
-//}
-
 //One last check to confirm floor platform is infact below us or if platform has moved away
 //if instance_exists(myFloorPlat) && !place_meeting(x + _paddingX, y + movePlatYspeedMax, myFloorPlat) {
 if instance_exists(myFloorPlat) && !place_meeting(x, y + movePlatYspeedMax, myFloorPlat) {
@@ -1259,28 +1264,6 @@ if instance_exists(myFloorPlat) && !place_meeting(x, y + movePlatYspeedMax, myFl
 //Land on ground platform if there is one (except if player is climbing up)
 if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
 //if instance_exists(myFloorPlat) && !climbing {
-
-	//var _touchingBoxOnSide = false;
-	//
-	//if myFloorPlat.object_index == obj_block_wall_box_small {
-	//
-	//	//show_debug_message("touching box")
-	//	
-	//	var _paddingX = 1;
-	//	
-	//	if place_meeting(x + _paddingX, y, myFloorPlat) {
-	//	
-	//		//show_debug_message("touching box on side")
-	//		
-	//		//_touchingBoxOnSide = true;
-	//		
-	//		//myFloorPlat = noone;
-	//	
-	//	}
-	//
-	//}
-	
-	//if !_touchingBoxOnSide {
 
 	//Scoot up
 	_subPixel = 0.5;
@@ -1342,8 +1325,6 @@ if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
 		}
 	
 	}
-	
-	//}
 	
 }
 

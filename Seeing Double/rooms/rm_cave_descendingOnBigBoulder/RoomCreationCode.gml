@@ -9,3 +9,5 @@ if !audio_is_playing(obj_control.bgmCave) && global.caughtByCaveGhostAmount == 0
 global.verticalLevel = true;
 
 enableSmallReverb();
+
+//global.gotScammed = true; //TEMP

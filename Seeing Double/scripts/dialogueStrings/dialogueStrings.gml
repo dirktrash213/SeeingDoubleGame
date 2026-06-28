@@ -196,7 +196,8 @@ global.dialogueStringArrays = {
 		//"Personally I'm more of a free-form jazz aficionado.",
 		//"I hate mining.",
 		//"I hate mining, I hate these idiots, and I hate you.",
-		"I hate all of you.",
+		//"I hate all of you.",
+		"[shake]FLINT AND STEEL, BROTHER!!",
 	
 	],
 	

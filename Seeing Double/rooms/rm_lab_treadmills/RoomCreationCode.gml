@@ -38,7 +38,7 @@ if global.destroyedLabDoor {
 	
 	with obj_interactable_conveyor {
 	
-		conveyorSpeed = 0;
+		if IDnumber == 1 conveyorSpeed = 0;
 	
 	}
 	

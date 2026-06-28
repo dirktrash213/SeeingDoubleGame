@@ -991,6 +991,7 @@ function detectFloorDuringGroundPound(_floor) {
 				
 			}
 			
+			//Detect moveable boulder
 			if _floor.object_index == obj_interactable_demoBoulder && (room != rm_cave_bigBreakableRockFloor && room != rm_cave_chase_bigBreakableRockFloor) {
 			
 				//show_debug_message("boulder ground pounded")
@@ -2036,5 +2037,105 @@ function conveyorLogic() {
 	if !_conveyor.facingRight && !place_meeting(x-_wallPadding, y, obj_block_wall) x -= _conveyor.conveyorSpeed;
 	
 	
+
+}
+
+
+function checkCrusherCollision() {
+
+	var _rightCrusher = noone;
+	var _leftCrusher = noone;
+	var _bottomCrusher = noone;
+	var _topCrusher = noone;
+	var _listOfCrushers = ds_list_create();
+	var _listOfCrushersSize = instance_place_list(x, y, obj_block_wall_crusher, _listOfCrushers, false);
+	//var _listOfCrushersSize = instance_place_list(x, y, obj_block_wall_box_small, _listOfCrushers, false);
+
+	for(var i = 0; i < _listOfCrushersSize; i++) {
+
+		var _listInst = _listOfCrushers[|i];
+	
+		//Check for right walls
+		if _listInst.bbox_left - _listInst.xSpeed >= bbox_right-1 {
+	
+			if !instance_exists(_rightCrusher) || _listInst.bbox_left < _rightCrusher.bbox_left _rightCrusher = _listInst;
+	
+		}
+	
+		//Left walls
+		if _listInst.bbox_right - _listInst.xSpeed <= bbox_left+1 {
+	
+			if !instance_exists(_leftCrusher) || _listInst.bbox_right > _leftCrusher.bbox_right _leftCrusher = _listInst;
+	
+		}
+	
+		//Bottom walls
+		if _listInst.bbox_top - _listInst.ySpeed >= bbox_bottom-1 {
+	
+			if !instance_exists(_bottomCrusher) || _listInst.bbox_top < _bottomCrusher.bbox_top _bottomCrusher = _listInst;
+	
+		}
+	
+		//Top walls
+		if _listInst.bbox_bottom - _listInst.ySpeed <= bbox_top+1 {
+	
+			if !instance_exists(_topCrusher) || _listInst.bbox_bottom > _topCrusher.bbox_bottom _topCrusher = _listInst;
+	
+		}
+
+	}
+
+	ds_list_destroy(_listOfCrushers);
+	//@
+	//Player gets pushed by moving right walls here
+	if instance_exists(_rightCrusher) {
+
+		var _rightDist = bbox_right - x;
+		x = _rightCrusher.bbox_left - _rightDist;
+	
+		show_debug_message("player pushed by right")
+
+	}
+
+	//left
+	if instance_exists(_leftCrusher) {
+
+		var _leftDist = x - bbox_left;
+		x = _leftCrusher.bbox_right + _leftDist;
+	
+		show_debug_message("player pushed by left")
+
+	}
+
+	//bottom
+	if instance_exists(_bottomCrusher) {
+
+		var _bottomDist = bbox_bottom - y;
+		y = _bottomCrusher.bbox_top - _bottomDist;
+	
+		show_debug_message("player pushed by bottom")
+
+	}
+
+	//top
+	if instance_exists(_topCrusher) {
+
+		var _upDist = y - bbox_top;
+		var _targetY = _topCrusher.bbox_bottom + _upDist;
+	
+		//Check if wall in the way
+		if !place_meeting(x, _targetY, obj_block_wall) { //Test if needed or not
+	
+			y = _targetY;
+		
+			show_debug_message("player pushed by top")
+	
+		} else {
+	
+			show_debug_message("player pushed by top but wall in way")
+	
+		}
+	
+	}
 
 }
