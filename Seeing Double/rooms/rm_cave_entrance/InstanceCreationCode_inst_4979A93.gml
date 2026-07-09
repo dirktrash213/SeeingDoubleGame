@@ -5,7 +5,7 @@ if global.dialogueVariables.talkedToScaredMiner instance_destroy();
 variableTextDisplayDuration = true;
 wrapAmount = 125;
 typist.sound(sfx_mouseChirp, false, 0.7, 1.5); 
-textDisplayDuration = 360;
+textDisplayDuration = 400;
 
 
 

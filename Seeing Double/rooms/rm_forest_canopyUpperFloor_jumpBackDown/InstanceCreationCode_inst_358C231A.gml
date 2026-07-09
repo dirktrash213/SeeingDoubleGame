@@ -9,7 +9,7 @@ if !global.dialogueVariables.talkedToScammer {
 	dialogueString[0] = "Hey. Hey guy. C'mere."
 	dialogueString[1] = "Yeah. That's right. Lookie what I got."
 	dialogueString[2] = "Parachute, see? Top of the line, mint condition."
-	dialogueString[3] = "Absolutely garaunteed not to break. Ever."
+	dialogueString[3] = "Absolutely guaranteed not to break. Ever."
 	dialogueString[4] = "I could part with it for, I dunno... 100 [spr_interactable_coin]coins."
 	dialogueString[5] = "How about it? 100 [spr_interactable_coin]coins and this piece of... [slant]fine[/slant] craftsmanship... is all yours."
 
