@@ -4,7 +4,7 @@ event_inherited();
 //ySpeed = 0;
 
 timerDuration = 180;
-durationBeforeLift = 300; //120
+durationBeforeLift = 120; //120
 
 crusherFallSpeed = 5; //5
 crusherLiftSpeed = 2; //2

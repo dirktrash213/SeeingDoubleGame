@@ -28,7 +28,14 @@ if global.playerDefeated || global.paused {
 		
 		sprite_index = defeatSprite;
 		
-		if crushed sprite_index = crushedSprite;
+		if obj_player_pitter.crushed || obj_player_patter.crushed {
+			
+			obj_player_pitter.sprite_index = obj_player_pitter.crushedSprite;
+			obj_player_patter.sprite_index = obj_player_patter.crushedSprite;
+			
+			//show_debug_message("patter crushed!!")
+			
+		}	
 		
 	}
 	
@@ -600,13 +607,6 @@ if instance_exists(_topWall) {
 //Crusher collision
 //@
 checkCrusherCollision();
-
-//var _rightCrusher = noone;
-//var _leftCrusher = noone;
-//var _bottomCrusher = noone;
-//var _topCrusher = noone;
-
-
 
 //Don't get dropped by moving platform
 earlyMovePlatXSpeed = false;
@@ -1503,7 +1503,7 @@ if place_meeting(x, y, obj_block_wall)
 		//image_blend = c_blue;
 		crushed = true;
 		playerDefeated();
-		
+	
 		show_debug_message("crush")
 	
 	}

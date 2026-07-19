@@ -35,5 +35,5 @@
     "path": "sprites/spr_block_collision_crusher/spr_block_collision_crusher.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

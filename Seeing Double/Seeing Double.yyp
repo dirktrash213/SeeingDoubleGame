@@ -156,6 +156,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Platforms","folderPath":"folders/Sprites/Platforms.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Promo Art","folderPath":"folders/Sprites/Promo Art.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"OLD","folderPath":"folders/Sprites/Promo Art/OLD.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Twitch","folderPath":"folders/Sprites/Promo Art/Twitch.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilemaps","folderPath":"folders/Sprites/Tilemaps.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"OLD","folderPath":"folders/Sprites/Tilemaps/OLD.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UI","folderPath":"folders/Sprites/UI.yy",},
@@ -185,7 +186,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Steamworks","folderPath":"folders/Steamworks.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Twitch","folderPath":"folders/Sprites/Promo Art/Twitch.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"assist_data.json","CopyToMask":-1,"filePath":"datafiles",},
@@ -1063,6 +1063,7 @@
     {"id":{"name":"spr_UI_volumeIcon_loud","path":"sprites/spr_UI_volumeIcon_loud/spr_UI_volumeIcon_loud.yy",},},
     {"id":{"name":"robo_factory_bit_02","path":"sprites/robo_factory_bit_02/robo_factory_bit_02.yy",},},
     {"id":{"name":"spr_background_plant_v20","path":"sprites/spr_background_plant_v20/spr_background_plant_v20.yy",},},
+    {"id":{"name":"rm_lab_aboveCrushers","path":"rooms/rm_lab_aboveCrushers/rm_lab_aboveCrushers.yy",},},
     {"id":{"name":"obj_trigger_boxThumpNoise","path":"objects/obj_trigger_boxThumpNoise/obj_trigger_boxThumpNoise.yy",},},
     {"id":{"name":"obj_steam_parties_host_beacon","path":"objects/obj_steam_parties_host_beacon/obj_steam_parties_host_beacon.yy",},},
     {"id":{"name":"spr_patter","path":"sprites/spr_patter/spr_patter.yy",},},
@@ -2535,6 +2536,7 @@
     {"roomId":{"name":"rm_lab_assemblyLine","path":"rooms/rm_lab_assemblyLine/rm_lab_assemblyLine.yy",},},
     {"roomId":{"name":"rm_forest_treeBase_secret","path":"rooms/rm_forest_treeBase_secret/rm_forest_treeBase_secret.yy",},},
     {"roomId":{"name":"rm_lab_crushers","path":"rooms/rm_lab_crushers/rm_lab_crushers.yy",},},
+    {"roomId":{"name":"rm_lab_aboveCrushers","path":"rooms/rm_lab_aboveCrushers/rm_lab_aboveCrushers.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

@@ -136,6 +136,7 @@
     {"name":"Pitter And Patter","order":1,"path":"folders/Sprites/Pitter And Patter.yy",},
     {"name":"Platforms","order":21,"path":"folders/Sprites/Platforms.yy",},
     {"name":"Promo Art","order":19,"path":"folders/Sprites/Promo Art.yy",},
+    {"name":"Twitch","order":29,"path":"folders/Sprites/Promo Art/Twitch.yy",},
     {"name":"Tilemaps","order":18,"path":"folders/Sprites/Tilemaps.yy",},
     {"name":"OLD","order":12,"path":"folders/Sprites/Tilemaps/OLD.yy",},
     {"name":"UI","order":17,"path":"folders/Sprites/UI.yy",},
@@ -165,7 +166,6 @@
     {"name":"Steamworks","order":19,"path":"folders/Steamworks.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"Twitch","order":29,"path":"folders/Sprites/Promo Art/Twitch.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_npc_smartassMiner","order":23,"path":"objects/obj_npc_smartassMiner/obj_npc_smartassMiner.yy",},
@@ -942,6 +942,7 @@
     {"name":"spr_UI_volumeIcon_loud","order":6,"path":"sprites/spr_UI_volumeIcon_loud/spr_UI_volumeIcon_loud.yy",},
     {"name":"robo_factory_bit_02","order":32,"path":"sprites/robo_factory_bit_02/robo_factory_bit_02.yy",},
     {"name":"spr_background_plant_v20","order":14,"path":"sprites/spr_background_plant_v20/spr_background_plant_v20.yy",},
+    {"name":"rm_lab_aboveCrushers","order":6,"path":"rooms/rm_lab_aboveCrushers/rm_lab_aboveCrushers.yy",},
     {"name":"obj_trigger_boxThumpNoise","order":30,"path":"objects/obj_trigger_boxThumpNoise/obj_trigger_boxThumpNoise.yy",},
     {"name":"spr_promo_capsule_main_alt","order":12,"path":"sprites/spr_promo_capsule_main_alt/spr_promo_capsule_main_alt.yy",},
     {"name":"rm_hills_runTutorial","order":7,"path":"rooms/rm_hills_runTutorial/rm_hills_runTutorial.yy",},

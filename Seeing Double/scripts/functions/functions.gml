@@ -2113,7 +2113,7 @@ function checkCrusherCollision() {
 		if !place_meeting(x, _targetY, obj_block_wall) { 
 			y = _targetY;
 		} else {
-			show_debug_message("player squished between crusher and floor!")
+			//show_debug_message("player squished between crusher and floor!")
 		}
 	}
 }
