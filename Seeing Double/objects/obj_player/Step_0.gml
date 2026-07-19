@@ -598,13 +598,13 @@ if instance_exists(_topWall) {
 }
 
 //Crusher collision
-
+//@
 checkCrusherCollision();
 
-var _rightCrusher = noone;
-var _leftCrusher = noone;
-var _bottomCrusher = noone;
-var _topCrusher = noone;
+//var _rightCrusher = noone;
+//var _leftCrusher = noone;
+//var _bottomCrusher = noone;
+//var _topCrusher = noone;
 
 
 

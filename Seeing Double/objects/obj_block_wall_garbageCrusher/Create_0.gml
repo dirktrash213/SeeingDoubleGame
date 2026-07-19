@@ -4,9 +4,10 @@ event_inherited();
 //ySpeed = 0;
 
 timerDuration = 180;
-durationBeforeLift = 120;
+durationBeforeLift = 300; //120
 
-crusherSpeed = 5;
+crusherFallSpeed = 5; //5
+crusherLiftSpeed = 2; //2
 
 crusherPathCrush = path_crusher_garbage_crush;
 crusherPathLift = path_crusher_garbage_lift;
