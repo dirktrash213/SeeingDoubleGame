@@ -6,6 +6,8 @@ global.demoBuild = false; //Determines if this build is the demo version vs full
 
 window_set_caption("Seeing Double");
 
+//CLOSE LAB ENTRANCE DOOR BEFORE RELEASE
+
 global.speedrunTimer = 0; //OLD
 
 

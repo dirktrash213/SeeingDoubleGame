@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_twitchBanners",
+  "name": "spr_twitch_banners",
   "bbox_bottom": 105,
   "bbox_left": 0,
   "bbox_right": 319,
@@ -35,7 +35,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_twitchBanners",
+    "name": "spr_twitch_banners",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -57,10 +57,10 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"20965162-7779-4fc4-bcc8-9ff66c71dfaa","path":"sprites/spr_twitchBanners/spr_twitchBanners.yy",},},},"Disabled":false,"id":"0a6c2c39-93f9-4961-86d1-72b13dcbc311","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0fcfb6e7-d51b-4b93-bcda-d6cb271dfe2e","path":"sprites/spr_twitchBanners/spr_twitchBanners.yy",},},},"Disabled":false,"id":"53187d39-35c8-42e6-b493-eecf14b40386","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"959902a5-f181-4322-982a-c16ed4b3b3cc","path":"sprites/spr_twitchBanners/spr_twitchBanners.yy",},},},"Disabled":false,"id":"145961e0-ac02-4d3f-be69-71c294923dd3","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e146155e-617c-423e-9631-cb5c1af38c81","path":"sprites/spr_twitchBanners/spr_twitchBanners.yy",},},},"Disabled":false,"id":"e23d6ce2-ffd7-4291-a5f0-b8a1d5d60ca6","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"20965162-7779-4fc4-bcc8-9ff66c71dfaa","path":"sprites/spr_twitch_banners/spr_twitch_banners.yy",},},},"Disabled":false,"id":"0a6c2c39-93f9-4961-86d1-72b13dcbc311","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0fcfb6e7-d51b-4b93-bcda-d6cb271dfe2e","path":"sprites/spr_twitch_banners/spr_twitch_banners.yy",},},},"Disabled":false,"id":"53187d39-35c8-42e6-b493-eecf14b40386","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"959902a5-f181-4322-982a-c16ed4b3b3cc","path":"sprites/spr_twitch_banners/spr_twitch_banners.yy",},},},"Disabled":false,"id":"145961e0-ac02-4d3f-be69-71c294923dd3","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e146155e-617c-423e-9631-cb5c1af38c81","path":"sprites/spr_twitch_banners/spr_twitch_banners.yy",},},},"Disabled":false,"id":"e23d6ce2-ffd7-4291-a5f0-b8a1d5d60ca6","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

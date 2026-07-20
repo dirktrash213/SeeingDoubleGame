@@ -1,7 +1,8 @@
-event_inherited();
+//event_inherited();
 
 //xSpeed = 0;
 //ySpeed = 0;
+//crusherID = 0;
 
 timerDuration = 180;
 durationBeforeLift = 120; //120

@@ -154,6 +154,7 @@ function saveRoom() {
 			y: y,
 			image_index: image_index,
 			visible: visible,
+			redCoinCherry: redCoinCherry, //TEMP, remove if causes issues
 		
 		}
 		

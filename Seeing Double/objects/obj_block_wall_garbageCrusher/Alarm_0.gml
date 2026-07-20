@@ -1,3 +1,5 @@
+var _crusherID = crusherID;
+
 if readyToCrush {
 
 	readyToCrush = false;
@@ -11,7 +13,11 @@ if readyToCrush {
 	
 	with obj_block_wall_crusher {
 	
-		path_start(_crusherPathCrush, _crusherFallSpeed, path_action_stop, false);
+		if crusherID == _crusherID {
+	
+			path_start(_crusherPathCrush, _crusherFallSpeed, path_action_stop, false);
+		
+		}
 	
 	}
 
@@ -24,7 +30,11 @@ if readyToCrush {
 	
 	with obj_block_wall_crusher {
 	
-		path_start(_crusherPathLift, _crusherLiftSpeed, path_action_stop, false);
+		if crusherID == _crusherID {
+	
+			path_start(_crusherPathLift, _crusherLiftSpeed, path_action_stop, false);
+		
+		}
 	
 	}
 
