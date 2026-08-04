@@ -2226,3 +2226,657 @@ function checkCrusherCollision() {
 		}
 	}
 }
+
+function singlePlayerCameraControls() {
+	
+	//Set position of view by centering it on the player 
+
+	var _cameraClampValue = 4;
+	var _cameraRoomBoundValue = global.splitScreenActive ? 2 : 1;
+
+	if pitterPlayerIsPresent() {
+
+		//if abs(xSpeed) >= moveSpeed[1]
+		//var _cameraLeadingX = 0;
+	
+		var _runningMult = abs(obj_player_pitter.xSpeed) >= obj_player_pitter.moveSpeed[1] ? 3 : 1;
+		
+		if obj_player_pitter.moveDir == 1 {
+		
+			//pitterCameraLeadingX += cameraLeadAdjustSpeedX * _runningMult;
+		
+			if obj_player_pitter.ridingMinecart {
+			
+				cameraLeadingX += cameraLeadAdjustSpeedMinecartX * _runningMult;
+				cameraLeadingX = min(cameraLeadingX, cameraLeadingXMinecartMax);
+			
+			} else {
+		
+				if cameraLeadingX > cameraLeadingXmax {
+			
+					cameraLeadingX -= cameraLeadAdjustSpeedX * _runningMult;
+			
+				} else {
+		
+					cameraLeadingX += cameraLeadAdjustSpeedX * _runningMult;
+					cameraLeadingX = min(cameraLeadingX, cameraLeadingXmax);
+			
+				}
+		
+			}
+		
+		}
+	
+		if obj_player_pitter.moveDir == -1 {
+		
+			//cameraLeadingX -= cameraLeadAdjustSpeedX * _runningMult;
+		
+			if obj_player_pitter.ridingMinecart {
+			
+				cameraLeadingX -= cameraLeadAdjustSpeedMinecartX * _runningMult;
+				cameraLeadingX = min(cameraLeadingX, -cameraLeadingXMinecartMax);
+			
+			} else {
+		
+				if cameraLeadingX < -cameraLeadingXmax {
+			
+					cameraLeadingX += cameraLeadAdjustSpeedX * _runningMult;
+			
+				} else {
+		
+					cameraLeadingX -= cameraLeadAdjustSpeedX * _runningMult;
+					cameraLeadingX = max(cameraLeadingX, -cameraLeadingXmax);
+			
+				}
+		
+			}
+		
+		}
+	
+		if cameraLockedForward {
+	
+			cameraLeadingX = cameraLeadingXMinecartMax;
+	
+		}
+	
+		if global.verticalLevel {
+		//if global.verticalLevel || global.customLevel {
+	
+			if obj_player_pitter.crouching {
+	
+				verticalLevelOffsetY += verticalLevelOffsetYUpdateAmount;
+				verticalLevelOffsetY = min(verticalLevelOffsetY, verticalLevelOffsetYMax)
+	
+			}
+	
+			if obj_player_pitter.lookingUp {
+	
+				verticalLevelOffsetY -= verticalLevelOffsetYUpdateAmount;
+				verticalLevelOffsetY = max(verticalLevelOffsetY, verticalLevelOffsetYMin)
+	
+			}
+		
+			if room == rm_cave_descent  //Edge cases for certain descending rooms so the player can see ahead
+			|| room == rm_cave_descendingOnBigBoulder 
+			|| room == rm_cave_chase_descent 
+			|| room == rm_cave_chase_descendingWithGroundPound {
+		
+				verticalLevelOffsetY = verticalLevelOffsetYMax;
+		
+			}
+	
+		}
+	
+		if !global.verticalLevel {
+	
+			var _customMaxClampY = 273; 
+	
+			//Vars that center the camera on player
+			var _x = clamp((obj_player_pitter.x-view_width/_cameraClampValue) + cameraLeadingX, 0, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
+			var _y = clamp(obj_player_pitter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue);
+			if global.customLevel _y = clamp(obj_player_pitter.y-view_height + 100, 0, _customMaxClampY);
+	
+		} else {
+	
+			//Vars that center the camera on player
+			var _x = clamp((obj_player_pitter.x-view_width/_cameraClampValue) + cameraLeadingX, 0, 240); //Special values for vertical levels
+			var _y = clamp((obj_player_pitter.y-view_height/_cameraClampValue) + verticalLevelOffsetY, 0, room_height-view_height);
+	
+		}
+
+		//Camera smoothing
+	
+		//Get view's current position
+		var _cur_x = camera_get_view_x(VIEW);
+		var _cur_y = camera_get_view_y(VIEW);
+	
+		//How fast will our camera follow?
+		var _spd = 0.5; //0.1
+	
+		if freeze { //Camera does not follow player if this variable is triggered during cutscenes
+	
+			//camera_set_view_pos(view, lerp(_cur_x, _x, _spd), lerp(_cur_y, _y, _spd));
+			//camera_set_view_pos(VIEW, _cur_x,_cur_y);
+	
+		} else { //Otherwise camera follows player
+	
+			//camera_set_view_pos(view, lerp(_cur_x, _x, _spd), lerp(_cur_y, _y, _spd));
+			//camera_set_view_pos(VIEW, _x, _y);
+		
+			if !global.verticalLevel {
+		
+				camera_set_view_pos(VIEW, _x, pitterCameraOffsetY); //TODO: change camera movement type depending on level type? Or find a way to draw bounds for the cameras
+				if global.customLevel camera_set_view_pos(VIEW, _x, _y); 
+	
+			} else {
+		
+				camera_set_view_pos(VIEW, _x, _y);
+			
+			}
+	
+		}
+	
+		// Current app window size (your reference)
+		var _windowWidth = 1920;
+		var _windowHeight = 1080;
+	
+		// The current camera view size (480x270)
+		var _camWidth = camera_get_view_width(VIEW);
+		var _camHeight = camera_get_view_height(VIEW);
+	
+		//show_debug_message(_camWidth)
+	
+		// --- NEW VIEWPORT DIMENSIONS ---
+		// New Viewport Width: Half the window width (960)
+		var _newPortWidth = _windowWidth / 2; // 960
+		// New Viewport Height: Full window height (1080)
+		var _newPortHeight = _windowHeight; // 1080
+	
+		// --- NEW VIEWPORT POSITION (Left Side) ---
+		var _newPortX = 0; // Starts at the far left
+		var _newPortY = 0;
+	
+		// Set the new viewport size (960x1080)
+		view_set_wport(0, _newPortWidth);
+		view_set_hport(0, _newPortHeight);
+	
+		// Set the new viewport position (top-left corner of the window)
+		view_set_xport(0, _newPortX);
+		view_set_yport(0, _newPortY);
+	
+	
+	
+	}
+
+	//@
+	if patterPlayerIsPresent() {
+
+		if obj_player_patter.moveDir == 1 {
+		
+			//cameraLeadingX += cameraLeadAdjustSpeedX * _runningMult;
+		
+			if obj_player_patter.ridingMinecart {
+			
+				cameraLeadingX += cameraLeadAdjustSpeedMinecartX;
+				cameraLeadingX = min(cameraLeadingX, cameraLeadingXMinecartMax);
+			
+			} else {
+		
+				if cameraLeadingX > cameraLeadingXmax {
+			
+					cameraLeadingX -= cameraLeadAdjustSpeedX;
+			
+				} else {
+		
+					cameraLeadingX += cameraLeadAdjustSpeedX;
+					cameraLeadingX = min(cameraLeadingX, cameraLeadingXmax);
+			
+				}
+		
+			}
+		
+		}
+	
+		if obj_player_patter.moveDir == -1 {
+		
+			//cameraLeadingX -= cameraLeadAdjustSpeedX * _runningMult;
+		
+			if obj_player_patter.ridingMinecart {
+			
+				cameraLeadingX -= cameraLeadAdjustSpeedMinecartX;
+				cameraLeadingX = min(cameraLeadingX, -cameraLeadingXMinecartMax);
+			
+			} else {
+		
+				if cameraLeadingX < -cameraLeadingXmax {
+			
+					cameraLeadingX += cameraLeadAdjustSpeedX;
+			
+				} else {
+		
+					cameraLeadingX -= cameraLeadAdjustSpeedX;
+					cameraLeadingX = max(cameraLeadingX, -cameraLeadingXmax);
+			
+				}
+		
+			}
+		
+		}
+	
+		if cameraLockedForward {
+	
+			cameraLeadingX = cameraLeadingXMinecartMax;
+	
+		}
+	
+		if !global.verticalLevel {
+	
+			var _customMinClampY = 592;
+	
+			//Vars that center the camera on patter
+			var _x = clamp(obj_player_patter.x-view_width/_cameraClampValue + cameraLeadingX, 0, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
+			var _y = clamp(obj_player_patter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue);
+			if global.customLevel _y = clamp(obj_player_patter.y-view_height + 100, _customMinClampY, room_height-view_height-1); 
+	
+		} else {
+	
+			var _x = clamp(obj_player_patter.x-view_width/_cameraClampValue + cameraLeadingX, patterCameraOffsetX, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
+			var _y = clamp((obj_player_patter.y-view_height/_cameraClampValue) + verticalLevelOffsetY, 0, room_height-view_height/_cameraRoomBoundValue*2);
+	
+		}
+
+
+		//Camera smoothing
+	
+		//Get view's current position
+		var _cur_x = camera_get_view_x(VIEW2);
+		var _cur_y = camera_get_view_y(VIEW2);
+	
+		//How fast will our camera follow?
+		var _spd = 0.5; //0.1
+	
+		if freeze { //Camera does not follow player if this variable is triggered during cutscenes
+	
+			//camera_set_view_pos(view, lerp(_cur_x, _x, _spd), lerp(_cur_y, _y, _spd));
+			//camera_set_view_pos(VIEW, _cur_x,_cur_y);
+	
+		} else { //Otherwise camera follows player
+	
+			//camera_set_view_pos(view, lerp(_cur_x, _x, _spd), lerp(_cur_y, _y, _spd));
+			//camera_set_view_pos(VIEW, _x, _y);
+			if !global.verticalLevel {
+			
+			camera_set_view_pos(VIEW2, _x, patterCameraOffsetY); 
+			if global.customLevel camera_set_view_pos(VIEW2, _x, _y); 
+		
+			} else {
+		
+				camera_set_view_pos(VIEW2, _x, _y);
+			
+			}
+	
+	
+		}
+	
+		var _windowWidth = 1920;
+		var _windowHeight = 1080;
+
+		var _camWidth = camera_get_view_width(VIEW2);
+		var _camHeight = camera_get_view_height(VIEW2);
+	
+		// --- NEW VIEWPORT DIMENSIONS ---
+		// New Viewport Width: Half the window width (960)
+		var _newPortWidth = _windowWidth / 2; // 960
+		// New Viewport Height: Full window height (1080)
+		var _newPortHeight = _windowHeight; // 1080
+	
+		// --- NEW VIEWPORT POSITION (Right Side) ---
+		var _newPortX = 960; // Starts at the right
+		//_newPortY = 305;
+		var _newPortY = 0;
+	
+		// Set the new viewport size (960x1080)
+		view_set_wport(1, _newPortWidth);
+		view_set_hport(1, _newPortHeight);
+	
+		// Set the new viewport position (top-left corner of the window)
+		view_set_xport(1, _newPortX);
+		view_set_yport(1, _newPortY);
+
+
+
+
+
+
+
+
+
+
+	}
+
+
+
+
+
+
+}
+
+function coopCameraControls() {
+
+	//Set position of view by centering it on the player 
+
+	var _cameraClampValue = 4;
+	var _cameraRoomBoundValue = global.splitScreenActive ? 2 : 1;
+	
+	if pitterPlayerIsPresent() {
+
+		//if abs(xSpeed) >= moveSpeed[1]
+		//var _cameraLeadingX = 0;
+	
+		var _runningMult = abs(obj_player_pitter.xSpeed) >= obj_player_pitter.moveSpeed[1] ? 3 : 1;
+		
+		if obj_player_pitter.moveDir == 1 {
+		
+			//pitterCameraLeadingX += cameraLeadAdjustSpeedX * _runningMult;
+		
+			if obj_player_pitter.ridingMinecart {
+			
+				pitterCameraLeadingX += cameraLeadAdjustSpeedMinecartX * _runningMult;
+				pitterCameraLeadingX = min(pitterCameraLeadingX, cameraLeadingXMinecartMax);
+			
+			} else {
+		
+				if pitterCameraLeadingX > cameraLeadingXmax {
+			
+					pitterCameraLeadingX -= cameraLeadAdjustSpeedX * _runningMult;
+			
+				} else {
+		
+					pitterCameraLeadingX += cameraLeadAdjustSpeedX * _runningMult;
+					pitterCameraLeadingX = min(pitterCameraLeadingX, cameraLeadingXmax);
+			
+				}
+		
+			}
+		
+		}
+	
+		if obj_player_pitter.moveDir == -1 {
+		
+			//cameraLeadingX -= cameraLeadAdjustSpeedX * _runningMult;
+		
+			if obj_player_pitter.ridingMinecart {
+			
+				pitterCameraLeadingX -= cameraLeadAdjustSpeedMinecartX * _runningMult;
+				pitterCameraLeadingX = min(pitterCameraLeadingX, -cameraLeadingXMinecartMax);
+			
+			} else {
+		
+				if pitterCameraLeadingX < -cameraLeadingXmax {
+			
+					pitterCameraLeadingX += cameraLeadAdjustSpeedX * _runningMult;
+			
+				} else {
+		
+					pitterCameraLeadingX -= cameraLeadAdjustSpeedX * _runningMult;
+					pitterCameraLeadingX = max(pitterCameraLeadingX, -cameraLeadingXmax);
+			
+				}
+		
+			}
+		
+		}
+	
+		if cameraLockedForward {
+	
+			pitterCameraLeadingX = cameraLeadingXMinecartMax;
+	
+		}
+	
+		if global.verticalLevel {
+		//if global.verticalLevel || global.customLevel {
+	
+			if obj_player_pitter.crouching {
+	
+				verticalLevelOffsetY += verticalLevelOffsetYUpdateAmount;
+				verticalLevelOffsetY = min(verticalLevelOffsetY, verticalLevelOffsetYMax)
+	
+			}
+	
+			if obj_player_pitter.lookingUp {
+	
+				verticalLevelOffsetY -= verticalLevelOffsetYUpdateAmount;
+				verticalLevelOffsetY = max(verticalLevelOffsetY, verticalLevelOffsetYMin)
+	
+			}
+		
+			if room == rm_cave_descent  //Edge cases for certain descending rooms so the player can see ahead
+			|| room == rm_cave_descendingOnBigBoulder 
+			|| room == rm_cave_chase_descent 
+			|| room == rm_cave_chase_descendingWithGroundPound {
+		
+				verticalLevelOffsetY = verticalLevelOffsetYMax;
+		
+			}
+	
+		}
+	
+		if !global.verticalLevel {
+	
+			var _customMaxClampY = 273; 
+	
+			//Vars that center the camera on player
+			var _x = clamp((obj_player_pitter.x-view_width/_cameraClampValue) + pitterCameraLeadingX, 0, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
+			var _y = clamp(obj_player_pitter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue);
+			if global.customLevel _y = clamp(obj_player_pitter.y-view_height + 100, 0, _customMaxClampY);
+	
+		} else {
+	
+			//Vars that center the camera on player
+			var _x = clamp((obj_player_pitter.x-view_width/_cameraClampValue) + pitterCameraLeadingX, 0, 240); //Special values for vertical levels
+			var _y = clamp((obj_player_pitter.y-view_height/_cameraClampValue) + verticalLevelOffsetY, 0, room_height-view_height);
+	
+		}
+
+		//Camera smoothing
+	
+		//Get view's current position
+		var _cur_x = camera_get_view_x(VIEW);
+		var _cur_y = camera_get_view_y(VIEW);
+	
+		//How fast will our camera follow?
+		var _spd = 0.5; //0.1
+	
+		if freeze { //Camera does not follow player if this variable is triggered during cutscenes
+	
+			//camera_set_view_pos(view, lerp(_cur_x, _x, _spd), lerp(_cur_y, _y, _spd));
+			//camera_set_view_pos(VIEW, _cur_x,_cur_y);
+	
+		} else { //Otherwise camera follows player
+	
+			//camera_set_view_pos(view, lerp(_cur_x, _x, _spd), lerp(_cur_y, _y, _spd));
+			//camera_set_view_pos(VIEW, _x, _y);
+		
+			if !global.verticalLevel {
+		
+				camera_set_view_pos(VIEW, _x, pitterCameraOffsetY); //TODO: change camera movement type depending on level type? Or find a way to draw bounds for the cameras
+				if global.customLevel camera_set_view_pos(VIEW, _x, _y); 
+	
+			} else {
+		
+				camera_set_view_pos(VIEW, _x, _y);
+			
+			}
+	
+		}
+	
+		// Current app window size (your reference)
+		var _windowWidth = 1920;
+		var _windowHeight = 1080;
+	
+		// The current camera view size (480x270)
+		var _camWidth = camera_get_view_width(VIEW);
+		var _camHeight = camera_get_view_height(VIEW);
+	
+		//show_debug_message(_camWidth)
+	
+		// --- NEW VIEWPORT DIMENSIONS ---
+		// New Viewport Width: Half the window width (960)
+		var _newPortWidth = _windowWidth / 2; // 960
+		// New Viewport Height: Full window height (1080)
+		var _newPortHeight = _windowHeight; // 1080
+	
+		// --- NEW VIEWPORT POSITION (Left Side) ---
+		var _newPortX = 0; // Starts at the far left
+		var _newPortY = 0;
+	
+		// Set the new viewport size (960x1080)
+		view_set_wport(0, _newPortWidth);
+		view_set_hport(0, _newPortHeight);
+	
+		// Set the new viewport position (top-left corner of the window)
+		view_set_xport(0, _newPortX);
+		view_set_yport(0, _newPortY);
+	
+	
+	
+	}
+
+	//@
+	if patterPlayerIsPresent() {
+
+		if obj_player_patter.moveDir == 1 {
+		
+			//cameraLeadingX += cameraLeadAdjustSpeedX * _runningMult;
+		
+			if obj_player_patter.ridingMinecart {
+			
+				patterCameraLeadingX += cameraLeadAdjustSpeedMinecartX;
+				patterCameraLeadingX = min(patterCameraLeadingX, cameraLeadingXMinecartMax);
+			
+			} else {
+		
+				if patterCameraLeadingX > cameraLeadingXmax {
+			
+					patterCameraLeadingX -= cameraLeadAdjustSpeedX;
+			
+				} else {
+		
+					patterCameraLeadingX += cameraLeadAdjustSpeedX;
+					patterCameraLeadingX = min(patterCameraLeadingX, cameraLeadingXmax);
+			
+				}
+		
+			}
+		
+		}
+	
+		if obj_player_patter.moveDir == -1 {
+		
+			//cameraLeadingX -= cameraLeadAdjustSpeedX * _runningMult;
+		
+			if obj_player_patter.ridingMinecart {
+			
+				patterCameraLeadingX -= cameraLeadAdjustSpeedMinecartX;
+				patterCameraLeadingX = min(patterCameraLeadingX, -cameraLeadingXMinecartMax);
+			
+			} else {
+		
+				if patterCameraLeadingX < -cameraLeadingXmax {
+			
+					patterCameraLeadingX += cameraLeadAdjustSpeedX;
+			
+				} else {
+		
+					patterCameraLeadingX -= cameraLeadAdjustSpeedX;
+					patterCameraLeadingX = max(patterCameraLeadingX, -cameraLeadingXmax);
+			
+				}
+		
+			}
+		
+		}
+	
+		if cameraLockedForward {
+	
+			patterCameraLeadingX = cameraLeadingXMinecartMax;
+	
+		}
+	
+		if !global.verticalLevel {
+	
+			var _customMinClampY = 592;
+	
+			//Vars that center the camera on patter
+			var _x = clamp(obj_player_patter.x-view_width/_cameraClampValue + patterCameraLeadingX, 0, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
+			var _y = clamp(obj_player_patter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue);
+			if global.customLevel _y = clamp(obj_player_patter.y-view_height + 100, _customMinClampY, room_height-view_height-1); 
+	
+		} else {
+	
+			var _x = clamp(obj_player_patter.x-view_width/_cameraClampValue + patterCameraLeadingX, patterCameraOffsetX, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
+			var _y = clamp((obj_player_patter.y-view_height/_cameraClampValue) + verticalLevelOffsetY, 0, room_height-view_height/_cameraRoomBoundValue*2);
+	
+		}
+
+
+		//Camera smoothing
+	
+		//Get view's current position
+		var _cur_x = camera_get_view_x(VIEW2);
+		var _cur_y = camera_get_view_y(VIEW2);
+	
+		//How fast will our camera follow?
+		var _spd = 0.5; //0.1
+	
+		if freeze { //Camera does not follow player if this variable is triggered during cutscenes
+	
+			//camera_set_view_pos(view, lerp(_cur_x, _x, _spd), lerp(_cur_y, _y, _spd));
+			//camera_set_view_pos(VIEW, _cur_x,_cur_y);
+	
+		} else { //Otherwise camera follows player
+	
+			//camera_set_view_pos(view, lerp(_cur_x, _x, _spd), lerp(_cur_y, _y, _spd));
+			//camera_set_view_pos(VIEW, _x, _y);
+			if !global.verticalLevel {
+			
+			camera_set_view_pos(VIEW2, _x, patterCameraOffsetY); 
+			if global.customLevel camera_set_view_pos(VIEW2, _x, _y); 
+		
+			} else {
+		
+				camera_set_view_pos(VIEW2, _x, _y);
+			
+			}
+	
+	
+		}
+	
+		var _windowWidth = 1920;
+		var _windowHeight = 1080;
+
+		var _camWidth = camera_get_view_width(VIEW2);
+		var _camHeight = camera_get_view_height(VIEW2);
+	
+		// --- NEW VIEWPORT DIMENSIONS ---
+		// New Viewport Width: Half the window width (960)
+		var _newPortWidth = _windowWidth / 2; // 960
+		// New Viewport Height: Full window height (1080)
+		var _newPortHeight = _windowHeight; // 1080
+	
+		// --- NEW VIEWPORT POSITION (Right Side) ---
+		var _newPortX = 960; // Starts at the right
+		//_newPortY = 305;
+		var _newPortY = 0;
+	
+		// Set the new viewport size (960x1080)
+		view_set_wport(1, _newPortWidth);
+		view_set_hport(1, _newPortHeight);
+	
+		// Set the new viewport position (top-left corner of the window)
+		view_set_xport(1, _newPortX);
+		view_set_yport(1, _newPortY);
+
+	}
+
+}
