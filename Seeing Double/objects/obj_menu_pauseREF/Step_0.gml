@@ -20,8 +20,8 @@ up_key = keyboard_check_pressed(ord("W")) || global.moveUp;
 down_key = keyboard_check_pressed(ord("S")) || global.moveDown;
 right_key = keyboard_check_pressed(ord("D")) || global.moveRight;
 left_key = keyboard_check_pressed(ord("A")) || global.moveLeft;
-accept_key = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(global.controllerPort,gp_face1);
-back_key = keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(global.controllerPort,gp_face2);
+accept_key = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(global.pitterDevice,gp_face1);
+back_key = keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(global.pitterDevice,gp_face2);
 
 
 

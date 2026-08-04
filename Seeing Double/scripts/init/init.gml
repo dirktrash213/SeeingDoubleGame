@@ -8,6 +8,8 @@ window_set_caption("Seeing Double");
 
 //CLOSE LAB ENTRANCE DOOR BEFORE RELEASE
 
+global.coopActive = false;
+
 global.speedrunTimer = 0; //OLD
 
 
@@ -44,7 +46,10 @@ global.currentCheckpointDefeatCount = 0;
 
 global.layer_alpha = 1;
 
-global.controllerPort = 0;
+//global.controllerPort = 0;
+// Controller assignments: -1 = Keyboard, 0+ = Gamepad Slot Index
+global.pitterDevice = -1; // Default Pitter to Keyboard
+global.patterDevice = 0;  // Default Patter to Gamepad Slot 0
 global.lastInputWasController = false;
 
 global.readytoDisplayTitleScreenMenu = true;

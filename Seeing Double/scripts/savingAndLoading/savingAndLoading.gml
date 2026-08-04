@@ -39,6 +39,7 @@ function saveSettings() {
         assistMode: global.assistMode,
         screenShake: global.screenShake,
         displayGameTime: global.displayGameTime,
+        //coopActive: global.coopActive,
        
     };
 	
@@ -91,6 +92,7 @@ function loadSettings() { //Load player's audio, visual, and gameplay settings o
         global.assistMode   = _s[$ "assistMode"] ?? false;
         global.screenShake   = _s[$ "screenShake"] ?? false;
         global.displayGameTime   = _s[$ "displayGameTime"] ?? false;
+        //global.coopActive   = _s[$ "coopActive"] ?? false;
        
     }
 	
@@ -238,7 +240,8 @@ function saveGame() {
     // 2. Pack all global variables into a "stats" struct within gameData
     global.gameData.stats = {
 		
-        gameTimeMilliseconds: global.gameTimeMilliseconds,
+        coopActive: global.coopActive,
+		gameTimeMilliseconds: global.gameTimeMilliseconds,
         gameTimeMillisecondsRegional: global.gameTimeMillisecondsRegional,
         disableSpeedrunForest: global.disableSpeedrunForest,
         disableSpeedrunCave: global.disableSpeedrunCave,
@@ -308,6 +311,7 @@ function loadGame() {
         // If the key doesn't exist in an old save, it uses the ?? default value
         var _s = _loadData.stats;
         
+		global.coopActive   = _s[$ "coopActive"] ?? false;
 		global.gameTimeMilliseconds   = _s[$ "gameTimeMilliseconds"] ?? 0;
         global.gameTimeMillisecondsRegional   = _s[$ "gameTimeMillisecondsRegional"] ?? 0;
         global.disableSpeedrunForest   = _s[$ "disableSpeedrunForest"] ?? false;

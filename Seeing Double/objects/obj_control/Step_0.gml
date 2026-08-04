@@ -5,6 +5,8 @@ input_check_source(); //Check if player's most recent input is keyboard or gamep
 //show_debug_message("portals active: " + string(global.portalsActive))
 //show_debug_message("global.patterOffsetY: " + string(global.patterOffsetY))
 
+//show_debug_message("global.coopActive: " + string(global.coopActive))
+
 if !global.paused {
 	
     global.gameTimeMilliseconds += delta_time / 1000; 
@@ -296,6 +298,13 @@ if global.paused {
 								global.screenShake = !global.screenShake;
 						
 							} break;
+							//@
+							case 4: { //Toggle co-op
+						
+								//global.coopActive = !global.coopActive;
+								setCoopMode(!global.coopActive);
+						
+							} break;
 							
 						}
 						
@@ -369,11 +378,11 @@ if global.paused {
 					if pauseMenuPosition > 4 pauseMenuPosition = 0;
 				
 				} break;
-				
+				//@
 				case "Gameplay settings": {
 				
-					if pauseMenuPosition < 0 pauseMenuPosition = 3;
-					if pauseMenuPosition > 3 pauseMenuPosition = 0;
+					if pauseMenuPosition < 0 pauseMenuPosition = 4;
+					if pauseMenuPosition > 4 pauseMenuPosition = 0;
 				
 				} break;
 					
@@ -547,13 +556,16 @@ if back {
 #region Controller Port + Input type detection
 
 // Get and assign a controller port for a connected controller
-var gp_num = gamepad_get_device_count();
+//var gp_num = gamepad_get_device_count();
+//
+//for (var i = 0; i < gp_num; i++;) {
+//	   
+//	if gamepad_is_connected(i) global.controllerPort = i;
+//	   
+//}
 
-for (var i = 0; i < gp_num; i++;) {
-	   
-	if gamepad_is_connected(i) global.controllerPort = i;
-	   
-}
+
+
 
 if keyboard_check(ord("W")) || keyboard_check(ord("A")) || keyboard_check(ord("S")) || keyboard_check(ord("D")) || keyboard_check(vk_space)
 || keyboard_check(vk_escape) || keyboard_check(vk_shift) {
@@ -562,10 +574,10 @@ if keyboard_check(ord("W")) || keyboard_check(ord("A")) || keyboard_check(ord("S
 
 }
 
-if gamepad_axis_value(global.controllerPort,gp_axislh) < 0 || gamepad_axis_value(global.controllerPort,gp_axislh) > 0 
-|| gamepad_axis_value(global.controllerPort,gp_axislv) < 0 || gamepad_axis_value(global.controllerPort,gp_axislv) > 0
-|| gamepad_button_check(global.controllerPort, gp_face1) || gamepad_button_check(global.controllerPort, gp_face3) ||
-gamepad_button_check_pressed(global.controllerPort,gp_start) {
+if gamepad_axis_value(global.pitterDevice,gp_axislh) < 0 || gamepad_axis_value(global.pitterDevice,gp_axislh) > 0 
+|| gamepad_axis_value(global.pitterDevice,gp_axislv) < 0 || gamepad_axis_value(global.pitterDevice,gp_axislv) > 0
+|| gamepad_button_check(global.pitterDevice, gp_face1) || gamepad_button_check(global.pitterDevice, gp_face3) ||
+gamepad_button_check_pressed(global.pitterDevice,gp_start) {
 
 	global.lastInputWasController = true;
 

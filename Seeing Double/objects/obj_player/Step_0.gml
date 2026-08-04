@@ -28,14 +28,18 @@ if global.playerDefeated || global.paused {
 		
 		sprite_index = defeatSprite;
 		
-		if obj_player_pitter.crushed || obj_player_patter.crushed {
+		if patterPlayerIsPresent(){
+		
+			if obj_player_pitter.crushed || obj_player_patter.crushed {
 			
-			obj_player_pitter.sprite_index = obj_player_pitter.crushedSprite;
-			obj_player_patter.sprite_index = obj_player_patter.crushedSprite;
+				obj_player_pitter.sprite_index = obj_player_pitter.crushedSprite;
+				obj_player_patter.sprite_index = obj_player_patter.crushedSprite;
 			
-			//show_debug_message("patter crushed!!")
+				//show_debug_message("patter crushed!!")
 			
-		}	
+			}	
+		
+		}
 		
 	}
 	
@@ -79,18 +83,26 @@ if object_index == obj_player_pitter && global.splitScreenActive {
 //Keep patter in sync with pitter
 if object_index == obj_player_patter && global.splitScreenActive {
 
-	if pitterPlayerIsPresent() {
+	if global.coopActive {
 	
-		if !global.verticalLevel {
+	
+	
+	} else {
+	
+		if pitterPlayerIsPresent() {
+	
+			if !global.verticalLevel {
 		
-			x = obj_player_pitter.x;
-			y = obj_player_pitter.y + global.patterOffsetY;
+				x = obj_player_pitter.x;
+				y = obj_player_pitter.y + global.patterOffsetY;
 		
-		} else {
+			} else {
 		
-			x = obj_player_pitter.x + global.patterOffsetX;
-			y = obj_player_pitter.y;
+				x = obj_player_pitter.x + global.patterOffsetX;
+				y = obj_player_pitter.y;
 		
+			}
+	
 		}
 	
 	}
@@ -125,6 +137,7 @@ if object_index == obj_player_patter && global.splitScreenActive && !global.cuts
 }
 
 getControls();
+if global.coopActive getControlsPlayer2(); //For co-op only
 
 if stuckOnBoulder {
 

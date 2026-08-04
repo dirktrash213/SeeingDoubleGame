@@ -204,23 +204,38 @@ function drawPauseMenu() {
 						draw_sprite(volumeLoudIcon, 0, _x + _offsetX + _iconOffsetX, _y + _offsetY + _spacing*3);
 				
 					} break;
-					
+					//@
 					case "Gameplay settings": {
+				
+						//show_debug_message("pauseMenuPosition: " + string(pauseMenuPosition))
 				
 						var _backString = "Back";
 						var _runModeString = global.runModeIsToggle ? "\nToggle Run: ON" : "\nToggle Run: OFF";
 						var _assistModeString = global.assistMode ? "\nAssistance: ON" : "\nAssistance: OFF";
 						var _screenShakeString = global.screenShake ? "\nScreen Shake: ON" : "\nScreen Shake: OFF";
+						var _coopString = global.coopActive ? "\nCo-op: ON" : "\nCo-op: OFF";
 	
 						if pauseMenuPosition == 0 _backString = "[wave]Back[/wave]";
 						if pauseMenuPosition == 1 _runModeString = global.runModeIsToggle ? "[wave]\nToggle Run: ON[/wave]" : "[wave]\nToggle Run: OFF[/wave]";
 						if pauseMenuPosition == 2 _assistModeString = global.assistMode ? "[wave]\nAssistance: ON[/wave]" : "[wave]\nAssistance: OFF[/wave]";
-						if pauseMenuPosition == 3 _screenShakeString = global.screenShake ? "[wave]\nScreen Shake: ON" : "[wave]\nScreen Shake: OFF";
+						if pauseMenuPosition == 3 _screenShakeString = global.screenShake ? "[wave]\nScreen Shake: ON[/wave]" : "[wave]\nScreen Shake: OFF[/wave]";
+						if pauseMenuPosition == 4 _coopString = global.coopActive ? "[wave]\nCo-op: ON[/wave]" : "[wave]\nCo-op: OFF[/wave]";
+						
+						//switch (pauseMenuPosition) {
+						// 
+						//	case 0: _backString = "[wave]Back[/wave]"; break;
+						//	case 1: _runModeString = global.runModeIsToggle ? "[wave]\nToggle Run: ON[/wave]" : "[wave]\nToggle Run: OFF[/wave]"; break;
+						//	case 2: _assistModeString = global.assistMode ? "[wave]\nAssistance: ON[/wave]" : "[wave]\nAssistance: OFF[/wave]"; break;
+						//	case 3: _screenShakeString = global.screenShake ? "[wave]\nScreen Shake: ON" : "[wave]\nScreen Shake: OFF"; break;
+						//	case 4: _coopString = global.coopActive ? "[wave]\nCo-op: ON" : "[wave]\nCo-op: OFF"; break;
+						//	
+						//
+						//}
 				
 						var _offsetX = 0;
 						var _offsetY = _masterOffsetY;
 	
-						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _runModeString + _assistModeString + _screenShakeString);
+						draw_text_scribble(_x + _offsetX, _y + _offsetY, _backString + _runModeString + _assistModeString + _screenShakeString + _coopString);
 				
 					} break;
 			
@@ -246,6 +261,100 @@ function drawPauseMenu() {
 	}
 	
 }
+
+/// @function set_coop_mode(enable);
+/// @param {bool} enable True to enable co-op, false to disable.
+function setCoopMode(_enable) {
+    global.coopActive = _enable;
+    
+    if (global.coopActive) {
+        // --- CO-OP MODE (Strict device isolation) ---
+        var _firstPad = -1;
+        var _secondPad = -1;
+        
+        for (var i = 0; i < 12; i++) {
+            if (gamepad_is_connected(i)) {
+                if (_firstPad == -1) {
+                    _firstPad = i;
+                } else if (_secondPad == -1) {
+                    _secondPad = i;
+                    break;
+                }
+            }
+        }
+        
+        if (_firstPad != -1 && _secondPad != -1) {
+            global.pitterDevice = _firstPad;   // Player 1 on Gamepad 1
+            global.patterDevice = _secondPad;  // Player 2 on Gamepad 2
+        } 
+        else if (_firstPad != -1) {
+            global.pitterDevice = -1;          // Player 1 on Keyboard
+            global.patterDevice = _firstPad;   // Player 2 on Gamepad 1
+        } 
+        else {
+            global.pitterDevice = -1;          // WASD
+            global.patterDevice = -1;          // Arrow Keys
+        }
+    } 
+    else {
+        // --- SINGLE-PLAYER MODE ---
+        // -2 means "Accept Keyboard AND any connected Gamepad"
+        global.pitterDevice = -2;
+        global.patterDevice = -1; 
+    }
+}
+
+//function setCoopMode(_enable) {
+//    global.coopActive = _enable;
+//    
+//    if (global.coopActive) {
+//        // --- CO-OP TURNED ON ---
+//        var _firstPad = -1;
+//        var _secondPad = -1;
+//        
+//        // Scan for up to 12 gamepad slots
+//        for (var i = 0; i < 12; i++) {
+//            if (gamepad_is_connected(i)) {
+//                if (_firstPad == -1) {
+//                    _firstPad = i;
+//                } else if (_secondPad == -1) {
+//                    _secondPad = i;
+//                    break; // Found two pads, stop searching
+//                }
+//            }
+//        }
+//        
+//        // Scenario A: 2 Gamepads (P1 = Pad 1, P2 = Pad 2)
+//        if (_firstPad != -1 && _secondPad != -1) {
+//            global.pitterDevice = _firstPad;
+//            global.patterDevice = _secondPad;
+//        } 
+//        // Scenario B: 1 Gamepad (P1 = Keyboard, P2 = Pad 1)
+//        else if (_firstPad != -1) {
+//            global.pitterDevice = -1;
+//            global.patterDevice = _firstPad;
+//        } 
+//        // Scenario C: 0 Gamepads (P1 = WASD, P2 = Arrows)
+//        else {
+//            global.pitterDevice = -1;
+//            global.patterDevice = -1;
+//        }
+//    } 
+//    else {
+//        // --- CO-OP TURNED OFF ---
+//        // Give Pitter the first available gamepad, or default to keyboard
+//        global.pitterDevice = -1;
+//        for (var i = 0; i < 12; i++) {
+//            if (gamepad_is_connected(i)) {
+//                global.pitterDevice = i;
+//                break;
+//            }
+//        }
+//        
+//        // Reset Patter's assigned device
+//        global.patterDevice = -1; 
+//    }
+//}
 
 function activateCutscene() {
 
@@ -631,13 +740,13 @@ function playerCaughtByForestGhost() {
 
 }
 
-
+//@
 function checkForMenuInput() {
 
 	confirm = keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter) ||
-	gamepad_button_check_pressed(global.controllerPort, gp_face1) || gamepad_button_check_pressed(global.controllerPort, gp_start);
+	gamepad_button_check_pressed(global.pitterDevice, gp_face1) || gamepad_button_check_pressed(global.pitterDevice, gp_start);
 	
-	back = keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_backspace) || gamepad_button_check_pressed(global.controllerPort, gp_face2);
+	back = keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_backspace) || gamepad_button_check_pressed(global.pitterDevice, gp_face2);
 	
 	moveUp = keyboard_check_pressed(ord("W")) || global.moveUp;
 	moveDown = keyboard_check_pressed(ord("S")) || global.moveDown;
@@ -657,7 +766,7 @@ function pauseButtonPressed() {
 
 	return keyboard_check_pressed(vk_enter) || 
 	keyboard_check_pressed(vk_escape) || 
-	gamepad_button_check_pressed(global.controllerPort, gp_start);
+	gamepad_button_check_pressed(global.pitterDevice, gp_start);
 
 }
 
@@ -734,53 +843,53 @@ function analogStickMenuMovement() {
 	global.moveLeft = false;
 	global.moveRight = false;
 
-	if !global.hasMovedUp && gamepad_axis_value(global.controllerPort,gp_axislv) < -_axisSensitivity {
+	if !global.hasMovedUp && gamepad_axis_value(global.pitterDevice,gp_axislv) < -_axisSensitivity {
 	
 		global.moveUp = true;
 		global.hasMovedUp = true;
 	
 	}
 
-	if global.hasMovedUp && gamepad_axis_value(global.controllerPort,gp_axislv) == 0 {
+	if global.hasMovedUp && gamepad_axis_value(global.pitterDevice,gp_axislv) == 0 {
 
 		global.hasMovedUp = false;
 
 	}
 
-	if !global.hasMovedDown && gamepad_axis_value(global.controllerPort,gp_axislv) > _axisSensitivity {
+	if !global.hasMovedDown && gamepad_axis_value(global.pitterDevice,gp_axislv) > _axisSensitivity {
 	
 		global.moveDown = true;
 		global.hasMovedDown = true;
 	
 	}
 
-	if global.hasMovedDown && gamepad_axis_value(global.controllerPort,gp_axislv) == 0 {
+	if global.hasMovedDown && gamepad_axis_value(global.pitterDevice,gp_axislv) == 0 {
 
 		global.hasMovedDown = false;
 
 	}
 
-	if !global.hasMovedLeft && gamepad_axis_value(global.controllerPort,gp_axislh) < -_axisSensitivity {
+	if !global.hasMovedLeft && gamepad_axis_value(global.pitterDevice,gp_axislh) < -_axisSensitivity {
 	
 		global.moveLeft = true;
 		global.hasMovedLeft = true;
 	
 	}
 
-	if global.hasMovedLeft && gamepad_axis_value(global.controllerPort,gp_axislh) == 0 {
+	if global.hasMovedLeft && gamepad_axis_value(global.pitterDevice,gp_axislh) == 0 {
 
 		global.hasMovedLeft = false;
 
 	}
 
-	if !global.hasMovedRight && gamepad_axis_value(global.controllerPort,gp_axislh) > _axisSensitivity {
+	if !global.hasMovedRight && gamepad_axis_value(global.pitterDevice,gp_axislh) > _axisSensitivity {
 	
 		global.moveRight = true;
 		global.hasMovedRight = true;
 	
 	}
 
-	if global.hasMovedRight && gamepad_axis_value(global.controllerPort,gp_axislh) == 0 {
+	if global.hasMovedRight && gamepad_axis_value(global.pitterDevice,gp_axislh) == 0 {
 
 		global.hasMovedRight = false;
 
@@ -946,7 +1055,7 @@ function shakeScreen(_mag, _frames) {
         }
     }
 }
-//@
+
 function detectMiscObjectDuringGroundPound(_object) {
 
 	if _object != noone && groundPoundFalling {
@@ -2040,7 +2149,7 @@ function conveyorLogic() {
 
 }
 
-//@
+
 function checkCrusherCollision() {
 
 	var _rightCrusher = noone;

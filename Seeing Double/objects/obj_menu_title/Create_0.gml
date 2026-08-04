@@ -1,6 +1,7 @@
 
 typingNewGame = true;
 confirmingNewGame = false;
+choosingCoop = false;
 
 menuPosition = 0;
 
