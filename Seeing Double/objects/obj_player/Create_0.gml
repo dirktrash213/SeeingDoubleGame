@@ -76,6 +76,26 @@ function checkForSemisolidPlatform(_x, _y) {
 
 controlsSetup();
 
+//if global.coopActive {
+	
+if object_index == obj_player_pitter {
+	
+	//show_debug_message("created shadow")
+	
+	instance_create_layer(x, y, "Instances", obj_player_shadow_pitter);
+	
+}
+
+if object_index == obj_player_patter {
+	
+	//show_debug_message("created shadow")
+	
+	instance_create_layer(x, y, "Instances", obj_player_shadow_patter);
+	
+}
+	
+//}
+
 heartParticleSpawnRate = 10;
 wherePatterParticleSpawnRate = 20;
 

@@ -432,15 +432,33 @@ function playerIsPresent() {
 
 }
 
+function shadowIsPresent() {
+
+	return instance_exists(obj_player_shadow);
+
+}
+
 function pitterPlayerIsPresent() {
 
 	return instance_exists(obj_player_pitter);
 
 }
 
+function pitterShadowIsPresent() {
+
+	return instance_exists(obj_player_shadow_pitter);
+
+}
+
 function patterPlayerIsPresent() {
 
 	return instance_exists(obj_player_patter);
+
+}
+
+function patterShadowIsPresent() {
+
+	return instance_exists(obj_player_shadow_patter);
 
 }
 

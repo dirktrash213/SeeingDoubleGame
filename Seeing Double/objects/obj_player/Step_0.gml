@@ -85,7 +85,7 @@ if object_index == obj_player_patter && global.splitScreenActive {
 
 	if global.coopActive {
 	
-	
+		
 	
 	} else {
 	
@@ -103,6 +103,76 @@ if object_index == obj_player_patter && global.splitScreenActive {
 		
 			}
 	
+		}
+	
+	}
+
+}
+
+if pitterShadowIsPresent() && global.splitScreenActive && global.coopActive && object_index == obj_player_pitter {
+			
+	var _sprite_index = sprite_index;
+	var _x = x;
+	var _y = y;
+	var _faceDir = faceDir;
+	var _xStretch = xStretch;
+	var _yStretch = yStretch;
+	
+	with obj_player_shadow_pitter {
+	
+		sprite_index = _sprite_index;
+		
+		if sprite_index == spr_pitter_walk sprite_index = spr_pitter_walk_silent; 
+		
+		faceDir = _faceDir;
+		xStretch = _xStretch;
+		yStretch = _yStretch;
+
+		if !global.verticalLevel {
+
+			x = _x;
+			y = _y + global.patterOffsetY;
+
+		} else {
+
+			x = _x + global.patterOffsetX;
+			y = _y;
+
+		}
+	
+	}
+
+}
+
+if patterShadowIsPresent() && global.splitScreenActive && global.coopActive && object_index == obj_player_patter {
+			
+	var _sprite_index = sprite_index;
+	var _x = x;
+	var _y = y;
+	var _faceDir = faceDir;
+	var _xStretch = xStretch;
+	var _yStretch = yStretch;
+	
+	with obj_player_shadow_patter {
+	
+		sprite_index = _sprite_index;
+		
+		if sprite_index == spr_patter_walk sprite_index = spr_patter_walk_silent; 
+		
+		faceDir = _faceDir;
+		xStretch = _xStretch;
+		yStretch = _yStretch;
+
+		if !global.verticalLevel {
+
+			x = _x;
+			y = _y - global.patterOffsetY;
+
+		} else {
+
+			x = _x - global.patterOffsetX;
+			y = _y;
+
 		}
 	
 	}
@@ -565,7 +635,7 @@ for(var i = 0; i < _listOfSolidPlatformsSize; i++) {
 }
 
 ds_list_destroy(_listOfSolidPlatforms);
-//@
+
 //Player gets pushed by moving right walls here
 if instance_exists(_rightWall) {
 
@@ -618,7 +688,7 @@ if instance_exists(_topWall) {
 }
 
 //Crusher collision
-//@
+
 checkCrusherCollision();
 
 //Don't get dropped by moving platform
@@ -1273,7 +1343,7 @@ if instance_exists(myFloorPlat) && !place_meeting(x, y + movePlatYspeedMax, myFl
 	myFloorPlat = noone;
 
 }
-//@
+
 //Land on ground platform if there is one (except if player is climbing up)
 if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
 //if instance_exists(myFloorPlat) && !climbing {
@@ -1456,7 +1526,7 @@ if !earlyMovePlatXSpeed {
 
 }
 
-//@
+
 //Y snap to moving floor platform
 if instance_exists(myFloorPlat) && (myFloorPlat.ySpeed != 0
 || myFloorPlat.object_index == obj_block_wall_moving
