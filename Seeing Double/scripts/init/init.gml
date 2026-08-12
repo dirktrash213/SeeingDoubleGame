@@ -155,6 +155,8 @@ global.dialogueVariables = {
 
 }
 
+global.loadingFirstTimePatter = true;
+
 global.gotScammed = false;
 //global.gotScammed = true;
 

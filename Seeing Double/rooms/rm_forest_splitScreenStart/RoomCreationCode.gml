@@ -8,4 +8,6 @@ if !audio_is_playing(amb_forest_ambience) {
 
 }
 
+global.loadingFirstTimePatter = false;
+
 //if !audio_is_playing(bgm_soft_wind_leaves) audio_play_sound(bgm_soft_wind_leaves, 1, 1, 1);

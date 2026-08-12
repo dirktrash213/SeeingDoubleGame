@@ -1,5 +1,16 @@
 loadRoom();
 
+if patterPlayerIsPresent() && instance_exists(obj_trigger_patterRespawn) && global.loadingFirstTimePatter {
+			
+	//show_debug_message("patter loaded")
+	
+	global.loadingFirstTimePatter = false;
+	
+	obj_player_patter.x = obj_trigger_patterRespawn.x;
+	obj_player_patter.y = obj_trigger_patterRespawn.y;
+
+}
+
 
 
 //if room == rm_cave_entrance

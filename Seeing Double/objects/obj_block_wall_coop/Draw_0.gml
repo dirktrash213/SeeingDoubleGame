@@ -1,3 +1,5 @@
+if !global.coopActive exit;
+
 // 1. Get the Tilemap ID for your "LevelTiles" layer
 var _layerID = layer_get_id("LevelTiles");
 var _tilemapID = layer_tilemap_get_id(_layerID);
@@ -12,8 +14,6 @@ var _tileSize = 16;
 // 4. Calculate how many 16x16 cells fit in the stretched block
 var _numCols = floor(sprite_width / _tileSize);
 var _numRows = floor(sprite_height / _tileSize);
-
-//image_blend = c_red;
 
 // 5. Loop through every 16x16 cell on the block
 for (var _col = 0; _col < _numCols; _col++) {
@@ -37,13 +37,43 @@ for (var _col = 0; _col < _numCols; _col++) {
         if (_tileData != 0) {
             // Pass _tilesetID here instead of _tilemapID!
 			//show_debug_message("Attempting to draw tile")
-            draw_tile(_tilesetID, _tileData, 0, _drawX, _drawY);
+			
+			
+			// Extract the tile index from your tiledata variable
+			//var _tileIndex = tile_get_index(_tileData);
+			//
+			//// Only draw if the tile is within valid bounds
+			//if (_tileIndex > 0 && _tileIndex < max_tiles) {
+			//    draw_tile(_tilesetID, _tileData, 0, _drawX, _drawY);
+			//}
+			
+			//var _tileIndex = tile_get_index(_tileData);
+			//
+			//// Suppress output by skipping out-of-bounds indices
+			//if (_tileIndex > 0 && _tileIndex < 64) { // Replace 64 with your tileset's tile count
+			//    draw_tile(ts_your_tileset, _tileData, 0, _drawX, _drawY);
+			//}
+			
+            //draw_tile(_tilesetID, _tileData, 0, _drawX, _drawY);
+			
+			// Replaces drawing anything over tile index 0 that is unrealistically high
+			if (tile_get_index(_tileData) < 400) { 
+			    draw_tile(_tilesetID, _tileData, 0, _drawX, _drawY);
+			}
+			
+			
+			
+			
         } else {
 			//show_debug_message("No tile data")
 		}
     }
 }
 
+
+//var _sprite = choose(spr_1, spr_2);
+
+//draw_sprite(_sprite, 0, _drawX, _drawY)
 
 
 
@@ -55,12 +85,13 @@ gpu_set_blendmode_ext(bm_dest_color, bm_zero);
 
 // Draw a colored rectangle over the entire block bounds
 draw_set_color(_tintColor);
+draw_set_alpha(image_alpha);
 draw_rectangle(x, y, x + sprite_width - 1, y + sprite_height - 1, false);
 
 // Reset GPU blend mode and draw color back to normal
 gpu_set_blendmode(bm_normal);
 draw_set_color(c_white);
-
+draw_set_alpha(1.0);
 
 
 

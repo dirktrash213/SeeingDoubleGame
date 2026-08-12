@@ -21,3 +21,15 @@ patterColor = #F3C2D8;
 isOnPitterScreen = y < global.patterOffsetY;
 
 blendColor = isOnPitterScreen ? patterColor : pitterColor;
+
+alarm[1] = 1; //Prevents platforms from appearing too early
+
+
+
+
+
+// Get tileset info and store the total tile count
+//var _info = tileset_get_info(tiles_standard); // Replace with your tileset asset name
+//max_tiles = _info.tile_count;
+
+

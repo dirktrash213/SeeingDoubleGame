@@ -1,3 +1,13 @@
+if !global.coopActive {
+
+	active = true;
+	mask_index = spr_block_collision_coop;
+	exit;
+
+}
+
+if alarm[1] > -1 exit; //Prevents platforms from appearing too early
+
 // Radius around the player shadow where blocks become visible
 var _revealRadius = 30; //Adjust this distance to fit your game
 var _isNearShadow = false;
@@ -23,9 +33,11 @@ if active {
 	visible = true;
 	alarm[0] = -1;
 	mask_index = spr_block_collision_coop;
+	image_alpha = 1.0;
 
 } else {
 
 	if alarm[0] == -1 alarm[0] = activeGraceTimer;
+	image_alpha = alarm[0] / activeGraceTimer; //Makes the temporary platform slowly fade out
 
 }
