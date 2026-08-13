@@ -6,8 +6,13 @@ if patterPlayerIsPresent() && instance_exists(obj_trigger_patterRespawn) && glob
 	
 	global.loadingFirstTimePatter = false;
 	
-	obj_player_patter.x = obj_trigger_patterRespawn.x;
-	obj_player_patter.y = obj_trigger_patterRespawn.y;
+	if pitterPlayerIsPresent() var _patterRespawnLocation = instance_nearest(obj_player_pitter.x, obj_player_pitter.y, obj_trigger_patterRespawn);
+	
+	//obj_player_patter.x = obj_trigger_patterRespawn.x;
+	//obj_player_patter.y = obj_trigger_patterRespawn.y;
+	
+	obj_player_patter.x = _patterRespawnLocation.x;
+	obj_player_patter.y = _patterRespawnLocation.y;
 
 }
 

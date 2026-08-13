@@ -6,7 +6,7 @@ if !global.coopActive {
 
 }
 
-if alarm[1] > -1 exit; //Prevents platforms from appearing too early
+if alarm[1] > -1 exit; //Prevents platforms from appearing too early (move to draw)
 
 // Radius around the player shadow where blocks become visible
 var _revealRadius = 30; //Adjust this distance to fit your game
