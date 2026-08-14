@@ -2944,15 +2944,15 @@ function checkpointTouched() {
 function coopObjectInstanceCreationCode() {
 
 	visible = false;
-	active = false;
+	coopActive = false;
 	invisCoop = true;
 
 }
 
 function coopObjectCreateEventCode() {
 
-	active = true;
-	activeGraceTimer = 60;
+	coopActive = true;
+	coopActiveGraceTimer = 60;
 	invisCoop = false;
 	pitterColor = #6DD0F7;
 	patterColor = #F3C2D8;
@@ -2990,7 +2990,7 @@ function coopObjectStepEventCode() {
 		var _tempMaskIndex = mask_index;
 		mask_index = sprite_index;
 
-		// Check against all active player shadows (handles 1 player or Co-op!)
+		// Check against all coopActive player shadows (handles 1 player or Co-op!)
 		with (obj_player_shadow) {
 		    if (collision_circle(x, y, _revealRadius, other.id, true, false) != noone) {
 		        _isNearShadow = true;
@@ -2998,10 +2998,10 @@ function coopObjectStepEventCode() {
 		    }
 		}
 	
-		active = _isNearShadow;
+		coopActive = _isNearShadow;
 		mask_index = _tempMaskIndex;
 	
-		if active {
+		if coopActive {
 		
 			visible = true;
 			mask_index = sprite_index;
@@ -3010,8 +3010,8 @@ function coopObjectStepEventCode() {
 		
 		} else {
 	
-			if alarm[10] == -1 alarm[10] = activeGraceTimer;
-			image_alpha = alarm[10] / activeGraceTimer; //Makes the temporary platform slowly fade out
+			if alarm[10] == -1 alarm[10] = coopActiveGraceTimer;
+			image_alpha = alarm[10] / coopActiveGraceTimer; //Makes the temporary platform slowly fade out
 	
 		}
 	

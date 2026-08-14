@@ -1,2 +1,0 @@
-attachedToPlatform = true;
-visible = false;
