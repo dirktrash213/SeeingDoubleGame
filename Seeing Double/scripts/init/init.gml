@@ -92,7 +92,7 @@ global.hasMovedDown = false;
 global.hasMovedLeft = false;
 global.hasMovedRight = false;
 
-//THESE TWO VALUES SHOULD NOT BE EDITED
+//THESE VALUES SHOULD NOT BE EDITED
 global.defaultPatterOffsetX = 528; 
 global.defaultPatterOffsetY = 320;
 global.defaultCustomLevelPatterOffsetY = 592;

@@ -2940,3 +2940,103 @@ function checkpointTouched() {
 	}
 
 }
+
+function coopObjectInstanceCreationCode() {
+
+	visible = false;
+	active = false;
+	invisCoop = true;
+
+}
+
+function coopObjectCreateEventCode() {
+
+	active = true;
+	activeGraceTimer = 60;
+	invisCoop = false;
+	pitterColor = #6DD0F7;
+	patterColor = #F3C2D8;
+
+	if !global.verticalLevel {
+	
+		if !global.customLevel {
+	
+			isOnPitterScreen = y < global.patterOffsetY;
+	
+		} else {
+	
+			isOnPitterScreen = y < global.defaultCustomLevelPatterOffsetY;
+	
+		}
+	
+	} else {
+
+		isOnPitterScreen = x < global.patterOffsetX;
+
+	}
+
+}
+
+function coopObjectStepEventCode() {
+
+	if global.coopActive && invisCoop {
+	
+		//mask_index = visible ? sprite_index : spr_empty;
+	
+		// Radius around the player shadow where blocks become visible
+		var _revealRadius = 30; //Adjust this distance to fit your game
+		var _isNearShadow = false;
+
+		var _tempMaskIndex = mask_index;
+		mask_index = sprite_index;
+
+		// Check against all active player shadows (handles 1 player or Co-op!)
+		with (obj_player_shadow) {
+		    if (collision_circle(x, y, _revealRadius, other.id, true, false) != noone) {
+		        _isNearShadow = true;
+		        break; // Found a nearby shadow, no need to check other shadows
+		    }
+		}
+	
+		active = _isNearShadow;
+		mask_index = _tempMaskIndex;
+	
+		if active {
+		
+			visible = true;
+			mask_index = sprite_index;
+			alarm[10] = -1;
+			image_alpha = 1.0;
+		
+		} else {
+	
+			if alarm[10] == -1 alarm[10] = activeGraceTimer;
+			image_alpha = alarm[10] / activeGraceTimer; //Makes the temporary platform slowly fade out
+	
+		}
+	
+	}
+
+}
+
+function coopObjectDrawEventCode() {
+
+	if global.coopActive && invisCoop {
+	
+		var _drawColor = isOnPitterScreen ? patterColor : pitterColor;
+		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, _drawColor, image_alpha);
+	
+	} else {
+
+		draw_self();
+
+	}
+
+}
+
+function coopObjectAlarmCode() {
+
+	visible = false;
+	mask_index = spr_empty;
+
+}

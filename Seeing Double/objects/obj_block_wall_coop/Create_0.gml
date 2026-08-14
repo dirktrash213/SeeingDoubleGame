@@ -18,7 +18,23 @@ pitterColor = #6DD0F7;
 patterColor = #F3C2D8;
 
 
-isOnPitterScreen = y < global.patterOffsetY;
+if !global.verticalLevel {
+	
+	if !global.customLevel {
+	
+		isOnPitterScreen = y < global.patterOffsetY;
+	
+	} else {
+	
+		isOnPitterScreen = y < global.defaultCustomLevelPatterOffsetY;
+	
+	}
+	
+} else {
+
+	isOnPitterScreen = x < global.patterOffsetX;
+
+}
 
 blendColor = isOnPitterScreen ? patterColor : pitterColor;
 
