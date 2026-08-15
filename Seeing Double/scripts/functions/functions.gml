@@ -2944,13 +2944,21 @@ function checkpointTouched() {
 function coopObjectInstanceCreationCode() {
 
 	visible = false;
-	coopActive = false;
-	invisCoop = true;
+	
+	if global.coopActive {
+	
+		coopActive = false;
+		invisCoop = true;
+	
+	}
 
 }
 
 function coopObjectCreateEventCode() {
 
+	//show_debug_message("image_alpha")
+	//show_debug_message(image_alpha)
+	//show_debug_message("--")
 	coopActive = true;
 	coopActiveGraceTimer = 60;
 	invisCoop = false;
