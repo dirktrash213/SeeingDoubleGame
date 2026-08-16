@@ -252,6 +252,8 @@ function saveGame() {
         cherryCount: global.cherryCount,
         cherryCountRegional: global.cherryCountRegional,
         defeatCount: global.defeatCount,
+        defeatCountPitter: global.defeatCountPitter,
+        defeatCountPatter: global.defeatCountPatter,
         xRespawnPitter: global.xRespawnPitter,
         yRespawnPitter: global.yRespawnPitter,
         splitScreenActive: global.splitScreenActive,
@@ -323,6 +325,8 @@ function loadGame() {
         global.cherryCount         = _s[$ "cherryCount"] ?? 0;
         global.cherryCountRegional = _s[$ "cherryCountRegional"] ?? 0;
         global.defeatCount         = _s[$ "defeatCount"] ?? 0;
+        global.defeatCountPitter   = _s[$ "defeatCountPitter"] ?? 0;
+        global.defeatCountPatter   = _s[$ "defeatCountPatter"] ?? 0;
         global.xRespawnPitter      = _s[$ "xRespawnPitter"] ?? 0;
         global.yRespawnPitter      = _s[$ "yRespawnPitter"] ?? 0;
         global.splitScreenActive   = _s[$ "splitScreenActive"] ?? false;

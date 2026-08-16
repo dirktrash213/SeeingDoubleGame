@@ -1,3 +1,5 @@
+if !visible && global.coopActive mask_index = spr_empty;
+
 if bonked && (visible || secret) {
 
 	if room == rm_forest_spotTheDifference {

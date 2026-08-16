@@ -35,10 +35,16 @@ function drawPauseMenu() {
 		
 			case 0: {
 	
-				var _defeatString = global.splitScreenActive ?  " [spr_pitter_defeat_x4][spr_patter_defeat_x4]x" : " [spr_pitter_defeat_x4]x ";  
+				var _defeatString = global.splitScreenActive ?  " [spr_pitter_defeat_x4][spr_patter_defeat_x4]x" + string(global.defeatCount) : " [spr_pitter_defeat_x4]x " + string(global.defeatCount);  
+	
+				if global.coopActive {
+				
+					_defeatString = global.splitScreenActive ?  " [spr_pitter_defeat_x4]x" + string(global.defeatCountPitter) + " [spr_patter_defeat_x4]x" + string(global.defeatCountPatter) : " [spr_pitter_defeat_x4]x " + string(global.defeatCountPitter);  
+				
+				}
 	
 				//var _statText = scribble("[spr_interactable_coin]x " + string(global.coinCount) + "\n[spr_interactable_cherry]x " + string(global.cherryCount) + "\n[spr_pitter_defeat]x " + string(global.defeatCount));
-				var _statText = scribble("[spr_interactable_coin_x4]x " + string(global.coinCount) + " [spr_interactable_cherry_x4]x " + string(global.cherryCount) + _defeatString + string(global.defeatCount));
+				var _statText = scribble("[spr_interactable_coin_x4]x " + string(global.coinCount) + " [spr_interactable_cherry_x4]x " + string(global.cherryCount) + _defeatString);
 
 				_statText.starting_format("font_pauseMenu", c_white);
 				//_coinText.wrap(335); 
@@ -666,14 +672,31 @@ function spawnPatter() {
 
 }
 
+function increaseDefeatCount() {
 
+	if global.coopActive && instance_exists(other) {
+	
+		//show_debug_message(object_get_name(other.object_index))
+		//show_debug_message("defeated")
+		
+		if other.object_index == obj_player_pitter global.defeatCountPitter++;
+		if other.object_index == obj_player_patter global.defeatCountPatter++;
+	
+	} else {
+	
+		global.defeatCount++;
+	
+	}
+
+}
 
 function playerDefeated() {
 
 	if global.playerDefeated exit;
 
 	global.playerDefeated = true;
-	global.defeatCount++;
+	
+	increaseDefeatCount();
 
 	audio_play_sound(sfx_hurt, 1, 0);
 	global.playerControl = false;
@@ -696,7 +719,9 @@ function playerCaughtByForestGhost() {
 	if global.playerDefeated exit;
 
 	global.playerDefeated = true;
-	global.defeatCount++;
+	
+	increaseDefeatCount();
+	//global.defeatCount++;
 	
 	with objBktGlitchDemo {
 	
@@ -1849,7 +1874,8 @@ function caughtByCaveGhost() {
 	if global.playerDefeated exit;
 
 	global.playerDefeated = true;
-	global.defeatCount++;
+	increaseDefeatCount();
+	//global.defeatCount++;
 	
 	global.caughtByCaveGhostAmount++;
 	
@@ -2954,14 +2980,27 @@ function coopObjectInstanceCreationCode() {
 
 }
 
+function coopObjectSolidInstanceCreationCode() {
+
+	if global.coopActive {
+	
+		coopActive = false;
+		solidCoop = true;
+	
+	} else {
+	
+		visible = false;
+	
+	}
+
+}
+
 function coopObjectCreateEventCode() {
 
-	//show_debug_message("image_alpha")
-	//show_debug_message(image_alpha)
-	//show_debug_message("--")
 	coopActive = true;
 	coopActiveGraceTimer = 60;
 	invisCoop = false;
+	solidCoop = false;
 	pitterColor = #6DD0F7;
 	patterColor = #F3C2D8;
 
@@ -2987,9 +3026,7 @@ function coopObjectCreateEventCode() {
 
 function coopObjectStepEventCode() {
 
-	if global.coopActive && invisCoop {
-	
-		//mask_index = visible ? sprite_index : spr_empty;
+	if global.coopActive && (invisCoop || solidCoop) {
 	
 		// Radius around the player shadow where blocks become visible
 		var _revealRadius = 30; //Adjust this distance to fit your game
@@ -3019,7 +3056,16 @@ function coopObjectStepEventCode() {
 		} else {
 	
 			if alarm[10] == -1 alarm[10] = coopActiveGraceTimer;
-			image_alpha = alarm[10] / coopActiveGraceTimer; //Makes the temporary platform slowly fade out
+			
+			if solidCoop {
+			
+				image_alpha = 0.5;
+			
+			} else {
+			
+				image_alpha = alarm[10] / coopActiveGraceTimer; //Makes the temporary platform slowly fade out
+			
+			}
 	
 		}
 	
@@ -3029,9 +3075,10 @@ function coopObjectStepEventCode() {
 
 function coopObjectDrawEventCode() {
 
-	if global.coopActive && invisCoop {
+	if global.coopActive && (invisCoop || solidCoop) {
 	
 		var _drawColor = isOnPitterScreen ? patterColor : pitterColor;
+		if solidCoop && !coopActive _drawColor = c_white;
 		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, _drawColor, image_alpha);
 	
 	} else {
@@ -3044,7 +3091,11 @@ function coopObjectDrawEventCode() {
 
 function coopObjectAlarmCode() {
 
-	visible = false;
-	mask_index = spr_empty;
+	if !solidCoop {
+
+		visible = false;
+		mask_index = spr_empty;
+	
+	}
 
 }

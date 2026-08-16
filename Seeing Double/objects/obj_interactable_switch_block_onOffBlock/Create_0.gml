@@ -6,3 +6,4 @@ secret = false;
 
 inert = false;
 
+//if !visible && global.coopActive mask_index = spr_empty;

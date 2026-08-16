@@ -1384,7 +1384,7 @@ if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
 	//
 	//}
 	
-	
+	//@
 	if myFloorPlat.object_index == obj_block_wall_semiSolid_moving
 	|| myFloorPlat.object_index == obj_block_wall_moving
 	|| object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid_moving) 
@@ -1394,7 +1394,20 @@ if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
 	
 			with myFloorPlat {
 	
-				if stationary {
+				var _revealRadius = 1; 
+				var _isNearShadow = false;
+
+				// Check against all coopActive player shadows (handles 1 player or Co-op!)
+				with (obj_player_shadow) {
+				    if (collision_circle(x, y, _revealRadius, other.id, true, false) != noone) {
+				        _isNearShadow = true;
+				        break; // Found a nearby shadow, no need to check other shadows
+				    }
+				}
+				
+				if !global.coopActive _isNearShadow = true;
+	
+				if stationary && _isNearShadow {
 	
 					//Begin moving platform on rails
 					stationary = false;
