@@ -17,6 +17,13 @@ if switchToHorizontal global.verticalLevel = false;
 
 if pitterPlayerIsPresent() {
 
+	if global.coopActive {
+	
+		if other.object_index == obj_player_pitter obj_player_patter.ySpeed = other.ySpeed;
+		if other.object_index == obj_player_patter obj_player_pitter.ySpeed = other.ySpeed;
+	
+	}
+
 	if horizontalWarp {
 
 		var _yOffset = abs(obj_player_pitter.y - yEnter);
@@ -58,8 +65,8 @@ if pitterPlayerIsPresent() {
 		
 		if global.coopActive {
 		
-			obj_player_pitter.x = xSpawn + _xOffset + global.patterOffsetX;
-			obj_player_pitter.y = ySpawn;
+			obj_player_patter.x = xSpawn + _xOffset + global.patterOffsetX;
+			obj_player_patter.y = ySpawn;
 		
 		} 
 	
