@@ -1580,6 +1580,7 @@
     {"name":"spr_block_checkpoint_patter","order":15,"path":"sprites/spr_block_checkpoint_patter/spr_block_checkpoint_patter.yy",},
     {"name":"spr_pitterAndPatter_defeat","order":35,"path":"sprites/spr_pitterAndPatter_defeat/spr_pitterAndPatter_defeat.yy",},
     {"name":"rm_cave_chase_bigBreakableRock","order":4,"path":"rooms/rm_cave_chase_bigBreakableRock/rm_cave_chase_bigBreakableRock.yy",},
+    {"name":"roomTypeArrays","order":16,"path":"scripts/roomTypeArrays/roomTypeArrays.yy",},
     {"name":"spr_background_massiveFishFossilBLUR","order":56,"path":"sprites/spr_background_massiveFishFossilBLUR/spr_background_massiveFishFossilBLUR.yy",},
     {"name":"spr_interactable_switch_inert","order":11,"path":"sprites/spr_interactable_switch_inert/spr_interactable_switch_inert.yy",},
     {"name":"spr_interactable_checkpointPlant","order":2,"path":"sprites/spr_interactable_checkpointPlant/spr_interactable_checkpointPlant.yy",},

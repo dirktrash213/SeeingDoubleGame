@@ -111,6 +111,7 @@
     {"name":"inst_1D5D609F","path":"rooms/rm_forest_canopyMiddleFloor/rm_forest_canopyMiddleFloor.yy",},
     {"name":"inst_14DC4ECB","path":"rooms/rm_forest_canopyMiddleFloor/rm_forest_canopyMiddleFloor.yy",},
     {"name":"inst_512CCA49","path":"rooms/rm_forest_canopyMiddleFloor/rm_forest_canopyMiddleFloor.yy",},
+    {"name":"inst_291C53E6","path":"rooms/rm_forest_canopyMiddleFloor/rm_forest_canopyMiddleFloor.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -231,6 +232,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_14D99F1_1_1","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_warp","path":"objects/obj_trigger_warp/obj_trigger_warp.yy",},"properties":[],"rotation":0.0,"scaleX":6.0,"scaleY":1.0,"x":0.0,"y":1088.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1D5D609F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_checkPoint","path":"objects/obj_trigger_checkPoint/obj_trigger_checkPoint.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":10.0,"x":128.0,"y":160.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_637308B5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_patterRespawn","path":"objects/obj_trigger_patterRespawn/obj_trigger_patterRespawn.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":656.0,"y":160.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_291C53E6","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_warp","path":"objects/obj_trigger_warp/obj_trigger_warp.yy",},"properties":[],"rotation":0.0,"scaleX":6.0,"scaleY":1.0,"x":528.0,"y":1088.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Collectables","depth":400,"effectEnabled":true,"effectType":null,"gridX":8,"gridY":8,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1D0F74A9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_pickup_coin_red","path":"objects/obj_pickup_coin_red/obj_pickup_coin_red.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":56.0,"y":336.0,},

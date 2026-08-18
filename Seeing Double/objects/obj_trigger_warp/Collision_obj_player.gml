@@ -10,10 +10,10 @@ if other.object_index == obj_player_patter && !global.coopActive exit;
 room_goto(targetRoom);
 part_system_clear(global.particleSystemDevice);
 
-//show_debug_message("gf4wegt4yg4")
+show_debug_message("target room: " + string(room_get_name(targetRoom)))
 
-if switchToVertical global.verticalLevel = true;
-if switchToHorizontal global.verticalLevel = false;
+//if switchToVertical global.verticalLevel = true;
+//if switchToHorizontal global.verticalLevel = false;
 
 if pitterPlayerIsPresent() {
 
@@ -26,61 +26,109 @@ if pitterPlayerIsPresent() {
 
 	if horizontalWarp {
 
-		var _yOffset = abs(obj_player_pitter.y - yEnter);
+		var _offsetY = abs(obj_player_pitter.y - yEnter);
 		
 		if other.object_index == obj_player_patter {
 		
-			_yOffset = abs(obj_player_patter.y - yEnter - global.patterOffsetY);
+			_offsetY = abs(obj_player_patter.y - yEnter - global.patterOffsetY);
 	
 		}
 		
-		//show_debug_message("_yOffset: " + string(_yOffset))
+		//show_debug_message("_offsetY: " + string(_offsetY))
 		
 		var _offsetX;
 	
 		_offsetX = xSpawn == 1 ? 3 : -3; //This offset prevents the player from spawning on the target room's warp
 
 		obj_player_pitter.x = xSpawn + _offsetX;
-		obj_player_pitter.y = ySpawn - _yOffset;
+		obj_player_pitter.y = ySpawn - _offsetY;
 		
 		if global.coopActive {
 		
 			obj_player_patter.x = xSpawn + _offsetX;
-			obj_player_patter.y = ySpawn - _yOffset + global.patterOffsetY;
+			obj_player_patter.y = ySpawn - _offsetY + global.patterOffsetY;
 		
 		} 
 	
 	} else {
+	
+		//var _offsetX = abs(other.x - xEnter);
+		var _offsetX = abs(other.x - x);
 
-		var _xOffset = abs(obj_player_pitter.x - xEnter);
+		if other.object_index == obj_player_pitter {
+
+			//var _offsetX = abs(obj_player_pitter.x - xEnter);
 		
-		if other.object_index == obj_player_patter {
+			//if other.object_index == obj_player_patter {
+			//
+			//	_offsetX = abs(obj_player_patter.x - xEnter - global.patterOffsetX);
+			//
+			//}
+
+			obj_player_pitter.x = xSpawn + _offsetX;
+			obj_player_pitter.y = ySpawn;
 		
-			_xOffset = abs(obj_player_patter.x - xEnter - global.patterOffsetX);
+			if global.coopActive {
+		
+				if !array_contains(global.verticalRoomArray, targetRoom) {
+			
+					if !array_contains(global.customRoomArray, targetRoom) {
+				
+						obj_player_patter.x = obj_player_pitter.x;
+						obj_player_patter.y = obj_player_pitter.y + global.patterOffsetY;
+				
+					} else {
+					
+						obj_player_patter.x = obj_player_pitter.x;
+						obj_player_patter.y = obj_player_pitter.y + global.defaultCustomLevelPatterOffsetY;
+				
+					}
+			
+				} else {
+			
+					obj_player_patter.x = obj_player_pitter.x + global.patterOffsetX;
+					obj_player_patter.y = obj_player_pitter.y;
+			
+				}
+		
+			} 
+		
+		} else { //other.object_index is obj_player_patter
+			
+			if !array_contains(global.verticalRoomArray, targetRoom) {
+				
+				if !array_contains(global.customRoomArray, targetRoom) {
+				
+					obj_player_patter.x = xSpawn + _offsetX;
+					obj_player_patter.y = ySpawn + global.patterOffsetY;
+				
+					obj_player_pitter.x = obj_player_patter.x;
+					obj_player_pitter.y = obj_player_patter.y - global.patterOffsetY;
+				
+				
+				} else {
+			
+					obj_player_patter.x = xSpawn + _offsetX;
+					obj_player_patter.y = ySpawn + global.defaultCustomLevelPatterOffsetY;
+				
+					obj_player_pitter.x = obj_player_patter.x;
+					obj_player_pitter.y = obj_player_patter.y - global.defaultCustomLevelPatterOffsetY;
+				
+				}
+				
+			} else {
+		
+				obj_player_patter.x = xSpawn + global.patterOffsetX + _offsetX;
+				obj_player_patter.y = ySpawn;
+			
+				obj_player_pitter.x = obj_player_patter.x - global.patterOffsetX;
+				obj_player_pitter.y = obj_player_patter.y;
+			
+			}
 		
 		}
-
-		obj_player_pitter.x = xSpawn + _xOffset;
-		obj_player_pitter.y = ySpawn;
-		
-		if global.coopActive {
-		
-			obj_player_patter.x = xSpawn + _xOffset + global.patterOffsetX;
-			obj_player_patter.y = ySpawn;
-		
-		} 
 	
-		//global.patterOffsetX = 528;
-		//global.patterOffsetY = 0;
-
 	}
-
-	//if canRespawnPlayer {
-	//
-	//	obj_player_pitter.xRespawn = xSpawn;
-	//	obj_player_pitter.yRespawn = ySpawn;
-	//
-	//}
 
 }
 
@@ -142,18 +190,18 @@ if patterPlayerIsPresent() {
 
 	if horizontalWarp {
 
-		var _yOffset = abs(obj_player_patter.y - yEnter);
+		var _offsetY = abs(obj_player_patter.y - yEnter);
 		
-		show_debug_message(_yOffset)
+		show_debug_message(_offsetY)
 
 		obj_player_patter.x = xSpawn;
-		obj_player_patter.y = ySpawn - _yOffset;
+		obj_player_patter.y = ySpawn - _offsetY;
 		
 	} else {
 	
-		var _xOffset = abs(obj_player_patter.x - xEnter);
+		var _offsetX = abs(obj_player_patter.x - xEnter);
 
-		obj_player_patter.x = xSpawn + _xOffset;
+		obj_player_patter.x = xSpawn + _offsetX;
 		obj_player_patter.y = ySpawn;
 	
 	}

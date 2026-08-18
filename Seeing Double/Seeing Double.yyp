@@ -1751,6 +1751,7 @@
     {"id":{"name":"spr_block_checkpoint_patter","path":"sprites/spr_block_checkpoint_patter/spr_block_checkpoint_patter.yy",},},
     {"id":{"name":"spr_pitterAndPatter_defeat","path":"sprites/spr_pitterAndPatter_defeat/spr_pitterAndPatter_defeat.yy",},},
     {"id":{"name":"rm_cave_chase_bigBreakableRock","path":"rooms/rm_cave_chase_bigBreakableRock/rm_cave_chase_bigBreakableRock.yy",},},
+    {"id":{"name":"roomTypeArrays","path":"scripts/roomTypeArrays/roomTypeArrays.yy",},},
     {"id":{"name":"spr_background_massiveFishFossilBLUR","path":"sprites/spr_background_massiveFishFossilBLUR/spr_background_massiveFishFossilBLUR.yy",},},
     {"id":{"name":"spr_interactable_switch_inert","path":"sprites/spr_interactable_switch_inert/spr_interactable_switch_inert.yy",},},
     {"id":{"name":"spr_interactable_checkpointPlant","path":"sprites/spr_interactable_checkpointPlant/spr_interactable_checkpointPlant.yy",},},
