@@ -23,6 +23,7 @@ if pitterPlayerIsPresent() {
 			
 			obj_player_patter.ySpeed = other.ySpeed;
 			obj_player_patter.coyoteHangTimer = 0;
+			obj_player_patter.climbing = other.climbing;
 			
 		}
 		
@@ -30,6 +31,7 @@ if pitterPlayerIsPresent() {
 			
 			obj_player_pitter.ySpeed = other.ySpeed;
 			obj_player_pitter.coyoteHangTimer = 0;
+			obj_player_pitter.climbing = other.climbing;
 			
 		}
 	

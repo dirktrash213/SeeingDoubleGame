@@ -117,16 +117,19 @@ if pitterShadowIsPresent() && global.splitScreenActive && global.coopActive && o
 	var _faceDir = faceDir;
 	var _xStretch = xStretch;
 	var _yStretch = yStretch;
+	var _image_speed = image_speed;
 	
 	with obj_player_shadow_pitter {
 	
 		sprite_index = _sprite_index;
 		
 		if sprite_index == spr_pitter_walk sprite_index = spr_pitter_walk_silent; 
+		if sprite_index == spr_pitter_climb sprite_index = spr_pitter_climb_silent; 
 		
 		faceDir = _faceDir;
 		xStretch = _xStretch;
 		yStretch = _yStretch;
+		image_speed = _image_speed;
 
 		if !global.verticalLevel {
 
@@ -152,16 +155,19 @@ if patterShadowIsPresent() && global.splitScreenActive && global.coopActive && o
 	var _faceDir = faceDir;
 	var _xStretch = xStretch;
 	var _yStretch = yStretch;
+	var _image_speed = image_speed;
 	
 	with obj_player_shadow_patter {
 	
 		sprite_index = _sprite_index;
 		
 		if sprite_index == spr_patter_walk sprite_index = spr_patter_walk_silent; 
+		if sprite_index == spr_patter_climb sprite_index = spr_patter_climb_silent; 
 		
 		faceDir = _faceDir;
 		xStretch = _xStretch;
 		yStretch = _yStretch;
+		image_speed = _image_speed;
 
 		if !global.verticalLevel {
 
@@ -733,11 +739,11 @@ if moveUp && place_meeting(x, y, obj_block_ladder) && canGrabLadder {
 
 }
 
-//if !place_meeting(x,y, obj_block_ladder) {
-//	
-//	climbing = false;
-//	
-//}
+if !place_meeting(x,y, obj_block_ladder) {
+	
+	climbing = false;
+	
+}
 
 
 

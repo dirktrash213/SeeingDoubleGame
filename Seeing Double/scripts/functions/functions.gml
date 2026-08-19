@@ -3105,7 +3105,7 @@ function coopObjectAlarmCode() {
 
 }
 
-function coopObjectBlockDrawCode() {
+function coopObjectBlockDrawCode(_layername = "LevelTiles") {
 
 	if !global.coopActive exit;
 
@@ -3114,116 +3114,62 @@ function coopObjectBlockDrawCode() {
 	if global.verticalLevel isOnPitterScreen = x < global.patterOffsetX;
 	blendColor = isOnPitterScreen ? patterColor : pitterColor;
 
-	// 1. Get the Tilemap ID for your "LevelTiles" layer
-	var _layerID = layer_get_id("LevelTiles");
+	// 1. Get Tilemap and Tileset info
+	//var _layerID = layer_get_id("LevelTiles");
+	var _layerID = layer_get_id(_layername);
 	var _tilemapID = layer_tilemap_get_id(_layerID);
-
-	// 2. Extract the actual Tileset Asset pointer needed for draw_tile()
 	var _tilesetID = tilemap_get_tileset(_tilemapID);
 
-	// 3. Define the sample offset and your tile size (16x16)
+	// 2. Sample offsets
 	var _xOffset = 0;
 	var _yOffset = 0;
 
 	if global.verticalLevel {
-
 		_xOffset = isOnPitterScreen ? global.patterOffsetX : -global.patterOffsetX;
-
 	} else {
-
 		if global.customLevel {
-	
 			_yOffset = isOnPitterScreen ? global.defaultCustomLevelPatterOffsetY : -global.defaultCustomLevelPatterOffsetY;
-	
 		} else {
-	
 			_yOffset = isOnPitterScreen ? global.patterOffsetY : -global.patterOffsetY;
-	
 		}
-
 	}
 
 	var _tileSize = 16; 
-
-	// 4. Calculate how many 16x16 cells fit in the stretched block
 	var _numCols = floor(sprite_width / _tileSize);
 	var _numRows = floor(sprite_height / _tileSize);
 
-	// 5. Loop through every 16x16 cell on the block
+	// --- START SHADER TINT ---
+	shader_set(shd_tile_tint);
+	
+	// Convert color (0-255) to shader float format (0.0 - 1.0)
+	var _uTint = shader_get_uniform(shd_tile_tint, "u_vTint");
+	var _r = color_get_red(blendColor) / 255.0;
+	var _g = color_get_green(blendColor) / 255.0;
+	var _b = color_get_blue(blendColor) / 255.0;
+	var _a = image_alpha;
+
+	shader_set_uniform_f(_uTint, _r, _g, _b, _a);
+
+	// 3. Draw Tiles
 	for (var _col = 0; _col < _numCols; _col++) {
 	    for (var _row = 0; _row < _numRows; _row++) {
-        
-			//show_debug_message("_col: " + string(_col))
-			//show_debug_message("_row: " + string(_row))
 		
-	        // Target drawing position on the block
 	        var _drawX = x + (_col * _tileSize);
 	        var _drawY = y + (_row * _tileSize);
-        
-	        // Sampling position
+		
 	        var _sampleX = _drawX + _xOffset;
 	        var _sampleY = _drawY + _yOffset;
-        
-	        // Read tile data from the "LevelTiles" tilemap at the offset position
+		
 	        var _tileData = tilemap_get_at_pixel(_tilemapID, _sampleX, _sampleY);
-        
-	        // If there is a valid tile at that sampled location, draw it!
+		
 	        if (_tileData != 0) {
-	            // Pass _tilesetID here instead of _tilemapID!
-				//show_debug_message("Attempting to draw tile")
-			
-			
-				// Extract the tile index from your tiledata variable
-				//var _tileIndex = tile_get_index(_tileData);
-				//
-				//// Only draw if the tile is within valid bounds
-				//if (_tileIndex > 0 && _tileIndex < max_tiles) {
-				//    draw_tile(_tilesetID, _tileData, 0, _drawX, _drawY);
-				//}
-			
-				//var _tileIndex = tile_get_index(_tileData);
-				//
-				//// Suppress output by skipping out-of-bounds indices
-				//if (_tileIndex > 0 && _tileIndex < 64) { // Replace 64 with your tileset's tile count
-				//    draw_tile(ts_your_tileset, _tileData, 0, _drawX, _drawY);
-				//}
-			
-	            //draw_tile(_tilesetID, _tileData, 0, _drawX, _drawY);
-			
-				// Replaces drawing anything over tile index 0 that is unrealistically high
 				if (tile_get_index(_tileData) < 400) { 
 				    draw_tile(_tilesetID, _tileData, 0, _drawX, _drawY);
 				}
-			
-			
-			
-			
-	        } else {
-				//show_debug_message("No tile data")
-			}
+	        }
 	    }
 	}
 
-	// --- TINT THE TILES ---
-	var _tintColor = blendColor; // Set to whatever color you want (or use image_blend)
-
-	// Enable Multiply blend mode
-	gpu_set_blendmode_ext(bm_dest_color, bm_zero);
-
-	// Draw a colored rectangle over the entire block bounds
-	draw_set_color(_tintColor);
-	draw_set_alpha(image_alpha);
-	draw_rectangle(x, y, x + sprite_width - 1, y + sprite_height - 1, false);
-
-	// Reset GPU blend mode and draw color back to normal
-	gpu_set_blendmode(bm_normal);
-	draw_set_color(c_white);
-	draw_set_alpha(1.0);
-
-
-
-
-
-
-
+	// --- RESET SHADER ---
+	shader_reset();
 }

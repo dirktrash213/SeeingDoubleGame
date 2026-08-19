@@ -42,7 +42,7 @@ alarm[1] = 1; //Prevents platforms from appearing too early
 
 
 
-
+if playerIsPresent() depth = obj_player.depth + 10;
 
 // Get tileset info and store the total tile count
 //var _info = tileset_get_info(tiles_standard); // Replace with your tileset asset name

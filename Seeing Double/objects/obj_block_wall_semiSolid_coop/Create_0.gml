@@ -33,3 +33,4 @@ alarm[1] = 1; //Prevents platforms from appearing too early
 //max_tiles = _info.tile_count;
 
 
+if playerIsPresent() depth = obj_player.depth + 10;

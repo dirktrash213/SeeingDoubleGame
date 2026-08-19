@@ -1,0 +1,9 @@
+coopObjectBlockDrawCode();
+coopObjectBlockDrawCode("BackgroundLadderTiles");
+
+
+
+
+
+
+

@@ -27,6 +27,7 @@ if bonked && (visible || secret) {
 	
 		var _visible = visible;
 		var _invisCoop = invisCoop;
+		var _solidCoop = solidCoop;
 		var _alarm10Timer = alarm[10];
 		var _image_alpha = image_alpha;
 		var _coopActive = coopActive;
@@ -41,9 +42,10 @@ if bonked && (visible || secret) {
 			
 					canSwap = false;
 					
-					if _invisCoop && global.coopActive {
+					if (_invisCoop || _solidCoop) && global.coopActive {
 					
-						coopObjectInstanceCreationCode();
+						if _invisCoop coopObjectInstanceCreationCode();
+						if _solidCoop coopObjectSolidInstanceCreationCode();
 						
 						visible = _visible;
 						alarm[10] = _alarm10Timer;
@@ -68,6 +70,7 @@ if bonked && (visible || secret) {
 	
 		var _visible = visible;
 		var _invisCoop = invisCoop;
+		var _solidCoop = solidCoop;
 		var _alarm10Timer = alarm[10];
 		var _image_alpha = image_alpha;
 		var _coopActive = coopActive;
@@ -79,9 +82,10 @@ if bonked && (visible || secret) {
 			
 				canSwap = false;
 				
-				if _invisCoop && global.coopActive {
+				if (_invisCoop || _solidCoop) && global.coopActive {
 					
-					coopObjectInstanceCreationCode();
+					if _invisCoop coopObjectInstanceCreationCode();
+					if _solidCoop coopObjectSolidInstanceCreationCode();
 					
 					visible = _visible;
 					alarm[10] = _alarm10Timer;
