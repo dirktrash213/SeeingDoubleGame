@@ -1,3 +1,6 @@
+coopObjectBlockDrawCode();
+/*
+
 if !global.coopActive exit;
 
 // 1. Get the Tilemap ID for your "LevelTiles" layer

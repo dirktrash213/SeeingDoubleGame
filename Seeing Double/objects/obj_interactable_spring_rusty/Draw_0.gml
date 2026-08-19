@@ -1,0 +1,6 @@
+coopObjectDrawEventCode();
+
+
+
+
+

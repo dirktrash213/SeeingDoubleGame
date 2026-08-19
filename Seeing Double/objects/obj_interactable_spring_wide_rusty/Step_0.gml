@@ -1,3 +1,6 @@
+coopObjectStepEventCode();
+
+
 if isLastAnimationFrame() {
 
 	image_speed = 0;

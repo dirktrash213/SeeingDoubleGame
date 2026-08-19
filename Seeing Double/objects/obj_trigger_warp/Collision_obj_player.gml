@@ -19,8 +19,19 @@ if pitterPlayerIsPresent() {
 
 	if global.coopActive {
 	
-		if other.object_index == obj_player_pitter obj_player_patter.ySpeed = other.ySpeed;
-		if other.object_index == obj_player_patter obj_player_pitter.ySpeed = other.ySpeed;
+		if other.object_index == obj_player_pitter {
+			
+			obj_player_patter.ySpeed = other.ySpeed;
+			obj_player_patter.coyoteHangTimer = 0;
+			
+		}
+		
+		if other.object_index == obj_player_patter {
+			
+			obj_player_pitter.ySpeed = other.ySpeed;
+			obj_player_pitter.coyoteHangTimer = 0;
+			
+		}
 	
 	}
 
