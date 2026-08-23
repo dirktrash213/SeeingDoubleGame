@@ -1,4 +1,5 @@
 event_inherited();
+//coopObjectStepEventCode();
 
 if global.paused || !active {
 

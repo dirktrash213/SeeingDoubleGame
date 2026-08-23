@@ -13,6 +13,8 @@ function setOnGroundEnemy(_val = true) {
 
 }
 
+coopObjectCreateEventCode();
+
 harmless = false;
 invincible = false;
 

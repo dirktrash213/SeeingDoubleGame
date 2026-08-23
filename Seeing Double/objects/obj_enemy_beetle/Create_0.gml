@@ -1,4 +1,5 @@
 event_inherited();
+//coopObjectCreateEventCode();
 
 idle = false;
 walking = true;

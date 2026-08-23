@@ -3084,11 +3084,38 @@ function coopObjectDrawEventCode() {
 		
 		var _drawColor = isOnPitterScreen ? patterColor : pitterColor;
 		if solidCoop && !coopActive _drawColor = c_white;
-		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, _drawColor, image_alpha);
+		
+		var _xStretch = 1;
+		var _yStretch = 1;
+		
+		if (variable_instance_exists(id, "xStretch")) {
+		    _xStretch = xStretch;
+		}
+		
+		if (variable_instance_exists(id, "yStretch")) {
+		    _yStretch = yStretch;
+		}
+		
+		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale*_xStretch, image_yscale*_yStretch, image_angle, _drawColor, image_alpha);
+		
+		//draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, _drawColor, image_alpha);
 	
 	} else {
 
-		draw_self();
+		//draw_self();
+		
+		var _xStretch = 1;
+		var _yStretch = 1;
+	
+		if (variable_instance_exists(id, "xStretch")) {
+		    _xStretch = xStretch;
+		}
+		
+		if (variable_instance_exists(id, "yStretch")) {
+		    _yStretch = yStretch;
+		}
+	
+		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale*_xStretch, image_yscale*_yStretch, image_angle, image_blend, image_alpha);
 
 	}
 

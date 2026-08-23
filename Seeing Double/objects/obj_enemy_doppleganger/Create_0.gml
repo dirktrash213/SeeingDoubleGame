@@ -1,3 +1,6 @@
+//event_inherited();
+coopObjectCreateEventCode();
+
 enemyToCopy = noone;
 
 if !global.verticalLevel {
@@ -23,5 +26,8 @@ if instance_exists(enemyToCopy) {
 	enemyToCopyIsVisible = enemyToCopy.visible;
 
 }
+
+
+//defeated = false;
 
 //show_debug_message("dopppleganger created")
