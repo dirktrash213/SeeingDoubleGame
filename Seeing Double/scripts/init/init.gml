@@ -9,6 +9,8 @@ window_set_caption("Seeing Double");
 //CLOSE LAB ENTRANCE DOOR BEFORE RELEASE
 
 global.coopActive = false;
+global.coopInvisibleEnemyDetectionRadius = 75;
+
 
 global.speedrunTimer = 0; //OLD
 

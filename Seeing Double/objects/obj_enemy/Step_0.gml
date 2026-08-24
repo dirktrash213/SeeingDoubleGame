@@ -1,5 +1,5 @@
 normalizeStretching();
-coopObjectStepEventCode();
+coopObjectStepEventCode(global.coopInvisibleEnemyDetectionRadius);
 
 mask_index = sprite_index;
 
@@ -16,17 +16,17 @@ if pitterPlayerIsPresent() && !active {
 
 }
 
-//if patterPlayerIsPresent() && !active && global.coopActive {
-//
-//	var _distance = point_distance(x, y, obj_player_patter.x, obj_player_patter.y);
-//
-//	if (_distance <= detectionRadius) {
-//    
-//	    active = true;
-//		
-//	} 
-//
-//}
+if patterShadowIsPresent() && !active && global.coopActive {
+
+	var _distance = point_distance(x, y, obj_player_shadow_patter.x, obj_player_shadow_patter.y);
+
+	if (_distance <= detectionRadius) {
+    
+	    active = true;
+		
+	} 
+
+}
 
 if global.paused || !active {
 

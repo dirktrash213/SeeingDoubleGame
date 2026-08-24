@@ -1,12 +1,36 @@
-//show_debug_message("visible: " + string(visible))
-//event_inherited();
-coopObjectStepEventCode();
+if debugTracking {
+	
+	show_debug_message("defeated: " + string(defeated))
+	
+}
+
+
+event_inherited();
+coopObjectStepEventCode(global.coopInvisibleEnemyDetectionRadius);
+//normalizeStretching();
+
+//if defeated && alarm[0] == -1 {
+if defeated && instance_exists(enemyToCopy) && global.coopActive {
+
+	if !enemyToCopy.defeated {
+
+		enemyToCopy.defeated = true;
+		enemyToCopy.xStretch = 1.5;
+		enemyToCopy.yStretch = 0.5;
+	
+	}
+
+}
 
 if !instance_exists(enemyToCopy) {
 
 	var _visible = visible;
 	var _invisCoop = invisCoop;
 	var _coopActive = coopActive;
+	var _xStretch = xStretch;
+	var _yStretch = yStretch;
+	
+	
 	//###
 	if enemyToCopyObjectIndex == obj_enemy_beetle && room != rm_forest_canopyUpperFloor_enemyMinigames {
 		
@@ -15,6 +39,8 @@ if !instance_exists(enemyToCopy) {
 			visible = _visible;
 			invisCoop = _invisCoop;
 			coopActive = _coopActive;
+			//xStretch = 1.5;
+			//yStretch = 0.5;
 			
 			if !visible coopObjectInstanceCreationCode();
 		
@@ -29,6 +55,8 @@ if !instance_exists(enemyToCopy) {
 			visible = _visible;
 			invisCoop = _invisCoop;
 			coopActive = _coopActive;
+			//xStretch = _xStretch;
+			//yStretch = _yStretch;
 		
 		}
 	
@@ -61,3 +89,5 @@ if !global.verticalLevel {
 
 xStretch = enemyToCopy.xStretch;
 yStretch = enemyToCopy.yStretch;
+
+

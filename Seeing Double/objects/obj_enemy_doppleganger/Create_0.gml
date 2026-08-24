@@ -1,4 +1,4 @@
-//event_inherited();
+event_inherited();
 coopObjectCreateEventCode();
 
 enemyToCopy = noone;
@@ -15,6 +15,7 @@ if !global.verticalLevel {
 
 xStretch = 1;
 yStretch = 1;
+stretchAdjustAmount = 0.1;
 
 enemyToCopyObjectIndex = noone;
 

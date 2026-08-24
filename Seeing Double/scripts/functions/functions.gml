@@ -3024,12 +3024,12 @@ function coopObjectCreateEventCode() {
 
 }
 
-function coopObjectStepEventCode() {
+function coopObjectStepEventCode(_revealRadius = 30) {
 
 	if global.coopActive && (invisCoop || solidCoop) {
 	
 		// Radius around the player shadow where blocks become visible
-		var _revealRadius = 30; //Adjust this distance to fit your game
+		//var _revealRadius = 30; //Adjust this distance to fit your game
 		var _isNearShadow = false;
 
 		var _tempMaskIndex = mask_index;

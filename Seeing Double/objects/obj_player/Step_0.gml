@@ -1153,7 +1153,23 @@ if collidingEnemy {
 	//	if !climbing {
 	
 		//	if !audio_is_playing(sfx_slice) audio_play_sound(sfx_slice, 1, 0, 1, 0, 1.5);
-			if !audio_is_playing(sfx_slice) audio_play_sound_on(obj_control.reverb_emitter, sfx_slice, 0, 1, 1, 0, 1.5);
+			//if !audio_is_playing(sfx_slice) audio_play_sound_on(obj_control.reverb_emitter, sfx_slice, 0, 1, 1, 0, 1.5);
+			
+			var _duplicateAudio = false;
+	
+			with obj_enemy {
+	
+				if duplicateAudio _duplicateAudio = true;
+	
+			}
+			
+			if !_duplicateAudio {
+				
+				audio_play_sound_on(obj_control.reverb_emitter, sfx_slice, 0, 1, 1, 0, 1.5);
+			
+				collidingEnemy.duplicateAudio = true;
+			
+			}
 			
 			if global.doubleJumpActive {
 			

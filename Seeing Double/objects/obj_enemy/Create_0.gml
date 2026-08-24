@@ -48,3 +48,7 @@ detectionRadius = 300;
 xStretch = 1;
 yStretch = 1;
 stretchAdjustAmount = 0.1;
+
+duplicateAudio = false;
+
+debugTracking = false;
