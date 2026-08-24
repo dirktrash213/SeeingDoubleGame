@@ -2,6 +2,7 @@ global.verticalRoomArray = [
 
 	rm_forest_canopyLowerFloor,
 	rm_forest_canopyMiddleFloor,
+	rm_forest_canopyUpperFloorSecret,
 	rm_forest_parachuteFallingArea,
 	rm_cave_descent,
 	rm_cave_descendingToGroundPoundBarrel,

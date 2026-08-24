@@ -41,6 +41,9 @@ if global.playerDefeated || global.paused {
 		
 		}
 		
+		if pitterShadowIsPresent() && object_index == obj_player_pitter obj_player_shadow_pitter.sprite_index = sprite_index;
+		if patterShadowIsPresent() && object_index == obj_player_patter obj_player_shadow_patter.sprite_index = sprite_index;
+		
 	}
 	
 	x = x;

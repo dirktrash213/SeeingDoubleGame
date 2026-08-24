@@ -3144,6 +3144,9 @@ function coopObjectBlockDrawCode(_layername = "LevelTiles") {
 	// 1. Get Tilemap and Tileset info
 	//var _layerID = layer_get_id("LevelTiles");
 	var _layerID = layer_get_id(_layername);
+	
+	if _layerID == -1 exit;
+	
 	var _tilemapID = layer_tilemap_get_id(_layerID);
 	var _tilesetID = tilemap_get_tileset(_tilemapID);
 
