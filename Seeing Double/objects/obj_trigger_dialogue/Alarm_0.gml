@@ -41,6 +41,8 @@ if count == _l-1 {
 		
 		global.dialogueVariables.talkedToCrazyGuy = true;
 		
+		global.dialogueVariables.talkedToCoopNPCEnemies = true;
+		
 	}
 	
 	if room == rm_forest_canopyUpperFloor_jumpBackDown {

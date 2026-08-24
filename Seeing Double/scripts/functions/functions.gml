@@ -3200,3 +3200,13 @@ function coopObjectBlockDrawCode(_layername = "LevelTiles") {
 	// --- RESET SHADER ---
 	shader_reset();
 }
+
+function displayDialogue(_dialogueArray) {
+
+	for (var i = 0; i < array_length(_dialogueArray); ++i) {
+
+		dialogueString[i] = _dialogueArray[i];
+
+	}
+
+}

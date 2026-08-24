@@ -46,6 +46,42 @@ global.dialogueStringArrays = {
 	
 	],
 	
+	forestCoopNpcPlatforms : [ 
+	
+		"Hey. I'm your imaginary marriage counselor.", //0
+		//"You're seeing me because your marriage might not be as in-sync as you'd like.",
+		"You're seeing me because your marriage is on the rocks. You two are not in sync. At all.",
+		//"I suppose a better way to put it is, you're seeing me because you're treating your partnership like some sort.",
+		"In other words, you're treating your partnership like some sort of co-op adventure, aren't you?",
+		"Disgusting.",
+		"But hey. That's neither here nor there. What you sick people do in your free time ain't my buisiness.",
+		//"I'm simply here to give some co-op specific pointers. Against my better judgement.",
+		//"I'm here to salvage this shipwreck of a partnership by giving some co-op specific pointers.", 
+		"I'm here to salvage this shipwreck of a partnership by giving some co-op specific pointers. Against my better judgement.", //5
+		"Let's talk platforms. Some platforms or objects won't be visible or solid to your partner until you stand near them.", 
+		"However, other objects such as this platform will appear transluscent but still be solid. Your partner being near won't change a thing.", 
+		"If you can see it, you can interact with it. Remember that. Now get off my private island!", 
+	
+	],
+	
+	forestCoopNpcEnemies : [ 
+	
+		//"Hey. It's your imaginary marriage counselor again.", //0
+		"Oh. You two again.", //0
+		"Well, whatever. Let's talk invisible enemies. Annoying, Right?", 
+		"You can reveal invisible enemies for each other, same as platforms.", 
+		"But unlike most invisble objects, they [slant]can[/slant] hurt you even when invisible.", 
+		//"Stay near your partner's shadow so you don't run into any invisible buggers. And, as always, be good to each other!", 
+		"Stay near your partner's shadow so you don't run into any invisible buggers and there might be hope for you two. [slant]Might.", 
+	
+	],
+	
+	forestCoopNpcNoRepeat : [ 
+	
+		"I ain't repeating myself!", //0
+		
+	],
+	
 	forestTreeCarving : [ 
 	
 		"\"S + H\" is carved into the tree.", //0
