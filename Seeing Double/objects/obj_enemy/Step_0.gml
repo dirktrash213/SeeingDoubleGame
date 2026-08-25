@@ -105,7 +105,7 @@ var _clampedYspeed = max(0, ySpeed);
 
 var _list = ds_list_create(); //Store objects we run into
 var _array = array_create(0);
-array_push(_array, obj_block_wall, obj_block_wall_semiSolid);
+array_push(_array, obj_block_wall, obj_block_wall_semiSolid, obj_block_enemySolid);
 
 //Do the actual check and add objects to list
 var _listSize = instance_place_list(x, y+1 + _clampedYspeed + movePlatYspeedMax, _array, _list, false);
@@ -126,6 +126,7 @@ for(var i = 0; i < _listSize; i++) {
 		//Return a solid wall or any semisolid walls that are below the enemy
 		if _listInstance.object_index == obj_block_wall 
 		|| object_is_ancestor(_listInstance.object_index, obj_block_wall) 
+		|| _listInstance.object_index == obj_block_enemySolid 
 		|| floor(bbox_bottom) <= ceil(_listInstance.bbox_top - _listInstance.ySpeed) {
 	
 			//Return the highest wall object, and check for platforms that pick up the enemy from below
@@ -166,8 +167,10 @@ if instance_exists(myFloorPlat) && !climbing {
 	
 	}
 	
-	//Make sure we don't end up below the top of a semi soli dplatform
-	if myFloorPlat.object_index == obj_block_wall_semiSolid || object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid) {
+	//Make sure we don't end up below the top of a semi solid platform
+	if myFloorPlat.object_index == obj_block_wall_semiSolid 
+	//|| myFloorPlat.object_index == obj_block_enemySolid
+	|| object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid) {
 	
 		while place_meeting(x, y, myFloorPlat) {
 		

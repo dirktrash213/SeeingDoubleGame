@@ -6,7 +6,7 @@ visible = true;
 
 //if global.coopActive instance_deactivate_object(id);
 
-defaultAlpha = 0.35;
+defaultAlpha = global.coopTransluscentDefaultAlpha;
 
 image_alpha = defaultAlpha;
 

@@ -1,6 +1,6 @@
-coopObjectBlockDrawCode();
+//coopObjectBlockDrawCode();
 
-/*
+
 
 if !global.coopActive exit;
 
