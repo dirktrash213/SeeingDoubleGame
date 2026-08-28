@@ -1,5 +1,7 @@
 //instance_create_layer(x,y,"Instances", obj_pickup_cherry);
 
+//show_debug_message("doppleganger collision")
+
 if room == rm_forest_canopyUpperFloor_enemyMinigames global.dialogueVariables.beatMinigame = true;
 
 with obj_interactable_switch_block_inert instance_destroy();
@@ -21,7 +23,10 @@ audio_play_sound(sfx_pause, 1, 0, 1, 0, 2.0);
 
 awardPlayerAchievement("MINIGAME_FOREST");
 
-instance_destroy(instance_nearest(x,y,obj_enemy));
+//instance_destroy(instance_nearest(x,y,obj_enemy));
+
+with obj_enemy instance_destroy();
+
 //instance_destroy(obj_enemy_beetle_dead);
 instance_destroy();
 

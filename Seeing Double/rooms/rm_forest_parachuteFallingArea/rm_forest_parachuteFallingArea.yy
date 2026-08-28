@@ -21,6 +21,7 @@
     {"name":"inst_5118158E","path":"rooms/rm_forest_parachuteFallingArea/rm_forest_parachuteFallingArea.yy",},
     {"name":"inst_6771E56F","path":"rooms/rm_forest_parachuteFallingArea/rm_forest_parachuteFallingArea.yy",},
     {"name":"inst_6E450ECF","path":"rooms/rm_forest_parachuteFallingArea/rm_forest_parachuteFallingArea.yy",},
+    {"name":"inst_40342A27","path":"rooms/rm_forest_parachuteFallingArea/rm_forest_parachuteFallingArea.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -45,6 +46,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6858EB68","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_warp","path":"objects/obj_trigger_warp/obj_trigger_warp.yy",},"properties":[],"rotation":0.0,"scaleX":30.0,"scaleY":1.0,"x":0.0,"y":-16.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5118158E","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_warp","path":"objects/obj_trigger_warp/obj_trigger_warp.yy",},"properties":[],"rotation":0.0,"scaleX":30.0,"scaleY":1.0,"x":0.0,"y":1088.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6E450ECF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_defeat","path":"objects/obj_trigger_defeat/obj_trigger_defeat.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":480.0,"y":1088.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_40342A27","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_parachuteBreakZone","path":"objects/obj_trigger_parachuteBreakZone/obj_trigger_parachuteBreakZone.yy",},"properties":[],"rotation":0.0,"scaleX":43.0,"scaleY":1.0,"x":-160.0,"y":64.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"ForegroundTiles","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":68,"SerialiseWidth":63,"TileCompressedData":[
 -75,-2147483648,1,0,-14,-2147483648,-3,0,-45,-2147483648,1,0,-62,-2147483648,-18,0,-43,-2147483648,2,0,-2147483648,-18,0,-42,-2147483648,-21,0,-42,-2147483648,-21,0,-42,-2147483648,-2,0,1,-2147483648,-18,0,-33,-2147483648,-17,0,1,-2147483648,-3,0,1,-2147483648,-8,0,-33,-2147483648,-17,0,1,-2147483648,-3,0,1,-2147483648,-8,0,

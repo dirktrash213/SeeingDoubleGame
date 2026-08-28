@@ -1,5 +1,7 @@
 //instance_create_layer(x,y,"Instances", obj_pickup_cherry);
 
+//show_debug_message("beetle collision")
+
 if room == rm_forest_canopyUpperFloor_enemyMinigames global.dialogueVariables.beatMinigame = true;
 
 with obj_interactable_switch_block_inert instance_destroy();

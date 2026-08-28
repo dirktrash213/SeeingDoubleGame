@@ -1,4 +1,4 @@
-if !visible && global.coopActive mask_index = spr_empty;
+if !visible && global.coopActive && !secret mask_index = spr_empty;
 
 if bonked && (visible || secret) {
 
