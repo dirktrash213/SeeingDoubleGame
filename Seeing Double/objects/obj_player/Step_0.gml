@@ -300,19 +300,22 @@ if ridingMinecart {
 	
 		//Increase number of performed jumps
 		jumpCount++;
-	
-		if pitterPlayerIsPresent() {
-	
-			if obj_player_pitter.jumpCount >= obj_player_pitter.jumpMax && obj_player_pitter.gemPowerupDoubleJump {
-	
-				obj_player_pitter.jumpMax = 1;
-	
-				obj_player_pitter.gemPowerupDoubleJump = false;
-				if patterPlayerIsPresent() obj_player_patter.gemPowerupDoubleJump = false;
-	
-			}
-	
-		}
+		
+		
+		doubleJumpGem();
+		
+		//if pitterPlayerIsPresent() {
+		//
+		//	if obj_player_pitter.jumpCount >= obj_player_pitter.jumpMax && obj_player_pitter.gemPowerupDoubleJump {
+		//
+		//		obj_player_pitter.jumpMax = 1;
+		//
+		//		obj_player_pitter.gemPowerupDoubleJump = false;
+		//		if patterPlayerIsPresent() obj_player_patter.gemPowerupDoubleJump = false;
+		//
+		//	}
+		//
+		//}
 	
 		//Set jump hold timer
 		jumpHoldTimer = jumpHoldFrames[jumpCount-1];
@@ -1020,19 +1023,9 @@ if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled {
 	
 	//Increase number of performed jumps
 	jumpCount++;
+	//@
 	
-	if pitterPlayerIsPresent() {
-	
-		if obj_player_pitter.jumpCount >= obj_player_pitter.jumpMax && obj_player_pitter.gemPowerupDoubleJump {
-	
-			obj_player_pitter.jumpMax = 1;
-	
-			obj_player_pitter.gemPowerupDoubleJump = false;
-			if patterPlayerIsPresent() obj_player_patter.gemPowerupDoubleJump = false;
-	
-		}
-	
-	}
+	doubleJumpGem();
 	
 	//Set jump hold timer
 	jumpHoldTimer = jumpHoldFrames[jumpCount-1];
@@ -1046,38 +1039,48 @@ if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled {
 		
 		_pitch += 0.3;
 		
-		with obj_player {
-			
-			xStretch = 0.5;
-			yStretch = 1.5;
-			//instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
-			
-		}
+		if global.coopActive {
 		
-		if global.doubleJumpActive {
-		
-			instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
+			if object_index == obj_player_pitter || object_index == obj_player_patter {
+				
+				xStretch = 0.5;
+				yStretch = 1.5;
+				
+			}
 		
 		} else {
 		
-			with obj_player instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
+			with obj_player {
+			
+				xStretch = 0.5;
+				yStretch = 1.5;
+				//instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
+			
+			}
 		
 		}
 		
-		//if pitterPlayerIsPresent() {
-		//	
-		//	show_debug_message("pitter double jump vfx created")
-		//	instance_create_layer(obj_player_pitter.x, obj_player_pitter.y, "Instances", obj_vfx_actionLines_doubleJump);
-		//	
-		//}
-		//
-		//
-		//if patterPlayerIsPresent() {
-		//	
-		//	show_debug_message("patter double jump vfx created")
-		//	instance_create_layer(obj_player_patter.x, obj_player_patter.y, "Instances", obj_vfx_actionLines_doubleJump);
-		//	
-		//}
+		if global.coopActive {
+			
+			if object_index == obj_player_pitter || object_index == obj_player_patter {
+				
+				instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
+				
+			}
+			
+		} else {
+		
+			if global.doubleJumpActive {
+		
+				instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
+		
+			} else {
+		
+				with obj_player instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
+		
+			}
+		
+		}
 		
 	} else {
 	
@@ -1409,7 +1412,7 @@ if instance_exists(myFloorPlat) && (!climbing || !moveUp) {
 	//
 	//}
 	
-	//@
+	
 	if myFloorPlat.object_index == obj_block_wall_semiSolid_moving
 	|| myFloorPlat.object_index == obj_block_wall_moving
 	|| object_is_ancestor(myFloorPlat.object_index, obj_block_wall_semiSolid_moving) 

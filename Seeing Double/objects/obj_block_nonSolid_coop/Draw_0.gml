@@ -1,4 +1,5 @@
 coopObjectBlockDrawCode("BackgroundTiles");
+coopObjectBlockDrawCode("RuinsTiles");
 coopObjectBlockDrawCode();
 
 

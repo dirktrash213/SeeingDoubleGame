@@ -15,19 +15,29 @@ audio_play_sound(sfx_collect_cherry, 1, 0);
 sprite_index = emptySprite;
 
 
+if global.coopActive {
 
-if pitterPlayerIsPresent() {
-
-	obj_player_pitter.gemPowerupDoubleJump = true;
-	obj_player_pitter.jumpMax = 2;
+	other.gemPowerupDoubleJump = true;
+	other.jumpMax = 2;
 	
-	if obj_player_pitter.jumpCount > 1 obj_player_pitter.jumpCount = 1;
+	if other.jumpCount > 1 other.jumpCount = 1;
 
-}
+} else {
 
-if patterPlayerIsPresent() {
+	if pitterPlayerIsPresent() {
 
-	obj_player_patter.gemPowerupDoubleJump = true;
+		obj_player_pitter.gemPowerupDoubleJump = true;
+		obj_player_pitter.jumpMax = 2;
+	
+		if obj_player_pitter.jumpCount > 1 obj_player_pitter.jumpCount = 1;
+
+	}
+
+	if patterPlayerIsPresent() {
+
+		obj_player_patter.gemPowerupDoubleJump = true;
+
+	}
 
 }
 

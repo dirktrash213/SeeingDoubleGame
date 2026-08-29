@@ -1,4 +1,5 @@
 coopObjectBlockDrawCode();
+coopObjectBlockDrawCode("RuinsTiles");
 /*
 
 if !global.coopActive exit;

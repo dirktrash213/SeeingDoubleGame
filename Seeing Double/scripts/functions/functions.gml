@@ -3213,3 +3213,112 @@ function displayDialogue(_dialogueArray) {
 	}
 
 }
+
+function doubleJumpGem() {
+
+	if global.coopActive {
+	
+		if object_index == obj_player_pitter {
+		
+			if obj_player_pitter.jumpCount >= obj_player_pitter.jumpMax && obj_player_pitter.gemPowerupDoubleJump {
+	
+				obj_player_pitter.jumpMax = 1;
+	
+				obj_player_pitter.gemPowerupDoubleJump = false;
+				
+			}
+		
+		}
+		
+		if object_index == obj_player_patter {
+		
+			if obj_player_patter.jumpCount >= obj_player_patter.jumpMax && obj_player_patter.gemPowerupDoubleJump {
+	
+				obj_player_patter.jumpMax = 1;
+	
+				obj_player_patter.gemPowerupDoubleJump = false;
+				
+			}
+		
+		}
+	
+	} else {
+	
+		if pitterPlayerIsPresent() {
+	
+			if obj_player_pitter.jumpCount >= obj_player_pitter.jumpMax && obj_player_pitter.gemPowerupDoubleJump {
+	
+				obj_player_pitter.jumpMax = 1;
+	
+				obj_player_pitter.gemPowerupDoubleJump = false;
+				if patterPlayerIsPresent() obj_player_patter.gemPowerupDoubleJump = false;
+	
+			}
+	
+		}
+	
+	}
+
+}
+
+function coopSpawnDuplicateCollectable() {
+
+	if global.coopActive && !duplicate {
+
+		var _offsetX = 0;
+		var _offsetY = 0;
+	
+		if global.verticalLevel {
+	
+			if x > global.patterOffsetX {
+	
+				_offsetX = -global.patterOffsetX;	
+	
+			} else {
+	
+				_offsetX = global.patterOffsetX;
+	
+			}
+	
+		} else {
+		
+			if global.customLevel {
+		
+				if y > global.defaultCustomLevelPatterOffsetY {
+	
+					_offsetY = -global.defaultCustomLevelPatterOffsetY;	
+	
+				} else {
+	
+					_offsetY = global.defaultCustomLevelPatterOffsetY;
+	
+				}
+		
+			} else {
+	
+				if y > global.patterOffsetY {
+	
+					_offsetY = -global.patterOffsetY;	
+	
+				} else {
+	
+					_offsetY = global.patterOffsetY;
+	
+				}
+		
+			}
+	
+		}
+
+		duplicatedObject = instance_create_layer(x + _offsetX, y + _offsetY, "Collectables", object_index);
+	
+		with duplicatedObject {
+	
+			duplicate = true;
+			coopObjectInstanceCreationCode();
+	
+		}
+
+	}
+
+}
