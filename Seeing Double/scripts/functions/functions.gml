@@ -2951,14 +2951,42 @@ function checkpointTouched() {
 			//show_debug_message("global.xRespawnPitter: " + string(global.xRespawnPitter))
 			//show_debug_message("global.yRespawnPitter: " + string(global.yRespawnPitter))
 		
-			if global.splitScreenActive {
-		
-				var _patterRespawnPoint = instance_nearest(x, y, obj_trigger_patterRespawn);
-		
-				global.xRespawnPatter = _patterRespawnPoint.x;
-				global.yRespawnPatter = _patterRespawnPoint.y;
-			
-		
+			if (global.splitScreenActive) {
+    
+			    var _halfWidth = 2; // Gives 4 pixels of horizontal leeway total (x - 2 to x + 2)
+			    var _step = 4;      // Distance to jump per scan step (lower = more precise, higher = faster)
+			    var _maxDist = 2000; // Maximum downward search distance in pixels
+    
+			    var _foundPoint = noone;
+			    
+				if global.verticalLevel {
+				
+					var _checkX = x;
+    
+				    // Scan rightward until a trigger is hit or max distance is reached
+				    while (_checkX <= x + _maxDist && _foundPoint == noone) {
+				        _foundPoint = collision_rectangle(_checkX, y - _halfHeight, _checkX + _step, y + _halfHeight, obj_trigger_patterRespawn, false, true);
+				        _checkX += _step;
+				    }
+				
+				} else {
+				
+					var _checkY = y;
+    
+				    // Scan downward until a trigger is hit or max distance is reached
+				    while (_checkY <= y + _maxDist && _foundPoint == noone) {
+				        _foundPoint = collision_rectangle(x - _halfWidth, _checkY, x + _halfWidth, _checkY + _step, obj_trigger_patterRespawn, false, true);
+				        _checkY += _step;
+				    }
+				
+				}
+    
+			    // If a respawn point was found, update the global variables
+			    if (_foundPoint != noone) {
+			        global.xRespawnPatter = _foundPoint.x;
+			        global.yRespawnPatter = _foundPoint.y;
+			    }
+				
 			}
 	
 		}

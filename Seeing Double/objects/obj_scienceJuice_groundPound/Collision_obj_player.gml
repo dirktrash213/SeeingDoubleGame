@@ -6,10 +6,10 @@ triggered = true;
 
 if global.coopActive {
 
-	if x > global.patterOffsetX {
+	if y > global.defaultCustomLevelPatterOffsetY {
 	
-		obj_player_pitter.x = x - global.patterOffsetX;
-		obj_player_pitter.y = y;
+		obj_player_pitter.x = x;
+		obj_player_pitter.y = y - global.defaultCustomLevelPatterOffsetY;
 		
 		obj_player_patter.x = x;
 		obj_player_patter.y = y;
@@ -19,8 +19,8 @@ if global.coopActive {
 		obj_player_pitter.x = x;
 		obj_player_pitter.y = y;
 		
-		obj_player_patter.x = x + global.patterOffsetX;
-		obj_player_patter.y = y;
+		obj_player_patter.x = x;
+		obj_player_patter.y = y + global.defaultCustomLevelPatterOffsetY;
 	
 	}
 
