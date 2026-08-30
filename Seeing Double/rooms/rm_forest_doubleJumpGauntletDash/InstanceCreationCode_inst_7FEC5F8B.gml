@@ -1,2 +1,2 @@
 vanishOnTimeout = true;
-visible = false;
+coopObjectInstanceCreationCode();

@@ -74,10 +74,15 @@ if bonked && !inert && (visible || secret) {
 			instance_destroy();
 	
 		}
-	
+		//@
 		with obj_interactable_temp_block_on {
 	
 			var _visible = visible;
+			var _invisCoop = invisCoop;
+			var _solidCoop = solidCoop;
+			var _alarm10Timer = alarm[10];
+			var _image_alpha = image_alpha;
+			var _coopActive = coopActive;
 	
 			if canSwap {
 				
@@ -88,7 +93,22 @@ if bonked && !inert && (visible || secret) {
 				with instance_create_layer(_x,_y, "Instances", obj_interactable_temp_block_off) {
 			
 					canSwap = false;
-					visible = _visible;
+					
+					if (_invisCoop || _solidCoop) && global.coopActive {
+					
+						if _invisCoop coopObjectInstanceCreationCode();
+						if _solidCoop coopObjectSolidInstanceCreationCode();
+						
+						visible = _visible;
+						alarm[10] = _alarm10Timer;
+						image_alpha = _image_alpha;
+						coopActive = _coopActive;
+					
+					} else {
+					
+						visible = _visible;
+					
+					}
 			
 				}
 		
@@ -99,6 +119,11 @@ if bonked && !inert && (visible || secret) {
 		with obj_interactable_temp_block_off {
 	
 			var _visible = visible;
+			var _invisCoop = invisCoop;
+			var _solidCoop = solidCoop;
+			var _alarm10Timer = alarm[10];
+			var _image_alpha = image_alpha;
+			var _coopActive = coopActive;
 		
 			if canSwap {
 		
@@ -109,7 +134,22 @@ if bonked && !inert && (visible || secret) {
 				with instance_create_layer(_x,_y, "Instances", obj_interactable_temp_block_on) {
 			
 					canSwap = false;
-					visible = _visible;
+					
+					if (_invisCoop || _solidCoop) && global.coopActive {
+					
+						if _invisCoop coopObjectInstanceCreationCode();
+						if _solidCoop coopObjectSolidInstanceCreationCode();
+						
+						visible = _visible;
+						alarm[10] = _alarm10Timer;
+						image_alpha = _image_alpha;
+						coopActive = _coopActive;
+					
+					} else {
+					
+						visible = _visible;
+					
+					}
 			
 				}
 		

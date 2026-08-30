@@ -1,1 +1,1 @@
-visible = false;
+coopObjectInstanceCreationCode();
