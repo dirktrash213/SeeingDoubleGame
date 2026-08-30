@@ -1,3 +1,7 @@
+coopObjectBlockTranslucentDrawCode();
+coopObjectBlockTranslucentDrawCode("RuinsTiles");
+/*
+
 if !global.coopActive exit;
 
 // --- CALCULATE TINT COLOR & ALPHA BEFORE DRAWING ---
@@ -13,7 +17,8 @@ if (!active) {
 image_alpha = clamp(image_alpha, defaultAlpha, 1.0);
 
 // 1. Get Tilemap and Tileset info
-var _layerID = layer_get_id("LevelTiles");
+//var _layerID = layer_get_id("LevelTiles");
+var _layerID = layer_get_id("RuinsTiles");
 var _tilemapID = layer_tilemap_get_id(_layerID);
 var _tilesetID = tilemap_get_tileset(_tilemapID);
 

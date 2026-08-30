@@ -1,4 +1,4 @@
 walkSpeed = 2.0;
 fallOffLedges = false;
-visible = false;
+coopObjectInstanceCreationCode();
 detectionRadius = 450;

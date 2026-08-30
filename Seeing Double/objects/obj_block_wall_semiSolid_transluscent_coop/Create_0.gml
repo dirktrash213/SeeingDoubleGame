@@ -6,7 +6,7 @@ mask_index = sprite_index;
 
 //if global.coopActive instance_deactivate_object(id);
 
-defaultAlpha = global.coopTransluscentDefaultAlpha;
+defaultAlpha = global.coopTransluscentBlocksDefaultAlpha;
 
 image_alpha = defaultAlpha;
 

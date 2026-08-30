@@ -1,3 +1,3 @@
 fallOffLedges = false;
-visible = false;
+coopObjectInstanceCreationCode();
 detectionRadius = 150;
