@@ -3412,3 +3412,68 @@ function coopSpawnDuplicateCollectable() {
 	}
 
 }
+
+function coopSyncPlayerPositions() {
+
+	if global.coopActive {
+	
+		if other.object_index == obj_player_pitter obj_player_patter.faceDir = other.faceDir;
+		if other.object_index == obj_player_patter obj_player_pitter.faceDir = other.faceDir;
+	
+		if global.verticalLevel {
+	
+			if other.object_index == obj_player_pitter {
+	
+				obj_player_patter.x = other.x + global.patterOffsetX;
+				obj_player_patter.y = other.y;
+	
+			}
+	
+			if other.object_index == obj_player_patter {
+	
+				obj_player_pitter.x = other.x - global.patterOffsetX;
+				obj_player_pitter.y = other.y;
+	
+			}
+	
+		} else {
+		
+			if global.customLevel {
+		
+				if other.object_index == obj_player_pitter {
+	
+					obj_player_patter.x = other.x;
+					obj_player_patter.y = other.y + global.defaultCustomLevelPatterOffsetY;
+	
+				}
+	
+				if other.object_index == obj_player_patter {
+	
+					obj_player_pitter.x = other.x;
+					obj_player_pitter.y = other.y - global.defaultCustomLevelPatterOffsetY;
+	
+				}
+		
+			} else {
+
+				if other.object_index == obj_player_pitter {
+	
+					obj_player_patter.x = other.x;
+					obj_player_patter.y = other.y + global.patterOffsetY;
+	
+				}
+	
+				if other.object_index == obj_player_patter {
+	
+					obj_player_pitter.x = other.x;
+					obj_player_pitter.y = other.y - global.patterOffsetY;
+	
+				}
+		
+			}
+	
+		}
+
+	}
+
+}

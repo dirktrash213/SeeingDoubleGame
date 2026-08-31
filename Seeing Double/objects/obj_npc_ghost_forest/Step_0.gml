@@ -21,7 +21,15 @@ if patterPlayerIsPresent() {
 		
 		with obj_player_patter {
 		
-			if place_meeting(x, y, obj_trigger_behindLayer) _playerHidden = true;
+			if global.coopActive {
+			
+				if place_meeting(x, y, obj_trigger_behindLayer) && place_meeting(obj_player_shadow.x, obj_player_shadow.y, obj_trigger_behindLayer) _playerHidden = true;
+			
+			} else {
+		
+				if place_meeting(x, y, obj_trigger_behindLayer) _playerHidden = true;
+			
+			}
 		
 		}
 

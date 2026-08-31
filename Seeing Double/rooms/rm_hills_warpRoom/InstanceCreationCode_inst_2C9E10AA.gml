@@ -4,4 +4,5 @@ xEnter = 256;
 yEnter = 256;
 
 xSpawn = 50;
-ySpawn = -100;
+//ySpawn = -100;
+ySpawn = 20;

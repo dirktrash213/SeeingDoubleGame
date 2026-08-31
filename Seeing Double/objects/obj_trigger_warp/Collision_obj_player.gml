@@ -17,7 +17,7 @@ show_debug_message("target room: " + string(room_get_name(targetRoom)))
 
 if pitterPlayerIsPresent() {
 
-	if global.coopActive {
+	if global.coopActive && patterPlayerIsPresent() {
 	
 		if other.object_index == obj_player_pitter {
 			
@@ -56,7 +56,7 @@ if pitterPlayerIsPresent() {
 		obj_player_pitter.x = xSpawn + _offsetX;
 		obj_player_pitter.y = ySpawn - _offsetY;
 		
-		if global.coopActive {
+		if global.coopActive && patterPlayerIsPresent() {
 		
 			obj_player_patter.x = xSpawn + _offsetX;
 			obj_player_patter.y = ySpawn - _offsetY + global.patterOffsetY;
@@ -81,7 +81,7 @@ if pitterPlayerIsPresent() {
 			obj_player_pitter.x = xSpawn + _offsetX;
 			obj_player_pitter.y = ySpawn;
 		
-			if global.coopActive {
+			if global.coopActive && patterPlayerIsPresent() {
 		
 				if !array_contains(global.verticalRoomArray, targetRoom) {
 			
@@ -155,13 +155,22 @@ if room == rm_hills_warpRoom && !ignoreDoorWarp { //For warping out of the warp 
 
 	global.splitScreenActive = true;
 
-	instance_create_layer(x, y, "Instances", obj_player_patter);
+	if !patterPlayerIsPresent() {
+		
+		instance_create_layer(obj_player_pitter.x, obj_player_pitter.y + global.patterOffsetY, "Instances", obj_player_patter);
+		
+	}
 
 	audio_stop_sound(amb_scifiCave);
 	audio_play_sound(sfx_portal_jump, 1, false);
 
 	if targetRoom == rm_forest_splitScreenTutorial {
-
+		
+		
+		
+		//targetRoom = rm_forest_caveEntrance; //TEMP
+		//room_goto(targetRoom); //TEMP
+		
 		global.cherryCount = 3;
 	
 		global.disableSpeedrunForest = true;

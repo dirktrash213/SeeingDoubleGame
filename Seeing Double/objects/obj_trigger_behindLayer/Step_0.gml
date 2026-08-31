@@ -3,8 +3,10 @@
 
 
 if room == rm_forest_caveEntrance {
+	
+	var _collidingObject = global.coopActive ? obj_player_shadow_pitter : obj_player_patter;
 
-	if place_meeting(x, y, obj_player_patter) {
+	if place_meeting(x, y, _collidingObject) {
 
 		make_layer_transparent("SecretTiles", 0.0, 0.05);
 
@@ -13,6 +15,15 @@ if room == rm_forest_caveEntrance {
 		//make_layer_transparent("SecretTiles", 1.0, 0.05, false);
 		make_layer_transparent("SecretTiles", 0.5, 0.05, false); //??? This works somehow?
 
+	}
+	
+	if global.coopActive && place_meeting(x, y, obj_player_patter) && !place_meeting(x, y, obj_player_shadow_pitter) {
+	
+		//obj_player_patter.x += 3.5;
+		//obj_player_patter.x += 5;
+		//obj_player_patter.x = 192;
+		obj_player_patter.x = 193;
+	
 	}
 
 } else {
