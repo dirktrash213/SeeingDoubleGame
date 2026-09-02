@@ -3100,7 +3100,7 @@ function coopObjectStepEventCode(_revealRadius = 30) {
 	}
 
 }
-//@
+
 function coopObjectDrawEventCode() {
 
 	if global.coopActive && (invisCoop || solidCoop) {
@@ -3213,7 +3213,7 @@ function coopObjectBlockTranslucentDrawCode(_layername = "LevelTiles") {
 	        var _tileData = tilemap_get_at_pixel(_tilemapID, _sampleX, _sampleY);
         
 	        if (_tileData != 0) {
-	            if (tile_get_index(_tileData) < 400) { 
+	            if (tile_get_index(_tileData) < 800) { 
 	                draw_tile(_tilesetID, _tileData, 0, _drawX, _drawY);
 	            }
 	        }
@@ -3283,7 +3283,7 @@ function coopObjectBlockDrawCode(_layername = "LevelTiles") {
 	        var _tileData = tilemap_get_at_pixel(_tilemapID, _sampleX, _sampleY);
 		
 	        if (_tileData != 0) {
-				if (tile_get_index(_tileData) < 400) { 
+				if (tile_get_index(_tileData) < 800) { //400
 				    draw_tile(_tilesetID, _tileData, 0, _drawX, _drawY);
 				}
 	        }
@@ -3350,7 +3350,7 @@ function doubleJumpGem() {
 	}
 
 }
-
+//@
 function coopSpawnDuplicateCollectable() {
 
 	if global.coopActive && !duplicate {
@@ -3402,10 +3402,13 @@ function coopSpawnDuplicateCollectable() {
 
 		duplicatedObject = instance_create_layer(x + _offsetX, y + _offsetY, "Collectables", object_index);
 	
+		var _depth = instance_nearest(x, y, object_index).depth + 10;
+	
 		with duplicatedObject {
 	
 			duplicate = true;
 			coopObjectInstanceCreationCode();
+			depth = _depth;
 	
 		}
 

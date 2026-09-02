@@ -1,3 +1,7 @@
+coopObjectStepEventCode(60);
+mask_index = sprite_index;
+
+
 if attachedToPlatform {
 
 	var _xDiff = platform.xstart - xstart;
