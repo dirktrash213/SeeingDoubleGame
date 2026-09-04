@@ -17,6 +17,7 @@ if patterPlayerIsPresent() && instance_exists(obj_trigger_patterRespawn) && glob
 }
 
 
+if global.coopActive layer_set_visible(layer_get_id("SecretTiles"), false);
 
 //if room == rm_cave_entrance
 //|| room == rm_lab_entrance {

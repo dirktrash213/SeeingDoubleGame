@@ -16,3 +16,6 @@ global.customLevel = false;
 //disableReverb();
 //enableTinyReverb();
 enableSmallReverb();
+
+
+//if global.coopActive layer_set_visible(layer_get_id("SecretTiles"), false);

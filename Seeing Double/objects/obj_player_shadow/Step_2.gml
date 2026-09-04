@@ -15,7 +15,12 @@ if !global.coopActive || !global.splitScreenActive {
 
 }
 
+if instance_exists(cutout) {
 
+	cutout.x = x;
+	cutout.y = y - 4;
+
+}
 
 
 
