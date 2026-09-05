@@ -303,6 +303,7 @@ if global.paused {
 						
 								//global.coopActive = !global.coopActive;
 								setCoopMode(!global.coopActive);
+								global.killPlayerAfterUnpause = true;
 						
 							} break;
 							

@@ -543,6 +543,7 @@ function spawnPitter() {
 	var _offsetY = 20;
 
 	obj_control.canDrawDivider = true;
+	global.killPlayerAfterUnpause = false;
 	
 	with objBktGlitchDemo {
 	
@@ -867,6 +868,8 @@ function togglePause() {
 				jumpDisabled = true;
 		
 			}
+			
+			//if global.killPlayerAfterUnpause playerDefeated();
 		
 		}
 	

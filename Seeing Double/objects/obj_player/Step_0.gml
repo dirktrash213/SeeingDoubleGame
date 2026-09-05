@@ -1,5 +1,12 @@
 if global.doubleJumpActive && jumpMax == 1 jumpMax = 2; //Ensure player can double jump if they have unlocked it
 
+if global.killPlayerAfterUnpause && !global.paused {
+
+	playerDefeated();
+	global.killPlayerAfterUnpause = false;
+
+}
+
 if global.playerDefeated || global.paused {
 
 	if global.playerDefeated {
@@ -48,6 +55,14 @@ if global.playerDefeated || global.paused {
 	
 	x = x;
 	y = y;
+	
+	//show_debug_message("obj_player_pitter.x: " + string(obj_player_pitter.x))
+	//show_debug_message("obj_player_pitter.y: " + string(obj_player_pitter.y))
+	//
+	//show_debug_message("obj_player_patter.x: " + string(obj_player_patter.x))
+	//show_debug_message("obj_player_patter.y: " + string(obj_player_patter.y))
+	//
+	//show_debug_message("----------------------------------------------------")
 	
 	exit;
 

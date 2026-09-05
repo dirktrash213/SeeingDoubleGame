@@ -38,6 +38,7 @@ global.coinLotsAmountForest = 800;
 global.coinLotsAmountCave = 1200;
 
 global.paused = false;
+global.killPlayerAfterUnpause = false;
 global.playerControl = true;
 
 global.playerDefeated = false;
