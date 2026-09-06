@@ -74,13 +74,17 @@ if pitterPlayerIsPresent() {
 		//
 		//} 
 		
-		// _offsetY = abs(other.y - y);
-		var _offsetY = -abs(other.y - yEnter);
+		
+		var _offsetX = xSpawn == 1 ? 3 : -3; //This offset prevents the player from spawning on the target room's warp
+		//var _offsetY = -abs(other.y - yEnter);
+		var _offsetY = -abs(other.y - (y + sprite_height));
+		//var _offsetY = -abs(other.y - 463);
 
 		if other.object_index == obj_player_pitter {
 
-			obj_player_pitter.x = xSpawn;
+			obj_player_pitter.x = xSpawn + _offsetX;
 			obj_player_pitter.y = ySpawn + _offsetY;
+			//obj_player_pitter.y = ySpawn - _offsetY;
 		
 			if global.coopActive && patterPlayerIsPresent() {
 		
@@ -89,7 +93,7 @@ if pitterPlayerIsPresent() {
 					if !array_contains(global.customRoomArray, targetRoom) { //Target room is horizontal
 				
 						obj_player_patter.x = obj_player_pitter.x;
-						obj_player_patter.y = obj_player_pitter.y + global.patterOffsetY;
+						obj_player_patter.y = obj_player_pitter.y + global.defaultPatterOffsetY;
 				
 					} else { //Target room is custom sized
 					
@@ -100,7 +104,7 @@ if pitterPlayerIsPresent() {
 			
 				} else { //Target room is vertical
 			
-					obj_player_patter.x = obj_player_pitter.x + global.patterOffsetX;
+					obj_player_patter.x = obj_player_pitter.x + global.defaultPatterOffsetX;
 					obj_player_patter.y = obj_player_pitter.y;
 			
 				}
@@ -111,31 +115,30 @@ if pitterPlayerIsPresent() {
 			
 			if !array_contains(global.verticalRoomArray, targetRoom) {
 				
-				if !array_contains(global.customRoomArray, targetRoom) {
+				if !array_contains(global.customRoomArray, targetRoom) { //Target room is horizontal
 				
 					obj_player_patter.x = xSpawn + _offsetX;
-					obj_player_patter.y = ySpawn + global.patterOffsetY;
+					obj_player_patter.y = ySpawn + global.defaultPatterOffsetY + _offsetY;
 				
 					obj_player_pitter.x = obj_player_patter.x;
-					obj_player_pitter.y = obj_player_patter.y - global.patterOffsetY;
+					obj_player_pitter.y = obj_player_patter.y - global.defaultPatterOffsetY;
 				
-				
-				} else {
+				} else { //Target room is custom sized
 			
 					obj_player_patter.x = xSpawn + _offsetX;
-					obj_player_patter.y = ySpawn + global.defaultCustomLevelPatterOffsetY;
+					obj_player_patter.y = ySpawn + global.defaultCustomLevelPatterOffsetY + _offsetY;
 				
 					obj_player_pitter.x = obj_player_patter.x;
 					obj_player_pitter.y = obj_player_patter.y - global.defaultCustomLevelPatterOffsetY;
 				
 				}
 				
-			} else {
+			} else { //Target room is vertical
 		
-				obj_player_patter.x = xSpawn + global.patterOffsetX + _offsetX;
-				obj_player_patter.y = ySpawn;
+				obj_player_patter.x = xSpawn + global.defaultPatterOffsetX + _offsetX;
+				obj_player_patter.y = ySpawn + _offsetY;
 			
-				obj_player_pitter.x = obj_player_patter.x - global.patterOffsetX;
+				obj_player_pitter.x = obj_player_patter.x - global.defaultPatterOffsetX;
 				obj_player_pitter.y = obj_player_patter.y;
 			
 			}

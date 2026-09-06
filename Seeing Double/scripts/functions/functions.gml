@@ -2957,6 +2957,7 @@ function checkpointTouched() {
 			if (global.splitScreenActive) {
     
 			    var _halfWidth = 2; // Gives 4 pixels of horizontal leeway total (x - 2 to x + 2)
+			    var _halfHeight = 2; // Gives 4 pixels of vertical leeway total (y - 2 to y + 2)
 			    var _step = 4;      // Distance to jump per scan step (lower = more precise, higher = faster)
 			    var _maxDist = 2000; // Maximum downward search distance in pixels
     
