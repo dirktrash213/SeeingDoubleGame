@@ -3420,6 +3420,62 @@ function coopSpawnDuplicateCollectable() {
 
 }
 
+function coopSyncDuplicateObjects() {
+
+	if duplicatedObject != noone {
+
+		var _offsetX = 0;
+		var _offsetY = 0;
+	
+		if global.verticalLevel {
+	
+			if x > global.patterOffsetX {
+	
+				_offsetX = -global.patterOffsetX;	
+	
+			} else {
+	
+				_offsetX = global.patterOffsetX;
+	
+			}
+	
+		} else {
+		
+			if global.customLevel {
+		
+				if y > global.defaultCustomLevelPatterOffsetY {
+	
+					_offsetY = -global.defaultCustomLevelPatterOffsetY;	
+	
+				} else {
+	
+					_offsetY = global.defaultCustomLevelPatterOffsetY;
+	
+				}
+		
+			} else {
+	
+				if y > global.patterOffsetY {
+	
+					_offsetY = -global.patterOffsetY;	
+	
+				} else {
+	
+					_offsetY = global.patterOffsetY;
+	
+				}
+		
+			}
+	
+		}
+
+		duplicatedObject.x = x + _offsetX;
+		duplicatedObject.y = y + _offsetY;
+
+	}
+
+}
+
 function coopSyncPlayerPositions() {
 
 	if global.coopActive {

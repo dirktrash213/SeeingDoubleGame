@@ -33,4 +33,5 @@ if attachedToSolidPlatform {
 
 }
 
+coopSyncDuplicateObjects();
 
