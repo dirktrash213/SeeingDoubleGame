@@ -1036,7 +1036,7 @@ function spawnGroundPoundFloorPieces() {
 	audio_play_sound(sfx_slice, 1, 0, 1, 0, _pitch);
 
 }
-
+//@
 function spawnBreakableFloorPieces() {
 
 	var _piecesAmount = 4;
@@ -1052,6 +1052,14 @@ function spawnBreakableFloorPieces() {
 	var _rotationSpeedMax = 10;
 	
 	var _gravity = 0.05;
+	
+	var _blendColor = c_white;
+	
+	if (invisCoop || solidCoop) && global.coopActive {
+	
+		_blendColor = isOnPitterScreen ? global.patterColor : global.pitterColor;
+	
+	}
 		
 	for(var i = 0; i < _piecesAmount; i++) {
 
@@ -1072,6 +1080,8 @@ function spawnBreakableFloorPieces() {
 			
 			image_angle = random_range(0, 360);
 			rotationSpeed = random_range(_rotationSpeedMin, _rotationSpeedMax);
+			
+			image_blend = _blendColor;
 			
 			depth = -10000;
 	
@@ -3026,7 +3036,7 @@ function coopObjectSolidInstanceCreationCode() {
 	}
 
 }
-
+//@
 function coopObjectCreateEventCode() {
 
 	coopActive = true;
@@ -3354,7 +3364,7 @@ function doubleJumpGem() {
 	}
 
 }
-//@
+
 function coopSpawnDuplicateCollectable() {
 
 	if global.coopActive && !duplicate {

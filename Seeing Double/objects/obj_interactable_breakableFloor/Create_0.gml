@@ -12,3 +12,4 @@ breakNoisePitchDefault = 1.0;
 breakNoisePitch = breakNoisePitchDefault;
 breakNoisePitchIncreaseAmount = 0.5;
 
+coopObjectCreateEventCode();
