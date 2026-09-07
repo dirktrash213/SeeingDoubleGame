@@ -1,5 +1,7 @@
 event_inherited();
 //coopObjectStepEventCode();
+enemyBeetleStepCode();
+/*
 
 if global.paused || !active {
 

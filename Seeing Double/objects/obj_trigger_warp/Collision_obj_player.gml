@@ -7,7 +7,10 @@ if other.object_index == obj_player_patter && !global.coopActive exit;
 
 //if object_index == obj_player_pitter {
 
+//show_debug_message("collided with warp id: " + string(id))
+
 room_goto(targetRoom);
+//room_goto(rm_cave_descent);
 part_system_clear(global.particleSystemDevice);
 
 show_debug_message("target room: " + string(room_get_name(targetRoom)))
@@ -74,8 +77,9 @@ if pitterPlayerIsPresent() {
 		//
 		//} 
 		
+		var _offsetAmount = 3;
 		
-		var _offsetX = xSpawn == 1 ? 3 : -3; //This offset prevents the player from spawning on the target room's warp
+		var _offsetX = xSpawn == 1 ? _offsetAmount : -_offsetAmount; //This offset prevents the player from spawning on the target room's warp
 		//var _offsetY = -abs(other.y - yEnter);
 		var _offsetY = -abs(other.y - (y + sprite_height));
 		//var _offsetY = -abs(other.y - 463);
@@ -106,7 +110,7 @@ if pitterPlayerIsPresent() {
 			
 					obj_player_patter.x = obj_player_pitter.x + global.defaultPatterOffsetX;
 					obj_player_patter.y = obj_player_pitter.y;
-			
+					
 				}
 		
 			} 
@@ -144,6 +148,12 @@ if pitterPlayerIsPresent() {
 			}
 		
 		} 
+		
+		//show_debug_message("obj_player_pitter.x: " + string(obj_player_pitter.x))
+		//show_debug_message("obj_player_pitter.y: " + string(obj_player_pitter.y))
+		//
+		//show_debug_message("obj_player_patter.x: " + string(obj_player_patter.x))
+		//show_debug_message("obj_player_patter.y: " + string(obj_player_patter.y))
 		
 	} else { //vertical warp
 	
@@ -278,27 +288,3 @@ if room == rm_hills_warpRoom && !ignoreDoorWarp { //For warping out of the warp 
 
 }
 
-//}
-
-/*
-if patterPlayerIsPresent() {
-
-	if horizontalWarp {
-
-		var _offsetY = abs(obj_player_patter.y - yEnter);
-		
-		show_debug_message(_offsetY)
-
-		obj_player_patter.x = xSpawn;
-		obj_player_patter.y = ySpawn - _offsetY;
-		
-	} else {
-	
-		var _offsetX = abs(obj_player_patter.x - xEnter);
-
-		obj_player_patter.x = xSpawn + _offsetX;
-		obj_player_patter.y = ySpawn;
-	
-	}
-
-}

@@ -5,7 +5,10 @@ enemyToCopy = noone;
 
 spikey = false;
 
-if !global.verticalLevel {
+show_debug_message(room_get_name(room))
+
+//if !global.verticalLevel {
+if !array_contains(global.verticalRoomArray, room) {
 
 	enemyToCopy = instance_place(x, y - global.patterOffsetY, obj_enemy);
 

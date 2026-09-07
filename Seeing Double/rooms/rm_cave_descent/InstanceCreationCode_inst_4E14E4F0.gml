@@ -1,2 +1,2 @@
 horizontal = true;
-visible = false;
+coopObjectInstanceCreationCode();
