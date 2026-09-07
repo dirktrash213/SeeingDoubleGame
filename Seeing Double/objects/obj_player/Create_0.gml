@@ -120,6 +120,8 @@ concernSprite = spr_pitter_pause;
 scaredSprite = spr_pitter_scared;
 runScaredSprite = spr_pitter_run_scared;
 curiousSprite = spr_pitter_curious;
+crySprite = spr_pitter_cry;
+
 
 
 jumpSfx = sfx_jump_pitter;

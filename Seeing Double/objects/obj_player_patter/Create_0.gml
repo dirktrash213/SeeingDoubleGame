@@ -19,3 +19,4 @@ curiousSprite = spr_patter_curious;
 groundPoundJumpSprite = spr_patter_groundPound_jump;
 groundPoundFallSprite = spr_patter_groundPound_fall;
 groundPoundFallBoulderSprite = spr_patter_groundPound_fall_angry;
+crySprite = spr_patter_cry;

@@ -26,3 +26,5 @@ harmless = false;
 invincible = false;
 
 removeDuration = 15;
+
+spikey = false;

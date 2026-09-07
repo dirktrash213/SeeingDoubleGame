@@ -1,2 +1,2 @@
-visible = false;
+coopObjectInstanceCreationCode();
 fallOffLedges = false;

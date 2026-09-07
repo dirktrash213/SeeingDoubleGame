@@ -545,6 +545,9 @@ function spawnPitter() {
 	obj_control.canDrawDivider = true;
 	global.killPlayerAfterUnpause = false;
 	
+	global.coopPitterDefeated = false;
+	global.coopPatterDefeated = false;
+	
 	with objBktGlitchDemo {
 	
 		intensity = 0;
@@ -682,10 +685,27 @@ function increaseDefeatCount() {
 		
 		if other.object_index == obj_player_pitter global.defeatCountPitter++;
 		if other.object_index == obj_player_patter global.defeatCountPatter++;
+		
+		if other.object_index == obj_player_pitter global.coopPitterDefeated = true;
+		if other.object_index == obj_player_patter global.coopPatterDefeated = true;
 	
 	} else {
 	
 		global.defeatCount++;
+	
+	}
+
+}
+
+function coopSetCrySprite() {
+
+	obj_player_pitter.sprite_index = obj_player_pitter.defeatSprite;
+	obj_player_patter.sprite_index = obj_player_patter.defeatSprite;
+	
+	if global.coopActive {
+		
+		if global.coopPitterDefeated obj_player_patter.sprite_index = obj_player_patter.crySprite;
+		if global.coopPatterDefeated obj_player_pitter.sprite_index = obj_player_pitter.crySprite;
 	
 	}
 
@@ -698,7 +718,9 @@ function playerDefeated() {
 	global.playerDefeated = true;
 	
 	increaseDefeatCount();
-
+	coopSetCrySprite();
+	
+	
 	audio_play_sound(sfx_hurt, 1, 0);
 	global.playerControl = false;
 	obj_control.alarm[0] = global.playerRespawnTime; 
@@ -707,12 +729,6 @@ function playerDefeated() {
 	other.xStretch = 1;
 	other.yStretch = 1;
 	
-	if other.object_index == obj_player_pitter {
-
-	
-
-	}
-
 }
 
 function playerCaughtByForestGhost() {
@@ -722,7 +738,7 @@ function playerCaughtByForestGhost() {
 	global.playerDefeated = true;
 	
 	increaseDefeatCount();
-	//global.defeatCount++;
+	coopSetCrySprite();
 	
 	with objBktGlitchDemo {
 	
@@ -1036,7 +1052,7 @@ function spawnGroundPoundFloorPieces() {
 	audio_play_sound(sfx_slice, 1, 0, 1, 0, _pitch);
 
 }
-//@
+
 function spawnBreakableFloorPieces() {
 
 	var _piecesAmount = 4;
@@ -1888,7 +1904,7 @@ function caughtByCaveGhost() {
 
 	global.playerDefeated = true;
 	increaseDefeatCount();
-	//global.defeatCount++;
+	coopSetCrySprite();
 	
 	global.caughtByCaveGhostAmount++;
 	
@@ -1898,26 +1914,11 @@ function caughtByCaveGhost() {
 	
 	}
 	
-	//instance_create_depth(obj_player.x, obj_player.y, -10000, obj_background_blackScreen);
-	//instance_create_depth(x, y, -10000, obj_background_blackScreen);
-	//instance_create_depth(0, 0, -10000, obj_background_blackScreen);
-	
 	if audio_is_playing(sfx_ghost_screamAlerted) audio_stop_sound(sfx_ghost_screamAlerted);
-	//if audio_is_playing(sfx_ghost_screamAlerted) audio_stop_sound(sfx_ghost_screamAlerted);
-	
+
 	resetPitterSprites();
 	resetPatterSprites();
 	
-	//application_surface_draw_enable(false);
-	
-	//with objBktGlitchDemo {
-	//
-	//	intensity = 0;
-	//	channelShift = 0;
-	//	channelDispersion = 0;
-	//
-	//}
-
 	audio_play_sound(sfx_hurt, 1, 0);
 	audio_play_sound(sfx_mouseScream, 1, 0);
 	global.playerControl = false;
@@ -1933,8 +1934,6 @@ function caughtByCaveGhost() {
 	if audio_is_playing(sfx_glitch_loop) audio_stop_sound(sfx_glitch_loop);
 	if audio_is_playing(sfx_glitch_loop2) audio_stop_sound(sfx_glitch_loop2);
 	
-	//objBktGlitchDemo.intensityIncrementType = INCREMENT_TYPE.DECREASING_TO_ZERO;
-
 }
 
 
@@ -3036,7 +3035,7 @@ function coopObjectSolidInstanceCreationCode() {
 	}
 
 }
-//@
+
 function coopObjectCreateEventCode() {
 
 	coopActive = true;

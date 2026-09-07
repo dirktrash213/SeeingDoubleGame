@@ -49,6 +49,8 @@ xStretch = 1;
 yStretch = 1;
 stretchAdjustAmount = 0.1;
 
+spikey = false;
+
 duplicateAudio = false;
 
 debugTracking = false;

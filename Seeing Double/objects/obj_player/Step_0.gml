@@ -33,18 +33,40 @@ if global.playerDefeated || global.paused {
 		
 		moveDir = 0;
 		
-		sprite_index = defeatSprite;
+		if !global.coopActive {
+			
+			sprite_index = defeatSprite;
 		
-		if patterPlayerIsPresent(){
 		
-			if obj_player_pitter.crushed || obj_player_patter.crushed {
+			if patterPlayerIsPresent() {
+		
+				if obj_player_pitter.crushed || obj_player_patter.crushed {
 			
-				obj_player_pitter.sprite_index = obj_player_pitter.crushedSprite;
-				obj_player_patter.sprite_index = obj_player_patter.crushedSprite;
+					obj_player_pitter.sprite_index = obj_player_pitter.crushedSprite;
+					obj_player_patter.sprite_index = obj_player_patter.crushedSprite;
 			
-				//show_debug_message("patter crushed!!")
+					//show_debug_message("patter crushed!!")
 			
-			}	
+				}	
+		
+			}
+		
+		} else {
+		
+			if global.coopPitterDefeated && object_index == obj_player_pitter {
+				
+				sprite_index = defeatSprite;
+				if crushed sprite_index = crushedSprite;
+				
+			}
+			
+			
+			if global.coopPatterDefeated && object_index == obj_player_patter {
+				
+				sprite_index = defeatSprite;
+				if crushed sprite_index = crushedSprite;
+				
+			}
 		
 		}
 		
@@ -64,12 +86,14 @@ if global.playerDefeated || global.paused {
 	//
 	//show_debug_message("----------------------------------------------------")
 	
+	//show_debug_message("player defeated")
+	
 	exit;
 
 }
 
 
-//if place_meeting(x,y,obj_trigger_waterfall)
+//show_debug_message("player not defeated")
 
 underWaterfall = place_meeting(x,y,obj_trigger_waterfall) ? true : false;
 

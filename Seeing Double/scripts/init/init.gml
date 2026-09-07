@@ -12,6 +12,8 @@ global.coopActive = false;
 global.coopInvisibleEnemyDetectionRadius = 75;
 global.coopTransluscentDefaultAlpha = 0.35;
 global.coopTransluscentBlocksDefaultAlpha = 0.75;
+global.coopPitterDefeated = false;
+global.coopPatterDefeated = false;
 
 global.pitterColor = #6DD0F7;
 global.patterColor = #F3C2D8;

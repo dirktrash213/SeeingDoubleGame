@@ -3,6 +3,8 @@ coopObjectCreateEventCode();
 
 enemyToCopy = noone;
 
+spikey = false;
+
 if !global.verticalLevel {
 
 	enemyToCopy = instance_place(x, y - global.patterOffsetY, obj_enemy);
@@ -25,8 +27,17 @@ if instance_exists(enemyToCopy) {
 
 	enemyToCopyObjectIndex = enemyToCopy.object_index;
 	enemyToCopyIsVisible = enemyToCopy.visible;
+	
+	//if enemyToCopy.spikey spikey = true;	
+	
+	if (variable_instance_exists(enemyToCopy, "spikey")) {
+		if (enemyToCopy.spikey) {
+			spikey = true;
+		}
+	}
 
 }
+
 
 
 //defeated = false;
