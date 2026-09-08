@@ -294,6 +294,12 @@ if ridingMinecart {
 	var _wall = instance_place(x, y, obj_block_wall); 
 	var _wallSemiSolid = instance_place(x, y, obj_block_wall_semiSolid); 
 	
+	if _wallSemiSolid != noone {
+	
+		if _wallSemiSolid.object_index == obj_block_wall_semiSolid_moving_cave_block _wallSemiSolid = noone;
+	
+	}
+	
 	if _wall != noone { //Exit minecart early if player touches wall/ceiling
 	
 		y = _wall.y-2;
@@ -316,9 +322,8 @@ if ridingMinecart {
 		y = _wallSemiSolid.y-2;
 	
 		ridingMinecart = false;
-		//adjustingMinecartX = false;
 		currentMinecart = noone;
-		
+	
 		sprite_set_offset(spr_pitter_jump, 8, 16); 
 		sprite_set_offset(spr_patter_jump, 8, 16);
 		

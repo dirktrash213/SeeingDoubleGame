@@ -162,9 +162,6 @@ waterfallVFXspawnRate = 8;
 
 ridingMinecart = false;
 currentMinecart = noone;
-//adjustingMinecartX = false;
-
-//onConveyor = false;
 
 xSpeed = 0;
 ySpeed = 0;

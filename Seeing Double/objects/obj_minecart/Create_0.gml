@@ -27,6 +27,6 @@ duplicateObject = detectDuplicateObject();
 if duplicateObject != noone {
     // A duplicate matching object was found!
     // You can access its ID via duplicateObject.id
-	show_debug_message("dup object found")
+	//show_debug_message("dup object found")
 	
 }

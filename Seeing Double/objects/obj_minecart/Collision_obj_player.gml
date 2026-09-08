@@ -2,8 +2,6 @@ if triggered exit;
 
 triggered = true; 
 
-//show_debug_message("Minecart has been triggered")
-
 //path_start(pth_minecart_track, 0, path_action_stop, false);
 
 //travelSoundID = audio_play_sound(amb_elevator, 1, false);
