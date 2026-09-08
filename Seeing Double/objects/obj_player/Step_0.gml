@@ -368,11 +368,24 @@ if ridingMinecart {
 		
 			_pitch += 0.3;
 		
-			with obj_player {
+			if global.coopActive {
+		
+				if object_index == obj_player_pitter || object_index == obj_player_patter {
+				
+					xStretch = 0.5;
+					yStretch = 1.5;
+				
+				}
+		
+			} else {
+		
+				with obj_player {
 			
-				xStretch = 0.5;
-				yStretch = 1.5;
+					xStretch = 0.5;
+					yStretch = 1.5;
 			
+				}
+		
 			}
 		
 			if global.doubleJumpActive {
@@ -415,7 +428,7 @@ if ridingMinecart {
 		jumpHoldTimer--;
 
 	}
-	
+	//@
 	ySpeed += grav;
 	if ySpeed > termVelocityMinecart ySpeed = termVelocityMinecart;
 	
@@ -436,21 +449,7 @@ if ridingMinecart {
 	
 	}
 	
-	//switch (currentMinecart.image_angle) {
-	//	
-	//	case 315: {
-	//
-	//		_offsetX = 15;
-	//
-	//	} break;
-	//	
-	//	case 45: {
-	//
-	//		_offsetX = -5;
-	//
-	//	} break;
-	//
-	//}
+	if global.coopActive && (!obj_player_pitter.ridingMinecart || !obj_player_patter.ridingMinecart) _offsetX = 0;
 	
 	var _maxY = currentMinecart.y  + _offsetY;
 
@@ -460,8 +459,6 @@ if ridingMinecart {
 	sprite_set_offset(spr_pitter_scared_jump, 8, 16); 
 	sprite_set_offset(spr_patter_scared_jump, 8, 16);
 	
-	
-	
 	x = currentMinecart.x;
 	
 	y += ySpeed;
@@ -469,16 +466,16 @@ if ridingMinecart {
 	y = clamp(y, -1000, _maxY);
 	
 	if y == _maxY {
-		
+	
 		jumpCount = 0;
 		sprite_set_offset(spr_pitter_jump, 8+_offsetX, 16); //Moving the sprite instead of the object prevents camera jittering
 		sprite_set_offset(spr_patter_jump, 8+_offsetX, 16);
-		
+	
 		sprite_set_offset(spr_pitter_scared_jump, 8+_offsetX, 16); 
 		sprite_set_offset(spr_patter_scared_jump, 8+_offsetX, 16);
-		
+	
 	}
-
+	
 	exit;
 
 }
@@ -1093,7 +1090,6 @@ if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled {
 			
 				xStretch = 0.5;
 				yStretch = 1.5;
-				//instance_create_layer(x, y, "Instances", obj_vfx_actionLines_doubleJump);
 			
 			}
 		

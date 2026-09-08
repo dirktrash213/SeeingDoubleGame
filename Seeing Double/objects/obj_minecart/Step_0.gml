@@ -74,3 +74,5 @@ if path_position == 1.0 {
 	}
 		
 }
+
+if path_position == 0 image_speed = 0;

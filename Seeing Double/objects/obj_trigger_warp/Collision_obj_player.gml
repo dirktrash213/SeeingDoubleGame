@@ -1,5 +1,23 @@
 if other.object_index == obj_player_patter && !global.coopActive exit;
 
+
+if global.coopActive {
+
+	with obj_player {
+		
+		ridingMinecart = false;
+		currentMinecart = noone;
+		
+		sprite_set_offset(spr_pitter_jump, 8, 16); 
+		sprite_set_offset(spr_patter_jump, 8, 16);
+		
+		sprite_set_offset(spr_pitter_scared_jump, 8, 16); 
+		sprite_set_offset(spr_patter_scared_jump, 8, 16);
+
+	}
+
+}
+
 //var _collidingPlayer = other.object_index == obj_player_pitter ? obj_player_pitter : obj_player_patter;
 //var _secondaryPlayer = _collidingPlayer == obj_player_pitter ? obj_player_patter : obj_player_pitter;
 

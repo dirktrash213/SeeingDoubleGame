@@ -445,7 +445,7 @@ global.dialogueStringArrays = {
 		"[font_robot]We will perform our tasks in his absence.", 
 		"[font_robot]No rest. No breaks. Only duty.", 
 		"[font_robot]Hah! I'm not like those other conformist sheeple! Just try and stop me, idiot!", //5 
-		"[font_robot][shake]H-help!! It's out of control! Somebody do something!!", 
+		"[font_robot][shake]H-help!! It's out of control! Somebody [slant]do something!!", 
 		
 	],
 	
@@ -455,13 +455,27 @@ global.dialogueStringArrays = {
 		"[font_robot]On second thought, this is a really stupid way to recharge.", //0
 		//"My sensors indicate a fun value of -683.", 
 		//"My sensors indicate a fun value of 10! I love laying on the ground in agony even more than walking! How did you know?", 
-		"[font_robot]I love laying on the ground in agony even [slant]more[/slant] than walking! How did you know?", 
+		//"[font_robot]I love laying on the ground in agony even [slant]more[/slant] than walking! How did you know?", 
+		"[font_robot]I love laying on the ground even [slant]more[/slant] than walking! How did you know?", 
 		"[font_robot]Father will be most displeased with our failure.", 
 		"", 
 		"", 
 		"[font_robot]Well played.", //5
 		//"Pain.", 
 		"[font_robot]You have made pain my new reality.", 
+		
+	],
+	
+	labGarbageCompacterRobot : [ 
+	
+		//"What? I'm just doing my job! Not my fault you decided to be an idiot and hop in the damn garbage compactor!", //0
+		"What? I'm just doing my job! Who told you to hop in the damn garbage compactor!?", //0
+		
+	],
+	
+	labBlockRobot : [ 
+	
+		"The blocks! Those [shake]dastardly[/shake] blocks!! I feel like I've seen them somewhere before... probably in my nightmares!", //0
 		
 	],
 

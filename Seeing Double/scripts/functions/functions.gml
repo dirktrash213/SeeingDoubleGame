@@ -721,6 +721,7 @@ function playerDefeated() {
 	coopSetCrySprite();
 	
 	
+	
 	audio_play_sound(sfx_hurt, 1, 0);
 	global.playerControl = false;
 	obj_control.alarm[0] = global.playerRespawnTime; 
@@ -728,6 +729,23 @@ function playerDefeated() {
 	other.sprite_index = other.defeatSprite;
 	other.xStretch = 1;
 	other.yStretch = 1;
+	
+	if global.coopActive {
+
+		with obj_player {
+		
+			ridingMinecart = false;
+			currentMinecart = noone;
+		
+			sprite_set_offset(spr_pitter_jump, 8, 16); 
+			sprite_set_offset(spr_patter_jump, 8, 16);
+		
+			sprite_set_offset(spr_pitter_scared_jump, 8, 16); 
+			sprite_set_offset(spr_patter_scared_jump, 8, 16);
+
+		}
+
+	}
 	
 }
 
@@ -792,11 +810,7 @@ function playerCaughtByForestGhost() {
 	if audio_is_playing(sfx_glitch_loop) audio_stop_sound(sfx_glitch_loop);
 	if audio_is_playing(sfx_glitch_loop2) audio_stop_sound(sfx_glitch_loop2);
 	
-	if other.object_index == obj_player_pitter {
-
 	
-
-	}
 
 }
 
@@ -1933,6 +1947,23 @@ function caughtByCaveGhost() {
 	
 	if audio_is_playing(sfx_glitch_loop) audio_stop_sound(sfx_glitch_loop);
 	if audio_is_playing(sfx_glitch_loop2) audio_stop_sound(sfx_glitch_loop2);
+	
+	if global.coopActive {
+
+		with obj_player {
+		
+			ridingMinecart = false;
+			currentMinecart = noone;
+		
+			sprite_set_offset(spr_pitter_jump, 8, 16); 
+			sprite_set_offset(spr_patter_jump, 8, 16);
+		
+			sprite_set_offset(spr_pitter_scared_jump, 8, 16); 
+			sprite_set_offset(spr_patter_scared_jump, 8, 16);
+
+		}
+
+	}
 	
 }
 
@@ -3624,5 +3655,28 @@ function enemyBeetleStepCode() {
 	}
 
 
+
+}
+
+function detectDuplicateObject() {
+
+	var _offsetX;
+	var _offsetY;
+	
+	if global.verticalLevel {
+	
+		_offsetX = x > global.defaultPatterOffsetX ? -2000 : 2000;
+		_offsetY = 1;
+
+		return collision_rectangle(x, y - _offsetY, x + _offsetX, y + _offsetY, object_index, false, true);
+	
+	} else {
+
+		_offsetX = 1;
+		_offsetY = y > global.defaultPatterOffsetY ? -2000 : 2000;
+
+		return collision_rectangle(x - _offsetX, y, x + _offsetX, y + _offsetY, object_index, false, true);
+	
+	}
 
 }
