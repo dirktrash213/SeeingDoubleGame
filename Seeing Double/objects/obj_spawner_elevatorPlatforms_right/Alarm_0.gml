@@ -10,6 +10,12 @@ with instance_create_layer(x, y, "Instances", platformToSpawn) {
 	railPath = path_platform_elevator_right;
 	path_start(railPath, _platformSpawnSpeed, path_action_stop, false);
 
+	if !_visible && global.coopActive {
+		
+		coopObjectInstanceCreationCode();
+		mask_index = spr_empty;
+		
+	}
 
 }
 alarm[0] = platformSpawnRate;

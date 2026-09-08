@@ -9,6 +9,13 @@ with instance_create_layer(x, y, "Instances", platformToSpawn) {
 	visible = _visible;
 	railPath = path_platform_elevator_rightCurved;
 	path_start(railPath, _platformSpawnSpeed, path_action_stop, false);
+	
+	if !_visible && global.coopActive {
+		
+		coopObjectInstanceCreationCode();
+		mask_index = spr_empty;
+		
+	}
 
 
 }
