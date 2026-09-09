@@ -121,6 +121,7 @@ scaredSprite = spr_pitter_scared;
 runScaredSprite = spr_pitter_run_scared;
 curiousSprite = spr_pitter_curious;
 crySprite = spr_pitter_cry;
+binocularSprite = spr_pitter_binoculars;
 
 
 
@@ -271,3 +272,6 @@ stuckOnBoulder = false;
 
 aboutToBeatUpScammer = false;
 scammerGroundPoundCount = 0;
+
+
+binocularsActive = false;

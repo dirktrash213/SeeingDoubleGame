@@ -6,6 +6,18 @@ if global.killPlayerAfterUnpause && !global.paused {
 	global.killPlayerAfterUnpause = false;
 
 }
+//@
+if binocularsActive {
+
+	x = x;
+	y = y;
+	
+	if pitterShadowIsPresent() && object_index == obj_player_pitter obj_player_shadow_pitter.sprite_index = sprite_index;
+	if patterShadowIsPresent() && object_index == obj_player_patter obj_player_shadow_patter.sprite_index = sprite_index;
+	
+	exit;
+
+}
 
 if global.playerDefeated || global.paused {
 
@@ -433,7 +445,7 @@ if ridingMinecart {
 		jumpHoldTimer--;
 
 	}
-	//@
+	
 	ySpeed += grav;
 	if ySpeed > termVelocityMinecart ySpeed = termVelocityMinecart;
 	
@@ -768,11 +780,25 @@ if (moveDown || place_meeting(x, y, obj_block_wall)) && onGround {
 	crouching = true;
 
 }
-
+//@
 //Looking up
 if moveUp && onGround {
 
-	lookingUp = true;
+	if place_meeting(x, y, obj_interactable_binoculars) && !binocularsActive {
+	
+		//if (object_index == obj_player_pitter || object_index == obj_player_patter) binocularsActive = true;
+		binocularsActive = true;
+		
+		sprite_index = binocularSprite;
+		//global.playerControl = false;
+		
+		exit;
+	
+	} else {
+
+		lookingUp = true;
+	
+	}
 
 }
 
@@ -1064,7 +1090,7 @@ if jumpKeyBuffered && jumpCount < jumpMax && !jumpDisabled {
 	
 	//Increase number of performed jumps
 	jumpCount++;
-	//@
+	
 	
 	doubleJumpGem();
 	

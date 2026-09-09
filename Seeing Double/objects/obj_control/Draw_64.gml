@@ -1,6 +1,9 @@
 //draw_set_color(c_white);
 //draw_text(32, 32, "Elapsed Time: " + global.gameTimeString);
 
+var _GUIcenterX = 720;
+var _GUIcenterY = 405;
+
 if global.displayGameTime {
 
 	var _oldFont = draw_get_font();
@@ -53,6 +56,37 @@ if global.playerControl && !global.cutsceneActive && global.scoreUIenabled {
 	
 	//drawWhiteTextWithBlackOutline(0, 0, "[spr_interactable_coin_x2]" + string(global.coinCount) + "\n[spr_interactable_cherry_x2]" + string(global.cherryCount) + _parachuteString);
 	drawWhiteTextWithBlackOutline(0, 0, "[spr_interactable_coin_x2]" + string(global.coinCount) + "\n[spr_interactable_cherry_x2]" + string(global.cherryCount) + "/" + string(global.cherryMax) + _parachuteString);
+	
+	var _offsetX = 295;
+	var _offsetY = 0;
+	
+	if pitterPlayerIsPresent() {
+		
+		if obj_player_pitter.binocularsActive {
+	
+			var _binoculars = instance_nearest(obj_player_pitter.x, obj_player_pitter.y, obj_interactable_binoculars);
+	
+			if _binoculars.cameraMoveAmount > 0 draw_sprite(spr_background_camera_arrow_left, image_index, (_GUIcenterX - (_GUIcenterX/2)) - _offsetX, _GUIcenterY);
+			if _binoculars.cameraMoveAmount < _binoculars.cameraMoveAmountMax draw_sprite(spr_background_camera_arrow_right, image_index, (_GUIcenterX - (_GUIcenterX/2)) + _offsetX, _GUIcenterY);
+	
+			
+	
+		}
+	
+	}
+	
+	if patterPlayerIsPresent() {
+	
+		if obj_player_patter.binocularsActive {
+			
+			var _binoculars = instance_nearest(obj_player_patter.x, obj_player_patter.y, obj_interactable_binoculars);
+	
+			if _binoculars.cameraMoveAmount > 0 draw_sprite(spr_background_camera_arrow_left, image_index, (_GUIcenterX + (_GUIcenterX/2)) - _offsetX, _GUIcenterY);
+			if _binoculars.cameraMoveAmount < _binoculars.cameraMoveAmountMax draw_sprite(spr_background_camera_arrow_right, image_index, (_GUIcenterX + (_GUIcenterX/2)) + _offsetX, _GUIcenterY);
+	
+		}
+	
+	}
 	
 	draw_set_font(_oldFont);
 

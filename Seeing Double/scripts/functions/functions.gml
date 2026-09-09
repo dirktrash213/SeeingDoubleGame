@@ -734,6 +734,7 @@ function playerDefeated() {
 
 		with obj_player {
 		
+			binocularsActive = false;
 			ridingMinecart = false;
 			currentMinecart = noone;
 		
@@ -3679,4 +3680,24 @@ function detectDuplicateObject() {
 	
 	}
 
+}
+
+function floatStart() {
+
+	// Store the original starting Y position
+	startY = y;
+
+	// Control the floating motion
+	floatTimer = 0;
+	floatSpeed = 0.05;  // How fast it bobs up and down (lower = slower)
+	floatHeight = 4;    // How many pixels up and down it moves
+
+}
+
+function floatUpAndDown() {
+    // Advance the timer
+    floatTimer += floatSpeed;
+    
+    // Calculate new Y offset using sine wave (-1 to 1)
+    y = startY + (sin(floatTimer) * floatHeight);
 }
