@@ -1,4 +1,18 @@
+coopObjectStepEventCode();
+
 if !triggered exit;
+
+//mask_index = spr_empty; //TEMP
+
+//if mask_index == spr_empty {
+//
+//	show_debug_message("mask empty")
+//
+//} else {
+//
+//	show_debug_message("mask not empty")
+//
+//}
 
 var _id = id;
 depth = 100;

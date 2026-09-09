@@ -1,5 +1,9 @@
 triggered = false;
 
+coopObjectCreateEventCode();
+
+//if global.coopActive && invisCoop mask_index = spr_empty;
+
 // Speed and momentum variables
 cart_speed = 0;       // Current velocity
 min_speed = 2.2;        // Lower Speed limit //2
@@ -30,3 +34,4 @@ if duplicateObject != noone {
 	//show_debug_message("dup object found")
 	
 }
+

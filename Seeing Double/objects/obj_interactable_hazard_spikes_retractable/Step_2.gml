@@ -1,4 +1,6 @@
-coopObjectStepEventCode(60);
+var _spikeDetectionRadius = 60;
+if room == rm_cave_minecartMore _spikeDetectionRadius = 120;
+coopObjectStepEventCode(_spikeDetectionRadius);
 mask_index = sprite_index;
 
 
