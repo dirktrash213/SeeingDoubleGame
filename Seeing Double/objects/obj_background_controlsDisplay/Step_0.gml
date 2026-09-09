@@ -10,7 +10,8 @@ if !active || global.paused exit;
 //
 //}
 
-if (global.input_source == 1) {
+//if (global.input_source == 1) {
+if (global.input_source != 0) {
 	
     sprite_index = controllerSprite;
 	

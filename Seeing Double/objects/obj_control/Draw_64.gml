@@ -69,7 +69,10 @@ if global.playerControl && !global.cutsceneActive && global.scoreUIenabled {
 			if _binoculars.cameraMoveAmount > 0 draw_sprite(spr_background_camera_arrow_left, image_index, (_GUIcenterX - (_GUIcenterX/2)) - _offsetX, _GUIcenterY);
 			if _binoculars.cameraMoveAmount < _binoculars.cameraMoveAmountMax draw_sprite(spr_background_camera_arrow_right, image_index, (_GUIcenterX - (_GUIcenterX/2)) + _offsetX, _GUIcenterY);
 	
-			
+			if global.input_source == 0 drawWhiteTextWithBlackOutline(_GUIcenterX - (_GUIcenterX/2) - 100, _GUIcenterY + (_GUIcenterY * 0.825), "[spr_background_controlsDisplay_S_big] to cancel")
+			if global.input_source > 0 drawWhiteTextWithBlackOutline(_GUIcenterX - (_GUIcenterX/2) - 100, _GUIcenterY + (_GUIcenterY * 0.825), "[spr_background_controlsDisplay_analogStick_down_big] to cancel")
+	
+			//drawWhiteTextWithBlackOutline(0, 300, _binoculars.cameraMoveAmount); //TEMP
 	
 		}
 	
@@ -83,6 +86,9 @@ if global.playerControl && !global.cutsceneActive && global.scoreUIenabled {
 	
 			if _binoculars.cameraMoveAmount > 0 draw_sprite(spr_background_camera_arrow_left, image_index, (_GUIcenterX + (_GUIcenterX/2)) - _offsetX, _GUIcenterY);
 			if _binoculars.cameraMoveAmount < _binoculars.cameraMoveAmountMax draw_sprite(spr_background_camera_arrow_right, image_index, (_GUIcenterX + (_GUIcenterX/2)) + _offsetX, _GUIcenterY);
+	
+			if global.input_source == 0 drawWhiteTextWithBlackOutline(_GUIcenterX + (_GUIcenterX/2) - 100, _GUIcenterY + (_GUIcenterY * 0.825), "[spr_background_controlsDisplay_S_big] to cancel")
+			if global.input_source > 0 drawWhiteTextWithBlackOutline(_GUIcenterX + (_GUIcenterX/2) - 100, _GUIcenterY + (_GUIcenterY * 0.825), "[spr_background_controlsDisplay_analogStick_down_big] to cancel")
 	
 		}
 	

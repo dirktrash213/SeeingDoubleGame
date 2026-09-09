@@ -38,11 +38,48 @@ if global.splitScreenActive { //Halve viewport sizes if two exist
 
 }
 
+
+
 if global.coopActive {
+	
+	if pitterPlayerIsPresent() {
+
+		if obj_player_pitter.binocularsActive {
+	
+			var _binoculars = instance_nearest(obj_player_pitter.x, obj_player_pitter.y, obj_interactable_binoculars);
+		
+			pitterCameraLeadingX = pitterCameraLeadingXStoredValue;
+			pitterCameraLeadingX = pitterCameraLeadingX + _binoculars.cameraMoveAmount;
+	
+		}
+
+	}
+
+	if patterPlayerIsPresent() {
+
+		if obj_player_patter.binocularsActive {
+	
+			var _binoculars = instance_nearest(obj_player_patter.x, obj_player_patter.y, obj_interactable_binoculars);
+		
+			patterCameraLeadingX = patterCameraLeadingXStoredValue;
+			patterCameraLeadingX = patterCameraLeadingX + _binoculars.cameraMoveAmount;
+	
+		}
+
+	}
 
 	coopCameraControls();
 
 } else {
+	
+	if obj_player.binocularsActive {
+	
+		var _binoculars = instance_nearest(obj_player_pitter.x, obj_player_pitter.y, obj_interactable_binoculars);
+	
+		cameraLeadingX = cameraLeadingXStoredValue;
+		cameraLeadingX = cameraLeadingX + _binoculars.cameraMoveAmount;
+	
+	}
 
 	singlePlayerCameraControls();
 

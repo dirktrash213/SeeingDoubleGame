@@ -6,18 +6,20 @@ if global.killPlayerAfterUnpause && !global.paused {
 	global.killPlayerAfterUnpause = false;
 
 }
-//@
-if binocularsActive {
 
-	x = x;
-	y = y;
-	
-	if pitterShadowIsPresent() && object_index == obj_player_pitter obj_player_shadow_pitter.sprite_index = sprite_index;
-	if patterShadowIsPresent() && object_index == obj_player_patter obj_player_shadow_patter.sprite_index = sprite_index;
-	
-	exit;
-
-}
+//if binocularsActive {
+//
+//	x = x;
+//	y = y;
+//	
+//	if pitterShadowIsPresent() && object_index == obj_player_pitter obj_player_shadow_pitter.sprite_index = sprite_index;
+//	if patterShadowIsPresent() && object_index == obj_player_patter obj_player_shadow_patter.sprite_index = sprite_index;
+//	
+//	if moveDown binocularsActive = false;
+//	
+//	exit;
+//
+//}
 
 if global.playerDefeated || global.paused {
 
@@ -268,6 +270,48 @@ if object_index == obj_player_patter && global.splitScreenActive && !global.cuts
 
 getControls();
 if global.coopActive getControlsPlayer2(); //For co-op only
+
+//@
+if binocularsActive {
+
+	var _binoculars = instance_nearest(x, y, obj_interactable_binoculars);
+	
+	var _increment = 5;
+	
+	if moveRight _binoculars.cameraMoveAmount += _increment;
+	if moveLeft _binoculars.cameraMoveAmount -= _increment;
+	
+	_binoculars.cameraMoveAmount = clamp(_binoculars.cameraMoveAmount, 0, _binoculars.cameraMoveAmountMax);
+
+	x = x;
+	y = y;
+	
+	if pitterShadowIsPresent() && object_index == obj_player_pitter obj_player_shadow_pitter.sprite_index = sprite_index;
+	if patterShadowIsPresent() && object_index == obj_player_patter obj_player_shadow_patter.sprite_index = sprite_index;
+	
+	if moveDown {
+		
+		binocularsActive = false;
+		_binoculars.cameraMoveAmount = 0;
+		
+		if global.coopActive {
+		
+			if object_index == obj_player_pitter obj_camera.pitterCameraLeadingX = obj_camera.pitterCameraLeadingXStoredValue; 
+			if object_index == obj_player_patter obj_camera.patterCameraLeadingX = obj_camera.patterCameraLeadingXStoredValue; 
+		
+		} else {
+		
+			obj_camera.cameraLeadingX = obj_camera.cameraLeadingXStoredValue;
+		
+		}
+		
+		//obj_camera.pitterCameraLeadingXStoredValue = 0;
+		
+	}
+	
+	exit;
+
+}
 
 if stuckOnBoulder {
 
@@ -791,6 +835,19 @@ if moveUp && onGround {
 		
 		sprite_index = binocularSprite;
 		//global.playerControl = false;
+		
+		//var _binoculars = instance_nearest(x, y, obj_interactable_binoculars);
+		
+		if global.coopActive {
+		
+			if object_index == obj_player_pitter obj_camera.pitterCameraLeadingXStoredValue = obj_camera.pitterCameraLeadingX; //Used to prevent camera from auto scrolling
+			if object_index == obj_player_patter obj_camera.patterCameraLeadingXStoredValue = obj_camera.patterCameraLeadingX;
+		
+		} else {
+		
+			obj_camera.cameraLeadingXStoredValue = obj_camera.cameraLeadingX;
+		
+		}
 		
 		exit;
 	
