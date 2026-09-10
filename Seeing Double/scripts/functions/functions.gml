@@ -3223,6 +3223,9 @@ function coopObjectBlockTranslucentDrawCode(_layername = "LevelTiles") {
 
 	// 1. Get Tilemap and Tileset info
 	var _layerID = layer_get_id(_layername);
+	
+	show_debug_message(_layerID)
+	
 	if _layerID == -1 exit; //Prevents a bunch of garbage console outputs
 	var _tilemapID = layer_tilemap_get_id(_layerID);
 	var _tilesetID = tilemap_get_tileset(_tilemapID);
@@ -3281,6 +3284,9 @@ function coopObjectBlockDrawCode(_layername = "LevelTiles") {
 
 	// 1. Get Tilemap and Tileset info
 	var _layerID = layer_get_id(_layername);
+	
+	show_debug_message(_layerID)
+	
 	if _layerID == -1 exit; //Prevents a bunch of garbage console outputs
 	var _tilemapID = layer_tilemap_get_id(_layerID);
 	var _tilesetID = tilemap_get_tileset(_tilemapID);

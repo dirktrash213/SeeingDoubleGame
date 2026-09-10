@@ -18,7 +18,7 @@ function controlsSetup() {
 	pause = 0;
 	run = 0;
 	runPressed = 0;
-
+	
 }
 
 //TODO: make controller deadzones adjustable?

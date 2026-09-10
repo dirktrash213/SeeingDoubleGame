@@ -17,8 +17,15 @@ surface_set_target(surfSecretTiles);
 draw_clear_alpha(c_black, 0);
 
 // 3. Draw the SecretTiles layer offset to current view
-var _tilemapID = layer_tilemap_get_id(layer_get_id("SecretTiles"));
-draw_tilemap(_tilemapID, -_camX, -_camY);
+
+var _layerID = layer_get_id("SecretTiles");
+
+if _layerID != -1 {
+
+	var _tilemapID = layer_tilemap_get_id(_layerID);
+	draw_tilemap(_tilemapID, -_camX, -_camY);
+
+}
 
 // 4. Erase alpha using the sprite mask of ALL obj_cutout instances
 // (This handles co-op / multiple cutouts on screen automatically)
