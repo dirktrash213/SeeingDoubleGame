@@ -3145,7 +3145,7 @@ function coopObjectStepEventCode(_revealRadius = 30) {
 	}
 
 }
-
+//@@
 function coopObjectDrawEventCode() {
 
 	if global.coopActive && (invisCoop || solidCoop) {
@@ -3157,6 +3157,23 @@ function coopObjectDrawEventCode() {
 		
 		var _drawColor = isOnPitterScreen ? patterColor : pitterColor;
 		if solidCoop && !coopActive _drawColor = c_white;
+		
+		if global.portalsActive {
+				
+			var _dividerLineY = obj_player_pitter.y < global.defaultPatterOffsetY ? 136 : 456;
+			//var _dividerLineY = 136;
+			
+			if y > _dividerLineY {
+			
+				_drawColor = pitterColor;
+			
+			} else {
+			
+				_drawColor = patterColor;
+			
+			}
+		
+		}
 		
 		var _xStretch = 1;
 		var _yStretch = 1;
@@ -3417,7 +3434,7 @@ function doubleJumpGem() {
 	}
 
 }
-
+//@@
 function coopSpawnDuplicateCollectable() {
 
 	if global.coopActive && !duplicate {
@@ -3451,7 +3468,7 @@ function coopSpawnDuplicateCollectable() {
 	
 				}
 		
-			} else {
+			} else { //Horizontal level
 	
 				if y > global.patterOffsetY {
 	
@@ -3461,6 +3478,22 @@ function coopSpawnDuplicateCollectable() {
 	
 					_offsetY = global.patterOffsetY;
 	
+				}
+				
+				if global.portalsActive {
+				
+					var _dividerLineY = obj_player_pitter.y < global.defaultPatterOffsetY ? 136 : 456;
+					
+					if y > _dividerLineY {
+					
+						_offsetY = -144;
+					
+					} else {
+					
+						_offsetY = 144;
+					
+					}
+				
 				}
 		
 			}
@@ -3482,7 +3515,7 @@ function coopSpawnDuplicateCollectable() {
 	}
 
 }
-
+//@@
 function coopSyncDuplicateObjects() {
 
 	if duplicatedObject != noone {
@@ -3516,7 +3549,7 @@ function coopSyncDuplicateObjects() {
 	
 				}
 		
-			} else {
+			} else { //Horizontal level
 	
 				if y > global.patterOffsetY {
 	
@@ -3526,6 +3559,26 @@ function coopSyncDuplicateObjects() {
 	
 					_offsetY = global.patterOffsetY;
 	
+				}
+				
+				if global.portalsActive {
+				
+					//var _dividerLineY = obj_player_pitter.y > global.patterOffsetY ? 136 : 456;
+					var _dividerLineY = obj_player_pitter.y < global.defaultPatterOffsetY ? 136 : 456;
+					
+					if y > _dividerLineY {
+					
+						_offsetY = -144;
+					
+					} else {
+					
+						_offsetY = 144;
+					
+					}
+					
+					if _dividerLineY == 136 && y > global.defaultPatterOffsetY _offsetY = 2000; //Relocated unwanted duplicate objects
+					if _dividerLineY == 456 && y < global.defaultPatterOffsetY _offsetY = -2000; //Relocated unwanted duplicate objects
+				
 				}
 		
 			}

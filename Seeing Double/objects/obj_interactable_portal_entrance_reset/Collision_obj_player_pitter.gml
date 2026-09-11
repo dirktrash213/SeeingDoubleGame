@@ -27,6 +27,20 @@ instance_activate_object(obj_block_wall_temp_reverse);
 
 playGreenPortalJumpEffects();
 
+if global.coopActive {
 
+	with obj_block_wall_temp {
+
+		visible = false;
+	
+	}
+	
+	with obj_block_wall_temp_reverse {
+
+		visible = true;
+	
+	}
+
+}
 
 

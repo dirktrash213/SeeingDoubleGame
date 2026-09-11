@@ -13,7 +13,17 @@ instance_activate_object(obj_block_wall_temp);
 
 if global.coopActive {
 
-	obj_block_wall_temp.visible = true;
+	with obj_block_wall_temp {
+
+		visible = true;
+	
+	}
+	
+	with obj_block_wall_temp_reverse {
+
+		visible = false;
+	
+	}
 
 	var _nearestExitPortal;
 	var _portalID = portalID;
