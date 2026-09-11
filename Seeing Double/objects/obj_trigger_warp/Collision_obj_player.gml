@@ -60,41 +60,6 @@ if pitterPlayerIsPresent() {
 
 	if horizontalWarp {
 
-		//var _offsetY = abs(obj_player_pitter.y - yEnter);
-		//
-		//if other.object_index == obj_player_patter {
-		//
-		//	_offsetY = abs(obj_player_patter.y - yEnter - global.patterOffsetY);
-		//	//if array_contains(global.customRoomArray, targetRoom) _offsetY = abs(obj_player_patter.y - yEnter - global.defaultCustomLevelPatterOffsetY);
-		//
-		//}
-		//
-		////show_debug_message("_offsetY: " + string(_offsetY))
-		//
-		//var _offsetX;
-		//
-		//_offsetX = xSpawn == 1 ? 3 : -3; //This offset prevents the player from spawning on the target room's warp
-		//
-		//obj_player_pitter.x = xSpawn + _offsetX;
-		//obj_player_pitter.y = ySpawn - _offsetY;
-		//
-		//if global.coopActive && patterPlayerIsPresent() {
-		//
-		//	obj_player_patter.x = xSpawn + _offsetX;
-		//	obj_player_patter.y = ySpawn - _offsetY + global.patterOffsetY;
-		//
-		//	//if array_contains(global.customRoomArray, targetRoom) {
-		//	//
-		//	//	obj_player_patter.y = ySpawn - _offsetY + global.defaultCustomLevelPatterOffsetY;
-		//	//
-		//	//} else {
-		//	//
-		//	//	obj_player_patter.y = ySpawn - _offsetY + global.patterOffsetY;
-		//	//
-		//	//}
-		//
-		//} 
-		
 		var _offsetAmount = 3;
 		
 		var _offsetX = xSpawn == 1 ? _offsetAmount : -_offsetAmount; //This offset prevents the player from spawning on the target room's warp
@@ -116,6 +81,12 @@ if pitterPlayerIsPresent() {
 				
 						obj_player_patter.x = obj_player_pitter.x;
 						obj_player_patter.y = obj_player_pitter.y + global.defaultPatterOffsetY;
+						
+						if global.portalsActive {
+						
+							obj_player_patter.y = obj_player_pitter.y - 144;
+						
+						}
 				
 					} else { //Target room is custom sized
 					
@@ -144,6 +115,12 @@ if pitterPlayerIsPresent() {
 				
 					obj_player_pitter.x = obj_player_patter.x;
 					obj_player_pitter.y = obj_player_patter.y - global.defaultPatterOffsetY;
+					
+					if global.portalsActive {
+						
+						obj_player_patter.y = obj_player_pitter.y - 144;
+						
+					}
 				
 				} else { //Target room is custom sized
 			

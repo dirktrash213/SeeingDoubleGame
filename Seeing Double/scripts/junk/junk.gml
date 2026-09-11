@@ -2,6 +2,42 @@
 
 /*
 
+//var _offsetY = abs(obj_player_pitter.y - yEnter);
+		//
+		//if other.object_index == obj_player_patter {
+		//
+		//	_offsetY = abs(obj_player_patter.y - yEnter - global.patterOffsetY);
+		//	//if array_contains(global.customRoomArray, targetRoom) _offsetY = abs(obj_player_patter.y - yEnter - global.defaultCustomLevelPatterOffsetY);
+		//
+		//}
+		//
+		////show_debug_message("_offsetY: " + string(_offsetY))
+		//
+		//var _offsetX;
+		//
+		//_offsetX = xSpawn == 1 ? 3 : -3; //This offset prevents the player from spawning on the target room's warp
+		//
+		//obj_player_pitter.x = xSpawn + _offsetX;
+		//obj_player_pitter.y = ySpawn - _offsetY;
+		//
+		//if global.coopActive && patterPlayerIsPresent() {
+		//
+		//	obj_player_patter.x = xSpawn + _offsetX;
+		//	obj_player_patter.y = ySpawn - _offsetY + global.patterOffsetY;
+		//
+		//	//if array_contains(global.customRoomArray, targetRoom) {
+		//	//
+		//	//	obj_player_patter.y = ySpawn - _offsetY + global.defaultCustomLevelPatterOffsetY;
+		//	//
+		//	//} else {
+		//	//
+		//	//	obj_player_patter.y = ySpawn - _offsetY + global.patterOffsetY;
+		//	//
+		//	//}
+		//
+		//} 
+
+
 function coopObjectBlockDrawCode() {
 
 	if !global.coopActive exit;
