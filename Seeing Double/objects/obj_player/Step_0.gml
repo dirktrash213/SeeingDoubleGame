@@ -309,6 +309,8 @@ if binocularsActive {
 		
 	}
 	
+	//show_debug_message("should not run")
+	
 	exit;
 
 }
@@ -541,7 +543,10 @@ if ridingMinecart {
 
 }
 
-if moveDownPressed && !onGround && !global.cutsceneActive && !groundPounding && !groundPoundOnCooldown && (gemPowerupGroundPound || global.groundPoundActive) {
+//show_debug_message(moveDownPressed)
+//@@
+//if moveDownPressed && !onGround && !global.cutsceneActive && !groundPounding && !groundPoundOnCooldown && (gemPowerupGroundPound || global.groundPoundActive) {
+if moveDown && !onGround && !global.cutsceneActive && !groundPounding && !groundPoundOnCooldown && (gemPowerupGroundPound || global.groundPoundActive) {
 
 	groundPounding = true;
 	groundPoundRising = true;

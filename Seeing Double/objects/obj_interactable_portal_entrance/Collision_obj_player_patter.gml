@@ -9,7 +9,19 @@ global.portalsActive = true;
 //global.patterOffsetY = _nearestExitPortal.y - obj_player_pitter.y + _offsetY;
 global.patterOffsetY = patterOffsetY;
 
-instance_activate_object(obj_block_wall_temp);
+//instance_activate_object(obj_block_wall_temp);
+
+with obj_block_wall_temp {
+
+	mask_index = sprite_index;
+	
+}
+
+with obj_block_wall_temp_reverse {
+
+	mask_index = spr_empty;
+	
+}
 
 if global.coopActive {
 

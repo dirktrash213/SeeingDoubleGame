@@ -22,8 +22,20 @@ other.x = _nearestExitPortal.x;
 other.y = _nearestExitPortal.y;
 
 
-//instance_deactivate_object(obj_block_wall_temp);
-instance_activate_object(obj_block_wall_temp_reverse);
+
+//instance_activate_object(obj_block_wall_temp_reverse);
+
+with obj_block_wall_temp {
+
+	mask_index = spr_empty;
+	
+}
+
+with obj_block_wall_temp_reverse {
+
+	mask_index = sprite_index;
+	
+}
 
 playGreenPortalJumpEffects();
 
