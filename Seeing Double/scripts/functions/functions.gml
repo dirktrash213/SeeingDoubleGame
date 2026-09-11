@@ -3204,7 +3204,7 @@ function coopObjectAlarmCode() {
 	}
 
 }
-
+//@@
 function coopObjectBlockTranslucentDrawCode(_layername = "LevelTiles") {
 
 	if !global.coopActive exit;
@@ -3217,6 +3217,15 @@ function coopObjectBlockTranslucentDrawCode(_layername = "LevelTiles") {
 	    image_alpha = defaultAlpha;
 	} else {
 	    _tintColor = blendColor;
+		
+		if global.portalsActive {
+			
+			var _dividerLineY = 136;
+			
+			_tintColor = y >_dividerLineY ? global.patterColor : global.pitterColor;
+			
+		}
+		
 	}
 
 	image_alpha = clamp(image_alpha, defaultAlpha, 1.0);
@@ -3233,6 +3242,13 @@ function coopObjectBlockTranslucentDrawCode(_layername = "LevelTiles") {
 	// 2. Define sample offset and tile size
 	var _yOffset = isOnPitterScreen ? global.patterOffsetY : -global.patterOffsetY;
 	var _tileSize = 16; 
+	
+	if global.portalsActive {
+
+		var _dividerLineY = 136;
+		_yOffset = y > _dividerLineY ? -144 : 144;
+		
+	}
 
 	var _numCols = floor(sprite_width / _tileSize);
 	var _numRows = floor(sprite_height / _tileSize);
