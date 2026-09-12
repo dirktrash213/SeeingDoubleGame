@@ -161,8 +161,8 @@ global.dialogueStringArrays = {
 		
 		"[font_pencil]He really does get the craziest ideas. Building a house in a cave? Who'd think of that?", 
 		"[font_pencil]I've been studying the fungi in my spare time. There must be thousands of species down here, at least.", 
-		"[font_pencil]But, in truth, I miss the outdoors. The distant chirping of sparrows in the morning, the glow of the fireflies at dusk...", 
-		"[font_pencil]There's only so much darkness and bat guano falling on my head that I can take. Yuck.", 
+		"[font_pencil]But, in truth, I miss the outdoors. The distant chirping of sparrows in the morning, the glow of fireflies at dusk...", 
+		"[font_pencil]I mean, there's only so much darkness and bat guano falling on my head that I can take. Yuck.", 
 		"[font_pencil]I know what he'll say. 'It's for a good cause.' I get that. We're doing important work here. Groundbreaking, even.", 
 		"[font_pencil]It's just... the learning curve has been [slant]so[/slant] steep. Quantum physics is not my area of expertise, to say the least. But I'm trying my best.", 
 		"[font_pencil]I just wish we'd finally hit that damn breakthrough he keeps saying is coming. Grah.", 

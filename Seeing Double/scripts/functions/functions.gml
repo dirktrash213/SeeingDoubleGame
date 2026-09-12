@@ -59,11 +59,13 @@ function drawPauseMenu() {
 	
 				var _resumeString = "Resume";
 				var _optionsString = "\nOptions";
+				var _retryString = "\nRetry";
 				var _exitString = "\nExit Game";
 	
 				if pauseMenuPosition == 0 _resumeString = "[wave]Resume[/wave]";
 				if pauseMenuPosition == 1 _optionsString = "[wave]\nOptions[/wave]";
-				if pauseMenuPosition == 2 _exitString = "[wave]\nExit Game[/wave]";
+				if pauseMenuPosition == 2 _retryString = "[wave]\nRetry[/wave]";
+				if pauseMenuPosition == 3 _exitString = "[wave]\nExit Game[/wave]";
 	
 				//show_debug_message("pauseMenuPosition: " + string(pauseMenuPosition))
 
@@ -78,7 +80,7 @@ function drawPauseMenu() {
 	
 				//_menuText.draw(_x + _offsetX, _y + _offsetY, typist2);
 			
-				draw_text_scribble(_x + _offsetX, _y + _offsetY, _resumeString + _optionsString + _exitString);
+				draw_text_scribble(_x + _offsetX, _y + _offsetY, _resumeString + _optionsString + _retryString + _exitString);
 				
 				if global.foundRose {
 					
@@ -733,6 +735,15 @@ function playerDefeated() {
 	if global.coopActive {
 
 		with obj_player {
+		
+			//var _binoculars = instance_nearest(x, y, obj_interactable_binoculars);
+			
+			if binocularsActive {
+			
+				if object_index == obj_player_pitter obj_camera.pitterCameraLeadingX = obj_camera.pitterCameraLeadingXStoredValue; 
+				if object_index == obj_player_patter obj_camera.patterCameraLeadingX = obj_camera.patterCameraLeadingXStoredValue; 
+			
+			}
 		
 			binocularsActive = false;
 			ridingMinecart = false;
@@ -3250,7 +3261,7 @@ function coopObjectBlockTranslucentDrawCode(_layername = "LevelTiles") {
 	// 1. Get Tilemap and Tileset info
 	var _layerID = layer_get_id(_layername);
 	
-	show_debug_message(_layerID)
+	//show_debug_message(_layerID)
 	
 	if _layerID == -1 exit; //Prevents a bunch of garbage console outputs
 	var _tilemapID = layer_tilemap_get_id(_layerID);
@@ -3318,7 +3329,7 @@ function coopObjectBlockDrawCode(_layername = "LevelTiles") {
 	// 1. Get Tilemap and Tileset info
 	var _layerID = layer_get_id(_layername);
 	
-	show_debug_message(_layerID)
+	//show_debug_message(_layerID)
 	
 	if _layerID == -1 exit; //Prevents a bunch of garbage console outputs
 	var _tilemapID = layer_tilemap_get_id(_layerID);

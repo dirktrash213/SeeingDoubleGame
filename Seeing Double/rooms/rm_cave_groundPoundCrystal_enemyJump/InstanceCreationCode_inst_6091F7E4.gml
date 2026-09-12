@@ -1,4 +1,4 @@
-visible = false;
+coopObjectInstanceCreationCode();
 horizontal = true;
 radius = 64;
 rotationSpeed = 1;

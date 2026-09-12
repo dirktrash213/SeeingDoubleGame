@@ -1,3 +1,5 @@
+
+
 if !global.coopActive exit;
 
 // Get current camera bounds

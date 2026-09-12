@@ -81,8 +81,22 @@ if global.paused {
 						exit;
 		
 					} break;
+					//@@
+					case 2: { //Retry
+						
+						global.killPlayerAfterUnpause = true;
+						
+						global.paused = !global.paused;
+						
+						saveSettings();
+	
+						togglePause();
+						
+						exit;
+		
+					} break;
 					
-					case 2: { //Exit game
+					case 3: { //Exit game
 						
 						submenuType = "Exit";
 		
@@ -298,7 +312,7 @@ if global.paused {
 								global.screenShake = !global.screenShake;
 						
 							} break;
-							//@
+							
 							case 4: { //Toggle co-op
 						
 								//global.coopActive = !global.coopActive;
@@ -335,8 +349,8 @@ if global.paused {
 	
 		case 0: {
 		
-			if pauseMenuPosition < 0 pauseMenuPosition = 2;
-			if pauseMenuPosition > 2 pauseMenuPosition = 0;
+			if pauseMenuPosition < 0 pauseMenuPosition = 3;
+			if pauseMenuPosition > 3 pauseMenuPosition = 0;
 		
 		} break;
 		
@@ -379,7 +393,7 @@ if global.paused {
 					if pauseMenuPosition > 4 pauseMenuPosition = 0;
 				
 				} break;
-				//@
+				
 				case "Gameplay settings": {
 				
 					if pauseMenuPosition < 0 pauseMenuPosition = 4;
