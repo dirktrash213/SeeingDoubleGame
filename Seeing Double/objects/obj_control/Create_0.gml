@@ -59,7 +59,8 @@ bgmSecretFlowerArea = bgm_spring;
 bgmCave = bgm_dramaticCaveTheme;
 bgmCaveRestArea = bgm_burrowedBelow;
 //bgmCaveChase = bgm_battleDemonic;
-bgmCaveChase = bgm_quirkyBossLoop;
+//bgmCaveChase = bgm_quirkyBossLoop;
+bgmCaveChase = bgm_caveChase;
 //bgmCaveChase = bgm_doomIncoming;
 
 bgmLab = bgm_abstraction;

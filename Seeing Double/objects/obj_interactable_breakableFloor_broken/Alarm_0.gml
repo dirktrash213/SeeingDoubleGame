@@ -8,9 +8,6 @@ var _coopActive = coopActive;
 
 with instance_create_layer(x, y, "Instances", obj_interactable_breakableFloor) {
 
-	//visible = _visible;
-	//breakSpeed = _breakSpeed;
-	
 	if (_invisCoop || _solidCoop) && global.coopActive {
 					
 		if _invisCoop coopObjectInstanceCreationCode();

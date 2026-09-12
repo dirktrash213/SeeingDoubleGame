@@ -1848,6 +1848,7 @@
     {"name":"string_length_scribble","order":4,"path":"scripts/string_length_scribble/string_length_scribble.yy",},
     {"name":"spr_tilemap_caveALT","order":7,"path":"sprites/spr_tilemap_caveALT/spr_tilemap_caveALT.yy",},
     {"name":"__scribble_gen_3_devanagari","order":4,"path":"scripts/__scribble_gen_3_devanagari/__scribble_gen_3_devanagari.yy",},
+    {"name":"bgm_caveChase","order":22,"path":"sounds/bgm_caveChase/bgm_caveChase.yy",},
     {"name":"spr_interactable_labDoor_piece3","order":120,"path":"sprites/spr_interactable_labDoor_piece3/spr_interactable_labDoor_piece3.yy",},
     {"name":"spr_interactable_coin_red","order":6,"path":"sprites/spr_interactable_coin_red/spr_interactable_coin_red.yy",},
     {"name":"spr_tilemap_cave3","order":15,"path":"sprites/spr_tilemap_cave3/spr_tilemap_cave3.yy",},

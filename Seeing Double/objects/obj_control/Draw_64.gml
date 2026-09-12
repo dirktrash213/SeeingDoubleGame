@@ -72,7 +72,7 @@ if global.playerControl && !global.cutsceneActive && global.scoreUIenabled {
 			if global.input_source == 0 drawWhiteTextWithBlackOutline(_GUIcenterX - (_GUIcenterX/2) - 100, _GUIcenterY + (_GUIcenterY * 0.825), "[spr_background_controlsDisplay_S_big] to cancel")
 			if global.input_source > 0 drawWhiteTextWithBlackOutline(_GUIcenterX - (_GUIcenterX/2) - 100, _GUIcenterY + (_GUIcenterY * 0.825), "[spr_background_controlsDisplay_analogStick_down_big] to cancel")
 	
-			//drawWhiteTextWithBlackOutline(0, 300, _binoculars.cameraMoveAmount); //TEMP
+			drawWhiteTextWithBlackOutline(0, 300, _binoculars.cameraMoveAmount); //TEMP
 	
 		}
 	

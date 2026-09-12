@@ -150,14 +150,23 @@ global.dialogueStringArrays = {
 	cavesDiary : [ 
 	
 		//"A house in cave. He really does get the craziest ideas.", 
+		//"[font_pencil]He really does get the craziest ideas. Building a house in a cave? Who'd think of that?", 
+		//"[font_pencil]But I have to admit it's beautiful in this little alcove, tucked away from the world. And so much to study, too!", 
+		//"[font_pencil]I reckon there's hundreds - no, [slant]thousands[/slant] of unknown fungi waiting to be discovered. How exciting!", 
+		//"[font_pencil]Oh, he's giving me that look... I might have to wrap this entry up~", 
+		////"Wait a minute... He's peeking at my journal again!! Son of a-", 
+		////"Wait a minute... He's peeking at my journal again!! That sneaky rat!", 
+		//"[font_pencil]Wait a minute... no he's not! He's peeking at my journal! [/slant]Again!!", 
+		//"[font_pencil]Simon, if you ever read this I SWEAR I'll kill you.", 
+		
 		"[font_pencil]He really does get the craziest ideas. Building a house in a cave? Who'd think of that?", 
-		"[font_pencil]But I have to admit it's beautiful in this little alcove, tucked away from the world. And so much to study, too!", 
-		"[font_pencil]I reckon there's hundreds - no, [slant]thousands[/slant] of unknown fungi waiting to be discovered. How exciting!", 
-		"[font_pencil]Oh, he's giving me that look... I might have to wrap this entry up~", 
-		//"Wait a minute... He's peeking at my journal again!! Son of a-", 
-		//"Wait a minute... He's peeking at my journal again!! That sneaky rat!", 
-		"[font_pencil]Wait a minute... no he's not! He's peeking at my journal! [/slant]Again!!", 
-		"[font_pencil]Simon, if you ever read this I SWEAR I'll kill you.", 
+		"[font_pencil]I've been studying the fungi in my spare time. There must be thousands of species down here, at least.", 
+		"[font_pencil]But, in truth, I miss the outdoors. The distant chirping of sparrows in the morning, the glow of the fireflies at dusk...", 
+		"[font_pencil]There's only so much darkness and bat guano falling on my head that I can take. Yuck.", 
+		"[font_pencil]I know what he'll say. 'It's for a good cause.' I get that. We're doing important work here. Groundbreaking, even.", 
+		"[font_pencil]It's just... the learning curve has been [slant]so[/slant] steep. Quantum physics is not my area of expertise, to say the least. But I'm trying my best.", 
+		"[font_pencil]I just wish we'd finally hit that damn breakthrough he keeps saying is coming. Grah.", 
+		"[font_pencil]Oh, Simon. I love you. I really do. But sometimes I just wanna... eh, let's not write [slant]that[/slant] one down. Yikes.", 
 		
 	],
 	

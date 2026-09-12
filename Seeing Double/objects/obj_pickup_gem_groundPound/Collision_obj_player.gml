@@ -15,15 +15,23 @@ audio_play_sound(sfx_collect_cherry, 1, 0);
 sprite_index = emptySprite;
 
 
-if pitterPlayerIsPresent() {
+if global.coopActive {
 
-	obj_player_pitter.gemPowerupGroundPound = true;
+	other.gemPowerupGroundPound = true;
 
-}
+} else {
 
-if patterPlayerIsPresent() {
+	if pitterPlayerIsPresent() {
 
-	obj_player_patter.gemPowerupGroundPound = true;
+		obj_player_pitter.gemPowerupGroundPound = true;
+
+	}
+
+	if patterPlayerIsPresent() {
+
+		obj_player_patter.gemPowerupGroundPound = true;
+
+	}
 
 }
 

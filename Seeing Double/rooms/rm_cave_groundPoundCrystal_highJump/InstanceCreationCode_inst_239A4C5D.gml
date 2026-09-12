@@ -1,1 +1,1 @@
-timerDuration = 900;
+timerDuration = 1200;
