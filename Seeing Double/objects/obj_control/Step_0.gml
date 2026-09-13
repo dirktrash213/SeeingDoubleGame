@@ -84,13 +84,21 @@ if global.paused {
 					//@@
 					case 2: { //Retry
 						
-						global.killPlayerAfterUnpause = true;
+						if global.canRetry {
 						
-						global.paused = !global.paused;
+							global.killPlayerAfterUnpause = true;
 						
-						saveSettings();
+							global.paused = !global.paused;
+						
+							saveSettings();
 	
-						togglePause();
+							togglePause();
+						
+						} else {
+						
+							audio_play_sound(sfx_wrongBuzzer, 1, false);
+						
+						}
 						
 						exit;
 		

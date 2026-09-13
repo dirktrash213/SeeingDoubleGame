@@ -2332,6 +2332,7 @@
     {"id":{"name":"spr_particle_nothing","path":"sprites/spr_particle_nothing/spr_particle_nothing.yy",},},
     {"id":{"name":"spr_particle_scienceJuiceSparks_doubleJump","path":"sprites/spr_particle_scienceJuiceSparks_doubleJump/spr_particle_scienceJuiceSparks_doubleJump.yy",},},
     {"id":{"name":"spr_interactable_mushrooms3","path":"sprites/spr_interactable_mushrooms3/spr_interactable_mushrooms3.yy",},},
+    {"id":{"name":"obj_trigger_enableRetry","path":"objects/obj_trigger_enableRetry/obj_trigger_enableRetry.yy",},},
     {"id":{"name":"rmSimpleExample","path":"rooms/rmSimpleExample/rmSimpleExample.yy",},},
     {"id":{"name":"rm_forest_doubleJumpGauntlet","path":"rooms/rm_forest_doubleJumpGauntlet/rm_forest_doubleJumpGauntlet.yy",},},
     {"id":{"name":"path_crusher_piston_crush47","path":"paths/path_crusher_piston_crush47/path_crusher_piston_crush47.yy",},},

@@ -21,6 +21,7 @@ if fadingIn {
 		}
 		
 		global.playerControl = true;
+		global.canRetry = true;
 		
 		loadGame();
 		

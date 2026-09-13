@@ -701,8 +701,8 @@ function increaseDefeatCount() {
 
 function coopSetCrySprite() {
 
-	obj_player_pitter.sprite_index = obj_player_pitter.defeatSprite;
-	obj_player_patter.sprite_index = obj_player_patter.defeatSprite;
+	if pitterPlayerIsPresent() obj_player_pitter.sprite_index = obj_player_pitter.defeatSprite;
+	if patterPlayerIsPresent() obj_player_patter.sprite_index = obj_player_patter.defeatSprite;
 	
 	if global.coopActive {
 		

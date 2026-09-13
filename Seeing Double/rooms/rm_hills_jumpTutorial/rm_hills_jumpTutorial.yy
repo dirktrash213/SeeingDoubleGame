@@ -77,6 +77,7 @@
     {"name":"inst_19B1427C","path":"rooms/rm_hills_jumpTutorial/rm_hills_jumpTutorial.yy",},
     {"name":"inst_2D6371A3","path":"rooms/rm_hills_jumpTutorial/rm_hills_jumpTutorial.yy",},
     {"name":"inst_5E31BA08","path":"rooms/rm_hills_jumpTutorial/rm_hills_jumpTutorial.yy",},
+    {"name":"inst_464C640E","path":"rooms/rm_hills_jumpTutorial/rm_hills_jumpTutorial.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -164,6 +165,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4A9C01E7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_defeat","path":"objects/obj_trigger_defeat/obj_trigger_defeat.yy",},"properties":[],"rotation":0.0,"scaleX":10.0,"scaleY":1.0,"x":640.0,"y":288.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B97267D","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_checkPoint","path":"objects/obj_trigger_checkPoint/obj_trigger_checkPoint.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":8.0,"x":480.0,"y":112.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_76B7F8CC","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_warp","path":"objects/obj_trigger_warp/obj_trigger_warp.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":12.0,"x":960.0,"y":48.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_464C640E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_enableRetry","path":"objects/obj_trigger_enableRetry/obj_trigger_enableRetry.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":8.0,"x":512.0,"y":-16.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Collision","depth":300,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7F7281E8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_block_wall","path":"objects/obj_block_wall/obj_block_wall.yy",},"properties":[],"rotation":0.0,"scaleX":6.0,"scaleY":1.0,"x":-16.0,"y":208.0,},

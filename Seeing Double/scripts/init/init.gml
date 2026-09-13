@@ -20,6 +20,7 @@ global.patterColor = #F3C2D8;
 
 global.speedrunTimer = 0; //OLD
 
+global.canRetry = false;
 
 global.coinCount = 0;
 global.cherryCount = 0;

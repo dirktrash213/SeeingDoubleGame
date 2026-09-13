@@ -1,8 +1,4 @@
-with obj_interactable_bird {
 
-	state = BIRD_STATE.FLYING;
-
-}
 
 var _gain = 0.5
 var _pitch = 1.0

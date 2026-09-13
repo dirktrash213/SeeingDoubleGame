@@ -46,6 +46,10 @@ if pitterPlayerIsPresent() {
 			obj_player_patter.coyoteHangTimer = 0;
 			obj_player_patter.climbing = other.climbing;
 			
+			obj_player_patter.groundPounding = other.groundPounding;
+			obj_player_patter.groundPoundFalling = other.groundPoundFalling;
+			obj_player_patter.vspeed = other.vspeed;
+			
 		}
 		
 		if other.object_index == obj_player_patter {
@@ -54,8 +58,12 @@ if pitterPlayerIsPresent() {
 			obj_player_pitter.coyoteHangTimer = 0;
 			obj_player_pitter.climbing = other.climbing;
 			
+			obj_player_pitter.groundPounding = other.groundPounding;
+			obj_player_pitter.groundPoundFalling = other.groundPoundFalling;
+			obj_player_pitter.vspeed = other.vspeed;
+			
 		}
-	
+			
 	}
 
 	if horizontalWarp {
@@ -166,9 +174,15 @@ if pitterPlayerIsPresent() {
 					if !array_contains(global.customRoomArray, targetRoom) {
 				
 						obj_player_patter.x = obj_player_pitter.x;
-						obj_player_patter.y = obj_player_pitter.y + global.patterOffsetY;
+						obj_player_patter.y = obj_player_pitter.y + global.defaultPatterOffsetY;
+						
+						//show_debug_message("obj_player_pitter.x: " + string(obj_player_pitter.x))
+						//show_debug_message("obj_player_pitter.y: " + string(obj_player_pitter.y))
+						//
+						//show_debug_message("obj_player_patter.x: " + string(obj_player_patter.x))
+						//show_debug_message("obj_player_patter.y: " + string(obj_player_patter.y))
 				
-					} else {
+					} else { 
 					
 						obj_player_patter.x = obj_player_pitter.x;
 						obj_player_patter.y = obj_player_pitter.y + global.defaultCustomLevelPatterOffsetY;
@@ -177,7 +191,7 @@ if pitterPlayerIsPresent() {
 			
 				} else {
 			
-					obj_player_patter.x = obj_player_pitter.x + global.patterOffsetX;
+					obj_player_patter.x = obj_player_pitter.x + global.defaultPatterOffsetX;
 					obj_player_patter.y = obj_player_pitter.y;
 			
 				}
@@ -191,10 +205,10 @@ if pitterPlayerIsPresent() {
 				if !array_contains(global.customRoomArray, targetRoom) {
 				
 					obj_player_patter.x = xSpawn + _offsetX;
-					obj_player_patter.y = ySpawn + global.patterOffsetY;
+					obj_player_patter.y = ySpawn + global.defaultPatterOffsetY;
 				
 					obj_player_pitter.x = obj_player_patter.x;
-					obj_player_pitter.y = obj_player_patter.y - global.patterOffsetY;
+					obj_player_pitter.y = obj_player_patter.y - global.defaultPatterOffsetY;
 				
 				
 				} else {
@@ -209,10 +223,10 @@ if pitterPlayerIsPresent() {
 				
 			} else {
 		
-				obj_player_patter.x = xSpawn + global.patterOffsetX + _offsetX;
+				obj_player_patter.x = xSpawn + global.defaultPatterOffsetX + _offsetX;
 				obj_player_patter.y = ySpawn;
 			
-				obj_player_pitter.x = obj_player_patter.x - global.patterOffsetX;
+				obj_player_pitter.x = obj_player_patter.x - global.defaultPatterOffsetX;
 				obj_player_pitter.y = obj_player_patter.y;
 			
 			}
