@@ -3156,7 +3156,7 @@ function coopObjectStepEventCode(_revealRadius = 30) {
 	}
 
 }
-//@@
+
 function coopObjectDrawEventCode() {
 
 	if global.coopActive && (invisCoop || solidCoop) {
@@ -3236,6 +3236,11 @@ function coopObjectAlarmCode() {
 function coopObjectBlockTranslucentDrawCode(_layername = "LevelTiles") {
 
 	if !global.coopActive exit;
+	
+	isOnPitterScreen = y < global.patterOffsetY;
+	if global.customLevel isOnPitterScreen = y < global.defaultCustomLevelPatterOffsetY;
+	if global.verticalLevel isOnPitterScreen = x < global.patterOffsetX;
+	blendColor = isOnPitterScreen ? patterColor : pitterColor;
 
 	// --- CALCULATE TINT COLOR & ALPHA BEFORE DRAWING ---
 	var _tintColor;
@@ -3268,7 +3273,23 @@ function coopObjectBlockTranslucentDrawCode(_layername = "LevelTiles") {
 	var _tilesetID = tilemap_get_tileset(_tilemapID);
 
 	// 2. Define sample offset and tile size
-	var _yOffset = isOnPitterScreen ? global.patterOffsetY : -global.patterOffsetY;
+	//var _yOffset = isOnPitterScreen ? global.patterOffsetY : -global.patterOffsetY;
+	
+	var _xOffset = 0;
+	var _yOffset = 0;
+
+	if global.verticalLevel {
+		_xOffset = isOnPitterScreen ? global.patterOffsetX : -global.patterOffsetX;
+	} else {
+		if global.customLevel {
+			_yOffset = isOnPitterScreen ? global.defaultCustomLevelPatterOffsetY : -global.defaultCustomLevelPatterOffsetY;
+		} else {
+			_yOffset = isOnPitterScreen ? global.patterOffsetY : -global.patterOffsetY;
+		}
+	}
+	
+	
+	
 	var _tileSize = 16; 
 	
 	if global.portalsActive {
@@ -3299,7 +3320,7 @@ function coopObjectBlockTranslucentDrawCode(_layername = "LevelTiles") {
 	        var _drawX = x + (_col * _tileSize);
 	        var _drawY = y + (_row * _tileSize);
         
-	        var _sampleX = _drawX;
+	        var _sampleX = _drawX + _xOffset;
 	        var _sampleY = _drawY + _yOffset;
         
 	        var _tileData = tilemap_get_at_pixel(_tilemapID, _sampleX, _sampleY);
@@ -3316,7 +3337,7 @@ function coopObjectBlockTranslucentDrawCode(_layername = "LevelTiles") {
 	shader_reset();
 
 }
-
+//@@
 function coopObjectBlockDrawCode(_layername = "LevelTiles") {
 
 	if !global.coopActive exit;
@@ -3445,7 +3466,7 @@ function doubleJumpGem() {
 	}
 
 }
-//@@
+
 function coopSpawnDuplicateCollectable() {
 
 	if global.coopActive && !duplicate {
@@ -3526,7 +3547,7 @@ function coopSpawnDuplicateCollectable() {
 	}
 
 }
-//@@
+
 function coopSyncDuplicateObjects() {
 
 	if duplicatedObject != noone {
