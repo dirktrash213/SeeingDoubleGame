@@ -7,6 +7,7 @@ global.verticalRoomArray = [
 	rm_forest_doubleJumpGet,
 	rm_cave_descent,
 	rm_cave_descendingToGroundPoundBarrel,
+	rm_cave_groundPoundGauntlet_horizontalElevators,
 	rm_cave_descendingOnBigBoulder,
 	rm_cave_chase_descent,
 	rm_cave_chase_descendingNarrow,
