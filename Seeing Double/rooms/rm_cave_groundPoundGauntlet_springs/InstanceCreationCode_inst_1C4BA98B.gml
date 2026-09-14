@@ -1,0 +1,2 @@
+coopObjectInstanceCreationCode();
+attachedToBreakableFloor = true;
