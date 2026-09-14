@@ -244,6 +244,22 @@ if pitterPlayerIsPresent() {
 if boulderFallingWarp {
 
 	obj_control.alarm[4] = 2;
+	
+	if global.coopActive {
+	
+		if other.object_index == obj_player_pitter {
+		
+			obj_player_patter.stuckOnBoulder = other.stuckOnBoulder;
+		
+		}
+		
+		if other.object_index == obj_player_patter {
+		
+			obj_player_pitter.stuckOnBoulder = other.stuckOnBoulder;
+		
+		}
+	
+	}
 
 }
 
