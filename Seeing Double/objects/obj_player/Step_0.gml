@@ -267,7 +267,11 @@ if binocularsActive {
 	if moveRight _binoculars.cameraMoveAmount += _increment;
 	if moveLeft _binoculars.cameraMoveAmount -= _increment;
 	
+	if moveUp _binoculars.cameraMoveAmountVertical -= _increment;
+	if moveDown _binoculars.cameraMoveAmountVertical += _increment;
+	
 	_binoculars.cameraMoveAmount = clamp(_binoculars.cameraMoveAmount, 0, _binoculars.cameraMoveAmountMax);
+	_binoculars.cameraMoveAmountVertical = clamp(_binoculars.cameraMoveAmountVertical, _binoculars.cameraMoveAmountVerticalMin, _binoculars.cameraMoveAmountVerticalMax);
 
 	x = x;
 	y = y;
@@ -275,19 +279,25 @@ if binocularsActive {
 	if pitterShadowIsPresent() && object_index == obj_player_pitter obj_player_shadow_pitter.sprite_index = sprite_index;
 	if patterShadowIsPresent() && object_index == obj_player_patter obj_player_shadow_patter.sprite_index = sprite_index;
 	
-	if moveDown {
+	//if moveDown {
+	if jumpPressed {
 		
 		binocularsActive = false;
 		_binoculars.cameraMoveAmount = 0;
+		_binoculars.cameraMoveAmountVertical = 0;
 		
 		if global.coopActive {
 		
 			if object_index == obj_player_pitter obj_camera.pitterCameraLeadingX = obj_camera.pitterCameraLeadingXStoredValue; 
 			if object_index == obj_player_patter obj_camera.patterCameraLeadingX = obj_camera.patterCameraLeadingXStoredValue; 
+			
+			if object_index == obj_player_pitter obj_camera.pitterCameraLeadingY = obj_camera.pitterCameraLeadingYStoredValue; 
+			if object_index == obj_player_patter obj_camera.patterCameraLeadingY = obj_camera.patterCameraLeadingYStoredValue; 
 		
 		} else {
 		
 			obj_camera.cameraLeadingX = obj_camera.cameraLeadingXStoredValue;
+			obj_camera.cameraLeadingY = obj_camera.cameraLeadingYStoredValue;
 		
 		}
 		
@@ -840,10 +850,14 @@ if moveUp && onGround {
 		
 			if object_index == obj_player_pitter obj_camera.pitterCameraLeadingXStoredValue = obj_camera.pitterCameraLeadingX; //Used to prevent camera from auto scrolling
 			if object_index == obj_player_patter obj_camera.patterCameraLeadingXStoredValue = obj_camera.patterCameraLeadingX;
+			
+			if object_index == obj_player_pitter obj_camera.pitterCameraLeadingYStoredValue = obj_camera.pitterCameraLeadingY;
+			if object_index == obj_player_patter obj_camera.patterCameraLeadingYStoredValue = obj_camera.patterCameraLeadingY;
 		
 		} else {
 		
 			obj_camera.cameraLeadingXStoredValue = obj_camera.cameraLeadingX;
+			obj_camera.cameraLeadingYStoredValue = obj_camera.cameraLeadingY;
 		
 		}
 		

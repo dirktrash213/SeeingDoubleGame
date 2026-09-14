@@ -31,6 +31,14 @@ cameraLeadingXStoredValue = 0;
 pitterCameraLeadingXStoredValue = 0;
 patterCameraLeadingXStoredValue = 0;
 
+cameraLeadingYStoredValue = 0;
+cameraLeadingY = 0;
+pitterCameraLeadingY = 0;
+patterCameraLeadingY = 0;
+pitterCameraLeadingYStoredValue = 0;
+patterCameraLeadingYStoredValue = 0;
+
+
 cameraLockedForward = false; //Check if camera is locked forward for minecart segments
 
 pitterCameraOffsetY = 0;

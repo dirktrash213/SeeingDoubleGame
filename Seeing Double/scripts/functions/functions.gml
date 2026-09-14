@@ -2325,7 +2325,7 @@ function checkCrusherCollision() {
 		}
 	}
 }
-
+//@@
 function singlePlayerCameraControls() {
 	
 	//Set position of view by centering it on the player 
@@ -2433,7 +2433,7 @@ function singlePlayerCameraControls() {
 			//Vars that center the camera on player
 			var _x = clamp((obj_player_pitter.x-view_width/_cameraClampValue) + cameraLeadingX, 0, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
 			var _y = clamp(obj_player_pitter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue);
-			if global.customLevel _y = clamp(obj_player_pitter.y-view_height + 100, 0, _customMaxClampY);
+			if global.customLevel _y = clamp(obj_player_pitter.y-view_height + 100 + cameraLeadingY, 0, _customMaxClampY);
 	
 		} else {
 	
@@ -2575,7 +2575,7 @@ function singlePlayerCameraControls() {
 			//Vars that center the camera on patter
 			var _x = clamp(obj_player_patter.x-view_width/_cameraClampValue + cameraLeadingX, 0, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
 			var _y = clamp(obj_player_patter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue);
-			if global.customLevel _y = clamp(obj_player_patter.y-view_height + 100, _customMinClampY, room_height-view_height-1); 
+			if global.customLevel _y = clamp(obj_player_patter.y-view_height + 100 + cameraLeadingY, _customMinClampY, room_height-view_height-1); 
 	
 		} else {
 	
@@ -2659,7 +2659,7 @@ function singlePlayerCameraControls() {
 
 
 }
-
+//@@
 function coopCameraControls() {
 
 	//Set position of view by centering it on the player 
@@ -2764,10 +2764,14 @@ function coopCameraControls() {
 	
 			var _customMaxClampY = 273; 
 	
+			//var _y = _y + pitterCameraLeadingY;
+	
 			//Vars that center the camera on player
 			var _x = clamp((obj_player_pitter.x-view_width/_cameraClampValue) + pitterCameraLeadingX, 0, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
-			var _y = clamp(obj_player_pitter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue);
-			if global.customLevel _y = clamp(obj_player_pitter.y-view_height + 100, 0, _customMaxClampY);
+			var _y = clamp((obj_player_pitter.y-view_height/_cameraClampValue) + pitterCameraLeadingY, 0, room_height-view_height/_cameraRoomBoundValue);
+			if global.customLevel _y = clamp(obj_player_pitter.y-view_height + 100 + pitterCameraLeadingY, 0, _customMaxClampY);
+			
+			//show_debug_message(" _y: " + string( _y));
 	
 		} else {
 	
@@ -2909,7 +2913,7 @@ function coopCameraControls() {
 			//Vars that center the camera on patter
 			var _x = clamp(obj_player_patter.x-view_width/_cameraClampValue + patterCameraLeadingX, 0, room_width-view_width/_cameraRoomBoundValue); //Clamp the x and y values so the view cant leave the room
 			var _y = clamp(obj_player_patter.y-view_height/_cameraClampValue, 0, room_height-view_height/_cameraRoomBoundValue);
-			if global.customLevel _y = clamp(obj_player_patter.y-view_height + 100, _customMinClampY, room_height-view_height-1); 
+			if global.customLevel _y = clamp(obj_player_patter.y-view_height + 100 + patterCameraLeadingY, _customMinClampY, room_height-view_height-1); 
 	
 		} else {
 	
@@ -3232,7 +3236,7 @@ function coopObjectAlarmCode() {
 	}
 
 }
-//@@
+
 function coopObjectBlockTranslucentDrawCode(_layername = "LevelTiles") {
 
 	if !global.coopActive exit;
@@ -3337,7 +3341,7 @@ function coopObjectBlockTranslucentDrawCode(_layername = "LevelTiles") {
 	shader_reset();
 
 }
-//@@
+
 function coopObjectBlockDrawCode(_layername = "LevelTiles") {
 
 	if !global.coopActive exit;

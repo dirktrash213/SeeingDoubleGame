@@ -50,6 +50,9 @@ if global.coopActive {
 		
 			pitterCameraLeadingX = pitterCameraLeadingXStoredValue;
 			pitterCameraLeadingX = pitterCameraLeadingX + _binoculars.cameraMoveAmount;
+			
+			pitterCameraLeadingY = pitterCameraLeadingYStoredValue;
+			pitterCameraLeadingY = pitterCameraLeadingY + _binoculars.cameraMoveAmountVertical;
 	
 		}
 
@@ -63,6 +66,9 @@ if global.coopActive {
 		
 			patterCameraLeadingX = patterCameraLeadingXStoredValue;
 			patterCameraLeadingX = patterCameraLeadingX + _binoculars.cameraMoveAmount;
+			
+			patterCameraLeadingY = patterCameraLeadingYStoredValue;
+			patterCameraLeadingY = patterCameraLeadingY + _binoculars.cameraMoveAmountVertical;
 	
 		}
 
@@ -78,6 +84,9 @@ if global.coopActive {
 	
 		cameraLeadingX = cameraLeadingXStoredValue;
 		cameraLeadingX = cameraLeadingX + _binoculars.cameraMoveAmount;
+		
+		cameraLeadingY = cameraLeadingYStoredValue;
+		cameraLeadingY = cameraLeadingY + _binoculars.cameraMoveAmountVertical;
 	
 	}
 

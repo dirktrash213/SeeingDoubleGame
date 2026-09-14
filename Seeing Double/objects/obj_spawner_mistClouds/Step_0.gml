@@ -13,5 +13,8 @@ if playerIsPresent() {
 		active = false;
 	
 	}
+	
+	if obj_player_pitter.binocularsActive active = true;
+	if obj_player_patter.binocularsActive active = true;
 
 }
