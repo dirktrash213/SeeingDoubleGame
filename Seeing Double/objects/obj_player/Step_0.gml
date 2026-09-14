@@ -541,6 +541,9 @@ if moveDown && !onGround && !global.cutsceneActive && !groundPounding && !ground
 	groundPoundOnCooldown = true;
 	alarm[6] = groundPoundCooldown;
 	
+	
+	alarm[8] = groundPoundTimeout;
+	
 	ySpeed = -7;
 	//xSpeed = 0; //TEMP
 	
@@ -687,6 +690,10 @@ if groundPounding {
 	detectFloorDuringGroundPound(_wallSemisolid);
 	
 	exit; 
+
+} else { //Disable groundpound timeout if player is no longer ground pounding
+
+	alarm[8] = -1;
 
 }
 

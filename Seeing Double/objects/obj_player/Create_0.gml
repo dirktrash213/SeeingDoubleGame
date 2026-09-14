@@ -212,6 +212,7 @@ groundPoundJumpSpeed = -3.25;
 groundPoundGravity = 0.2;
 groundPoundFallSpeed = 15;
 groundPoundCooldown = 30;
+groundPoundTimeout = 1200;
 
 canLandWithDust = false;
 timeUntilCanLandWithDust = 5;

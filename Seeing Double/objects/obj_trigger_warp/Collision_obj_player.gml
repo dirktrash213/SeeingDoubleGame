@@ -47,8 +47,10 @@ if pitterPlayerIsPresent() {
 			obj_player_patter.climbing = other.climbing;
 			
 			obj_player_patter.groundPounding = other.groundPounding;
+			obj_player_patter.groundPoundRising = other.groundPoundRising;
 			obj_player_patter.groundPoundFalling = other.groundPoundFalling;
 			obj_player_patter.vspeed = other.vspeed;
+			obj_player_patter.gravity = other.gravity;
 			
 		}
 		
@@ -59,8 +61,10 @@ if pitterPlayerIsPresent() {
 			obj_player_pitter.climbing = other.climbing;
 			
 			obj_player_pitter.groundPounding = other.groundPounding;
+			obj_player_pitter.groundPoundRising = other.groundPoundRising;
 			obj_player_pitter.groundPoundFalling = other.groundPoundFalling;
 			obj_player_pitter.vspeed = other.vspeed;
+			obj_player_pitter.gravity = other.gravity;
 			
 		}
 			
