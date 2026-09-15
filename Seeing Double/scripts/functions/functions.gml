@@ -1821,7 +1821,7 @@ function playGreenPortalJumpEffects() {
 
 	var _fakeEntrancePortal = collision_line(x, 0, x, room_height, obj_interactable_portal_entrance_FAKE, false, true);
 	
-	if _fakeEntrancePortal != noone {
+	if _fakeEntrancePortal != noone && !global.coopActive {
 	
 		with _fakeEntrancePortal {
 		
@@ -1843,7 +1843,7 @@ function playGreenPortalJumpEffects() {
 	
 	var _fakeEntranceResetPortal = collision_line(x, 0, x, room_height, obj_interactable_portal_entrance_reset_FAKE, false, true);
 	
-	if _fakeEntranceResetPortal != noone {
+	if _fakeEntranceResetPortal != noone && !global.coopActive {
 	
 		with _fakeEntranceResetPortal {
 		

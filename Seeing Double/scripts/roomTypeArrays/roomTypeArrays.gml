@@ -10,6 +10,7 @@ global.verticalRoomArray = [
 	rm_cave_groundPoundGauntlet_horizontalElevators,
 	rm_cave_descendingOnBigBoulder,
 	rm_cave_chase_descent,
+	rm_cave_chase_narrowGroundPound,
 	rm_cave_chase_descendingNarrow,
 	rm_cave_chase_descendingWithGroundPound,
 	rm_cave_chase_descendingOnBigBoulder,
