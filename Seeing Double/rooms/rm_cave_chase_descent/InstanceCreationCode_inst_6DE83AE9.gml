@@ -1,3 +1,3 @@
 horizontal = true;
-visible = false;
+coopObjectSolidInstanceCreationCode();
 radius = 48;

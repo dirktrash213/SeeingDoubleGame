@@ -56,3 +56,5 @@ if (_num > 0) {
 ds_list_destroy(__groundPoundFloorList);
 
 
+coopObjectStepEventCode();
+

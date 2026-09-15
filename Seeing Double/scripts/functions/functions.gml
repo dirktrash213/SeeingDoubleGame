@@ -1596,9 +1596,21 @@ function resetPatterSprites() {
 function resetCameraLeading() {
 
 	with obj_camera {
+		
+		if !global.coopActive {
 	
-		if cameraLeadingX > 0 cameraLeadingX--;
-		if cameraLeadingX < 0 cameraLeadingX++;
+			if cameraLeadingX > 0 cameraLeadingX--;
+			if cameraLeadingX < 0 cameraLeadingX++;
+		
+		} else {
+		
+			//if pitterCameraLeadingX > 0 pitterCameraLeadingX--;
+			//if pitterCameraLeadingX < 0 pitterCameraLeadingX++;
+			
+			if patterCameraLeadingX > 0 patterCameraLeadingX--;
+			if patterCameraLeadingX < 0 patterCameraLeadingX++;
+		
+		}
 	
 	}
 
@@ -1936,7 +1948,7 @@ function caughtByCaveGhost() {
 	
 	with obj_player {
 	
-		instance_create_depth(x, y, -10000, obj_background_blackScreen);
+		instance_create_depth(x, y, -12000, obj_background_blackScreen);
 	
 	}
 	

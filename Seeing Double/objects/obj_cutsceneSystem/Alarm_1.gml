@@ -642,6 +642,7 @@ switch global.currentCutsceneID {
 				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
 				
 					obj_player_pitter.hspeed = 1;
+					if global.coopActive obj_player_patter.hspeed = 1;
 					
 				}
 				
@@ -656,6 +657,7 @@ switch global.currentCutsceneID {
 				if pitterPlayerIsPresent() && patterPlayerIsPresent() {
 			
 					obj_player_pitter.hspeed = 0;
+					if global.coopActive obj_player_patter.hspeed = 0;
 					
 				}
 				

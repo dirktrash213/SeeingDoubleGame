@@ -39,7 +39,13 @@ instance_destroy(obj_npc_ghost_cavesChase);
 
 fadeOutSpookyGhostAudio();
 
-instance_activate_object(obj_block_wall_temp);
+//instance_activate_object(obj_block_wall_temp);
+
+with obj_block_wall_temp {
+
+	mask_index = sprite_index;
+
+}
 
 audio_sound_gain(obj_control.bgmCaveChase, 0, 5000);
 

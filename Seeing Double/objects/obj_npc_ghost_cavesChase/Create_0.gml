@@ -4,7 +4,7 @@ playerCaught = false;
 canDetectPlayer = false;
 chasePath = path_platform_test;
 //delayBeforeChase = global.caughtByCaveGhostAmount == 0 ? 300 : 5;
-delayBeforeChase = 300;
+delayBeforeChase = 360;
 rushSpeed = 3.5;
 chaseMusicPitch = 1.0;
 
@@ -134,6 +134,10 @@ switch room {
 	} break;
 
 }
+
+var _coopDelayOffset = 99999;
+
+if global.coopActive delayBeforeChase += _coopDelayOffset;
 
 //show_debug_message("delayBeforeChase: " + string(delayBeforeChase))
 

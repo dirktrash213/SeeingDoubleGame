@@ -153,6 +153,7 @@
     {"name":"inst_1D64DAD8","path":"rooms/rm_cave_chase_descendingNarrow/rm_cave_chase_descendingNarrow.yy",},
     {"name":"inst_74B8DA0A","path":"rooms/rm_cave_chase_descendingNarrow/rm_cave_chase_descendingNarrow.yy",},
     {"name":"inst_4305632A","path":"rooms/rm_cave_chase_descendingNarrow/rm_cave_chase_descendingNarrow.yy",},
+    {"name":"inst_21DF4D2B","path":"rooms/rm_cave_chase_descendingNarrow/rm_cave_chase_descendingNarrow.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -306,6 +307,7 @@
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Triggers","depth":200,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B27C99_1_2_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_defeat","path":"objects/obj_trigger_defeat/obj_trigger_defeat.yy",},"properties":[],"rotation":0.0,"scaleX":64.0,"scaleY":1.0,"x":-16.0,"y":1104.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1CCA1401_1_1","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_warp","path":"objects/obj_trigger_warp/obj_trigger_warp.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":240.0,"y":1088.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_21DF4D2B","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_trigger_warp","path":"objects/obj_trigger_warp/obj_trigger_warp.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":768.0,"y":1088.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Collectables","depth":300,"effectEnabled":true,"effectType":null,"gridX":8,"gridY":8,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":400,"effectEnabled":true,"effectType":null,"gridX":8,"gridY":8,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
