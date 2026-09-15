@@ -3787,7 +3787,10 @@ function detectDuplicateObject() {
 	var _offsetX;
 	var _offsetY;
 	
-	if global.verticalLevel {
+	
+	
+	//if global.verticalLevel {
+	if array_contains(global.verticalRoomArray, room) {
 	
 		_offsetX = x > global.defaultPatterOffsetX ? -2000 : 2000;
 		_offsetY = 1;
@@ -3796,10 +3799,26 @@ function detectDuplicateObject() {
 	
 	} else {
 
-		_offsetX = 1;
-		_offsetY = y > global.defaultPatterOffsetY ? -2000 : 2000;
+		// global.customLevel {
+		if array_contains(global.customRoomArray, room) {
+			
+			_offsetX = 10;
+			_offsetY = y > global.defaultCustomLevelPatterOffsetY ? -4000 : 4000;
 
-		return collision_rectangle(x - _offsetX, y, x + _offsetX, y + _offsetY, object_index, false, true);
+			show_debug_message("yesgdfolnijkgoi")
+
+			return collision_rectangle(x - _offsetX, y, x + _offsetX, y + _offsetY, object_index, false, true);
+		
+		} else {
+			
+			show_debug_message("???")
+			
+			_offsetX = 1;
+			_offsetY = y > global.defaultPatterOffsetY ? -2000 : 2000;
+
+			return collision_rectangle(x - _offsetX, y, x + _offsetX, y + _offsetY, object_index, false, true);
+		
+		}
 	
 	}
 

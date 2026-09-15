@@ -24,7 +24,7 @@ other.gravity = 0;
 other.sprite_index = other.jumpSprite;
 
 
-if !global.coopActive || duplicateObject != noone {
+if !global.coopActive && duplicateObject != noone {
 
 	//image_speed = 1.0;
 	path_start(pth_minecart_track, 0, path_action_stop, false);

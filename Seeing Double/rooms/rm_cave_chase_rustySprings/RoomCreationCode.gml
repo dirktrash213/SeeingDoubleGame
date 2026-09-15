@@ -5,7 +5,7 @@ if !audio_is_playing(amb_droplets_in_a_cave) audio_play_sound(amb_droplets_in_a_
 //objBktGlitchDemo.enable_split_screen = false;
 
 
-
+//show_debug_message("!!!")
 
 global.verticalLevel = false;
 global.customLevel = true;
