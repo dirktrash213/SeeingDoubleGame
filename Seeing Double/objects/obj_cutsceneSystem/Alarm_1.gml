@@ -53,6 +53,8 @@ switch global.currentCutsceneID {
 					fadeInRate = 0.005;
 		
 				}
+				
+				
 	
 			} break;
 	

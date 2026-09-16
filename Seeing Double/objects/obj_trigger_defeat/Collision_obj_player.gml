@@ -5,6 +5,7 @@ if other.canCollide {
 	|| room == rm_cave_chase_longRun {
 	
 		obj_npc_ghost_cavesChase.playerCaught = true;
+		global.caveChaseOver = false;
 		caughtByCaveGhost();
 		exit;
 	

@@ -4,3 +4,5 @@ if global.splitScreenActive {
 	instance_destroy();
 
 }
+
+if global.coopActive instance_destroy();

@@ -150,18 +150,22 @@ if global.splitScreenActive {
 			obj_background_fadeToWhite.fadingOut = true;
 			global.cutsceneActive = false;
 			global.playerControl = true;
-			instance_create_layer(100, 100, "Instances", obj_player_patter);
+			instance_create_layer(200, 500, "Instances", obj_player_patter); //Wow. This code sucks.
 			view_visible[1] = true;
 			
-			with obj_spawner {
+			if !global.coopActive {
 			
-				instance_create_layer(x,y, "Instances", obj_block_wall_semiSolid);
+				with obj_spawner {
+			
+					instance_create_layer(x,y, "Instances", obj_block_wall_semiSolid);
 				
-				show_debug_message("semisolid wall created")
+					show_debug_message("semisolid wall created")
+			
+				}
+			
+				instance_create_layer(272, 160, "Instances", obj_block_wall_semiSolid);
 			
 			}
-			
-			instance_create_layer(272, 160, "Instances", obj_block_wall_semiSolid);
 			
 			instance_destroy(obj_trigger_cutscene);
 			

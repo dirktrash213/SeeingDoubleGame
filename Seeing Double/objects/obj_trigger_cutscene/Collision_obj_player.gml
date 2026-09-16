@@ -6,7 +6,7 @@ global.currentCutsceneID = cutsceneID;
 obj_cutsceneSystem.alarm[0] = delay;	
 	
 
-coopSyncPlayerPositions();
+if room != rm_forest_splitScreenStart coopSyncPlayerPositions();
 
 
 

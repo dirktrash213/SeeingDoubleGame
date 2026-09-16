@@ -1,4 +1,5 @@
-var _player = other;
+//var _player = other;
+var _player = obj_player_pitter;
 
 with obj_npc_ghost_cavesChase {
 
@@ -17,6 +18,7 @@ var _gain = 0.10;
 //audio_play_sound(sfx_ghost_scream2_LOUD, 1, false, _gain, 0, _pitch);
 audio_play_sound(sfx_ghost_scream_LOUD, 1, false, _gain, 0, _pitch);
 
+instance_destroy();
 
 
 

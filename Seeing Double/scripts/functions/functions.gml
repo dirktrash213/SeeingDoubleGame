@@ -706,8 +706,8 @@ function coopSetCrySprite() {
 	
 	if global.coopActive {
 		
-		if global.coopPitterDefeated obj_player_patter.sprite_index = obj_player_patter.crySprite;
-		if global.coopPatterDefeated obj_player_pitter.sprite_index = obj_player_pitter.crySprite;
+		if global.coopPitterDefeated && patterPlayerIsPresent() obj_player_patter.sprite_index = obj_player_patter.crySprite;
+		if global.coopPatterDefeated && pitterPlayerIsPresent() obj_player_pitter.sprite_index = obj_player_pitter.crySprite;
 	
 	}
 
@@ -1953,6 +1953,7 @@ function caughtByCaveGhost() {
 	}
 	
 	if audio_is_playing(sfx_ghost_screamAlerted) audio_stop_sound(sfx_ghost_screamAlerted);
+	if audio_is_playing(sfx_ghost_scream_LOUD) audio_stop_sound(sfx_ghost_scream_LOUD);
 
 	resetPitterSprites();
 	resetPatterSprites();

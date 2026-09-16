@@ -11,3 +11,5 @@ global.customLevel = false;
 global.groundPoundActive = true;
 
 enableLargeReverb();
+
+global.caveChaseOver = false;

@@ -6,4 +6,3 @@ yEnter = 224;
 xSpawn = 479;
 ySpawn = 224;
 
-horizontalWarp = false;
