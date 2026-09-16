@@ -135,7 +135,7 @@ switch room {
 
 }
 
-var _coopDelayOffset = 99999;
+var _coopDelayOffset = 600;
 
 if global.coopActive delayBeforeChase += _coopDelayOffset;
 
