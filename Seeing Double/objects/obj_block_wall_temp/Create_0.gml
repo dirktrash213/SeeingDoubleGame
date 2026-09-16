@@ -7,3 +7,17 @@ event_inherited();
 mask_index = spr_empty;
 
 //if room == rm_cave_chase_longRun mask_index = sprite_index;
+
+if global.coopActive {
+	
+	//visible = true;
+	
+	if global.portalsActive {
+		
+		visible = true;
+		
+		mask_index = sprite_index;
+		
+	}
+	
+}

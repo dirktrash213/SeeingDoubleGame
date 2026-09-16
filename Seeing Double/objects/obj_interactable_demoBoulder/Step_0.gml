@@ -58,3 +58,5 @@ ds_list_destroy(__groundPoundFloorList);
 
 coopObjectStepEventCode();
 
+mask_index = sprite_index;
+

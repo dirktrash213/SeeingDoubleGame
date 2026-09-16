@@ -12,13 +12,13 @@ global.patterOffsetY = global.defaultPatterOffsetY;
 
 with obj_block_wall_temp {
 
-	mask_index = sprite_index;
+	mask_index = spr_empty;
 	
 }
 
 with obj_block_wall_temp_reverse {
 
-	mask_index = spr_empty;
+	mask_index = sprite_index;
 	
 }
 

@@ -15,4 +15,4 @@ global.groundPoundActive = true;
 
 enableLargeReverb();
 
-global.caughtByCaveGhostAmount = 0; //TEMP
+//global.caughtByCaveGhostAmount = 0; //TEMP

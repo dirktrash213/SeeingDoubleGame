@@ -29,6 +29,12 @@ if count == _l-1 {
 		
 	}
 	
+	if room == rm_forest_treeJumpPuzzle {
+		
+		global.dialogueVariables.talkedToCoopNPCPlatforms = true;
+		
+	}
+	
 	if room == rm_forest_treeBase {
 		
 		if global.dialogueVariables.talkedToGreenBrother global.dialogueVariables.talkedToGreenBrotherTwice = true;
@@ -80,6 +86,14 @@ if count == _l-1 {
 		
 	}
 	
+	if room == rm_cave_spikes {
+		
+		global.dialogueVariables.talkedToCoopNPCSpikes = true;
+		
+	}
+	
+	
+	
 	//Moved to top
 	//if room == rm_cave_entrance { 
 	//	
@@ -124,6 +138,12 @@ if count == _l-1 {
 	if room == rm_cave_missingMiner { 
 		
 		global.dialogueVariables.talkedToMinerGroup = true;
+		
+	}
+	
+	if room == rm_cave_groundPoundCrystal {
+		
+		global.dialogueVariables.talkedToCoopNPCGroundPoundBlocks = true;
 		
 	}
 	

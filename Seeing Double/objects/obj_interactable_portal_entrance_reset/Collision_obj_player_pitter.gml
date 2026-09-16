@@ -25,18 +25,6 @@ other.y = _nearestExitPortal.y;
 
 //instance_activate_object(obj_block_wall_temp_reverse);
 
-with obj_block_wall_temp {
-
-	mask_index = spr_empty;
-	
-}
-
-with obj_block_wall_temp_reverse {
-
-	mask_index = sprite_index;
-	
-}
-
 playGreenPortalJumpEffects();
 
 if global.coopActive {
@@ -53,6 +41,18 @@ if global.coopActive {
 	
 	}
 
+}
+
+with obj_block_wall_temp {
+
+	mask_index = spr_empty;
+	
+}
+
+with obj_block_wall_temp_reverse {
+
+	mask_index = sprite_index;
+	
 }
 
 

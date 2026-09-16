@@ -154,6 +154,7 @@ global.dialogueVariables = {
 	talkedToExplorerTwice : false,
 	solvedForestPuzzle : false,
 	talkedToScaredMiner : false,
+	talkedToCoopNPCSpikes : false,
 	talkedToMiner : false,
 	talkedToCamper : false,
 	talkedToCamperTwice : false,
@@ -164,6 +165,7 @@ global.dialogueVariables = {
 	talkedToExplorerCaveTwice : false,
 	talkedToHungryMiner : false,
 	eatenCaveCherry : false,
+	talkedToCoopNPCGroundPoundBlocks : false,
 	talkedToLostMiner : false,
 	talkedToLostMinerTwice : false,
 

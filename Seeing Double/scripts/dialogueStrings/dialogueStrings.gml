@@ -53,14 +53,17 @@ global.dialogueStringArrays = {
 		"You're seeing me because your marriage is on the rocks. You two are not in sync. At all.",
 		//"I suppose a better way to put it is, you're seeing me because you're treating your partnership like some sort.",
 		"In other words, you're treating your partnership like some sort of co-op adventure, aren't you?",
-		"Disgusting.",
-		"But hey. That's neither here nor there. What you sick people do in your free time ain't my buisiness.",
+		"Disgusting. You really thought a stupid little picnic was gonna fix anything? Moronic.",
+		"But hey. That's neither here nor there. What you sick people do in your free time ain't my business.",
 		//"I'm simply here to give some co-op specific pointers. Against my better judgement.",
 		//"I'm here to salvage this shipwreck of a partnership by giving some co-op specific pointers.", 
-		"I'm here to salvage this shipwreck of a partnership by giving some co-op specific pointers. Against my better judgement.", //5
-		"Let's talk platforms. Some platforms or objects won't be visible or solid to your partner until you stand near them.", 
-		"However, other objects such as this platform will appear transluscent but still be solid. Your partner being near won't change a thing.", 
-		"If you can see it, you can interact with it. Remember that. Now get off my private island!", 
+		"I'm here to salvage this shipwreck of a partnership by giving some co-op specific pointers.", //5
+		//"Let's talk platforms. Some platforms or objects won't be visible or solid to your partner until you stand near them.", 
+		"For example, invisble platforms won't be solid to you until your partner is near them.", 
+		//"However, other objects such as this platform will appear transluscent but still be solid.", 
+		"Transluscent objects, however, such as this platform are always solid.", 
+		"If you can see it, you can interact with it, and vice versa. [slant]Usually.[/slant]", 
+		"Now get off my island!", 
 	
 	],
 	
@@ -147,6 +150,15 @@ global.dialogueStringArrays = {
 		
 	],
 	
+	caveCoopNpcSpike : [ 
+	
+		"Well, well. You look like you just seen a ghost. Heh.", //0
+		"So, see these spikes? The ones that hurt real bad if you step on 'em like some idiot?", 
+		"They're like enemies. Invisible, but still deadly. Like a fart in a closed room. Have your partner reveal 'em.", 
+		"You guys have a long way to go, and it's only gonna get harder. Better buckle up, buttercups.", 
+	
+	],
+	
 	cavesDiary : [ 
 	
 		//"A house in cave. He really does get the craziest ideas.", 
@@ -164,8 +176,8 @@ global.dialogueStringArrays = {
 		"[font_pencil]But, in truth, I miss the outdoors. The distant chirping of sparrows in the morning, the glow of fireflies at dusk...", 
 		"[font_pencil]I mean, there's only so much darkness and bat guano falling on my head that I can take. Yuck.", 
 		"[font_pencil]I know what he'll say. 'It's for a good cause.' I get that. We're doing important work here. Groundbreaking, even.", 
-		"[font_pencil]It's just... the learning curve has been [slant]so[/slant] steep. Quantum physics is not my area of expertise, to say the least. But I'm trying my best.", 
-		"[font_pencil]I just wish we'd finally hit that damn breakthrough he keeps saying is coming. Grah.", 
+		"[font_pencil]It's just... the learning curve has been [slant]so[/slant] steep. Quantum physics is not my area of expertise, to say the least.", 
+		"[font_pencil]I'm trying my best. I just wish we'd finally hit that damn breakthrough he keeps saying is coming. Grah.", 
 		"[font_pencil]Oh, Simon. I love you. I really do. But sometimes I just wanna... eh, let's not write [slant]that[/slant] one down. Yikes.", 
 		
 	],
@@ -243,6 +255,16 @@ global.dialogueStringArrays = {
 		//"I hate mining, I hate these idiots, and I hate you.",
 		//"I hate all of you.",
 		"[shake]FLINT AND STEEL, BROTHER!!",
+	
+	],
+	
+	caveCoopNpcGroundPoundBlocks : [ 
+	
+		"See these blocks? The ones you can break through? They're always solid, visible or not.", //0
+		"Your partner can reveal them. So, like, do that.", 
+		"Huh? What's that? How come [slant]these[/slant] particular types of blocks stay solid when they dissappear?", 
+		"[shake]How should I know!?[/shake] That's just the way it is, got it? I don't know anything you don't, missy!", 
+		"Yeah. Remember? Figment of your imagination ring any bells? Ugh, just get on with it.", 
 	
 	],
 	
