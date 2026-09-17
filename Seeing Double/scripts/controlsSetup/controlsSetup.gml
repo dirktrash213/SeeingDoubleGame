@@ -100,7 +100,98 @@ function getControls() {
     }
 }
 
+function getControlsPlayer2() {
+    if (!global.coopActive || object_index == obj_player_pitter) exit;
+    
+    // FIX 1: Completely freeze Player 2 while waiting for their device input
+    if (global.coopDetectingPlayer2Input) {
+        moveLeft = 0; moveRight = 0; moveUp = 0; moveDown = 0;
+        jump = 0; jumpPressed = 0; run = 0; runPressed = 0; pause = 0;
+        exit;
+    }
+    
+    if (global.playerControl && !global.paused && !global.cutsceneActive) {
+        var _dev = global.patterDevice;
+        
+        // Initialize base variables
+        var _kbLeft = 0, _kbRight = 0, _kbUp = 0, _kbDown = 0;
+        var _kbJump = 0, _kbJumpP = 0, _kbPause = 0, _kbRun = 0, _kbRunP = 0;
+        
+        var _gpLeft = 0, _gpRight = 0, _gpUp = 0, _gpDown = 0;
+        var _gpJump = 0, _gpJumpP = 0, _gpPause = 0, _gpRun = 0, _gpRunP = 0;
 
+        // FIX 2: Strict isolation of Keyboard vs Gamepad to prevent silent overrides
+        if (_dev == -1) {
+            // Player 2 local Keyboard fallbacks (Arrow Keys)
+            //_kbLeft  = keyboard_check(vk_left);
+            //_kbRight = keyboard_check(vk_right);
+            //_kbUp    = keyboard_check(vk_up);
+            //_kbDown  = keyboard_check(vk_down);
+            //_kbJump  = keyboard_check(ord("P"));
+            //_kbJumpP = keyboard_check_pressed(ord("P"));
+            //_kbPause = keyboard_check_pressed(vk_alt);
+            //_kbRun   = keyboard_check(ord("O"));
+            //_kbRunP  = keyboard_check_pressed(ord("O"));
+			
+            _kbLeft  = keyboard_check(ord("A"));
+            _kbRight = keyboard_check(ord("D"));
+            _kbUp    = keyboard_check(ord("W"));
+            _kbDown  = keyboard_check(ord("S"));
+            _kbJump  = keyboard_check(vk_space);
+            _kbJumpP = keyboard_check_pressed(vk_space);
+            _kbPause = keyboard_check_pressed(vk_alt);
+            _kbRun   = keyboard_check(vk_shift);
+            _kbRunP  = keyboard_check_pressed(vk_shift);
+        } 
+        else if (_dev >= 0) {
+            // Player 2 Gamepad inputs
+            _gpLeft  = (gamepad_axis_value(_dev, gp_axislh) < -0.5 || gamepad_button_check(_dev, gp_padl));
+            _gpRight = (gamepad_axis_value(_dev, gp_axislh) > 0.5  || gamepad_button_check(_dev, gp_padr));
+            _gpUp    = (gamepad_axis_value(_dev, gp_axislv) < -0.3 || gamepad_button_check(_dev, gp_padu));
+            _gpDown  = (gamepad_axis_value(_dev, gp_axislv) > 0.3  || gamepad_button_check(_dev, gp_padd));
+            _gpJump  = gamepad_button_check(_dev, gp_face1);
+            _gpJumpP = gamepad_button_check_pressed(_dev, gp_face1);
+            _gpPause = gamepad_button_check_pressed(_dev, gp_start);
+            _gpRun   = gamepad_button_check(_dev, gp_face3);
+            _gpRunP  = gamepad_button_check_pressed(_dev, gp_face3);
+        }
+
+        // Safely combine inputs (one set will always be 0)
+        moveLeft  = _kbLeft || _gpLeft;
+        moveRight = _kbRight || _gpRight;
+        moveUp    = _kbUp || _gpUp;
+        moveDown  = _kbDown || _gpDown;
+        jump      = _kbJump || _gpJump;
+        jumpPressed = _kbJumpP || _gpJumpP;
+        pause     = _kbPause || _gpPause;
+        run       = _kbRun || _gpRun;
+        runPressed = _kbRunP || _gpRunP;
+    }
+
+    // Clamp values
+    moveRight = clamp(moveRight, 0, 1);
+    moveLeft  = clamp(moveLeft, 0, 1);
+    moveUp    = clamp(moveUp, 0, 1);
+    moveDown  = clamp(moveDown, 0, 1);
+    jumpPressed = clamp(jumpPressed, 0, 1);
+    jump      = clamp(jump, 0, 1);
+    run       = clamp(run, 0, 1);
+    runPressed = clamp(runPressed, 0, 1);
+
+    // Jump key buffering logic
+    if (jumpPressed && !jumpDisabled && !global.cutsceneActive) {
+        jumpKeyBufferTimer = jumpBufferTime;
+    }
+
+    if (jumpKeyBufferTimer > 0) {
+        jumpKeyBuffered = 1;
+        jumpKeyBufferTimer--;
+    } else {
+        jumpKeyBuffered = 0;
+    }
+}
+
+/*
 
 function getControlsPlayer2() {
     if (!global.coopActive || object_index == obj_player_pitter) exit;
@@ -163,8 +254,6 @@ function getControlsPlayer2() {
         jumpKeyBuffered = 0;
     }
 }
-
-/*
 
 
 //function getControls() {

@@ -275,50 +275,77 @@ function drawPauseMenu() {
 /// @param {bool} enable True to enable co-op, false to disable.
 function setCoopMode(_enable) {
     
-	global.coopActive = _enable;
+    global.coopActive = _enable;
     
     if (global.coopActive) {
-		
-		global.coopDetectingPlayer2Input = true;
-		
-        // --- CO-OP MODE (Strict device isolation) ---
-        var _firstPad = -1;
-        var _secondPad = -1;
         
-        for (var i = 0; i < 12; i++) {
-            if (gamepad_is_connected(i)) {
-                if (_firstPad == -1) {
-                    _firstPad = i;
-                } else if (_secondPad == -1) {
-                    _secondPad = i;
-                    break;
-                }
-            }
-        }
+        global.coopDetectingPlayer2Input = true;
         
-        if (_firstPad != -1 && _secondPad != -1) {
-            global.pitterDevice = _firstPad;   // Player 1 on Gamepad 1
-            global.patterDevice = _secondPad;  // Player 2 on Gamepad 2
-        } 
-        else if (_firstPad != -1) {
-            global.pitterDevice = -1;          // Player 1 on Keyboard
-            global.patterDevice = _firstPad;   // Player 2 on Gamepad 1
-        } 
-        else {
-            global.pitterDevice = -1;          // WASD
-            global.patterDevice = -1;          // Arrow Keys
-        }
-    } 
-    else {
-		
-		global.coopDetectingPlayer2Input = false;
-		
+        // We leave Player 1's device alone for now.
+        // -3 means "Unassigned / Detecting" so Player 2 doesn't move yet
+        global.patterDevice = -3; 
+        
+    } else {
+        
+        global.coopDetectingPlayer2Input = false;
+        
         // --- SINGLE-PLAYER MODE ---
         // -2 means "Accept Keyboard AND any connected Gamepad"
         global.pitterDevice = -2;
         global.patterDevice = -1; 
     }
 }
+
+
+
+/// @function set_coop_mode(enable);
+/// @param {bool} enable True to enable co-op, false to disable.
+//function setCoopMode(_enable) {
+//    
+//	global.coopActive = _enable;
+//    
+//    if (global.coopActive) {
+//		
+//		global.coopDetectingPlayer2Input = true;
+//		
+//        // --- CO-OP MODE (Strict device isolation) ---
+//        var _firstPad = -1;
+//        var _secondPad = -1;
+//        
+//        for (var i = 0; i < 12; i++) {
+//            if (gamepad_is_connected(i)) {
+//                if (_firstPad == -1) {
+//                    _firstPad = i;
+//                } else if (_secondPad == -1) {
+//                    _secondPad = i;
+//                    break;
+//                }
+//            }
+//        }
+//        
+//        if (_firstPad != -1 && _secondPad != -1) {
+//            global.pitterDevice = _firstPad;   // Player 1 on Gamepad 1
+//            global.patterDevice = _secondPad;  // Player 2 on Gamepad 2
+//        } 
+//        else if (_firstPad != -1) {
+//            global.pitterDevice = -1;          // Player 1 on Keyboard
+//            global.patterDevice = _firstPad;   // Player 2 on Gamepad 1
+//        } 
+//        else {
+//            global.pitterDevice = -1;          // WASD
+//            global.patterDevice = -1;          // Arrow Keys
+//        }
+//    } 
+//    else {
+//		
+//		global.coopDetectingPlayer2Input = false;
+//		
+//        // --- SINGLE-PLAYER MODE ---
+//        // -2 means "Accept Keyboard AND any connected Gamepad"
+//        global.pitterDevice = -2;
+//        global.patterDevice = -1; 
+//    }
+//}
 
 //function setCoopMode(_enable) {
 //    global.coopActive = _enable;
@@ -2346,7 +2373,7 @@ function checkCrusherCollision() {
 		}
 	}
 }
-//@@
+
 function singlePlayerCameraControls() {
 	
 	//Set position of view by centering it on the player 
@@ -2680,7 +2707,7 @@ function singlePlayerCameraControls() {
 
 
 }
-//@@
+
 function coopCameraControls() {
 
 	//Set position of view by centering it on the player 
@@ -3854,7 +3881,101 @@ function floatUpAndDown() {
 }
 
 function coopDetectPlayer2Input() {
+    
+	show_debug_message("detecting input...")
+	
+    // First, determine if Player 1 is using the "Any" (-2) scheme
+    var _p1ImplicitPad = -1;
+    if (global.pitterDevice == -2) {
+        for (var i = 0; i < 12; i++) {
+            if (gamepad_is_connected(i)) { 
+                _p1ImplicitPad = i; 
+                break; 
+            }
+        }
+    }
 
-	show_debug_message("Searching for player2 input...")
+    // --- 1. SCAN GAMEPADS (0-11) FOR A JOIN BUTTON ---
+    for (var i = 0; i < 12; i++) {
+        if (gamepad_is_connected(i)) {
+            // Check standard join buttons (A, B, X, Y, Start)
+            if (gamepad_button_check_pressed(i, gp_face1) ||
+                gamepad_button_check_pressed(i, gp_face2) ||
+                gamepad_button_check_pressed(i, gp_face3) ||
+                gamepad_button_check_pressed(i, gp_face4) ||
+                gamepad_button_check_pressed(i, gp_start)) {
 
+                // If this is explicitly P1's gamepad, ignore it
+                if (global.pitterDevice == i) continue;
+
+                // Resolve the "-2" (Any Device) conflict for Player 1
+                if (global.pitterDevice == -2) {
+                    if (i == _p1ImplicitPad) {
+                        // P2 just pressed a button on the gamepad P1 was implicitly using.
+                        // Force P1 onto Keyboard so P2 can have the gamepad.
+                        global.pitterDevice = -1; 
+                    } else if (_p1ImplicitPad != -1) {
+                        // P2 pressed a completely different gamepad!
+                        // Force P1 onto their implicit gamepad.
+                        global.pitterDevice = _p1ImplicitPad;
+                    } else {
+                        // P1 had no gamepad connected, force P1 to keyboard.
+                        global.pitterDevice = -1;
+                    }
+                }
+
+                // Assign the gamepad to P2 and stop detecting
+                global.patterDevice = i;
+                global.coopDetectingPlayer2Input = false;
+                return;
+            }
+        }
+    }
+
+    // --- 2. SCAN KEYBOARD FOR A JOIN BUTTON ---
+    if (keyboard_check_pressed(vk_anykey)) {
+        // If Player 1 is explicitly locked to a Gamepad, P2 can take the keyboard
+        if (global.pitterDevice >= 0) {
+            global.patterDevice = -1;
+            global.coopDetectingPlayer2Input = false;
+            return;
+        }
+        // NOTE: If P1 is -2 (Keyboard + Pad) or -1 (Keyboard), we ignore keyboard presses
+        // because P1 is already using the keyboard. P2 MUST use a controller in this scenario.
+    }
+}
+
+function detectPlayer1Input() {
+    
+    // We only need to dynamically swap devices in Single Player
+    if (global.coopActive) exit;
+
+    // 1. Check Keyboard
+    // If any key is pressed, make the keyboard Player 1's active device
+    if (keyboard_check(vk_anykey)) {
+        global.pitterDevice = -1;
+    }
+
+    // 2. Check Gamepads
+    for (var i = 0; i < 12; i++) {
+        if (gamepad_is_connected(i)) {
+            // Check for face buttons, Start, D-Pad, or significant joystick movement
+            if (gamepad_button_check(i, gp_face1) || 
+                gamepad_button_check(i, gp_face2) ||
+                gamepad_button_check(i, gp_face3) || 
+                gamepad_button_check(i, gp_face4) ||
+                gamepad_button_check(i, gp_start) ||
+                gamepad_button_check(i, gp_padu) ||
+                gamepad_button_check(i, gp_padd) ||
+                gamepad_button_check(i, gp_padl) ||
+                gamepad_button_check(i, gp_padr) ||
+                abs(gamepad_axis_value(i, gp_axislh)) > 0.2 || 
+                abs(gamepad_axis_value(i, gp_axislv)) > 0.2) {
+                
+                // Assign this specific gamepad to Player 1
+                global.pitterDevice = i;
+                break;
+            }
+        }
+    }
 }

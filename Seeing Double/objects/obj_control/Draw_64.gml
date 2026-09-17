@@ -22,7 +22,7 @@ if global.displayGameTime {
 
 }
 
-if global.coopActive && global.coopDetectingPlayer2Input && global.splitScreenActive {
+if global.coopActive && global.coopDetectingPlayer2Input && global.splitScreenActive && !global.paused {
 
 	var _oldFont = draw_get_font();
 	draw_set_font(font_scoreUI);

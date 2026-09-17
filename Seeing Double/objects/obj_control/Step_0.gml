@@ -7,10 +7,22 @@ input_check_source(); //Check if player's most recent input is keyboard or gamep
 
 //show_debug_message("global.coopActive: " + string(global.coopActive))
 
-if global.coopActive && global.coopDetectingPlayer2Input && global.splitScreenActive {
+//if global.coopActive && global.coopDetectingPlayer2Input && global.splitScreenActive {
+//
+//	coopDetectPlayer2Input();
+//
+//}
 
-	coopDetectPlayer2Input();
-
+if (!global.coopActive) {
+	
+    // Single Player: Actively track the most recently used device for P1
+    detectPlayer1Input();
+	
+} else if (global.coopDetectingPlayer2Input && global.splitScreenActive) {
+	
+    // Co-op Mode: Wait for P2 to press a button on a DIFFERENT device
+    coopDetectPlayer2Input();
+	
 }
 
 
