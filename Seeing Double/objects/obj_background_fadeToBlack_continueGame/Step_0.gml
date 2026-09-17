@@ -65,6 +65,8 @@ if fadingIn {
 		
 		if !global.splitScreenActive instance_destroy(obj_player_patter);
 		
+		if global.coopActive global.coopDetectingPlayer2Input = true;
+		
 	}
 
 }

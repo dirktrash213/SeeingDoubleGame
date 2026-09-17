@@ -270,12 +270,17 @@ function drawPauseMenu() {
 	
 }
 
+//@@
 /// @function set_coop_mode(enable);
 /// @param {bool} enable True to enable co-op, false to disable.
 function setCoopMode(_enable) {
-    global.coopActive = _enable;
+    
+	global.coopActive = _enable;
     
     if (global.coopActive) {
+		
+		global.coopDetectingPlayer2Input = true;
+		
         // --- CO-OP MODE (Strict device isolation) ---
         var _firstPad = -1;
         var _secondPad = -1;
@@ -305,6 +310,9 @@ function setCoopMode(_enable) {
         }
     } 
     else {
+		
+		global.coopDetectingPlayer2Input = false;
+		
         // --- SINGLE-PLAYER MODE ---
         // -2 means "Accept Keyboard AND any connected Gamepad"
         global.pitterDevice = -2;
@@ -3843,4 +3851,10 @@ function floatUpAndDown() {
     
     // Calculate new Y offset using sine wave (-1 to 1)
     y = startY + (sin(floatTimer) * floatHeight);
+}
+
+function coopDetectPlayer2Input() {
+
+	show_debug_message("Searching for player2 input...")
+
 }

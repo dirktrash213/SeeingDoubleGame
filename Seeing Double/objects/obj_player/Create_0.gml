@@ -73,7 +73,7 @@ function checkForSemisolidPlatform(_x, _y) {
 	return _rtrn;
 
 }
-
+//@@
 controlsSetup();
 
 //if global.coopActive {

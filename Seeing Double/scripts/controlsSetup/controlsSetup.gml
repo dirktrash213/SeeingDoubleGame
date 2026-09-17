@@ -100,70 +100,7 @@ function getControls() {
     }
 }
 
-//function getControls() {
-//    if (global.coopActive && object_index == obj_player_patter) exit;
-//    
-//    if (global.playerControl && !global.paused && !global.cutsceneActive) {
-//        var _dev = global.pitterDevice;
-//		
-//		show_debug_message("global.pitterDevice: " + string(global.pitterDevice))
-//        
-//        // Check keyboard input if assigned to keyboard (-1)
-//        var _kbLeft  = (_dev == -1) && keyboard_check(ord("A"));
-//        var _kbRight = (_dev == -1) && keyboard_check(ord("D"));
-//        var _kbUp    = (_dev == -1) && keyboard_check(ord("W"));
-//        var _kbDown  = (_dev == -1) && keyboard_check(ord("S"));
-//        var _kbJump  = (_dev == -1) && keyboard_check(vk_space);
-//        var _kbJumpP = (_dev == -1) && keyboard_check_pressed(vk_space);
-//        var _kbPause = (_dev == -1) && keyboard_check_pressed(vk_escape);
-//        var _kbRun   = (_dev == -1) && keyboard_check(vk_shift);
-//        var _kbRunP  = (_dev == -1) && keyboard_check_pressed(vk_shift);
-//        
-//        // Check gamepad input if assigned to a gamepad (>= 0)
-//        var _gpLeft  = (_dev >= 0) && (gamepad_axis_value(_dev, gp_axislh) < -0.5 || gamepad_button_check(_dev, gp_padl));
-//        var _gpRight = (_dev >= 0) && (gamepad_axis_value(_dev, gp_axislh) > 0.5  || gamepad_button_check(_dev, gp_padr));
-//        var _gpUp    = (_dev >= 0) && (gamepad_axis_value(_dev, gp_axislv) < -0.3 || gamepad_button_check(_dev, gp_padu));
-//        var _gpDown  = (_dev >= 0) && (gamepad_axis_value(_dev, gp_axislv) > 0.3  || gamepad_button_check(_dev, gp_padd));
-//        var _gpJump  = (_dev >= 0) && gamepad_button_check(_dev, gp_face1);
-//        var _gpJumpP = (_dev >= 0) && gamepad_button_check_pressed(_dev, gp_face1);
-//        var _gpPause = (_dev >= 0) && gamepad_button_check_pressed(_dev, gp_start);
-//        var _gpRun   = (_dev >= 0) && gamepad_button_check(_dev, gp_face3);
-//        var _gpRunP  = (_dev >= 0) && gamepad_button_check_pressed(_dev, gp_face3);
-//        
-//        // Combine inputs
-//        moveLeft  = _kbLeft || _gpLeft;
-//        moveRight = _kbRight || _gpRight;
-//        moveUp    = _kbUp || _gpUp;
-//        moveDown  = _kbDown || _gpDown;
-//        jump      = _kbJump || _gpJump;
-//        jumpPressed = _kbJumpP || _gpJumpP;
-//        pause     = _kbPause || _gpPause;
-//        run       = _kbRun || _gpRun;
-//        runPressed = _kbRunP || _gpRunP;
-//    }
-//
-//    // Clamp values
-//    moveRight = clamp(moveRight, 0, 1);
-//    moveLeft  = clamp(moveLeft, 0, 1);
-//    moveUp    = clamp(moveUp, 0, 1);
-//    moveDown  = clamp(moveDown, 0, 1);
-//    jumpPressed = clamp(jumpPressed, 0, 1);
-//    jump      = clamp(jump, 0, 1);
-//    run       = clamp(run, 0, 1);
-//    runPressed = clamp(runPressed, 0, 1);
-//
-//    // Jump key buffering logic
-//    if (jumpPressed && !jumpDisabled && !global.cutsceneActive) {
-//        jumpKeyBufferTimer = jumpBufferTime;
-//    }
-//
-//    if (jumpKeyBufferTimer > 0) {
-//        jumpKeyBuffered = 1;
-//        jumpKeyBufferTimer--;
-//    } else {
-//        jumpKeyBuffered = 0;
-//    }
-//}
+
 
 function getControlsPlayer2() {
     if (!global.coopActive || object_index == obj_player_pitter) exit;
@@ -228,6 +165,72 @@ function getControlsPlayer2() {
 }
 
 /*
+
+
+//function getControls() {
+//    if (global.coopActive && object_index == obj_player_patter) exit;
+//    
+//    if (global.playerControl && !global.paused && !global.cutsceneActive) {
+//        var _dev = global.pitterDevice;
+//		
+//		show_debug_message("global.pitterDevice: " + string(global.pitterDevice))
+//        
+//        // Check keyboard input if assigned to keyboard (-1)
+//        var _kbLeft  = (_dev == -1) && keyboard_check(ord("A"));
+//        var _kbRight = (_dev == -1) && keyboard_check(ord("D"));
+//        var _kbUp    = (_dev == -1) && keyboard_check(ord("W"));
+//        var _kbDown  = (_dev == -1) && keyboard_check(ord("S"));
+//        var _kbJump  = (_dev == -1) && keyboard_check(vk_space);
+//        var _kbJumpP = (_dev == -1) && keyboard_check_pressed(vk_space);
+//        var _kbPause = (_dev == -1) && keyboard_check_pressed(vk_escape);
+//        var _kbRun   = (_dev == -1) && keyboard_check(vk_shift);
+//        var _kbRunP  = (_dev == -1) && keyboard_check_pressed(vk_shift);
+//        
+//        // Check gamepad input if assigned to a gamepad (>= 0)
+//        var _gpLeft  = (_dev >= 0) && (gamepad_axis_value(_dev, gp_axislh) < -0.5 || gamepad_button_check(_dev, gp_padl));
+//        var _gpRight = (_dev >= 0) && (gamepad_axis_value(_dev, gp_axislh) > 0.5  || gamepad_button_check(_dev, gp_padr));
+//        var _gpUp    = (_dev >= 0) && (gamepad_axis_value(_dev, gp_axislv) < -0.3 || gamepad_button_check(_dev, gp_padu));
+//        var _gpDown  = (_dev >= 0) && (gamepad_axis_value(_dev, gp_axislv) > 0.3  || gamepad_button_check(_dev, gp_padd));
+//        var _gpJump  = (_dev >= 0) && gamepad_button_check(_dev, gp_face1);
+//        var _gpJumpP = (_dev >= 0) && gamepad_button_check_pressed(_dev, gp_face1);
+//        var _gpPause = (_dev >= 0) && gamepad_button_check_pressed(_dev, gp_start);
+//        var _gpRun   = (_dev >= 0) && gamepad_button_check(_dev, gp_face3);
+//        var _gpRunP  = (_dev >= 0) && gamepad_button_check_pressed(_dev, gp_face3);
+//        
+//        // Combine inputs
+//        moveLeft  = _kbLeft || _gpLeft;
+//        moveRight = _kbRight || _gpRight;
+//        moveUp    = _kbUp || _gpUp;
+//        moveDown  = _kbDown || _gpDown;
+//        jump      = _kbJump || _gpJump;
+//        jumpPressed = _kbJumpP || _gpJumpP;
+//        pause     = _kbPause || _gpPause;
+//        run       = _kbRun || _gpRun;
+//        runPressed = _kbRunP || _gpRunP;
+//    }
+//
+//    // Clamp values
+//    moveRight = clamp(moveRight, 0, 1);
+//    moveLeft  = clamp(moveLeft, 0, 1);
+//    moveUp    = clamp(moveUp, 0, 1);
+//    moveDown  = clamp(moveDown, 0, 1);
+//    jumpPressed = clamp(jumpPressed, 0, 1);
+//    jump      = clamp(jump, 0, 1);
+//    run       = clamp(run, 0, 1);
+//    runPressed = clamp(runPressed, 0, 1);
+//
+//    // Jump key buffering logic
+//    if (jumpPressed && !jumpDisabled && !global.cutsceneActive) {
+//        jumpKeyBufferTimer = jumpBufferTime;
+//    }
+//
+//    if (jumpKeyBufferTimer > 0) {
+//        jumpKeyBuffered = 1;
+//        jumpKeyBufferTimer--;
+//    } else {
+//        jumpKeyBuffered = 0;
+//    }
+//}
 
 
 function getControls() {

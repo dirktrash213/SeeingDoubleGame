@@ -7,6 +7,13 @@ input_check_source(); //Check if player's most recent input is keyboard or gamep
 
 //show_debug_message("global.coopActive: " + string(global.coopActive))
 
+if global.coopActive && global.coopDetectingPlayer2Input && global.splitScreenActive {
+
+	coopDetectPlayer2Input();
+
+}
+
+
 if !global.paused {
 	
     global.gameTimeMilliseconds += delta_time / 1000; 

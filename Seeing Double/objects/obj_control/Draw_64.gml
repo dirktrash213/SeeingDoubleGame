@@ -22,6 +22,20 @@ if global.displayGameTime {
 
 }
 
+if global.coopActive && global.coopDetectingPlayer2Input && global.splitScreenActive {
+
+	var _oldFont = draw_get_font();
+	draw_set_font(font_scoreUI);
+	
+	draw_set_halign(fa_center)
+	
+	drawWhiteTextWithBlackOutline(_GUIcenterX + (_GUIcenterX/2), _GUIcenterY - (_GUIcenterY*0.8), "Detecting input. \nPress a button on the controller \nor connect via Steam Remote Play.");
+
+	draw_set_font(_oldFont);
+	draw_set_halign(fa_left);
+
+}
+
 //if global.playerControl && !global.paused && !global.cutsceneActive && global.scoreUIenabled {
 if global.playerControl && !global.cutsceneActive && global.scoreUIenabled {
 
@@ -79,8 +93,8 @@ if global.playerControl && !global.cutsceneActive && global.scoreUIenabled {
 			if global.input_source == 0 drawWhiteTextWithBlackOutline(_GUIcenterX - (_GUIcenterX/2) - 100, _GUIcenterY + (_GUIcenterY * 0.825), "[spr_background_controlsDisplay_spacebar_big] to cancel")
 			if global.input_source > 0 drawWhiteTextWithBlackOutline(_GUIcenterX - (_GUIcenterX/2) - 100, _GUIcenterY + (_GUIcenterY * 0.825), "[spr_background_controlsDisplay_face1_big] to cancel")
 	
-			drawWhiteTextWithBlackOutline(0, 300, _binoculars.cameraMoveAmount); //TEMP
-			drawWhiteTextWithBlackOutline(0, 400, _binoculars.cameraMoveAmountVertical); //TEMP
+			//drawWhiteTextWithBlackOutline(0, 300, _binoculars.cameraMoveAmount); //TEMP
+			//drawWhiteTextWithBlackOutline(0, 400, _binoculars.cameraMoveAmountVertical); //TEMP
 	
 		}
 	

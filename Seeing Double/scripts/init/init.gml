@@ -15,6 +15,8 @@ global.coopTransluscentBlocksDefaultAlpha = 0.75;
 global.coopPitterDefeated = false;
 global.coopPatterDefeated = false;
 
+global.coopDetectingPlayer2Input = false;
+
 global.pitterColor = #6DD0F7;
 global.patterColor = #F3C2D8;
 
