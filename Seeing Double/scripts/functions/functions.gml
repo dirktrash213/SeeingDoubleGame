@@ -3947,8 +3947,8 @@ function coopDetectPlayer2Input() {
 
 function detectPlayer1Input() {
     
-    // We only need to dynamically swap devices in Single Player
-    if (global.coopActive) exit;
+    // REMOVED: if (global.coopActive) exit; 
+    // obj_control now handles the timing of this function natively!
 
     // 1. Check Keyboard
     // If any key is pressed, make the keyboard Player 1's active device
@@ -3969,8 +3969,8 @@ function detectPlayer1Input() {
                 gamepad_button_check(i, gp_padd) ||
                 gamepad_button_check(i, gp_padl) ||
                 gamepad_button_check(i, gp_padr) ||
-                abs(gamepad_axis_value(i, gp_axislh)) > 0.2 || 
-                abs(gamepad_axis_value(i, gp_axislv)) > 0.2) {
+                abs(gamepad_axis_value(i, gp_axislh)) > 0.5 || 
+                abs(gamepad_axis_value(i, gp_axislv)) > 0.5) {
                 
                 // Assign this specific gamepad to Player 1
                 global.pitterDevice = i;
@@ -3979,3 +3979,39 @@ function detectPlayer1Input() {
         }
     }
 }
+
+
+//function detectPlayer1Input() {
+//    
+//    // We only need to dynamically swap devices in Single Player
+//    if (global.coopActive) exit;
+//
+//    // 1. Check Keyboard
+//    // If any key is pressed, make the keyboard Player 1's active device
+//    if (keyboard_check(vk_anykey)) {
+//        global.pitterDevice = -1;
+//    }
+//
+//    // 2. Check Gamepads
+//    for (var i = 0; i < 12; i++) {
+//        if (gamepad_is_connected(i)) {
+//            // Check for face buttons, Start, D-Pad, or significant joystick movement
+//            if (gamepad_button_check(i, gp_face1) || 
+//                gamepad_button_check(i, gp_face2) ||
+//                gamepad_button_check(i, gp_face3) || 
+//                gamepad_button_check(i, gp_face4) ||
+//                gamepad_button_check(i, gp_start) ||
+//                gamepad_button_check(i, gp_padu) ||
+//                gamepad_button_check(i, gp_padd) ||
+//                gamepad_button_check(i, gp_padl) ||
+//                gamepad_button_check(i, gp_padr) ||
+//                abs(gamepad_axis_value(i, gp_axislh)) > 0.2 || 
+//                abs(gamepad_axis_value(i, gp_axislv)) > 0.2) {
+//                
+//                // Assign this specific gamepad to Player 1
+//                global.pitterDevice = i;
+//                break;
+//            }
+//        }
+//    }
+//}

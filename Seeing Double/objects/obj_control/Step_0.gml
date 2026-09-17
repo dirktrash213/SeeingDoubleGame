@@ -13,16 +13,25 @@ input_check_source(); //Check if player's most recent input is keyboard or gamep
 //
 //}
 
-if (!global.coopActive) {
-	
-    // Single Player: Actively track the most recently used device for P1
+//if (!global.coopActive) {
+//	
+//    // Single Player: Actively track the most recently used device for P1
+//    detectPlayer1Input();
+//	
+//} else if (global.coopDetectingPlayer2Input && global.splitScreenActive) {
+//	
+//    // Co-op Mode: Wait for P2 to press a button on a DIFFERENT device
+//    coopDetectPlayer2Input();
+//	
+//}
+
+// Allow Player 1 to freely swap devices in Single Player, OR in Co-op before the split-screen starts
+if (!global.coopActive || !global.splitScreenActive) {
     detectPlayer1Input();
-	
-} else if (global.coopDetectingPlayer2Input && global.splitScreenActive) {
-	
-    // Co-op Mode: Wait for P2 to press a button on a DIFFERENT device
+} 
+// Once Co-op and Split Screen are both active, lock P1's device and listen for P2
+else if (global.coopDetectingPlayer2Input) {
     coopDetectPlayer2Input();
-	
 }
 
 
