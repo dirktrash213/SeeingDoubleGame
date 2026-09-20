@@ -1,2 +1,4 @@
 //vanishOnTimeout = true;
-timerDuration = 900;
+timerDuration = 1200;
+
+if global.coopActive timerDuration = 1500;

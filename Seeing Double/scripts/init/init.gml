@@ -10,8 +10,10 @@ window_set_caption("Seeing Double");
 
 global.coopActive = false;
 global.coopInvisibleEnemyDetectionRadius = 75;
-global.coopTransluscentDefaultAlpha = 0.35;
-global.coopTransluscentBlocksDefaultAlpha = 0.75;
+//global.coopTransluscentDefaultAlpha = 0.35;
+//global.coopTransluscentBlocksDefaultAlpha = 0.75;
+global.coopTransluscentDefaultAlpha = 1.00;
+global.coopTransluscentBlocksDefaultAlpha = 1.00;
 global.coopPitterDefeated = false;
 global.coopPatterDefeated = false;
 

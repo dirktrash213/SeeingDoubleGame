@@ -746,6 +746,7 @@
     {"name":"spr_background_smallHouse","order":11,"path":"sprites/spr_background_smallHouse/spr_background_smallHouse.yy",},
     {"name":"obj_block_wall_semiSolid_moving_cave_long","order":9,"path":"objects/obj_block_wall_semiSolid_moving_cave_long/obj_block_wall_semiSolid_moving_cave_long.yy",},
     {"name":"rm_forest_spotTheDifference","order":23,"path":"rooms/rm_forest_spotTheDifference/rm_forest_spotTheDifference.yy",},
+    {"name":"obj_pickup_gem_empty","order":17,"path":"objects/obj_pickup_gem_empty/obj_pickup_gem_empty.yy",},
     {"name":"GandalfHardcore_Animated_Water_Tiles","order":2,"path":"sprites/GandalfHardcore_Animated_Water_Tiles/GandalfHardcore_Animated_Water_Tiles.yy",},
     {"name":"obj_steam_parties_client_beacon","order":1,"path":"objects/obj_steam_parties_client_beacon/obj_steam_parties_client_beacon.yy",},
     {"name":"obj_block_wall_semiSolid_moving_cave_tiny","order":7,"path":"objects/obj_block_wall_semiSolid_moving_cave_tiny/obj_block_wall_semiSolid_moving_cave_tiny.yy",},

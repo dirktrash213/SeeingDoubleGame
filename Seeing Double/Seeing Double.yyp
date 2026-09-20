@@ -857,6 +857,7 @@
     {"id":{"name":"spr_background_smallHouse","path":"sprites/spr_background_smallHouse/spr_background_smallHouse.yy",},},
     {"id":{"name":"obj_block_wall_semiSolid_moving_cave_long","path":"objects/obj_block_wall_semiSolid_moving_cave_long/obj_block_wall_semiSolid_moving_cave_long.yy",},},
     {"id":{"name":"rm_forest_spotTheDifference","path":"rooms/rm_forest_spotTheDifference/rm_forest_spotTheDifference.yy",},},
+    {"id":{"name":"obj_pickup_gem_empty","path":"objects/obj_pickup_gem_empty/obj_pickup_gem_empty.yy",},},
     {"id":{"name":"GandalfHardcore_Animated_Water_Tiles","path":"sprites/GandalfHardcore_Animated_Water_Tiles/GandalfHardcore_Animated_Water_Tiles.yy",},},
     {"id":{"name":"obj_steam_parties_client_beacon","path":"objects/obj_steam_parties_client_beacon/obj_steam_parties_client_beacon.yy",},},
     {"id":{"name":"obj_block_wall_semiSolid_moving_cave_tiny","path":"objects/obj_block_wall_semiSolid_moving_cave_tiny/obj_block_wall_semiSolid_moving_cave_tiny.yy",},},

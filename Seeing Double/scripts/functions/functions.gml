@@ -3160,7 +3160,7 @@ function coopObjectCreateEventCode() {
 
 }
 
-function coopObjectStepEventCode(_revealRadius = 30) {
+function coopObjectStepEventCode(_revealRadius = 60) { //30
 
 	if global.coopActive && (invisCoop || solidCoop) {
 	
@@ -3312,6 +3312,8 @@ function coopObjectBlockTranslucentDrawCode(_layername = "LevelTiles") {
 		}
 		
 	}
+	
+	_tintColor = c_white; //Remove if need pitter or patter colors
 
 	image_alpha = clamp(image_alpha, defaultAlpha, 1.0);
 

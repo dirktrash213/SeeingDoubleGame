@@ -158,7 +158,7 @@
         {"name":"param_grav_accel","type":0,"value":"300",},
         {"name":"param_debug_grid","type":0,"value":"0",},
       ],"userdefinedDepth":false,"visible":true,},
-    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"SecretTiles","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":37,"SerialiseWidth":30,"TileCompressedData":[
+    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"SecretTreeTiles","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":37,"SerialiseWidth":30,"TileCompressedData":[
 -9,108,1,128,-18,108,-4,128,-5,108,4,128,129,-2147483648,127,-9,108,1,128,-6,108,6,129,0,0,-2147483648,-2147483648,127,-3,108,
 1,129,-4,-2147483648,1,127,-7,108,4,129,0,127,128,-3,108,1,129,-3,0,-3,-2147483648,3,127,128,129,-5,-2147483648,2,0,127,
 -5,108,1,129,-4,0,3,127,128,129,-4,0,-11,-2147483648,-2,0,1,127,-3,108,1,129,-26,0,3,127,128,129,-291,0,
