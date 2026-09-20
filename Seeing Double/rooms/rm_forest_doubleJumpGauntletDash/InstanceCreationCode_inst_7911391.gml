@@ -1,1 +1,1 @@
-//timerDuration = 1000008;
+if global.coopActive timerDuration = 900;

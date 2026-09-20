@@ -270,7 +270,7 @@ function drawPauseMenu() {
 	
 }
 
-//@@
+
 /// @function set_coop_mode(enable);
 /// @param {bool} enable True to enable co-op, false to disable.
 function setCoopMode(_enable) {
@@ -3159,7 +3159,7 @@ function coopObjectCreateEventCode() {
 	}
 
 }
-
+//@@
 function coopObjectStepEventCode(_revealRadius = 60) { //30
 
 	if global.coopActive && (invisCoop || solidCoop) {

@@ -1,1 +1,1 @@
-cameraMoveAmountMax = 4000;
+cameraMoveAmountMax = 4900;
