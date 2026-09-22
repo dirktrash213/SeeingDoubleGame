@@ -42,7 +42,11 @@
     "backdropWidth": 1366,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
+    "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[
+        {"resourceType":"Keyframe<MessageEventKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"MessageEventKeyframe","resourceVersion":"1.0","Events":[
+                "footstep",
+              ],},},"Disabled":false,"id":"4dab5f23-714a-477a-aa20-a60f3e5ff42a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+      ],},
     "eventStubScript": null,
     "eventToFunction": {},
     "length": 3.0,

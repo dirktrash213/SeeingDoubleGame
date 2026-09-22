@@ -1336,7 +1336,7 @@ function detectEnemyDuringGroundPound(_enemy) {
 	}
 
 }
-
+//@@
 function detectScammerDuringGroundPound(_scammer) {
 
 	if _scammer != noone if groundPoundFalling {
@@ -1420,6 +1420,9 @@ function detectScammerDuringGroundPound(_scammer) {
 			dialogueString = [];
 			//dialogueString[0] = _scammerGroundPoundCount == 1 ? "OW, WHAT THE HELL!? STOP THAT!" : choose("OW, OW, STOP!", "OW, MY COINS!", "THE PAIN!", "UNCLE, UNCLE!", "OW, MY HEAD!", "OW, PLEASE LADY!");
 			//dialogueString[0] = _scammerGroundPoundCount == 1 ? "OW, WHAT THE HELL!? STOP THAT!" : _text;
+			
+			//if _scammerGroundPoundCount 
+			
 			dialogueString[0] = _textArray[_scammerGroundPoundCount];
 			
 			if _scammerGroundPoundCount >= 10 {
@@ -1984,6 +1987,8 @@ function caughtByCaveGhost() {
 	with obj_player {
 	
 		instance_create_depth(x, y, -12000, obj_background_blackScreen);
+		
+		scammerGroundPoundCount = 0;
 	
 	}
 	

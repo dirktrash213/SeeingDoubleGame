@@ -9,7 +9,7 @@ if event_data[? "event_type"] == "sprite event" {
 			var _pitch = random_range(0.5, 1.5);
 			
 			//audio_play_sound(sfx_footstep, 1, 0, 1, 0, _pitch);
-			audio_play_sound_on(obj_control.reverb_emitter, sfx_footstep, 0, 1, 1, 0, _pitch);
+			if object_index == obj_player_pitter || global.coopActive audio_play_sound_on(obj_control.reverb_emitter, sfx_footstep, 0, 1, 1, 0, _pitch);
 			
 		} break;
 		
