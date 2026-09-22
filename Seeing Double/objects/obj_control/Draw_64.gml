@@ -14,6 +14,8 @@ if global.displayGameTime {
 	//if global.playerControl && !global.paused && !global.cutsceneActive && global.scoreUIenabled _offsetY = 70;
 	if global.playerControl && !global.cutsceneActive && global.scoreUIenabled _offsetY = 70;
 	
+	if global.coopActive _offsetY += 65;
+	
 	drawWhiteTextWithBlackOutline(0, _offsetY, "[spr_icon_clock_x2]" + global.gameTimeString);
 	
 	if showingBlinkingSpeedrunText drawWhiteTextWithBlackOutline(0, _offsetY + 30, blinkingSpeedrunText);
@@ -69,7 +71,18 @@ if global.playerControl && !global.cutsceneActive && global.scoreUIenabled {
 	}
 	
 	//drawWhiteTextWithBlackOutline(0, 0, "[spr_interactable_coin_x2]" + string(global.coinCount) + "\n[spr_interactable_cherry_x2]" + string(global.cherryCount) + _parachuteString);
-	drawWhiteTextWithBlackOutline(0, 0, "[spr_interactable_coin_x2]" + string(global.coinCount) + "\n[spr_interactable_cherry_x2]" + string(global.cherryCount) + "/" + string(global.cherryMax) + _parachuteString);
+	
+	var _defeatPitterString = "";
+	var _defeatPatterString = "";
+	
+	if global.coopActive {
+	
+		_defeatPitterString = "\n[spr_pitter_defeat_x2]" + string(global.defeatCountPitter);
+		_defeatPatterString = "\n[spr_patter_defeat_x2]" + string(global.defeatCountPatter);
+	
+	}
+	
+	drawWhiteTextWithBlackOutline(0, 0, "[spr_interactable_coin_x2]" + string(global.coinCount) + "\n[spr_interactable_cherry_x2]" + string(global.cherryCount) + "/" + string(global.cherryMax) + _parachuteString + _defeatPitterString + _defeatPatterString);
 	
 	var _offsetX = 295;
 	var _offsetY = 335;
