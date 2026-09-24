@@ -49,10 +49,10 @@ if global.coopActive {
 			var _binoculars = instance_nearest(obj_player_pitter.x, obj_player_pitter.y, obj_interactable_binoculars);
 		
 			pitterCameraLeadingX = pitterCameraLeadingXStoredValue;
-			pitterCameraLeadingX = pitterCameraLeadingX + _binoculars.cameraMoveAmount;
+			pitterCameraLeadingX = _binoculars.reverse ? pitterCameraLeadingX - _binoculars.cameraMoveAmount : pitterCameraLeadingX + _binoculars.cameraMoveAmount;
 			
 			pitterCameraLeadingY = pitterCameraLeadingYStoredValue;
-			pitterCameraLeadingY = pitterCameraLeadingY + _binoculars.cameraMoveAmountVertical;
+			pitterCameraLeadingY = _binoculars.reverseVertical ? pitterCameraLeadingY - _binoculars.cameraMoveAmountVertical : pitterCameraLeadingY + _binoculars.cameraMoveAmountVertical;
 	
 		}
 
@@ -65,10 +65,10 @@ if global.coopActive {
 			var _binoculars = instance_nearest(obj_player_patter.x, obj_player_patter.y, obj_interactable_binoculars);
 		
 			patterCameraLeadingX = patterCameraLeadingXStoredValue;
-			patterCameraLeadingX = patterCameraLeadingX + _binoculars.cameraMoveAmount;
+			patterCameraLeadingX = _binoculars.reverse ? patterCameraLeadingX - _binoculars.cameraMoveAmount : patterCameraLeadingX + _binoculars.cameraMoveAmount;
 			
 			patterCameraLeadingY = patterCameraLeadingYStoredValue;
-			patterCameraLeadingY = patterCameraLeadingY + _binoculars.cameraMoveAmountVertical;
+			patterCameraLeadingY = _binoculars.reverseVertical ? patterCameraLeadingY - _binoculars.cameraMoveAmountVertical : patterCameraLeadingY + _binoculars.cameraMoveAmountVertical;
 	
 		}
 
@@ -83,10 +83,10 @@ if global.coopActive {
 		var _binoculars = instance_nearest(obj_player_pitter.x, obj_player_pitter.y, obj_interactable_binoculars);
 	
 		cameraLeadingX = cameraLeadingXStoredValue;
-		cameraLeadingX = cameraLeadingX + _binoculars.cameraMoveAmount;
+		cameraLeadingX = _binoculars.reverse ? cameraLeadingX - _binoculars.cameraMoveAmount : cameraLeadingX + _binoculars.cameraMoveAmount;
 		
 		cameraLeadingY = cameraLeadingYStoredValue;
-		cameraLeadingY = cameraLeadingY + _binoculars.cameraMoveAmountVertical;
+		cameraLeadingY = _binoculars.reverseVertical ? cameraLeadingY - _binoculars.cameraMoveAmountVertical : cameraLeadingY + _binoculars.cameraMoveAmountVertical;
 	
 	}
 

@@ -268,11 +268,61 @@ if binocularsActive {
 	
 	var _increment = 5;
 	
-	if moveRight _binoculars.cameraMoveAmount += _increment;
-	if moveLeft _binoculars.cameraMoveAmount -= _increment;
+	if moveRight {
+		
+		if _binoculars.reverse {
+			
+			_binoculars.cameraMoveAmount -= _increment;
+			
+		} else {
+		
+			_binoculars.cameraMoveAmount += _increment;
+		
+		}
+		
+	}
 	
-	if moveUp _binoculars.cameraMoveAmountVertical -= _increment;
-	if moveDown _binoculars.cameraMoveAmountVertical += _increment;
+	if moveLeft {
+		
+		if _binoculars.reverse { 
+			
+			_binoculars.cameraMoveAmount += _increment;
+			
+		} else {
+		
+			_binoculars.cameraMoveAmount -= _increment;
+		
+		}
+		
+	}
+	
+	if moveUp {
+		
+		if _binoculars.reverseVertical {
+			
+			_binoculars.cameraMoveAmountVertical += _increment;
+			
+		} else {
+		
+			_binoculars.cameraMoveAmountVertical -= _increment;
+		
+		}
+		
+	} 
+	
+	if moveDown {
+		
+		if _binoculars.reverseVertical {
+			
+			_binoculars.cameraMoveAmountVertical -= _increment;
+			
+		} else {
+		
+			_binoculars.cameraMoveAmountVertical += _increment;
+		
+		}
+		
+	}
 	
 	_binoculars.cameraMoveAmount = clamp(_binoculars.cameraMoveAmount, 0, _binoculars.cameraMoveAmountMax);
 	_binoculars.cameraMoveAmountVertical = clamp(_binoculars.cameraMoveAmountVertical, _binoculars.cameraMoveAmountVerticalMin, _binoculars.cameraMoveAmountVerticalMax);

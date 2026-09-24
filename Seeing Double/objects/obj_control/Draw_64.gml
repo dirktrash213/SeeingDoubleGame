@@ -93,21 +93,71 @@ if global.playerControl && !global.cutsceneActive && global.scoreUIenabled {
 	
 			var _binoculars = instance_nearest(obj_player_pitter.x, obj_player_pitter.y, obj_interactable_binoculars);
 	
-			if _binoculars.cameraMoveAmount > 0 draw_sprite(spr_background_camera_arrow_left, image_index, (_GUIcenterX - (_GUIcenterX/2)) - _offsetX, _GUIcenterY);
-			if _binoculars.cameraMoveAmount < _binoculars.cameraMoveAmountMax draw_sprite(spr_background_camera_arrow_right, image_index, (_GUIcenterX - (_GUIcenterX/2)) + _offsetX, _GUIcenterY);
+			if _binoculars.cameraMoveAmount > 0 {
+				
+				if _binoculars.reverse { 
+					
+					draw_sprite(spr_background_camera_arrow_right, image_index, (_GUIcenterX - (_GUIcenterX/2)) + _offsetX, _GUIcenterY);
+					
+				} else {
+					
+					draw_sprite(spr_background_camera_arrow_left, image_index, (_GUIcenterX - (_GUIcenterX/2)) - _offsetX, _GUIcenterY);
+					
+				}
+				
+			}
+			
+			if _binoculars.cameraMoveAmount < _binoculars.cameraMoveAmountMax {
+				
+				if _binoculars.reverse { 
+					
+					draw_sprite(spr_background_camera_arrow_left, image_index, (_GUIcenterX - (_GUIcenterX/2)) - _offsetX, _GUIcenterY);
+					
+				} else {
+					
+					draw_sprite(spr_background_camera_arrow_right, image_index, (_GUIcenterX - (_GUIcenterX/2)) + _offsetX, _GUIcenterY);
+					
+				}
+				
+			}
 			
 			if _binoculars.cameraMoveAmountVerticalMax > 0 {
 			
-				if _binoculars.cameraMoveAmountVertical > _binoculars.cameraMoveAmountVerticalMin draw_sprite(spr_background_camera_arrow_up, image_index, (_GUIcenterX - (_GUIcenterX/2)), _GUIcenterY - _offsetY);
-				if _binoculars.cameraMoveAmountVertical < _binoculars.cameraMoveAmountVerticalMax draw_sprite(spr_background_camera_arrow_down, image_index, (_GUIcenterX - (_GUIcenterX/2)), _GUIcenterY + _offsetY);
+				if _binoculars.cameraMoveAmountVertical > _binoculars.cameraMoveAmountVerticalMin {
+						
+					if _binoculars.reverseVertical {
+						
+						draw_sprite(spr_background_camera_arrow_down, image_index, (_GUIcenterX - (_GUIcenterX/2)), _GUIcenterY + _offsetY);
+						
+					} else {
+						
+						draw_sprite(spr_background_camera_arrow_up, image_index, (_GUIcenterX - (_GUIcenterX/2)), _GUIcenterY - _offsetY);
+						
+					}
+					
+				}
+				
+				if _binoculars.cameraMoveAmountVertical < _binoculars.cameraMoveAmountVerticalMax {
+					
+					if _binoculars.reverseVertical {
+						
+						draw_sprite(spr_background_camera_arrow_up, image_index, (_GUIcenterX - (_GUIcenterX/2)), _GUIcenterY - _offsetY);
+						
+					} else {
+						
+						draw_sprite(spr_background_camera_arrow_down, image_index, (_GUIcenterX - (_GUIcenterX/2)), _GUIcenterY + _offsetY);
+						
+					}
+					
+				}
 	
 			}
 	
 			if global.input_source == 0 drawWhiteTextWithBlackOutline(_GUIcenterX - (_GUIcenterX/2) - 100, _GUIcenterY + (_GUIcenterY * 0.825), "[spr_background_controlsDisplay_spacebar_big] to cancel")
 			if global.input_source > 0 drawWhiteTextWithBlackOutline(_GUIcenterX - (_GUIcenterX/2) - 100, _GUIcenterY + (_GUIcenterY * 0.825), "[spr_background_controlsDisplay_face1_big] to cancel")
 	
-			//drawWhiteTextWithBlackOutline(0, 300, _binoculars.cameraMoveAmount); //TEMP
-			//drawWhiteTextWithBlackOutline(0, 400, _binoculars.cameraMoveAmountVertical); //TEMP
+			drawWhiteTextWithBlackOutline(0, 300, _binoculars.cameraMoveAmount); //TEMP
+			drawWhiteTextWithBlackOutline(0, 400, _binoculars.cameraMoveAmountVertical); //TEMP
 	
 		}
 	
@@ -119,13 +169,66 @@ if global.playerControl && !global.cutsceneActive && global.scoreUIenabled {
 			
 			var _binoculars = instance_nearest(obj_player_patter.x, obj_player_patter.y, obj_interactable_binoculars);
 	
-			if _binoculars.cameraMoveAmount > 0 draw_sprite(spr_background_camera_arrow_left, image_index, (_GUIcenterX + (_GUIcenterX/2)) - _offsetX, _GUIcenterY);
-			if _binoculars.cameraMoveAmount < _binoculars.cameraMoveAmountMax draw_sprite(spr_background_camera_arrow_right, image_index, (_GUIcenterX + (_GUIcenterX/2)) + _offsetX, _GUIcenterY);
+			if _binoculars.cameraMoveAmount > 0 {
+				
+				if _binoculars.reverse { 
+					
+					draw_sprite(spr_background_camera_arrow_right, image_index, (_GUIcenterX + (_GUIcenterX/2)) + _offsetX, _GUIcenterY);
+					
+				} else {
+					
+					draw_sprite(spr_background_camera_arrow_left, image_index, (_GUIcenterX + (_GUIcenterX/2)) - _offsetX, _GUIcenterY);
+					
+				}
+				
+			}
+			
+			if _binoculars.cameraMoveAmount < _binoculars.cameraMoveAmountMax {
+				
+				if _binoculars.reverse { 
+					
+					draw_sprite(spr_background_camera_arrow_left, image_index, (_GUIcenterX + (_GUIcenterX/2)) - _offsetX, _GUIcenterY);
+					
+				} else {
+					
+					draw_sprite(spr_background_camera_arrow_right, image_index, (_GUIcenterX + (_GUIcenterX/2)) + _offsetX, _GUIcenterY);
+					
+				}
+				
+			}
 	
 			if _binoculars.cameraMoveAmountVerticalMax > 0 {
 			
-				if _binoculars.cameraMoveAmountVertical > _binoculars.cameraMoveAmountVerticalMin draw_sprite(spr_background_camera_arrow_up, image_index, (_GUIcenterX + (_GUIcenterX/2)), _GUIcenterY - _offsetY);
-				if _binoculars.cameraMoveAmountVertical < _binoculars.cameraMoveAmountVerticalMax draw_sprite(spr_background_camera_arrow_down, image_index, (_GUIcenterX + (_GUIcenterX/2)), _GUIcenterY + _offsetY);
+				if _binoculars.cameraMoveAmountVertical > _binoculars.cameraMoveAmountVerticalMin {
+					
+					if _binoculars.reverseVertical { 
+						
+						draw_sprite(spr_background_camera_arrow_down, image_index, (_GUIcenterX + (_GUIcenterX/2)), _GUIcenterY + _offsetY);
+						
+					} else {
+						
+						draw_sprite(spr_background_camera_arrow_up, image_index, (_GUIcenterX + (_GUIcenterX/2)), _GUIcenterY - _offsetY);
+						
+					}
+					
+				}
+				
+				
+				if _binoculars.cameraMoveAmountVertical < _binoculars.cameraMoveAmountVerticalMax {
+					
+					if _binoculars.reverseVertical { 
+						
+						draw_sprite(spr_background_camera_arrow_up, image_index, (_GUIcenterX + (_GUIcenterX/2)), _GUIcenterY - _offsetY);
+						
+					}
+					
+					else {
+						 
+						 draw_sprite(spr_background_camera_arrow_down, image_index, (_GUIcenterX + (_GUIcenterX/2)), _GUIcenterY + _offsetY);
+						 
+					}
+					
+				}
 	
 			}
 	

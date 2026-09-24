@@ -775,8 +775,19 @@ function playerDefeated() {
 			
 			if binocularsActive {
 			
-				if object_index == obj_player_pitter obj_camera.pitterCameraLeadingX = obj_camera.pitterCameraLeadingXStoredValue; 
-				if object_index == obj_player_patter obj_camera.patterCameraLeadingX = obj_camera.patterCameraLeadingXStoredValue; 
+				if object_index == obj_player_pitter {
+					
+					obj_camera.pitterCameraLeadingX = obj_camera.pitterCameraLeadingXStoredValue; 
+					obj_camera.pitterCameraLeadingY = obj_camera.pitterCameraLeadingYStoredValue; 
+					
+				}
+				
+				if object_index == obj_player_patter {
+					
+					obj_camera.patterCameraLeadingX = obj_camera.patterCameraLeadingXStoredValue;
+					obj_camera.patterCameraLeadingY = obj_camera.patterCameraLeadingYStoredValue; 
+					
+				}
 			
 			}
 		

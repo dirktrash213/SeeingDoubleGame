@@ -1,0 +1,2 @@
+fallOffLedges = false;
+coopObjectInstanceCreationCode();
