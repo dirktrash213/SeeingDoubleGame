@@ -1565,7 +1565,8 @@ function detectScammerDuringGroundPound(_scammer) {
 		instance_create_layer(x + _offsetX, y, "Instances", obj_vfx_dust_groundPound, {image_xscale : -1});
 		
 		var _pitch = random_range(1.10, 1.20);
-		//audio_play_sound(sfx_explosion, 1, 0, 1, 0, _pitch);
+		
+		if global.coopActive audio_play_sound(sfx_explosion, 1, false, 0.5, 0, _pitch);
 		
 		var _screenShakeMagnitude = 2;
 		var _screenShakeFrames = 10;
