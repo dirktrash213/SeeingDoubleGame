@@ -369,6 +369,7 @@
     {"name":"spr_background_parallax_caves_L2","order":32,"path":"sprites/spr_background_parallax_caves_L2/spr_background_parallax_caves_L2.yy",},
     {"name":"spr_promo_capsule_header_v2","order":18,"path":"sprites/spr_promo_capsule_header_v2/spr_promo_capsule_header_v2.yy",},
     {"name":"rm_cave_groundPoundGauntlet","order":34,"path":"rooms/rm_cave_groundPoundGauntlet/rm_cave_groundPoundGauntlet.yy",},
+    {"name":"obj_marker_empty","order":18,"path":"objects/obj_marker_empty/obj_marker_empty.yy",},
     {"name":"spr_patter_happy_animated","order":18,"path":"sprites/spr_patter_happy_animated/spr_patter_happy_animated.yy",},
     {"name":"obj_interactable_switch_groundPound","order":53,"path":"objects/obj_interactable_switch_groundPound/obj_interactable_switch_groundPound.yy",},
     {"name":"spr_particle_leaf","order":18,"path":"sprites/spr_particle_leaf/spr_particle_leaf.yy",},

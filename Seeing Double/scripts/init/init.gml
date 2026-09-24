@@ -108,6 +108,15 @@ global.hasMovedDown = false;
 global.hasMovedLeft = false;
 global.hasMovedRight = false;
 
+global.moveUpP2 = false;
+global.moveDownP2 = false;
+global.moveLeftP2 = false;
+global.moveRightP2 = false;
+global.hasMovedUpP2 = false;
+global.hasMovedDownP2 = false;
+global.hasMovedLeftP2 = false;
+global.hasMovedRightP2 = false;
+
 //THESE VALUES SHOULD NOT BE EDITED
 global.defaultPatterOffsetX = 528; 
 global.defaultPatterOffsetY = 320;

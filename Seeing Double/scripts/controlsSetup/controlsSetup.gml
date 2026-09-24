@@ -48,17 +48,21 @@ function getControls() {
         var _kbRight = _useKeyboard && keyboard_check(ord("D"));
         var _kbUp    = _useKeyboard && keyboard_check(ord("W"));
         var _kbDown  = _useKeyboard && keyboard_check(ord("S"));
+        var _kbDownP  = _useKeyboard && keyboard_check_pressed(ord("S"));
         var _kbJump  = _useKeyboard && keyboard_check(vk_space);
         var _kbJumpP = _useKeyboard && keyboard_check_pressed(vk_space);
         var _kbPause = _useKeyboard && keyboard_check_pressed(vk_escape);
         var _kbRun   = _useKeyboard && keyboard_check(vk_shift);
         var _kbRunP  = _useKeyboard && keyboard_check_pressed(vk_shift);
+		
+		if _kbDownP show_debug_message("_kbDownP pressed")
         
         // --- GAMEPAD INPUTS ---
         var _gpLeft  = _useGamepad && (gamepad_axis_value(_gpIndex, gp_axislh) < -0.5 || gamepad_button_check(_gpIndex, gp_padl));
         var _gpRight = _useGamepad && (gamepad_axis_value(_gpIndex, gp_axislh) > 0.5  || gamepad_button_check(_gpIndex, gp_padr));
         var _gpUp    = _useGamepad && (gamepad_axis_value(_gpIndex, gp_axislv) < -0.3 || gamepad_button_check(_gpIndex, gp_padu));
         var _gpDown  = _useGamepad && (gamepad_axis_value(_gpIndex, gp_axislv) > 0.3  || gamepad_button_check(_gpIndex, gp_padd));
+        var _gpDownP  = _useGamepad && (global.moveDown || gamepad_button_check_pressed(_gpIndex, gp_padd));
         var _gpJump  = _useGamepad && gamepad_button_check(_gpIndex, gp_face1);
         var _gpJumpP = _useGamepad && gamepad_button_check_pressed(_gpIndex, gp_face1);
         var _gpPause = _useGamepad && gamepad_button_check_pressed(_gpIndex, gp_start);
@@ -70,6 +74,7 @@ function getControls() {
         moveRight   = _kbRight || _gpRight;
         moveUp      = _kbUp || _gpUp;
         moveDown    = _kbDown || _gpDown;
+        moveDownPressed    = _kbDownP || _gpDownP;
         jump        = _kbJump || _gpJump;
         jumpPressed = _kbJumpP || _gpJumpP;
         pause       = _kbPause || _gpPause;
@@ -82,6 +87,7 @@ function getControls() {
     moveLeft    = clamp(moveLeft, 0, 1);
     moveUp      = clamp(moveUp, 0, 1);
     moveDown    = clamp(moveDown, 0, 1);
+    moveDownPressed    = clamp(moveDownPressed, 0, 1);
     jumpPressed = clamp(jumpPressed, 0, 1);
     jump        = clamp(jump, 0, 1);
     run         = clamp(run, 0, 1);
@@ -105,7 +111,7 @@ function getControlsPlayer2() {
     
     // FIX 1: Completely freeze Player 2 while waiting for their device input
     if (global.coopDetectingPlayer2Input) {
-        moveLeft = 0; moveRight = 0; moveUp = 0; moveDown = 0;
+        moveLeft = 0; moveRight = 0; moveUp = 0; moveDown = 0; moveDownPressed = 0;
         jump = 0; jumpPressed = 0; run = 0; runPressed = 0; pause = 0;
         exit;
     }
@@ -114,10 +120,10 @@ function getControlsPlayer2() {
         var _dev = global.patterDevice;
         
         // Initialize base variables
-        var _kbLeft = 0, _kbRight = 0, _kbUp = 0, _kbDown = 0;
+        var _kbLeft = 0, _kbRight = 0, _kbUp = 0, _kbDown = 0, _kbDownP = 0;
         var _kbJump = 0, _kbJumpP = 0, _kbPause = 0, _kbRun = 0, _kbRunP = 0;
         
-        var _gpLeft = 0, _gpRight = 0, _gpUp = 0, _gpDown = 0;
+        var _gpLeft = 0, _gpRight = 0, _gpUp = 0, _gpDown = 0, _gpDownP = 0;
         var _gpJump = 0, _gpJumpP = 0, _gpPause = 0, _gpRun = 0, _gpRunP = 0;
 
         // FIX 2: Strict isolation of Keyboard vs Gamepad to prevent silent overrides
@@ -137,6 +143,7 @@ function getControlsPlayer2() {
             _kbRight = keyboard_check(ord("D"));
             _kbUp    = keyboard_check(ord("W"));
             _kbDown  = keyboard_check(ord("S"));
+			_kbDownP  = keyboard_check_pressed(ord("S"));
             _kbJump  = keyboard_check(vk_space);
             _kbJumpP = keyboard_check_pressed(vk_space);
             _kbPause = keyboard_check_pressed(vk_alt);
@@ -149,6 +156,7 @@ function getControlsPlayer2() {
             _gpRight = (gamepad_axis_value(_dev, gp_axislh) > 0.5  || gamepad_button_check(_dev, gp_padr));
             _gpUp    = (gamepad_axis_value(_dev, gp_axislv) < -0.3 || gamepad_button_check(_dev, gp_padu));
             _gpDown  = (gamepad_axis_value(_dev, gp_axislv) > 0.3  || gamepad_button_check(_dev, gp_padd));
+            _gpDownP  = (global.moveDownP2  || gamepad_button_check_pressed(_dev, gp_padd));
             _gpJump  = gamepad_button_check(_dev, gp_face1);
             _gpJumpP = gamepad_button_check_pressed(_dev, gp_face1);
             _gpPause = gamepad_button_check_pressed(_dev, gp_start);
@@ -161,6 +169,7 @@ function getControlsPlayer2() {
         moveRight = _kbRight || _gpRight;
         moveUp    = _kbUp || _gpUp;
         moveDown  = _kbDown || _gpDown;
+        moveDownPressed  = _kbDownP || _gpDownP;
         jump      = _kbJump || _gpJump;
         jumpPressed = _kbJumpP || _gpJumpP;
         pause     = _kbPause || _gpPause;
@@ -173,6 +182,7 @@ function getControlsPlayer2() {
     moveLeft  = clamp(moveLeft, 0, 1);
     moveUp    = clamp(moveUp, 0, 1);
     moveDown  = clamp(moveDown, 0, 1);
+    moveDownPressed  = clamp(moveDownPressed, 0, 1);
     jumpPressed = clamp(jumpPressed, 0, 1);
     jump      = clamp(jump, 0, 1);
     run       = clamp(run, 0, 1);

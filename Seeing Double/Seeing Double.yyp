@@ -452,6 +452,7 @@
     {"id":{"name":"spr_background_parallax_caves_L2","path":"sprites/spr_background_parallax_caves_L2/spr_background_parallax_caves_L2.yy",},},
     {"id":{"name":"spr_promo_capsule_header_v2","path":"sprites/spr_promo_capsule_header_v2/spr_promo_capsule_header_v2.yy",},},
     {"id":{"name":"rm_cave_groundPoundGauntlet","path":"rooms/rm_cave_groundPoundGauntlet/rm_cave_groundPoundGauntlet.yy",},},
+    {"id":{"name":"obj_marker_empty","path":"objects/obj_marker_empty/obj_marker_empty.yy",},},
     {"id":{"name":"spr_patter_happy_animated","path":"sprites/spr_patter_happy_animated/spr_patter_happy_animated.yy",},},
     {"id":{"name":"obj_interactable_switch_groundPound","path":"objects/obj_interactable_switch_groundPound/obj_interactable_switch_groundPound.yy",},},
     {"id":{"name":"spr_particle_leaf","path":"sprites/spr_particle_leaf/spr_particle_leaf.yy",},},

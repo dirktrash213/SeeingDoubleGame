@@ -965,7 +965,7 @@ function togglePause() {
 
 }
 
-
+//##
 function analogStickMenuMovement() {
 
 	//Handle moving in menus with the analog stick 
@@ -1026,6 +1026,72 @@ function analogStickMenuMovement() {
 	if global.hasMovedRight && gamepad_axis_value(global.pitterDevice,gp_axislh) == 0 {
 
 		global.hasMovedRight = false;
+
+	} 
+
+
+}
+
+function analogStickMenuMovementPlayer2() {
+
+	//Handle moving in menus with the analog stick 
+	
+	var _axisSensitivity = 0.5;
+
+	global.moveUpP2 = false;
+	global.moveDownP2 = false;
+	global.moveLeftP2 = false;
+	global.moveRightP2 = false;
+
+	if !global.hasMovedUpP2 && gamepad_axis_value(global.patterDevice,gp_axislv) < -_axisSensitivity {
+	
+		global.moveUpP2 = true;
+		global.hasMovedUpP2 = true;
+	
+	}
+
+	if global.hasMovedUpP2 && gamepad_axis_value(global.patterDevice,gp_axislv) == 0 {
+
+		global.hasMovedUpP2 = false;
+
+	}
+
+	if !global.hasMovedDownP2 && gamepad_axis_value(global.patterDevice,gp_axislv) > _axisSensitivity {
+	
+		global.moveDownP2 = true;
+		global.hasMovedDownP2 = true;
+	
+	}
+
+	if global.hasMovedDownP2 && gamepad_axis_value(global.patterDevice,gp_axislv) == 0 {
+
+		global.hasMovedDownP2 = false;
+
+	}
+
+	if !global.hasMovedLeftP2 && gamepad_axis_value(global.patterDevice,gp_axislh) < -_axisSensitivity {
+	
+		global.moveLeftP2 = true;
+		global.hasMovedLeftP2 = true;
+	
+	}
+
+	if global.hasMovedLeftP2 && gamepad_axis_value(global.patterDevice,gp_axislh) == 0 {
+
+		global.hasMovedLeftP2 = false;
+
+	}
+
+	if !global.hasMovedRightP2 && gamepad_axis_value(global.patterDevice,gp_axislh) > _axisSensitivity {
+	
+		global.moveRightP2 = true;
+		global.hasMovedRightP2 = true;
+	
+	}
+
+	if global.hasMovedRightP2 && gamepad_axis_value(global.patterDevice,gp_axislh) == 0 {
+
+		global.hasMovedRightP2 = false;
 
 	} 
 
@@ -3211,7 +3277,7 @@ function coopObjectStepEventCode(_revealRadius = 60) { //30
 			
 			if solidCoop {
 			
-				image_alpha = 0.5;
+				image_alpha = global.coopTransluscentDefaultAlpha;
 			
 			} else {
 			
@@ -3235,7 +3301,8 @@ function coopObjectDrawEventCode() {
 		blendColor = isOnPitterScreen ? patterColor : pitterColor;
 		
 		var _drawColor = isOnPitterScreen ? patterColor : pitterColor;
-		if solidCoop && !coopActive _drawColor = c_white;
+		//if solidCoop && !coopActive _drawColor = c_white;
+		
 		
 		if global.portalsActive {
 				
@@ -3253,6 +3320,8 @@ function coopObjectDrawEventCode() {
 			}
 		
 		}
+		
+		if solidCoop _drawColor = c_white;
 		
 		var _xStretch = 1;
 		var _yStretch = 1;

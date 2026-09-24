@@ -253,7 +253,7 @@ if object_index == obj_player_patter && global.splitScreenActive && !global.cuts
 	}
 	
 }
-//@@
+
 getControls();
 if global.coopActive getControlsPlayer2(); //For co-op only
 
@@ -595,8 +595,8 @@ if ridingMinecart {
 
 //show_debug_message(moveDownPressed)
 
-//if moveDownPressed && !onGround && !global.cutsceneActive && !groundPounding && !groundPoundOnCooldown && (gemPowerupGroundPound || global.groundPoundActive) {
-if moveDown && !onGround && !global.cutsceneActive && !groundPounding && !groundPoundOnCooldown && (gemPowerupGroundPound || global.groundPoundActive) {
+if moveDownPressed && !onGround && !global.cutsceneActive && !groundPounding && !groundPoundOnCooldown && (gemPowerupGroundPound || global.groundPoundActive) {
+//if moveDown && !onGround && !global.cutsceneActive && !groundPounding && !groundPoundOnCooldown && (gemPowerupGroundPound || global.groundPoundActive) {
 
 	groundPounding = true;
 	groundPoundRising = true;
