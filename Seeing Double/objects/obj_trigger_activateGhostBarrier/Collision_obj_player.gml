@@ -3,6 +3,22 @@ global.caveChaseOver = true;
 resetPitterSprites();
 resetPatterSprites();
 
+if global.coopActive {
+
+	if other.object_index == obj_player_pitter && patterPlayerIsPresent() {
+	
+		obj_player_patter.x = other.x;
+	
+	}
+	
+	if other.object_index == obj_player_patter && pitterPlayerIsPresent() {
+	
+		obj_player_pitter.x = other.x;
+	
+	}
+
+}
+
 var _numberOfGhostParticles = 30;
 
 //var _range = 10;

@@ -747,10 +747,18 @@ function coopSetCrySprite() {
 	}
 
 }
-
+//@@
 function playerDefeated() {
 
 	if global.playerDefeated exit;
+	
+	if audio_is_playing(obj_control.bgmCaveChase) {
+	
+		with obj_npc_ghost_cavesChase playerCaught = true;
+		caughtByCaveGhost();
+		exit;
+	
+	}
 
 	global.playerDefeated = true;
 	
@@ -1413,7 +1421,7 @@ function detectEnemyDuringGroundPound(_enemy) {
 	}
 
 }
-//@@
+
 function detectScammerDuringGroundPound(_scammer) {
 
 	if _scammer != noone if groundPoundFalling {
@@ -2051,10 +2059,12 @@ function spawnGoldenParachute() {
 	}
 
 }
-
+//@@
 function caughtByCaveGhost() {
 
 	if global.playerDefeated exit;
+	
+	//if instance_exists(obj_npc_ghost_cavesChase) 
 
 	global.playerDefeated = true;
 	increaseDefeatCount();
@@ -3242,7 +3252,7 @@ function coopObjectCreateEventCode() {
 	}
 
 }
-//@@
+
 function coopObjectStepEventCode(_revealRadius = 60) { //30
 
 	if global.coopActive && (invisCoop || solidCoop) {

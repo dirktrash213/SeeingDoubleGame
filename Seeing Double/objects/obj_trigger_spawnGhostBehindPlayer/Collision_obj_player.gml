@@ -5,6 +5,8 @@ with obj_npc_ghost_cavesChase {
 
 	var _offsetX = -125;
 	
+	if global.coopActive _offsetX = -155; //-155
+	
 	alarm[0] = 2;
 	
 	x = _player.x + _offsetX;

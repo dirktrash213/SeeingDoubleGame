@@ -442,15 +442,21 @@ global.dialogueStringArrays = {
 	
 	labJournalEntryEntrance : [ 
 	
-		"Log Entry No. 1. Wow. Feels surreal to type that out.", //0
-		"It's been a long and arduous road, but with the lab up and running we can finally conduct our research.",
-		"To say I'm excited is an understatement. What we find here has the potential to change [slant]everything.",
-		"These anomalies seem to defy all conventional models of physics. It may be years before we even begin to grasp their true nature.",
+		"Log Entry No. 1. Feels surreal to type that one out.", //0
+		//"It's been a long and arduous road, but with the lab up and running we can finally conduct our research.",
+		"It's been a long road, but with the lab and team up and running we can finally conduct our research proper.",
+		//"To say I'm excited is an understatement. What we find here has the potential to change [slant]everything.",
+		"Sure, I'll miss our little underground home away from home, but our research here has the potential to upend [slant]everything.",
+		//"Now, we know by now these anomalies defy all conventional models of physics. It may be some time before we fully grasp their true nature.",
+		"Truth be told, it may still be some time before we fully grasp the true nature of these anomalies. Perhaps to the order of years.",
 		//"This will be a challenge, to be sure, but I believe there's nothing we can't understand, given enough time and effort.",
+		//"That said, I believe there's nothing we can't understand, given enough time and effort. The future is looking bright!",
 		"That said, I believe there's nothing we can't understand, given enough time and effort.",
 		//"Our team, Helena, and I will make sure of it. [slant]-S", //5
 		//"Helena and I will make sure of it. [slant]-S", //5
-		"Helly and I will make sure of it. [slant]-S", //5
+		//"Helly and I will make sure of it. [slant]-S", //5
+		//"Helly and I are up to the challenge. And we're going to change the world. [slant]-S", //5
+		"Helly and I... we're going to change the world. [slant]-S", //5
 	
 	],
 	
