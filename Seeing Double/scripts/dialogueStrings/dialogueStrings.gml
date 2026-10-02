@@ -52,18 +52,20 @@ global.dialogueStringArrays = {
 		//"You're seeing me because your marriage might not be as in-sync as you'd like.",
 		"You're seeing me because your marriage is on the rocks. You two are not in sync. At all.",
 		//"I suppose a better way to put it is, you're seeing me because you're treating your partnership like some sort.",
-		"In other words, you're treating your partnership like some sort of co-op adventure, aren't you?",
-		"Disgusting. You really thought a stupid little picnic was gonna fix anything? Moronic.",
+		"In other words, you're treating your partnership like some sort of co-op adventure, aren't you? Disgusting.",
+		//"Disgusting. You really thought a stupid little picnic was gonna fix anything? Moronic.",
 		"But hey. That's neither here nor there. What you sick people do in your free time ain't my business.",
 		//"I'm simply here to give some co-op specific pointers. Against my better judgement.",
 		//"I'm here to salvage this shipwreck of a partnership by giving some co-op specific pointers.", 
-		"I'm here to salvage this shipwreck of a partnership by giving some co-op specific pointers.", //5
+		"I'm here to salvage this shipwreck of a partnership by giving some co-op specific pointers.",
 		//"Let's talk platforms. Some platforms or objects won't be visible or solid to your partner until you stand near them.", 
-		"For example, invisble platforms won't be solid to you until your partner is near them.", 
+		//"For example, invisble platforms won't be solid to you until your partner is near them.", //5
+		"For example, you've probably noticed that invisble platforms won't be solid unless your partner is near them.", //5
 		//"However, other objects such as this platform will appear transluscent but still be solid.", 
-		"Transluscent objects, however, such as this platform are always solid.", 
-		"If you can see it, you can interact with it, and vice versa. [slant]Usually.[/slant]", 
-		"Now get off my island!", 
+		//"Transluscent objects, however, such as this platform are always solid.", 
+		//"If you can see it, you can interact with it, and vice versa. [slant]Usually.[/slant]", 
+		"If you can't see it, you can't interact with it. [slant]Usually.[/slant] Now get off my island!", 
+		//"Now get off my island!", 
 	
 	],
 	
