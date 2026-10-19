@@ -294,8 +294,8 @@ if room == rm_hills_warpRoom && !ignoreDoorWarp { //For warping out of the warp 
 		global.coinCount = 800;
 		global.cherryCount = 34;
 		
-		//targetRoom = rm_cave_bigBreakableRock; //TEMP
-		//room_goto(targetRoom); //TEMP
+		targetRoom = rm_cave_bigBreakableRock; //TEMP
+		room_goto(targetRoom); //TEMP
 	
 		global.doubleJumpActive = true;
 		global.escapedForestGhost = true;
