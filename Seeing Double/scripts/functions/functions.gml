@@ -747,7 +747,7 @@ function coopSetCrySprite() {
 	}
 
 }
-//@@
+
 function playerDefeated() {
 
 	if global.playerDefeated exit;
@@ -2059,7 +2059,7 @@ function spawnGoldenParachute() {
 	}
 
 }
-//@@
+
 function caughtByCaveGhost() {
 
 	if global.playerDefeated exit;
@@ -3616,8 +3616,8 @@ function doubleJumpGem() {
 	}
 
 }
-
-function coopSpawnDuplicateCollectable() {
+//@@
+function coopSpawnDuplicateCollectable() { //Activates after a 1 frame delay on alarm[1], otherwise bugs occur
 
 	if global.coopActive && !duplicate {
 
@@ -3681,16 +3681,27 @@ function coopSpawnDuplicateCollectable() {
 			}
 	
 		}
+		
+		var _IDnumber = 0;
+		
+		if variable_instance_exists(id, "IDnumber") {
+			
+		    _IDnumber = IDnumber;
+			
+		}
 
 		duplicatedObject = instance_create_layer(x + _offsetX, y + _offsetY, "Collectables", object_index);
 	
 		var _depth = instance_nearest(x, y, object_index).depth + 10;
+		
+		
 	
 		with duplicatedObject {
 	
 			duplicate = true;
 			coopObjectInstanceCreationCode();
 			depth = _depth;
+			IDnumber = _IDnumber;
 	
 		}
 
