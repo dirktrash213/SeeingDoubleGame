@@ -3252,13 +3252,13 @@ function coopObjectCreateEventCode() {
 	}
 
 }
-
+//@@
 function coopObjectStepEventCode(_revealRadius = 60) { //30
 
 	if global.coopActive && (invisCoop || solidCoop) {
 	
 		// Radius around the player shadow where blocks become visible
-		//var _revealRadius = 30; //Adjust this distance to fit your game
+
 		var _isNearShadow = false;
 
 		var _tempMaskIndex = mask_index;
@@ -3616,7 +3616,7 @@ function doubleJumpGem() {
 	}
 
 }
-//@@
+
 function coopSpawnDuplicateCollectable() { //Activates after a 1 frame delay on alarm[1], otherwise bugs occur
 
 	if global.coopActive && !duplicate {

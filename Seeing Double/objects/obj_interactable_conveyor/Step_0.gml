@@ -13,3 +13,29 @@ if facingRight {
 }
 
 image_speed = conveyorSpeed/2;
+
+
+var _revealRadius = 60; 
+var _id = id;
+var _revealed = false;
+
+//var _visible = visible;
+
+
+//if global.coopActive {
+//
+//	with (obj_player_shadow) {
+//		
+//	    if collision_circle(x, y, _revealRadius, _id, true, true) != noone {
+//	        _revealed = true;
+//	        break; 
+//	    }
+//	}
+//
+//	visible = _revealed ? true : hiddenConveyor;
+//
+//}
+
+coopObjectStepEventCode();
+
+mask_index = sprite_index;
