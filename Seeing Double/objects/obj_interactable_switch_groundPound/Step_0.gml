@@ -1,3 +1,5 @@
+if coopSyncSwitch && !global.coopActive instance_destroy();
+
 if inactive {
 
 	sprite_index = spr_interactable_switch_groundPound_inactive;
@@ -15,6 +17,29 @@ if inactive {
 
 
 if pressed && !triggered {
+	
+	if coopSyncSwitch && global.coopActive && !coopSyncWaitingForPartner {
+	
+		coopSyncWaitingForPartner = true;
+		
+		alarm[1] = coopSyncDuration;
+	
+		var _otherSwitch = findNearestObjectWithSameID();
+	
+		if _otherSwitch.coopSyncWaitingForPartner {
+		
+			coopSyncWaitingForPartner = false;
+			alarm[1] = -1;
+			
+			_otherSwitch.coopSyncWaitingForPartner = false;
+			_otherSwitch.alarm[1] = -1;
+			_otherSwitch.triggered = true;
+		
+		}
+
+	}
+	
+	if coopSyncWaitingForPartner exit;
 
 	//triggered = true;
 
@@ -74,7 +99,7 @@ if pressed && !triggered {
 		}
 	
 	}
-	
+	//@@
 	if switchType == SWITCH_TYPE.CONVEYOR_ADJUST {
 		
 		var _switchID = IDnumber;
@@ -181,7 +206,7 @@ if pressed && !triggered {
 		}
 	
 	}
-	
+	//@@
 	if room == rm_lab_treadmills {
 		
 		global.destroyedLabDoor = true;
@@ -219,6 +244,9 @@ if pressed && !triggered {
 	}
 	
 	triggered = true;
+	
+	//@@
+	
 
 }
 

@@ -25,5 +25,6 @@ global.customRoomArray = [
 	rm_cave_groundPoundGauntlet_springs,
 	rm_cave_chase_minecarts,
 	rm_cave_chase_rustySprings,
+	rm_lab_assemblyLine,
 	
 ];

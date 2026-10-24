@@ -2,6 +2,7 @@ inactive = false;
 pressed = false;
 triggered = false;
 
+coopSyncWaitingForPartner = false; 
 
 
 
@@ -10,8 +11,8 @@ triggered = false;
 //timerDuration
 //newSpeed
 //newFacingRight
-
-
+//coopSyncSwitch
+//coopSyncDuration
 
 
 

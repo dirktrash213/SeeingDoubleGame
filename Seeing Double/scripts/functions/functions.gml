@@ -3991,7 +3991,7 @@ function floatUpAndDown() {
 
 function coopDetectPlayer2Input() {
     
-	show_debug_message("detecting input...")
+	//show_debug_message("detecting input...")
 	
     // First, determine if Player 1 is using the "Any" (-2) scheme
     var _p1ImplicitPad = -1;
@@ -4087,6 +4087,28 @@ function detectPlayer1Input() {
             }
         }
     }
+}
+
+function findNearestObjectWithSameID() {
+	
+	//IDnumber
+	
+    var _nearest = noone;
+    var _bestDist = infinity;
+    var _self = id;
+    var _IDnumber = IDnumber;
+
+    with (object_index) {
+        if (id == _self) || (IDnumber != _IDnumber) continue; // skip the caller or objects with not matching ID
+
+        var _dist = point_distance(x, y, other.x, other.y);
+        if (_dist < _bestDist) {
+            _bestDist = _dist;
+            _nearest = id;
+        }
+    }
+
+    return _nearest;
 }
 
 
