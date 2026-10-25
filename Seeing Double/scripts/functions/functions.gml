@@ -2389,7 +2389,7 @@ function conveyorLogic() {
 
 }
 
-
+//@@
 function checkCrusherCollision() {
 
 	var _rightCrusher = noone;
@@ -2402,6 +2402,8 @@ function checkCrusherCollision() {
 
 	for(var i = 0; i < _listOfCrushersSize; i++) {
 		var _listInst = _listOfCrushers[|i];
+		
+		//if !_listInst.pitterCrusher && object_index == obj_player_pitter exit; 
 	
 		// 1. Calculate how many pixels the crusher is overlapping the player on all 4 sides
 		var _pLeft   = _listInst.bbox_right - bbox_left;
@@ -3252,7 +3254,7 @@ function coopObjectCreateEventCode() {
 	}
 
 }
-//@@
+
 function coopObjectStepEventCode(_revealRadius = 60) { //30
 
 	if global.coopActive && (invisCoop || solidCoop) {
@@ -4100,6 +4102,27 @@ function findNearestObjectWithSameID() {
 
     with (object_index) {
         if (id == _self) || (IDnumber != _IDnumber) continue; // skip the caller or objects with not matching ID
+
+        var _dist = point_distance(x, y, other.x, other.y);
+        if (_dist < _bestDist) {
+            _bestDist = _dist;
+            _nearest = id;
+        }
+    }
+
+    return _nearest;
+}
+
+function findNearestObjectWithSameObjectIndex() {
+	
+	//IDnumber
+	
+    var _nearest = noone;
+    var _bestDist = infinity;
+    var _self = id;
+
+    with (object_index) {
+        if (id == _self) continue; // skip the caller or objects with not matching ID
 
         var _dist = point_distance(x, y, other.x, other.y);
         if (_dist < _bestDist) {

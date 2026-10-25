@@ -859,7 +859,7 @@ if instance_exists(_topWall) {
 }
 
 //Crusher collision
-
+//@@
 checkCrusherCollision();
 
 //Don't get dropped by moving platform

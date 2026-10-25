@@ -1,5 +1,7 @@
 targetView = 0; //Decides which screen to draw to, overriden in creation code
 
+coopObjectCreateEventCode();
+
 timerDuration = 70;
 durationBeforeLift = 60; //120
 
