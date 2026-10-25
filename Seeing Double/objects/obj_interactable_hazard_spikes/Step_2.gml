@@ -1,5 +1,6 @@
 var _spikeDetectionRadius = 60;
 if room == rm_cave_minecartMore _spikeDetectionRadius = 120;
+if object_index == obj_interactable_hazard_spikes_boxes _spikeDetectionRadius = 120; 
 coopObjectStepEventCode(_spikeDetectionRadius);
 
 

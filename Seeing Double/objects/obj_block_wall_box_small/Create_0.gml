@@ -1,5 +1,7 @@
 event_inherited();
 
+coopObjectCreateEventCode();
+
 dir = 0;
 rotationSpeed = 0;
 radius = 0;

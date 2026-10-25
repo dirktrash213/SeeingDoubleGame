@@ -1,0 +1,2 @@
+coopObjectInstanceCreationCode();
+coopSolid = false;

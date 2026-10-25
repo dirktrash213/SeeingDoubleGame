@@ -806,14 +806,14 @@ for(var i = 0; i < _listOfSolidPlatformsSize; i++) {
 }
 
 ds_list_destroy(_listOfSolidPlatforms);
-
+//##
 //Player gets pushed by moving right walls here
 if instance_exists(_rightWall) {
 
 	var _rightDist = bbox_right - x;
 	x = _rightWall.bbox_left - _rightDist;
 	
-	show_debug_message("player pushed by right")
+	//show_debug_message("player pushed by right")
 
 }
 
@@ -823,7 +823,7 @@ if instance_exists(_leftWall) {
 	var _leftDist = x - bbox_left;
 	x = _leftWall.bbox_right + _leftDist;
 	
-	show_debug_message("player pushed by left")
+	//show_debug_message("player pushed by left")
 
 }
 
@@ -833,7 +833,7 @@ if instance_exists(_bottomWall) {
 	var _bottomDist = bbox_bottom - y;
 	y = _bottomWall.bbox_top - _bottomDist;
 	
-	show_debug_message("player pushed by bottom")
+	//show_debug_message("player pushed by bottom")
 
 }
 
@@ -848,11 +848,11 @@ if instance_exists(_topWall) {
 	
 		y = _targetY;
 		
-		show_debug_message("player pushed by top")
+		//show_debug_message("player pushed by top")
 	
 	} else {
 	
-		show_debug_message("player pushed by top but wall in way")
+		//show_debug_message("player pushed by top but wall in way")
 	
 	}
 	

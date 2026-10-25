@@ -814,6 +814,7 @@
     {"id":{"name":"spr_background_grassPiece2","path":"sprites/spr_background_grassPiece2/spr_background_grassPiece2.yy",},},
     {"id":{"name":"spr_icon_flower_256x256","path":"sprites/spr_icon_flower_256x256/spr_icon_flower_256x256.yy",},},
     {"id":{"name":"spr_interactable_labDoor_piece5","path":"sprites/spr_interactable_labDoor_piece5/spr_interactable_labDoor_piece5.yy",},},
+    {"id":{"name":"spr_interactable_spikes_boxes1329","path":"sprites/spr_interactable_spikes_boxes1329/spr_interactable_spikes_boxes1329.yy",},},
     {"id":{"name":"spr_background_parallax_forest_tall2_white","path":"sprites/spr_background_parallax_forest_tall2_white/spr_background_parallax_forest_tall2_white.yy",},},
     {"id":{"name":"Room_Steam_Social","path":"rooms/Room_Steam_Social/Room_Steam_Social.yy",},},
     {"id":{"name":"spr_background_sproutPiece","path":"sprites/spr_background_sproutPiece/spr_background_sproutPiece.yy",},},

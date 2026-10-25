@@ -1,2 +1,2 @@
 attachedToSolidPlatform = true;
-visible = false;
+coopObjectInstanceCreationCode();

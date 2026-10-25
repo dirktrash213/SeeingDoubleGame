@@ -11,6 +11,8 @@ if other.canCollide {
 	
 	}
 	
+	//show_debug_message("defeat trigger touched")
+	
 	playerDefeated();
 
 }

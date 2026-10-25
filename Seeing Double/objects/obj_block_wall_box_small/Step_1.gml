@@ -1,6 +1,9 @@
 if global.paused exit;
 
+var _detectionRadius = 120; 
+coopObjectStepEventCode(_detectionRadius);
 
+mask_index = sprite_index;
 
 var _paddingY = 2;
 

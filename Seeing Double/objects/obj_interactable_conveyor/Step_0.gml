@@ -38,4 +38,4 @@ var _revealed = false;
 
 coopObjectStepEventCode();
 
-mask_index = sprite_index;
+if coopSolid mask_index = sprite_index;

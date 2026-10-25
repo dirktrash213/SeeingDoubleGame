@@ -706,6 +706,7 @@
     {"name":"spr_background_grassPiece2","order":1,"path":"sprites/spr_background_grassPiece2/spr_background_grassPiece2.yy",},
     {"name":"spr_icon_flower_256x256","order":10,"path":"sprites/spr_icon_flower_256x256/spr_icon_flower_256x256.yy",},
     {"name":"spr_interactable_labDoor_piece5","order":122,"path":"sprites/spr_interactable_labDoor_piece5/spr_interactable_labDoor_piece5.yy",},
+    {"name":"spr_interactable_spikes_boxes1329","order":135,"path":"sprites/spr_interactable_spikes_boxes1329/spr_interactable_spikes_boxes1329.yy",},
     {"name":"spr_background_parallax_forest_tall2_white","order":29,"path":"sprites/spr_background_parallax_forest_tall2_white/spr_background_parallax_forest_tall2_white.yy",},
     {"name":"Room_Steam_Social","order":4,"path":"rooms/Room_Steam_Social/Room_Steam_Social.yy",},
     {"name":"spr_background_sproutPiece","order":8,"path":"sprites/spr_background_sproutPiece/spr_background_sproutPiece.yy",},

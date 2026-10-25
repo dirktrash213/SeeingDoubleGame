@@ -11,3 +11,5 @@ oldFacingRight = true;
 //hiddenConveyor = visible;
 
 coopObjectCreateEventCode();
+
+coopSolid = true;
