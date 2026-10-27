@@ -2389,7 +2389,7 @@ function conveyorLogic() {
 
 }
 
-//@@
+
 function checkCrusherCollision() {
 
 	var _rightCrusher = noone;
@@ -3225,7 +3225,7 @@ function coopObjectSolidInstanceCreationCode() {
 	}
 
 }
-
+//@@
 function coopObjectCreateEventCode() {
 
 	coopActive = true;
@@ -3240,6 +3240,13 @@ function coopObjectCreateEventCode() {
 		if !global.customLevel {
 	
 			isOnPitterScreen = y < global.patterOffsetY;
+			
+			if object_index == obj_block_wall_pistonCrusher {
+			
+				isOnPitterScreen = y < 90;
+				//isOnPitterScreen = true;
+			
+			}
 	
 		} else {
 	
@@ -3254,7 +3261,7 @@ function coopObjectCreateEventCode() {
 	}
 
 }
-
+//@@
 function coopObjectStepEventCode(_revealRadius = 60) { //30
 
 	if global.coopActive && (invisCoop || solidCoop) {
@@ -3309,6 +3316,7 @@ function coopObjectDrawEventCode() {
 	if global.coopActive && (invisCoop || solidCoop) {
 	
 		isOnPitterScreen = y < global.patterOffsetY;
+		if object_index == obj_block_wall_pistonCrusher isOnPitterScreen = y < 90;
 		if global.customLevel isOnPitterScreen = y < global.defaultCustomLevelPatterOffsetY;
 		if global.verticalLevel isOnPitterScreen = x < global.patterOffsetX;
 		blendColor = isOnPitterScreen ? patterColor : pitterColor;
@@ -3350,6 +3358,8 @@ function coopObjectDrawEventCode() {
 		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale*_xStretch, image_yscale*_yStretch, image_angle, _drawColor, image_alpha);
 		
 		//draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, _drawColor, image_alpha);
+		
+		//if tracking show_debug_message("is on pitter screen: " + string(isOnPitterScreen))
 	
 	} else {
 

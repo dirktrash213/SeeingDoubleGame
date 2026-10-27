@@ -18,3 +18,5 @@ readyToCrush = true;
 alarm[0] = timerDuration;
 
 //crusherID = 0;
+
+tracking = false;

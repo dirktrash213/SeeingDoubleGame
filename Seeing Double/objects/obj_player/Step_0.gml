@@ -1016,7 +1016,7 @@ if lookingUp xSpeed = 0;
 
 
 //X collision
-
+//@@
 //How close can we get to a wall
 var _subPixel = 0.5;
 

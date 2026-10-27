@@ -1,1 +1,2 @@
-visible = false;
+coopObjectInstanceCreationCode();
+targetView = 1;
