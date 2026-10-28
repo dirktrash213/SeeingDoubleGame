@@ -2,8 +2,8 @@ targetView = 0; //Decides which screen to draw to, overriden in creation code
 
 coopObjectCreateEventCode();
 
-timerDuration = 70;
-durationBeforeLift = 60; //120
+timerDuration = 70; //70
+durationBeforeLift = 60; //60
 
 crusherFallSpeed = 5; 
 crusherLiftSpeed = 5; 

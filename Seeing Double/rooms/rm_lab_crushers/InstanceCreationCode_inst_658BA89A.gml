@@ -1,1 +1,1 @@
-coopObjectInstanceCreationCode();
+//coopObjectInstanceCreationCode();
