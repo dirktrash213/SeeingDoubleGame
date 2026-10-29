@@ -483,7 +483,7 @@ global.dialogueStringArrays = {
 		"[font_robot]Father needs us at full capacity.", 
 		"[font_robot]We will perform our tasks in his absence.", 
 		"[font_robot]No rest. No breaks. Only duty.", 
-		"[font_robot]Hah! I'm not like those other conformist sheeple! Just try and stop me, idiot!", //5 
+		"[font_robot]Hah! I'm not like those conformist sheeple! Just try and stop me, idiot!", //5 
 		"[font_robot][shake]H-help!! It's out of control! Somebody [slant]do something!!", 
 		
 	],
@@ -500,6 +500,7 @@ global.dialogueStringArrays = {
 		"", 
 		"", 
 		"[font_robot]Well played.", //5
+		//"[font_robot]Great. Now I'm just like everyone else. Thanks for nothing!", //5
 		//"Pain.", 
 		"[font_robot]You have made pain my new reality.", 
 		
@@ -509,6 +510,20 @@ global.dialogueStringArrays = {
 	
 		//"What? I'm just doing my job! Not my fault you decided to be an idiot and hop in the damn garbage compactor!", //0
 		"What? I'm just doing my job! Who told you to hop in the damn garbage compactor!?", //0
+		
+	],
+	
+	labDeviceRobot2 : [ 
+	
+		"The device is currently powered off, per Father's orders.", //0
+		"If you want to reactivate it you'll need to turn on the two generators deeper in the facility.", 
+		"I'd normally stop you, but no one pays us anymore, so I can't be arsed. Knock yourself out.", 
+		
+	],
+	
+	labDeviceRobot2 : [ 
+	
+		"Careful, bud. These pits lead to the old sewer system. And trust me, you don't wanna end up there.", //0
 		
 	],
 	

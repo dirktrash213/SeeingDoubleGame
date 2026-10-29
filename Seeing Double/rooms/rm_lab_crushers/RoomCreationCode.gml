@@ -1,5 +1,9 @@
 if !audio_is_playing(obj_control.bgmLab) audio_play_sound(obj_control.bgmLab, 1, true);
 
+if audio_is_playing(obj_control.bgmDevicePhase1) audio_stop_sound(obj_control.bgmDevicePhase1);
+if audio_is_playing(obj_control.bgmDevicePhase2) audio_stop_sound(obj_control.bgmDevicePhase2);
+if audio_is_playing(obj_control.bgmDevicePhase3) audio_stop_sound(obj_control.bgmDevicePhase3);
+
 global.verticalLevel = false;
 global.customLevel = false;
 

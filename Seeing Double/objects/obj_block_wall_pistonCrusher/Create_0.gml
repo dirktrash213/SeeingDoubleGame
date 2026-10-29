@@ -20,3 +20,5 @@ alarm[0] = timerDuration;
 //crusherID = 0;
 
 tracking = false;
+
+storedPathSpeed = 0;

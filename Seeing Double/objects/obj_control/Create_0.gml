@@ -65,6 +65,10 @@ bgmCaveChase = bgm_caveChase;
 
 bgmLab = bgm_abstraction;
 
+bgmDevicePhase1 = bgm_theDevice1LOUD;
+bgmDevicePhase2 = bgm_theDevice2LOUD;
+bgmDevicePhase3 = bgm_theDevice3LOUD;
+
 //saveSettings();
 //Load player settings
 loadSettings();
