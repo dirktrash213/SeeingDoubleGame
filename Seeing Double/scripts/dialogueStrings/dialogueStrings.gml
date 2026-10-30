@@ -513,7 +513,7 @@ global.dialogueStringArrays = {
 		
 	],
 	
-	labDeviceRobot2 : [ 
+	labDeviceRobot : [ 
 	
 		"The device is currently powered off, per Father's orders.", //0
 		"If you want to reactivate it you'll need to turn on the two generators deeper in the facility.", 
