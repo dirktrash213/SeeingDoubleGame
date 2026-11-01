@@ -521,6 +521,13 @@ global.dialogueStringArrays = {
 		
 	],
 	
+	labDeviceRobotPart2 : [ 
+	
+		"What's that? Why do robots need pay? Oh ho ho, you silly creature.", //0
+		"Father pays us in Good Boy Points. Literally. He points at us and says, \"Good boy!\"",
+		
+	],
+	
 	labDeviceRobot2 : [ 
 	
 		"Careful, bud. These pits lead to the old sewer system. And trust me, you don't wanna end up there.", //0
