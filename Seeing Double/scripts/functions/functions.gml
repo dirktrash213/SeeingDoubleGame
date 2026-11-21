@@ -4145,6 +4145,8 @@ function findNearestObjectWithSameObjectIndex() {
 }
 
 
+
+
 //function detectPlayer1Input() {
 //    
 //    // We only need to dynamically swap devices in Single Player
