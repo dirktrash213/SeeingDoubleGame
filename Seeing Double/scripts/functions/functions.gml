@@ -713,18 +713,25 @@ function spawnPatter() {
 
 }
 
-function increaseDefeatCount() {
+function increaseDefeatCount(_instance = other) {
 
-	if global.coopActive && instance_exists(other) {
+	//if global.coopActive && instance_exists(other) {
+	if global.coopActive && instance_exists(_instance) {
 	
 		//show_debug_message(object_get_name(other.object_index))
 		//show_debug_message("defeated")
 		
-		if other.object_index == obj_player_pitter global.defeatCountPitter++;
-		if other.object_index == obj_player_patter global.defeatCountPatter++;
+		if _instance.object_index == obj_player_pitter global.defeatCountPitter++;
+		if _instance.object_index == obj_player_patter global.defeatCountPatter++;
 		
-		if other.object_index == obj_player_pitter global.coopPitterDefeated = true;
-		if other.object_index == obj_player_patter global.coopPatterDefeated = true;
+		if _instance.object_index == obj_player_pitter global.coopPitterDefeated = true;
+		if _instance.object_index == obj_player_patter global.coopPatterDefeated = true;
+		
+		//if other.object_index == obj_player_pitter global.defeatCountPitter++;
+		//if other.object_index == obj_player_patter global.defeatCountPatter++;
+		//
+		//if other.object_index == obj_player_pitter global.coopPitterDefeated = true;
+		//if other.object_index == obj_player_patter global.coopPatterDefeated = true;
 	
 	} else {
 	
@@ -747,8 +754,8 @@ function coopSetCrySprite() {
 	}
 
 }
-
-function playerDefeated() {
+//@@
+function playerDefeated(_instance = other) {
 
 	if global.playerDefeated exit;
 	
@@ -762,7 +769,7 @@ function playerDefeated() {
 
 	global.playerDefeated = true;
 	
-	increaseDefeatCount();
+	increaseDefeatCount(_instance);
 	coopSetCrySprite();
 	
 	
@@ -771,9 +778,13 @@ function playerDefeated() {
 	global.playerControl = false;
 	obj_control.alarm[0] = global.playerRespawnTime; 
 
-	other.sprite_index = other.defeatSprite;
-	other.xStretch = 1;
-	other.yStretch = 1;
+	//other.sprite_index = other.defeatSprite;
+	//other.xStretch = 1;
+	//other.yStretch = 1;
+	
+	_instance.sprite_index = _instance.defeatSprite;
+	obj_player.xStretch = 1;
+	obj_player.yStretch = 1;
 	
 	if global.coopActive {
 
